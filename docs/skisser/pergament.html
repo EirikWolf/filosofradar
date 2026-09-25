@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konseptskisse: Pergament – Filosofradaren</title>
+  <style>
+    :root {
+      --bg: #ece2ce;
+      --paper: #faf5eb;
+      --ink: #2b1f14;
+      --ink-dim: #735c46;
+      --ink-faint: rgba(67, 49, 32, 0.15);
+      --sepia-line: #a88d72;
+      --card-bg: #fffbf4;
+      --card-border: #caa883;
+      --accent-wax: #9e2a2b;
+      --font-serif: 'Georgia', 'Garamond', 'Palatino', serif;
+      --font-sans: system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-serif);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.5) 0%, rgba(200, 180, 150, 0.4) 100%),
+        repeating-linear-gradient(45deg, rgba(67, 49, 32, 0.02) 0px, rgba(67, 49, 32, 0.02) 2px, transparent 2px, transparent 4px);
+    }
+
+    /* Top switcher */
+    header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--sepia-line);
+      background: rgba(250, 245, 235, 0.88);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(67, 49, 32, 0.08);
+      z-index: 10;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-wax);
+      border: 1px solid var(--accent-wax);
+      padding: 3px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .title-group h1 {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--ink);
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .style-switcher {
+      display: flex;
+      gap: 8px;
+    }
+
+    .style-btn {
+      text-decoration: none;
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      border: 1px solid var(--sepia-line);
+      color: var(--ink-dim);
+      border-radius: 4px;
+      transition: all 0.2s;
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .style-btn:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+      background: #ffffff;
+    }
+    .style-btn.active {
+      color: #ffffff;
+      background: var(--ink);
+      font-weight: bold;
+      border-color: var(--ink);
+      box-shadow: 0 2px 8px rgba(43, 31, 20, 0.3);
+    }
+
+    /* Main layout */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    /* Radar container */
+    .radar-wrapper {
+      position: relative;
+      width: min(560px, 90vw);
+      height: min(560px, 90vw);
+      background: var(--paper);
+      border-radius: 50%;
+      border: 3px double var(--ink);
+      box-shadow: 0 10px 30px rgba(67, 49, 32, 0.25), inset 0 0 50px rgba(168, 141, 114, 0.35);
+      overflow: hidden;
+    }
+
+    /* Compass needle sweep */
+    .sweep-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      animation: rotate-sweep 12s linear infinite;
+      transform-origin: center center;
+    }
+
+    .sweep-tail {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, rgba(158, 42, 43, 0.25) 0deg, rgba(168, 141, 114, 0.1) 25deg, transparent 60deg);
+    }
+
+    @keyframes rotate-sweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* SVG overlay */
+    svg.radar-svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .radar-ring {
+      fill: none;
+      stroke: var(--ink-faint);
+      stroke-width: 1;
+    }
+    .radar-ring-major {
+      stroke: var(--sepia-line);
+      stroke-dasharray: 4, 3;
+    }
+    .radar-axis {
+      stroke: var(--ink-faint);
+      stroke-width: 1;
+    }
+    .radar-label {
+      fill: var(--ink-dim);
+      font-size: 10px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+    .sector-label {
+      fill: var(--ink);
+      font-size: 9px;
+      font-family: var(--font-serif);
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* Antique Blips */
+    .blip {
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .blip-seal {
+      fill: var(--paper);
+      stroke: var(--ink);
+      stroke-width: 1.5;
+      transition: all 0.2s;
+    }
+    .blip-core {
+      fill: var(--accent-wax);
+      transition: all 0.2s;
+    }
+    .blip:hover .blip-core, .blip.selected .blip-core {
+      r: 6;
+      fill: #b91c1c;
+      filter: drop-shadow(0 0 4px rgba(185, 28, 28, 0.6));
+    }
+    .blip:hover .blip-seal, .blip.selected .blip-seal {
+      r: 10;
+      stroke-width: 2;
+    }
+    .blip-text {
+      fill: var(--ink);
+      font-size: 11px;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      pointer-events: none;
+      text-shadow: 0 0 2px #fff, 0 0 5px #fff;
+    }
+
+    /* Info card */
+    .info-panel {
+      width: min(390px, 90vw);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 24px rgba(67, 49, 32, 0.18);
+      border-radius: 4px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    /* Wax seal decoration */
+    .info-panel::before {
+      content: "📜";
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      font-size: 24px;
+    }
+
+    .panel-header {
+      border-bottom: 1px solid var(--sepia-line);
+      padding-bottom: 12px;
+    }
+    .panel-tag {
+      font-size: 0.75rem;
+      color: var(--accent-wax);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .panel-name {
+      font-size: 1.7rem;
+      color: var(--ink);
+      margin: 4px 0 2px 0;
+      font-weight: bold;
+    }
+    .panel-meta {
+      font-size: 0.9rem;
+      color: var(--ink-dim);
+      font-style: italic;
+    }
+
+    .panel-body {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #3f2f22;
+    }
+
+    .theme-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-top: 6px;
+    }
+    .theme-row {
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .theme-label {
+      width: 100px;
+      color: var(--ink-dim);
+      font-style: italic;
+    }
+    .theme-meter {
+      flex: 1;
+      height: 6px;
+      background: rgba(168, 141, 114, 0.25);
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid rgba(168, 141, 114, 0.4);
+    }
+    .theme-fill {
+      height: 100%;
+      background: var(--accent-wax);
+    }
+
+    .quote-box {
+      border-left: 3px solid var(--accent-wax);
+      padding-left: 12px;
+      font-style: italic;
+      color: #4a2810;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      background: rgba(202, 168, 131, 0.12);
+      padding-top: 6px;
+      padding-bottom: 6px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .instructions {
+      font-size: 0.8rem;
+      color: var(--ink-dim);
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title-group">
+      <span class="badge">Konseptskisse 3 // STIL: PERGAMENT</span>
+      <h1>FILOSOFRADAREN</h1>
+    </div>
+    <nav class="style-switcher">
+      <a href="sonar.html" class="style-btn">1. Sonar</a>
+      <a href="observatoriet.html" class="style-btn">2. Observatoriet</a>
+      <a href="pergament.html" class="style-btn active">3. Pergament</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="radar-wrapper" id="radar">
+      <div class="sweep-line">
+        <div class="sweep-tail"></div>
+      </div>
+      <svg class="radar-svg" viewBox="0 0 600 600" id="radarSvg">
+        <!-- Kompassrose i sentrum -->
+        <g transform="translate(300, 300) scale(0.6)" opacity="0.25">
+          <polygon points="0,-70 12,-15 70,0 15,12 0,70 -12,15 -70,0 -15,-12" fill="#2b1f14" />
+          <polygon points="0,-70 0,0 70,0 0,0 0,70 0,0 -70,0 0,0" fill="#9e2a2b" />
+        </g>
+
+        <!-- Sektorlinjer -->
+        <g id="sectorLines"></g>
+
+        <!-- Sirkler / Epoker -->
+        <circle cx="300" cy="300" r="60" class="radar-ring" />
+        <circle cx="300" cy="300" r="120" class="radar-ring" />
+        <circle cx="300" cy="300" r="180" class="radar-ring radar-ring-major" />
+        <circle cx="300" cy="300" r="240" class="radar-ring" />
+        <circle cx="300" cy="300" r="285" class="radar-ring radar-ring-major" />
+        
+        <!-- Årstall-markører -->
+        <text x="300" y="236" class="radar-label">År 0</text>
+        <text x="300" y="176" class="radar-label">500 e.Kr.</text>
+        <text x="300" y="116" class="radar-label">1000 e.Kr.</text>
+        <text x="300" y="56" class="radar-label">1500 e.Kr.</text>
+        <text x="300" y="12" class="radar-label">2000 e.Kr.</text>
+        <text x="300" y="303" class="radar-label" style="fill:#9e2a2b; font-weight:bold;">• 600 f.Kr.</text>
+
+        <!-- Filosofer (segl/blekkmerker) -->
+        <g id="blipsGroup"></g>
+      </svg>
+    </div>
+
+    <div class="info-panel" id="infoPanel">
+      <div class="panel-header">
+        <div class="panel-tag" id="targetTradition">GRESK & ROMERSK</div>
+        <div class="panel-name" id="targetName">Sokrates</div>
+        <div class="panel-meta" id="targetYears">ca. 470 – 399 f.Kr. · Athen</div>
+      </div>
+      <div class="panel-body" id="targetIdea">
+        Gikk rundt på torget i Athen og stilte lure spørsmål til folk. Mente at ekte visdom starter med å innse hva man ikke vet.
+      </div>
+      <div class="quote-box" id="targetQuote">
+        «Det eneste jeg vet, er at jeg ingenting vet.»
+      </div>
+      <div>
+        <div style="font-size:0.75rem; color:var(--accent-wax); font-weight:bold; letter-spacing:1px; margin-bottom:4px;">TEMAPROFIL (SKJØNN)</div>
+        <div class="theme-bars" id="themeBars"></div>
+      </div>
+      <div class="instructions">Klikk på et segl på kartet for å lese om filosofen.</div>
+    </div>
+  </main>
+
+  <script>
+    const philosophers = [
+      {
+        id: "konfucius",
+        name: "Konfucius",
+        years: "551 – 479 f.Kr.",
+        yearNum: -551,
+        angle: 25,
+        tradition: "Kinesisk",
+        idea: "La vekt på respekt for familien, rettferdighet, gode vaner og moralsk lederskap.",
+        quote: "Den som flytter et fjell, begynner med å bære bort små steiner.",
+        themes: { Etikk: 5, Samfunn: 5, Erkjennelse: 3 }
+      },
+      {
+        id: "buddha",
+        name: "Buddha (Siddhartha)",
+        years: "ca. 563 – 483 f.Kr.",
+        yearNum: -563,
+        angle: 90,
+        tradition: "Indisk",
+        idea: "Undersøkte hvorfor vi mennesker lider, og hvordan meditasjon, medfølelse og innsikt kan frigjøre sinnet.",
+        quote: "Sinnet er alt. Hva du tenker, det blir du.",
+        themes: { Sinn: 5, Etikk: 5, Mening: 4 }
+      },
+      {
+        id: "sokrates",
+        name: "Sokrates",
+        years: "ca. 470 – 399 f.Kr.",
+        yearNum: -470,
+        angle: 140,
+        tradition: "Gresk-romersk",
+        idea: "Gikk rundt på torget i Athen og stilte spørsmål. Mente ekte visdom starter med å innse hva man ikke vet.",
+        quote: "Det eneste jeg vet, er at jeg ingenting vet.",
+        themes: { Etikk: 5, Erkjennelse: 5, Logikk: 4 }
+      },
+      {
+        id: "hypatia",
+        name: "Hypatia",
+        years: "ca. 360 – 415 e.Kr.",
+        yearNum: 385,
+        angle: 155,
+        tradition: "Gresk-romersk",
+        idea: "Matematiker, astronom og filosof i Alexandria. Underviste i platonsk filosofi og vitenskap.",
+        quote: "Bevar din rett til å tenke, for selv å tenke feil er bedre enn ikke å tenke.",
+        themes: { Erkjennelse: 5, Logikk: 4, Metafysikk: 3 }
+      },
+      {
+        id: "ibn-sina",
+        name: "Ibn Sina (Avicenna)",
+        years: "980 – 1037 e.Kr.",
+        yearNum: 1000,
+        angle: 190,
+        tradition: "Islamsk-jødisk",
+        idea: "Knyttet gresk logikk sammen med islamsk tenkning og skrev legendariske verk om medisin og sjelen.",
+        quote: "Kunnskap uten handling er som et tre uten frukt.",
+        themes: { Metafysikk: 5, Sinn: 5, Erkjennelse: 4 }
+      },
+      {
+        id: "descartes",
+        name: "René Descartes",
+        years: "1596 – 1650 e.Kr.",
+        yearNum: 1620,
+        angle: 235,
+        tradition: "Europeisk",
+        idea: "Tvileren: Hva kan vi være 100 % sikre på? Konklusjonen hans ble: 'Jeg tenker, altså er jeg'.",
+        quote: "Cogito, ergo sum. (Jeg tenker, altså er jeg.)",
+        themes: { Erkjennelse: 5, Sinn: 5, Metafysikk: 4 }
+      },
+      {
+        id: "wollstonecraft",
+        name: "Mary Wollstonecraft",
+        years: "1759 – 1797 e.Kr.",
+        yearNum: 1780,
+        angle: 250,
+        tradition: "Europeisk",
+        idea: "En av de første forkjemperne for kvinners rettigheter. Krevde lik utdanning for jenter og gutter.",
+        quote: "Jeg ønsker ikke at kvinner skal ha makt over menn, men over seg selv.",
+        themes: { Samfunn: 5, Etikk: 5, Erkjennelse: 3 }
+      },
+      {
+        id: "nietzsche",
+        name: "Friedrich Nietzsche",
+        years: "1844 – 1900 e.Kr.",
+        yearNum: 1875,
+        angle: 265,
+        tradition: "Europeisk",
+        idea: "Utfordret alle vedtatte sannheter og moralregler. Oppfordret folk til å skape sine egne verdier.",
+        quote: "Den som har et hvorfor å leve for, kan tåle nesten et hvilket som helst hvordan.",
+        themes: { Mening: 5, Etikk: 4, Kunst: 4 }
+      },
+      {
+        id: "de-beauvoir",
+        name: "Simone de Beauvoir",
+        years: "1908 – 1986 e.Kr.",
+        yearNum: 1950,
+        angle: 280,
+        tradition: "Europeisk",
+        idea: "Eksistensialist og forfatter. Mente at vi mennesker ikke er forhåndsbestemt, men skaper oss selv gjennom frie valg.",
+        quote: "Man fødes ikke som kvinne, man blir det.",
+        themes: { Samfunn: 5, Etikk: 5, Sinn: 4 }
+      },
+      {
+        id: "arne-naess",
+        name: "Arne Næss",
+        years: "1912 – 2004 e.Kr.",
+        yearNum: 1960,
+        angle: 305,
+        tradition: "Nordisk",
+        idea: "Norsk filosof og fjellklatrer. Grunnlegger av dypøkologien: all natur og alle levende vesener har egenverdi.",
+        quote: "Enklere livsstil, rikere liv.",
+        themes: { Etikk: 5, Mening: 5, Samfunn: 4 }
+      }
+    ];
+
+    const cx = 300;
+    const cy = 300;
+    const maxRadius = 280;
+
+    function yearToRadius(year) {
+      const minYear = -650;
+      const maxYear = 2025;
+      const pct = (year - minYear) / (maxYear - minYear);
+      return 25 + Math.pow(pct, 0.85) * (maxRadius - 25);
+    }
+
+    const sectorLinesGroup = document.getElementById("sectorLines");
+    const sectors = [
+      { name: "Kinesisk", angle: 25 },
+      { name: "Indisk", angle: 90 },
+      { name: "Gresk-romersk", angle: 145 },
+      { name: "Islamsk-jødisk", angle: 190 },
+      { name: "Europeisk", angle: 255 },
+      { name: "Nordisk", angle: 305 }
+    ];
+
+    sectors.forEach(s => {
+      const rad = (s.angle - 90) * Math.PI / 180;
+      const x2 = cx + maxRadius * Math.cos(rad);
+      const y2 = cy + maxRadius * Math.sin(rad);
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", cx);
+      line.setAttribute("y1", cy);
+      line.setAttribute("x2", x2);
+      line.setAttribute("y2", y2);
+      line.setAttribute("class", "radar-axis");
+      sectorLinesGroup.appendChild(line);
+
+      const lx = cx + (maxRadius + 14) * Math.cos(rad);
+      const ly = cy + (maxRadius + 14) * Math.sin(rad);
+      const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      txt.setAttribute("x", lx);
+      txt.setAttribute("y", ly);
+      txt.setAttribute("class", "sector-label");
+      txt.setAttribute("text-anchor", "middle");
+      txt.textContent = s.name;
+      sectorLinesGroup.appendChild(txt);
+    });
+
+    const blipsGroup = document.getElementById("blipsGroup");
+
+    philosophers.forEach(p => {
+      const r = yearToRadius(p.yearNum);
+      const rad = (p.angle - 90) * Math.PI / 180;
+      const x = cx + r * Math.cos(rad);
+      const y = cy + r * Math.sin(rad);
+
+      const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      g.setAttribute("class", "blip" + (p.id === "sokrates" ? " selected" : ""));
+      g.setAttribute("id", "blip-" + p.id);
+
+      // Seal border
+      const seal = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      seal.setAttribute("cx", x);
+      seal.setAttribute("cy", y);
+      seal.setAttribute("r", p.id === "sokrates" ? 9 : 7);
+      seal.setAttribute("class", "blip-seal");
+      g.appendChild(seal);
+
+      // Wax core
+      const core = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      core.setAttribute("cx", x);
+      core.setAttribute("cy", y);
+      core.setAttribute("r", p.id === "sokrates" ? 5 : 3.5);
+      core.setAttribute("class", "blip-core");
+      g.appendChild(core);
+
+      // Name label
+      const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      txt.setAttribute("x", x + 12);
+      txt.setAttribute("y", y + 4);
+      txt.setAttribute("class", "blip-text");
+      txt.textContent = p.name.split(" ")[0];
+      g.appendChild(txt);
+
+      g.addEventListener("click", () => selectPhilosopher(p));
+      blipsGroup.appendChild(g);
+    });
+
+    function selectPhilosopher(p) {
+      document.querySelectorAll(".blip").forEach(el => el.classList.remove("selected"));
+      document.getElementById("blip-" + p.id).classList.add("selected");
+
+      document.getElementById("targetTradition").textContent = p.tradition;
+      document.getElementById("targetName").textContent = p.name;
+      document.getElementById("targetYears").textContent = p.years;
+      document.getElementById("targetIdea").textContent = p.idea;
+      document.getElementById("targetQuote").textContent = "«" + p.quote + "»";
+
+      const themeContainer = document.getElementById("themeBars");
+      themeContainer.innerHTML = "";
+      for (const [key, val] of Object.entries(p.themes)) {
+        const row = document.createElement("div");
+        row.className = "theme-row";
+        row.innerHTML = `
+          <div class="theme-label">${key}</div>
+          <div class="theme-meter"><div class="theme-fill" style="width: ${(val / 5) * 100}%"></div></div>
+          <div style="width: 25px; text-align: right; color: var(--accent-wax); font-size:0.75rem; font-weight:bold; margin-left: 6px;">${val}/5</div>
+        `;
+        themeContainer.appendChild(row);
+      }
+    }
+
+    selectPhilosopher(philosophers[2]);
+  </script>
+</body>
+</html>

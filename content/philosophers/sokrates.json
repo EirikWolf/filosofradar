@@ -1,0 +1,50 @@
+{
+  "id": "sokrates",
+  "name": "Sokrates",
+  "nameOriginal": "Σωκράτης",
+  "born": { "year": -470, "approx": true },
+  "died": { "year": -399, "approx": false },
+  "tradition": "greek-roman",
+  "schools": ["klassisk gresk filosofi"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 4,
+    "politics": 3,
+    "logic": 4,
+    "mind": 2,
+    "meaning": 3,
+    "beauty": 1
+  },
+  "themeNotes": "Sokrates var mest opptatt av hvordan man bør leve (etikk), og brukte spørsmål og argumenter (logikk) for å avsløre hva vi egentlig vet (erkjennelse).",
+  "keyIdeas": [
+    {
+      "title": "Jeg vet at jeg ikke vet",
+      "text": "Sokrates mente at det første steget mot visdom er å innrømme hva man ikke vet. Han gikk rundt i Athen og spurte folk som trodde de visste mye – og viste at de ofte ikke gjorde det."
+    },
+    {
+      "title": "Sokratisk samtale",
+      "text": "I stedet for å holde foredrag stilte Sokrates spørsmål, ett etter ett, til samtalepartneren selv oppdaget svakheter i sin egen tankegang. Metoden brukes fortsatt i skoler og terapi."
+    },
+    {
+      "title": "Ingen gjør galt med vilje",
+      "text": "Sokrates mente at den som virkelig forstår hva som er godt, også vil gjøre det. Gale handlinger kommer av uvitenhet, ikke ondskap."
+    }
+  ],
+  "quote": {
+    "text": "Et liv uten ettertanke er ikke verdt å leve.",
+    "work": "Platon: Sokrates' forsvarstale (Apologien) 38a",
+    "source": "https://plato.stanford.edu/entries/socrates/",
+    "translator": "egen oversettelse fra gresk via engelsk"
+  },
+  "thinkAbout": "Tenk på noe du er helt sikker på. Hvilket spørsmål kunne fått deg til å tvile?",
+  "influencedBy": [],
+  "wikidata": "Q913",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Sokrates" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Sokrates" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/socrates/" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

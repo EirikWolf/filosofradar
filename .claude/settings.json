@@ -1,0 +1,46 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(npm test *)",
+      "Bash(npx vitest *)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)",
+      "Bash(npx prettier *)",
+      "Bash(npx playwright test *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git switch *)",
+      "Bash(git branch *)",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "Bash(firebase --version)",
+      "Bash(firebase login:list)",
+      "Bash(firebase projects:list)",
+      "WebFetch(domain:query.wikidata.org)",
+      "WebFetch(domain:www.wikidata.org)",
+      "WebFetch(domain:snl.no)",
+      "WebFetch(domain:plato.stanford.edu)",
+      "WebFetch(domain:no.wikipedia.org)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:commons.wikimedia.org)"
+    ],
+    "ask": [
+      "Bash(firebase deploy *)",
+      "Bash(firebase hosting:channel:deploy *)",
+      "Bash(git push *)",
+      "Bash(winget install *)",
+      "Bash(npm install -g *)",
+      "Bash(rm -rf *)"
+    ],
+    "deny": [
+      "Bash(firebase projects:delete *)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)"
+    ]
+  }
+}
