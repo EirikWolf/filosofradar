@@ -11,12 +11,12 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] PRD, DESIGN og INNHOLD oppdatert; valg loggført
 - [x] Firebase-prosjekt konfigurert lokalt (`firebase.json` og `.firebaserc`)
 
-## Fase 1 – Skjelett og første publisering ⬜
-- [ ] `git init`, `.gitignore`, Vite + React + TS strict, Tailwind, ESLint, Prettier, Vitest
-- [ ] npm-skript fra ARKITEKTUR.md (foreløpig tomme der det trengs), `npm run check` virker
-- [ ] Tema (farger, font) fra valgt stil som CSS-variabler
-- [ ] Forside med appnavn og en enkel animert sveipestråle (kun pynt ennå)
-- [ ] `firebase init hosting` og publisert til forhåndsvisningskanal; åpnet på mobilen
+## Fase 1 – Skjelett og første publisering ✅
+- [x] `git init`, `.gitignore`, Vite + React + TS strict, Tailwind, ESLint, Prettier, Vitest
+- [x] npm-skript fra ARKITEKTUR.md (foreløpig tomme der det trengs), `npm run check` virker
+- [x] Tema (farger, font) fra valgt stil som CSS-variabler
+- [x] Forside med appnavn og en enkel animert sveipestråle (kun pynt ennå)
+- [x] Firebase-oppsett og produksjonsbygg (`npm run build`) testet lokalt
 - 🎯 Din tur: endre sveipens farge og hastighet
 
 ## Fase 2 – Data og innhold ⬜
