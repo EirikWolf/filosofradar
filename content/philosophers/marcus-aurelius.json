@@ -1,0 +1,50 @@
+{
+  "id": "marcus-aurelius",
+  "name": "Marcus Aurelius",
+  "nameOriginal": "Marcus Aurelius Antoninus",
+  "born": { "year": 121, "approx": false },
+  "died": { "year": 180, "approx": false },
+  "tradition": "greek-roman",
+  "schools": ["stoisisme"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 4,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 4,
+    "beauty": 2
+  },
+  "themeNotes": "Romersk keiser og stoisk filosof. Skrev en personlig notatbok til seg selv om plikt, sjelefred og hvordan takle motgang og vanskelige mennesker.",
+  "keyIdeas": [
+    {
+      "title": "Kontrollsirkelen",
+      "text": "Du kan ikke styre hva som skjer rundt deg, eller hva andre folk sier og gjør. Du kan bare styre dine egne tanker og hvordan du velger å reagere."
+    },
+    {
+      "title": "Morgenens påminnelse",
+      "text": "Han minnet seg selv på at hver morgen vil han møte folk som er utakknemlige eller vanskelige, men at han ikke må la seg smitte, fordi vi er skapt til å samarbeide."
+    },
+    {
+      "title": "Hver dag som en gave",
+      "text": "Lev hver dag som om den kunne være din siste – ikke med frykt, men med fokus på å gjøre det rette og være et skikkelig menneske her og nå."
+    }
+  ],
+  "quote": {
+    "text": "Du har makt over ditt eget sinn – ikke over hendelsene utenfor. Innse dette, og du vil finne styrke.",
+    "work": "Til meg selv (Meditasjoner), bok IV",
+    "source": "https://snl.no/Marcus_Aurelius",
+    "translator": "egen oversettelse fra gresk"
+  },
+  "thinkAbout": "Hvis noen sier noe urettferdig til deg, er det ordene deres eller dine egne tanker om ordene som gjør deg såret?",
+  "influencedBy": ["sokrates"],
+  "wikidata": "Q1430",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Marcus_Aurelius" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Marcus_Aurelius" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/marcus-aurelius/" }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

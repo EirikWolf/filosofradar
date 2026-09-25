@@ -1,0 +1,50 @@
+{
+  "id": "de-beauvoir",
+  "name": "Simone de Beauvoir",
+  "nameOriginal": "Simone Lucie Ernestine Marie Bertrand de Beauvoir",
+  "born": { "year": 1908, "approx": false },
+  "died": { "year": 1986, "approx": false },
+  "tradition": "european",
+  "schools": ["eksistensialisme", "feministisk filosofi"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Fransk filosof og forfatter. Grunnla moderne kjønnsfilosofi og viste hvordan frihet krever at vi kjemper for andres frihet samtidig.",
+  "keyIdeas": [
+    {
+      "title": "Man blir ikke født, man blir det",
+      "text": "Mennesker er ikke forhåndsbestemt av biologi eller tradisjon. Hvordan jenter og gutter oppfører seg er formet av samfunnets forventninger og våre egne valg."
+    },
+    {
+      "title": "Frihetens etikk",
+      "text": "Ekte frihet er ikke å gjøre hva som helst uten hensyn. Min egen frihet er avhengig av at menneskene rundt meg også er frie."
+    },
+    {
+      "title": "Situasjon og valg",
+      "text": "Vi velger ikke hvilken familie eller tidsepoke vi blir født inn i, men vi velger alltid hvordan vi handler innenfor situasjonen vi står i."
+    }
+  ],
+  "quote": {
+    "text": "Man fødes ikke som kvinne, man blir det.",
+    "work": "Det annet kjønn (Le Deuxième Sexe, 1949)",
+    "source": "https://snl.no/Simone_de_Beauvoir",
+    "translator": "egen oversettelse fra fransk"
+  },
+  "thinkAbout": "Hvor mye av det du liker og driver med skyldes hva du genuint ønsker, og hvor mye skyldes hva venner og sosiale medier forventer av deg?",
+  "influencedBy": ["kierkegaard"],
+  "wikidata": "Q7197",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Simone_de_Beauvoir" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Simone_de_Beauvoir" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/beauvoir/" }
+  ],
+  "gender": "kvinne",
+  "reviewed": false
+}

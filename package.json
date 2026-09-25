@@ -4,20 +4,21 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "tsx scripts/build-content.ts && vite",
+    "build": "tsx scripts/build-content.ts && tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
-    "validate": "node -e \"console.log('Ingen innhold å validere ennå (Fase 2)')\"",
+    "validate": "tsx scripts/build-content.ts --validate-only",
     "e2e": "node -e \"console.log('E2E-tester klargjøres i Fase 8')\"",
-    "wikidata": "node -e \"console.log('Wikidata-skript klargjøres i Fase 2')\"",
+    "wikidata": "tsx scripts/wikidata.ts",
     "check": "npm run typecheck && npm run lint && npm run test && npm run validate"
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -33,6 +34,7 @@
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.23.15",
     "typescript": "~5.7.3",
     "typescript-eslint": "^8.25.0",
     "vite": "^6.2.0",

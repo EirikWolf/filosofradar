@@ -1,0 +1,49 @@
+{
+  "id": "zapffe",
+  "name": "Peter Wessel Zapffe",
+  "nameOriginal": "Peter Wessel Zapffe",
+  "born": { "year": 1899, "approx": false },
+  "died": { "year": 1990, "approx": false },
+  "tradition": "nordic",
+  "schools": ["biosofi", "eksistensialisme", "pessimisme"],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 2,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "Norsk filosof, jurist, forfatter og fjellklatrer. Mente at mennesket har utviklet for mye bevissthet i forhold til hva naturen kan gi mening til, men bevarte en gnistrende humor og kjærlighet til fjellet.",
+  "keyIdeas": [
+    {
+      "title": "Kjempe-elgens gevir",
+      "text": "Zapffe sammenlignet mennesket med den forhistoriske kjempe-elgen: dens gevir ble så gigantisk at den ikke lenger klarte å bære det. Vår hjerne er blitt så overutviklet at vi krever mer mening enn universet kan gi."
+    },
+    {
+      "title": "Fire forsvarsmekanismer",
+      "text": "For å unngå å bli overveldet av eksistensens meningsløshet, bruker vi fire teknikker: isolasjon (fortrenge tanken), forankring (klynge oss til faste verdier), distraksjon (holde oss travelt opptatt), og sublimering (gjøre smerten om til kunst eller humor)."
+    },
+    {
+      "title": "Tindebestigning som frirom",
+      "text": "I fjellet og klatringen fant han en pause fra intellektets grublerier, der handling og konsentrasjon krevde hele mennesket her og nå."
+    }
+  ],
+  "quote": {
+    "text": "Mennesket er et biologisk overutviklet vesen.",
+    "work": "Om det tragiske (1941)",
+    "source": "https://snl.no/Peter_Wessel_Zapffe",
+    "translator": "original på norsk"
+  },
+  "thinkAbout": "Når du er trist eller grubler for mye, hjelper det å klatre i et tre, løpe en tur eller drive med sport?",
+  "influencedBy": ["nietzsche"],
+  "wikidata": "Q1379461",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Peter_Wessel_Zapffe" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Peter_Wessel_Zapffe" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

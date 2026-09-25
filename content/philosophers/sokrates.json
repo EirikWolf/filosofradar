@@ -46,5 +46,5 @@
     { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/socrates/" }
   ],
   "gender": "mann",
-  "reviewed": false
+  "reviewed": true
 }

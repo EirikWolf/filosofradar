@@ -1,0 +1,49 @@
+{
+  "id": "konfucius",
+  "name": "Konfucius",
+  "nameOriginal": "孔子",
+  "born": { "year": -551, "approx": false },
+  "died": { "year": -479, "approx": false },
+  "tradition": "chinese",
+  "schools": ["konfusianisme"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 1,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 3,
+    "meaning": 3,
+    "beauty": 3
+  },
+  "themeNotes": "Kinas mest innflytelsesrike læremester. Fremhevet familieverdier, høflighet, gode ritualer og moralsk ansvar hos samfunnsledere.",
+  "keyIdeas": [
+    {
+      "title": "Medmenneskelighet (Ren)",
+      "text": "Den viktigste dyden er å bry seg oppriktig om andre mennesker. Behandle andre slik du selv vil bli behandlet."
+    },
+    {
+      "title": "Gode vaner og skikker (Li)",
+      "text": "Når vi viser høflighet og respekt i hverdagen – ved matbordet, i familien og på skolen – skaper det harmoni og trygghet i hele samfunnet."
+    },
+    {
+      "title": "Læring og ettertanke",
+      "text": "Å lære uten å tenke er bortkastet tid; men å tenke uten å lære er farlig."
+    }
+  ],
+  "quote": {
+    "text": "Gjør ikke mot andre det du ikke vil at de skal gjøre mot deg.",
+    "work": "Samtaler (Lunyu), bok 15",
+    "source": "https://snl.no/Konfucius",
+    "translator": "egen oversettelse fra klassisk kinesisk"
+  },
+  "thinkAbout": "Hva skjer med stemningen i klassen eller familien hvis alle øver på å si 'takk' og vise litt ekstra omtanke en hel dag?",
+  "influencedBy": [],
+  "wikidata": "Q4604",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Konfucius" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Konfucius" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

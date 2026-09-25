@@ -1,0 +1,49 @@
+{
+  "id": "laozi",
+  "name": "Laozi",
+  "nameOriginal": "老子",
+  "born": { "year": -571, "approx": true },
+  "died": { "year": -471, "approx": true },
+  "tradition": "chinese",
+  "schools": ["daoisme"],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 3,
+    "politics": 3,
+    "logic": 1,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "Forfatteren av Daodejing og daoismens urfar. Mente at den beste måten å leve på er å flyte med naturens orden, akkurat som vann.",
+  "keyIdeas": [
+    {
+      "title": "Å handle uten å tvinge (Wu wei)",
+      "text": "Ikke press ting gjennom med vold eller makt. Den som tilpasser seg naturens rytme og lar ting modnes i ro, oppnår mer med mindre slit."
+    },
+    {
+      "title": "Vannets kraft",
+      "text": "Vann er det mykeste og mest ettergivende stoffet som finnes, men det sliper ned de hardeste klippene. Mykhet overvinner stivhet."
+    },
+    {
+      "title": "Enkelhet og stillhet",
+      "text": "Den som jager etter for mange eiendeler og statussymboler blir aldri fornøyd. Ekte rikdom er å være takknemlig for det enkle."
+    }
+  ],
+  "quote": {
+    "text": "En reise på tusen mil må begynne med et enkelt skritt.",
+    "work": "Daodejing, kapittel 64",
+    "source": "https://snl.no/Laozi",
+    "translator": "egen oversettelse fra klassisk kinesisk"
+  },
+  "thinkAbout": "Når et problem virker altfor stort og umulig, hvilket bittelite første skritt kan du ta i dag?",
+  "influencedBy": [],
+  "wikidata": "Q9333",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Laozi" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Laozi" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

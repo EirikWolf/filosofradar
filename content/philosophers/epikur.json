@@ -1,0 +1,49 @@
+{
+  "id": "epikur",
+  "name": "Epikur",
+  "nameOriginal": "Ἐπίκουρος",
+  "born": { "year": -341, "approx": false },
+  "died": { "year": -270, "approx": false },
+  "tradition": "greek-roman",
+  "schools": ["epikurisme", "atomisme"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 4,
+    "knowledge": 3,
+    "politics": 2,
+    "logic": 2,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Grunnla Hage-skolen i Athen der både kvinner og slaver var velkomne. Forveksles ofte med luksus, men lærte at sann lykke er enkle måltider, gode venner og fravær av frykt.",
+  "keyIdeas": [
+    {
+      "title": "Sjelefred (Ataraxia)",
+      "text": "Lykke er ikke dyre ting og festing, men ro i sinnet og fravær av frykt for guder og døden."
+    },
+    {
+      "title": "Verdien av vennskap",
+      "text": "Av alle ting som visdommen kan gi for å gjøre livet lykkelig, er vennskap den aller største skatten."
+    },
+    {
+      "title": "Frykt ikke døden",
+      "text": "Når vi er her, er ikke døden her; og når døden er her, er ikke vi her. Døden angår oss derfor ikke."
+    }
+  ],
+  "quote": {
+    "text": "Ingenting er nok for den som synes det tilstrekkelige er for lite.",
+    "work": "Vatikan-samlingen av aforismer",
+    "source": "https://snl.no/Epikur",
+    "translator": "egen oversettelse fra gresk"
+  },
+  "thinkAbout": "Hva gir deg mest ekte glede: Å kjøpe en ny dyr dings, eller å le med venner rundt en enkel pizza?",
+  "influencedBy": [],
+  "wikidata": "Q659",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Epikur" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Epikur" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

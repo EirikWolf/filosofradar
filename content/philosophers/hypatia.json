@@ -1,0 +1,49 @@
+{
+  "id": "hypatia",
+  "name": "Hypatia av Alexandria",
+  "nameOriginal": "Ὑπατία",
+  "born": { "year": 360, "approx": true },
+  "died": { "year": 415, "approx": false },
+  "tradition": "greek-roman",
+  "schools": ["nyplatonisme"],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 4,
+    "knowledge": 5,
+    "politics": 2,
+    "logic": 5,
+    "mind": 3,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Hypatia var matematiker, astronom og filosof. Hun var spesielt opptatt av erkjennelse og vitenskapelig tenkning gjennom geometri og himmellegemenes baner.",
+  "keyIdeas": [
+    {
+      "title": "Retten til å tenke selv",
+      "text": "Hypatia mente at vi må bevare evnen til å tenke selvstendig, og at selv det å ta feil underveis er mye bedre enn å ikke tenke i det hele tatt."
+    },
+    {
+      "title": "Stjernekart og instrumenter",
+      "text": "Hun ledet vitenskapsskolen i Alexandria og forbedret astrolabiet – et stjernekart-instrument i metall som sjøfolk brukte til å navigere etter stjernene."
+    },
+    {
+      "title": "Matematikk som vei til sannhet",
+      "text": "Hun underviste i at matematikk og geometri ikke bare var regning, men et universelt språk for å forstå kosmos og virkelighetens lover."
+    }
+  ],
+  "quote": {
+    "text": "Bevar din rett til å tenke, for selv å tenke feil er bedre enn ikke å tenke overhodet.",
+    "work": "Brev og sitat gjengitt i biografiske kilder om Alexandria",
+    "source": "https://snl.no/Hypatia",
+    "translator": "egen oversettelse via Store norske leksikon"
+  },
+  "thinkAbout": "Hvis nesten alle rundt deg mener noe er sant uten bevis, tør du å stole på din egen logikk?",
+  "influencedBy": ["platon"],
+  "wikidata": "Q11903",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Hypatia" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Hypatia" }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

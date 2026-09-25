@@ -1,0 +1,49 @@
+{
+  "id": "buddha",
+  "name": "Buddha (Siddhartha Gautama)",
+  "nameOriginal": "सिद्धार्थ गौतम",
+  "born": { "year": -563, "approx": true },
+  "died": { "year": -483, "approx": true },
+  "tradition": "indian",
+  "schools": ["buddhisme"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 4,
+    "politics": 2,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 2
+  },
+  "themeNotes": "Utforsket sinnets mekanismer, årsaken til menneskelig lidelse (dukkha), og hvordan meditasjon, tilstedeværelse og medfølelse kan skape fred i sinnet.",
+  "keyIdeas": [
+    {
+      "title": "De fire edle sannheter",
+      "text": "Livet inneholder uunngåelig smerte og skuffelser; dette skyldes ofte vårt eget begjær etter å kontrollere alt; men det finnes en vei til ro og frihet."
+    },
+    {
+      "title": "Den åttedelte vei",
+      "text": "En praktisk oppskrift på et godt liv gjennom rett forståelse, rett tale, rett handling, og trening av oppmerksomhet og meditasjon."
+    },
+    {
+      "title": "Forgjengelighet (Anicca)",
+      "text": "Ingenting i verden eller sinnet vårt er fastlåst. Alt endrer seg hele tiden – tanker, følelser, og kropp – og å akseptere dette gir frihet."
+    }
+  ],
+  "quote": {
+    "text": "Sinnet er alt. Hva du tenker, det blir du.",
+    "work": "Dhammapada, vers 1",
+    "source": "https://snl.no/buddhisme",
+    "translator": "egen oversettelse fra pali"
+  },
+  "thinkAbout": "Når du er sint eller trist, legger du merke til at følelsen forandrer seg og forsvinner etter en stund hvis du ikke mater den med flere tanker?",
+  "influencedBy": [],
+  "wikidata": "Q9441",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Buddha" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Siddhartha_Gautama" }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

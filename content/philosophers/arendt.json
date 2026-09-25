@@ -1,0 +1,50 @@
+{
+  "id": "arendt",
+  "name": "Hannah Arendt",
+  "nameOriginal": "Hannah Arendt",
+  "born": { "year": 1906, "approx": false },
+  "died": { "year": 1975, "approx": false },
+  "tradition": "european",
+  "schools": ["politisk filosofi", "fenomenologi"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 3,
+    "meaning": 4,
+    "beauty": 2
+  },
+  "themeNotes": "En av 1900-tallets skarpeste politiske tenkere. Flyktet fra Nazi-Tyskland og utforsket totalitarisme, ondskapens natur og kraften i menneskelig handling.",
+  "keyIdeas": [
+    {
+      "title": "Ondskapens banalitet",
+      "text": "Stor ondskap utføres ofte ikke av monstre med onde planer, men av vanlige byråkrater som slutter å tenke selv og bare adlyder ordre blindt."
+    },
+    {
+      "title": "Handling og ny begynnelse (Natalitet)",
+      "text": "Fordi nye mennesker stadig blir født, har menneskeheten alltid evnen til å starte på nytt og skape noe helt uventet og godt gjennom felles handling."
+    },
+    {
+      "title": "Det offentlige rom",
+      "text": "Frihet oppstår når mennesker samles i åpen samtale for å diskutere og forme samfunnet sammen som likeverdige borgere."
+    }
+  ],
+  "quote": {
+    "text": "Det finnes ingen farlige tanker; selve tenkningen er en farlig virksomhet.",
+    "work": "Sinnets liv (The Life of the Mind, 1978)",
+    "source": "https://snl.no/Hannah_Arendt",
+    "translator": "egen oversettelse fra tysk/engelsk"
+  },
+  "thinkAbout": "Hvorfor kan det være farlig for et samfunn hvis folk slutter å stille spørsmål og bare gjør det de blir bedt om?",
+  "influencedBy": ["kant"],
+  "wikidata": "Q60149",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Hannah_Arendt" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Hannah_Arendt" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/arendt/" }
+  ],
+  "gender": "kvinne",
+  "reviewed": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "aristoteles",
+  "name": "Aristoteles",
+  "nameOriginal": "Ἀριστοτέλης",
+  "born": { "year": -384, "approx": false },
+  "died": { "year": -322, "approx": false },
+  "tradition": "greek-roman",
+  "schools": ["aristotelisme", "peripatetikerne"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 4,
+    "logic": 5,
+    "mind": 4,
+    "meaning": 3,
+    "beauty": 4
+  },
+  "themeNotes": "Platons elev, men så ned på jorden og undersøkte naturen med observasjon og logikk. Grunnla formell logikk og zoologi.",
+  "keyIdeas": [
+    {
+      "title": "Den gylne middelvei",
+      "text": "I etikken mente han at dyd og gode handlinger ligger i midten mellom to ytterpunkter. Mote er for eksempel balansen mellom feighet og dumdristighet."
+    },
+    {
+      "title": "Formell logikk (syllogismer)",
+      "text": "Skapte regler for hvordan man kan trekke sikre konklusjoner: 'Alle mennesker er dødelige; Sokrates er et menneske; altså er Sokrates dødelig'."
+    },
+    {
+      "title": "Form og stoff",
+      "text": "I motsetning til Platon mente Aristoteles at idéene ikke svever i en egen himmel, men finnes rett inne i tingene her på jorden."
+    }
+  ],
+  "quote": {
+    "text": "Vi er det vi gjør gjentatte ganger. Fortreffelighet er derfor ikke en enkel handling, men en vane.",
+    "work": "Den nikomakiske etikk",
+    "source": "https://snl.no/Aristoteles",
+    "translator": "egen oversettelse fra gresk"
+  },
+  "thinkAbout": "Er det lettere å bli en god person hvis du øver på gode handlinger hver dag, akkurat som å øve på et instrument?",
+  "influencedBy": ["platon"],
+  "wikidata": "Q868",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Aristoteles" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Aristoteles" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/aristotle/" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

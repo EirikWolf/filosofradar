@@ -1,0 +1,50 @@
+{
+  "id": "descartes",
+  "name": "René Descartes",
+  "nameOriginal": "René Descartes",
+  "born": { "year": 1596, "approx": false },
+  "died": { "year": 1650, "approx": false },
+  "tradition": "european",
+  "schools": ["rasjonalisme", "kartesianisme"],
+  "themes": {
+    "ethics": 2,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 1,
+    "logic": 4,
+    "mind": 5,
+    "meaning": 3,
+    "beauty": 1
+  },
+  "themeNotes": "Moderne filosofis og geometriens far. Ville bygge all vitenskap på urokkelig grunn og startet med å tvile på alt som kunne betviles.",
+  "keyIdeas": [
+    {
+      "title": "Metodisk tvil",
+      "text": "Descartes tvilte på alt: sansene våre kan lure oss, og kanskje alt vi opplever bare er en drøm eller en ond demon som lurer hjernen vår."
+    },
+    {
+      "title": "Jeg tenker, altså er jeg (Cogito)",
+      "text": "Uansett hvor mye han tvilte, var én ting hevet over all tvil: Selve tvilen beviser at det finnes et 'jeg' som tenker og tviler her og nå."
+    },
+    {
+      "title": "Dualisme (sjel og kropp)",
+      "text": "Han skilte skarpt mellom den tenkende sjelen (som ikke har fysisk form) og den fysiske kroppen (som fungerer som en biologisk maskin)."
+    }
+  ],
+  "quote": {
+    "text": "Cogito, ergo sum. (Jeg tenker, altså er jeg.)",
+    "work": "Om metoden (Discours de la méthode, 1637)",
+    "source": "https://snl.no/Ren%C3%A9_Descartes",
+    "translator": "egen oversettelse fra latin/fransk"
+  },
+  "thinkAbout": "Hvordan kan du bevise for en venn at du ikke drømmer akkurat nå?",
+  "influencedBy": ["aristoteles"],
+  "wikidata": "Q9191",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Ren%C3%A9_Descartes" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Ren%C3%A9_Descartes" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/descartes/" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

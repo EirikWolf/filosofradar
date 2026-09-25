@@ -1,0 +1,50 @@
+{
+  "id": "nietzsche",
+  "name": "Friedrich Nietzsche",
+  "nameOriginal": "Friedrich Wilhelm Nietzsche",
+  "born": { "year": 1844, "approx": false },
+  "died": { "year": 1900, "approx": false },
+  "tradition": "european",
+  "schools": ["nihilisme", "eksistensialisme", "livsfilosofi"],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 3,
+    "knowledge": 4,
+    "politics": 2,
+    "logic": 2,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 5
+  },
+  "themeNotes": "En av historiens mest provoserende og poetiske tenkere. Kritiserte flokkmentalitet, feiret kreativ livskraft og oppfordret oss til å skape våre egne verdier.",
+  "keyIdeas": [
+    {
+      "title": "Gud er død",
+      "text": "Ikke et triumfrop, men en advarsel: Gamle tradisjoner og religiøse regler holder ikke lenger automatisk samfunnet oppe. Menneskene må finne motet til å skape ny mening selv."
+    },
+    {
+      "title": "Bli den du er",
+      "text": "Ikke følg flokken blindt. Utfordre deg selv, overvinn din egen latskap, og skap et liv fylt med mot og skaperglede."
+    },
+    {
+      "title": "Amor fati (elsk din skjebne)",
+      "text": "Lev livet slik at du ville vært villig til å gjenoppleve hvert eneste øyeblikk – både gledene og motgangen – om igjen og om igjen i all evighet."
+    }
+  ],
+  "quote": {
+    "text": "Den som har et hvorfor å leve for, kan tåle nesten et hvilket som helst hvordan.",
+    "work": "Avgudenes ragnarok (Götzen-Dämmerung, 1889)",
+    "source": "https://snl.no/Friedrich_Nietzsche",
+    "translator": "egen oversettelse fra tysk"
+  },
+  "thinkAbout": "Tør du å stå for det du mener, selv om alle andre i rommet er uenige med deg?",
+  "influencedBy": ["sokrates"],
+  "wikidata": "Q9358",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Friedrich_Nietzsche" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Friedrich_Nietzsche" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/nietzsche/" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "marx",
+  "name": "Karl Marx",
+  "nameOriginal": "Karl Heinrich Marx",
+  "born": { "year": 1818, "approx": false },
+  "died": { "year": 1883, "approx": false },
+  "tradition": "european",
+  "schools": ["marxisme", "historisk materialisme"],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 2,
+    "meaning": 2,
+    "beauty": 1
+  },
+  "themeNotes": "Kritiker av kapitalismen og industrisamfunnet. Mente at det er økonomiske og materielle forhold som styrer historiens gang, ikke abstrakte idéer.",
+  "keyIdeas": [
+    {
+      "title": "Å forandre verden",
+      "text": "Filosofene har bare tolket verden på ulike måter; poenget er å forandre den til et mer rettferdig sted for vanlige arbeidsfolk."
+    },
+    {
+      "title": "Fremmedgjøring",
+      "text": "Når fabrikkarbeidere bare lager små deler av et produkt uten å eie det de lager eller ha kontroll over arbeidsdagen, mister arbeidet mening."
+    },
+    {
+      "title": "Klassekamp",
+      "text": "Mente at historien drives framover av konflikter mellom de som eier fabrikkene og ressursene, og de som må selge arbeidskraften sin for å overleve."
+    }
+  ],
+  "quote": {
+    "text": "Filosofene har bare tolket verden på ulike måter; poenget er å forandre den.",
+    "work": "Teser om Feuerbach (1845), tese 11",
+    "source": "https://snl.no/Karl_Marx",
+    "translator": "egen oversettelse fra tysk"
+  },
+  "thinkAbout": "Bør målet med å lære og tenke være å forstå verden slik den er, eller å gjøre den bedre for andre?",
+  "influencedBy": [],
+  "wikidata": "Q9061",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Karl_Marx" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Karl_Marx" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/marx/" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

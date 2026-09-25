@@ -1,0 +1,50 @@
+{
+  "id": "kant",
+  "name": "Immanuel Kant",
+  "nameOriginal": "Immanuel Kant",
+  "born": { "year": 1724, "approx": false },
+  "died": { "year": 1804, "approx": false },
+  "tradition": "european",
+  "schools": ["opplysningstid", "kantianisme", "transcendentalfilosofi"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 4,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 3,
+    "beauty": 4
+  },
+  "themeNotes": "Königsberg-professoren som snudde filosofien på hodet. Mente at menneskesinnet har innebygde 'briller' (tid og rom) som former alt vi opplever.",
+  "keyIdeas": [
+    {
+      "title": "Det kategoriske imperativ",
+      "text": "Etisk regel: Handle alltid slik at regelen bak handlingen din kunne vært en allmenn lov for alle mennesker uten selvmotsigelse."
+    },
+    {
+      "title": "Kopernikansk vending",
+      "text": "I stedet for at sinnet vårt passivt tilpasser seg verden, er det sinnets strukturer (tid, rom, årsak) som former hvordan verden framstår for oss."
+    },
+    {
+      "title": "Menneskeverd",
+      "text": "Bruk aldri et annet menneske bare som et verktøy eller middel for å nå dine egne mål. Ethvert menneske har en uendelig egenverdi."
+    }
+  ],
+  "quote": {
+    "text": "To ting fyller sinnet med stadig ny og økende beundring: stjernehimmelen over meg og moralloven i meg.",
+    "work": "Kritikk av den praktiske fornuft (1788)",
+    "source": "https://snl.no/Immanuel_Kant",
+    "translator": "egen oversettelse fra tysk"
+  },
+  "thinkAbout": "Hva ville skjedd hvis alle mennesker plutselig begynte å lyve når det passet dem best?",
+  "influencedBy": ["descartes"],
+  "wikidata": "Q9312",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Immanuel_Kant" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Immanuel_Kant" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/kant/" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

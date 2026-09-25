@@ -1,0 +1,50 @@
+{
+  "id": "kierkegaard",
+  "name": "Søren Kierkegaard",
+  "nameOriginal": "Søren Aabye Kierkegaard",
+  "born": { "year": 1813, "approx": false },
+  "died": { "year": 1855, "approx": false },
+  "tradition": "nordic",
+  "schools": ["eksistensialisme"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 2,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "København-filosofen som regnes som eksistensialismens far. Skrev med glød og ironi om angst, personlig tro og friheten til å velge hvem man vil være.",
+  "keyIdeas": [
+    {
+      "title": "Subjektivitet er sannhet",
+      "text": "De viktigste sannhetene i livet – kjærlighet, tro og moral – kan ikke bevises som et mattestykke. De må oppleves og velges innenfra av den enkelte."
+    },
+    {
+      "title": "Angst som frihetens svimmelhet",
+      "text": "Når vi innser at vi må ta egne valg uten en ferdig fasitbok, kjenner vi angst. Angst er ikke feil, men beviset på at vi har fri vilje."
+    },
+    {
+      "title": "Tre livsstadier",
+      "text": "Han beskrev tre måter å leve på: Estetikeren (jager nytelse og moro), Etikeren (tar ansvar og plikter), og den Religiøse (lever i tillit og tro)."
+    }
+  ],
+  "quote": {
+    "text": "Livet kan bare forstås baklengs, men det må leves forlengs.",
+    "work": "Journaler og notater (1843)",
+    "source": "https://snl.no/S%C3%B8ren_Kierkegaard",
+    "translator": "original på dansk"
+  },
+  "thinkAbout": "Når du må ta et vanskelig valg og ingen kan gi deg fasiten, hvordan vet du hva som er det rette for deg?",
+  "influencedBy": ["sokrates"],
+  "wikidata": "Q6512",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/S%C3%B8ren_Kierkegaard" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/S%C3%B8ren_Kierkegaard" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/kierkegaard/" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}

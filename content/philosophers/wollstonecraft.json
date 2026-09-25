@@ -1,0 +1,50 @@
+{
+  "id": "wollstonecraft",
+  "name": "Mary Wollstonecraft",
+  "nameOriginal": "Mary Wollstonecraft",
+  "born": { "year": 1759, "approx": false },
+  "died": { "year": 1797, "approx": false },
+  "tradition": "european",
+  "schools": ["opplysningstid", "tidlig feminisme"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 1,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 3,
+    "mind": 3,
+    "meaning": 3,
+    "beauty": 3
+  },
+  "themeNotes": "En av opplysningstidens modigste stemmer. Krevde full likestilling i utdanning og like politiske rettigheter for kvinner og menn.",
+  "keyIdeas": [
+    {
+      "title": "Lik utdanning for alle",
+      "text": "Wollstonecraft argumenterte for at jenter og gutter må få gå på samme skole og lære de samme fagene for å utvikle fornuft og selvstendighet."
+    },
+    {
+      "title": "Fornuft kjenner ikke kjønn",
+      "text": "Evnen til å tenke rasjonelt og handle moralsk er felles for alle mennesker, uavhengig av om man er kvinne eller mann."
+    },
+    {
+      "title": "Selvstendighet fremfor avhengighet",
+      "text": "Et samfunn der halvparten av befolkningen holdes uvitende og avhengige av andre, kan aldri bli et rettferdig eller velfungerende samfunn."
+    }
+  ],
+  "quote": {
+    "text": "Jeg ønsker ikke at kvinner skal ha makt over menn, men over seg selv.",
+    "work": "Et forsvar for kvinnens rettigheter (1792)",
+    "source": "https://snl.no/Mary_Wollstonecraft",
+    "translator": "egen oversettelse fra engelsk"
+  },
+  "thinkAbout": "Hvorfor er det så viktig at alle får lære det samme på skolen, uansett hvem de er?",
+  "influencedBy": [],
+  "wikidata": "Q101748",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Mary_Wollstonecraft" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Mary_Wollstonecraft" },
+    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/wollstonecraft/" }
+  ],
+  "gender": "kvinne",
+  "reviewed": false
+}

@@ -1,0 +1,49 @@
+{
+  "id": "arne-naess",
+  "name": "Arne Næss",
+  "nameOriginal": "Arne Dekke Eide Næss",
+  "born": { "year": 1912, "approx": false },
+  "died": { "year": 2004, "approx": false },
+  "tradition": "nordic",
+  "schools": ["dypøkologi", "semantikk"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 4,
+    "politics": 4,
+    "logic": 4,
+    "mind": 3,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "Norges mest kjente filosof. Grunnlegger av dypøkologien, fjellklatrer og professor i filosofi ved Universitetet i Oslo i over 30 år.",
+  "keyIdeas": [
+    {
+      "title": "Dypøkologi",
+      "text": "Næss skilte mellom 'grunn' miljøvern (som bare beskytter naturen fordi vi mennesker trenger den) og 'dyp' økologi, der alt liv, planter og elver har en egenverdi i seg selv."
+    },
+    {
+      "title": "Saklig diskusjon",
+      "text": "Han formulerte seks berømte saklighetsnormer for debatt: ikke vri på motpartens mening, hold deg til saken, og vær presis i språket."
+    },
+    {
+      "title": "Det utvidede selv",
+      "text": "Når vi tilbringer mye tid i fjellet og naturen, utvider vi hvem vi er. Å skade naturen blir som å skade en del av seg selv."
+    }
+  ],
+  "quote": {
+    "text": "Enklere livsstil, rikere liv.",
+    "work": "Økologi, samfunn og livsstil (1974)",
+    "source": "https://snl.no/Arne_N%C3%A6ss",
+    "translator": "original på norsk"
+  },
+  "thinkAbout": "Hvis et tre i skogen ikke gjør noen nytte for mennesker, har det likevel rett til å stå der i fred?",
+  "influencedBy": ["sokrates"],
+  "wikidata": "Q212648",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Arne_N%C3%A6ss" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Arne_N%C3%A6ss" }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}
