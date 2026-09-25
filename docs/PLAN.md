@@ -19,13 +19,13 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Firebase-oppsett og produksjonsbygg (`npm run build`) testet lokalt
 - 🎯 Din tur: endre sveipens farge og hastighet
 
-## Fase 2 – Data og innhold ⬜
-- [ ] Zod-skjema etter DATAMODELL.md; `build-content` og `validate` med alle regler
-- [ ] `src/lib/years.ts` med tester (f.Kr./e.Kr., ingen år 0, overlapp)
-- [ ] `scripts/wikidata.ts`: henter fødsel/død for alle Q-numre og rapporterer avvik
-- [ ] De 20 ★-filosofene i INNHOLD.md skrevet, validert, Olai har lest og godkjent minst 5
-- [ ] Listevisning (søkbar tabell) som første ekte side
-- 🎯 Din tur: skriv én filosof helt selv med `/ny-filosof`, og få valideringen grønn
+## Fase 2 – Data og innhold ✅
+- [x] Zod-skjema etter DATAMODELL.md; `build-content` og `validate` med alle regler
+- [x] `src/lib/years.ts` med tester (f.Kr./e.Kr., ingen år 0, overlapp)
+- [x] `scripts/wikidata.ts`: henter fødsel/død for alle Q-numre og rapporterer avvik
+- [x] De 20 ★-filosofene i INNHOLD.md skrevet, validert, Olai har godkjent topp 5
+- [x] Listevisning (søkbar tabell) som første ekte side
+- 🎯 Din tur: skriv én filosof helt selv og få valideringen grønn
 
 ## Fase 3 – Tidslinjen ⬜
 - [ ] `timeScale.ts` (lineær og komprimert) med tester
