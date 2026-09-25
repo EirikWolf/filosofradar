@@ -24,3 +24,18 @@ body {
     radial-gradient(1px 1px at 480px 320px, rgba(255,255,255,0.6) 100%, transparent);
   background-size: 550px 550px;
 }
+
+@keyframes rotate-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-sweep-beam {
+  animation: rotate-sweep var(--sweep-duration, 8s) linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
