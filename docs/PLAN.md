@@ -46,11 +46,11 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Radaren er forsiden; publisert til forhåndsvisning
 - 🎯 Din tur: regn ut for hånd hvor Sokrates skal stå (x, y), og sjekk i appen
 
-## Fase 5 – Filosofkort og sammenligning ⬜
-- [ ] Filosofkort etter DESIGN.md §5 (glir inn; ark på mobil); URL `?f=id`
-- [ ] Temaradar (edderkoppdiagram) som gjenbrukbar komponent, animert inn
-- [ ] Sammenlign 2–3 filosofer: overlagte temaradarer + levetid på felles akse
-- [ ] Portretter med lisenskreditering der de finnes
+## Fase 5 – Filosofkort og sammenligning ✅
+- [x] Filosofkort etter DESIGN.md §5 (glir inn; ark på mobil); URL `?f=id`
+- [x] Temaradar (edderkoppdiagram) som gjenbrukbar komponent, animert inn
+- [x] Sammenlign 2–3 filosofer: overlagte temaradarer + levetid på felles akse
+- [x] Portretter med lisenskreditering der de finnes
 - 🎯 Din tur: legg til en niende akse i temaradaren på en egen git-gren – og se hva som skjer
 
 ## Fase 6 – Påvirkningsnett ⬜
