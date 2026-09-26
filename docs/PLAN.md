@@ -77,9 +77,13 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] `npm run publiser` klargjort for Firebase Hosting 🎉
 - 🎯 Din tur: vis appen til tre venner og noter hva de klikker på først
 
-## Fase 9 (valgfri) – Ekstra wow ⬜
-Velg én eller flere: 3D-«galakse» med Three.js · lydlandskap som følger tidsmaskinen ·
-«dagens filosof» på forsiden · engelsk versjon.
+## Fase 9 (valgfri) – Ekstra wow ✅
+- [x] Kosmisk lydlandskap med Web Audio API: ambient drone, supernova-akkord og stjerne-harpe
+- [x] «Dagens filosof» på forsiden: deterministisk per kalenderdato med sitat, inspirasjon og snarveier
+- [x] 3D-galakse: interaktiv 3D-perspektivprojeksjon for alle 80 stjerner og konstellasjoner i HTML5 Canvas
+- [x] Lydkontroll og 3D-knapp i navigasjonslinjen
+- [x] Tester for Fase 9 grønne (`tests/fase9-wow.test.ts`), 66/66 tester bestått
+- 🎯 Din tur: Juster klangfargen eller frekvensen på stjernelyden i `src/lib/sound.ts` og hør forskjellen!
 
 ## Fase 10 (valgfri) – «Spør filosofen» ⬜
 Krever Blaze-plan, Cloud Functions og API-nøkkel (Asbjørns eller Olais, lagret som Firebase secret – aldri i koden).

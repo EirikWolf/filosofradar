@@ -8,18 +8,27 @@ import { PhilosopherComparison } from './features/comparison/PhilosopherComparis
 import { QuizView } from './features/quiz/QuizView';
 import { FactCheckView } from './features/factcheck/FactCheckView';
 import { AboutView } from './features/about/AboutView';
+import { Galaxy3DView } from './features/galaxy/Galaxy3DView';
+import { DailyPhilosopher } from './features/daily/DailyPhilosopher';
+import { sound } from './lib/sound';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
 
 const philosophers = philosophersData as Philosopher[];
 
-type ViewMode = 'radar' | 'timeline' | 'network' | 'list' | 'quiz' | 'factcheck' | 'about';
+type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 'factcheck' | 'about';
 
 export const App: React.FC = () => {
   const [view, setView] = useState<ViewMode>('radar');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [comparingIds, setComparingIds] = useState<string[] | null>(null);
   const [isClassroomMode, setIsClassroomMode] = useState<boolean>(false);
+  const [isSoundEnabled, setIsSoundEnabled] = useState<boolean>(sound.enabled);
+
+  const toggleSound = useCallback(() => {
+    const next = sound.toggle();
+    setIsSoundEnabled(next);
+  }, []);
 
   // Synkroniser med URL (?f=filosof-id)
   useEffect(() => {
@@ -82,6 +91,19 @@ export const App: React.FC = () => {
           >
             <span>🎓</span> {isClassroomMode ? 'Klasseromsmodus på' : 'Klasserom'}
           </button>
+
+          {/* Kosmisk lyd-knapp */}
+          <button
+            onClick={toggleSound}
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-lg ${
+              isSoundEnabled
+                ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 font-bold shadow-[0_0_10px_rgba(103,232,249,0.35)]'
+                : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
+            }`}
+            title={isSoundEnabled ? 'Kosmisk lyd på (klikk for å dempe)' : 'Skru på kosmiske lyder og synthesizer'}
+          >
+            <span>{isSoundEnabled ? '🔊' : '🔈'}</span> {isSoundEnabled ? 'Lyd på' : 'Lyd av'}
+          </button>
         </div>
 
         <h1 className="text-4xl md:text-5xl font-serif tracking-wider text-star-white drop-shadow-[0_0_25px_rgba(103,232,249,0.45)]">
@@ -102,6 +124,16 @@ export const App: React.FC = () => {
             }`}
           >
             <span>✦</span> Radaren
+          </button>
+          <button
+            onClick={() => setView('galaxy')}
+            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
+              view === 'galaxy'
+                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
+                : 'text-star-dim hover:text-white'
+            }`}
+          >
+            <span>🌌</span> 3D-Galaksen
           </button>
           <button
             onClick={() => setView('timeline')}
@@ -172,8 +204,20 @@ export const App: React.FC = () => {
         </nav>
       </header>
 
-      {/* Hovedinnhold: Radaren, Tidslinjen, Idénettet eller Listevisning */}
-      <main className="my-6 w-full flex flex-col items-center justify-center">
+      {/* Dagens filosof (vises elegant øverst i observatoriet) */}
+      <div className="w-full mt-4">
+        <DailyPhilosopher
+          philosophers={philosophers}
+          onOpenCard={openCard}
+          onNavigateToRadar={(id) => {
+            setView('radar');
+            openCard(id);
+          }}
+        />
+      </div>
+
+      {/* Hovedinnhold: Radaren, 3D-Galaksen, Tidslinjen, Idénettet, Listevisning osv. */}
+      <main className="my-4 w-full flex flex-col items-center justify-center">
         {view === 'radar' ? (
           <RadarView
             philosophers={philosophers}
@@ -181,6 +225,15 @@ export const App: React.FC = () => {
             onStartCompare={(id) => setComparingIds([id])}
             onNavigateToTimeline={() => setView('timeline')}
             onNavigateToList={() => setView('list')}
+          />
+        ) : view === 'galaxy' ? (
+          <Galaxy3DView
+            philosophers={philosophers}
+            onOpenCard={openCard}
+            onNavigateToRadar={(id) => {
+              setView('radar');
+              if (id) openCard(id);
+            }}
           />
         ) : view === 'timeline' ? (
           <TimelineView
@@ -275,7 +328,7 @@ export const App: React.FC = () => {
           </button>
         </div>
         <p className="mt-1 text-[11px] text-star-dim/70">
-          Filosofradaren · Skapt av Olai & Asbjørn · Fase 8 (Lansering) · 100% åpen og personvernvennlig
+          Filosofradaren · Skapt av Olai & Asbjørn · Fase 9 (Kosmisk Wow-utgave) · 100% åpen og personvernvennlig
         </p>
       </footer>
     </div>

@@ -6,6 +6,7 @@ import type { ScaleMode } from '../../lib/timeScale';
 import { formatYear, formatLifeSpan, checkOverlap } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
+import { sound } from '../../lib/sound';
 
 const OLAI_TOP_5 = new Set([
   'hypatia',
@@ -191,6 +192,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
       }
 
       if (newlyBorn.size > 0) {
+        sound.playSupernovaBirth();
         setBornRecently((prev) => {
           const merged = new Set(prev);
           newlyBorn.forEach((id) => merged.add(id));
@@ -741,10 +743,14 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 className={`cursor-pointer transition-opacity duration-300 focus:outline-none group`}
                 onMouseEnter={() => setHoveredId(pt.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                onClick={() => setSelectedId(selectedId === pt.id ? null : pt.id)}
+                onClick={() => {
+                  sound.playStarSelect();
+                  setSelectedId(selectedId === pt.id ? null : pt.id);
+                }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
+                    sound.playStarSelect();
                     setSelectedId(selectedId === pt.id ? null : pt.id);
                   } else if (e.key === 'Escape') {
                     setSelectedId(null);
