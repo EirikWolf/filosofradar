@@ -1,0 +1,58 @@
+{
+  "id": "peirce",
+  "name": "Charles Sanders Peirce",
+  "nameOriginal": "Charles Sanders Peirce",
+  "born": {
+    "year": 1839,
+    "approx": false
+  },
+  "died": {
+    "year": 1914,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "pragmatisme",
+    "semiotikk"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 4,
+    "knowledge": 5,
+    "politics": 2,
+    "logic": 5,
+    "mind": 4,
+    "meaning": 3,
+    "beauty": 2
+  },
+  "themeNotes": "Peirce grunnla pragmatismen og moderne semiotikk (læren om tegn) og formulerte abduksjon – den kreative hypotesedannelsen.",
+  "keyIdeas": [
+    {
+      "title": "Semiotikk (Tegnlære)",
+      "text": "Et tegn er noe som står for noe for noen. All menneskelig tenkning skjer i tegn."
+    },
+    {
+      "title": "Abduktiv slutning",
+      "text": "I tillegg til deduksjon og induksjon finnes abduksjon: å foreslå den beste mulige forklaringen på et overraskende faktum."
+    }
+  ],
+  "quote": {
+    "text": "La oss ikke late som om vi tviler i filosofien på det vi ikke tviler på i våre hjerter.",
+    "work": "Some Consequences of Four Incapacities (1868)",
+    "source": "https://plato.stanford.edu/entries/peirce/"
+  },
+  "thinkAbout": "Hvordan kan et rødt lys i et trafikkryss få tusenvis av fremmede mennesker til å stoppe samtidig?",
+  "influencedBy": [
+    "kant",
+    "aristoteles"
+  ],
+  "wikidata": "Q179972",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/peirce/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

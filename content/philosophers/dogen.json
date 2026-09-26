@@ -1,0 +1,57 @@
+{
+  "id": "dogen",
+  "name": "Dōgen",
+  "nameOriginal": "道元",
+  "born": {
+    "year": 1200,
+    "approx": false
+  },
+  "died": {
+    "year": 1253,
+    "approx": false
+  },
+  "tradition": "japanese-korean",
+  "schools": [
+    "soto zen",
+    "buddhisme"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 1,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "Dōgen forente tid og væren (Uji) og underviste at selve praksisen med å sitte (zazen) allerede er oppvåkning.",
+  "keyIdeas": [
+    {
+      "title": "Å glemme seg selv",
+      "text": "Å studere Buddhas vei er å studere seg selv; å studere seg selv er å glemme seg selv; å glemme seg selv er å bli opplyst av alt som finnes."
+    },
+    {
+      "title": "Væren-tid (Uji)",
+      "text": "Tid er ikke en elv som renner forbi oss; vi er selv tid, og hvert øyeblikk er hele universets væren."
+    }
+  ],
+  "quote": {
+    "text": "Å lære veien er å lære seg selv. Å lære seg selv er å glemme seg selv.",
+    "work": "Genjōkōan",
+    "source": "https://plato.stanford.edu/entries/dogen/"
+  },
+  "thinkAbout": "Hva skjer med bekymringene dine hvis du kun lever fullt og helt i akkurat dette sekundet?",
+  "influencedBy": [
+    "buddha"
+  ],
+  "wikidata": "Q315339",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/dogen/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

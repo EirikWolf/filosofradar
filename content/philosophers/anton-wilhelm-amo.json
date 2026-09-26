@@ -1,0 +1,58 @@
+{
+  "id": "anton-wilhelm-amo",
+  "name": "Anton Wilhelm Amo",
+  "nameOriginal": "Anton Wilhelm Amo",
+  "born": {
+    "year": 1703,
+    "approx": true
+  },
+  "died": {
+    "year": 1759,
+    "approx": true
+  },
+  "tradition": "african",
+  "schools": [
+    "opplysningstid",
+    "sinnsfilosofi"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 3,
+    "logic": 5,
+    "mind": 5,
+    "meaning": 2,
+    "beauty": 1
+  },
+  "themeNotes": "Amo fra Ghana ble den første afrikanske professoren i filosofi ved tyske universiteter (Halle og Jena) og skrev banebrytende om sinnets uavhengighet av kroppen.",
+  "keyIdeas": [
+    {
+      "title": "Sinnet kan ikke føle fysisk smerte",
+      "text": "I avhandlingen De humanae mentis apatheia viste han at kroppen er passiv og mottar fysiske inntrykk, mens sinnet er en rent aktiv, immateriell kraft."
+    },
+    {
+      "title": "Rettslig likhet for afrikanere",
+      "text": "Amo forfattet en historisk-juridisk avhandling som forsvarte rettighetene til maurere og afrikanere i Europa basert på romerretten."
+    }
+  ],
+  "quote": {
+    "text": "Menneskesinnet handler, men lider ikke under fysisk påvirkning.",
+    "work": "De humanae mentis apatheia (1734)",
+    "source": "https://plato.stanford.edu/entries/amo/"
+  },
+  "thinkAbout": "Er sinnet ditt bare hjernens kjemiske signaler, eller noe mer som opplever signalene?",
+  "influencedBy": [
+    "descartes",
+    "locke"
+  ],
+  "wikidata": "Q588145",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/amo/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

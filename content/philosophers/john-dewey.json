@@ -1,0 +1,58 @@
+{
+  "id": "john-dewey",
+  "name": "John Dewey",
+  "nameOriginal": "John Dewey",
+  "born": {
+    "year": 1859,
+    "approx": false
+  },
+  "died": {
+    "year": 1952,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "pragmatisme",
+    "progressiv pedagogikk"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 3,
+    "knowledge": 5,
+    "politics": 5,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 3,
+    "beauty": 4
+  },
+  "themeNotes": "Dewey knyttet filosofi, utdanning og demokrati sammen, og lærte at læring skjer gjennom aktiv handling og eksperimentering.",
+  "keyIdeas": [
+    {
+      "title": "Læring gjennom handling (Learning by doing)",
+      "text": "Kunnskap fester seg best når vi selv utforsker, løser problemer og prøver ut ideer i praksis."
+    },
+    {
+      "title": "Demokrati som levemåte",
+      "text": "Demokrati er mer enn bare valg hvert fjerde år; det er en daglig måte å leve sammen på gjennom åpen dialog."
+    }
+  ],
+  "quote": {
+    "text": "Utdanning er ikke forberedelse til livet; utdanning er selve livet.",
+    "work": "Democracy and Education (1916)",
+    "source": "https://plato.stanford.edu/entries/dewey/"
+  },
+  "thinkAbout": "Husker du best det du leste i en bok, eller det du prøvde og gjorde selv med hendene?",
+  "influencedBy": [
+    "william-james",
+    "hegel"
+  ],
+  "wikidata": "Q13298",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/dewey/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

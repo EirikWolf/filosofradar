@@ -1,0 +1,59 @@
+{
+  "id": "hammarskjold",
+  "name": "Dag Hammarskjöld",
+  "nameOriginal": "Dag Hjalmar Agne Carl Hammarskjöld",
+  "born": {
+    "year": 1905,
+    "approx": false
+  },
+  "died": {
+    "year": 1961,
+    "approx": false
+  },
+  "tradition": "nordic",
+  "schools": [
+    "etikk",
+    "diplomati",
+    "moderne mystikk"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Hammarskjöld var FNs generalsekretær og etterlot seg den filosofiske dagboken Veimerker om uselvisk tjeneste og indre stillhet.",
+  "keyIdeas": [
+    {
+      "title": "Uselvisk tjeneste",
+      "text": "Ekte lederskap krever at man oppgir eget ego for å tjene freden og fellesskapets beste."
+    },
+    {
+      "title": "Stillhetens kilde",
+      "text": "I en travel og konfliktfylt verden må mennesket finne et indre rom av stillhet der samvittigheten kan høres."
+    }
+  ],
+  "quote": {
+    "text": "For det som har vært – takk! For det som skal komme – ja!",
+    "work": "Vägmärken (Veimerker)",
+    "source": "https://snl.no/Dag_Hammarskj%C3%B6ld"
+  },
+  "thinkAbout": "Hvordan kan du bevare roen inni deg når alt rundt deg er stressende og bråkete?",
+  "influencedBy": [
+    "marcus-aurelius",
+    "kant"
+  ],
+  "wikidata": "Q1267",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Dag_Hammarskj%C3%B6ld"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

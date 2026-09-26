@@ -1,0 +1,58 @@
+{
+  "id": "hegel",
+  "name": "G. W. F. Hegel",
+  "nameOriginal": "Georg Wilhelm Friedrich Hegel",
+  "born": {
+    "year": 1770,
+    "approx": false
+  },
+  "died": {
+    "year": 1831,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "tysk idealisme",
+    "dialektikk"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 5,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Hegel så historien som Åndens (Geist) dialektiske utvikling mot stadig større frihet og selvbevissthet.",
+  "keyIdeas": [
+    {
+      "title": "Dialektisk utvikling",
+      "text": "Ideer og samfunn utvikler seg gjennom motsetninger (tese møter antitese) som til slutt forenes i en rikere helhet (syntese)."
+    },
+    {
+      "title": "Herre-trell-dialektikken",
+      "text": "Selvbevissthet krever anerkjennelse fra et annet selvstendig menneske for å bli virkelig."
+    }
+  ],
+  "quote": {
+    "text": "Det sanne er helheten.",
+    "work": "Phänomenologie des Geistes (Åndens fenomenologi)",
+    "source": "https://plato.stanford.edu/entries/hegel/"
+  },
+  "thinkAbout": "Må samfunn ofte gå gjennom kriser og uenigheter for å finne bedre løsninger?",
+  "influencedBy": [
+    "kant",
+    "spinoza"
+  ],
+  "wikidata": "Q9235",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/hegel/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

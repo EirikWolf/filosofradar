@@ -1,0 +1,54 @@
+{
+  "id": "pytagoras",
+  "name": "Pytagoras",
+  "nameOriginal": "Πυθαγόρας",
+  "born": {
+    "year": -570,
+    "approx": true
+  },
+  "died": {
+    "year": -495,
+    "approx": true
+  },
+  "tradition": "greek-roman",
+  "schools": [
+    "pytagoreerne"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 2,
+    "logic": 4,
+    "mind": 3,
+    "meaning": 5,
+    "beauty": 5
+  },
+  "themeNotes": "Pytagoras oppdaget sammenhengen mellom musikk, matematikk og kosmos, og lærte at universet dypest sett er bygget av tall og harmoni.",
+  "keyIdeas": [
+    {
+      "title": "Alt er tall",
+      "text": "Tall og matematiske proporsjoner er ikke bare abstrakte symboler, men universets grunnleggende byggeklosser."
+    },
+    {
+      "title": "Sfærenes harmoni",
+      "text": "Himmellegemenes bevegelser skaper en kosmisk musikk og matematisk orden som det menneskelige øret ikke direkte kan høre."
+    }
+  ],
+  "quote": {
+    "text": "Tallene styrer universet.",
+    "work": "Overleverte fragmenter",
+    "source": "https://plato.stanford.edu/entries/pythagoras/"
+  },
+  "thinkAbout": "Hvorfor oppleves musikk og vakre mønstre så tilfredsstillende for hjernen vår?",
+  "influencedBy": [],
+  "wikidata": "Q10261",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/pythagoras/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

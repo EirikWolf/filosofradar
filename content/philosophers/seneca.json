@@ -1,0 +1,56 @@
+{
+  "id": "seneca",
+  "name": "Seneca",
+  "nameOriginal": "Lucius Annaeus Seneca",
+  "born": {
+    "year": -4,
+    "approx": true
+  },
+  "died": {
+    "year": 65,
+    "approx": false
+  },
+  "tradition": "greek-roman",
+  "schools": [
+    "stoisisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 4,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Seneca var romersk statsmann og filosof, kjent for sine brev om sinnsro, vennskap og livets korthet.",
+  "keyIdeas": [
+    {
+      "title": "Livets korthet",
+      "text": "Livet er ikke kort fordi vi har fått for lite tid, men fordi vi kaster bort så mye av det på ubetydelige ting."
+    },
+    {
+      "title": "Mestring av sinne",
+      "text": "Sinne er en midlertidig galskap som ødelegger den som bærer det mer enn den det rettes mot."
+    }
+  ],
+  "quote": {
+    "text": "Det er ikke fordi ting er vanskelige at vi ikke våger; det er fordi vi ikke våger at de er vanskelige.",
+    "work": "Epistulae Morales 104",
+    "source": "https://plato.stanford.edu/entries/seneca/"
+  },
+  "thinkAbout": "Hva bruker du mest tid på som du egentlig vet ikke betyr noe for deg?",
+  "influencedBy": [
+    "sokrates"
+  ],
+  "wikidata": "Q2054",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/seneca/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

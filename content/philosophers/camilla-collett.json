@@ -1,0 +1,57 @@
+{
+  "id": "camilla-collett",
+  "name": "Camilla Collett",
+  "nameOriginal": "Jacobine Camilla Collett",
+  "born": {
+    "year": 1813,
+    "approx": false
+  },
+  "died": {
+    "year": 1895,
+    "approx": false
+  },
+  "tradition": "nordic",
+  "schools": [
+    "tidlig feminisme",
+    "frigjøringsfilosofi"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 1,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 4,
+    "beauty": 4
+  },
+  "themeNotes": "Collett var Norges første store feministiske tenker, som krevde kvinners rett til å velge med eget hjerte og leve som frie, moralske vesener.",
+  "keyIdeas": [
+    {
+      "title": "Følelsenes frihet",
+      "text": "Ekteskap av økonomisk bekvemmelighet uten ekte kjærlighet er en form for slaveri som forkrøpler kvinnens sjel."
+    },
+    {
+      "title": "Kvinners stemme i samfunnet",
+      "text": "Et samfunn som undertrykker halvparten av befolkningens erfaring og samvittighet, blir kaldt og ufullstendig."
+    }
+  ],
+  "quote": {
+    "text": "Kvinnens stilling er samfunnets målestokk.",
+    "work": "Fra de Stummes Leir (1877)",
+    "source": "https://snl.no/Camilla_Collett"
+  },
+  "thinkAbout": "Hva betyr det å ha retten til å forme sitt eget liv, uten at andre bestemmer hvem du skal være?",
+  "influencedBy": [
+    "wollstonecraft"
+  ],
+  "wikidata": "Q264319",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Camilla_Collett"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

@@ -1,0 +1,54 @@
+{
+  "id": "achille-mbembe",
+  "name": "Achille Mbembe",
+  "nameOriginal": "Achille Mbembe",
+  "born": {
+    "year": 1957,
+    "approx": false
+  },
+  "tradition": "african",
+  "schools": [
+    "postkolonial filosofi",
+    "politisk teori"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 2
+  },
+  "themeNotes": "Mbembe er kamerunsk filosof og vinner av Holbergprisen 2024, kjent for teorien om nekropolitikk og visjonen om en felles verden.",
+  "keyIdeas": [
+    {
+      "title": "Nekropolitikk",
+      "text": "Moderne suverenitet handler ikke bare om retten til å gi liv, men om makt til å bestemme hvem som må utsettes for død og vold."
+    },
+    {
+      "title": "Jordens felleskap",
+      "text": "I en tid med klimakrise og migrasjon deler vi alle én og samme planet; ingen del av jorden tilhører eksklusivt noen."
+    }
+  ],
+  "quote": {
+    "text": "Å tenke verden fra Afrika er å åpne døren for et genuint universelt fellesskap.",
+    "work": "Sort fornuft (2013)",
+    "source": "https://snl.no/Achille_Mbembe"
+  },
+  "thinkAbout": "Hvordan kan vi bygge en verden der alle føler seg like velkomne på tvers av landegrenser?",
+  "influencedBy": [
+    "fanon",
+    "foucault"
+  ],
+  "wikidata": "Q2823101",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Achille_Mbembe"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

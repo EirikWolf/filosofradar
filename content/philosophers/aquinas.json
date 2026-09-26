@@ -1,0 +1,60 @@
+{
+  "id": "aquinas",
+  "name": "Thomas Aquinas",
+  "nameOriginal": "Thomas Aquinas",
+  "born": {
+    "year": 1225,
+    "approx": false
+  },
+  "died": {
+    "year": 1274,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "skolastikk",
+    "thomisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 4,
+    "logic": 4,
+    "mind": 3,
+    "meaning": 5,
+    "beauty": 2
+  },
+  "themeNotes": "Thomas av Aquino bygget middelalderens mektigste syntese av kristen teologi og aristotelisk fornuft.",
+  "keyIdeas": [
+    {
+      "title": "Naturretten",
+      "text": "Menneskets fornuft kan erkjenne grunnleggende moralske prinsipper (å gjøre godt og unngå ondt) nedfelt i naturens orden."
+    },
+    {
+      "title": "Tro og viten",
+      "text": "Fornuften leder oss til filosofiske sannheter, mens åpenbaring fullender det fornuften alene ikke kan fatte."
+    }
+  ],
+  "quote": {
+    "text": "Nåden ødelegger ikke naturen, men fullender den.",
+    "work": "Summa Theologiae I, q. 1, a. 8",
+    "source": "https://plato.stanford.edu/entries/aquinas/"
+  },
+  "thinkAbout": "Er det noen moralske regler som gjelder for alle mennesker, overalt og til alle tider?",
+  "influencedBy": [
+    "aristoteles",
+    "augustin",
+    "ibn-sina",
+    "maimonides"
+  ],
+  "wikidata": "Q9438",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/aquinas/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

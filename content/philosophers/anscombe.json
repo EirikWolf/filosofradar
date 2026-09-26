@@ -1,0 +1,59 @@
+{
+  "id": "anscombe",
+  "name": "G. E. M. Anscombe",
+  "nameOriginal": "Gertrude Elizabeth Margaret Anscombe",
+  "born": {
+    "year": 1919,
+    "approx": false
+  },
+  "died": {
+    "year": 2001,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "analytisk etikk",
+    "dydsetikk"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 4,
+    "politics": 3,
+    "logic": 4,
+    "mind": 5,
+    "meaning": 3,
+    "beauty": 1
+  },
+  "themeNotes": "Anscombe revitaliserte moderne dydsetikk med artikkelen «Modern Moral Philosophy» og skrev banebrytende om intensjon og handling.",
+  "keyIdeas": [
+    {
+      "title": "Gjenfødelsen av dydsetikk",
+      "text": "Moderne regler om «plikt» gir lite mening uten en karakterbyggende visjon om hva et godt og blomstrende menneskeliv er."
+    },
+    {
+      "title": "Intensjon i handling",
+      "text": "En handling forstås ikke bare ut fra dens fysiske bevegelser, men ut fra svaret på spørsmålet: «Hvorfor gjorde du det?»"
+    }
+  ],
+  "quote": {
+    "text": "Begrepene forpliktelse og plikt bør legges til side inntil vi har en skikkelig filosofisk psykologi.",
+    "work": "Modern Moral Philosophy (1958)",
+    "source": "https://plato.stanford.edu/entries/anscombe/"
+  },
+  "thinkAbout": "Betyr intensjonen din mest når du gjør noe, eller er det bare resultatet som teller?",
+  "influencedBy": [
+    "aristoteles",
+    "wittgenstein",
+    "aquinas"
+  ],
+  "wikidata": "Q236477",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/anscombe/"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

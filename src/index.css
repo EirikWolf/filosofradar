@@ -88,3 +88,26 @@ body {
     transition-duration: 0.1s !important;
   }
 }
+
+/* Klasseromsmodus (større skrift og kontrast for projektor og storskjerm) */
+.classroom-mode {
+  font-size: 1.15rem;
+}
+
+.classroom-mode h1 {
+  font-size: 3.25rem !important;
+  letter-spacing: 0.08em;
+}
+
+.classroom-mode nav button {
+  font-size: 0.95rem !important;
+  padding: 0.6rem 1.25rem !important;
+}
+
+.classroom-mode .text-xs {
+  font-size: 0.85rem !important;
+}
+
+.classroom-mode .text-sm {
+  font-size: 1rem !important;
+}

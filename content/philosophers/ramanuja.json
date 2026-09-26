@@ -1,0 +1,57 @@
+{
+  "id": "ramanuja",
+  "name": "Ramanuja",
+  "nameOriginal": "रामानुजः",
+  "born": {
+    "year": 1017,
+    "approx": false
+  },
+  "died": {
+    "year": 1137,
+    "approx": true
+  },
+  "tradition": "indian",
+  "schools": [
+    "vishishtadvaita",
+    "vedanta"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 2,
+    "logic": 3,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Ramanuja forsvarte en kvalifisert ikke-dualisme der individuelle sjeler og universet er virkelige deler av en personlig og kjærlig guddom.",
+  "keyIdeas": [
+    {
+      "title": "Kvalifisert ikke-dualisme",
+      "text": "Verden og sjelene er ikke en illusjon, men utgjør kroppen til det absolutte guddommelige."
+    },
+    {
+      "title": "Kjærlighetens vei (Bhakti)",
+      "text": "Dyp hengivenhet og kjærlighet er den sikreste veien til sjelelig frigjøring for alle mennesker, uavhengig av sosial status."
+    }
+  ],
+  "quote": {
+    "text": "Gjennom kjærlighet og hengivenhet erkjenner sjelen sin sanne forbindelse med kilden til alt liv.",
+    "work": "Sri Bhashya",
+    "source": "https://plato.stanford.edu/entries/ramanuja/"
+  },
+  "thinkAbout": "Føler du deg nærmere sannheten når du tenker strengt logisk, eller når du kjenner dyp kjærlighet og omsorg?",
+  "influencedBy": [
+    "shankara"
+  ],
+  "wikidata": "Q174175",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/ramanuja/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

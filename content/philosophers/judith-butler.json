@@ -1,0 +1,56 @@
+{
+  "id": "judith-butler",
+  "name": "Judith Butler",
+  "nameOriginal": "Judith Butler",
+  "born": {
+    "year": 1956,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "skeiv teori",
+    "poststrukturalisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 3,
+    "beauty": 2
+  },
+  "themeNotes": "Butler formulerte teorien om kjønnsperformativitet og har skrevet dypt om menneskets felles sårbarhet og sorg.",
+  "keyIdeas": [
+    {
+      "title": "Kjønnsperformativitet",
+      "text": "Kjønn er ikke noe vi passivt er, men noe vi gjør gjennom gjentatte handlinger, fakter og kleskoder som samfunnet forventer."
+    },
+    {
+      "title": "Sårbarhetens etikk",
+      "text": "Fordi vi alle har en fysisk sårbar kropp som er avhengig av andre for å overleve, har vi en felles etisk forpliktelse til å verne om hverandres liv."
+    }
+  ],
+  "quote": {
+    "text": "Kjønn er en gjentatt handling som produserer illusjonen av en naturlig kjerne.",
+    "work": "Gender Trouble (1990)",
+    "source": "https://plato.stanford.edu/entries/feminism-gender/"
+  },
+  "thinkAbout": "Hvor mange av valgene dine rundt klær og oppførsel gjør du fordi du har lyst, og hvor mange gjør du fordi det forventes?",
+  "influencedBy": [
+    "hegel",
+    "nietzsche",
+    "foucault",
+    "de-beauvoir"
+  ],
+  "wikidata": "Q219501",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Judith_Butler"
+    }
+  ],
+  "gender": "annet",
+  "reviewed": true
+}

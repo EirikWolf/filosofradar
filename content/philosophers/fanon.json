@@ -1,0 +1,59 @@
+{
+  "id": "fanon",
+  "name": "Frantz Fanon",
+  "nameOriginal": "Frantz Fanon",
+  "born": {
+    "year": 1925,
+    "approx": false
+  },
+  "died": {
+    "year": 1961,
+    "approx": false
+  },
+  "tradition": "african",
+  "schools": [
+    "avkolonisering",
+    "eksistensiell psykologi"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 4,
+    "beauty": 2
+  },
+  "themeNotes": "Fanon var psykiater og filosof fra Martinique som kjempet i Algerie og avslørte kolonialismens dype psykologiske skader.",
+  "keyIdeas": [
+    {
+      "title": "Kolonialisert bevissthet",
+      "text": "Kolonialismen undertrykker ikke bare landområder, men invaderer det undertrykte menneskets selvbilde og språk."
+    },
+    {
+      "title": "Frigjøring som nyskapelse",
+      "text": "Ekte avkolonisering betyr ikke å etterligne Europa, men å skape et helt nytt og mer humant menneske."
+    }
+  ],
+  "quote": {
+    "text": "Å, min kropp, gjør meg alltid til et menneske som stiller spørsmål!",
+    "work": "Peau noire, masques blancs (Svart hud, hvite masker, 1952)",
+    "source": "https://plato.stanford.edu/entries/fanon/"
+  },
+  "thinkAbout": "Hvordan kan bildene vi ser i medier og filmer påvirke hvordan vi ser på oss selv?",
+  "influencedBy": [
+    "marx",
+    "hegel",
+    "sartre"
+  ],
+  "wikidata": "Q189197",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/fanon/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

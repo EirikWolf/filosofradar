@@ -1,0 +1,58 @@
+{
+  "id": "sartre",
+  "name": "Jean-Paul Sartre",
+  "nameOriginal": "Jean-Paul Sartre",
+  "born": {
+    "year": 1905,
+    "approx": false
+  },
+  "died": {
+    "year": 1980,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "eksistensialisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 4,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 2,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Sartre hevdet at eksistens går forut for essens: mennesket er dømt til frihet og må selv skape sin egen mening gjennom handling.",
+  "keyIdeas": [
+    {
+      "title": "Eksistens går forut for essens",
+      "text": "En kniv lages etter en bestemt plan; et menneske derimot fødes først, og definerer hvem det er gjennom sine valg."
+    },
+    {
+      "title": "Vrang tro (Mauvaise foi)",
+      "text": "Å late som om man ikke hadde noe valg, er å lure seg selv og fraskrive seg sitt menneskelige ansvar."
+    }
+  ],
+  "quote": {
+    "text": "Mennesket er fordømt til å være fritt.",
+    "work": "L’existentialisme est un humanisme",
+    "source": "https://plato.stanford.edu/entries/sartre/"
+  },
+  "thinkAbout": "Har du noen gang sagt «jeg hadde ikke noe valg» selv om du innerst inne visste at du hadde et?",
+  "influencedBy": [
+    "kierkegaard",
+    "nietzsche",
+    "descartes"
+  ],
+  "wikidata": "Q9364",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/sartre/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

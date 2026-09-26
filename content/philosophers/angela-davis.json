@@ -1,0 +1,54 @@
+{
+  "id": "angela-davis",
+  "name": "Angela Davis",
+  "nameOriginal": "Angela Yvonne Davis",
+  "born": {
+    "year": 1944,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "kritisk teori",
+    "interseksjonell feminisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 3,
+    "mind": 3,
+    "meaning": 4,
+    "beauty": 1
+  },
+  "themeNotes": "Davis har analysert hvordan rase, klasse og kjønn henger sammen, og kjempet for radikal frihet og fengselsreform.",
+  "keyIdeas": [
+    {
+      "title": "Frihet er en konstant kamp",
+      "text": "Frihet er ikke en ferdig tilstand man oppnår en gang for alle, men en uopphørlig historisk bevegelse."
+    },
+    {
+      "title": "Interseksjonalitet i praksis",
+      "text": "Urettferdighet mot kvinner, arbeidere og minoriteter kan ikke løses adskilt; maktstrukturene må ses i sammenheng."
+    }
+  ],
+  "quote": {
+    "text": "I et rasistisk samfunn er det ikke nok å være ikke-rasist, vi må være antirasister.",
+    "work": "Taler og skrifter",
+    "source": "https://en.wikipedia.org/wiki/Angela_Davis"
+  },
+  "thinkAbout": "Hva er forskjellen på å bare være uenig i urett, og aktivt si ifra?",
+  "influencedBy": [
+    "marx",
+    "hegel"
+  ],
+  "wikidata": "Q209641",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Angela_Davis"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

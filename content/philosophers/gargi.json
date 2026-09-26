@@ -1,0 +1,55 @@
+{
+  "id": "gargi",
+  "name": "Gargi Vachaknavi",
+  "nameOriginal": "गार्गी वाचक्नवी",
+  "born": {
+    "year": -700,
+    "approx": true
+  },
+  "died": {
+    "year": -640,
+    "approx": true
+  },
+  "tradition": "indian",
+  "schools": [
+    "vedisk filosofi",
+    "upanishadene"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 2,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 2
+  },
+  "themeNotes": "Gargi var en fremtredende kvinnelig filosof i antikkens India som i Brihadaranyaka Upanishad utfordret de fremste vismennene om universets grunnlag.",
+  "keyIdeas": [
+    {
+      "title": "Universets vev",
+      "text": "Gargi spurte: «Hva er vannet vevd over? Hva er luften vevd over? Hva er himmelen vevd over?» til hun nådde det evige, uforgjengelige grunnlaget for alt."
+    },
+    {
+      "title": "Uredd sannhetssøken",
+      "text": "I kong Janakas debattarena krevde Gargi logiske og filosofiske svar uten å vike for autoriteter."
+    }
+  ],
+  "quote": {
+    "text": "I hva er da himmelen og jorden, fortid, nåtid og fremtid, vevd og flettet inn?",
+    "work": "Brihadaranyaka Upanishad 3.8.3",
+    "source": "https://en.wikipedia.org/wiki/Gargi_Vachaknavi"
+  },
+  "thinkAbout": "Hva er det dypeste «hvorfor» bak alt som eksisterer?",
+  "influencedBy": [],
+  "wikidata": "Q3635105",
+  "links": [
+    {
+      "label": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gargi_Vachaknavi"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

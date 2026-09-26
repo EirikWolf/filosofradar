@@ -1,0 +1,56 @@
+{
+  "id": "mengzi",
+  "name": "Mengzi",
+  "nameOriginal": "孟子",
+  "born": {
+    "year": -372,
+    "approx": true
+  },
+  "died": {
+    "year": -289,
+    "approx": true
+  },
+  "tradition": "chinese",
+  "schools": [
+    "konfucianisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 3,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 2
+  },
+  "themeNotes": "Mengzi argumenterte for at menneskenaturen er grunnleggende god, og at herskere må tjene folket med omsorg.",
+  "keyIdeas": [
+    {
+      "title": "Menneskets medfødte godhet",
+      "text": "Alle mennesker kjenner spontan medfølelse om de ser et barn falle i en brønn. Dydene er som spirer som må vannes og næres."
+    },
+    {
+      "title": "Folket først",
+      "text": "Folket er det viktigste i en stat; herskeren er minst viktig. En tyrann som undertrykker folket har mistet himmelens mandat."
+    }
+  ],
+  "quote": {
+    "text": "Menneskets natur tenderer mot det gode, akkurat som vannet renner nedover.",
+    "work": "Mengzi 6A:2",
+    "source": "https://plato.stanford.edu/entries/mencius/"
+  },
+  "thinkAbout": "Er mennesker født gode, eller er godhet noe vi må oppdras til?",
+  "influencedBy": [
+    "konfucius"
+  ],
+  "wikidata": "Q131758",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/mencius/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

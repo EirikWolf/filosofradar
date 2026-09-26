@@ -1,0 +1,59 @@
+{
+  "id": "william-james",
+  "name": "William James",
+  "nameOriginal": "William James",
+  "born": {
+    "year": 1842,
+    "approx": false
+  },
+  "died": {
+    "year": 1910,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "pragmatisme",
+    "radikal empirisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 4,
+    "knowledge": 5,
+    "politics": 3,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 2
+  },
+  "themeNotes": "James grunnla pragmatismen og moderne psykologi, og viste at en idé er sann hvis den fungerer og gjør en reell forskjell i levd liv.",
+  "keyIdeas": [
+    {
+      "title": "Pragmatisk sannhetsbegrep",
+      "text": "Sannhet er ikke en passiv kopi av verden, men verdien av en idés praktiske konsekvenser i erfaringen."
+    },
+    {
+      "title": "Bevissthetsstrømmen",
+      "text": "Bevisstheten er ikke sammensatt av adskilte biter, men en sammenhengende, dynamisk strøm."
+    }
+  ],
+  "quote": {
+    "text": "Sannhet er det som fungerer i vår tenkning.",
+    "work": "Pragmatism (1907)",
+    "source": "https://plato.stanford.edu/entries/james/"
+  },
+  "thinkAbout": "Gjør det noen forskjell om en tro er «vitenskapelig bevist» dersom den gir et menneske mot og håp til å leve godt?",
+  "influencedBy": [
+    "kant",
+    "hume",
+    "locke"
+  ],
+  "wikidata": "Q125249",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/james/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

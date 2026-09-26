@@ -1,0 +1,58 @@
+{
+  "id": "wittgenstein",
+  "name": "Ludwig Wittgenstein",
+  "nameOriginal": "Ludwig Wittgenstein",
+  "born": {
+    "year": 1889,
+    "approx": false
+  },
+  "died": {
+    "year": 1951,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "språkfilosofi",
+    "analytisk filosofi"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 2,
+    "knowledge": 5,
+    "politics": 1,
+    "logic": 5,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Wittgenstein revolusjonerte filosofien to ganger: først ved å sette språkets logiske grenser, deretter ved å se språket som praktiske spill.",
+  "keyIdeas": [
+    {
+      "title": "Språkets grenser",
+      "text": "Det man ikke kan tale klart om, må man tie om. Metafysisk tåkeprat oppstår når språket «går på tomgang»."
+    },
+    {
+      "title": "Språkspill",
+      "text": "Ord har ikke faste, magiske betydninger; deres mening er måten vi bruker dem på i samhandling med andre."
+    }
+  ],
+  "quote": {
+    "text": "Grensene for mitt språk betyr grensene for min verden.",
+    "work": "Tractatus Logico-Philosophicus 5.6",
+    "source": "https://plato.stanford.edu/entries/wittgenstein/"
+  },
+  "thinkAbout": "Hvordan kan et enkelt ord som «respekt» bety helt ulike ting for ulike personer?",
+  "influencedBy": [
+    "schopenhauer",
+    "kant"
+  ],
+  "wikidata": "Q9391",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/wittgenstein/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

@@ -1,0 +1,54 @@
+{
+  "id": "heraklit",
+  "name": "Heraklit",
+  "nameOriginal": "Ἡράκλειτος",
+  "born": {
+    "year": -535,
+    "approx": true
+  },
+  "died": {
+    "year": -475,
+    "approx": true
+  },
+  "tradition": "greek-roman",
+  "schools": [
+    "førsokratisk naturfilosofi"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 2,
+    "logic": 3,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Heraklit fra Efesos lærte at universet er i uopphørlig forandring (panta rhei), styrt av en dypere fornuft (Logos) og motsetningers harmoni.",
+  "keyIdeas": [
+    {
+      "title": "Alt flyter (Panta rhei)",
+      "text": "Du kan ikke stige ned i den samme elven to ganger, for nye vannmasser strømmer hele tiden til, og du selv har også forandret deg."
+    },
+    {
+      "title": "Motsetningenes enhet",
+      "text": "Vei opp og vei ned er én og samme vei. Uten sykdom ville vi ikke verdsatt helse; uten mørke ville vi ikke sett lyset."
+    }
+  ],
+  "quote": {
+    "text": "Alt flyter, ingenting står stille.",
+    "work": "Fragment B12",
+    "source": "https://plato.stanford.edu/entries/heraclitus/"
+  },
+  "thinkAbout": "Hvis alt i deg og rundt deg forandrer seg hele tiden, hva er det som gjør at du likevel føler deg som den samme personen?",
+  "influencedBy": [],
+  "wikidata": "Q41155",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/heraclitus/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

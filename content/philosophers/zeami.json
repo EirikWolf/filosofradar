@@ -1,0 +1,57 @@
+{
+  "id": "zeami",
+  "name": "Zeami Motokiyo",
+  "nameOriginal": "世阿弥 元清",
+  "born": {
+    "year": 1363,
+    "approx": true
+  },
+  "died": {
+    "year": 1443,
+    "approx": true
+  },
+  "tradition": "japanese-korean",
+  "schools": [
+    "noh",
+    "japansk estetikk"
+  ],
+  "themes": {
+    "ethics": 2,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 1,
+    "logic": 2,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 5
+  },
+  "themeNotes": "Zeami utviklet Noh-teaterets estetikk rundt begrepet yūgen – en dyp, mystisk og subtil skjønnhet.",
+  "keyIdeas": [
+    {
+      "title": "Yūgen (mystisk ynde)",
+      "text": "Den dypeste skjønnheten avsløres aldri direkte, men antydes som en hvit fugl i tåken eller månen bak et tynt slør."
+    },
+    {
+      "title": "Blomsten (Hana)",
+      "text": "En ekte kunstner må bevare overraskelsen og friskheten i uttrykket, akkurat som en blomst som springer ut på ny."
+    }
+  ],
+  "quote": {
+    "text": "Skjul det, og det blir en blomst; vis alt, og det er ingen blomst.",
+    "work": "Fūshikaden",
+    "source": "https://en.wikipedia.org/wiki/Zeami_Motokiyo"
+  },
+  "thinkAbout": "Hvorfor er en antydning i en bok eller film ofte mer spennende enn når alt vises eksplisitt?",
+  "influencedBy": [
+    "dogen"
+  ],
+  "wikidata": "Q336064",
+  "links": [
+    {
+      "label": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Zeami_Motokiyo"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

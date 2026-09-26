@@ -1,0 +1,54 @@
+{
+  "id": "zara-yaqob",
+  "name": "Zera Yacob",
+  "nameOriginal": "ዘርአ ያዕቆብ",
+  "born": {
+    "year": 1599,
+    "approx": false
+  },
+  "died": {
+    "year": 1692,
+    "approx": false
+  },
+  "tradition": "african",
+  "schools": [
+    "etiopisk opplysning"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 4,
+    "knowledge": 5,
+    "politics": 3,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 1
+  },
+  "themeNotes": "Zera Yacob levde i en hule i Etiopia og skrev Hatäta (Undersøkelsen) – et rasjonalistisk mesterverk om fornuft og likeverd før den europeiske opplysningstiden.",
+  "keyIdeas": [
+    {
+      "title": "Fornuftens lys",
+      "text": "Skaperen har gitt alle mennesker fornuft for å skille sannhet fra løgn; vi må ikke blindt godta dogmer fra autoriteter."
+    },
+    {
+      "title": "Menneskers likeverd",
+      "text": "Alle mennesker er skapt like; lover som rettferdiggjør slaveri eller diskriminerer kvinner strider mot fornuftens naturlige orden."
+    }
+  ],
+  "quote": {
+    "text": "Gud har skapt mennesket med fornuft for at det skal søke sannheten.",
+    "work": "Hatäta (Undersøkelsen, 1667)",
+    "source": "https://en.wikipedia.org/wiki/Zera_Yacob_(philosopher)"
+  },
+  "thinkAbout": "Hva ville du tenkt ut om du tilbrakte to år alene i en hule kun med dine egne tanker?",
+  "influencedBy": [],
+  "wikidata": "Q144365",
+  "links": [
+    {
+      "label": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Zera_Yacob_(philosopher)"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

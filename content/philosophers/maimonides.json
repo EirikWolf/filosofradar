@@ -1,0 +1,59 @@
+{
+  "id": "maimonides",
+  "name": "Moses Maimonides",
+  "nameOriginal": "משה בן מימון",
+  "born": {
+    "year": 1138,
+    "approx": false
+  },
+  "died": {
+    "year": 1204,
+    "approx": false
+  },
+  "tradition": "islamic-jewish",
+  "schools": [
+    "jødisk filosofi",
+    "aristotelisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 3,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 1
+  },
+  "themeNotes": "Maimonides var lege og filosof som forente jødisk tradisjon med aristotelisk rasjonalisme i mesterverket Veiviser for de rådville.",
+  "keyIdeas": [
+    {
+      "title": "Negativ teologi",
+      "text": "Vi kan ikke si hva Gud er i positiv forstand, bare hva Gud ikke er. Å erkjenne våre begrensninger er sann visdom."
+    },
+    {
+      "title": "Givmildhetens åtte trinn",
+      "text": "Den høyeste formen for veldedighet er å gi et medmenneske et lån eller en jobb så hen kan klare seg selv."
+    }
+  ],
+  "quote": {
+    "text": "Godta sannheten uansett hvem som uttaler den.",
+    "work": "Introduksjon til Pirkei Avot",
+    "source": "https://plato.stanford.edu/entries/maimonides/"
+  },
+  "thinkAbout": "Hvorfor er det bedre å hjelpe noen til å hjelpe seg selv, enn bare å gi penger?",
+  "influencedBy": [
+    "aristoteles",
+    "ibn-sina",
+    "al-farabi"
+  ],
+  "wikidata": "Q127398",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/maimonides/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

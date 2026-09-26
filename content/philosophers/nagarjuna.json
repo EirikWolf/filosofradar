@@ -1,0 +1,57 @@
+{
+  "id": "nagarjuna",
+  "name": "Nāgārjuna",
+  "nameOriginal": "नागार्जुन",
+  "born": {
+    "year": 150,
+    "approx": true
+  },
+  "died": {
+    "year": 250,
+    "approx": true
+  },
+  "tradition": "indian",
+  "schools": [
+    "madhyamaka",
+    "buddhisme"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 1,
+    "logic": 5,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 1
+  },
+  "themeNotes": "Nāgārjuna grunnla Madhyamaka-skolen og viste med streng logikk at alle fenomener er tomme (śūnyatā) for egeneksistens.",
+  "keyIdeas": [
+    {
+      "title": "Tomhet (Śūnyatā)",
+      "text": "Ingenting eksisterer uavhengig i seg selv; alt oppstår i gjensidig avhengighet av alt annet."
+    },
+    {
+      "title": "De to sannheter",
+      "text": "Det finnes en konvensjonell sannhet for dagliglivet og en dypere sannhet der alle faste kategorier opphører."
+    }
+  ],
+  "quote": {
+    "text": "Det som oppstår i avhengighet, erklærer vi å være tomhet.",
+    "work": "Mūlamadhyamakakārikā 24:18",
+    "source": "https://plato.stanford.edu/entries/nagarjuna/"
+  },
+  "thinkAbout": "Hvis ingenting kan eksistere helt isolert alene, hva betyr det for hvem du er?",
+  "influencedBy": [
+    "buddha"
+  ],
+  "wikidata": "Q200788",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/nagarjuna/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

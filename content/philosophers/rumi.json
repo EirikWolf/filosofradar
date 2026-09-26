@@ -1,0 +1,57 @@
+{
+  "id": "rumi",
+  "name": "Rumi",
+  "nameOriginal": "جلال‌الدین محمد بلخی",
+  "born": {
+    "year": 1207,
+    "approx": false
+  },
+  "died": {
+    "year": 1273,
+    "approx": false
+  },
+  "tradition": "islamic-jewish",
+  "schools": [
+    "sufisme",
+    "mystikk"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 4,
+    "knowledge": 3,
+    "politics": 1,
+    "logic": 1,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 5
+  },
+  "themeNotes": "Rumi var persisk sufi-dikter og tenker som så universell kjærlighet som den forenende kraften bak hele skaperverket.",
+  "keyIdeas": [
+    {
+      "title": "Kjærlighet som kosmisk kraft",
+      "text": "Kjærlighet er ikke bare en følelse mellom to mennesker, men tiltrekningskraften som holder stjernene og sjelene sammen."
+    },
+    {
+      "title": "Gjestebudet i sinnet",
+      "text": "Mennesket er som et gjestehus; hver morgen kommer en ny gjest – en glede, en sorg, en skuffelse. Ta imot dem alle med respekt."
+    }
+  ],
+  "quote": {
+    "text": "Bortenfor ideer om rett og galt finnes det en åker. Jeg møter deg der.",
+    "work": "Masnavi",
+    "source": "https://en.wikipedia.org/wiki/Rumi"
+  },
+  "thinkAbout": "Hva skjer om du behandler tunge følelser som besøkende som snart skal reise videre, i stedet for fiender?",
+  "influencedBy": [
+    "al-ghazali"
+  ],
+  "wikidata": "Q43308",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Jalal_al-Din_Rumi"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

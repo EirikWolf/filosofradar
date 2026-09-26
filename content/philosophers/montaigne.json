@@ -1,0 +1,59 @@
+{
+  "id": "montaigne",
+  "name": "Michel de Montaigne",
+  "nameOriginal": "Michel de Montaigne",
+  "born": {
+    "year": 1533,
+    "approx": false
+  },
+  "died": {
+    "year": 1592,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "renessansens humanisme",
+    "skeptisisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 5,
+    "politics": 3,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Montaigne oppfant essaysjangeren for å utforske sitt eget sinn og stilte det udødelige spørsmålet: «Que sais-je?» (Hva vet jeg?).",
+  "keyIdeas": [
+    {
+      "title": "Hva vet jeg? (Que sais-je?)",
+      "text": "Menneskelig skråsikkerhet og fanatisme er kilden til grusomhet; sunn tvil og selvinnsikt er kilden til toleranse."
+    },
+    {
+      "title": "Kulturrelativisme",
+      "text": "Vi kaller ofte det vi ikke er vant til for barbarisk, uten å se våre egne skikker utenfra."
+    }
+  ],
+  "quote": {
+    "text": "På den høyeste trone i verden sitter vi likevel bare på vår egen bakende.",
+    "work": "Essais bok III kap. 13",
+    "source": "https://plato.stanford.edu/entries/montaigne/"
+  },
+  "thinkAbout": "Hvorfor er det så vanskelig å si høyt: «Jeg tok feil, jeg vet faktisk ikke»?",
+  "influencedBy": [
+    "sokrates",
+    "seneca",
+    "epikur"
+  ],
+  "wikidata": "Q41568",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/montaigne/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

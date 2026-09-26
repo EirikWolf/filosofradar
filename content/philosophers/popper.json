@@ -1,0 +1,58 @@
+{
+  "id": "popper",
+  "name": "Karl Popper",
+  "nameOriginal": "Karl Popper",
+  "born": {
+    "year": 1902,
+    "approx": false
+  },
+  "died": {
+    "year": 1994,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "vitenskapsfilosofi",
+    "kritisk rasjonalisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 3,
+    "knowledge": 5,
+    "politics": 5,
+    "logic": 5,
+    "mind": 3,
+    "meaning": 2,
+    "beauty": 1
+  },
+  "themeNotes": "Popper viste at vitenskap ikke bevises ved bekreftelse, men ved forsøk på å motbevise (falsifisere) hypoteser, og forsvarte det åpne samfunn mot totalitarisme.",
+  "keyIdeas": [
+    {
+      "title": "Falsifikasjon",
+      "text": "Uansett hvor mange hvite svaner du ser, kan du aldri bevise at alle svaner er hvite. Men å se én enkelt svart svane motbeviser påstanden umiddelbart."
+    },
+    {
+      "title": "Toleransens paradoks",
+      "text": "Hvis et tolerant samfunn tolererer de intolerante uten grenser, vil de intolerante til slutt ødelegge toleransen."
+    }
+  ],
+  "quote": {
+    "text": "Vår kunnskap kan bare være endelig, mens vår uvitenhet nødvendigvis må være uendelig.",
+    "work": "Conjectures and Refutations",
+    "source": "https://plato.stanford.edu/entries/popper/"
+  },
+  "thinkAbout": "Bør et fritt demokrati tillate krefter som ønsker å avskaffe demokratiet?",
+  "influencedBy": [
+    "kant",
+    "sokrates"
+  ],
+  "wikidata": "Q81244",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/popper/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

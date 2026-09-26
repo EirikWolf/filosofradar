@@ -1,0 +1,54 @@
+{
+  "id": "mahavira",
+  "name": "Mahavira",
+  "nameOriginal": "महावीर",
+  "born": {
+    "year": -599,
+    "approx": true
+  },
+  "died": {
+    "year": -527,
+    "approx": true
+  },
+  "tradition": "indian",
+  "schools": [
+    "jainisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 4,
+    "knowledge": 4,
+    "politics": 3,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 1
+  },
+  "themeNotes": "Mahavira var den 24. Tirthankara i jainismen og reformerte læren om total ikke-vold (ahimsa) og sannhetens mangesidighet (anekantavada).",
+  "keyIdeas": [
+    {
+      "title": "Ikke-vold (Ahimsa)",
+      "text": "Ikke skad noe levende vesen – verken i handling, ord eller tanke. All eksistens har liv og følelse."
+    },
+    {
+      "title": "Perspektivisme (Anekantavada)",
+      "text": "Virkeligheten er uendelig kompleks; ethvert menneskelig synspunkt fanger bare en liten flik av sannheten (som blinde menn som kjenner på en elefant)."
+    }
+  ],
+  "quote": {
+    "text": "Lev og la leve. Kjenn medlidenhet med alle levende skapninger.",
+    "work": "Acaranga Sutra",
+    "source": "https://en.wikipedia.org/wiki/Mahavira"
+  },
+  "thinkAbout": "Hvordan kan to personer se nøyaktig samme situasjon og være helt uenige, men likevel ha rett fra hvert sitt ståsted?",
+  "influencedBy": [],
+  "wikidata": "Q9391",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/jainisme"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

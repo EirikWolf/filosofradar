@@ -1,0 +1,57 @@
+{
+  "id": "locke",
+  "name": "John Locke",
+  "nameOriginal": "John Locke",
+  "born": {
+    "year": 1632,
+    "approx": false
+  },
+  "died": {
+    "year": 1704,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "empirisme",
+    "liberalisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 3,
+    "knowledge": 5,
+    "politics": 5,
+    "logic": 3,
+    "mind": 4,
+    "meaning": 2,
+    "beauty": 1
+  },
+  "themeNotes": "Locke formulerte ideen om sinnet som en ubeskrevet tavle (tabula rasa) og statens plikt til å beskytte liv, frihet og eiendom.",
+  "keyIdeas": [
+    {
+      "title": "Tabula rasa",
+      "text": "Vi fødes uten medfødte idéer; all kunnskap og erfaring skrives inn i sinnet gjennom sansene."
+    },
+    {
+      "title": "Naturlige rettigheter",
+      "text": "Mennesker har umistelige rettigheter til liv, helse, frihet og eiendom. Myndigheter som krenker disse, mister sin legitimitet."
+    }
+  ],
+  "quote": {
+    "text": "Ingen menneskes kunnskap her kan gå utover dets erfaring.",
+    "work": "An Essay Concerning Human Understanding",
+    "source": "https://plato.stanford.edu/entries/locke/"
+  },
+  "thinkAbout": "Hvor mye av den du er i dag skyldes genene dine, og hvor mye skyldes det du har opplevd?",
+  "influencedBy": [
+    "descartes"
+  ],
+  "wikidata": "Q9353",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/locke/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

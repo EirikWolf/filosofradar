@@ -1,0 +1,59 @@
+{
+  "id": "schopenhauer",
+  "name": "Arthur Schopenhauer",
+  "nameOriginal": "Arthur Schopenhauer",
+  "born": {
+    "year": 1788,
+    "approx": false
+  },
+  "died": {
+    "year": 1860,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "pessimisme",
+    "post-kantiansk filosofi"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 1,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 4,
+    "beauty": 5
+  },
+  "themeNotes": "Schopenhauer så universet drevet av en blind, hvileløs Vilje til liv, og fant lindring i kunst, musikk og medlidenhetsetikk.",
+  "keyIdeas": [
+    {
+      "title": "Verden som Vilje",
+      "text": "Bak sansenes forestilling finnes det en universell, blind streben (Viljen) som aldri finner varig fred."
+    },
+    {
+      "title": "Medlidenhet og kunst",
+      "text": "Når vi opplever stor kunst eller kjenner dyp medlidenhet med andres smerte, overskrider vi egoets snevre grenser."
+    }
+  ],
+  "quote": {
+    "text": "Medfølelse med alle levende vesener er det sikreste og edleste bevis på god karakter.",
+    "work": "Über die Grundlage der Moral",
+    "source": "https://plato.stanford.edu/entries/schopenhauer/"
+  },
+  "thinkAbout": "Hvorfor kan en trist sang eller et vakkert musikkstykke noen ganger gi deg dyp trøst?",
+  "influencedBy": [
+    "kant",
+    "platon",
+    "buddha"
+  ],
+  "wikidata": "Q38193",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/schopenhauer/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

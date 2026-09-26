@@ -1,0 +1,56 @@
+{
+  "id": "mozi",
+  "name": "Mozi",
+  "nameOriginal": "墨子",
+  "born": {
+    "year": -470,
+    "approx": true
+  },
+  "died": {
+    "year": -391,
+    "approx": true
+  },
+  "tradition": "chinese",
+  "schools": [
+    "mohisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 4,
+    "mind": 2,
+    "meaning": 3,
+    "beauty": 1
+  },
+  "themeNotes": "Mozi grunnla mohismen, fremmet universell kjærlighet (jian ai) og pragmatisk nytte, og kritiserte kostbare kriger og ritualer.",
+  "keyIdeas": [
+    {
+      "title": "Universell kjærlighet (Jian ai)",
+      "text": "Vi må bry oss like mye om andres familier og land som våre egne for å få slutt på krig og urett."
+    },
+    {
+      "title": "Nytte og sparsommelighet",
+      "text": "Alt samfunnet bruker ressurser på, bør måles etter om det gir praktisk nytte for folket."
+    }
+  ],
+  "quote": {
+    "text": "Når alle betrakter andres land som sitt eget, hvem vil da gå til angrep?",
+    "work": "Mozi kap. 14",
+    "source": "https://plato.stanford.edu/entries/mohism/"
+  },
+  "thinkAbout": "Er det mulig å bry seg like mye om en fremmed på den andre siden av jorda som om din egen familie?",
+  "influencedBy": [
+    "konfucius"
+  ],
+  "wikidata": "Q272092",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/mohism/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

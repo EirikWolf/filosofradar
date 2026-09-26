@@ -1,0 +1,58 @@
+{
+  "id": "al-farabi",
+  "name": "Al-Farabi",
+  "nameOriginal": "أبو نصر محمد الفارابي",
+  "born": {
+    "year": 872,
+    "approx": true
+  },
+  "died": {
+    "year": 950,
+    "approx": false
+  },
+  "tradition": "islamic-jewish",
+  "schools": [
+    "falsafa",
+    "politisk filosofi"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 4,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 5,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Al-Farabi, kjent som «Den andre læremester» (etter Aristoteles), formulerte visjonen om den dydige mønsterstaten der innbyggerne hjelper hverandre til lykke.",
+  "keyIdeas": [
+    {
+      "title": "Den dydige stat (Al-Madina al-Fadila)",
+      "text": "En rettferdig stat fungerer som en frisk kropp: alle organer samarbeider harmonisk for helhetens velvære."
+    },
+    {
+      "title": "Filosof-lederen",
+      "text": "Statens leder må besitte både teoretisk visdom og praktisk evne til å inspirere folket gjennom fortellinger og lover."
+    }
+  ],
+  "quote": {
+    "text": "En stat oppnår lykke når innbyggerne samarbeider for å fremme det som er virkelig godt.",
+    "work": "Den dydige stat",
+    "source": "https://plato.stanford.edu/entries/al-farabi/"
+  },
+  "thinkAbout": "Hva gjør et samfunn til et godt sted å bo – lover, rikdom eller tillit mellom folk?",
+  "influencedBy": [
+    "aristoteles",
+    "platon"
+  ],
+  "wikidata": "Q80378",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/al-farabi/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

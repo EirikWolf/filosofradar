@@ -1,0 +1,58 @@
+{
+  "id": "augustin",
+  "name": "Augustin",
+  "nameOriginal": "Aurelius Augustinus",
+  "born": {
+    "year": 354,
+    "approx": false
+  },
+  "died": {
+    "year": 430,
+    "approx": false
+  },
+  "tradition": "african",
+  "schools": [
+    "tidlig kristen filosofi",
+    "nyplatonisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 4,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Augustin fra Tagaste (i dagens Algerie) skrev dypt om tidens mysterium, viljens frihet og sjelens lengsel.",
+  "keyIdeas": [
+    {
+      "title": "Tidens vesen",
+      "text": "Hva er tid? Hvis ingen spør meg, vet jeg det; hvis jeg skal forklare det til noen, vet jeg det ikke. Fortid er minne, fremtid er forventning, nåtid er oppmerksomhet."
+    },
+    {
+      "title": "Gudsstaten vs. Jordstaten",
+      "text": "Historien preges av to kjærligheter: kjærligheten til selvet som leder til forakt for andre, og kjærligheten til det gode som leder til rettferdighet."
+    }
+  ],
+  "quote": {
+    "text": "Du har skapt oss til deg, og vårt hjerte er urolig inntil det finner hvile i deg.",
+    "work": "Confessiones (Bekjennelser) I, 1",
+    "source": "https://plato.stanford.edu/entries/augustine/"
+  },
+  "thinkAbout": "Hvor blir det av tiden som passerte i går? Finnes den noe annet sted enn i minnet ditt?",
+  "influencedBy": [
+    "platon",
+    "sokrates"
+  ],
+  "wikidata": "Q8018",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/augustine/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

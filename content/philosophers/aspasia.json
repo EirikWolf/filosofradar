@@ -1,0 +1,55 @@
+{
+  "id": "aspasia",
+  "name": "Aspasia",
+  "nameOriginal": "Ἀσπασία",
+  "born": {
+    "year": -470,
+    "approx": true
+  },
+  "died": {
+    "year": -400,
+    "approx": true
+  },
+  "tradition": "greek-roman",
+  "schools": [
+    "retorikk",
+    "sokratisk krets"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 2,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 4,
+    "mind": 3,
+    "meaning": 2,
+    "beauty": 4
+  },
+  "themeNotes": "Aspasia fra Milet var en intellektuell leder i antikkens Athen; Platon beskriver henne som Sokrates’ lærer i retorikk og veltalenhet.",
+  "keyIdeas": [
+    {
+      "title": "Talen som samfunnskraft",
+      "text": "Ord former politikken og samfunnets verdier; veltalenhet krever både sannhet, psykologisk innsikt og etisk ansvar."
+    },
+    {
+      "title": "Kvinners intellektuelle likeverd",
+      "text": "I et samfunn der kvinner ble holdt innendørs, samlet Aspasia Athens fremste filosofer og politikere til likeverdig debatt."
+    }
+  ],
+  "quote": {
+    "text": "En god tale må ære de falne og trøste de levende med rettferdighetens ord.",
+    "work": "Platon: Menexenos 236b",
+    "source": "https://en.wikipedia.org/wiki/Aspasia"
+  },
+  "thinkAbout": "Hvordan kan ordene en leder velger, endre hvordan et helt folk oppfører seg?",
+  "influencedBy": [],
+  "wikidata": "Q228564",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Aspasia"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

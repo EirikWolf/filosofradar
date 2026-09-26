@@ -1,0 +1,57 @@
+{
+  "id": "epiktet",
+  "name": "Epiktet",
+  "nameOriginal": "Ἐπίκτητος",
+  "born": {
+    "year": 50,
+    "approx": true
+  },
+  "died": {
+    "year": 135,
+    "approx": true
+  },
+  "tradition": "greek-roman",
+  "schools": [
+    "stoisisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 3,
+    "politics": 3,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 4,
+    "beauty": 1
+  },
+  "themeNotes": "Epiktet ble født som slave og lærte at sann frihet kommer fra å skille mellom hva som er i vår makt og hva som ikke er det.",
+  "keyIdeas": [
+    {
+      "title": "Kontrollens dikotomi",
+      "text": "Noe er i vår makt (våre meninger, ønsker og valg), annet er ikke i vår makt (kroppen, rikdom, rykte og andre menneskers handlinger). Frihet er å fokusere kun på det første."
+    },
+    {
+      "title": "Ikke hendelsene, men tolkningen",
+      "text": "Mennesker forstyrres ikke av tingene i seg selv, men av meningene de danner seg om tingene."
+    }
+  ],
+  "quote": {
+    "text": "Det er ikke tingene som foruroliger oss, men vår oppfatning av tingene.",
+    "work": "Encheiridion (Håndbok i livskunst) kap. 5",
+    "source": "https://plato.stanford.edu/entries/epictetus/"
+  },
+  "thinkAbout": "Hva er én ting som stresset deg i dag som du egentlig ikke har noen kontroll over?",
+  "influencedBy": [
+    "sokrates",
+    "diogenes"
+  ],
+  "wikidata": "Q183144",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/epictetus/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

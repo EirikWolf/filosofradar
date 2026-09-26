@@ -1,0 +1,56 @@
+{
+  "id": "shankara",
+  "name": "Adi Shankara",
+  "nameOriginal": "आदि शङ्करः",
+  "born": {
+    "year": 788,
+    "approx": true
+  },
+  "died": {
+    "year": 820,
+    "approx": true
+  },
+  "tradition": "indian",
+  "schools": [
+    "advaita vedanta"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 1,
+    "logic": 4,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 2
+  },
+  "themeNotes": "Shankara konsoliderte Advaita Vedanta (ikke-dualisme): den dypeste kjernen i mennesket (Atman) er identisk med universets kilde (Brahman).",
+  "keyIdeas": [
+    {
+      "title": "Ikke-dualisme (Advaita)",
+      "text": "Det finnes i dypeste forstand ikke to adskilte ting; mangfoldet vi ser er en illusjon (maya) skapt av uvitenhet."
+    },
+    {
+      "title": "Tauet og slangen",
+      "text": "I halvmørket tar du et tau for å være en slange og blir redd. Når lyset tennes, forsvinner frykten umiddelbart fordi slangen aldri fantes."
+    }
+  ],
+  "quote": {
+    "text": "Brahman er den eneste virkelighet; verden er en illusjon; sjelen er ikke forskjellig fra Brahman.",
+    "work": "Vivekacūḍāmaṇi",
+    "source": "https://plato.stanford.edu/entries/shankara/"
+  },
+  "thinkAbout": "Har du noen gang vært redd for noe som viste seg å bare være en misforståelse i tankene dine?",
+  "influencedBy": [
+    "buddha"
+  ],
+  "wikidata": "Q9487",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/shankara/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

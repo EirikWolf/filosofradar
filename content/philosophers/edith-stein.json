@@ -1,0 +1,57 @@
+{
+  "id": "edith-stein",
+  "name": "Edith Stein",
+  "nameOriginal": "Edith Stein",
+  "born": {
+    "year": 1891,
+    "approx": false
+  },
+  "died": {
+    "year": 1942,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "fenomenologi",
+    "thomisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 3,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Edith Stein var Edmund Husserls assistent og pioner innen empatiens fenomenologi og kvinners åndelige verdighet.",
+  "keyIdeas": [
+    {
+      "title": "Empatiens vesen",
+      "text": "Empati er ikke bare å føle det samme som andre, men evnen til å gripe et annet menneskes opplevelse som gyldig innenfra."
+    },
+    {
+      "title": "Menneskets individuelle kjerne",
+      "text": "Hvert menneske har en unik personlig sjel som aldri kan reduseres til ren biologi eller samfunnsrolle."
+    }
+  ],
+  "quote": {
+    "text": "Den som søker sannheten, søker Gud, enten man er klar over det eller ikke.",
+    "work": "Brev",
+    "source": "https://en.wikipedia.org/wiki/Edith_Stein"
+  },
+  "thinkAbout": "Hva er forskjellen på å synes synd på noen og virkelig forstå hvordan de har det inni seg?",
+  "influencedBy": [
+    "aquinas"
+  ],
+  "wikidata": "Q76749",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Edith_Stein"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

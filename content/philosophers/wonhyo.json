@@ -1,0 +1,57 @@
+{
+  "id": "wonhyo",
+  "name": "Wonhyo",
+  "nameOriginal": "元曉",
+  "born": {
+    "year": 617,
+    "approx": false
+  },
+  "died": {
+    "year": 686,
+    "approx": false
+  },
+  "tradition": "japanese-korean",
+  "schools": [
+    "koreansk buddhisme",
+    "hwajaeng"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 3,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 2
+  },
+  "themeNotes": "Wonhyo var en ledende koreansk tenker som forente motstridende buddhistiske doktriner i teorien om harmonisering (hwajaeng).",
+  "keyIdeas": [
+    {
+      "title": "Harmonisering av stridigheter (Hwajaeng)",
+      "text": "Tilsynelatende motsetninger mellom filosofiske skoler er bare ulike sider av den samme sannheten."
+    },
+    {
+      "title": "Sinnet skaper alt",
+      "text": "Da Wonhyo drakk vann fra en hodeskalle i mørket smakte det søtt, men da han så hva det var, ble han kvalm – alt er sinnets skaperverk."
+    }
+  ],
+  "quote": {
+    "text": "Når en tanke oppstår, oppstår alle ting; når tanken stilner, er skallen og vannet ett.",
+    "work": "Biografiske opptegnelser",
+    "source": "https://en.wikipedia.org/wiki/Wonhyo"
+  },
+  "thinkAbout": "Hvor mye av det du opplever som godt eller dårlig, bestemmes egentlig av din egen innstilling?",
+  "influencedBy": [
+    "buddha"
+  ],
+  "wikidata": "Q494875",
+  "links": [
+    {
+      "label": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wonhyo"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

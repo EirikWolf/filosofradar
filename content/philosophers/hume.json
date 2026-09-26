@@ -1,0 +1,57 @@
+{
+  "id": "hume",
+  "name": "David Hume",
+  "nameOriginal": "David Hume",
+  "born": {
+    "year": 1711,
+    "approx": false
+  },
+  "died": {
+    "year": 1776,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "empirisme",
+    "skeptisisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 2,
+    "knowledge": 5,
+    "politics": 3,
+    "logic": 4,
+    "mind": 5,
+    "meaning": 2,
+    "beauty": 3
+  },
+  "themeNotes": "Hume vekket filosofien fra dens «dogmatiske slummer» med sin radikale empirisme og analyse av vanen bak årsak og virkning.",
+  "keyIdeas": [
+    {
+      "title": "Årsak er en forventning i sinnet",
+      "text": "At solen har stått opp hver morgen til nå, gir oss ingen logisk garanti for at den gjør det i morgen; det er ren vane."
+    },
+    {
+      "title": "Er-bør-skillet",
+      "text": "Du kan aldri utlede hvordan ting bør være, utelukkende fra hvordan ting faktisk er."
+    }
+  ],
+  "quote": {
+    "text": "Fornuften er, og bør bare være, følelsenes slave.",
+    "work": "A Treatise of Human Nature",
+    "source": "https://plato.stanford.edu/entries/hume/"
+  },
+  "thinkAbout": "Er det fornuften eller følelsene dine som bestemmer hva du bryr deg mest om her i livet?",
+  "influencedBy": [
+    "descartes"
+  ],
+  "wikidata": "Q37160",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/hume/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

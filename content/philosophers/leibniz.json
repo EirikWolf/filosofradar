@@ -1,0 +1,57 @@
+{
+  "id": "leibniz",
+  "name": "Gottfried Wilhelm Leibniz",
+  "nameOriginal": "Gottfried Wilhelm Leibniz",
+  "born": {
+    "year": 1646,
+    "approx": false
+  },
+  "died": {
+    "year": 1716,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "rasjonalisme"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 2,
+    "logic": 5,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Leibniz var et geni i matematikk og filosofi som formulerte monadelæren og ideen om «den beste av alle mulige verdener».",
+  "keyIdeas": [
+    {
+      "title": "Monadene",
+      "text": "Universet består dypest sett av uendelig mange udelelige, åndelige enheter kalt monader, som speiler hele kosmos."
+    },
+    {
+      "title": "Den beste av alle verdener",
+      "text": "Gud valgte å skape en verden med fri vilje og naturlige lover; selv om det finnes lidelse, er dette den beste mulige balansen."
+    }
+  ],
+  "quote": {
+    "text": "Musikk er sjelens hemmelige regneøvelse, der den teller uten å vite at den teller.",
+    "work": "Brev til Goldbach",
+    "source": "https://plato.stanford.edu/entries/leibniz/"
+  },
+  "thinkAbout": "Kan en verden være fullkommen uten at menneskene i den har frihet til å gjøre feil?",
+  "influencedBy": [
+    "descartes",
+    "spinoza"
+  ],
+  "wikidata": "Q9047",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/leibniz/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

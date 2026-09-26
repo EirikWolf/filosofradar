@@ -1,0 +1,57 @@
+{
+  "id": "emerson",
+  "name": "Ralph Waldo Emerson",
+  "nameOriginal": "Ralph Waldo Emerson",
+  "born": {
+    "year": 1803,
+    "approx": false
+  },
+  "died": {
+    "year": 1882,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "transcendentalisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 3,
+    "politics": 3,
+    "logic": 1,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "Emerson oppfordret hvert menneske til å stole på sin egen indre stemme (Self-Reliance) og oppdage det guddommelige i naturen.",
+  "keyIdeas": [
+    {
+      "title": "Selvstendighet (Self-Reliance)",
+      "text": "Å stole på seg selv er det vanskeligste og viktigste; å etterligne andre er åndelig selvmord."
+    },
+    {
+      "title": "Over-Soul (Over-sjelen)",
+      "text": "En felles åndelig kraft strømmer gjennom all natur og forbinder alle menneskesinn."
+    }
+  ],
+  "quote": {
+    "text": "Vær deg selv; etterlign aldri.",
+    "work": "Self-Reliance (1841)",
+    "source": "https://plato.stanford.edu/entries/emerson/"
+  },
+  "thinkAbout": "Hvor ofte tør du å si hva du egentlig mener, selv om alle andre i rommet mener noe annet?",
+  "influencedBy": [
+    "kant",
+    "platon"
+  ],
+  "wikidata": "Q48226",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/emerson/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

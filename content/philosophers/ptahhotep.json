@@ -1,0 +1,54 @@
+{
+  "id": "ptahhotep",
+  "name": "Ptahhotep",
+  "nameOriginal": "Ptahhotep",
+  "born": {
+    "year": -2400,
+    "approx": true
+  },
+  "died": {
+    "year": -2350,
+    "approx": true
+  },
+  "tradition": "african",
+  "schools": [
+    "egyptisk visdomslære (sebayt)"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 4,
+    "politics": 4,
+    "logic": 2,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 3
+  },
+  "themeNotes": "Ptahhotep var vesir i det gamle Egypt og forfatter av Maksimene til Ptahhotep – en av menneskehetens eldste bevarte etiske tekster.",
+  "keyIdeas": [
+    {
+      "title": "Å lytte er visdom",
+      "text": "Vær ikke hovmodig på grunn av din lærdom. Rådspør både den ulærde og den lærde; visdommens grenser er aldri nådd."
+    },
+    {
+      "title": "Ma’at (rettferdighet og balanse)",
+      "text": "Rettferdighet er varig og stor; den har bestått siden urtiden, og den som handler rettferdig vil bestå."
+    }
+  ],
+  "quote": {
+    "text": "Ingen når grensene for sin kunst, og ingen håndverker eier fullkommen dyktighet.",
+    "work": "Maksimene til Ptahhotep",
+    "source": "https://en.wikipedia.org/wiki/The_Maxims_of_Ptahhotep"
+  },
+  "thinkAbout": "Hva kan du lære av noen som har et helt annet liv eller yrke enn deg selv?",
+  "influencedBy": [],
+  "wikidata": "Q380540",
+  "links": [
+    {
+      "label": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_Maxims_of_Ptahhotep"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

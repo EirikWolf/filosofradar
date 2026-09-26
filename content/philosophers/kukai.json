@@ -1,0 +1,57 @@
+{
+  "id": "kukai",
+  "name": "Kūkai",
+  "nameOriginal": "空海",
+  "born": {
+    "year": 774,
+    "approx": false
+  },
+  "died": {
+    "year": 835,
+    "approx": false
+  },
+  "tradition": "japanese-korean",
+  "schools": [
+    "shingon",
+    "esoterisk buddhisme"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 2,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "Kūkai grunnla Shingon-buddhismen i Japan og lærte at opplysning kan nås i denne kroppen her og nå gjennom kropp, tale og sinn.",
+  "keyIdeas": [
+    {
+      "title": "Buddhaskap i dette legemet",
+      "text": "Man behøver ikke vente på gjenfødsler; det opplyste sinnet kan realiseres umiddelbart i dette jordiske livet."
+    },
+    {
+      "title": "Tale, kropp og tanke",
+      "text": "Gjennom mantraer, gester (mudra) og meditasjon forenes det personlige sinnet med universets kosmiske prinsipp."
+    }
+  ],
+  "quote": {
+    "text": "De mørke sinnene ser ikke lyset; når lyset tennes, forsvinner mørket av seg selv.",
+    "work": "Sokushin jōbutsugi",
+    "source": "https://plato.stanford.edu/entries/kukai/"
+  },
+  "thinkAbout": "Kan kroppen din hjelpe tankene dine til å finne ro og klarhet?",
+  "influencedBy": [
+    "buddha"
+  ],
+  "wikidata": "Q328659",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/kukai/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

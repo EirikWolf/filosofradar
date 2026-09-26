@@ -1,0 +1,57 @@
+{
+  "id": "foucault",
+  "name": "Michel Foucault",
+  "nameOriginal": "Michel Foucault",
+  "born": {
+    "year": 1926,
+    "approx": false
+  },
+  "died": {
+    "year": 1984,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "poststrukturalisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 3,
+    "knowledge": 5,
+    "politics": 5,
+    "logic": 3,
+    "mind": 4,
+    "meaning": 2,
+    "beauty": 2
+  },
+  "themeNotes": "Foucault undersøkte hvordan makt og kunnskap er vevd sammen, og hvordan institusjoner som fengsler og klinikker former det moderne mennesket.",
+  "keyIdeas": [
+    {
+      "title": "Makt og kunnskap",
+      "text": "Makt er ikke bare noe en konge eller stat utøver ovenfra; den er spredt i språket, vitenskapen og normene som definerer hva som regnes som «normalt»."
+    },
+    {
+      "title": "Det panoptiske samfunn",
+      "text": "Når vi føler oss overvåket hele tiden, begynner vi å overvåke og disiplinere oss selv innenfra."
+    }
+  ],
+  "quote": {
+    "text": "Der det finnes makt, finnes det også motstand.",
+    "work": "Histoire de la sexualité (Seksualitetens historie)",
+    "source": "https://plato.stanford.edu/entries/foucault/"
+  },
+  "thinkAbout": "Hvem bestemmer hva som regnes som «normalt» i vennegjengen eller på skolen?",
+  "influencedBy": [
+    "nietzsche",
+    "marx"
+  ],
+  "wikidata": "Q44272",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/foucault/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

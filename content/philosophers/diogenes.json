@@ -2,10 +2,18 @@
   "id": "diogenes",
   "name": "Diogenes fra Sinope",
   "nameOriginal": "Διογένης",
-  "born": { "year": -412, "approx": true },
-  "died": { "year": -323, "approx": true },
+  "born": {
+    "year": -412,
+    "approx": true
+  },
+  "died": {
+    "year": -323,
+    "approx": true
+  },
   "tradition": "greek-roman",
-  "schools": ["kynisme"],
+  "schools": [
+    "kynisme"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 1,
@@ -28,12 +36,20 @@
     }
   ],
   "thinkAbout": "Trenger vi egentlig alle tingene vi kjøper for å ha det bra?",
-  "influencedBy": ["sokrates"],
+  "influencedBy": [
+    "sokrates"
+  ],
   "wikidata": "Q59154",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Diogenes_fra_Sinope" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Diogenes_fra_Sinope" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Diogenes_fra_Sinope"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Diogenes_fra_Sinope"
+    }
   ],
   "gender": "mann",
-  "reviewed": false
+  "reviewed": true
 }

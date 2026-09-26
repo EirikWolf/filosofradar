@@ -2,10 +2,18 @@
   "id": "laozi",
   "name": "Laozi",
   "nameOriginal": "老子",
-  "born": { "year": -571, "approx": true },
-  "died": { "year": -471, "approx": true },
+  "born": {
+    "year": -571,
+    "approx": true
+  },
+  "died": {
+    "year": -471,
+    "approx": true
+  },
   "tradition": "chinese",
-  "schools": ["daoisme"],
+  "schools": [
+    "daoisme"
+  ],
   "themes": {
     "ethics": 4,
     "metaphysics": 5,
@@ -41,9 +49,15 @@
   "influencedBy": [],
   "wikidata": "Q9333",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Laozi" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Laozi" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Laozi"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Laozi"
+    }
   ],
   "gender": "mann",
-  "reviewed": false
+  "reviewed": true
 }

@@ -1,0 +1,58 @@
+{
+  "id": "al-ghazali",
+  "name": "Al-Ghazali",
+  "nameOriginal": "أبو حامد الغزالي",
+  "born": {
+    "year": 1058,
+    "approx": false
+  },
+  "died": {
+    "year": 1111,
+    "approx": false
+  },
+  "tradition": "islamic-jewish",
+  "schools": [
+    "sufisme",
+    "skeptisisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 4,
+    "knowledge": 5,
+    "politics": 2,
+    "logic": 4,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 2
+  },
+  "themeNotes": "Al-Ghazali gjennomlevde en dyp skeptisk krise, kritiserte blind tillit til filosofisk metafysikk, og fant visshet i mystisk erfaring.",
+  "keyIdeas": [
+    {
+      "title": "Kritikk av årsakssammenheng",
+      "text": "At bomull brenner når den berører ild, beviser ikke en nødvendig iboende kraft i ilden – vanen får oss til å forveksle sammentreff med absolutt nødvendighet (flere hundre år før Hume!)."
+    },
+    {
+      "title": "Hjertets erkjennelse",
+      "text": "Rasjonalitet alene kan ikke gi eksistensiell fred; direkte åndelig og etisk erfaring må til for full innsikt."
+    }
+  ],
+  "quote": {
+    "text": "Jeg undersøkte sansenes vitnesbyrd og fant at jeg ikke engang kunne stole på dem.",
+    "work": "Redningen fra villfarelsen (Al-Munqidh min al-dalal)",
+    "source": "https://plato.stanford.edu/entries/al-ghazali/"
+  },
+  "thinkAbout": "Har du noen gang trodd at en ting forårsaket en annen, bare fordi de skjedde rett etter hverandre?",
+  "influencedBy": [
+    "ibn-sina",
+    "al-farabi"
+  ],
+  "wikidata": "Q9546",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/al-ghazali/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

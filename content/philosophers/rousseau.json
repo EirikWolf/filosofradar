@@ -1,0 +1,58 @@
+{
+  "id": "rousseau",
+  "name": "Jean-Jacques Rousseau",
+  "nameOriginal": "Jean-Jacques Rousseau",
+  "born": {
+    "year": 1712,
+    "approx": false
+  },
+  "died": {
+    "year": 1778,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "opplysningstid",
+    "romantikk"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 2,
+    "knowledge": 2,
+    "politics": 5,
+    "logic": 2,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 4
+  },
+  "themeNotes": "Rousseau kritiserte sivilisasjonens kunstighet, hyllet menneskets opprinnelige frihet og la grunnlaget for folkesuverenitetsprinsippet.",
+  "keyIdeas": [
+    {
+      "title": "Født fri, men overalt i lenker",
+      "text": "Mennesket er fritt og godt av natur, men samfunnets institusjoner og ulikhet korrumperer oss."
+    },
+    {
+      "title": "Allmennviljen",
+      "text": "I et ekte demokrati styrer folket gjennom lover som tjener fellesskapets beste, ikke særinteresser."
+    }
+  ],
+  "quote": {
+    "text": "Mennesket er født fritt, og overalt er det i lenker.",
+    "work": "Du contrat social (Samfunnspakten)",
+    "source": "https://plato.stanford.edu/entries/rousseau/"
+  },
+  "thinkAbout": "Gjør moderne teknologi og sosiale medier oss friere, eller binder de oss fast?",
+  "influencedBy": [
+    "locke",
+    "platon"
+  ],
+  "wikidata": "Q6527",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/rousseau/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

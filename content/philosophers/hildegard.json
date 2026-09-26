@@ -1,0 +1,57 @@
+{
+  "id": "hildegard",
+  "name": "Hildegard von Bingen",
+  "nameOriginal": "Hildegard von Bingen",
+  "born": {
+    "year": 1098,
+    "approx": false
+  },
+  "died": {
+    "year": 1179,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "kristen mystikk",
+    "middelalderens naturfilosofi"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 4,
+    "knowledge": 3,
+    "politics": 2,
+    "logic": 1,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 5
+  },
+  "themeNotes": "Hildegard var abbedisse, polyhistor, poet og komponist som utviklet konseptet viriditas – den hellige, grønne livskraften i all natur.",
+  "keyIdeas": [
+    {
+      "title": "Viriditas (grønn livskraft)",
+      "text": "En guddommelig livsenergi strømmer gjennom trær, dyr, jord og menneskets sjel; åndelig helse er å være fruktbar og levende."
+    },
+    {
+      "title": "Kosmisk harmoni",
+      "text": "Mennesket er et mikrokosmos som gjenspeiler hele universets krefter og elementer."
+    }
+  ],
+  "quote": {
+    "text": "Gud har skapt mennesket slik at det kan se og erkjenne alle skapte ting.",
+    "work": "Scivias",
+    "source": "https://en.wikipedia.org/wiki/Hildegard_of_Bingen"
+  },
+  "thinkAbout": "Føler du deg mer levende og oppladet når du går en tur i en grønn skog?",
+  "influencedBy": [
+    "augustin"
+  ],
+  "wikidata": "Q8858",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Hildegard_fra_Bingen"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

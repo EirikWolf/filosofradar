@@ -1,0 +1,54 @@
+{
+  "id": "rabia",
+  "name": "Rabia al-Adawiyya",
+  "nameOriginal": "رابعة العدوية",
+  "born": {
+    "year": 714,
+    "approx": true
+  },
+  "died": {
+    "year": 801,
+    "approx": false
+  },
+  "tradition": "islamic-jewish",
+  "schools": [
+    "sufisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 3,
+    "knowledge": 2,
+    "politics": 1,
+    "logic": 1,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 3
+  },
+  "themeNotes": "Rabia grunnla sufismens doktrine om guddommelig kjærlighet (Mahabbah): godhet må gjøres av ren kjærlighet, ikke av frykt for straff eller håp om belønning.",
+  "keyIdeas": [
+    {
+      "title": "Uselvisk kjærlighet",
+      "text": "Å handle rett for å få belønning er kjøpmannsskap, ikke kjærlighet. Ekte godhet springer ut av et hjerte uten baktanker."
+    },
+    {
+      "title": "Bøtten og fakkelen",
+      "text": "Legenden forteller at hun bar en bøtte vann og en brennende fakkel: for å slukke helvetes ild og brenne paradis, så folk bare elsket det gode for dets egen skyld."
+    }
+  ],
+  "quote": {
+    "text": "Hvis jeg tilber deg av frykt for helvete, brenn meg der; men hvis jeg tilber deg for din egen skyld, hold meg ikke unna din evige skjønnhet.",
+    "work": "Overleverte bønner",
+    "source": "https://en.wikipedia.org/wiki/Rabia_of_Basra"
+  },
+  "thinkAbout": "Gjør du gode ting fordi du vil ha ros, eller fordi det er rett i seg selv?",
+  "influencedBy": [],
+  "wikidata": "Q236402",
+  "links": [
+    {
+      "label": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rabia_of_Basra"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

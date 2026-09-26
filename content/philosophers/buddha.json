@@ -2,10 +2,18 @@
   "id": "buddha",
   "name": "Buddha (Siddhartha Gautama)",
   "nameOriginal": "सिद्धार्थ गौतम",
-  "born": { "year": -563, "approx": true },
-  "died": { "year": -483, "approx": true },
+  "born": {
+    "year": -563,
+    "approx": true
+  },
+  "died": {
+    "year": -483,
+    "approx": true
+  },
   "tradition": "indian",
-  "schools": ["buddhisme"],
+  "schools": [
+    "buddhisme"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 3,
@@ -41,8 +49,14 @@
   "influencedBy": [],
   "wikidata": "Q9441",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Buddha" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Siddhartha_Gautama" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Buddha"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Siddhartha_Gautama"
+    }
   ],
   "gender": "mann",
   "reviewed": true

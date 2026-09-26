@@ -1,0 +1,58 @@
+{
+  "id": "spinoza",
+  "name": "Baruch Spinoza",
+  "nameOriginal": "Baruch Spinoza",
+  "born": {
+    "year": 1632,
+    "approx": false
+  },
+  "died": {
+    "year": 1677,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "rasjonalisme",
+    "panteisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 4,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 1
+  },
+  "themeNotes": "Spinoza identifiserte Gud med naturen (Deus sive Natura) og bygget et radikalt frisinnet filosofisk system formet som en geometrisk lærebok.",
+  "keyIdeas": [
+    {
+      "title": "Gud eller naturen (Deus sive Natura)",
+      "text": "Det finnes bare én uendelig substans. Alt i universet – steiner, tanker, stjerner – er moduser av denne ene naturen."
+    },
+    {
+      "title": "Frihet gjennom fornuft",
+      "text": "Frihet er ikke å handle uten årsak, men å forstå hvorfor vi føler og handler som vi gjør, slik at vi ikke styres blindt av lidenskaper."
+    }
+  ],
+  "quote": {
+    "text": "Jeg har bestrebet meg på ikke å le av menneskelige handlinger, ikke å gråte over dem, ei heller å forbanne dem, men å forstå dem.",
+    "work": "Tractatus Politicus kap. 1",
+    "source": "https://plato.stanford.edu/entries/spinoza/"
+  },
+  "thinkAbout": "Når du blir sint på noen, hjelper det å tenke på hva som fikk dem til å oppføre seg slik?",
+  "influencedBy": [
+    "descartes",
+    "maimonides"
+  ],
+  "wikidata": "Q35802",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/spinoza/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

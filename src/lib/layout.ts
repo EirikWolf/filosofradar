@@ -161,8 +161,8 @@ export function computeRadarLayout(
       });
     }
 
-    // Deterministisk kollisjonsavlastning i 2D (16 iterasjoner)
-    for (let iter = 0; iter < 16; iter++) {
+    // Deterministisk kollisjonsavlastning i 2D (32 iterasjoner)
+    for (let iter = 0; iter < 32; iter++) {
       let moved = false;
       for (let i = 0; i < pointsInSector.length; i++) {
         for (let j = i + 1; j < pointsInSector.length; j++) {
@@ -177,7 +177,7 @@ export function computeRadarLayout(
             const neededDist = minDistance - dist;
 
             // 1. Juster vinkel
-            const neededDeg = (neededDist / Math.max(p1.radius, p2.radius)) * (180 / Math.PI) * 0.55;
+            const neededDeg = (neededDist / Math.max(p1.radius, p2.radius)) * (180 / Math.PI) * 0.6;
             if (p1.angleDeg <= p2.angleDeg) {
               p1.angleDeg = Math.max(minAngle, p1.angleDeg - neededDeg);
               p2.angleDeg = Math.min(maxAngle, p2.angleDeg + neededDeg);
@@ -187,7 +187,7 @@ export function computeRadarLayout(
             }
 
             // 2. Juster radius forsiktig i 2D
-            const dr = (neededDist * 0.35);
+            const dr = neededDist * 0.45;
             if (p1.radius <= p2.radius) {
               p1.radius = Math.max(minRadius, p1.radius - dr);
               p2.radius = Math.min(maxRadius, p2.radius + dr);

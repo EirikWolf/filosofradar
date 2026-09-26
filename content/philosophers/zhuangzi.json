@@ -1,0 +1,56 @@
+{
+  "id": "zhuangzi",
+  "name": "Zhuangzi",
+  "nameOriginal": "莊子",
+  "born": {
+    "year": -369,
+    "approx": true
+  },
+  "died": {
+    "year": -286,
+    "approx": true
+  },
+  "tradition": "chinese",
+  "schools": [
+    "daoisme"
+  ],
+  "themes": {
+    "ethics": 3,
+    "metaphysics": 5,
+    "knowledge": 4,
+    "politics": 2,
+    "logic": 3,
+    "mind": 5,
+    "meaning": 5,
+    "beauty": 4
+  },
+  "themeNotes": "Zhuangzi utfordret faste begreper og regler med humor og poesi, og pekte mot frihet i harmoni med Dao.",
+  "keyIdeas": [
+    {
+      "title": "Sommerfugldrømmen",
+      "text": "Zhuangzi drømte han var en sommerfugl. Da han våknet, visste han ikke om han var et menneske som drømte om en sommerfugl, eller en sommerfugl som drømte om et menneske."
+    },
+    {
+      "title": "Tingenes likeverd",
+      "text": "I Dao har alt sin egen naturlige plass. Menneskers inndelinger i godt og ondt, nyttig og unyttig er relative og begrensede."
+    }
+  ],
+  "quote": {
+    "text": "Hvordan kan jeg vite at kjærligheten til livet ikke bare er en villfarelse?",
+    "work": "Zhuangzi kap. 2",
+    "source": "https://plato.stanford.edu/entries/zhuangzi/"
+  },
+  "thinkAbout": "Når du drømmer, virker det ekte. Hvordan kan du vite med sikkerhet at du er våken akkurat nå?",
+  "influencedBy": [
+    "laozi"
+  ],
+  "wikidata": "Q47739",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/zhuangzi/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

@@ -1,0 +1,54 @@
+{
+  "id": "parmenides",
+  "name": "Parmenides",
+  "nameOriginal": "Παρμενίδης",
+  "born": {
+    "year": -515,
+    "approx": true
+  },
+  "died": {
+    "year": -450,
+    "approx": true
+  },
+  "tradition": "greek-roman",
+  "schools": [
+    "eleatisk filosofi"
+  ],
+  "themes": {
+    "ethics": 1,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 1,
+    "logic": 5,
+    "mind": 3,
+    "meaning": 4,
+    "beauty": 2
+  },
+  "themeNotes": "Parmenides grunnla ontologien og argumenterte med ren logikk for at Væren er én, udelt og uforanderlig – sansenes forandring er en illusjon.",
+  "keyIdeas": [
+    {
+      "title": "Det som er, er",
+      "text": "Det er umulig for noe å oppstå fra intet (ex nihilo nihil fit). Derfor må det som eksisterer alltid ha vært og aldri kunne forsvinne."
+    },
+    {
+      "title": "Sannhetens vei vs. Meningens vei",
+      "text": "Sansene bedrar oss til å tro på forandring og død; fornuften alene avslører den uforanderlige sannheten."
+    }
+  ],
+  "quote": {
+    "text": "For tenkning og væren er ett og det samme.",
+    "work": "Om naturen fragment 3",
+    "source": "https://plato.stanford.edu/entries/parmenides/"
+  },
+  "thinkAbout": "Kan noe oppstå fra absolutt ingenting?",
+  "influencedBy": [],
+  "wikidata": "Q125551",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/parmenides/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

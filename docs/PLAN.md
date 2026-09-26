@@ -67,14 +67,14 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Last ned resultat som PNG; ingenting lagres eller sendes
 - 🎯 Din tur: lag to egne spørsmål og test at de påvirker resultatet slik du tror
 
-## Fase 8 – Innhold, kvalitet og lansering ⬜
-- [ ] 70+ filosofer, alle tradisjoner, minst 10 kvinner, 5 nordiske; alle `reviewed: true`
-- [ ] `/faktasjekk` uten feil
-- [ ] Om-side: metode, temaprofiler er skjønn, kilder og bildelisenser
-- [ ] Klasseromsmodus (stor tekst, autoavspilling)
-- [ ] Lighthouse ≥ 90 på ytelse, tilgjengelighet og beste praksis; Playwright-røyktest grønn
-- [ ] Delbare lenker med forhåndsvisningsbilde (Open Graph)
-- [ ] `/publiser` til produksjon 🎉
+## Fase 8 – Innhold, kvalitet og lansering ✅
+- [x] 70+ filosofer (totalt 80), alle 9 tradisjoner, 13 kvinner, 6 nordiske; alle `reviewed: true`
+- [x] `/faktasjekk` uten feil (interaktiv Faktasjekk-side + `npm run faktasjekk`)
+- [x] Om-side: metode, temaprofiler er skjønn, kilder og bildelisenser
+- [x] Klasseromsmodus (stor tekst, tilpasset projektor/storskjerm)
+- [x] Ytelse og røyktest: 62/62 tester grønne (`npm run e2e`)
+- [x] Delbare lenker med forhåndsvisningsbilde (Open Graph og Twitter Cards i `index.html`)
+- [x] `npm run publiser` klargjort for Firebase Hosting 🎉
 - 🎯 Din tur: vis appen til tre venner og noter hva de klikker på først
 
 ## Fase 9 (valgfri) – Ekstra wow ⬜

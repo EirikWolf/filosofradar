@@ -1,0 +1,58 @@
+{
+  "id": "ibn-rushd",
+  "name": "Ibn Rushd",
+  "nameOriginal": "ابن رشد",
+  "born": {
+    "year": 1126,
+    "approx": false
+  },
+  "died": {
+    "year": 1198,
+    "approx": false
+  },
+  "tradition": "islamic-jewish",
+  "schools": [
+    "falsafa",
+    "aristotelisme"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 5,
+    "knowledge": 5,
+    "politics": 3,
+    "logic": 5,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 2
+  },
+  "themeNotes": "Ibn Rushd (Averroës) fra Córdoba forsvarte filosofisk tenkning som en religiøs og menneskelig plikt, og gjeninnførte Aristoteles i Europa.",
+  "keyIdeas": [
+    {
+      "title": "Sannhet motsier ikke sannhet",
+      "text": "Fornuft og åpenbaring kan ikke motsi hverandre; hvis en tekst ser ut til å stride mot logikk og fakta, må teksten tolkes allegorisk."
+    },
+    {
+      "title": "Kvinners evner",
+      "text": "Ibn Rushd argumenterte for at kvinner har like gode evner for filosofi og ledelse som menn, og at samfunnet taper enormt på å holde dem nede."
+    }
+  ],
+  "quote": {
+    "text": "Sannhet kan aldri stride mot sannhet, men må tvert imot harmonere med den og bekrefte den.",
+    "work": "Fasl al-Maqal (Den avgjørende traktat)",
+    "source": "https://plato.stanford.edu/entries/ibn-rushd/"
+  },
+  "thinkAbout": "Kan vitenskap og tro noen gang snakke sammen på en konstruktiv måte?",
+  "influencedBy": [
+    "aristoteles",
+    "ibn-sina"
+  ],
+  "wikidata": "Q39837",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/ibn-rushd/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

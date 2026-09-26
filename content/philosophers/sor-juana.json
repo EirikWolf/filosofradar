@@ -1,0 +1,57 @@
+{
+  "id": "sor-juana",
+  "name": "Sor Juana Inés de la Cruz",
+  "nameOriginal": "Juana Inés de Asbaje y Ramírez de Santillana",
+  "born": {
+    "year": 1648,
+    "approx": false
+  },
+  "died": {
+    "year": 1695,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "barokk filosofi",
+    "opplysning"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 3,
+    "knowledge": 5,
+    "politics": 4,
+    "logic": 4,
+    "mind": 4,
+    "meaning": 4,
+    "beauty": 5
+  },
+  "themeNotes": "Sor Juana var en meksikansk nonne, dikter og filosof som skrev et flammende forsvar for kvinners rett til vitenskap og fri tenkning.",
+  "keyIdeas": [
+    {
+      "title": "Kvinners rett til lærdom",
+      "text": "Intellektet har intet kjønn; kvinner har samme rett og evne til å studere vitenskap, filosofi og teologi som menn."
+    },
+    {
+      "title": "Filosofi i hverdagen",
+      "text": "Man kan filosofere overalt: «Hva kan vi kvinner vite, bortsett fra kjøkkenfilosofi? Men om Aristoteles hadde stekt mat, ville han ha skrevet enda mer!»"
+    }
+  ],
+  "quote": {
+    "text": "Man kan utmerket filosofere mens man lager middag.",
+    "work": "Respuesta a Sor Filotea (1691)",
+    "source": "https://plato.stanford.edu/entries/sor-juana-ines/"
+  },
+  "thinkAbout": "Kan man lære like mye om verden ved å observere vanlige hverdagsting som ved å lese tunge bøker?",
+  "influencedBy": [
+    "descartes"
+  ],
+  "wikidata": "Q183074",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/sor-juana-ines/"
+    }
+  ],
+  "gender": "kvinne",
+  "reviewed": true
+}

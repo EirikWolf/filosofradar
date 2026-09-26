@@ -1,0 +1,58 @@
+{
+  "id": "holberg",
+  "name": "Ludvig Holberg",
+  "nameOriginal": "Ludvig Holberg",
+  "born": {
+    "year": 1684,
+    "approx": false
+  },
+  "died": {
+    "year": 1754,
+    "approx": false
+  },
+  "tradition": "nordic",
+  "schools": [
+    "opplysningstid",
+    "naturrett"
+  ],
+  "themes": {
+    "ethics": 4,
+    "metaphysics": 2,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 4,
+    "mind": 3,
+    "meaning": 3,
+    "beauty": 4
+  },
+  "themeNotes": "Holberg var den nordiske opplysningstidens far, som med skarp satire, teater og naturrettslige essays kjempet mot fordommer og pedanteri.",
+  "keyIdeas": [
+    {
+      "title": "Fornuft og toleranse",
+      "text": "Holberg angrep overtro, religiøs fanatisme og stivbente lærde; fornuft og praktisk moral må styre samfunnet."
+    },
+    {
+      "title": "Likestilling i Nils Klim",
+      "text": "I sin underjordiske satire Nils Klims reise beskrev Holberg et samfunn der kvinner og menn hadde like rettigheter og muligheter."
+    }
+  ],
+  "quote": {
+    "text": "En lærd narr er mer uutholdelig enn en ulærd.",
+    "work": "Moralske Tanker",
+    "source": "https://snl.no/Ludvig_Holberg"
+  },
+  "thinkAbout": "Kan humor og satire noen ganger få folk til å tenke mer enn alvorlige foredrag?",
+  "influencedBy": [
+    "locke",
+    "montaigne"
+  ],
+  "wikidata": "Q216852",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Ludvig_Holberg"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}

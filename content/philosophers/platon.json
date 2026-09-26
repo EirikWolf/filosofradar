@@ -2,10 +2,19 @@
   "id": "platon",
   "name": "Platon",
   "nameOriginal": "Πλάτων",
-  "born": { "year": -427, "approx": true },
-  "died": { "year": -347, "approx": true },
+  "born": {
+    "year": -427,
+    "approx": true
+  },
+  "died": {
+    "year": -347,
+    "approx": true
+  },
   "tradition": "greek-roman",
-  "schools": ["platonisme", "klassisk gresk filosofi"],
+  "schools": [
+    "platonisme",
+    "klassisk gresk filosofi"
+  ],
   "themes": {
     "ethics": 4,
     "metaphysics": 5,
@@ -38,13 +47,24 @@
     "translator": "egen oversettelse fra gresk"
   },
   "thinkAbout": "Hvis du bare hadde sett skyggene av ting på en vegg hele livet, hvordan ville du reagert om noen viste deg den virkelige verden?",
-  "influencedBy": ["sokrates"],
+  "influencedBy": [
+    "sokrates"
+  ],
   "wikidata": "Q859",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Platon" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Platon" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/plato/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Platon"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Platon"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/plato/"
+    }
   ],
   "gender": "mann",
-  "reviewed": false
+  "reviewed": true
 }

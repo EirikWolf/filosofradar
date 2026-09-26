@@ -1,0 +1,57 @@
+{
+  "id": "thoreau",
+  "name": "Henry David Thoreau",
+  "nameOriginal": "Henry David Thoreau",
+  "born": {
+    "year": 1817,
+    "approx": false
+  },
+  "died": {
+    "year": 1862,
+    "approx": false
+  },
+  "tradition": "americas",
+  "schools": [
+    "transcendentalisme",
+    "naturfilosofi"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 4,
+    "knowledge": 3,
+    "politics": 5,
+    "logic": 1,
+    "mind": 4,
+    "meaning": 5,
+    "beauty": 5
+  },
+  "themeNotes": "Thoreau bodde to år i en enkel hytte ved Walden Pond og formulerte prinsippet om sivil ulydighet mot urettferdige lover.",
+  "keyIdeas": [
+    {
+      "title": "Forenkle, forenkle!",
+      "text": "Mennesker bruker livene sine på å samle ting de ikke trenger. Sann rikdom er å ha få behov og tid til å leve."
+    },
+    {
+      "title": "Sivil ulydighet",
+      "text": "Når en lov krever at du gjør urett mot et annet menneske, har du en moralsk plikt til å nekte å adlyde loven."
+    }
+  ],
+  "quote": {
+    "text": "Jeg gikk til skogs fordi jeg ønsket å leve med overlegg, å møte livets grunnleggende fakta.",
+    "work": "Walden (1854)",
+    "source": "https://plato.stanford.edu/entries/thoreau/"
+  },
+  "thinkAbout": "Hva ville skjedd om du kuttet ut alt unødvendig mas og bare beholdt det som gir deg ekte ro og glede?",
+  "influencedBy": [
+    "emerson"
+  ],
+  "wikidata": "Q107752",
+  "links": [
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/thoreau/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}
