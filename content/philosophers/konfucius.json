@@ -2,10 +2,18 @@
   "id": "konfucius",
   "name": "Konfucius",
   "nameOriginal": "孔子",
-  "born": { "year": -551, "approx": false },
-  "died": { "year": -479, "approx": false },
+  "born": {
+    "year": -551,
+    "approx": false
+  },
+  "died": {
+    "year": -479,
+    "approx": false
+  },
   "tradition": "chinese",
-  "schools": ["konfusianisme"],
+  "schools": [
+    "konfusianisme"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 1,
@@ -38,11 +46,19 @@
     "translator": "egen oversettelse fra klassisk kinesisk"
   },
   "thinkAbout": "Hva skjer med stemningen i klassen eller familien hvis alle øver på å si 'takk' og vise litt ekstra omtanke en hel dag?",
-  "influencedBy": [],
+  "influencedBy": [
+    "laozi"
+  ],
   "wikidata": "Q4604",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Konfucius" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Konfucius" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Konfucius"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Konfucius"
+    }
   ],
   "gender": "mann",
   "reviewed": false

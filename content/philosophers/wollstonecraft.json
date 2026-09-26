@@ -2,10 +2,19 @@
   "id": "wollstonecraft",
   "name": "Mary Wollstonecraft",
   "nameOriginal": "Mary Wollstonecraft",
-  "born": { "year": 1759, "approx": false },
-  "died": { "year": 1797, "approx": false },
+  "born": {
+    "year": 1759,
+    "approx": false
+  },
+  "died": {
+    "year": 1797,
+    "approx": false
+  },
   "tradition": "european",
-  "schools": ["opplysningstid", "tidlig feminisme"],
+  "schools": [
+    "opplysningstid",
+    "tidlig feminisme"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 1,
@@ -38,12 +47,25 @@
     "translator": "egen oversettelse fra engelsk"
   },
   "thinkAbout": "Hvorfor er det så viktig at alle får lære det samme på skolen, uansett hvem de er?",
-  "influencedBy": [],
+  "influencedBy": [
+    "sokrates",
+    "kant",
+    "descartes"
+  ],
   "wikidata": "Q101748",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Mary_Wollstonecraft" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Mary_Wollstonecraft" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/wollstonecraft/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Mary_Wollstonecraft"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Mary_Wollstonecraft"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/wollstonecraft/"
+    }
   ],
   "gender": "kvinne",
   "reviewed": false

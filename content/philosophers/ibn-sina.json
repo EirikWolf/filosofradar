@@ -2,10 +2,19 @@
   "id": "ibn-sina",
   "name": "Ibn Sina (Avicenna)",
   "nameOriginal": "ابن سینا",
-  "born": { "year": 980, "approx": false },
-  "died": { "year": 1037, "approx": false },
+  "born": {
+    "year": 980,
+    "approx": false
+  },
+  "died": {
+    "year": 1037,
+    "approx": false
+  },
   "tradition": "islamic-jewish",
-  "schools": ["islamsk gullalder", "nyplatonisme"],
+  "schools": [
+    "islamsk gullalder",
+    "nyplatonisme"
+  ],
   "themes": {
     "ethics": 3,
     "metaphysics": 5,
@@ -38,12 +47,24 @@
     "translator": "egen oversettelse fra arabisk"
   },
   "thinkAbout": "Hvis du lukker øynene og sitter helt stille uten lyder, hvordan vet du at du er deg?",
-  "influencedBy": ["aristoteles"],
+  "influencedBy": [
+    "aristoteles",
+    "platon"
+  ],
   "wikidata": "Q8011",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Ibn_Sina" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Avicenna" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/ibn-sina/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Ibn_Sina"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Avicenna"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/ibn-sina/"
+    }
   ],
   "gender": "mann",
   "reviewed": false

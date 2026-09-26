@@ -2,10 +2,20 @@
   "id": "kant",
   "name": "Immanuel Kant",
   "nameOriginal": "Immanuel Kant",
-  "born": { "year": 1724, "approx": false },
-  "died": { "year": 1804, "approx": false },
+  "born": {
+    "year": 1724,
+    "approx": false
+  },
+  "died": {
+    "year": 1804,
+    "approx": false
+  },
   "tradition": "european",
-  "schools": ["opplysningstid", "kantianisme", "transcendentalfilosofi"],
+  "schools": [
+    "opplysningstid",
+    "kantianisme",
+    "transcendentalfilosofi"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 5,
@@ -38,12 +48,25 @@
     "translator": "egen oversettelse fra tysk"
   },
   "thinkAbout": "Hva ville skjedd hvis alle mennesker plutselig begynte å lyve når det passet dem best?",
-  "influencedBy": ["descartes"],
+  "influencedBy": [
+    "descartes",
+    "aristoteles",
+    "platon"
+  ],
   "wikidata": "Q9312",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Immanuel_Kant" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Immanuel_Kant" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/kant/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Immanuel_Kant"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Immanuel_Kant"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/kant/"
+    }
   ],
   "gender": "mann",
   "reviewed": false

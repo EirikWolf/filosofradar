@@ -2,10 +2,19 @@
   "id": "descartes",
   "name": "René Descartes",
   "nameOriginal": "René Descartes",
-  "born": { "year": 1596, "approx": false },
-  "died": { "year": 1650, "approx": false },
+  "born": {
+    "year": 1596,
+    "approx": false
+  },
+  "died": {
+    "year": 1650,
+    "approx": false
+  },
   "tradition": "european",
-  "schools": ["rasjonalisme", "kartesianisme"],
+  "schools": [
+    "rasjonalisme",
+    "kartesianisme"
+  ],
   "themes": {
     "ethics": 2,
     "metaphysics": 5,
@@ -38,12 +47,24 @@
     "translator": "egen oversettelse fra latin/fransk"
   },
   "thinkAbout": "Hvordan kan du bevise for en venn at du ikke drømmer akkurat nå?",
-  "influencedBy": ["aristoteles"],
+  "influencedBy": [
+    "aristoteles",
+    "platon"
+  ],
   "wikidata": "Q9191",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Ren%C3%A9_Descartes" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Ren%C3%A9_Descartes" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/descartes/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Ren%C3%A9_Descartes"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Ren%C3%A9_Descartes"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/descartes/"
+    }
   ],
   "gender": "mann",
   "reviewed": false

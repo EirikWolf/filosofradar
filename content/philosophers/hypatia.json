@@ -2,10 +2,18 @@
   "id": "hypatia",
   "name": "Hypatia av Alexandria",
   "nameOriginal": "Ὑπατία",
-  "born": { "year": 360, "approx": true },
-  "died": { "year": 415, "approx": false },
+  "born": {
+    "year": 360,
+    "approx": true
+  },
+  "died": {
+    "year": 415,
+    "approx": false
+  },
   "tradition": "greek-roman",
-  "schools": ["nyplatonisme"],
+  "schools": [
+    "nyplatonisme"
+  ],
   "themes": {
     "ethics": 3,
     "metaphysics": 4,
@@ -38,11 +46,20 @@
     "translator": "egen oversettelse via Store norske leksikon"
   },
   "thinkAbout": "Hvis nesten alle rundt deg mener noe er sant uten bevis, tør du å stole på din egen logikk?",
-  "influencedBy": ["platon"],
+  "influencedBy": [
+    "platon",
+    "aristoteles"
+  ],
   "wikidata": "Q11903",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Hypatia" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Hypatia" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Hypatia"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Hypatia"
+    }
   ],
   "gender": "kvinne",
   "reviewed": true

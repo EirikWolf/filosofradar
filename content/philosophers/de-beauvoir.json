@@ -2,10 +2,19 @@
   "id": "de-beauvoir",
   "name": "Simone de Beauvoir",
   "nameOriginal": "Simone Lucie Ernestine Marie Bertrand de Beauvoir",
-  "born": { "year": 1908, "approx": false },
-  "died": { "year": 1986, "approx": false },
+  "born": {
+    "year": 1908,
+    "approx": false
+  },
+  "died": {
+    "year": 1986,
+    "approx": false
+  },
   "tradition": "european",
-  "schools": ["eksistensialisme", "feministisk filosofi"],
+  "schools": [
+    "eksistensialisme",
+    "feministisk filosofi"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 2,
@@ -38,12 +47,27 @@
     "translator": "egen oversettelse fra fransk"
   },
   "thinkAbout": "Hvor mye av det du liker og driver med skyldes hva du genuint ønsker, og hvor mye skyldes hva venner og sosiale medier forventer av deg?",
-  "influencedBy": ["kierkegaard"],
+  "influencedBy": [
+    "kierkegaard",
+    "descartes",
+    "marx",
+    "nietzsche",
+    "kant"
+  ],
   "wikidata": "Q7197",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Simone_de_Beauvoir" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Simone_de_Beauvoir" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/beauvoir/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Simone_de_Beauvoir"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Simone_de_Beauvoir"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/beauvoir/"
+    }
   ],
   "gender": "kvinne",
   "reviewed": false

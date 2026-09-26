@@ -2,10 +2,19 @@
   "id": "aristoteles",
   "name": "Aristoteles",
   "nameOriginal": "Ἀριστοτέλης",
-  "born": { "year": -384, "approx": false },
-  "died": { "year": -322, "approx": false },
+  "born": {
+    "year": -384,
+    "approx": false
+  },
+  "died": {
+    "year": -322,
+    "approx": false
+  },
   "tradition": "greek-roman",
-  "schools": ["aristotelisme", "peripatetikerne"],
+  "schools": [
+    "aristotelisme",
+    "peripatetikerne"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 5,
@@ -38,12 +47,24 @@
     "translator": "egen oversettelse fra gresk"
   },
   "thinkAbout": "Er det lettere å bli en god person hvis du øver på gode handlinger hver dag, akkurat som å øve på et instrument?",
-  "influencedBy": ["platon"],
+  "influencedBy": [
+    "platon",
+    "sokrates"
+  ],
   "wikidata": "Q868",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Aristoteles" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Aristoteles" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/aristotle/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Aristoteles"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Aristoteles"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/aristotle/"
+    }
   ],
   "gender": "mann",
   "reviewed": false

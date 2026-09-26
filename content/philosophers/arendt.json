@@ -38,7 +38,7 @@
     "translator": "egen oversettelse fra tysk/engelsk"
   },
   "thinkAbout": "Hvorfor kan det være farlig for et samfunn hvis folk slutter å stille spørsmål og bare gjør det de blir bedt om?",
-  "influencedBy": ["kant"],
+  "influencedBy": ["kant", "aristoteles", "sokrates", "marx", "kierkegaard"],
   "wikidata": "Q60149",
   "links": [
     { "label": "Store norske leksikon", "url": "https://snl.no/Hannah_Arendt" },

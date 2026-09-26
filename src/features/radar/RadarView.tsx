@@ -628,6 +628,65 @@ export const RadarView: React.FC<RadarViewProps> = ({
             </g>
           )}
 
+          {/* Animerte konstellasjonsbuer for påvirkningsnettverk (Wow-funksjon) */}
+          {activePoint && (
+            <g className="pointer-events-none">
+              {/* Forgjengere: gyllen glødende bue fra inspiratorer til denne filosofen */}
+              {activePoint.philosopher.influencedBy.map((ancestorId) => {
+                const anc = pointsMap.get(ancestorId);
+                if (!anc) return null;
+                const p1 = { x: anc.x, y: anc.y };
+                const p2 = { x: activePoint.x, y: activePoint.y };
+                const mx = (p1.x + p2.x) / 2;
+                const my = (p1.y + p2.y) / 2;
+                const qx = mx * 0.65 + cx * 0.35;
+                const qy = my * 0.65 + cy * 0.35;
+
+                return (
+                  <g key={`anc-${ancestorId}`}>
+                    <path
+                      d={`M ${p1.x} ${p1.y} Q ${qx} ${qy} ${p2.x} ${p2.y}`}
+                      fill="none"
+                      stroke="#ffd79e"
+                      strokeWidth="2.2"
+                      strokeDasharray="4 3"
+                      className="filter drop-shadow-[0_0_10px_#ffd79e] animate-pulse"
+                      opacity="0.9"
+                    />
+                    <circle cx={p1.x} cy={p1.y} r="5" fill="#ffd79e" opacity="0.7" className="animate-ping" />
+                  </g>
+                );
+              })}
+
+              {/* Etterfølgere: cyan/gull glødende bue videre til hvem denne inspirerte */}
+              {(activePoint.philosopher.influences ?? []).map((descendantId) => {
+                const desc = pointsMap.get(descendantId);
+                if (!desc) return null;
+                const p1 = { x: activePoint.x, y: activePoint.y };
+                const p2 = { x: desc.x, y: desc.y };
+                const mx = (p1.x + p2.x) / 2;
+                const my = (p1.y + p2.y) / 2;
+                const qx = mx * 0.65 + cx * 0.35;
+                const qy = my * 0.65 + cy * 0.35;
+
+                return (
+                  <g key={`desc-${descendantId}`}>
+                    <path
+                      d={`M ${p1.x} ${p1.y} Q ${qx} ${qy} ${p2.x} ${p2.y}`}
+                      fill="none"
+                      stroke="#67e8f9"
+                      strokeWidth="2.2"
+                      strokeDasharray="5 3"
+                      className="filter drop-shadow-[0_0_10px_#67e8f9] animate-pulse"
+                      opacity="0.9"
+                    />
+                    <circle cx={p2.x} cy={p2.y} r="5" fill="#67e8f9" opacity="0.7" className="animate-ping" />
+                  </g>
+                );
+              })}
+            </g>
+          )}
+
           {/* Stjernelaget (alle 21+ filosofene) */}
           {radarPoints.map((pt) => {
             const p = pt.philosopher;

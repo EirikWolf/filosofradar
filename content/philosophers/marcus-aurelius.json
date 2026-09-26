@@ -2,10 +2,18 @@
   "id": "marcus-aurelius",
   "name": "Marcus Aurelius",
   "nameOriginal": "Marcus Aurelius Antoninus",
-  "born": { "year": 121, "approx": false },
-  "died": { "year": 180, "approx": false },
+  "born": {
+    "year": 121,
+    "approx": false
+  },
+  "died": {
+    "year": 180,
+    "approx": false
+  },
   "tradition": "greek-roman",
-  "schools": ["stoisisme"],
+  "schools": [
+    "stoisisme"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 3,
@@ -38,12 +46,24 @@
     "translator": "egen oversettelse fra gresk"
   },
   "thinkAbout": "Hvis noen sier noe urettferdig til deg, er det ordene deres eller dine egne tanker om ordene som gjør deg såret?",
-  "influencedBy": ["sokrates"],
+  "influencedBy": [
+    "sokrates",
+    "diogenes"
+  ],
   "wikidata": "Q1430",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Marcus_Aurelius" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Marcus_Aurelius" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/marcus-aurelius/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Marcus_Aurelius"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Marcus_Aurelius"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/marcus-aurelius/"
+    }
   ],
   "gender": "mann",
   "reviewed": true

@@ -2,10 +2,19 @@
   "id": "epikur",
   "name": "Epikur",
   "nameOriginal": "Ἐπίκουρος",
-  "born": { "year": -341, "approx": false },
-  "died": { "year": -270, "approx": false },
+  "born": {
+    "year": -341,
+    "approx": false
+  },
+  "died": {
+    "year": -270,
+    "approx": false
+  },
   "tradition": "greek-roman",
-  "schools": ["epikurisme", "atomisme"],
+  "schools": [
+    "epikurisme",
+    "atomisme"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 4,
@@ -38,11 +47,20 @@
     "translator": "egen oversettelse fra gresk"
   },
   "thinkAbout": "Hva gir deg mest ekte glede: Å kjøpe en ny dyr dings, eller å le med venner rundt en enkel pizza?",
-  "influencedBy": [],
+  "influencedBy": [
+    "aristoteles",
+    "platon"
+  ],
   "wikidata": "Q659",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Epikur" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Epikur" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Epikur"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Epikur"
+    }
   ],
   "gender": "mann",
   "reviewed": false

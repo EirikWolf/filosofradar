@@ -2,10 +2,19 @@
   "id": "arne-naess",
   "name": "Arne Næss",
   "nameOriginal": "Arne Dekke Eide Næss",
-  "born": { "year": 1912, "approx": false },
-  "died": { "year": 2004, "approx": false },
+  "born": {
+    "year": 1912,
+    "approx": false
+  },
+  "died": {
+    "year": 2004,
+    "approx": false
+  },
   "tradition": "nordic",
-  "schools": ["dypøkologi", "semantikk"],
+  "schools": [
+    "dypøkologi",
+    "semantikk"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 3,
@@ -38,11 +47,22 @@
     "translator": "original på norsk"
   },
   "thinkAbout": "Hvis et tre i skogen ikke gjør noen nytte for mennesker, har det likevel rett til å stå der i fred?",
-  "influencedBy": ["sokrates"],
+  "influencedBy": [
+    "sokrates",
+    "buddha",
+    "zapffe",
+    "kant"
+  ],
   "wikidata": "Q212648",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Arne_N%C3%A6ss" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Arne_N%C3%A6ss" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Arne_N%C3%A6ss"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Arne_N%C3%A6ss"
+    }
   ],
   "gender": "mann",
   "reviewed": true

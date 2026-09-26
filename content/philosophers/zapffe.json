@@ -2,10 +2,20 @@
   "id": "zapffe",
   "name": "Peter Wessel Zapffe",
   "nameOriginal": "Peter Wessel Zapffe",
-  "born": { "year": 1899, "approx": false },
-  "died": { "year": 1990, "approx": false },
+  "born": {
+    "year": 1899,
+    "approx": false
+  },
+  "died": {
+    "year": 1990,
+    "approx": false
+  },
   "tradition": "nordic",
-  "schools": ["biosofi", "eksistensialisme", "pessimisme"],
+  "schools": [
+    "biosofi",
+    "eksistensialisme",
+    "pessimisme"
+  ],
   "themes": {
     "ethics": 4,
     "metaphysics": 3,
@@ -38,11 +48,20 @@
     "translator": "original på norsk"
   },
   "thinkAbout": "Når du er trist eller grubler for mye, hjelper det å klatre i et tre, løpe en tur eller drive med sport?",
-  "influencedBy": ["nietzsche"],
+  "influencedBy": [
+    "nietzsche",
+    "kierkegaard"
+  ],
   "wikidata": "Q1379461",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Peter_Wessel_Zapffe" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Peter_Wessel_Zapffe" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Peter_Wessel_Zapffe"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Peter_Wessel_Zapffe"
+    }
   ],
   "gender": "mann",
   "reviewed": false

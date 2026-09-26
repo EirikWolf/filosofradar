@@ -15,9 +15,12 @@
     "wikidata": "tsx scripts/wikidata.ts",
     "longest-life": "tsx scripts/longest-life.ts",
     "find-socrates": "tsx scripts/find-socrates.ts",
+    "longest-lineage": "tsx scripts/find-lineage.ts",
     "check": "npm run typecheck && npm run lint && npm run test && npm run validate"
   },
   "dependencies": {
+    "@types/d3-force": "^3.0.10",
+    "d3-force": "^3.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "zod": "^4.6.5"

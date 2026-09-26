@@ -2,10 +2,20 @@
   "id": "nietzsche",
   "name": "Friedrich Nietzsche",
   "nameOriginal": "Friedrich Wilhelm Nietzsche",
-  "born": { "year": 1844, "approx": false },
-  "died": { "year": 1900, "approx": false },
+  "born": {
+    "year": 1844,
+    "approx": false
+  },
+  "died": {
+    "year": 1900,
+    "approx": false
+  },
   "tradition": "european",
-  "schools": ["nihilisme", "eksistensialisme", "livsfilosofi"],
+  "schools": [
+    "nihilisme",
+    "eksistensialisme",
+    "livsfilosofi"
+  ],
   "themes": {
     "ethics": 4,
     "metaphysics": 3,
@@ -38,12 +48,25 @@
     "translator": "egen oversettelse fra tysk"
   },
   "thinkAbout": "Tør du å stå for det du mener, selv om alle andre i rommet er uenige med deg?",
-  "influencedBy": ["sokrates"],
+  "influencedBy": [
+    "sokrates",
+    "platon",
+    "kant"
+  ],
   "wikidata": "Q9358",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/Friedrich_Nietzsche" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Friedrich_Nietzsche" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/nietzsche/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Friedrich_Nietzsche"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Friedrich_Nietzsche"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/nietzsche/"
+    }
   ],
   "gender": "mann",
   "reviewed": false

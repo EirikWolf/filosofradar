@@ -2,10 +2,18 @@
   "id": "kierkegaard",
   "name": "Søren Kierkegaard",
   "nameOriginal": "Søren Aabye Kierkegaard",
-  "born": { "year": 1813, "approx": false },
-  "died": { "year": 1855, "approx": false },
+  "born": {
+    "year": 1813,
+    "approx": false
+  },
+  "died": {
+    "year": 1855,
+    "approx": false
+  },
   "tradition": "nordic",
-  "schools": ["eksistensialisme"],
+  "schools": [
+    "eksistensialisme"
+  ],
   "themes": {
     "ethics": 5,
     "metaphysics": 3,
@@ -38,12 +46,25 @@
     "translator": "original på dansk"
   },
   "thinkAbout": "Når du må ta et vanskelig valg og ingen kan gi deg fasiten, hvordan vet du hva som er det rette for deg?",
-  "influencedBy": ["sokrates"],
+  "influencedBy": [
+    "sokrates",
+    "kant",
+    "descartes"
+  ],
   "wikidata": "Q6512",
   "links": [
-    { "label": "Store norske leksikon", "url": "https://snl.no/S%C3%B8ren_Kierkegaard" },
-    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/S%C3%B8ren_Kierkegaard" },
-    { "label": "Stanford Encyclopedia of Philosophy", "url": "https://plato.stanford.edu/entries/kierkegaard/" }
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/S%C3%B8ren_Kierkegaard"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/S%C3%B8ren_Kierkegaard"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/kierkegaard/"
+    }
   ],
   "gender": "mann",
   "reviewed": false
