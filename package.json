@@ -14,6 +14,7 @@
     "e2e": "node -e \"console.log('E2E-tester klargjøres i Fase 8')\"",
     "wikidata": "tsx scripts/wikidata.ts",
     "longest-life": "tsx scripts/longest-life.ts",
+    "find-socrates": "tsx scripts/find-socrates.ts",
     "check": "npm run typecheck && npm run lint && npm run test && npm run validate"
   },
   "dependencies": {
