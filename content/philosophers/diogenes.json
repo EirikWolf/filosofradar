@@ -1,0 +1,39 @@
+{
+  "id": "diogenes",
+  "name": "Diogenes fra Sinope",
+  "nameOriginal": "Διογένης",
+  "born": { "year": -412, "approx": true },
+  "died": { "year": -323, "approx": true },
+  "tradition": "greek-roman",
+  "schools": ["kynisme"],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 1,
+    "knowledge": 2,
+    "politics": 4,
+    "logic": 2,
+    "mind": 3,
+    "meaning": 4,
+    "beauty": 1
+  },
+  "themeNotes": "Bodde i ei tønne og mente at ekte frihet er å eie minst mulig og gi blaffen i hva andre synes.",
+  "keyIdeas": [
+    {
+      "title": "Å eie minst mulig",
+      "text": "Diogenes mente at jo færre ting du trenger for å være lykkelig, jo friere er du som menneske."
+    },
+    {
+      "title": "Flytt deg fra sola!",
+      "text": "Da kong Alexander den store spurte hva han ønsket seg mest i hele verden, svarte Diogenes: 'Flytt deg, du skygger for sola!'"
+    }
+  ],
+  "thinkAbout": "Trenger vi egentlig alle tingene vi kjøper for å ha det bra?",
+  "influencedBy": ["sokrates"],
+  "wikidata": "Q59154",
+  "links": [
+    { "label": "Store norske leksikon", "url": "https://snl.no/Diogenes_fra_Sinope" },
+    { "label": "Wikipedia (norsk)", "url": "https://no.wikipedia.org/wiki/Diogenes_fra_Sinope" }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}
