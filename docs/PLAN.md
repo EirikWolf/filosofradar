@@ -34,16 +34,16 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] «Hvem levde samtidig?»: velg én → overlappende fremheves
 - 🎯 Din tur: finn ut hvem av filosofene som levde lengst – i koden, ikke ved å lete
 
-## Fase 4 – Radaren ✨ ⬜
-- [ ] `polar.ts` og `layout.ts` med tester (år + tradisjon → x,y; deterministisk spredning, ingen overlapp)
-- [ ] Ringer per århundre, sektorer med etiketter, punkter for alle filosofer
-- [ ] Sveipestråle med glød på passerte punkter (60 fps på mobil)
-- [ ] Tidsmaskin: glider, ▶/⏸, 1×/2×/4×, fødsel-puls og demping ved død, stort årstall
-- [ ] Bryter komprimert/lineær skala med forklaring
-- [ ] Pek/hold → etikett + samtidige lyser; klikk → velger filosof (kort kommer i fase 5)
-- [ ] Filter på tradisjon, tema og søk; bortfiltrerte tones ned
-- [ ] `prefers-reduced-motion` respektert; tastaturnavigasjon mellom punkter
-- [ ] Radaren er forsiden; publisert til forhåndsvisning
+## Fase 4 – Radaren ✨ ✅
+- [x] `polar.ts` og `layout.ts` med tester (år + tradisjon → x,y; deterministisk spredning, ingen overlapp)
+- [x] Ringer per århundre, sektorer med etiketter, punkter for alle filosofer
+- [x] Sveipestråle med glød på passerte punkter (60 fps på mobil)
+- [x] Tidsmaskin: glider, ▶/⏸, 1×/2×/4×, fødsel-puls og demping ved død, stort årstall
+- [x] Bryter komprimert/lineær skala med forklaring
+- [x] Pek/hold → etikett + samtidige lyser; klikk → velger filosof (kort kommer i fase 5)
+- [x] Filter på tradisjon, tema og søk; bortfiltrerte tones ned
+- [x] `prefers-reduced-motion` respektert; tastaturnavigasjon mellom punkter
+- [x] Radaren er forsiden; publisert til forhåndsvisning
 - 🎯 Din tur: regn ut for hånd hvor Sokrates skal stå (x, y), og sjekk i appen
 
 ## Fase 5 – Filosofkort og sammenligning ⬜
