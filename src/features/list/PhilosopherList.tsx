@@ -5,9 +5,10 @@ import { TRADITIONS, getTraditionMeta } from '../../lib/traditions';
 
 interface PhilosopherListProps {
   philosophers: Philosopher[];
+  onOpenCard?: (id: string) => void;
 }
 
-export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers }) => {
+export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, onOpenCard }) => {
   const [search, setSearch] = useState<string>('');
   const [selectedTradition, setSelectedTradition] = useState<string>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -190,9 +191,19 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers }
                 {isExpanded && (
                   <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-4 text-sm animate-fade-in">
                     <div>
-                      <h4 className="text-xs font-serif text-gold uppercase tracking-widest mb-1.5">
-                        Kjerneidéer
-                      </h4>
+                      <div className="flex items-center justify-between mb-1.5">
+                        <h4 className="text-xs font-serif text-gold uppercase tracking-widest">
+                          Kjerneidéer
+                        </h4>
+                        {onOpenCard && (
+                          <button
+                            onClick={() => onOpenCard(p.id)}
+                            className="px-3 py-1 bg-gold text-cosmos rounded-md font-serif text-xs font-bold hover:bg-gold-bright transition-all shadow-md flex items-center gap-1"
+                          >
+                            <span>📖</span> Åpne filosofkort
+                          </button>
+                        )}
+                      </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                         {p.keyIdeas.map((idea, idx) => (
                           <div

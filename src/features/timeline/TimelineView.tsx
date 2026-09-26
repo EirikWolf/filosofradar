@@ -6,6 +6,7 @@ import { getTraditionMeta } from '../../lib/traditions';
 
 interface TimelineViewProps {
   philosophers: Philosopher[];
+  onOpenCard?: (id: string) => void;
 }
 
 interface PhilosopherSpan {
@@ -14,7 +15,7 @@ interface PhilosopherSpan {
   endYear: number;
 }
 
-export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers }) => {
+export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpenCard }) => {
   const [scaleMode, setScaleMode] = useState<ScaleMode>('compressed');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -361,6 +362,14 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers }) => {
             <p className="text-sm text-cyan-glow font-sans mt-0.5">
               Levetid: {formatLifeSpan(selectedSpan.philosopher)} ({selectedSpan.endYear - selectedSpan.startYear} år)
             </p>
+            {onOpenCard && (
+              <button
+                onClick={() => onOpenCard(selectedSpan.philosopher.id)}
+                className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold text-cosmos font-serif font-bold text-xs hover:bg-gold-bright transition-all shadow-md"
+              >
+                <span>📖</span> Åpne filosofkort
+              </button>
+            )}
             <p className="text-xs text-star-bright/80 mt-2 font-sans max-w-xl">
               {selectedSpan.philosopher.themeNotes}
             </p>

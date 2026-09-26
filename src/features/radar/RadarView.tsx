@@ -18,12 +18,16 @@ const OLAI_TOP_5 = new Set([
 interface RadarViewProps {
   philosophers: Philosopher[];
   onSelectPhilosopher?: (id: string) => void;
+  onOpenCard?: (id: string) => void;
+  onStartCompare?: (id: string) => void;
   onNavigateToTimeline?: () => void;
   onNavigateToList?: () => void;
 }
 
 export const RadarView: React.FC<RadarViewProps> = ({
   philosophers,
+  onOpenCard,
+  onStartCompare,
   onNavigateToTimeline,
   onNavigateToList,
 }) => {
@@ -813,13 +817,29 @@ export const RadarView: React.FC<RadarViewProps> = ({
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              {onOpenCard && (
+                <button
+                  onClick={() => onOpenCard(activePoint.philosopher.id)}
+                  className="px-3.5 py-1.5 rounded-lg bg-gold text-cosmos font-serif font-bold hover:bg-gold-bright text-xs transition-all shadow-[0_0_10px_rgba(246,200,95,0.4)] flex items-center gap-1"
+                >
+                  <span>📖</span> Åpne filosofkort
+                </button>
+              )}
+              {onStartCompare && (
+                <button
+                  onClick={() => onStartCompare(activePoint.philosopher.id)}
+                  className="px-3 py-1.5 rounded-lg border border-gold/40 text-gold hover:bg-gold/10 text-xs font-serif transition-colors flex items-center gap-1"
+                >
+                  <span>⚖️</span> Sammenlign
+                </button>
+              )}
               {onNavigateToTimeline && (
                 <button
                   onClick={onNavigateToTimeline}
                   className="px-3 py-1.5 rounded-lg border border-white/20 hover:border-gold hover:text-gold text-xs font-serif transition-colors"
                 >
-                  ⏳ Se i tidslinjen
+                  ⏳ Tidslinje
                 </button>
               )}
               {onNavigateToList && (
@@ -827,14 +847,14 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   onClick={onNavigateToList}
                   className="px-3 py-1.5 rounded-lg border border-white/20 hover:border-gold hover:text-gold text-xs font-serif transition-colors"
                 >
-                  📋 Åpne detaljer
+                  📋 Liste
                 </button>
               )}
               {selectedId && (
                 <button
                   onClick={() => setSelectedId(null)}
                   className="text-star-dim hover:text-white px-2 py-1 text-sm"
-                  title="Lukk kort"
+                  title="Lukk forhåndsvisning"
                 >
                   ✕
                 </button>
