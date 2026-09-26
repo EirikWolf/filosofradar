@@ -53,11 +53,11 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Portretter med lisenskreditering der de finnes
 - 🎯 Din tur: legg til en niende akse i temaradaren på en egen git-gren – og se hva som skjer
 
-## Fase 6 – Påvirkningsnett ⬜
-- [ ] `influence.ts`: omvendte lenker, idéslekt bakover/fremover, med tester
-- [ ] Animerte buer på radaren når en filosof er valgt
-- [ ] Egen nettverksvisning med `d3-force`, dra i noder, tidsakse som svak kraft
-- [ ] Minst 40 påvirkningslenker i innholdet
+## Fase 6 – Påvirkningsnett ✅
+- [x] `influence.ts`: omvendte lenker, idéslekt bakover/fremover, med tester
+- [x] Animerte buer på radaren når en filosof er valgt
+- [x] Egen nettverksvisning med `d3-force`, dra i noder, tidsakse som svak kraft
+- [x] Minst 40 påvirkningslenker i innholdet (totalt 46 lenker)
 - 🎯 Din tur: finn den lengste idéslekten i dataene
 
 ## Fase 7 – «Hvilken filosof ligner du på?» ⬜
