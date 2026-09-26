@@ -5,13 +5,14 @@ import { RadarView } from './features/radar/RadarView';
 import { NetworkView } from './features/network/NetworkView';
 import { PhilosopherCard } from './features/card/PhilosopherCard';
 import { PhilosopherComparison } from './features/comparison/PhilosopherComparison';
+import { QuizView } from './features/quiz/QuizView';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
 
 const philosophers = philosophersData as Philosopher[];
 
 export const App: React.FC = () => {
-  const [view, setView] = useState<'radar' | 'timeline' | 'network' | 'list'>('radar');
+  const [view, setView] = useState<'radar' | 'timeline' | 'network' | 'list' | 'quiz'>('radar');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [comparingIds, setComparingIds] = useState<string[] | null>(null);
 
@@ -108,6 +109,16 @@ export const App: React.FC = () => {
             <span>📋</span> Listevisning ({philosophers.length})
           </button>
           <button
+            onClick={() => setView('quiz')}
+            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
+              view === 'quiz'
+                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
+                : 'text-star-dim hover:text-white'
+            }`}
+          >
+            <span>🎭</span> Quizen
+          </button>
+          <button
             onClick={() => setComparingIds(['sokrates', 'platon'])}
             className="px-4 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border border-gold/40 text-gold hover:bg-gold/15 shadow-sm"
           >
@@ -136,6 +147,17 @@ export const App: React.FC = () => {
             philosophers={philosophers}
             onOpenCard={openCard}
             onNavigateToRadar={() => setView('radar')}
+          />
+        ) : view === 'quiz' ? (
+          <QuizView
+            philosophers={philosophers}
+            onOpenCard={openCard}
+            onNavigateToRadar={(highlightId) => {
+              setView('radar');
+              if (highlightId) {
+                openCard(highlightId);
+              }
+            }}
           />
         ) : (
           <PhilosopherList
@@ -178,7 +200,7 @@ export const App: React.FC = () => {
 
       {/* Footer med status */}
       <footer className="w-full max-w-xl text-center py-4 text-xs text-star-dim border-t border-white/5">
-        <p>Filosofradaren · Bygget av Olai & Asbjørn · Fase 6</p>
+        <p>Filosofradaren · Bygget av Olai & Asbjørn · Fase 7</p>
       </footer>
     </div>
   );

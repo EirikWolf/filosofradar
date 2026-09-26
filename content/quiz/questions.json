@@ -1,0 +1,112 @@
+[
+  {
+    "id": "q1",
+    "question": "Det viktigste i livet er å handle rett mot andre, selv om det koster deg noe personlig.",
+    "context": "Plikt, godhet og rettferdighet overfor medmennesker.",
+    "themeWeights": {
+      "ethics": 3,
+      "politics": 1
+    }
+  },
+  {
+    "id": "q2",
+    "question": "Verden består av dypere, usynlige sannheter enn bare de fysiske tingene vi kan ta og føle på.",
+    "context": "Finnes det en idéverden, en åndelig orden eller en dypere kosmisk virkelighet bak alt?",
+    "themeWeights": {
+      "metaphysics": 3,
+      "meaning": 1
+    }
+  },
+  {
+    "id": "q3",
+    "question": "Vi bør aldri godta en påstand før vi har stilt kritiske spørsmål og sett solide bevis.",
+    "context": "Skeptisisme, nysgjerrighet og vitenskapelige metoder fremfor blind tro.",
+    "themeWeights": {
+      "knowledge": 3,
+      "logic": 1
+    }
+  },
+  {
+    "id": "q4",
+    "question": "Et samfunn er først rettferdig når de som har minst, blir løftet opp og beskyttet.",
+    "context": "Fellesskapets ansvar, likeverd og motstand mot urettferdighet og maktmisbruk.",
+    "themeWeights": {
+      "politics": 3,
+      "ethics": 1
+    }
+  },
+  {
+    "id": "q5",
+    "question": "Klart språk og streng logikk er det beste verktøyet vi har mot forvirring og manipulasjon.",
+    "context": "Å tenke ryddig, avsløre tankefeil og skille sak fra følelser.",
+    "themeWeights": {
+      "logic": 3,
+      "knowledge": 1
+    }
+  },
+  {
+    "id": "q6",
+    "question": "Menneskets bevissthet og følelser er noe unikt som en datamaskin aldri vil kunne oppleve.",
+    "context": "Hva er et sinn, og hva vil det si å oppleve å være levende?",
+    "themeWeights": {
+      "mind": 3,
+      "metaphysics": 1
+    }
+  },
+  {
+    "id": "q7",
+    "question": "Livet har ingen ferdig fasit – vi må selv velge hvem vi vil være og skape vår egen mening.",
+    "context": "Frihet til å velge, personlig ansvar og mot til å forme sin egen skjebne.",
+    "themeWeights": {
+      "meaning": 3,
+      "ethics": 1
+    }
+  },
+  {
+    "id": "q8",
+    "question": "Kunst, musikk og vakre opplevelser gjør livet dypere og mer verdt å leve enn rene fakta.",
+    "context": "Estetikk, harmoni og skjønnhetens kraft i menneskets tilværelse.",
+    "themeWeights": {
+      "beauty": 3,
+      "mind": 1
+    }
+  },
+  {
+    "id": "q9",
+    "question": "Naturen og alt levende liv har en egenverdi – vi mennesker har ikke rett til å herse med jorda.",
+    "context": "Dypøkologisk tankegang og ærefrykt for naturens mangfold.",
+    "themeWeights": {
+      "ethics": 2,
+      "politics": 1,
+      "metaphysics": 1
+    }
+  },
+  {
+    "id": "q10",
+    "question": "Den som innser hvor lite man faktisk vet, er klokere enn den som skråsikkert påstår at hen vet alt.",
+    "context": "Sokratisk ydmykhet: å erkjenne sin egen uvitenhet er begynnelsen på visdom.",
+    "themeWeights": {
+      "knowledge": 2,
+      "mind": 2
+    }
+  },
+  {
+    "id": "q11",
+    "question": "Vi kan ikke alltid kontrollere hva som skjer rundt oss, men vi kan alltid velge hvordan vi reagerer.",
+    "context": "Stoisk sinnsro, mental styrke og indre balanse i møte med motgang.",
+    "themeWeights": {
+      "mind": 2,
+      "meaning": 2
+    }
+  },
+  {
+    "id": "q12",
+    "question": "En vakker, enkel og harmonisk forklaring er ofte nærmere sannheten enn en komplisert og rotete en.",
+    "context": "Skjønnhet og symmetri som ledestjerner for rasjonell tenkning.",
+    "themeWeights": {
+      "beauty": 2,
+      "knowledge": 1,
+      "logic": 1
+    }
+  }
+]

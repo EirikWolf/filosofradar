@@ -2,13 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PhilosopherSchema, type PhilosopherInput, type Philosopher } from '../src/schemas/philosopher';
+import { QuizQuestionsSchema, type QuizQuestion } from '../src/schemas/quiz';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const CONTENT_DIR = path.resolve(__dirname, '../content/philosophers');
+const QUIZ_FILE = path.resolve(__dirname, '../content/quiz/questions.json');
 const OUTPUT_DIR = path.resolve(__dirname, '../src/generated');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'philosophers.json');
+const QUIZ_OUTPUT_FILE = path.join(OUTPUT_DIR, 'quizQuestions.json');
 
 const isValidateOnly = process.argv.includes('--validate-only');
 
@@ -137,6 +140,43 @@ function run() {
   console.log(`  - Tradisjoner:`, traditionCounts);
   console.log(`  - Kjønnsfordeling:`, genderCounts);
 
+  // Valider quiz-spørsmål hvis filen finnes
+  let quizQuestions: QuizQuestion[] = [];
+  if (fs.existsSync(QUIZ_FILE)) {
+    try {
+      const quizContent = fs.readFileSync(QUIZ_FILE, 'utf-8');
+      const quizJson = JSON.parse(quizContent);
+      const parsedQuiz = QuizQuestionsSchema.safeParse(quizJson);
+
+      if (!parsedQuiz.success) {
+        errors.push(`[quiz/questions.json] Valideringsfeil:\n${parsedQuiz.error.issues.map((e) => `  - ${e.path.join('.')}: ${e.message}`).join('\n')}`);
+      } else {
+        quizQuestions = parsedQuiz.data;
+        const qIdSet = new Set<string>();
+        for (const q of quizQuestions) {
+          if (qIdSet.has(q.id)) {
+            errors.push(`[quiz/questions.json] Duplikat spørsmål-ID: "${q.id}"`);
+          }
+          qIdSet.add(q.id);
+        }
+      }
+    } catch (err) {
+      errors.push(`[quiz/questions.json] Kunne ikke lese eller parse JSON: ${String(err)}`);
+    }
+  }
+
+  if (errors.length > 0) {
+    console.error('\n❌ Følgende feil må rettes:');
+    for (const e of errors) {
+      console.error(e);
+    }
+    process.exit(1);
+  }
+
+  if (quizQuestions.length > 0) {
+    console.log(`  - Quiz: ${quizQuestions.length} spørsmål validert`);
+  }
+
   if (warnings.length > 0 && !isValidateOnly) {
     console.log(`\n💡 ${warnings.length} redaksjonelle merknader (f.eks. reviewed: false)`);
   }
@@ -152,6 +192,11 @@ function run() {
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(finalPhilosophers, null, 2), 'utf-8');
   console.log(`📦 Bygget og lagret: ${OUTPUT_FILE}`);
+
+  if (quizQuestions.length > 0) {
+    fs.writeFileSync(QUIZ_OUTPUT_FILE, JSON.stringify(quizQuestions, null, 2), 'utf-8');
+    console.log(`📦 Bygget og lagret: ${QUIZ_OUTPUT_FILE}`);
+  }
 }
 
 run();

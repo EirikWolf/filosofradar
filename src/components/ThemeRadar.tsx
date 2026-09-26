@@ -1,11 +1,16 @@
 import React from 'react';
-import type { Philosopher } from '../schemas/philosopher';
-import { THEME_IDS } from '../schemas/philosopher';
+import { THEME_IDS, type Philosopher, type ThemeId } from '../schemas/philosopher';
 import { getThemeMeta } from '../lib/themes';
 import { degToRad } from '../lib/polar';
 
+export interface ThemeRadarItem {
+  id: string;
+  name: string;
+  themes: Record<ThemeId, number>;
+}
+
 export interface ThemeRadarProps {
-  philosophers: Philosopher[];
+  philosophers: (Philosopher | ThemeRadarItem)[];
   size?: number;
   colors?: string[];
   showLegend?: boolean;

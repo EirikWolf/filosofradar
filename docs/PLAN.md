@@ -60,11 +60,11 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Minst 40 påvirkningslenker i innholdet (totalt 46 lenker)
 - 🎯 Din tur: finn den lengste idéslekten i dataene
 
-## Fase 7 – «Hvilken filosof ligner du på?» ⬜
-- [ ] 10–12 spørsmål, hvert koblet til temaer med vekter (i JSON, ikke hardkodet)
-- [ ] `similarity.ts` (cosinuslikhet) med tester og forklaring i koden
-- [ ] Brukerens temaradar vokser mens man svarer; resultat med topp 3, prosent og begrunnelse
-- [ ] Last ned resultat som PNG; ingenting lagres eller sendes
+## Fase 7 – «Hvilken filosof ligner du på?» ✅
+- [x] 10–12 spørsmål, hvert koblet til temaer med vekter (i JSON, ikke hardkodet)
+- [x] `similarity.ts` (cosinuslikhet) med tester og forklaring i koden
+- [x] Brukerens temaradar vokser mens man svarer; resultat med topp 3, prosent og begrunnelse
+- [x] Last ned resultat som PNG; ingenting lagres eller sendes
 - 🎯 Din tur: lag to egne spørsmål og test at de påvirker resultatet slik du tror
 
 ## Fase 8 – Innhold, kvalitet og lansering ⬜
