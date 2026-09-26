@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { SweepBeam } from './components/SweepBeam';
 import { PhilosopherList } from './features/list/PhilosopherList';
+import { TimelineView } from './features/timeline/TimelineView';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
 
 const philosophers = philosophersData as Philosopher[];
 
 export const App: React.FC = () => {
-  const [view, setView] = useState<'radar' | 'list'>('radar');
+  const [view, setView] = useState<'radar' | 'timeline' | 'list'>('radar');
   const [speed, setSpeed] = useState<number>(8);
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
@@ -26,11 +27,11 @@ export const App: React.FC = () => {
           Filosofiens historie som et levende stjernekart.
         </p>
 
-        {/* Visnings-velger (Radaren vs Listevisning) */}
+        {/* Visnings-velger (Radaren vs Tidslinjen vs Listevisning) */}
         <nav className="flex items-center gap-2 mt-5 p-1 bg-cosmos-card/90 border border-white/10 rounded-full shadow-xl">
           <button
             onClick={() => setView('radar')}
-            className={`px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
+            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
               view === 'radar'
                 ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
                 : 'text-star-dim hover:text-white'
@@ -39,8 +40,18 @@ export const App: React.FC = () => {
             <span>✦</span> Radaren
           </button>
           <button
+            onClick={() => setView('timeline')}
+            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
+              view === 'timeline'
+                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
+                : 'text-star-dim hover:text-white'
+            }`}
+          >
+            <span>⏳</span> Tidslinjen
+          </button>
+          <button
             onClick={() => setView('list')}
-            className={`px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
+            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
               view === 'list'
                 ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
                 : 'text-star-dim hover:text-white'
@@ -127,6 +138,8 @@ export const App: React.FC = () => {
               </button>
             </div>
           </div>
+        ) : view === 'timeline' ? (
+          <TimelineView philosophers={philosophers} />
         ) : (
           <PhilosopherList philosophers={philosophers} />
         )}
@@ -134,7 +147,7 @@ export const App: React.FC = () => {
 
       {/* Footer med status */}
       <footer className="w-full max-w-xl text-center py-4 text-xs text-star-dim border-t border-white/5">
-        <p>Filosofradaren · Bygget av Olai & Asbjørn · Fase 2</p>
+        <p>Filosofradaren · Bygget av Olai & Asbjørn · Fase 3</p>
       </footer>
     </div>
   );
