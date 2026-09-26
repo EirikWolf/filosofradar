@@ -27,11 +27,11 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Listevisning (søkbar tabell) som første ekte side
 - 🎯 Din tur: skriv én filosof helt selv og få valideringen grønn
 
-## Fase 3 – Tidslinjen ⬜
-- [ ] `timeScale.ts` (lineær og komprimert) med tester
-- [ ] Horisontal tidslinje: levetid som stolper per tradisjon, akse med f.Kr./e.Kr.
-- [ ] Zoom/panorering (mus og touch)
-- [ ] «Hvem levde samtidig?»: velg én → overlappende fremheves
+## Fase 3 – Tidslinjen ✅
+- [x] `timeScale.ts` (lineær og komprimert) med tester
+- [x] Horisontal tidslinje: levetid som stolper per tradisjon, akse med f.Kr./e.Kr.
+- [x] Zoom/panorering (mus og touch)
+- [x] «Hvem levde samtidig?»: velg én → overlappende fremheves
 - 🎯 Din tur: finn ut hvem av filosofene som levde lengst – i koden, ikke ved å lete
 
 ## Fase 4 – Radaren ✨ ⬜
