@@ -48,3 +48,12 @@ Beslutning:
 3. Olais topp 5 favoritter settes til: Hypatia av Alexandria, Sokrates, Arne Næss, Buddha (Siddhartha Gautama) og Marcus Aurelius.
 Alternativer: Myk innfading ved fødsel; stjernestøv/stjerneskudd for nettverk.
 Konsekvens: De fem filosofene gis hedersplass øverst i `docs/INNHOLD.md` og implementeres først i Fase 2 for testing av tidsmaskin og stjernebilder.
+
+## B-008 – Radarens geometri: fødselsår og deterministisk 2D-avlastning (2026-09-26)
+Kontekst: DESIGN.md åpnet for å velge mellom fødselsår eller midten av levetiden for radarens radius, samt metode for å hindre at filosofer i samme epoke krasjer.
+Beslutning:
+1. Radius settes etter fødselsår (eller start på floruit).
+2. Vinkel settes etter tradisjonssektor (9 sektorer à 40°) i historisk-geografisk rekkefølge.
+3. Kollisjoner unngås deterministisk med alternerende viftevinkler og svak radial forskyvning (16 iterasjoner 2D-relaxation).
+Alternativer: Midtpunkt i levetiden; tilfeldig Math.random()-spredning; kun vinkelspredning uten radial forskyvning (ga overlapp i trange antikk-klynger).
+Konsekvens: Tidsmaskinen fungerer intuitivt: når tidsringen treffer punktets radius, fødes filosofen med supernova-puls. Alle 21 stjerner (og framtidige 70+) har garantert synlig separasjon.

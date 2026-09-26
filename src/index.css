@@ -39,3 +39,52 @@ body {
   transform-origin: center center;
   will-change: transform;
 }
+
+@keyframes supernova-birth {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+    stroke-width: 4px;
+  }
+  50% {
+    transform: scale(2.8);
+    opacity: 0.9;
+    stroke-width: 2px;
+  }
+  100% {
+    transform: scale(4.2);
+    opacity: 0;
+    stroke-width: 0.5px;
+  }
+}
+
+.animate-supernova {
+  animation: supernova-birth 1.4s ease-out forwards;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+@keyframes contemporary-glow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.35);
+  }
+}
+
+.animate-contemporary {
+  animation: contemporary-glow 2.2s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sweep-beam,
+  .animate-supernova,
+  .animate-contemporary {
+    animation: none !important;
+    transition-duration: 0.1s !important;
+  }
+}
