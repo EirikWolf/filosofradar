@@ -64,26 +64,9 @@ body {
   pointer-events: none;
 }
 
-@keyframes contemporary-glow {
-  0%, 100% {
-    opacity: 0.45;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.95;
-    transform: scale(1.35);
-  }
-}
-
-.animate-contemporary {
-  animation: contemporary-glow 2.2s ease-in-out infinite;
-  transform-origin: center center;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .animate-sweep-beam,
-  .animate-supernova,
-  .animate-contemporary {
+  .animate-supernova {
     animation: none !important;
     transition-duration: 0.1s !important;
   }

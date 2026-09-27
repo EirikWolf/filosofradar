@@ -768,15 +768,16 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   />
                 )}
 
-                {/* Glødende samtids-ring hvis samtidig med fokusert filosof */}
+                {/* Diskret, rolig samtids-ring hvis samtidig med fokusert filosof (statisk) */}
                 {isContemporary && (
                   <circle
-                    r={starRadius * 2.2}
+                    r={starRadius * 1.9}
                     fill="none"
                     stroke="#f6c85f"
-                    strokeWidth="1.8"
-                    strokeDasharray="3 2"
-                    className="animate-contemporary pointer-events-none"
+                    strokeWidth="1.2"
+                    strokeDasharray="2 2"
+                    opacity="0.65"
+                    className="pointer-events-none"
                   />
                 )}
 
