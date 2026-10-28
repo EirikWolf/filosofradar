@@ -4,6 +4,7 @@ import { TRADITION_SECTOR_ORDER, getSectorAngles } from '../../lib/polar';
 import { getTraditionMeta, TRADITIONS } from '../../lib/traditions';
 import { formatLifeSpan } from '../../lib/years';
 import { sound } from '../../lib/sound';
+import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
 
 interface Galaxy3DViewProps {
   philosophers: Philosopher[];
@@ -53,6 +54,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedTradition, setSelectedTradition] = useState<string>('all');
+  const [onlyExphil, setOnlyExphil] = useState<boolean>(false);
   const [isAutoRotating, setIsAutoRotating] = useState<boolean>(true);
 
   // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur)
@@ -268,8 +270,9 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
       const projectedStars: ProjectedStar[] = stars3D
         .map((s) => {
           const proj = project(s.x, s.y, s.z);
+          const isExphilMatch = !onlyExphil || EXPHIL_PHILOSOPHER_IDS.has(s.id);
           const isFilterMatch =
-            selectedTradition === 'all' || s.philosopher.tradition === selectedTradition;
+            (selectedTradition === 'all' || s.philosopher.tradition === selectedTradition) && isExphilMatch;
 
           return {
             ...s,
@@ -277,7 +280,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
             screenY: proj.screenY,
             screenZ: proj.screenZ,
             screenRadius: Math.max(2.2, 5 * proj.scale),
-            alpha: isFilterMatch ? 1 : 0.15,
+            alpha: isFilterMatch ? 1 : 0.12,
             visible: proj.visible,
           };
         })
@@ -396,7 +399,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
 
     animId = requestAnimationFrame(render);
     return () => cancelAnimationFrame(animId);
-  }, [stars3D, dustParticles, starsMap, selectedTradition, hoveredId, selectedId, isAutoRotating, activeStar]);
+  }, [stars3D, dustParticles, starsMap, selectedTradition, onlyExphil, hoveredId, selectedId, isAutoRotating, activeStar]);
 
   // Håndter mus- og berøringsinteraksjon for 3D-rotering og zooming
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -509,6 +512,19 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
               </option>
             ))}
           </select>
+
+          {/* Ex.phil hurtigfilter */}
+          <button
+            onClick={() => setOnlyExphil((prev) => !prev)}
+            className={`px-3 py-1.5 rounded-xl text-xs font-serif border transition-all flex items-center gap-1.5 ${
+              onlyExphil
+                ? 'bg-gold text-cosmos font-bold border-gold shadow-[0_0_10px_rgba(246,200,95,0.4)]'
+                : 'bg-cosmos border-white/15 text-star-dim hover:text-white hover:border-gold/40'
+            }`}
+            title="Vis kun filosofer på Examen philosophicum-pensum"
+          >
+            <span>🎓</span> {onlyExphil ? 'Kun Ex.phil' : 'Ex.phil'}
+          </button>
 
           {/* Autorasjon av/på */}
           <button

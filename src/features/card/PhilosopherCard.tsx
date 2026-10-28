@@ -3,6 +3,7 @@ import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { ThemeRadar } from '../../components/ThemeRadar';
+import { ExphilCardExamBox } from '../exphil/ExphilCardExamBox';
 
 interface PhilosopherCardProps {
   philosopher: Philosopher;
@@ -11,6 +12,7 @@ interface PhilosopherCardProps {
   onSelectPhilosopher: (id: string) => void;
   onStartCompare: (id: string) => void;
   onViewTimeline?: () => void;
+  onNavigateToExphilHub?: () => void;
 }
 
 export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
@@ -20,6 +22,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
   onSelectPhilosopher,
   onStartCompare,
   onViewTimeline,
+  onNavigateToExphilHub,
 }) => {
   const meta = getTraditionMeta(philosopher.tradition);
 
@@ -160,6 +163,12 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
             «{philosopher.themeNotes}»
           </p>
         </div>
+
+        {/* Examen Philosophicum Eksamens-boks (vises kun for pensum-filosofer) */}
+        <ExphilCardExamBox
+          philosopherId={philosopher.id}
+          onNavigateToExphilHub={onNavigateToExphilHub}
+        />
 
         {/* 2. Seksjon: Kjerneidéer */}
         <div className="mb-6">

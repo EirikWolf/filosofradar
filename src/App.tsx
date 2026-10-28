@@ -12,6 +12,7 @@ import { Galaxy3DView } from './features/galaxy/Galaxy3DView';
 import { DailyPhilosopher } from './features/daily/DailyPhilosopher';
 import { TourSelectModal } from './features/tours/TourSelectModal';
 import { TourPlayer } from './features/tours/TourPlayer';
+import { ExphilHub } from './features/exphil/ExphilHub';
 import type { Tour } from './features/tours/types';
 import { sound } from './lib/sound';
 import type { Philosopher } from './schemas/philosopher';
@@ -19,7 +20,7 @@ import philosophersData from './generated/philosophers.json';
 
 const philosophers = philosophersData as Philosopher[];
 
-type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 'factcheck' | 'about';
+type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 'exphil' | 'factcheck' | 'about';
 
 export const App: React.FC = () => {
   const [view, setView] = useState<ViewMode>('radar');
@@ -225,6 +226,17 @@ export const App: React.FC = () => {
             <span>🎭</span> Quizen
           </button>
           <button
+            onClick={() => setView('exphil')}
+            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border ${
+              view === 'exphil'
+                ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.6)]'
+                : 'border-amber-400/40 text-amber-300 hover:bg-amber-400/10'
+            }`}
+            title="Eksamensmestring for Examen Philosophicum (dueller, flashcards og eksamenstips)"
+          >
+            <span>🎓</span> Ex.phil
+          </button>
+          <button
             onClick={() => setIsTourModalOpen(true)}
             className="px-4 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border border-gold/60 text-gold hover:bg-gold hover:text-cosmos shadow-[0_0_10px_rgba(246,200,95,0.25)] font-bold"
           >
@@ -303,6 +315,18 @@ export const App: React.FC = () => {
             onOpenCard={openCard}
             onNavigateToRadar={() => setView('radar')}
           />
+        ) : view === 'exphil' ? (
+          <ExphilHub
+            philosophers={philosophers}
+            onOpenCard={openCard}
+            onComparePhilosophers={(ids) => setComparingIds(ids)}
+            onNavigateToRadar={(focusId) => {
+              setView('radar');
+              if (focusId) {
+                openCard(focusId);
+              }
+            }}
+          />
         ) : view === 'quiz' ? (
           <QuizView
             philosophers={philosophers}
@@ -343,6 +367,10 @@ export const App: React.FC = () => {
           onViewTimeline={() => {
             closeCard();
             setView('timeline');
+          }}
+          onNavigateToExphilHub={() => {
+            closeCard();
+            setView('exphil');
           }}
         />
       )}
@@ -385,6 +413,13 @@ export const App: React.FC = () => {
       {/* Footer med status og snarveier */}
       <footer className="w-full max-w-2xl text-center py-6 text-xs text-star-dim border-t border-white/10 flex flex-col items-center gap-2">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-serif">
+          <button
+            onClick={() => setView('exphil')}
+            className="hover:text-gold transition-colors underline underline-offset-4 text-amber-300 font-bold"
+          >
+            🎓 Ex.phil Studie-hub
+          </button>
+          <span>·</span>
           <button
             onClick={() => setIsTourModalOpen(true)}
             className="hover:text-gold transition-colors underline underline-offset-4"

@@ -7,6 +7,7 @@ import { formatYear, formatLifeSpan, checkOverlap } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
+import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
 
 interface RadarViewProps {
   philosophers: Philosopher[];
@@ -39,6 +40,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
   const [selectedTradition, setSelectedTradition] = useState<string>('all');
   const [selectedTheme, setSelectedTheme] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [onlyExphil, setOnlyExphil] = useState<boolean>(false);
   const [showScaleHelp, setShowScaleHelp] = useState<boolean>(false);
 
   // Sveipestråle-tilstander
@@ -123,7 +125,11 @@ export const RadarView: React.FC<RadarViewProps> = ({
         const themeVal = p.themes[selectedTheme as ThemeId] ?? 0;
         if (themeVal < 3) continue;
       }
-      // 3. Tekstsøk (navn, opprinnelig navn, skoler, idéer)
+      // 3. Ex.phil pensum-filter
+      if (onlyExphil && !EXPHIL_PHILOSOPHER_IDS.has(p.id)) {
+        continue;
+      }
+      // 4. Tekstsøk (navn, opprinnelig navn, skoler, idéer)
       if (query) {
         const matchesName = p.name.toLowerCase().includes(query);
         const matchesOrig = p.nameOriginal?.toLowerCase().includes(query);
@@ -138,7 +144,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
       ids.add(p.id);
     }
     return ids;
-  }, [radarPoints, selectedTradition, selectedTheme, searchQuery]);
+  }, [radarPoints, selectedTradition, selectedTheme, searchQuery, onlyExphil]);
 
   // Tidsmaskin animasjonsløkke
   useEffect(() => {
@@ -438,13 +444,27 @@ export const RadarView: React.FC<RadarViewProps> = ({
           </select>
         </div>
 
+        {/* Ex.phil pensum hurtigknapp */}
+        <button
+          onClick={() => setOnlyExphil((v) => !v)}
+          className={`px-3 py-1.5 rounded-lg text-xs font-serif transition-all border flex items-center gap-1.5 ${
+            onlyExphil
+              ? 'bg-gold text-cosmos font-bold border-gold shadow-[0_0_10px_rgba(246,200,95,0.4)]'
+              : 'bg-cosmos/80 border-white/10 text-star-dim hover:text-white hover:border-gold/40'
+          }`}
+          title="Vis kun filosofer som inngår i Examen philosophicum pensum"
+        >
+          <span>🎓</span> {onlyExphil ? 'Kun Ex.phil' : 'Ex.phil-pensum'}
+        </button>
+
         {/* Nullstill filtre knapp hvis aktive */}
-        {(selectedTradition !== 'all' || selectedTheme !== 'all' || searchQuery) && (
+        {(selectedTradition !== 'all' || selectedTheme !== 'all' || searchQuery || onlyExphil) && (
           <button
             onClick={() => {
               setSelectedTradition('all');
               setSelectedTheme('all');
               setSearchQuery('');
+              setOnlyExphil(false);
             }}
             className="px-2.5 py-1.5 rounded-lg text-gold hover:underline text-[11px] font-serif"
           >
