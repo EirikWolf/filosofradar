@@ -8,14 +8,6 @@ import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
 
-const FEATURED_TOP_5 = new Set([
-  'hypatia',
-  'sokrates',
-  'arne-naess',
-  'buddha',
-  'marcus-aurelius',
-]);
-
 interface RadarViewProps {
   philosophers: Philosopher[];
   onSelectPhilosopher?: (id: string) => void;
@@ -728,8 +720,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             }
 
             // Star size
-            const isTopStar = FEATURED_TOP_5.has(p.id);
-            const baseRadius = isTopStar ? 6 : 4.5;
+            const baseRadius = 4.5;
             const starRadius = isSelected || isHovered ? baseRadius * 1.5 : baseRadius;
 
             return (
@@ -798,8 +789,8 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.85)]"
                 />
 
-                {/* Navnelapp på radaren for utvalgte/stjernefilosofer eller ved hover */}
-                {(isHovered || isSelected || (isTopStar && !activePoint && !isUnborn)) && (
+                {/* Navnelapp på radaren ved hover eller når valgt */}
+                {(isHovered || isSelected) && (
                   <text
                     y={starRadius + 13}
                     textAnchor="middle"
@@ -866,9 +857,6 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 <span className="text-xs uppercase font-serif tracking-widest text-star-dim">
                   {getTraditionMeta(activePoint.tradition).name}
                 </span>
-                {FEATURED_TOP_5.has(activePoint.philosopher.id) && (
-                  <span className="text-gold text-xs">★ Utvalgt stjerne</span>
-                )}
               </div>
               <h3 className="text-2xl font-serif font-bold text-star-white flex items-center gap-2">
                 {activePoint.philosopher.name}
