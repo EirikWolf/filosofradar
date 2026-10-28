@@ -8,7 +8,7 @@ import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
 
-const OLAI_TOP_5 = new Set([
+const FEATURED_TOP_5 = new Set([
   'hypatia',
   'sokrates',
   'arne-naess',
@@ -728,7 +728,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             }
 
             // Star size
-            const isTopStar = OLAI_TOP_5.has(p.id);
+            const isTopStar = FEATURED_TOP_5.has(p.id);
             const baseRadius = isTopStar ? 6 : 4.5;
             const starRadius = isSelected || isHovered ? baseRadius * 1.5 : baseRadius;
 
@@ -866,8 +866,8 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 <span className="text-xs uppercase font-serif tracking-widest text-star-dim">
                   {getTraditionMeta(activePoint.tradition).name}
                 </span>
-                {OLAI_TOP_5.has(activePoint.philosopher.id) && (
-                  <span className="text-gold text-xs">★ Olais topp 5</span>
+                {FEATURED_TOP_5.has(activePoint.philosopher.id) && (
+                  <span className="text-gold text-xs">★ Utvalgt stjerne</span>
                 )}
               </div>
               <h3 className="text-2xl font-serif font-bold text-star-white flex items-center gap-2">

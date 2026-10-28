@@ -12,7 +12,7 @@ export const AboutView: React.FC = () => {
           Filosofiens Historie som et Levende Stjernekart
         </h2>
         <p className="text-star-dim text-sm sm:text-base mt-2 max-w-2xl mx-auto font-sans leading-relaxed">
-          Filosofradaren ble unnfanget og utviklet av <strong>Olai</strong> sammen med pappa <strong>Asbjørn</strong> som et utforskende parprogrammeringsprosjekt for å gjøre 2500+ år med menneskelig visdom visuell, levende og tilgjengelig.
+          Filosofradaren er et utforskende prosjekt for å gjøre 2500+ år med menneskelig visdom visuell, levende og tilgjengelig.
         </p>
       </div>
 
@@ -105,10 +105,7 @@ export const AboutView: React.FC = () => {
         <span className="text-xs font-serif uppercase tracking-widest text-gold">
           Bygget med kjærlighet for nysgjerrighet og undring
         </span>
-        <p className="text-sm text-white font-serif">
-          Olai (produkt & design) · Asbjørn (co-pilot & sparring)
-        </p>
-        <p className="text-xs text-star-dim">
+        <p className="text-xs text-star-dim mt-1">
           Oslo, 2026 · Bygget med React 19, TypeScript, Tailwind CSS og Vite.
         </p>
       </div>

@@ -3,6 +3,14 @@ import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { TRADITIONS, getTraditionMeta } from '../../lib/traditions';
 
+const FEATURED_IDS = new Set([
+  'hypatia',
+  'sokrates',
+  'arne-naess',
+  'buddha',
+  'marcus-aurelius',
+]);
+
 interface PhilosopherListProps {
   philosophers: Philosopher[];
   onOpenCard?: (id: string) => void;
@@ -155,9 +163,9 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
                             ({p.nameOriginal})
                           </span>
                         )}
-                        {p.reviewed && (
+                        {FEATURED_IDS.has(p.id) && (
                           <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-gold/20 text-gold font-serif border border-gold/30">
-                            ★ Olais Topp 5
+                            ★ Utvalgt
                           </span>
                         )}
                       </div>

@@ -328,7 +328,7 @@ export const App: React.FC = () => {
           </button>
         </div>
         <p className="mt-1 text-[11px] text-star-dim/70">
-          Filosofradaren · Skapt av Olai & Asbjørn · Fase 9 (Kosmisk Wow-utgave) · 100% åpen og personvernvennlig
+          Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig
         </p>
       </footer>
     </div>
