@@ -4,6 +4,7 @@ import { formatLifeSpan } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { ThemeRadar } from '../../components/ThemeRadar';
 import { ExphilCardExamBox } from '../exphil/ExphilCardExamBox';
+import { DeepDiveSection } from '../deepdive/DeepDiveSection';
 
 interface PhilosopherCardProps {
   philosopher: Philosopher;
@@ -215,7 +216,10 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
           </p>
         </div>
 
-        {/* 5. Seksjon: Påvirkningsnettverk (Idé-slekt) */}
+        {/* 5. Seksjon: Dypdykk (Historisk kontekst, Hovedverker og Tankeeksperimenter) */}
+        <DeepDiveSection philosopherId={philosopher.id} />
+
+        {/* 6. Seksjon: Påvirkningsnettverk (Idé-slekt) */}
         <div className="mb-6 space-y-3">
           <h3 className="text-sm font-serif font-bold text-gold tracking-wide flex items-center gap-2">
             <span>🕸️</span> Idé-slekt og påvirkning
