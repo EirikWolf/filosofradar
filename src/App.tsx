@@ -10,6 +10,9 @@ import { FactCheckView } from './features/factcheck/FactCheckView';
 import { AboutView } from './features/about/AboutView';
 import { Galaxy3DView } from './features/galaxy/Galaxy3DView';
 import { DailyPhilosopher } from './features/daily/DailyPhilosopher';
+import { TourSelectModal } from './features/tours/TourSelectModal';
+import { TourPlayer } from './features/tours/TourPlayer';
+import type { Tour } from './features/tours/types';
 import { sound } from './lib/sound';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
@@ -24,6 +27,43 @@ export const App: React.FC = () => {
   const [comparingIds, setComparingIds] = useState<string[] | null>(null);
   const [isClassroomMode, setIsClassroomMode] = useState<boolean>(false);
   const [isSoundEnabled, setIsSoundEnabled] = useState<boolean>(sound.enabled);
+
+  // Guidet tur tilstand
+  const [isTourModalOpen, setIsTourModalOpen] = useState<boolean>(false);
+  const [activeTour, setActiveTour] = useState<Tour | null>(null);
+  const [activeTourStopIndex, setActiveTourStopIndex] = useState<number>(0);
+
+  const startTour = useCallback((tour: Tour) => {
+    setActiveTour(tour);
+    setActiveTourStopIndex(0);
+    setIsTourModalOpen(false);
+    if (view !== 'radar' && view !== 'galaxy') {
+      setView('radar');
+    }
+  }, [view]);
+
+  const nextTourStop = useCallback(() => {
+    if (!activeTour) return;
+    if (activeTourStopIndex < activeTour.stops.length - 1) {
+      setActiveTourStopIndex((prev) => prev + 1);
+    }
+  }, [activeTour, activeTourStopIndex]);
+
+  const prevTourStop = useCallback(() => {
+    if (activeTourStopIndex > 0) {
+      setActiveTourStopIndex((prev) => prev - 1);
+    }
+  }, [activeTourStopIndex]);
+
+  const exitTour = useCallback(() => {
+    setActiveTour(null);
+    setActiveTourStopIndex(0);
+  }, []);
+
+  const currentTourStop = activeTour ? activeTour.stops[activeTourStopIndex] : null;
+  const tourPhilosopher = currentTourStop
+    ? philosophers.find((p) => p.id === currentTourStop.philosopherId) || null
+    : null;
 
   const toggleSound = useCallback(() => {
     const next = sound.toggle();
@@ -104,6 +144,15 @@ export const App: React.FC = () => {
           >
             <span>{isSoundEnabled ? '🔊' : '🔈'}</span> {isSoundEnabled ? 'Lyd på' : 'Lyd av'}
           </button>
+
+          {/* Guidede turer knapp */}
+          <button
+            onClick={() => setIsTourModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-serif transition-all border shadow-lg bg-gold/15 border-gold text-gold font-bold hover:bg-gold hover:text-cosmos shadow-[0_0_12px_rgba(246,200,95,0.3)] hover:scale-105"
+            title="Bli med på en kuratert historisk idé-reise"
+          >
+            <span>🧭</span> Guidede turer
+          </button>
         </div>
 
         <h1 className="text-4xl md:text-5xl font-serif tracking-wider text-star-white drop-shadow-[0_0_25px_rgba(103,232,249,0.45)]">
@@ -176,6 +225,12 @@ export const App: React.FC = () => {
             <span>🎭</span> Quizen
           </button>
           <button
+            onClick={() => setIsTourModalOpen(true)}
+            className="px-4 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border border-gold/60 text-gold hover:bg-gold hover:text-cosmos shadow-[0_0_10px_rgba(246,200,95,0.25)] font-bold"
+          >
+            <span>🧭</span> Turer
+          </button>
+          <button
             onClick={() => setComparingIds(['sokrates', 'platon'])}
             className="px-4 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border border-gold/40 text-gold hover:bg-gold/15 shadow-sm"
           >
@@ -225,6 +280,7 @@ export const App: React.FC = () => {
             onStartCompare={(id) => setComparingIds([id])}
             onNavigateToTimeline={() => setView('timeline')}
             onNavigateToList={() => setView('list')}
+            focusPhilosopherId={currentTourStop?.philosopherId}
           />
         ) : view === 'galaxy' ? (
           <Galaxy3DView
@@ -234,6 +290,7 @@ export const App: React.FC = () => {
               setView('radar');
               if (id) openCard(id);
             }}
+            focusPhilosopherId={currentTourStop?.philosopherId}
           />
         ) : view === 'timeline' ? (
           <TimelineView
@@ -303,9 +360,38 @@ export const App: React.FC = () => {
         />
       )}
 
+      {/* Guidet tur modal og spiller */}
+      {isTourModalOpen && (
+        <TourSelectModal
+          philosophers={philosophers}
+          onSelectTour={startTour}
+          onClose={() => setIsTourModalOpen(false)}
+        />
+      )}
+
+      {activeTour && tourPhilosopher && (
+        <TourPlayer
+          tour={activeTour}
+          currentStopIndex={activeTourStopIndex}
+          philosopher={tourPhilosopher}
+          onNextStop={nextTourStop}
+          onPrevStop={prevTourStop}
+          onSelectStopIndex={(idx) => setActiveTourStopIndex(idx)}
+          onOpenPhilosopherCard={(id) => openCard(id)}
+          onExitTour={exitTour}
+        />
+      )}
+
       {/* Footer med status og snarveier */}
       <footer className="w-full max-w-2xl text-center py-6 text-xs text-star-dim border-t border-white/10 flex flex-col items-center gap-2">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-serif">
+          <button
+            onClick={() => setIsTourModalOpen(true)}
+            className="hover:text-gold transition-colors underline underline-offset-4"
+          >
+            🧭 Guidede turer
+          </button>
+          <span>·</span>
           <button
             onClick={() => setView('factcheck')}
             className="hover:text-gold transition-colors underline underline-offset-4"

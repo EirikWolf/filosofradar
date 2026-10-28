@@ -15,6 +15,7 @@ interface RadarViewProps {
   onStartCompare?: (id: string) => void;
   onNavigateToTimeline?: () => void;
   onNavigateToList?: () => void;
+  focusPhilosopherId?: string | null;
 }
 
 export const RadarView: React.FC<RadarViewProps> = ({
@@ -23,6 +24,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
   onStartCompare,
   onNavigateToTimeline,
   onNavigateToList,
+  focusPhilosopherId,
 }) => {
   // Radargeometri
   const cx = 400;
@@ -52,6 +54,13 @@ export const RadarView: React.FC<RadarViewProps> = ({
 
   const lastAnimTimeRef = useRef<number | null>(null);
   const prevTimeRef = useRef<number>(currentTime);
+
+  // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur)
+  useEffect(() => {
+    if (focusPhilosopherId) {
+      setSelectedId(focusPhilosopherId);
+    }
+  }, [focusPhilosopherId]);
 
   // Beregn deterministiske stjerneposisjoner
   const radarPoints = useMemo<RadarPoint[]>(() => {

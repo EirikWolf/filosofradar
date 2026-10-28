@@ -9,6 +9,7 @@ interface Galaxy3DViewProps {
   philosophers: Philosopher[];
   onOpenCard: (id: string) => void;
   onNavigateToRadar?: (id?: string) => void;
+  focusPhilosopherId?: string | null;
 }
 
 interface Star3D {
@@ -44,6 +45,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   philosophers,
   onOpenCard,
   onNavigateToRadar,
+  focusPhilosopherId,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -52,6 +54,13 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedTradition, setSelectedTradition] = useState<string>('all');
   const [isAutoRotating, setIsAutoRotating] = useState<boolean>(true);
+
+  // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur)
+  useEffect(() => {
+    if (focusPhilosopherId) {
+      setSelectedId(focusPhilosopherId);
+    }
+  }, [focusPhilosopherId]);
 
   // Kameraorientering og zoom
   const cameraRef = useRef({
