@@ -17,7 +17,7 @@
     "longest-life": "tsx scripts/longest-life.ts",
     "find-socrates": "tsx scripts/find-socrates.ts",
     "longest-lineage": "tsx scripts/find-lineage.ts",
-    "publiser": "npm run check && npm run build && firebase deploy --only hosting",
+    "publiser": "npm run check && npm run build && npx firebase-tools deploy --only hosting",
     "check": "npm run typecheck && npm run lint && npm run test && npm run validate"
   },
   "dependencies": {
