@@ -794,4 +794,219 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     receptionAndCritique:
       'Gjenskapte dydsetikken som en av de tre store retningene i moderne normativ etikk. Kritisert av utilitarister for å være for opphengt i aktørens indre motiver i stedet for de faktiske konsekvensene i verden.',
   },
+
+  epikur: {
+    philosopherId: 'epikur',
+    historicalContext:
+      'Virket i Athen under den hellenistiske krisetiden etter Aleksander den stores død. Han kjøpte et hus med en hage utenfor bymurene (Kepos) hvor han inviterte alle – inkludert slaver, kvinner og prostituerte – til å leve et enkelt liv viet til vennskap og filosofi, borte fra politikkens maktspill og stress.',
+    majorWorks: [
+      {
+        title: 'Brev til Menoikeus',
+        year: -300,
+        description: 'Det mest berømte brevet om døden, lykken og hvordan man oppnår sjelefred (ataraxia).',
+      },
+      {
+        title: 'Hovedlæresetninger (Kyriai Doxai)',
+        year: -290,
+        description: '40 aforismer og leveregler om nytelse, frykt og vennskap.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Tetrapharmakos (De fire medisinene mot frykt)',
+        description: '1. Frykt ikke gudene (de bryr seg ikke om oss). 2. Frykt ikke døden (når vi er, er ikke døden; når døden er, er ikke vi). 3. Det gode er lett å oppnå (enkle behov som brød og vann). 4. Det vonde er lett å utholde (enten kortvarig eller dør vi).',
+        takeaway: 'Menneskets lidelse skyldes unødvendige begjær og irrasjonell frykt for døden.',
+      },
+    ],
+    receptionAndCritique:
+      'Grovt baktalt av stoikere og tidlige kristne som en umoralsk «hedonist» og fråtser (derav det moderne ordet «epikureer»). I realiteten levde Epikur på brød, vann og oliven, og advarte mot sanselig overflod fordi det skaper bakrus og uro.',
+  },
+
+  'marcus-aurelius': {
+    philosopherId: 'marcus-aurelius',
+    historicalContext:
+      'Romersk keiser i det 2. århundre e.Kr. Sto overfor enorme kriser: Den antoninske pesten som utslettet store deler av befolkningen, opprør og bitre kriger ved rikets nordgrense mot germanske stammer. Han skrev sine refleksjoner i teltet ved felttogfronten langs Donau som en personlig dagbok for å holde hodet kaldt.',
+    majorWorks: [
+      {
+        title: 'Til meg selv (Meditasjoner)',
+        year: 180,
+        description: 'Verdenshistoriens mest leste personlige selvhjelpsbok og etiske dagbok om plikt, ydmykhet og fatning.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Synet fra oven',
+        description: 'Lukk øynene og se for deg jorden høyt oppe fra stjernene: Se keiserdømmene, hærene, domstolene og rikdommene som ørsmå maurtuer som forsvinner i det uendelige rommet.',
+        takeaway: 'Våre daglige bekymringer og sårede stolthet krymper til ingenting når de sees i lys av kosmos og evigheten.',
+      },
+    ],
+    receptionAndCritique:
+      'Står som det fremste eksempelet på Platons ideal om en «filosofkonge». Beundret gjennom to årtusener av ledere, tenkere og vanlige mennesker for sin kompromissløse ærlighet overfor seg selv og sin etiske standhaftighet.',
+  },
+
+  seneca: {
+    philosopherId: 'seneca',
+    historicalContext:
+      'Romersk senator, forfatter og keiser Neros privatlærer og rådgiver. Levde midt i Romas farligste maktintriger, ble forvist til Korsika i åtte år, ble ufattelig rik, og ble til slutt beordret av den gale keiser Nero til å begå selvmord i år 65 e.Kr., noe han gjennomførte med stoisk verdighet.',
+    majorWorks: [
+      {
+        title: 'Brev til Lucilius (Epistulae Morales)',
+        year: 65,
+        description: '124 brev med praktiske råd om vennskap, tidssløsing, alderdom og frykt for døden.',
+      },
+      {
+        title: 'Om livets korthet (De Brevitate Vitae)',
+        year: 49,
+        description: '«Livet er langt nok hvis du vet hvordan du skal bruke det; det meste kaster vi bort på unyttige gjøremål.»',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Premeditatio Malorum (Foregrip det verste)',
+        description: 'Tenk hver morgen over det verste som kan skje i dag: Du kan bli syk, miste pengene dine, eller bli sviktet av en venn.',
+        takeaway: 'Når du har sett det verste i øynene på forhånd, kan ingenting overrumple eller knekke deg.',
+      },
+    ],
+    receptionAndCritique:
+      'En mester i det latinske essayspråket. Kritisert i samtiden og ettertiden for hykleri: Han forkynte nøysomhet og forakt for rikdom, men var samtidig en av Romerrikets rikeste menn og tjente en tyrann som Nero.',
+  },
+
+  epiktet: {
+    philosopherId: 'epiktet',
+    historicalContext:
+      'Født som slave i Hierapolis (i dag Tyrkia). Hans romerske herre mishandlet ham så grovt at han ble halt for resten av livet. Fikk etter hvert sin frihet og grunnla en berømt filosofiskole i Hellas. Han eide nesten ingenting annet enn en stråmatte og en leirlykt.',
+    majorWorks: [
+      {
+        title: 'Håndbok i livskunst (Encheiridion)',
+        year: 125,
+        description: 'En ultrakonsis praktisk guide til stoisk sjelefred og mental motstandskraft.',
+      },
+      {
+        title: 'Samtaler (Diatribai)',
+        year: 108,
+        description: 'Nedtegnelser av hans muntlige undervisning gjort av eleven Arrian.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Kontrollens todeling (Dichotomy of Control)',
+        description: 'Del verden strengt i to: 1. Ting som er under din kontroll (dine meninger, verdier, reaksjoner og valg). 2. Ting som ikke er under din kontroll (kroppen din, ryktet ditt, været, andre menneskers handlinger og døden).',
+        takeaway: 'Hvis du bare bryr deg om det du har kontroll over, kan ingen i hele verden noensinne gjøre deg ulykkelig.',
+      },
+    ],
+    receptionAndCritique:
+      'Var keiser Marcus Aurelius’ store åndelige helt og inspirasjonskilden til moderne kognitiv atferdsterapi (CBT / Aaron Beck). Viser at ekte indre frihet er fullstendig uavhengig av ytre lenker.',
+  },
+
+  diogenes: {
+    philosopherId: 'diogenes',
+    historicalContext:
+      'Levde i Athen og Korint på 300-tallet f.Kr. Drev kynismen (fra gresk kyon, «hund») til sitt ytterste ved å forkaste enhver borgerlig bekvemmelighet, kleskode og skikk. Han bodde i en stor krukke/tønne (pithos) på torget, tigget til livets opphold og gjorde narr av intellektuelt snobberi.',
+    majorWorks: [
+      {
+        title: 'Ingen skrifter (Levd filosofi)',
+        description: 'Diogenes skrev ingen overleverte bøker. Hans liv og offentlige provokasjoner var selve filosofien.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Lykten i dagslys',
+        description: 'Diogenes gikk rundt i Athens gater med en tent lykt midt på blanke formiddagen. Da folk spurte hva han drev med, svarte han: «Jeg leter etter et oppriktig, ekte menneske.»',
+        takeaway: 'Menneskene gjemmer seg bak masker av sosial prestisje og hykleri.',
+      },
+      {
+        title: 'Møtet med Aleksander den store',
+        description: 'Verdensherskeren Aleksander kom til Diogenes og sa: «Be om hva som helst du ønsker, og jeg skal gi deg det!» Diogenes svarte: «Flytt deg litt til siden, du skygger for solen min.»',
+        takeaway: 'Ekte frihet er å trenge så lite at selv verdens mektigste mann ikke har noe å friste eller true deg med.',
+      },
+    ],
+    receptionAndCritique:
+      'En legendarisk motkulturell skikkelse. Beundret av stoikerne for sin ubøyelige viljestyrke og forakt for luksus, men fryktet og avskydd av samtidens borgerskap for sin ublu oppførsel.',
+  },
+
+  schopenhauer: {
+    philosopherId: 'schopenhauer',
+    historicalContext:
+      'Sønn av en rik handelsmann i Danzig og Hamburg. Levde i Frankfurt som uavhengig privatskolelærer. La forelesningene sine ved universitetet i Berlin på nøyaktig samme tidspunkt som den feirede Hegel for å utfordre ham – men opplevde den ydmykelsen at alle studentene gikk til Hegel mens Schopenhauers auditorium sto tomt. Var den første store vestlige tenkeren som leste og integrerte indiske Upanishader og buddhisme.',
+    majorWorks: [
+      {
+        title: 'Verden som vilje og forestilling',
+        year: 1818,
+        description: 'Hovedverket: Virkeligheten bak sanseverdenen er en blind, rastløs og hensynsløs «Vilje til liv» som dømmer oss til lidelse og savn.',
+      },
+      {
+        title: 'Kunsten å alltid ha rett',
+        year: 1831,
+        description: '38 kyniske dialektiske knep for å vinne en debatt, uavhengig av sannheten.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Pinnsvinenes dilemma',
+        description: 'På en kald vinterdag må en flokk pinnsvin rykke tett sammen for å holde varmen. Men når de kommer for nær, stikker piggene deres hverandre smertefullt. Rygger de unna, fryser de i hjel.',
+        takeaway: 'Menneskelige relasjoner er en evig balanse mellom ensomhetens kulde og nærhetens sår.',
+      },
+    ],
+    receptionAndCritique:
+      'Fascinert og formet både den unge Nietzsche, Sigmund Freud (det ubevisste og driftene) og Leo Tolstoj. Kritisert for overdreven pessimisme og for at hans livsførsel (god mat og luksus) ikke helt matchet hans asketiske buddhisme-ideal.',
+  },
+
+  zapffe: {
+    philosopherId: 'zapffe',
+    historicalContext:
+      'Norsk jurist, filosof, forfatter og fjellklatrer fra Tromsø. Skrev sin doktoravhandling Om det tragiske ved Universitetet i Oslo i 1941 midt under den tyske okkupasjonen. Bodde store deler av livet i en enkel hytte i Asker og viet seg til klatring, natur og eksistensielle grublerier. Valgte bevisst å forbli barnløs for ikke å påføre nye sjeler eksistensens tragedie.',
+    majorWorks: [
+      {
+        title: 'Om det tragiske',
+        year: 1941,
+        description: 'Filosofisk doktoravhandling om menneskets eksistensielle overutrustning og det tragiske i naturen.',
+      },
+      {
+        title: 'Den siste Messias',
+        year: 1933,
+        description: 'Klassisk essay om de fire forsvarsmekanismene mennesket bruker for ikke å gå til grunne i eksistensiell panikk.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Kjempehjorten med for store gevir',
+        description: 'Den forhistoriske kjempehjorten utviklet gjennom evolusjonen så enorme gevir at den til slutt ikke klarte å løfte hodet eller rømme fra rovdyr. Mennesket har på samme måte utviklet en overdimensjonert bevissthet.',
+        takeaway: 'Mennesket krever mening og rettferdighet av et univers som er blindt og meningsløst; vi er en biologisk feilkonstruksjon.',
+      },
+    ],
+    receptionAndCritique:
+      'Norges mest originale eksistensielle tenker. Inspirerte Arne Næss og generasjoner av norske intellektuelle og forfattere. Kritisert for å være for nattsvart og for å overse menneskets evne til å skape genuin glede og fellesskap på tross av universets taushet.',
+  },
+
+  holberg: {
+    philosopherId: 'holberg',
+    historicalContext:
+      'Født i Bergen, men virket som professor og rektor ved Københavns Universitet under Danmark-Norges opplysningstid. Reiste på kryss og tvers i Europa til fots og brakte med seg moderne europeiske opplysningsidéer (John Locke, naturretten og vitenskapelig rasjonalitet) til Norden.',
+    majorWorks: [
+      {
+        title: 'Nils Klims underjordiske reise',
+        year: 1741,
+        description: 'Satirisk science-fiction-roman om en bergenser som faller inn i jordens indre og oppdager utopiske samfunn hvor trær snakker og kvinner og menn er likestilt.',
+      },
+      {
+        title: 'Moralske tanker',
+        year: 1744,
+        description: 'Kloke, humoristiske og tolerante essays om menneskenaturen, fordommer og etikk.',
+      },
+      {
+        title: 'Erasmus Montanus',
+        year: 1723,
+        description: 'Komedie som parodierer studenters oppblåste latin-snobberi mot sunn fornuft.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Potu-riket under jorden',
+        description: 'Nils Klim havner i landet Potu under jorden, der kloke trær styrer. I Potu har kvinner og menn nøyaktig samme rettigheter, men den som foreslår en ny lov må ha en løkke rundt halsen mens forslaget debatteres – blir det avvist, heises han opp!',
+        takeaway: 'Kritikk av forhastede politiske innfall og hyllest til likeverd og fornuftig toleranse.',
+      },
+    ],
+    receptionAndCritique:
+      'Nordens fremste opplysningsmann og grunnleggeren av moderne dansk-norsk litteratur og dramatikk. Kritisert i samtiden av konservative pietister for sine uærbødige satirer, men elsket som fornuftens og humorens talsmann.',
+  },
 };

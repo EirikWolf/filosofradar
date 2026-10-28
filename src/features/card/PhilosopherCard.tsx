@@ -5,6 +5,7 @@ import { getTraditionMeta } from '../../lib/traditions';
 import { ThemeRadar } from '../../components/ThemeRadar';
 import { ExphilCardExamBox } from '../exphil/ExphilCardExamBox';
 import { DeepDiveSection } from '../deepdive/DeepDiveSection';
+import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
 
 interface PhilosopherCardProps {
   philosopher: Philosopher;
@@ -93,6 +94,11 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
                 ) : (
                   <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
                     Under arbeid
+                  </span>
+                )}
+                {EXPHIL_PHILOSOPHER_IDS.has(philosopher.id) && (
+                  <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/40 font-bold font-serif">
+                    🎓 Ex.phil
                   </span>
                 )}
               </div>
