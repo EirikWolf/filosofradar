@@ -1009,4 +1009,1304 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     receptionAndCritique:
       'Nordens fremste opplysningsmann og grunnleggeren av moderne dansk-norsk litteratur og dramatikk. Kritisert i samtiden av konservative pietister for sine uærbødige satirer, men elsket som fornuftens og humorens talsmann.',
   },
+
+  heraklit: {
+    philosopherId: 'heraklit',
+    historicalContext:
+      "Virket i den joniske handelsbyen Efesos (i dag Tyrkia) ca. 500 f.Kr., i en brytningstid preget av persisk ekspansjon og gresk bystatskultur. Han tilhørte byens arvelige fyrsteslekt, men frasa seg sine kongelige privilegier til fordel for sin bror for å vie seg helt til filosofisk kontemplasjon. Han ble kalt «den dunkle» (skoteinos) på grunn av sin gåtefulle aforistiske stil og tilbaketrukne forakt for massenes overfladiskhet.",
+    majorWorks: [
+      {
+        title: "Om naturen (overleverte fragmenter)",
+        year: -500,
+        description: "En samling aforismer og poetiske fragmenter om Logos, kosmisk ild og motsetningenes dynamiske harmoni.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Elven du aldri stiger ned i to ganger",
+        description: "Går du ut i en elv, er det aldri det samme vannet som omgir deg andre gang – nye vannmasser strømmer uavbrutt til, og du selv har i mellomtiden også endret deg.",
+        takeaway: "Virkeligheten er ikke en samling statiske ting, men en uopphørlig prosess av forandring (panta rhei).",
+      },
+      {
+        title: "Buen og lyren (Motsetningenes spenning)",
+        description: "Både buen og lyren fungerer bare fordi strengen trekkes i motsatt retning av treverket; det er motstridende krefter i balanse som skaper pilens kraft og musikkens harmoni.",
+        takeaway: "Konflikt og motsetninger er ikke onder som skal utryddes, men selve universets skapende drivkraft.",
+      },
+    ],
+    receptionAndCritique:
+      "Inspirerte stoikerne, Hegel og Nietzsche, som hyllet ham som den første tenkeren som forsto at væren er kontinuerlig vorden. Samtidig ble han skarpt kritisert av Parmenides og Platon for å oppheve muligheten for stabil viten: Hvis alt flyter, hvordan kan noe erkjennes med sikkerhet?",
+  },
+
+  parmenides: {
+    philosopherId: 'parmenides',
+    historicalContext:
+      "Levde i den greske kolonien Elea i Sør-Italia ca. 500 f.Kr. Han grunnla den eleatiske skolen og formulerte et lovverk for sin hjemby som borgerne sverget troskap til i generasjoner. Han var den første i vestlig tenkning som stilte opp et rent deduktivt, logisk bevis for virkelighetens natur, uavhengig av hva sansene forteller oss.",
+    majorWorks: [
+      {
+        title: "Om naturen (Læredikt)",
+        year: -480,
+        description: "Et heksameterdikt delt i to deler: «Sannhetens vei» (Aletheia), som beviser at det værende er ett og uforanderlig, og «Meningenes vei» (Doxa), som forklarer sanseverdenens illusjoner.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Intethetens umulighet",
+        description: "Prøv å tenke på eller snakke om «ingenting». I samme øyeblikk som du tenker på det, tenker du på noe. Derfor er det umulig for noe å oppstå fra intet (ex nihilo nihil fit), eller å forsvinne inn i intet.",
+        takeaway: "Forandring krever at noe blir til av intet; ettersom intet ikke kan eksistere, må forandring være en logisk umulighet og sansenes illusjon.",
+      },
+    ],
+    receptionAndCritique:
+      "Grunnla den strenge rasjonalismen og ontologien (læren om væren). Hans elev Zeno forsvarte ham med berømte paradokser (f.eks. Akilles og skilpadden). Platon kalte ham med ærefrykt «den ærverdige og fryktinngytende Parmenides», men måtte begå et «fadermord» i dialogen Sofisten for å gjeninnføre mangfold og forandring i filosofien.",
+  },
+
+  pytagoras: {
+    philosopherId: 'pytagoras',
+    historicalContext:
+      "Født på øya Samos i Egeerhavet, men flyktet fra tyrannen Polykrates og slo seg ned i Kroton i Sør-Italia ca. 530 f.Kr. Der etablerte han et strengt religiøst og vitenskapelig brorskap (pytagoreerne) der menn og kvinner delte all eiendom, praktiserte vegetarisme og studerte musikk, geometri og kosmologi. Skolen ble etter hvert møtt med mistenksomhet fra lokalbefolkningen og brent ned under et politisk opprør.",
+    majorWorks: [
+      {
+        title: "Ingen skriftlige verker (Hemmelig muntlig tradisjon)",
+        year: -520,
+        description: "Pytagoras overlot læren muntlig til sine innvidde disipler (mathematikoi og akousmatikoi) under taushetsløfte.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Den vibrerende strengen (Musikkens matematiske vesen)",
+        description: "Deler du en streng i to nøyaktige halvdeler (forholdet 1:2), høres den samme tonen én oktav høyere. Deler du den 2:3, får du en ren kvint; 3:4 gir en kvart.",
+        takeaway: "Skjønnhet og harmoni i sanseverdenen hviler på usynlige, matematiske proporsjoner: «Alt er tall».",
+      },
+      {
+        title: "Sfærenes harmoni",
+        description: "Himmellegemene beveger seg i faste, matematiske baner og må derfor frembringe en uendelig vakker kosmisk klang (musica universalis), som vi ikke hører fordi vi har levd i den siden fødselen.",
+        takeaway: "Universet er et ordnet og harmonisk kosmos, ikke et kaotisk kaos.",
+      },
+    ],
+    receptionAndCritique:
+      "La grunnsteinen for matematisk naturvitenskap og påvirket Platons idélære og Johannes Keplers planetlover dypt. Kritisert av rasjonelle tenkere i antikken for esoterisk mystikk, kultlignende hemmelighold og forbud mot å røre hestebønner.",
+  },
+
+  aspasia: {
+    philosopherId: 'aspasia',
+    historicalContext:
+      "Født i Milet i Lilleasia, en by kjent for friere utdanning for kvinner enn Athen. Hun flyttet til Athen på 400-tallet f.Kr. Som innflytter (metoik) var hun ikke bundet av de strenge athenske lovene som stengte borgerkvinner inne i hjemmet. Hun ble partneren til Athens mektigste statsmann, Perikles, og hennes hjem ble byens fremste intellektuelle salong hvor Sokrates, Anaxagoras og Sofokles møttes for å diskutere filosofi, politikk og retorikk.",
+    majorWorks: [
+      {
+        title: "Perikles’ gravtale (tillagt Aspasia i Platons Menexenos)",
+        year: -431,
+        description: "Demokratiets mest berømte hyllesttale til de falne i krigen; Platon lar Sokrates hevde at Aspasia forfattet talen.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Den sokratiske dialogens opprinnelse",
+        description: "I Aischines’ dialog lar Aspasia et ektepar innse at uansett hvor rik naboens hest eller kones smykker er, vil de alltid foretrekke den beste ektefellen – og at dyd derfor krever at man gjør seg selv til det beste mennesket for sin partner.",
+        takeaway: "Gjennom ledende, empatiske spørsmål kan mennesker bringes til å erkjenne etiske sannheter på egen hånd – forløperen til den sokratiske metoden.",
+      },
+    ],
+    receptionAndCritique:
+      "Vant enorm beundring fra Sokrates som kalte henne sin læremester i retorikk og kjærlighetens kunst. Samtidig ble hun utsatt for nådeløse angrep og rettssaker fra athenske komedieforfattere og konservative politikere som svertet henne som en kurtisane (hetaira) fordi en kvinne med makt og intellekt brøt med alle tradisjonelle kjønnsroller.",
+  },
+
+  hypatia: {
+    philosopherId: 'hypatia',
+    historicalContext:
+      "Virket i Alexandria i Egypt på slutten av 300-tallet og begynnelsen av 400-tallet e.Kr., datter av matematikeren Theon. Hun ble leder for den nyplatonske skolen i Alexandria og underviste kristne, jødiske og hedenske studenter i matematikk, astronomi og filosofi. I 415 e.Kr. ble hun brutalt myrdet på åpen gate av en kristen mobb hisset opp under en politisk og religiøs maktkamp i byen.",
+    majorWorks: [
+      {
+        title: "Kommentar til Diofants Aritmetikk",
+        year: 400,
+        description: "Et banebrytende verk innen tidlig algebra og ligningsteori som bidro til å bevare gresk matematikk.",
+      },
+      {
+        title: "Kommentar til Apollonios’ Kjeglesnitt",
+        year: 405,
+        description: "Avhandling om geometriske kurver (ellipser, parabler, hyperbler) som senere ble sentrale for planetbaner.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Astrolabiet og himmelens mekanikk",
+        description: "Ved å holde et astrolabium mot nattehimmelen kan man beregne nøyaktig tid og stjernenes posisjon ut fra geometriske prinsipper.",
+        takeaway: "Menneskets fornuft kan avlese og forstå universets storslåtte lover uten å ty til blind overtro.",
+      },
+    ],
+    receptionAndCritique:
+      "Ble stående i historien som antikkens fremste kvinnelige vitenskapskvinne og et tragisk symbol på opplysningens undergang i overgangen til middelalderen. Voltaire, opplysningstidens tenkere og moderne feminister har hyllet henne som en martyr for intellektuell frihet og vitenskapelig nysgjerrighet.",
+  },
+
+  konfucius: {
+    philosopherId: 'konfucius',
+    historicalContext:
+      "Levde i Kina under Vår- og høstannalenes tid (ca. 551–479 f.Kr.) i staten Lu. Dette var en oppløsningstid preget av borgerkrig, korrupsjon og lovløshet mellom rivaliserende lensherrer. Han reiste fra stat til stat for å overbevise herskerne om at fred ikke skapes med makt eller strenge straffer, men ved at lederne selv opptrer med personlig verdighet og moral. Selv om han døde med følelsen av å ha mislykkes politisk, formet hans elever Øst-Asias sivilisasjon i over 2000 år.",
+    majorWorks: [
+      {
+        title: "Samtaler (Lunyu)",
+        year: -475,
+        description: "Samling av Konfucius’ fyndord, dialoger med disiplene og leveregler om medmenneskelighet (ren), rituell verdighet (li) og sønlig respekt (xiao).",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Lederskap som Nordstjernen",
+        description: "«Den som styrer ved hjelp av sin egen moralske styrke, er som Nordstjernen: Den forblir på sin faste plass, mens alle de andre stjernene bøyer seg og kretser omkring den.»",
+        takeaway: "Ekte autoritet krever moralsk forbilde; hvis lederen er rettferdig, vil folket følge etter av fri vilje.",
+      },
+      {
+        title: "Den gylne regel i revers (Shu)",
+        description: "Disippelen Zigong spurte: «Finnes det ett ord som kan tjene som rettesnor for hele livet?» Mesteren svarte: «Gjensidighet (shu): Det du ikke ønsker at andre skal gjøre mot deg, skal du heller ikke gjøre mot dem.»",
+        takeaway: "Empati og selvkritisk måtehold er etikkens fundamentale kjerne.",
+      },
+    ],
+    receptionAndCritique:
+      "Konfucianismen ble Han-dynastiets offisielle statsbærende ideologi og dannet grunnlaget for det keiserlige embetseksamen-systemet fram til 1905. Kritisert av daoisme for å være for stivbeint og regelryttersk, og av 1900-tallets modernister og Maos kulturrevolusjon for å opprettholde patriarkalsk underdanighet overfor autoriteter.",
+  },
+
+  laozi: {
+    philosopherId: 'laozi',
+    historicalContext:
+      "Tradisjonelt regnet som arkivaren ved Zhou-dynastiets keiserlige hoff i det 6. århundre f.Kr. Skuffet over samfunnets forfall og maktbegjær bestemte han seg for å forlate sivilisasjonen og ri vestover på en vannbøffel. Ved rikets grensepass ba grensevakten Yinxi ham om å skrive ned sin visdom før han forsvant ut i villmarken, hvorpå Laozi etterlot seg den korte boken Daodejing.",
+    majorWorks: [
+      {
+        title: "Daodejing (Boken om Veien og dens Kraft)",
+        year: -500,
+        description: "81 korte, poetiske og paradoksale kapitler om Dao (den uutsigelige kilden til alt), wu wei (ikke-anstrengelse) og naturlig enkelhet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Vannets kraft (Det myke overvinner det harde)",
+        description: "Ingenting i verden er mykere og mer ettergivende enn vann. Likevel er det ingenting som kan overgå vann når det gjelder å slipe ned hard granitt og forme dype kløfter over tid.",
+        takeaway: "Sann styrke ligger i tilpasningsevne, mykhet og ydmykhet, ikke i stivbeint aggresjon.",
+      },
+      {
+        title: "Hjulets nav og leirkrukkens tomrom",
+        description: "Tretti eiker samles i hjulets nav, men det er det tomme hullet i midten som gjør at vognen ruller. Vi former leire til en krukke, men det er det tomme rommet inni som gjør den brukbar.",
+        takeaway: "Det ikke-værende og usynlige er ofte mer verdifullt og virksomt enn det fysiske og påtrengende.",
+      },
+    ],
+    receptionAndCritique:
+      "Grunnla daoismen, som sammen med konfucianismen og buddhismen utgjør de «tre lærene» som har formet kinesisk kunst, medisin og tenkning. Kritisert av konfucianere og legalister for å være politisk passiviserende og for å oppmuntre til samfunnsflukt i stedet for samfunnsansvar.",
+  },
+
+  zhuangzi: {
+    philosopherId: 'zhuangzi',
+    historicalContext:
+      "Levde i de stridende staters tid (ca. 369–286 f.Kr.) i staten Song. Han avslo lukrative tilbud om høye ministerposter og foretrakk friheten som en enkel håndverker og skribent. Hans tekster er spekket med humor, fabler, samtaler med trær og hodeskaller, og satiriske spark mot selvhøytidelige lærde.",
+    majorWorks: [
+      {
+        title: "Zhuangzi (De indre kapitlene)",
+        year: -300,
+        description: "Et litterært og filosofisk mesterverk som utforsker relativisme, spontanitet, frihet og livets overganger.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Sommerfugldrømmen",
+        description: "Zhuangzi drømte en gang at han var en sommerfugl som flagret sorgløst omkring uten å vite at han var Zhuangzi. Da han våknet, var han igjen Zhuangzi. Men drømte han at han var en sommerfugl, eller drømmer en sommerfugl nå at den er Zhuangzi?",
+        takeaway: "Våre faste forestillinger om identitet og virkelighet er relative; grensene mellom bevissthetstilstander er flytende.",
+      },
+      {
+        title: "Kokken Ding som parterer oksen",
+        description: "Kokken Ding skar opp en okse med slike elegante, dansende bevegelser at kniven aldri traff et bein eller en sene. Etter 19 år var knivbladet like skarpt som da det kom fra slipesteinen, fordi han lot bladet gli gjennom de naturlige tomrommene.",
+        takeaway: "Når du handler i perfekt samklang med naturens flyt (wu wei), krever mesterskap ingen voldelig anstrengelse.",
+      },
+    ],
+    receptionAndCritique:
+      "En av verdenshistoriens mest elskede og humoristiske forfatterfilosofer; la grunnlaget for Chan-buddhismen (Zen). Kritisert av strenge moralister for moralsk likegyldighet og for å opphøye likegyldighet overfor liv og død til en dyd.",
+  },
+
+  mengzi: {
+    philosopherId: 'mengzi',
+    historicalContext:
+      "Også kjent som Mencius (ca. 372–289 f.Kr.). Oppdratt av sin mor, som i kinesisk tradisjon er selve forbildet for hengiven oppdragelse. Han levde under De stridende staters tid preget av blodige massakrer, og kjempet som omreisende rådgiver for å overbevise konger om at folket er viktigere enn staten og herskeren.",
+    majorWorks: [
+      {
+        title: "Mengzi (Mencius)",
+        year: -300,
+        description: "Klassiker i konfucianismen som beviser menneskets iboende godhet og forsvarer folkets rett til å avsette en tyrannisk hersker.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Barnet ved brønnen",
+        description: "Tenk deg at du plutselig ser et lite barn som krabber mot kanten av en dyp brønn og er i ferd med å falle nedi. Enhver som ser dette vil kjenne et umiddelbart støkk av medfølelse og alarm, uten å tenke på belønning eller ros fra foreldrene.",
+        takeaway: "Medfølelse er en medfødt impuls hos alle mennesker; menneskenaturen er opprinnelig god, akkurat som vann naturlig søker nedover.",
+      },
+    ],
+    receptionAndCritique:
+      "Kåret til konfucianismens «andre vismann» (etter Konfucius selv). Hans tese om at en hersker som mister folkets støtte har mistet «Himmelens mandat» (og derfor rettmessig kan avsettes), ble et mektig vern mot tyranni. Kritisert av den samtidige filosofen Xunzi, som tvert imot hevdet at menneskenaturen opprinnelig er rå og ond, og krever streng disiplin.",
+  },
+
+  mozi: {
+    philosopherId: 'mozi',
+    historicalContext:
+      "Virket på 400-tallet f.Kr. etter Konfucius’ død. Han var sannsynligvis en håndverker eller tømrer, og grunnla en strengt disiplinert bevegelse (moistene) bestående av ingeniører og soldater. De reiste til truede småbyer og hjalp dem med å bygge avanserte forsvarsverker for å stanse imperialistiske angrepskriger.",
+    majorWorks: [
+      {
+        title: "Mozi",
+        year: -400,
+        description: "Filosofisk traktat om allmenn kjærlighet (jian'ai), pragmatisk nytteetikk og pasifistisk forsvarsteori.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Allmenn kjærlighet (Jian'ai)",
+        description: "Hvis en hersker må velge en guvernør til å ta vare på sin familie mens han reiser bort: Ville han valgt den som bare bryr seg om sin egen familie, eller den som elsker alle familier like høyt som sin egen?",
+        takeaway: "Partiskhet og klanlojalitet er årsaken til krig og urett; bare universell omsorg for alle skaper trygghet.",
+      },
+    ],
+    receptionAndCritique:
+      "Verdens første eksplisitte utilitarist og konsekvensetiker. Hans bevegelse var konfucianismens farligste rival i to århundrer, men ble nesten utslettet under Qin-dynastiets bokbrenning. Gjenoppdaget på 1900-tallet som en banebrytende logiker, vitenskapsmann og sosialreformator.",
+  },
+
+  buddha: {
+    philosopherId: 'buddha',
+    historicalContext:
+      "Født som prins Siddhartha Gautama i Shakya-republikken ved foten av Himalaya (i dagens Nepal) ca. 500-tallet f.Kr. Oppvokst i skjermet luksus, men ble rystet da han forlot palasset og for første gang så en olding, en syk, et lik og en asket. Han forlot tronen, praktiserte ekstrem askese som nesten tok livet av ham, og fant til slutt «Den gylne middelvei» under Bodhi-treet i Bodh Gaya, hvor han nådde oppvåkning (Nirvana).",
+    majorWorks: [
+      {
+        title: "Dhammacakkappavattana Sutta (Lærens hjul settes i bevegelse)",
+        year: -520,
+        description: "Buddhas første preken i Dyreparken i Varanasi: De fire edle sannheter og Den åttedelte vei.",
+      },
+      {
+        title: "Dhammapada (Sannhetens ord)",
+        year: -450,
+        description: "Klassisk samling av Buddhas visdomsord om sinnets trening, medfølelse og frigjøring fra begjær.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Lignelsen om den forgiftede pilen",
+        description: "En mann blir skutt av en forgiftet pil. Før han lar legen trekke den ut, krever han å få vite: Hvem skjøt den? Hvilken kaste tilhørte han? Hva var buen laget av? Mannen vil dø før han får svar på sine teoretiske spørsmål.",
+        takeaway: "Filosofiens oppgave er ikke abstrakt metafysisk spekulasjon, men å fjerne menneskets akutte lidelse her og nå.",
+      },
+      {
+        title: "Flåteanalogien",
+        description: "Du bygger en flåte for å krysse en farlig elv. Når du har nådd den trygge bredden på den andre siden, bærer du vel ikke flåten videre på ryggen din?",
+        takeaway: "Selv religiøse doktriner og filosofiske teorier er bare verktøy for frigjøring; når målet er nådd, må man gi slipp på dem.",
+      },
+    ],
+    receptionAndCritique:
+      "Grunnla en av verdens store visdomstradisjoner med enorm innflytelse over hele Asia og i moderne vestlig psykologi. Kritisert av tradisjonell hinduistisk ortodoksi for å avvise Vedaenes hellige autoritet og kastesystemet, og for å fornekte en evig, uforanderlig sjel (anatta).",
+  },
+
+  nagarjuna: {
+    philosopherId: 'nagarjuna',
+    historicalContext:
+      "Sør-indisk buddhistisk filosof fra det 2. århundre e.Kr. Grunnleggeren av Madhyamaka-skolen («Middelveien») innen Mahayana-buddhismen. Han virket ved det berømte buddhistiske klosteruniversitetet Nalanda og regnes i Tibet og Øst-Asia som «den andre Buddha».",
+    majorWorks: [
+      {
+        title: "Mūlamadhyamakakārikā (Middelveiens grunnvers)",
+        year: 180,
+        description: "Filosofihistoriens skarpeste dialektiske analyse: Tomhet (śūnyatā), gjensidig avhengig opprinnelse (pratītyasamutpāda) og de to sannheter.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Vognen og dens deler (Tomhetslæren)",
+        description: "Hva er en vogn? Er det hjulene? Akselen? Setet? Hesten? Hvis du plukker delene fra hverandre, finner du ingen uavhengig «vogn-essens». Vognen eksisterer bare i kraft av delenes samspill og navnet vi gir den.",
+        takeaway: "Ingenting i universet har en iboende, isolert egeneksistens (svabhava); alt er «tomt» (śūnya) og eksisterer bare i gjensidig avhengighet.",
+      },
+    ],
+    receptionAndCritique:
+      "Beundret for sin ubøyelige logiske stringens; inspirerte Zen-buddhismens paradokser og moderne kvantefysiske tolkninger av relasjonell virkelighet. Samtidig ble han anklaget av rivaliserende skoler for å være en nihilist som opphever enhver virkelighet – en anklage han avviste ved å påpeke at tomhet ikke betyr intethet, men frihet fra fastlåste illusjoner.",
+  },
+
+  mahavira: {
+    philosopherId: 'mahavira',
+    historicalContext:
+      "Den 24. tirthankara (åndelige veiviser) i jainismen, født ca. 599 f.Kr. i det nåværende Bihar i India. Som samtidig med Buddha forlot han sin kongelige status som 30-åring og praktiserte ekstrem askese og meditasjon i 12 år før han nådde allvitenhet (kevala jnana). Han viet resten av sitt liv til å forkynne en radikal filosofi om ikke-vold (ahimsa) og sannhetens mangefasetterte natur.",
+    majorWorks: [
+      {
+        title: "Acaranga Sutra (overlevert muntlig lære)",
+        year: -500,
+        description: "Jainismens eldste hellige tekst om klosterregler, askese og det absolutte forbudet mot å skade noen levende skapning.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "De blinde mennene og elefanten (Anekantavada)",
+        description: "Seks blinde menn undersøker en elefant: En kjenner på støttannen og sier elefanten er som et spyd; en annen kjenner på benet og sier den er som et tre; en tredje på halen og kaller den et rep. Alle har rett fra sitt perspektiv, men alle tar feil hvis de tror de sitter på hele sannheten.",
+        takeaway: "Virkeligheten er uendelig kompleks (anekantavada); menneskelige sannheter er alltid partielle og betingede (syadvada).",
+      },
+    ],
+    receptionAndCritique:
+      "Formet en av Indias mest respekterte etiske tradisjoner og inspirerte Mahatma Gandhis filosofi om ikke-vold (satyagraha) som beveget en hel verden. Kritisert av buddhistiske og hinduistiske motstandere for at jainismens ekstreme askese (som å feie bakken for ikke å tråkke på insekter) er praktisk uutholdelig for vanlige samfunnsborgere.",
+  },
+
+  shankara: {
+    philosopherId: 'shankara',
+    historicalContext:
+      "Levde i Sør-India ca. 788–820 e.Kr. Til tross for sitt korte liv (han døde 32 år gammel) vandret han over hele det indiske subkontinentet, beseiret rivaliserende lærde i filosofiske debatter og etablerte fire store klostre (mathas) som revitaliserte hinduismen. Han forente sprikende tradisjoner under banneret Advaita Vedanta («ikke-dualisme»).",
+    majorWorks: [
+      {
+        title: "Brahmasutrabhashya (Kommentar til Brahma Sutra)",
+        year: 810,
+        description: "Mesterverket som beviser at den individuelle sjelen (Atman) og det universelle absolutte (Brahman) i dypeste forstand er ett og det samme.",
+      },
+      {
+        title: "Upadeshasahasri (De tusen lærdommer)",
+        year: 815,
+        description: "Pedagogisk innføring i erkjennelsesteori og metoder for å gjennomskue sinnets illusjoner.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Tauet og slangen (Maya-læren)",
+        description: "Du går langs en sti i skumringen og ser plutselig en giftslange som ligger kveilet opp. Hjertet hamrer av redsel. Når du lyser med en lykt, ser du at det bare var et gammelt stykke tau.",
+        takeaway: "Frykten og slangen var en illusjon (maya) skapt av uvitenhet; på samme måte forsvinner verdens mangfold og frykt når fornuften ser enheten i Brahman.",
+      },
+    ],
+    receptionAndCritique:
+      "Regnes som en av Indias aller største intellektuelle giganter. Kritisert av teistiske filosofer (som Ramanuja) for «kryptobuddhisme» og for at hans upersonlige Brahman gjør ekte personlig kjærlighet til Gud (bhakti) umulig.",
+  },
+
+  ramanuja: {
+    philosopherId: 'ramanuja',
+    historicalContext:
+      "Levde i Tamil Nadu i Sør-India (ca. 1017–1137). Han var prest og filosof ved det store tempelet i Srirangam. Han brøt med den eksklusive kasteortodoksien ved å forkynne frelse og åndelig likeverd for alle mennesker, uavhengig av fødsel, gjennom personlig hengivenhet (bhakti) til guden Vishnu.",
+    majorWorks: [
+      {
+        title: "Shri Bhashya",
+        year: 1090,
+        description: "En monumental kommentar til Brahma Sutra som etablerer Vishishtadvaita (kvalifisert ikke-dualisme).",
+      },
+      {
+        title: "Vedarthasangraha",
+        year: 1080,
+        description: "Filosofisk syntese av Upanishadene som forener verdens virkelighet med Guds overhøyhet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Universet som Guds kropp (Sharira-Shariri Bhava)",
+        description: "På samme måte som din sjel gir liv til, styrer og er uløselig knyttet til kroppen din, er Gud (Brahman) den indre sjelen som gjennomstrømmer og oppholder hele det fysiske universet og alle individuelle sjeler.",
+        takeaway: "Verden og menneskene er ikke tomme illusjoner (slik Shankara hevdet), men virkelige, vakre deler av Guds levende organisme.",
+      },
+    ],
+    receptionAndCritique:
+      "La det teologiske fundamentet for den populære Bhakti-bevegelsen som demokratiserte indisk åndsliv gjennom sang, poesi og nestekjærlighet. Kritisert av strengt rasjonalistiske ikke-dualister for å kompromittere absolutte enhetskrav med emosjonell gudstro.",
+  },
+
+  gargi: {
+    philosopherId: 'gargi',
+    historicalContext:
+      "Levde i det gamle India i den vediske perioden (ca. 700-tallet f.Kr.), datter av vismannen Vachaknu. Under kong Janakas store offerfest i Mithila samlet datidens fremste tenkere seg for å debattere virkelighetens ytterste natur. Gargi var den eneste kvinnen som trådte frem og utfordret den mektigste filosofen, Yajnavalkya, i en legendarisk intellektuell duell nedtegnet i Brihadaranyaka Upanishad.",
+    majorWorks: [
+      {
+        title: "Dialogene i Brihadaranyaka Upanishad",
+        year: -700,
+        description: "En av de eldste og mest dypsindige filosofiske tekstene i verdenslitteraturen, der Gargi presser spørsmålet om universets ontologiske fundament.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Kosmos som en vev av tråder",
+        description: "Gargi spurte: «Vann er vevd på luft, men hva er luften vevd på?» Yajnavalkya svarte: «Ilden.» Gargi fortsatte nådeløst: «Hva er ilden vevd på? Stjernene? Gudene?» Til slutt måtte vismannen advare: «Spør ikke for langt, Gargi, ellers vil hodet ditt falle av!»",
+        takeaway: "Menneskelig nysgjerrighet krever et ubetinget, ytterste fundament for alt som eksisterer (Brahman) – hinsides tid og rom.",
+      },
+    ],
+    receptionAndCritique:
+      "Står som et lysende forbilde i indisk kvinnehistorie for fryktløst intellektuelt mot og metafysisk dybde. Kritisert av senere patriarkalske skrivere som forsøkte å tone ned hennes rolle, men bevart i Upanishadene som en uovervinnelig sannhetssøker.",
+  },
+
+  'ibn-sina': {
+    philosopherId: 'ibn-sina',
+    historicalContext:
+      "Kjent i vesten som Avicenna (ca. 980–1037). Født i Bukhara (i dagens Usbekistan) under Den islamske gullalderen. Han var et universalgeni som leste Aristoteles’ Metafysikk 40 ganger til han kunne den utenat, og ble kongelig livlege og vesir som 18-åring. Han skrev sine banebrytende verker under reiser til hest, i fengsel og mellom kriger i det persiske riket.",
+    majorWorks: [
+      {
+        title: "Medisinens kanon (Al-Qanun fi al-Tibb)",
+        year: 1025,
+        description: "Medisinhistoriens mest berømte lærebok i over 500 år i både den islamske og europeiske verden.",
+      },
+      {
+        title: "Helbredelsens bok (Kitab al-Shifa)",
+        year: 1027,
+        description: "Et gigantisk filosofisk encyklopedi over logikk, fysikk, matematikk og metafysikk som helbreder sinnet for uvitenhet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Den flytende mannen (Bevissthetens uavhengighet)",
+        description: "Tenk deg at du blir skapt fullt bevisst i dette øyeblikk, men svevende i et totalt mørkt tomrom. Armene og bena er spredt så de ikke rører hverandre; øynene er blinde, ørene døve, og luften har samme temperatur som huden så du kjenner ingenting fysisk.",
+        takeaway: "Ville du likevel vite at du eksisterer? Ja! Dette beviser at sjelen er en immateriell substans, helt uavhengig av kroppen – 600 år før Descartes.",
+      },
+    ],
+    receptionAndCritique:
+      "Formet all islamsk, jødisk og kristen skolastisk filosofi (Thomas Aquinas bygde videre på hans skille mellom essens og eksistens). Kritisert av Al-Ghazali for å forfekte verdens evighet og fornekte at Gud kjenner enkelthendelser direkte.",
+  },
+
+  'ibn-rushd': {
+    philosopherId: 'ibn-rushd',
+    historicalContext:
+      "Kjent som Averroës (1126–1198), født i Córdoba i det mauriske Andalucía (Spania). Han var øverste dommer (qadi) og hofflege for almohad-kalifen i Marrakech. Da religiøs fanatisme tiltok, ble skriftene hans brent på torget i Córdoba og han ble forvist i eksil før kalifen rehabiliterte ham like før hans død.",
+    majorWorks: [
+      {
+        title: "De store kommentarene til Aristoteles",
+        year: 1180,
+        description: "De definitive kommentarene som gjenoppdaget og forklarte Aristoteles for middelalderens Europa og ga ham tilnavnet «Kommentatoren».",
+      },
+      {
+        title: "Sammenbruddets sammenbrudd (Tahafut al-Tahafut)",
+        year: 1180,
+        description: "Et glitrende filosofisk motangrep mot Al-Ghazalis kritikk av rasjonell vitenskap og årsakssammenheng.",
+      },
+      {
+        title: "Den avgjørende avhandlingen (Fasl al-Maqal)",
+        year: 1179,
+        description: "Harmoniseringen av religion og filosofi: Fornuft og åpenbaring er to veier til én og samme sannhet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Sannhetens to språk",
+        description: "Koranens metaforer og billedspråk er gitt for at vanlige folk skal forstå etiske sannheter, mens filosofiens strenge demonstrasjoner er for lærde fornuftsvesener.",
+        takeaway: "«Sannhet kan aldri motsi sannhet»: Filosofisk vitenskap og religiøs tro står i harmoni, ikke konflikt.",
+      },
+    ],
+    receptionAndCritique:
+      "Hans tolkninger utløste «averroismen» ved universitetene i Paris og Padova, som la kimen til den europeiske renessansen og sekulariseringen. Kritisert i den kristne kirke for «monopsykismen» (idéen om at alle mennesker deler én felles universell forstand), og i den islamske verden for overdreven tiltro til gresk logikk.",
+  },
+
+  'al-farabi': {
+    philosopherId: 'al-farabi',
+    historicalContext:
+      "Kjent i den islamske verden som «Den andre læreren» (med Aristoteles som den første). Født i Sentral-Asia ca. 872, levde et asketisk og tilbaketrukket liv i Bagdad og Damaskus kledd i sufi-kappe. Han var en virtuos musiker som fant opp forgjengeren til fiolinen (rebab) og systematiserte arabisk musikkteori og politisk filosofi.",
+    majorWorks: [
+      {
+        title: "Den mønstergyldige statens meninger (Al-Madina al-Fadila)",
+        year: 940,
+        description: "Politisk filosofi inspirert av Platons Staten, der den ideelle byen styres av en opplyst filosof-profet.",
+      },
+      {
+        title: "Den store boken om musikk (Kitab al-Musiqa al-Kabir)",
+        year: 930,
+        description: "Verdenshistoriens mest grundige verk om musikkens matematiske proporsjoner og terapeutiske virkning på sjelen.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Den syke byen (Korrupte samfunn)",
+        description: "Al-Farabi klassifiserte samfunn som enten «dydige» (søker sann lykke) eller «uvitende» (søker bare makt, rikdom eller sanselig nytelse). Et samfunn som bare jakter på penger kaller han en «by av usselhet».",
+        takeaway: "Politikkens egentlige oppgave er ikke bare økonomisk vekst, men å muliggjøre borgernes moralske og intellektuelle fullendelse.",
+      },
+    ],
+    receptionAndCritique:
+      "La grunnlaget for hele den islamske rasjonalistiske filosofien (Falsafa) og påvirket Ibn Sina og Maimonides dypt. Kritisert av tradisjonalister for å sette filosofisk fornuft over religiøs åpenbaring.",
+  },
+
+  'al-ghazali': {
+    philosopherId: 'al-ghazali',
+    historicalContext:
+      "Professor og rektor ved det prestisjetunge Nizamiyya-universitetet i Bagdad på slutten av 1000-tallet. Midt i suksessen ble han rammet av en dyp åndelig og skeptisk krise: Han mistet evnen til å snakke og undervise, forlot alt sitt gods og sine embeter, og levde i ti år som en fattig, vandrende sufi-mystiker i Damaskus og Jerusalem.",
+    majorWorks: [
+      {
+        title: "Filosofenes sammenbrudd (Tahafut al-Falasifa)",
+        year: 1095,
+        description: "Ett av historiens skarpeste filosofiske angrep på rasjonalistiske filosofer (som Aristoteles og Ibn Sina) for uholdbare metafysiske påstander.",
+      },
+      {
+        title: "Gjenopplivingen av de religiøse vitenskaper (Ihya Ulum al-Din)",
+        year: 1100,
+        description: "Monumentalt mesterverk som forente islamsk lov med inderlig sufi-kjærlighet og moralsk selvransakelse.",
+      },
+      {
+        title: "Befrieren fra villfarelsen (Al-Munqidh min al-Dalal)",
+        year: 1106,
+        description: "En gripende åndelig selvbiografi om tvil, skepsis og erkjennelsens lys i hjertet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Bomullen og ilden (Kausalitetsskepsis)",
+        description: "Når du setter en flamme bort til et stykke bomull, ser du bomullen bli svart og brenne. Men beviser det at ilden i seg selv har en iboende kraft til å brenne? Nei, det er Gud som i hvert eneste øyeblikk gjenskaper hendelsen.",
+        takeaway: "Naturlover er ikke logisk nødvendige årsakskjeder, men observerte vaner – 700 år før David Hume formulerte samme kritikk.",
+      },
+    ],
+    receptionAndCritique:
+      "Kåret til «islams fornyer» (Hujjat al-Islam); reddet sufismen inn i den islamske hovedstrømmen. Kritisert av Ibn Rushd og moderne historikere for å ha svekket den naturvitenskapelige og filosofiske nysgjerrigheten i den arabiske verden.",
+  },
+
+  maimonides: {
+    philosopherId: 'maimonides',
+    historicalContext:
+      "Kjent som Rambam (1138–1204), født i Córdoba i Spania. Måtte flykte fra fanatiske almohader gjennom Nord-Afrika til Kairo i Egypt, hvor han ble leder for det jødiske samfunnet og personlig livlege for sultan Saladin. Han behandlet pasienter hele dagen og skrev epokegjørende teologiske og medisinske verker om natten.",
+    majorWorks: [
+      {
+        title: "Veileder for de rådville (Moreh Nevukhim)",
+        year: 1190,
+        description: "Filosofisk mesterverk som veileder den troende som er forvirret over motsetningen mellom vitenskapelig fornuft og Bibelens ord.",
+      },
+      {
+        title: "Mishneh Torah",
+        year: 1180,
+        description: "Den første systematiske kodingen av hele jødisk lovverk og etikk i 14 bind.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Negativ teologi (Hva Gud ikke er)",
+        description: "Hvis du sier at «Gud er vis» eller «Gud er mektig», bruker du menneskelige ord som krymper Gud til et forstørret menneske. Du kan bare si hva Gud *ikke* er: Gud er ikke materiell, ikke begrenset, ikke dødelig.",
+        takeaway: "Den sanne erkjennelse av det guddommelige nås gjennom ydmyk stillhet og opphevelse av menneskelige projeksjoner.",
+      },
+    ],
+    receptionAndCritique:
+      "Den største jødiske filosofen i middelalderen («fra Moses til Moses fantes det ingen som Moses»). Dypt beundret av Thomas Aquinas og Spinoza. Kritisert av ortodokse jødiske lærde i samtiden som mente han opphøyde Aristoteles over Toraen og brente bøkene hans.",
+  },
+
+  rabia: {
+    philosopherId: 'rabia',
+    historicalContext:
+      "Født som den fjerde datteren (derav navnet Rabia) i en loddrett fattig familie i Basra (i dagens Irak) ca. 714 e.Kr. Ble foreldreløs under hungersnød, kidnappet og solgt som slave. Hennes herre skal ha sett et overnaturlig lys over hodet hennes mens hun ba om natten og ga henne friheten. Hun avslo alle ekteskapstilbud fra mektige menn og levde som en uavhengig asket og læremester.",
+    majorWorks: [
+      {
+        title: "Dikt og bønner om guddommelig kjærlighet",
+        year: 780,
+        description: "Overleverte poetiske bønner og samtaler som innførte uegennyttig, ren kjærlighet (hubb) i sufismen.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Vannbøtten og fakkelen",
+        description: "Rabia ble sett løpende gjennom Basras gater med en bøtte vann i den ene hånden og en brennende fakkel i den andre. Da folk spurte hva hun skulle, svarte hun: «Jeg skal sette fyr på paradis og slukke helvetes flammer, så menneskene elsker Gud for Guds egen skyld, og ikke av frykt for straff eller håp om belønning!»",
+        takeaway: "Sann kjærlighet og moralsk godhet må være fullstendig fri for egoistiske baktanker og frykt.",
+      },
+    ],
+    receptionAndCritique:
+      "Står som en av historiens mest elskede kvinnelige mystikere; transformerte tidlig asketisk frykt-fromhet til en religion av ren, lidenskapelig kjærlighet. Kritisert av samtidens patriarkalske teologer for å avvise tradisjonelle ekteskapsnormer.",
+  },
+
+  rumi: {
+    philosopherId: 'rumi',
+    historicalContext:
+      "Jalal al-Din Rumi (1207–1273), født i Balkh (i dagens Afghanistan). Hans familie flyktet vestover unna Djengis Khans mongolske horder og slo seg ned i Konya (Tyrkia). Rumi var en tradisjonell islamsk teolog inntil han i 1244 møtte den omflakkende dervisjen Shams fra Tabriz. Møtet utløste en enorm åndelig oppvåkning som forvandlet Rumi til en ekstastisk dikterfilosof.",
+    majorWorks: [
+      {
+        title: "Masnavi-ye Manavi (Åndelige vers)",
+        year: 1260,
+        description: "Et 26 000 vers langt poetisk epos over sufismens mystikk, fabler, kjærlighet og menneskesjelens lengsel.",
+      },
+      {
+        title: "Divan-e Shams-e Tabrizi",
+        year: 1250,
+        description: "Lidenskapelige kjærlighetsdikt dedikert til vennen Shams og det guddommelige nærvær.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Sivfløytens klage (Ney)",
+        description: "Hør på sivfløytens såre melodi: Hvorfor gråter den? Fordi den ble skåret løs fra sivbedet sitt ved elven. Hver tone den synger er en klagesang og en lengsel etter å vende tilbake til kilden den ble revet bort fra.",
+        takeaway: "Menneskets eksistensielle uro og lengsel er sjelens rop etter å bli gjenforent med den kosmiske kjærligheten.",
+      },
+    ],
+    receptionAndCritique:
+      "Grunnlegger av Mevlevi-ordenen («de dansende dervisjene»). Rumi er i dag en av verdens mest leste poeter på tvers av kulturer og religioner. Kritisert av puritanske bokstavtro teologer for å bruke musikk, dans og vinallegorier i teologi og for å viske ut dogmatiske grenser mellom religioner.",
+  },
+
+  leibniz: {
+    philosopherId: 'leibniz',
+    historicalContext:
+      "Gottfried Wilhelm Leibniz (1646–1716), oppvokst i Leipzig. Kanskje verdenshistoriens siste ekte universalgeni: matematiker (oppfant differensial- og integralregningen uavhengig av Newton), diplomat, jurist, historiker og oppfinner av den mekaniske regnemaskinen og det binære tallsystemet (0 og 1) som all moderne datateknologi hviler på.",
+    majorWorks: [
+      {
+        title: "Monadologien",
+        year: 1714,
+        description: "Klassisk metafysisk verk: Universet består av uendelig mange uutstrakte, åndelige kraftsenter (monader) som samvirker i preetablert harmoni.",
+      },
+      {
+        title: "Teodisé (Essais de Théodicée)",
+        year: 1710,
+        description: "Det filosofiske forsvaret for Guds godhet i møte med det onde: Vår verden er «den beste av alle mulige verdener».",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Leibniz’ mølle (Materialismens grense)",
+        description: "Se for deg at du forstørrer hjernen til størrelsen av en vindmølle, slik at du kan gå inn og se alt mekanisk arbeid: tannhjul, støtere og aksler. Ville du noensinne få øye på en *tanke*, en *følelse* eller fargen rød?",
+        takeaway: "Subjektiv bevissthet (qualia) kan aldri reduseres til rent mekaniske partikkelbevegelser.",
+      },
+      {
+        title: "Den beste av alle mulige verdener",
+        description: "Før skapelsen vurderte Gud uendelig mange mulige verdener. En verden med fri vilje må nødvendigvis innebære muligheten for at mennesker velger feil; en verden uten ondskap ville vært en verden av forhåndsprogrammerte roboter.",
+        takeaway: "Vår verden maksimerer det største mulige mangfold og gode under de mest elegante lover.",
+      },
+    ],
+    receptionAndCritique:
+      "En gigant innen matematikk, logikk og metafysikk. Hans optimisme ble berømt og nådeløst latterliggjort av Voltaire i satiren Candide (gjennom figuren Dr. Pangloss). Kritisert for at idéen om «preetablert harmoni» (at monader ikke har «vinduer») gjør fysisk kausalitet overflødig.",
+  },
+
+  montaigne: {
+    philosopherId: 'montaigne',
+    historicalContext:
+      "Michel de Montaigne (1533–1592), fransk adelsmann og jurist som levde midt under de blodige franske religionskrigene (hugenottkrigene og Bartolomeusnatten). Rystet av religiøs fanatisme og tortur trakk han seg tilbake i sitt tårnværelse på godset i Bordeaux som 38-åring for å undersøke sitt eget sinn og finne ut hva et menneske egentlig kan vite.",
+    majorWorks: [
+      {
+        title: "Essayer (Les Essais)",
+        year: 1580,
+        description: "Oppfant selve essaysjangeren: En personlig, ærlig og skeptisk utforskning av vennskap, frykt, kannibalisme, seksualitet og døden.",
+      },
+      {
+        title: "Forsvarstale for Raymond Sebond",
+        year: 1576,
+        description: "Skeptisismens renessanseklassiker: Menneskets fornuft er skrøpelig; «Hva vet jeg?» (Que sais-je?).",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Katten og Montaigne (Perspektivets relativitet)",
+        description: "«Når jeg leker med katten min, hvem vet da om ikke hun morer seg mer over meg enn jeg gjør over henne?»",
+        takeaway: "Menneskets tro på at vi er universets ubestridte herrer skyldes bare at vi mangler evnen til å se oss selv utenfra.",
+      },
+      {
+        title: "Om kannibaler (Kulturrelativisme)",
+        description: "Europeere kaller urbefolkningen i Amerika for «barbarer» fordi de spiser sine fiender etter døden. Men er det ikke langt mer barbarisk å torturere levende naboer på bålet for bagatellmessige dogmeuenigheter?",
+        takeaway: "Vi kaller alt for barbari som vi ikke er vant til i vårt eget land.",
+      },
+    ],
+    receptionAndCritique:
+      "Formet Shakespeares skuespill, Descartes’ metodiske tvil og hele den moderne humanismen. Kritisert av strenge katolske moralister (som Blaise Pascal) for selvopptatthet og for å spre en farlig skepsis som undergraver kirkens autoritet.",
+  },
+
+  russell: {
+    philosopherId: 'russell',
+    historicalContext:
+      "Bertrand Russell (1872–1970), britisk aristokrat, matematiker, logiker og nobelprisvinner i litteratur. Han var en brennende pasifist som ble fengslet under første verdenskrig for sine antikrigsskrifter, og deltok i en alder av 89 år i sitt-ned-demonstrasjoner mot atomvåpen. Grunnla den moderne analytiske filosofien sammen med G.E. Moore og Ludwig Wittgenstein.",
+    majorWorks: [
+      {
+        title: "Principia Mathematica (med A.N. Whitehead)",
+        year: 1910,
+        description: "Monumentalt trebindsverk som forsøkte å bevise at hele matematikken kan utledes fra ren logikk (logisisme).",
+      },
+      {
+        title: "Hvorfor jeg ikke er kristen",
+        year: 1927,
+        description: "Berømt foredrag og kampskrift for rasjonalisme, vitenskapelig skepsis og sekulær etikk.",
+      },
+      {
+        title: "Vestens filosofi",
+        year: 1945,
+        description: "Verdens mest leste og underholdende filosofihistoriske verk, skrevet under andre verdenskrig.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Russells tekanne",
+        description: "Hvis jeg påstår at det kretser en bitte liten porselenstekanne i bane rundt solen mellom jorden og Mars, kan ingen motbevise meg, for den er for liten til å sees i teleskoper. Betyr det at det er rimelig å tro på den?",
+        takeaway: "Bevisbyrden hviler alltid på den som fremsetter en ekstraordinær påstand, ikke på skeptikeren som nekter å tro uten bevis.",
+      },
+      {
+        title: "Barbererparadokset (Russells paradoks)",
+        description: "I en landsby finnes det en barberer som barberer alle menn som ikke barberer seg selv, og bare dem. Barberer han seg selv? Hvis ja, skal han ikke; hvis nei, må han.",
+        takeaway: "Naiv mengdelære inneholder fundamentale selvmotsigelser og krever streng typeteori.",
+      },
+    ],
+    receptionAndCritique:
+      "En av modernitetens største logikere og intellektuelle samvittigheter. Kritisert for at hans logisisme (prosjektet i Principia) ble rystet av Gödels ufullstendighetsteorem i 1931, og av eksistensialister for et overdrevent teknisk syn på språk og virkelighet.",
+  },
+
+  hildegard: {
+    philosopherId: 'hildegard',
+    historicalContext:
+      "Hildegard von Bingen (1098–1179), tysk abbedisse, mystiker, lege, komponist og naturforsker i Rhinland under høymiddelalderen. Hun opplevde mektige lysvisjoner fra hun var barn. Hun korresponderte frimodig med paver, keiser Fredrik Barbarossa og Bernhard av Clairvaux, og krevde kirkelige reformer og kvinners åndelige verdighet.",
+    majorWorks: [
+      {
+        title: "Kjenn Herrens veier (Scivias)",
+        year: 1151,
+        description: "Illustrert mesterverk med 26 visjoner om kosmos, sjelens frelse og skaperverkets orden.",
+      },
+      {
+        title: "Physica (Naturhistorie og urtemedisin)",
+        year: 1158,
+        description: "Den første vitenskapelige beskrivelsen av planter, urter og helbredende naturkrefter i tysk tradisjon.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Viriditas (Den grønne livskraften)",
+        description: "Se for deg den usynlige, saftige kraften som får en tørr kvist til å skyte friske, grønne knopper om våren. Hildegard kalte denne kraften *viriditas* (grønnhet).",
+        takeaway: "Guddommelig skaperkraft er ikke fjern og abstrakt, men den pulserende biologiske og moralske vitaliteten i alt levende.",
+      },
+      {
+        title: "Kosmos som et egg",
+        description: "Universet er formet som et stort egg: Skallet er stjernehimmelen, hviten er luft og vind, og plommen er den faste jorden i midten omgitt av ild.",
+        takeaway: "Mennesket og kosmos er innbyrdes speilbilder (mikrokosmos og makrokosmos) i fullkommen økologisk balanse.",
+      },
+    ],
+    receptionAndCritique:
+      "Utnevnt til kirkelærer i 2012; feiret i moderne tid som en pioner for økologisk teologi, kvinnehistorie og tidligmusikk. Kritisert av samtidige konservative munker for å tale offentlig og preke, noe som brøt med Paulus’ forbud mot kvinners røst i forsamlingen.",
+  },
+
+  'edith-stein': {
+    philosopherId: 'edith-stein',
+    historicalContext:
+      "Edith Stein (1891–1942), født inn i en jødisk familie i Breslau (nå Wrocław). Hun ble Edmund Husserls stjerneassistent i Göttingen og en ledende stemme i den tidlige fenomenologiske bevegelsen. Etter å ha lest Teresa av Ávilas selvbiografi konverterte hun til katolisismen, ble karmelittnonne (Søster Teresa Benedicta a Cruce), og kjempet for kvinners rett til utdanning og likestilling. I 1942 ble hun arrestert av Gestapo i Nederland og myrdet i Auschwitz.",
+    majorWorks: [
+      {
+        title: "Om innlevelsens problem (Zum Problem der Einfühlung)",
+        year: 1917,
+        description: "Fenomenologiens klassiker om empati: Hvordan vi oppfatter andres indre opplevelsesverden uten å forveksle den med vår egen.",
+      },
+      {
+        title: "Endelig og evig væren (Endliches und ewiges Sein)",
+        year: 1937,
+        description: "En genial syntese mellom Husserls moderne fenomenologi og Thomas Aquinas’ middelalderfilosofi.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Sorgens tårer hos en venn (Empatiens vesen)",
+        description: "Når du ser en venn gråte av sorg, opplever du sorgen direkte i hennes ansikt, men du forveksler ikke hennes sorg med din egen. Du føler *med* henne, ikke *i* henne.",
+        takeaway: "Empati (innlevelse) er en unik erkjennelsesakt som beviser at den andre er et selvstendig, ukrenkelig subjekt, og redder oss fra solipsisme.",
+      },
+    ],
+    receptionAndCritique:
+      "Kanonisert som helgen og skytshelgen for Europa; en ledende feministisk intellektuell i mellomkrigstiden. Kritisert i samtiden av mannlige akademiske komiteer som to ganger nektet henne habilitasjon og professorat utelukkende fordi hun var kvinne.",
+  },
+
+  'camilla-collett': {
+    philosopherId: 'camilla-collett',
+    historicalContext:
+      "Jacobine Camilla Collett (1813–1895), Henrik Wergelands søster, oppvokst på Eidsvoll prestegård. Opplevde det bitre tapet av sin ungdomskjærlighet Johan Sebastian Welhaven og ble gift med juristen Peter Jonas Collett. Etter ektemannens tidlige død sto hun igjen som eneforsørger for fire sønner, og viet resten av sitt liv til å kjempe for kvinners moralske, emosjonelle og juridiske frigjøring i det pietistiske og embetsmannsstyrte Norge.",
+    majorWorks: [
+      {
+        title: "Amtmandens Døtre",
+        year: 1854,
+        description: "Norgeshistoriens første realistiske og samfunnskritiske tendensroman: Et knusende oppgjør med fornuftsekteskap som ødelegger kvinnens følelsesliv.",
+      },
+      {
+        title: "Fra de Stummes Leir",
+        year: 1877,
+        description: "Essaysamling som hudfletter verdenslitteraturen og samfunnet for å ha dømt kvinner til taushet og underdanighet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Kjærlighetens tvangstrøye",
+        description: "En kvinne oppdras til at hennes eneste livskall er å bli gift. Hvis hun følger sitt sanne hjerte, kalles hun uansvarlig; hvis hun selger seg inn i et trygt, kjærlighetsløst ekteskap for å overleve økonomisk, kalles det ærverdig.",
+        takeaway: "Et samfunn som fratar kvinner økonomisk uavhengighet, tvinger dem inn i en form for legitimert prostitusjon som forkrøpler moralen.",
+      },
+    ],
+    receptionAndCritique:
+      "Norges første store feministiske tenker; inspirerte Henrik Ibsen til å skrive Et dukkehjem og banet vei for Kvinnesaksforeningen. Kritisert i samtiden av konservative menn og kirkelige ledere for å så splid i familiens hellige orden og undergrave kvinners gudgitte beskjedenhet.",
+  },
+
+  hammarskjold: {
+    philosopherId: 'hammarskjold',
+    historicalContext:
+      "Dag Hammarskjöld (1905–1961), svensk nasjonaløkonom, jurist og FNs andre generalsekretær (1953–1961). Han omdefinerte generalsekretærens rolle fra passiv administrator til uavhengig moralsk mekler i Suezkrisen og under den kalde krigen. Han døde i en mystisk flystyrt i Ndola (Zambia) under et fredsoppdrag under Kongokrisen. Fikk Nobels fredspris posthumt.",
+    majorWorks: [
+      {
+        title: "Veimerker (Vägmärken)",
+        year: 1963,
+        description: "Utgitt etter hans død; en åndelig og etisk dagbok som avslørte hans dype mystiske livsforankring, inspirert av Mester Eckhart og Johannes av Korset.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "FNs meditasjonsrom (Det tomme alteret)",
+        description: "Hammarskjöld tegnet FNs meditasjonsrom i New York med et eneste massivt stykke svensk jernmalm i midten, belyst av en enkelt lysstråle ovenfra, helt uten religiøse symboler.",
+        takeaway: "I stillheten bak alle ord og nasjonale slagord finnes et felles rom av sannhet, verdighet og tjeneste for menneskeheten.",
+      },
+    ],
+    receptionAndCritique:
+      "Står som det internasjonale diplomatiets fremste etiske fyrtårn; USAs president John F. Kennedy kalte ham «århundrets største statsmann». Kritisert under den kalde krigen av Sovjetunionens leder Nikita Khrusjtsjov, som forlangte hans avgang fordi han mente en person aldri kan være genuint nøytral.",
+  },
+
+  dogen: {
+    philosopherId: 'dogen',
+    historicalContext:
+      "Dōgen Zenji (1200–1253), født inn i en aristokratisk familie i Kyoto under Kamakura-shogunatets fremvekst i Japan. Etter å ha mistet begge foreldrene som barn ble han munk. Frustrert over korrupsjon i klostrene reiste han til Kina i 1223 for å finne ekte buddhisme. Der oppnådde han opplysning under mester Rujing da han hørte ordene: «Kast av kropp og sinn!» Han vendte tilbake til Japan og grunnla Sōtō Zen-skolen og det avsidesliggende Eihei-ji-tempelet i fjellene.",
+    majorWorks: [
+      {
+        title: "Shōbōgenzō (Den sanne dharmaens øye-skatt)",
+        year: 1253,
+        description: "Et 95 kapitler langt filosofisk mesterverk om tid, væren, meditasjon og opplysning i hverdagens handlinger.",
+      },
+      {
+        title: "Fukanzazengi (Universelle retningslinjer for zazen)",
+        year: 1227,
+        description: "Den grunnleggende håndboken i shikantaza («bare sitte» i årvåken tilstedeværelse).",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Tid-Væren (Uji)",
+        description: "Tid er ikke en abstrakt elv som flyter forbi deg mens du står stille på bredden. Fjellet *er* tid; solen *er* tid; din pust i dette sekundet *er* selve tiden som utfolder seg.",
+        takeaway: "Væren og tid er uatskillelige; hvert øyeblikk er hele universets fulle realisering.",
+      },
+      {
+        title: "Å ro en båt",
+        description: "Når du ror en båt over vannet, ser du kysten flytte seg bort. Men hvis du fester blikket på båten din, oppdager du at det er båten som beveger seg, ikke kysten.",
+        takeaway: "Illusjoner oppstår når vi projiserer vår egen urolige bevegelse over på den uforanderlige naturen.",
+      },
+    ],
+    receptionAndCritique:
+      "Regnes som en av Japans dypeste og mest originale tenkere gjennom tidene; Martin Heidegger skal ha uttalt at Dōgens tekster uttrykte nøyaktig hva han selv forsøkte å si i Væren og tid. Kritisert i samtiden av eldre maktklostre i Kyoto som forsøkte å brenne ned hans tempel.",
+  },
+
+  kukai: {
+    philosopherId: 'kukai',
+    historicalContext:
+      "Også kjent som Kōbō-Daishi (774–835), født på øya Shikoku. Han studerte ved det keiserlige universitetet i Nara, men forlot studiene for å praktisere askese i fjellene. I 804 reiste han til Kina på et farefullt oppdrag med en keiserlig flåte, lærte sanskrit og esoterisk buddhisme på rekordtid, og returnerte for å grunnlegge Shingon-skolen («Det sanne ord») på det hellige Kōya-fjellet. Han var også en genial kalligraf, dikter og ingeniør som bygget irrigasjonsdammer for bøndene.",
+    majorWorks: [
+      {
+        title: "Å oppnå opplysning i denne kroppen (Sokushin Jōbutsu Gi)",
+        year: 817,
+        description: "Filosofisk bevis for at mennesket kan realisere buddhanaturen her og nå i sin fysiske kropp, uten utallige gjenfødelser.",
+      },
+      {
+        title: "De ti sinnstilstandene (Jūjūshinron)",
+        year: 830,
+        description: "Monumentalt verk som systematiserer all menneskelig filosofi og religion fra dyrisk egoisme til kosmisk opplysning.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Kroppen som levende mandala",
+        description: "Hele universet er kroppen, talen og sinnet til ur-buddhaen Dainichi Nyorai. De seks elementene (jord, vann, ild, luft, rom og bevissthet) finnes like fullt i en stein og i din egen fingertupp.",
+        takeaway: "Den materielle verden er ikke en syndig felle som sjelen skal flykte fra, men selve det hellige nærværet.",
+      },
+    ],
+    receptionAndCritique:
+      "Kanskje Japans mest elskede åndelige kulturhelt; den 1200 km lange Shikoku-pilegrimsruten hedrer hans fotspor. Kritisert av reformatorer i Kamakura-perioden for overdrevent fokus på magiske ritualer, hemmelige mantraer og kostbare tempelkunster.",
+  },
+
+  zeami: {
+    philosopherId: 'zeami',
+    historicalContext:
+      "Zeami Motokiyo (ca. 1363–1443), japansk dramatiker, skuespiller og estetisk filosof. Han vokste opp som skuespillergutt og vant den unge shogun Ashikaga Yoshimitsus gunst i Kyoto. Sammen med sin far Kan'ami forvandlet han folkelig teater (sarugaku) til den raffinerte Noh-teaterkunsten. Senere i livet mistet han shogunatets gunst og ble forvist til den avsidesliggende øya Sado som 71-åring, hvor han fortsatte å skrive i eksil.",
+    majorWorks: [
+      {
+        title: "Fūshikaden (Læren om blomstens stil)",
+        year: 1402,
+        description: "Verdenshistoriens eldste og dypeste avhandling om skuespillerkunst, estetikk og sjelens modning gjennom kunst.",
+      },
+      {
+        title: "Kakyo (Speilet for blomsten)",
+        year: 1424,
+        description: "Videreutvikling av begrepet *yūgen* (dyp, gåtefull skjønnhet) og skuespillerens indre tilstedeværelse.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Den sanne blomsten (Hana)",
+        description: "En ung skuespiller har en naturlig sjarm som alle beundrer – men dette er bare en «forbigående blomst» som visner med alderen. Den «sanne blomsten» oppnås først etter tiår med disiplin, når skuespilleren kan bevege et publikum bare ved å sitte helt ubevegelig på scenen.",
+        takeaway: "Ekte skjønnhet og mesterskap krever at man overvinner forfengelighet og finner sjelens usynlige kjerne.",
+      },
+      {
+        title: "Yūgen (Skyggenes subtile skjønnhet)",
+        description: "Som en hvit svane med en sivbit i nebbet, eller solen som synker bak en tåkete åskam: Skjønnheten ligger i det antydede og tilbakeholdte, ikke i det brautende åpenbare.",
+        takeaway: "Den dypeste kunsten avslører ikke alt, men vekker tilskuerens egen kontemplasjon.",
+      },
+    ],
+    receptionAndCritique:
+      "Grunnleggeren av klassisk japansk dramaturgi og estetikk; hans hemmelige avhandlinger ble først offentliggjort på 1900-tallet og har fascinert teaterregissører og filosofer verden over. Kritisert i samtiden av makteliter som anså skuespillere som en lav sosial kaste.",
+  },
+
+  wonhyo: {
+    philosopherId: 'wonhyo',
+    historicalContext:
+      "Wonhyo (617–686), en av Koreas mest innflytelsesrike buddhistiske tenkere fra Silla-riket. Han forlot klosterets isolasjon, kledde seg som en vanlig legmann, spilte musikk og sang i landsbyene for fattige bønder for å bringe opplysning til folket. Han arbeidet utrettelig for å forene de splittede sektene i koreansk buddhisme.",
+    majorWorks: [
+      {
+        title: "Avhandling om harmoniseringen av de ti doktriner (Simmun Hwajaeng-non)",
+        year: 680,
+        description: "Hovedverket som etablerer *Hwajeong* (ikke-konflikt og forsoning av motstridende filosofiske skoler).",
+      },
+      {
+        title: "Kommentar til Oppvekkelsen av troen på Mahayana",
+        year: 675,
+        description: "Klassisk kommentar som forklarer sinnets opprinnelige renhet og hvordan det forurenses av uvitenhet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Vannet fra hodeskallen i mørket",
+        description: "På vei til Kina for å studere søkte Wonhyo ly i en mørk hule i et voldsomt regnvær. Tørst i mørket drakk han av en skål med vann og syntes det smakte vidunderlig friskt og søtt. Da han våknet om morgenen, oppdaget han at hulen var en gammel grav, og «skålen» var en råtnende menneskeskalle full av mark.",
+        takeaway: "Vannet hadde ikke endret seg; det var sinnets forestilling som gjorde det friskt i mørket og motbydelig i lyset. «Når sinnet oppstår, oppstår mangfoldet av ting; når sinnet stilner, forsvinner graven og skallen.»",
+      },
+    ],
+    receptionAndCritique:
+      "Hyllet som Koreas største religiøse geni som forente nasjonen under Silla-dynastiet. Kritisert av konservative klostermunker for sin uortodokse livsstil, inkludert at han brøt sølibatet med en prinsesse og fikk sønnen Seol Chong (en berømt lærd).",
+  },
+
+  'john-dewey': {
+    philosopherId: 'john-dewey',
+    historicalContext:
+      "John Dewey (1859–1952), amerikansk filosof, psykolog og pedagog. Han virket ved University of Chicago (hvor han etablerte den berømte Laboratory School) og Columbia University i New York. Han var en ledende offentlig intellektuell som kjempet for kvinners stemmerett, fagforeninger, borgerrettigheter (medgrunnlegger av NAACP) og forsvarte Leo Trotskij mot Stalins skueprosesser i Moskva.",
+    majorWorks: [
+      {
+        title: "Demokrati og utdanning (Democracy and Education)",
+        year: 1916,
+        description: "Pedagogikkens moderne manifest: Skolen må ikke være pugging av døde fakta, men et levende demokratisk minisamfunn.",
+      },
+      {
+        title: "Erfaring og natur (Experience and Nature)",
+        year: 1925,
+        description: "Pragmatismens naturfilosofi: Mennesket er en biologisk organisme som kontinuerlig samhandler med sine omgivelser.",
+      },
+      {
+        title: "Kunst som erfaring (Art as Experience)",
+        year: 1934,
+        description: "Estetisk verk som river kunsten ned fra elitens museumsvegger og forankrer den i hverdagens sansemessige opplevelser.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Learning by doing (Skolen som verksted)",
+        description: "Barn lærer ikke om geometri og fysikk ved å sitte passive på rad og rekke og lytte til en lærer; de lærer når de skal bygge en trehytte, lage mat eller løse et praktisk problem sammen.",
+        takeaway: "Tenkning er et verktøy for handling og problemløsning (instrumentalisme), ikke passiv tilskuerkontemplasjon.",
+      },
+    ],
+    receptionAndCritique:
+      "Revolusjonerte moderne progressiv pedagogikk over hele den vestlige verden. Kritisert av tradisjonalister for å svekke klassisk dannelse og disiplin, og av marxister for overdreven tiltro til at gradvise reformer kan løse kapitalismens strukturelle kriser.",
+  },
+
+  'william-james': {
+    philosopherId: 'william-james',
+    historicalContext:
+      "William James (1842–1910), bror til forfatteren Henry James. Oppvokst i en velstående og intellektuelt stimulerende familie i New England. Utdannet lege ved Harvard, men ble rammet av en dyp depresjon og eksistensiell panikk over determinismen: Hadde han overhodet en fri vilje? Han besluttet at hans første frie handling skulle være å *tro* på den frie vilje. Han grunnla den amerikanske psykologien og pragmatismen.",
+    majorWorks: [
+      {
+        title: "Psykologiens prinsipper (The Principles of Psychology)",
+        year: 1890,
+        description: "Monumentalt banebrytende verk som innførte begrepet «bevissthetsstrøm» (stream of consciousness).",
+      },
+      {
+        title: "Pragmatisme: Et nytt navn for noen gamle tenkemåter",
+        year: 1907,
+        description: "Definisjonen av pragmatisk sannhet: Idéers sannhet måles i deres «kontantverdi» (cash value) i praktisk livserfaring.",
+      },
+      {
+        title: "Religiøse erfaringer (The Varieties of Religious Experience)",
+        year: 1902,
+        description: "En empirisk psykologisk undersøkelse av omvendelser, mystikk og troens vitaliserende kraft.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Ekornets tre (Pragmatisk metode)",
+        description: "En mann løper rundt en trestamme for å få øye på et ekorn som sitter på baksiden. Ekornet beveger seg like raskt rundt treet slik at det alltid har stammen mellom seg og mannen. Går mannen «rundt» ekornet eller ikke?",
+        takeaway: "Uten en praktisk forskjell i erfaringen er filosofiske ordkrangler fullstendig meningsløse.",
+      },
+      {
+        title: "Fjellklatreren over bresprekken (Viljen til å tro)",
+        description: "En klatrer må hoppe over en livsfarlig bresprekk for å overleve. Hvis han tviler og krever 100 % bevis for at han vil klare det før han hopper, vil bena nøle og han styrter i avgrunnen. Hvis han velger å tro fullt og fast på sine krefter, gir selve troen ham spensten som redder livet.",
+        takeaway: "I moralske og eksistensielle spørsmål er troen en aktiv faktor som er med på å skape det faktumet den håper på.",
+      },
+    ],
+    receptionAndCritique:
+      "En av Amerikas mest elskede og leste filosofer. Kritisert av Bertrand Russell og rasjonalister for å forveksle «hva som er nyttig å tro» med «hva som er objektivt sant».",
+  },
+
+  peirce: {
+    philosopherId: 'peirce',
+    historicalContext:
+      "Charles Sanders Peirce (1839–1914), sønn av Harvards fremste matematiker. Han var et uregjerlig geni: fysiker, astronom ved US Coast Survey, matematiker og oppfinneren av pragmatismen og den moderne semiotikken (tegnlæren). På grunn av sin vanskelige personlighet og en skilsmisseskandale ble han utstøtt fra akademia og levde sine siste 25 år i lammende fattigdom i en isolert hytte i Milford, Pennsylvania, hvor han skrev tusenvis av upubliserte manuskriptsider holdt i live av pengegaver fra vennen William James.",
+    majorWorks: [
+      {
+        title: "Hvordan gjøre våre idéer klare (How to Make Our Ideas Clear)",
+        year: 1878,
+        description: "Pragmatismens grunnleggende essay: En idé sin mening er summen av dens tenkelige praktiske virkninger.",
+      },
+      {
+        title: "Tvilens og troens fiksering (The Fixation of Belief)",
+        year: 1877,
+        description: "Vitenskapsteoretisk analyse av hvordan mennesker kvitter seg med tvilens ubehag og etablerer tro.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Tegnets triade (Ikon, indeks, symbol)",
+        description: "Et tegn er ikke bare et ord som peker på en ting; det er en treleddet relasjon: Tegnet (representamen), Tingen (objektet), og Tolkningen i sinnet (interpretanten).",
+        takeaway: "Menneskelig tenkning er en uavbrutt kjede av tegnfortolkning (semiose); vi kan aldri hoppe ut av tegnene for å nå en naken virkelighet.",
+      },
+      {
+        title: "Diamantens hardhet",
+        description: "Hva mener vi når vi sier at en diamant er «hard»? Vi mener at den vil ripe opp nesten alle andre stoffer og ikke bli ripet opp selv.",
+        takeaway: "Virkelighetens egenskaper eksisterer som vaner og lovmessige disposisjoner, ikke som skjulte mystiske substanser.",
+      },
+    ],
+    receptionAndCritique:
+      "Anerkjennes i dag som en av de største og mest allsidige tenkerne USA har fostret; forutså moderne datavitenskap, vitenskapsfilosofi og språkvitenskap. Kritisert i samtiden for å være uferdig, fragmentarisk og krevende å lese.",
+  },
+
+  emerson: {
+    philosopherId: 'emerson',
+    historicalContext:
+      "Ralph Waldo Emerson (1803–1882), født i Boston inn i en lang rekke unitariske prester. Han sa opp sitt eget prestekall etter sin unge kones tragiske død fordi han ikke lenger kunne forsvare nattverdsritualet. Han ble lederen for transcendentalistene i Concord, Massachusetts, og USAs mest etterspurte offentlige foredragsholder, som kjempet mot slaveriet og inspirerte en ung nasjon til å finne sin egen kulturelle stemme uavhengig av Europa.",
+    majorWorks: [
+      {
+        title: "Naturen (Nature)",
+        year: 1836,
+        description: "Transcendentalismens manifest: Naturen er ikke en mekanisk ressurs som skal plyndres, men en levende åndelig åpenbaring.",
+      },
+      {
+        title: "Selvtillit (Self-Reliance)",
+        year: 1841,
+        description: "Verdenslitteraturens skarpeste hyllest til individuell uavhengighet: «Å stole på seg selv er å stole på det guddommelige».",
+      },
+      {
+        title: "Den amerikanske lærde (The American Scholar)",
+        year: 1837,
+        description: "Kalt USAs «intellektuelle uavhengighetserklæring»: Lærdom må springe ut av handling og levende erfaring, ikke døde bøker.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Det gjennomsiktige øyeeplet (Transparent Eyeball)",
+        description: "«Når jeg står på den bare marken med hodet løftet mot den uendelige himmelen, forsvinner all egoisme. Jeg blir et gjennomsiktig øyeeple: Jeg er ingenting; jeg ser alt; den universelle Væren strømmer gjennom meg.»",
+        takeaway: "Når vi opphever det snevre egoet, oppdager vi vår dype, mystiske enhet med hele kosmos og naturen.",
+      },
+    ],
+    receptionAndCritique:
+      "Formet amerikansk litteratur (Walt Whitman, Herman Melville, Emily Dickinson) og påvirket Friedrich Nietzsche dypt. Kritisert av enkelte samtidige (som Edgar Allan Poe og Nathaniel Hawthorne) for å være for naivt optimistisk og for å overse menneskesinnets mørke og ondskap.",
+  },
+
+  thoreau: {
+    philosopherId: 'thoreau',
+    historicalContext:
+      "Henry David Thoreau (1817–1862), Emersons protesjé og venn i Concord, Massachusetts. Han var utdannet ved Harvard, men nektet å gjøre konvensjonell karriere. Den 4. juli 1845 flyttet han ut i skogen ved Walden Pond, hvor han bygget en enkel tømmerhytte for egne hender og bodde i to år og to måneder for å bevise at et menneske kan leve et fritt, meningsfullt liv med et minimum av materielt forbruk.",
+    majorWorks: [
+      {
+        title: "Walden – livet i skogene",
+        year: 1854,
+        description: "En klassiker innen økologisk filosofi og livskunst: «Jeg gikk ut i skogen fordi jeg ønsket å leve bevisst, bare møte livets essensielle fakta.»",
+      },
+      {
+        title: "Sivil ulydighet (Civil Disobedience)",
+        year: 1849,
+        description: "Politisk kampskrift forankret i hans natt i fengsel fordi han nektet å betale skatt til en stat som førte angrepskrig mot Mexico og opprettholdt slaveri.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Prisen på en togbillett",
+        description: "Thoreau sammenlignet to menn som vil reise 50 kilometer inn til byen: Den ene jobber en hel dag i fabrikken for å tjene penger til togbilletten og tar toget om kvelden. Den andre begynner å gå til fots om morgenen. Hvem har da egentlig reist friest?",
+        takeaway: "«Kostnaden for en ting er mengden liv du må bytte bort for å skaffe den.» Vi blir slaver av våre egne eiendeler.",
+      },
+    ],
+    receptionAndCritique:
+      "Hans essay om sivil ulydighet ble den direkte inspirasjonen for Mahatma Gandhis kamp for Indias frigjøring og Martin Luther Kings borgerrettighetsbevegelse i USA. Kritisert av kritikere som påpekte at han ofte spiste middag hos moren i helgene, men beundret for sitt kompromissløse moralske mot.",
+  },
+
+  'judith-butler': {
+    philosopherId: 'judith-butler',
+    historicalContext:
+      "Judith Butler (født 1956), professor ved University of California, Berkeley. Vokste opp i en jødisk familie i Ohio og var aktiv i LHBT+-bevegelsen og AIDS-aktivismen (ACT UP) på 1980-tallet. De så hvordan aids-epidemien ble møtt med moralsk fordømmelse og hvordan samfunnets rigide kjønnsnormer gjorde visse liv «mindre verdt å sørge over».",
+    majorWorks: [
+      {
+        title: "Kjønnstrøbbel (Gender Trouble)",
+        year: 1990,
+        description: "Queerteoriens og den tredje feministiske bølgens grunntekst: Kjønn er ikke en biologisk essens, men en handling som kontinuerlig gjentas (performativitet).",
+      },
+      {
+        title: "Sårbare liv (Precarious Life)",
+        year: 2004,
+        description: "Etisk og politisk analyse etter 11. september: Felles sårbarhet, sorg og voldsmotstand.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "«Det er en jente!» (Kjønnets performativitet)",
+        description: "Når legen roper «Det er en jente!» i fødestuen, er det ikke bare en medisinsk beskrivelse; det er en performativ talehandling som starter en livslang tildeling av klær, leker, forventninger og kroppsbevegelser som må repeteres hver eneste dag for å fremstå som «naturlig».",
+        takeaway: "Kjønnsidentitet er ikke noe du *er* på forhånd; det er noe du *gjør* og gjentar innenfor kulturens tvangstrøye.",
+      },
+    ],
+    receptionAndCritique:
+      "En av verdens mest siterte og innflytelsesrike nålevende teoretikere; transformerte sosiologi, litteraturteori og politisk aktivisme. Kritisert av biologiske essensialister og eldre feminister som frykter at oppløsning av kategorien «kvinne» svekker den politiske kvinnekampen, samt for et notorisk vanskelig og ugjennomtrengelig akademisk språk.",
+  },
+
+  'angela-davis': {
+    philosopherId: 'angela-davis',
+    historicalContext:
+      "Angela Davis (født 1944), oppvokst i Birmingham, Alabama under de verste raseskillelovene (Jim Crow) i et nabolag kalt «Dynamite Hill» på grunn av Ku Klux Klans bombeangrep. Hun studerte filosofi i Frankrike og Tyskland under Theodor Adorno og Herbert Marcuse. Ble aktiv i Black Panther Party og kommunistpartiet. I 1970 ble hun satt på FBIs liste over «Ten Most Wanted», fengslet i over et år under en global «Free Angela»-kampanje, og frifunnet av en jury i 1972.",
+    majorWorks: [
+      {
+        title: "Kvinner, rase og klasse (Women, Race, & Class)",
+        year: 1981,
+        description: "Banebrytende forløper til interseksjonalitet: Viser hvordan den hvite middelklassefeminismen sviktet ved å ignorere svarte arbeiderkvinners kamper.",
+      },
+      {
+        title: "Er fengsler avleggs? (Are Prisons Obsolete?)",
+        year: 2003,
+        description: "Kritikk av det «fengselsindustrielle komplekset» og visjon for restorativ rettferdighet uten masseinnsetting.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Frihetens illusjon bak murene",
+        description: "Et samfunn bygger enorme, privatiserte fengsler for å låse bort fattigdom, rasisme og psykiske lidelser. Vi later som om vi har løst sosiale problemer bare ved å gjøre menneskene usynlige bak betongmurer.",
+        takeaway: "Ekte rettferdighet krever at vi bygger skoler, boliger og helsetilbud som forebygger nød, i stedet for å profitere på straff.",
+      },
+    ],
+    receptionAndCritique:
+      "Et globalt ikon for frigjøringskamp og interseksjonell analyse. Kritisert av konservative politikere i USA for sin historiske tilknytning til Sovjetunionen og for en fengselsavskaffelsesvisjon mange anser som urealistisk.",
+  },
+
+  'sor-juana': {
+    philosopherId: 'sor-juana',
+    historicalContext:
+      "Juana Inés de la Cruz (1648–1695), født utenfor ekteskap i kolonitidens Mexico (Ny-Spania). Et vidunderbarn som lærte å lese som treåring og ba om å få kle seg som gutt for å studere ved universitetet i Mexico City. For å unngå ekteskap og få fred til å studere vitenskap, matematikk og filosofi gikk hun i kloster som hieronymitt-nonne. Hun samlet et av Amerikas største biblioteker i cellen sin før kirkens biskoper tvang henne til å selge alle bøkene og vie seg til botsøvelser.",
+    majorWorks: [
+      {
+        title: "Svar til Søster Filotea (Respuesta a Sor Filotea de la Cruz)",
+        year: 1691,
+        description: "Den nye verdens første store feministiske manifest: Et brennende intellektuelt forsvar for kvinners gudgitte rett til lærdom og vitenskap.",
+      },
+      {
+        title: "Første drøm (Primero Sueño)",
+        year: 1692,
+        description: "Et kosmisk filosofisk dikt om sjelens nattlige søken etter å fatte universets helhet.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Filosofien i kjøkkenet",
+        description: "Da kirken forbød henne å lese filosofibøker, begynte hun å studere vitenskapelige lover under matlaging: Hvorfor stivner et egg i varm olje mens sukker smelter til væske? «Hvis Aristoteles hadde laget mat, ville han skrevet langt mer!»",
+        takeaway: "Erkjennelsestrangen kan aldri kveles av forbud; fornuften finner sannhet i de mest hverdagslige erfaringer.",
+      },
+    ],
+    receptionAndCritique:
+      "Kalt «Den tiende muse» og Mexicos nasjonalskatt; beundret i hele den spansktalende verden for sin lyriske genialitet og modige motstand mot kirkelig kvinnehat. Kritisert i samtiden av inkvisisjonen for å befatte seg med verdslig vitenskap.",
+  },
+
+  fanon: {
+    philosopherId: 'fanon',
+    historicalContext:
+      "Frantz Fanon (1925–1961), født på Martinique i Karibia. Han kjempet for De frie franske styrkene mot nazistene under andre verdenskrig og utdannet seg til psykiater i Frankrike. Som overlege ved et psykiatrisk sykehus i Algerie under frigjøringskrigen mot Frankrike ble han rystet over de mentale traumene fra kolonial tortur. Han sluttet seg til Den algeriske nasjonale frigjøringsfronten (FLN) og ble dens fremste intellektuelle talsmann før han døde av leukemi bare 36 år gammel.",
+    majorWorks: [
+      {
+        title: "Svart hud, hvite masker (Peau noire, masques blancs)",
+        year: 1952,
+        description: "En psykoanalytisk obduksjon av rasisme: Hvordan den koloniserte tvinges til å internalisere hvit overlegenhet og fremmedgjøres fra sitt eget selv.",
+      },
+      {
+        title: "Jordens fordømte (Les Damnés de la Terre)",
+        year: 1961,
+        description: "Avkoloniseringens bibel (med forord av Jean-Paul Sartre): Analyse av voldens renselse, nasjonal kultur og den postkoloniale elitens forræderi.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Det hvite blikkets fangenskap",
+        description: "En liten fransk gutt på gaten i Paris peker på Fanon og roper til moren sin: «Se, en neger! Mamma, se på negeren, jeg er redd!»",
+        takeaway: "Den svarte mannen får ikke lov til å eksistere som et vanlig menneskelig subjekt; han fanges og fastfryses som et fryktet, fremmedgjort objekt i den hvites blikk.",
+      },
+    ],
+    receptionAndCritique:
+      "Inspirerte frigjøringsbevegelser i Afrika, Asia og Black Power i USA. Kritisert av liberale pasifister for å forsvare nødvendigheten av revolusjonær motvold mot koloniherrene, men hans analyse av rasisme og traumer regnes i dag som uovertruffen.",
+  },
+
+  'achille-mbembe': {
+    philosopherId: 'achille-mbembe',
+    historicalContext:
+      "Achille Mbembe (født 1957 i Kamerun), professor i historie og politisk filosofi ved University of the Witwatersrand i Johannesburg, Sør-Afrika. En av verdens ledende teoretikere innen postkolonialisme og global politikk; tildelt den prestisjetunge Holbergprisen i 2024 for sitt arbeid med rase, suverenitet og planetær framtid.",
+    majorWorks: [
+      {
+        title: "Nekropolitikk (Necropolitics)",
+        year: 2019,
+        description: "Banebrytende politisk filosofi: Suverenitet handler i dag ikke bare om å styre liv (biopolitikk), men om makten til å diktere hvem som må dø og hvem som får leve.",
+      },
+      {
+        title: "Kritikk av den svarte fornuft (Critique de la raison nègre)",
+        year: 2013,
+        description: "Historisk og filosofisk analyse av hvordan kapitalismen oppfant «den svarte» som en vare og en ting for profitt.",
+      },
+      {
+        title: "Jordens brutalisering (Brutalisme)",
+        year: 2020,
+        description: "Analyse av hvordan grenser, overvåking og økologisk ødeleggelse forvandler planeten til en rå utvinningssone.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Dødssoner og dødsverdener",
+        description: "Moderne grensemurer, interneringsleirer for flyktninger og okkuperte territorier der mennesker fratas juridiske rettigheter og holdes i en permanent tilstand mellom liv og død.",
+        takeaway: "Makt i det 21. århundre utøves gjennom å skape zoner av organisert sårbarhet og langsom død.",
+      },
+    ],
+    receptionAndCritique:
+      "En sentral stemme for å forstå vår tids globale kriser, migrasjon og rasisme. Kritisert av enkelte tradisjonelle statsvitere for å være for dystopisk og for å tone ned nasjonalstaters evne til demokratisk inkludering.",
+  },
+
+  'anton-wilhelm-amo': {
+    philosopherId: 'anton-wilhelm-amo',
+    historicalContext:
+      "Født ca. 1703 i Axim (i dagens Ghana). Ble som barn brakt til Amsterdam og gitt som «gave» til hertugen av Braunschweig-Wolfenbüttel i Tyskland. Hertugen sørget for at han fikk full universitetsutdannelse ved universitetene i Halle og Wittenberg. Amo ble den første personen med afrikansk opprinnelse som tok en doktorgrad i filosofi i Europa og underviste som professor i Halle og Jena under opplysningstiden. Etter økende rasisme i Tyskland på 1740-tallet valgte han å vende tilbake til sitt fedreland Ghana, hvor han tilbrakte sine siste år.",
+    majorWorks: [
+      {
+        title: "Om sinnets apati (De Humanae Mentis Apatheia)",
+        year: 1734,
+        description: "En skarp opplysningstids-dissertasjon som korrigerer Descartes’ dualisme: Menneskesinnet kan ikke føle fysisk smerte; all sansning tilhører kroppen.",
+      },
+      {
+        title: "Avhandling om maurernes rettigheter i Europa",
+        year: 1729,
+        description: "En tapt juridisk avhandling som undersøkte romerrettens syn på afrikaneres frihet og likeverd.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Sinnets urørlighet (Apatheia)",
+        description: "Når du stikker fingeren på en torn, er det den fysiske kroppen som skades og registrerer smerteimpulsen; selve den tenkende ånden (mens) forblir immateriell og upåvirket av fysiske kutt.",
+        takeaway: "Forvekslingen mellom kropp og ånd skyldes uklar begrepsbruk; sjelen er en ren, aktiv fornuftskraft som aldri lider passivt.",
+      },
+    ],
+    receptionAndCritique:
+      "Et historisk bevis mot 1700-tallets gryende vitenskapelige rasisme (David Hume og Kant hevdet feilaktig at afrikanere manglet abstrakt fornuftsevne, uvitende om at Amo allerede underviste tyskere i logikk). Gjenoppdaget som en banebrytende tenker i afrikansk og europeisk opplysningstradisjon.",
+  },
+
+  'zara-yaqob': {
+    philosopherId: 'zara-yaqob',
+    historicalContext:
+      "Zera Yacob (1599–1692), etiopisk filosof. Utdannet i tradisjonell koptisk teologi under kong Susenyos, som konverterte til katolisismen under påtrykk fra portugisiske jesuitter. Da kongen krevde at alle borgere skulle konvertere, nektet Yacob å underkaste seg blindt og ble truet på livet. Han flyktet opp i fjellene og levde i to år i en hemmelig grotte ved Takkaze-elven, hvor han viet seg til å granske religionene med fornuftens lys før han skrev sin selvbiografiske avhandling.",
+    majorWorks: [
+      {
+        title: "Undersøkelsen (Hatäta)",
+        year: 1667,
+        description: "En rasjonalistisk filosofisk traktat skrevet på ge'ez – samtidig med Descartes’ Meditasjoner – som etablerer fornuften som den eneste pålitelige dommer.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Grotten ved Takkaze-elven",
+        description: "Alene i mørket i hulen spurte Yacob: Kristne, jøder og muslimer hevder alle at deres bok er den eneste sanne og at de andre lyver. Hvordan kan en rettferdig Skaper dømme folk for å følge foreldrenes tro? Hvis Gud er god, må han ha gitt alle mennesker samme redskap for å finne sannheten: den medfødte fornuften (lebuna).",
+        takeaway: "Enhver religiøs lov som strider mot fornuft og skaperverkets orden (f.eks. faste som ødelegger helsen eller sølibat som hindrer liv) er menneskeskapt løgn.",
+      },
+    ],
+    receptionAndCritique:
+      "Afrikas fremste opplysningsfilosof; formulerte uavhengig rasjonalistiske prinsipper om toleranse, fornuft og kvinners likeverd lenge før de franske opplysningsfilosofene. Lenge oversett av eurosentriske filosofihistorikere, men i dag hyllet som et bevis på at opplysningstenkning er et universelt menneskelig fenomen.",
+  },
+
+  ptahhotep: {
+    philosopherId: 'ptahhotep',
+    historicalContext:
+      "Vesir (førsteminister) under farao Djedkare Isesi i det gamle Egypt under det 5. dynasti (ca. 2400 f.Kr.) under Det gamle riket. Som en aldrende statsmann ønsket han å overlevere sin livsvisdom til sin sønn for å sikre fred, stabilitet og rettferdighet i samfunnet. Hans skrift er en av de aller eldste bevarte filosofiske bøkene i menneskehetens historie.",
+    majorWorks: [
+      {
+        title: "Ptahhoteps maksimer (Instruksjonene til Ptahhotep)",
+        year: -2400,
+        description: "37 etiske maksimer og leveregler om rettferdighet (Ma'at), ydmykhet, selvkontroll, ekteskapelig kjærlighet og kunsten å lytte.",
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: "Kunnskapens kilde hos tjenestejenten",
+        description: "«Vær ikke hovmodig over din lærdom; rådspør både den uvitende og den vise. For kunnskapens grenser kan aldri nås, og ingen håndverker mestrer sitt fag fullkomment. Kloke ord kan finnes like ofte hos slavinnen ved kvernen som blant de lærde.»",
+        takeaway: "Sann visdom krever radikal ydmykhet og vilje til å lytte oppmerksomt til alle stemmer i samfunnet.",
+      },
+      {
+        title: "Ma'ats evige balanse",
+        description: "Løgn og maktmisbruk kan gi kortsiktig vinning, men urettferdighet skaper sprekker i universets orden som til slutt vil ramle sammen over overgriperen.",
+        takeaway: "Rettferdighet, balanse og sannhet (Ma'at) er selve kosmos’ grunnstruktur og overlever alle tider.",
+      },
+    ],
+    receptionAndCritique:
+      "Grunnsteinen for Afrikas og Egypts eldgamle visdomstradisjon (Sebait). Kritisert av moderne egalitære tenkere for å forsvare det tradisjonelle egyptiske klassesamfunnet, men beundret for sin vektlegging av lytteevne, emosjonell kontroll og godhet overfor underordnede.",
+  },
+
 };

@@ -7,9 +7,9 @@ const philosophers = philosophersData as Philosopher[];
 const philosopherIdSet = new Set(philosophers.map((p) => p.id));
 
 describe('Dypdykk: Historisk kontekst & Hovedverker', () => {
-  it('har dypdykk for minst 20 sentrale filosofer', () => {
+  it('har dypdykk for samtlige 80 filosofer i observatoriet', () => {
     const keys = Object.keys(PHILOSOPHER_DEEP_DIVES);
-    expect(keys.length).toBeGreaterThanOrEqual(20);
+    expect(keys.length).toBe(80);
   });
 
   it('samtlige filosofer i PHILOSOPHER_DEEP_DIVES finnes i datasettet', () => {
