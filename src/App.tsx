@@ -1,22 +1,51 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
 import { PhilosopherList } from './features/list/PhilosopherList';
 import { TimelineView } from './features/timeline/TimelineView';
 import { RadarView } from './features/radar/RadarView';
 import { NetworkView } from './features/network/NetworkView';
 import { PhilosopherCard } from './features/card/PhilosopherCard';
-import { PhilosopherComparison } from './features/comparison/PhilosopherComparison';
-import { QuizView } from './features/quiz/QuizView';
-import { FactCheckView } from './features/factcheck/FactCheckView';
-import { AboutView } from './features/about/AboutView';
-import { Galaxy3DView } from './features/galaxy/Galaxy3DView';
 import { DailyPhilosopher } from './features/daily/DailyPhilosopher';
-import { TourSelectModal } from './features/tours/TourSelectModal';
 import { TourPlayer } from './features/tours/TourPlayer';
-import { ExphilHub } from './features/exphil/ExphilHub';
 import type { Tour } from './features/tours/types';
 import { sound } from './lib/sound';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
+
+// Kodeoppdeling via lazy loading for sekundære og tyngre moduler
+const Galaxy3DView = React.lazy(() =>
+  import('./features/galaxy/Galaxy3DView').then((m) => ({ default: m.Galaxy3DView })),
+);
+const QuizView = React.lazy(() =>
+  import('./features/quiz/QuizView').then((m) => ({ default: m.QuizView })),
+);
+const ExphilHub = React.lazy(() =>
+  import('./features/exphil/ExphilHub').then((m) => ({ default: m.ExphilHub })),
+);
+const FactCheckView = React.lazy(() =>
+  import('./features/factcheck/FactCheckView').then((m) => ({ default: m.FactCheckView })),
+);
+const AboutView = React.lazy(() =>
+  import('./features/about/AboutView').then((m) => ({ default: m.AboutView })),
+);
+const PhilosopherComparison = React.lazy(() =>
+  import('./features/comparison/PhilosopherComparison').then((m) => ({
+    default: m.PhilosopherComparison,
+  })),
+);
+const TourSelectModal = React.lazy(() =>
+  import('./features/tours/TourSelectModal').then((m) => ({ default: m.TourSelectModal })),
+);
+
+const ViewFallback: React.FC = () => (
+  <div
+    className="flex flex-col items-center justify-center min-h-[400px] text-star-dim gap-3"
+    role="status"
+    aria-label="Laster visning..."
+  >
+    <div className="w-8 h-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
+    <span className="text-xs font-serif tracking-wider uppercase text-gold/80">Laster observatoriet...</span>
+  </div>
+);
 
 const philosophers = philosophersData as Philosopher[];
 
@@ -164,7 +193,10 @@ export const App: React.FC = () => {
         </p>
 
         {/* Visnings-velger */}
-        <nav className="flex flex-wrap items-center justify-center gap-2 mt-5 p-1 bg-cosmos-card/90 border border-white/10 rounded-full shadow-xl">
+        <nav
+          aria-label="Hovednavigasjon"
+          className="flex flex-wrap items-center justify-center gap-2 mt-5 p-1 bg-cosmos-card/90 border border-white/10 rounded-full shadow-xl"
+        >
           <button
             onClick={() => setView('radar')}
             className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
@@ -285,72 +317,74 @@ export const App: React.FC = () => {
 
       {/* Hovedinnhold: Radaren, 3D-Galaksen, Tidslinjen, Idénettet, Listevisning osv. */}
       <main className="my-4 w-full flex flex-col items-center justify-center">
-        {view === 'radar' ? (
-          <RadarView
-            philosophers={philosophers}
-            onOpenCard={openCard}
-            onStartCompare={(id) => setComparingIds([id])}
-            onNavigateToTimeline={() => setView('timeline')}
-            onNavigateToList={() => setView('list')}
-            focusPhilosopherId={currentTourStop?.philosopherId}
-          />
-        ) : view === 'galaxy' ? (
-          <Galaxy3DView
-            philosophers={philosophers}
-            onOpenCard={openCard}
-            onNavigateToRadar={(id) => {
-              setView('radar');
-              if (id) openCard(id);
-            }}
-            focusPhilosopherId={currentTourStop?.philosopherId}
-          />
-        ) : view === 'timeline' ? (
-          <TimelineView
-            philosophers={philosophers}
-            onOpenCard={openCard}
-          />
-        ) : view === 'network' ? (
-          <NetworkView
-            philosophers={philosophers}
-            onOpenCard={openCard}
-            onNavigateToRadar={() => setView('radar')}
-          />
-        ) : view === 'exphil' ? (
-          <ExphilHub
-            philosophers={philosophers}
-            onOpenCard={openCard}
-            onComparePhilosophers={(ids) => setComparingIds(ids)}
-            onNavigateToRadar={(focusId) => {
-              setView('radar');
-              if (focusId) {
-                openCard(focusId);
-              }
-            }}
-          />
-        ) : view === 'quiz' ? (
-          <QuizView
-            philosophers={philosophers}
-            onOpenCard={openCard}
-            onNavigateToRadar={(highlightId) => {
-              setView('radar');
-              if (highlightId) {
-                openCard(highlightId);
-              }
-            }}
-          />
-        ) : view === 'factcheck' ? (
-          <FactCheckView
-            philosophers={philosophers}
-            onOpenCard={openCard}
-          />
-        ) : view === 'about' ? (
-          <AboutView />
-        ) : (
-          <PhilosopherList
-            philosophers={philosophers}
-            onOpenCard={openCard}
-          />
-        )}
+        <Suspense fallback={<ViewFallback />}>
+          {view === 'radar' ? (
+            <RadarView
+              philosophers={philosophers}
+              onOpenCard={openCard}
+              onStartCompare={(id) => setComparingIds([id])}
+              onNavigateToTimeline={() => setView('timeline')}
+              onNavigateToList={() => setView('list')}
+              focusPhilosopherId={currentTourStop?.philosopherId}
+            />
+          ) : view === 'galaxy' ? (
+            <Galaxy3DView
+              philosophers={philosophers}
+              onOpenCard={openCard}
+              onNavigateToRadar={(id) => {
+                setView('radar');
+                if (id) openCard(id);
+              }}
+              focusPhilosopherId={currentTourStop?.philosopherId}
+            />
+          ) : view === 'timeline' ? (
+            <TimelineView
+              philosophers={philosophers}
+              onOpenCard={openCard}
+            />
+          ) : view === 'network' ? (
+            <NetworkView
+              philosophers={philosophers}
+              onOpenCard={openCard}
+              onNavigateToRadar={() => setView('radar')}
+            />
+          ) : view === 'exphil' ? (
+            <ExphilHub
+              philosophers={philosophers}
+              onOpenCard={openCard}
+              onComparePhilosophers={(ids) => setComparingIds(ids)}
+              onNavigateToRadar={(focusId) => {
+                setView('radar');
+                if (focusId) {
+                  openCard(focusId);
+                }
+              }}
+            />
+          ) : view === 'quiz' ? (
+            <QuizView
+              philosophers={philosophers}
+              onOpenCard={openCard}
+              onNavigateToRadar={(highlightId) => {
+                setView('radar');
+                if (highlightId) {
+                  openCard(highlightId);
+                }
+              }}
+            />
+          ) : view === 'factcheck' ? (
+            <FactCheckView
+              philosophers={philosophers}
+              onOpenCard={openCard}
+            />
+          ) : view === 'about' ? (
+            <AboutView />
+          ) : (
+            <PhilosopherList
+              philosophers={philosophers}
+              onOpenCard={openCard}
+            />
+          )}
+        </Suspense>
       </main>
 
       {/* Filosofkortet (glir inn fra høyre) */}
@@ -377,24 +411,28 @@ export const App: React.FC = () => {
 
       {/* Sammenligningskammeret (modal for 2-3 filosofer) */}
       {comparingIds && (
-        <PhilosopherComparison
-          initialIds={comparingIds}
-          allPhilosophers={philosophers}
-          onClose={() => setComparingIds(null)}
-          onOpenPhilosopherCard={(id) => {
-            setComparingIds(null);
-            openCard(id);
-          }}
-        />
+        <Suspense fallback={null}>
+          <PhilosopherComparison
+            initialIds={comparingIds}
+            allPhilosophers={philosophers}
+            onClose={() => setComparingIds(null)}
+            onOpenPhilosopherCard={(id) => {
+              setComparingIds(null);
+              openCard(id);
+            }}
+          />
+        </Suspense>
       )}
 
       {/* Guidet tur modal og spiller */}
       {isTourModalOpen && (
-        <TourSelectModal
-          philosophers={philosophers}
-          onSelectTour={startTour}
-          onClose={() => setIsTourModalOpen(false)}
-        />
+        <Suspense fallback={null}>
+          <TourSelectModal
+            philosophers={philosophers}
+            onSelectTour={startTour}
+            onClose={() => setIsTourModalOpen(false)}
+          />
+        </Suspense>
       )}
 
       {activeTour && tourPhilosopher && (

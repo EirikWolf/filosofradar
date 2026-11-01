@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
 import { THEME_IDS } from '../../schemas/philosopher';
 import { getThemeMeta } from '../../lib/themes';
@@ -57,6 +57,17 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
     setSelectedIds(updated);
   };
 
+  // Tastatursnarvei: Escape lukker sammenligningskammeret
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   // Sjekk om de levde samtidig
   const haveOverlap = selectedPhilosophers.length >= 2 && (() => {
     const p1 = selectedPhilosophers[0];
@@ -74,6 +85,9 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Sammenligningskammer"
         className="w-full max-w-4xl max-h-[92vh] bg-cosmos-card border border-gold/40 rounded-2xl shadow-2xl flex flex-col p-6 sm:p-8 overflow-y-auto animate-in zoom-in-95"
         onClick={(e) => e.stopPropagation()}
       >
@@ -93,6 +107,8 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
 
           <button
             onClick={onClose}
+            aria-label="Lukk sammenligningskammer (Esc)"
+            title="Lukk (Esc)"
             className="w-9 h-9 rounded-full border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors flex items-center justify-center text-sm"
           >
             ✕

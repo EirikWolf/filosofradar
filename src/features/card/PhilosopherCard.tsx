@@ -55,6 +55,9 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
     >
       {/* Kort-panel som glir inn fra høyre */}
       <aside
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Filosofkort for ${philosopher.name}`}
         className="w-full max-w-lg md:max-w-xl h-full bg-cosmos-card border-l border-gold/30 shadow-2xl overflow-y-auto flex flex-col p-6 sm:p-8 animate-in slide-in-from-right duration-300 select-text"
         onClick={(e) => e.stopPropagation()}
       >
@@ -120,6 +123,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
 
           <button
             onClick={onClose}
+            aria-label="Lukk filosofkort (Esc)"
             className="w-8 h-8 rounded-full border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors flex items-center justify-center text-sm"
             title="Lukk (Esc)"
           >

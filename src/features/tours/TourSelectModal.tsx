@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import type { Tour } from './types';
 import { TOURS } from './tourData';
 import type { Philosopher } from '../../schemas/philosopher';
@@ -17,12 +17,26 @@ export const TourSelectModal: React.FC<TourSelectModalProps> = ({
 }) => {
   const pMap = new Map(philosophers.map((p) => [p.id, p]));
 
+  // Tastatursnarvei: Escape lukker tur-modalen
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-cosmos-darkest/80 backdrop-blur-md animate-fadeIn"
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Velg en historisk idéreise"
         className="relative w-full max-w-4xl max-h-[90vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
         onClick={(e) => e.stopPropagation()}
       >
@@ -42,8 +56,9 @@ export const TourSelectModal: React.FC<TourSelectModalProps> = ({
           </div>
           <button
             onClick={onClose}
+            aria-label="Lukk (Esc)"
+            title="Lukk (Esc)"
             className="w-9 h-9 rounded-full border border-white/15 hover:border-gold/50 text-star-dim hover:text-white flex items-center justify-center text-sm transition-all"
-            title="Lukk"
           >
             ✕
           </button>

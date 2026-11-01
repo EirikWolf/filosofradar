@@ -85,7 +85,15 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Tester for Fase 9 grønne (`tests/fase9-wow.test.ts`), 66/66 tester bestått
 - 🎯 Din tur: Juster klangfargen eller frekvensen på stjernelyden i `src/lib/sound.ts` og hør forskjellen!
 
-## Fase 10 (valgfri) – «Spør filosofen» ⬜
+## Fase 10 – Ex.phil Studie-Hub & Komplette Dypdykk ✅
+- [x] Eksamensradar med pensumrelevans, sensors nøkkelbegreper, typiske eksamensfeller og eksamensoppgaver for sentrale Ex.phil-filosofer
+- [x] 80 interaktive flervalgsflashcards med faglige begrunnelser og eksamensfokus
+- [x] Filosofisk debattarena: Sammenligning av tenkere på tvers av klassiske filosofiske dilemmaer (erkjennelsesteori, etikk, samfunnsfilosofi)
+- [x] Komplette dypdykk for samtlige 80 filosofer: Historisk kontekst, hovedverker, klassiske tankeeksperimenter og resepsjon/kritikk
+- [x] Tester for Ex.phil og dypdykk grønne (`tests/exphil.test.ts`, `tests/deepdive.test.ts`)
+- 🎯 Din tur: Velg to filosofer i debattarenaen og formuler din egen konklusjon på etikken deres!
+
+## Fase 11 (valgfri) – «Spør filosofen» ⬜
 Krever Blaze-plan, Cloud Functions og API-nøkkel (Asbjørns eller Olais, lagret som Firebase secret – aldri i koden).
 - [ ] Budsjettvarsel og hard grense satt; antall spørsmål per besøk begrenset
 - [ ] Svarene er tydelig merket som AI-simulering, bygger på filosof-filen, og er alderstilpasset

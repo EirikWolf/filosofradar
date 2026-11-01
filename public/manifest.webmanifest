@@ -1,0 +1,17 @@
+{
+  "name": "Filosofradaren",
+  "short_name": "Filosofradar",
+  "description": "Filosofiens historie som et levende stjernekart – 80 filosofer, 9 tradisjoner, 2500 år med idéhistorie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040714",
+  "theme_color": "#040714",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
