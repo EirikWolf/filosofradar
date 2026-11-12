@@ -1,0 +1,36 @@
+# CI for filosofradar. Repoet er offentlig, så vi bruker GitHub-hostede runnere
+# (gratis for offentlige repoer). Self-hosted runnere skal aldri kjøre kode fra
+# PR-er i et offentlig repo, fordi hvem som helst kan åpne en PR.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Sjekk og bygg
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # src/generated/ er gitignorert og lages fra content/. Uten dette steget
+      # feiler typecheck på en fersk klon (lokalt ligger filene der fra før).
+      - name: Generer innhold
+        run: npx tsx scripts/build-content.ts
+      # typecheck + lint + test + innholdsvalidering
+      - run: npm run check
+      - run: npm run build
