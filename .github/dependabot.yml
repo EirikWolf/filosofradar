@@ -1,0 +1,51 @@
+# Dependabot for Filosofradaren.
+#
+# Ukentlig kadens og et tak på fem åpne PR-er holder støyen nede. Sikkerhets-
+# oppdateringer teller ikke mot taket, så det bremser dem ikke.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Oslo
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      # Sikkerhetsoppdateringer samles i én PR så de kan vurderes samlet.
+      sikkerhetsoppdateringer:
+        applies-to: security-updates
+        patterns:
+          - "*"
+      byggkjede:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+          - "vitest"
+          - "tailwindcss"
+          - "postcss"
+          - "autoprefixer"
+          - "typescript"
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      ovrige-patch-og-minor:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: chore
