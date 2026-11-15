@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { ThemeRadar } from '../../components/ThemeRadar';
 import { ExphilCardExamBox } from '../exphil/ExphilCardExamBox';
 import { DeepDiveSection } from '../deepdive/DeepDiveSection';
+import { StoryModal } from '../story/StoryModal';
+import type { ThoughtExperiment } from '../deepdive/types';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
 
 interface PhilosopherCardProps {
@@ -28,6 +30,8 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
 }) => {
   const meta = getTraditionMeta(philosopher.tradition);
 
+  const [activeStoryExperiment, setActiveStoryExperiment] = useState<ThoughtExperiment | null>(null);
+
   // Kart over filosofer for rask id-oppslag
   const philosophersById = React.useMemo(() => {
     const map = new Map<string, Philosopher>();
@@ -37,16 +41,20 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
     return map;
   }, [allPhilosophers]);
 
-  // Tastatursnarvei: Escape lukker kortet
+  // Tastatursnarvei: Escape lukker kortet (eller aktiv story)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        if (activeStoryExperiment) {
+          setActiveStoryExperiment(null);
+        } else {
+          onClose();
+        }
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+  }, [onClose, activeStoryExperiment]);
 
   return (
     <div
@@ -242,6 +250,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         <DeepDiveSection
           philosopherId={philosopher.id}
           philosopherName={philosopher.name}
+          onPlayStory={(exp) => setActiveStoryExperiment(exp)}
         />
 
         {/* 6. Seksjon: Påvirkningsnettverk (Idé-slekt) */}
@@ -342,6 +351,16 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
           )}
         </div>
       </aside>
+
+      {/* Story-modus modal: "Idéen på 45 sekunder" */}
+      {activeStoryExperiment && (
+        <StoryModal
+          experiment={activeStoryExperiment}
+          philosopherName={philosopher.name}
+          philosopherId={philosopher.id}
+          onClose={() => setActiveStoryExperiment(null)}
+        />
+      )}
     </div>
   );
 };
