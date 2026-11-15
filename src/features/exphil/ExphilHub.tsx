@@ -7,47 +7,50 @@ import { ExphilQuizView } from './ExphilQuizView';
 import { sound } from '../../lib/sound';
 import { formatLifeSpan } from '../../lib/years';
 
-interface ExphilHubProps {
+export type ExphilTab = 'duels' | 'flashcards' | 'quiz' | 'syllabus';
+
+export interface ExphilHubProps {
   philosophers: Philosopher[];
   onOpenCard: (id: string) => void;
   onComparePhilosophers: (ids: string[]) => void;
   onNavigateToRadar: (focusId?: string) => void;
+  activeTab?: ExphilTab;
+  onTabChange?: (tab: ExphilTab) => void;
 }
-
-type ExphilTab = 'duels' | 'flashcards' | 'quiz' | 'syllabus';
 
 export const ExphilHub: React.FC<ExphilHubProps> = ({
   philosophers,
   onOpenCard,
   onComparePhilosophers,
   onNavigateToRadar,
+  activeTab: controlledTab,
+  onTabChange,
 }) => {
-  const [activeTab, setActiveTab] = useState<ExphilTab>('duels');
+  const [internalTab, setInternalTab] = useState<ExphilTab>('duels');
+  const activeTab = controlledTab ?? internalTab;
 
   // Filtrer filosofene til de som er på ex.phil-pensum
   const exphilPhilosophers = philosophers.filter((p) => EXPHIL_PHILOSOPHER_IDS.has(p.id));
 
   const handleTabChange = (tab: ExphilTab) => {
-    setActiveTab(tab);
+    if (onTabChange) {
+      onTabChange(tab);
+    } else {
+      setInternalTab(tab);
+    }
     sound.playStarSelect();
   };
 
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col items-center gap-6 px-2 sm:px-4 animate-in fade-in pb-12">
       {/* Banner / Header */}
-      <div className="w-full text-center max-w-3xl py-4 border-b border-white/10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold/15 border border-gold/40 text-gold text-xs font-serif uppercase tracking-widest shadow-lg mb-3">
-          <span>🎓</span> Eksamensmestring for Examen Philosophicum
-        </div>
-        <h1 className="text-3xl md:text-5xl font-serif font-bold text-star-white drop-shadow-[0_0_25px_rgba(246,200,95,0.3)]">
-          EX.PHIL STUDIE-HUB
-        </h1>
-        <p className="text-sm md:text-base text-star-dim font-sans mt-2 max-w-2xl mx-auto">
+      <div className="w-full text-center max-w-3xl py-2 border-b border-white/10">
+        <p className="text-xs sm:text-sm text-star-dim font-sans max-w-2xl mx-auto">
           Skreddersydd for studenter ved UiO, NTNU, UiB, UiT m.fl. Drøft de klassiske motsetningene, drill fagbegrepene og lær nøyaktig hva sensor ser etter på eksamensdagen.
         </p>
 
         {/* Tab-velger */}
-        <nav className="flex flex-wrap items-center justify-center gap-2 mt-6 p-1.5 bg-cosmos-card/90 border border-white/10 rounded-full shadow-xl">
+        <nav className="flex flex-wrap items-center justify-center gap-2 mt-4 p-1.5 bg-cosmos-card/90 border border-white/10 rounded-full shadow-xl">
           <button
             onClick={() => handleTabChange('duels')}
             className={`px-4 sm:px-6 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${

@@ -10,6 +10,8 @@ import type { Tour } from './features/tours/types';
 import { sound } from './lib/sound';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
+import type { ExphilTab } from './features/exphil/ExphilHub';
+import type { ThoughtExperiment } from './features/deepdive/types';
 
 // Kodeoppdeling via lazy loading for sekundære og tyngre moduler
 const Galaxy3DView = React.lazy(() =>
@@ -32,6 +34,12 @@ const PhilosopherComparison = React.lazy(() =>
 const TourSelectModal = React.lazy(() =>
   import('./features/tours/TourSelectModal').then((m) => ({ default: m.TourSelectModal })),
 );
+const StoryModal = React.lazy(() =>
+  import('./features/story/StoryModal').then((m) => ({ default: m.StoryModal })),
+);
+const StoryGalleryModal = React.lazy(() =>
+  import('./features/story/StoryGalleryModal').then((m) => ({ default: m.StoryGalleryModal })),
+);
 
 const ViewFallback: React.FC = () => (
   <div
@@ -51,10 +59,17 @@ type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 
 export const App: React.FC = () => {
   const [view, setView] = useState<ViewMode>('radar');
   const [lastObservatoryView, setLastObservatoryView] = useState<ViewMode>('radar');
+  const [exphilTab, setExphilTab] = useState<ExphilTab>('duels');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [comparingIds, setComparingIds] = useState<string[] | null>(null);
   const [isClassroomMode, setIsClassroomMode] = useState<boolean>(false);
   const [isSoundEnabled, setIsSoundEnabled] = useState<boolean>(sound.enabled);
+  const [isStoryGalleryOpen, setIsStoryGalleryOpen] = useState<boolean>(false);
+  const [activeStory, setActiveStory] = useState<{
+    philosopherId: string;
+    philosopherName: string;
+    experiment: ThoughtExperiment;
+  } | null>(null);
 
   const isObservatoryView =
     view === 'radar' || view === 'galaxy' || view === 'timeline' || view === 'network' || view === 'list';
@@ -214,7 +229,7 @@ export const App: React.FC = () => {
           className="flex flex-wrap items-center justify-center gap-2 mt-5 p-1.5 bg-cosmos-card/95 border border-white/15 rounded-full shadow-2xl"
         >
           <button
-            onClick={() => setView(lastObservatoryView)}
+            onClick={() => selectObservatoryView(lastObservatoryView)}
             className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-serif tracking-wider transition-all flex items-center gap-2 ${
               isObservatoryView
                 ? 'bg-gold text-cosmos font-bold shadow-[0_0_15px_rgba(246,200,95,0.6)] scale-[1.02]'
@@ -231,9 +246,9 @@ export const App: React.FC = () => {
                 ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-[0_0_18px_rgba(251,191,36,0.6)] scale-[1.02]'
                 : 'border-amber-400/30 text-amber-300 hover:bg-amber-400/10'
             }`}
-            title="Eksamensmestring for Examen Philosophicum (radar, flashcards og debattarena)"
+            title="Eksamensmestring for Examen Philosophicum (dueller, flashcards og pensum)"
           >
-            <span>🎓</span> Ex.phil Studie-Hub
+            <span>🎓</span> Ex.phil & Studie
           </button>
 
           <button
@@ -244,19 +259,19 @@ export const App: React.FC = () => {
                 : 'text-star-dim hover:text-white'
             }`}
           >
-            <span>🎭</span> Quizen & Opplevelser
+            <span>🎭</span> Opplevelser & Quiz
           </button>
         </nav>
 
-        {/* Under-velger for Observatoriet */}
+        {/* Kontekstuell sub-meny for Observatoriet */}
         {isObservatoryView && (
           <nav
             aria-label="Observatorie-visninger"
-            className="flex flex-wrap items-center justify-center gap-1.5 mt-3 p-1 bg-slate-900/70 border border-white/10 rounded-full shadow-lg animate-fadeIn"
+            className="flex flex-wrap items-center justify-center gap-1.5 mt-3 p-1 bg-slate-900/70 border border-white/10 rounded-full shadow-lg animate-fadeIn text-xs"
           >
             <button
               onClick={() => selectObservatoryView('radar')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'radar'
                   ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
                   : 'text-star-dim hover:text-white'
@@ -266,7 +281,7 @@ export const App: React.FC = () => {
             </button>
             <button
               onClick={() => selectObservatoryView('galaxy')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'galaxy'
                   ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
                   : 'text-star-dim hover:text-white'
@@ -276,7 +291,7 @@ export const App: React.FC = () => {
             </button>
             <button
               onClick={() => selectObservatoryView('timeline')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'timeline'
                   ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
                   : 'text-star-dim hover:text-white'
@@ -286,7 +301,7 @@ export const App: React.FC = () => {
             </button>
             <button
               onClick={() => selectObservatoryView('network')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'network'
                   ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
                   : 'text-star-dim hover:text-white'
@@ -296,7 +311,7 @@ export const App: React.FC = () => {
             </button>
             <button
               onClick={() => selectObservatoryView('list')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'list'
                   ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
                   : 'text-star-dim hover:text-white'
@@ -307,37 +322,109 @@ export const App: React.FC = () => {
           </nav>
         )}
 
-        {/* Hurtig-snarveier når man er i Quizen & Opplevelser */}
+        {/* Kontekstuell sub-meny for Ex.phil & Studie */}
+        {view === 'exphil' && (
+          <nav
+            aria-label="Ex.phil-moduler"
+            className="flex flex-wrap items-center justify-center gap-1.5 mt-3 p-1 bg-slate-900/70 border border-amber-400/20 rounded-full shadow-lg animate-fadeIn text-xs"
+          >
+            <button
+              onClick={() => setExphilTab('duels')}
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                exphilTab === 'duels'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
+              }`}
+            >
+              <span>⚔️</span> Eksamensdueller
+            </button>
+            <button
+              onClick={() => setExphilTab('flashcards')}
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                exphilTab === 'flashcards'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
+              }`}
+            >
+              <span>🃏</span> Flashcards (Begrepsdrill)
+            </button>
+            <button
+              onClick={() => setExphilTab('quiz')}
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                exphilTab === 'quiz'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
+              }`}
+            >
+              <span>📝</span> Eksamens-drill
+            </button>
+            <button
+              onClick={() => setExphilTab('syllabus')}
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                exphilTab === 'syllabus'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
+              }`}
+            >
+              <span>📚</span> Pensumliste
+            </button>
+            <button
+              onClick={() => setComparingIds(['platon', 'aristoteles'])}
+              className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-cyan-300 hover:text-white hover:bg-cyan-500/10 border border-cyan-400/30"
+              title="Sammenlign to tenkere i sammenligningskammeret"
+            >
+              <span>⚖️</span> Sammenlign
+            </button>
+          </nav>
+        )}
+
+        {/* Kontekstuell sub-meny for Opplevelser & Quiz */}
         {view === 'quiz' && (
-          <div className="flex flex-wrap items-center justify-center gap-2.5 mt-3 animate-fadeIn text-xs">
-            <span className="text-star-dim italic">Utforsk flere opplevelser:</span>
+          <nav
+            aria-label="Opplevelses-visninger"
+            className="flex flex-wrap items-center justify-center gap-1.5 mt-3 p-1 bg-slate-900/70 border border-white/10 rounded-full shadow-lg animate-fadeIn text-xs"
+          >
+            <div className="px-3.5 py-1.5 rounded-full font-serif tracking-wider bg-gold/20 border border-gold text-gold font-bold shadow-sm flex items-center gap-1.5">
+              <span>🎭</span> Personlighetsquiz
+            </div>
+            <button
+              onClick={() => setIsStoryGalleryOpen(true)}
+              className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-gold-bright hover:text-white bg-gold/10 hover:bg-gold/20 border border-gold/40 shadow-sm font-bold"
+              title="Åpne de 31 dramatiserte filosofiske historiene med tale"
+            >
+              <span>📖</span> 31 Filosofiske Historier
+            </button>
             <button
               onClick={() => setIsTourModalOpen(true)}
-              className="px-3.5 py-1 rounded-full font-serif border border-gold/40 bg-gold/10 text-gold hover:bg-gold hover:text-cosmos transition-all flex items-center gap-1.5 font-bold shadow-sm"
+              className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-star-dim hover:text-white hover:bg-white/5"
+              title="Start en kuratert historisk idéreise"
             >
-              <span>🧭</span> Start en guidet tur
+              <span>🧭</span> Guidede turer
             </button>
             <button
               onClick={() => setComparingIds(['sokrates', 'platon'])}
-              className="px-3.5 py-1 rounded-full font-serif border border-cyan-400/40 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 transition-all flex items-center gap-1.5 font-bold shadow-sm"
+              className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-cyan-300 hover:text-white hover:bg-cyan-500/10 border border-cyan-400/30"
+              title="Sammenlign to filosofer side om side"
             >
               <span>⚖️</span> Sammenlign to tenkere
             </button>
-          </div>
+          </nav>
         )}
       </header>
 
       {/* Dagens filosof (vises elegant øverst i observatoriet) */}
-      <div className="w-full mt-4">
-        <DailyPhilosopher
-          philosophers={philosophers}
-          onOpenCard={openCard}
-          onNavigateToRadar={(id) => {
-            setView('radar');
-            openCard(id);
-          }}
-        />
-      </div>
+      {isObservatoryView && (
+        <div className="w-full mt-4">
+          <DailyPhilosopher
+            philosophers={philosophers}
+            onOpenCard={openCard}
+            onNavigateToRadar={(id) => {
+              setView('radar');
+              openCard(id);
+            }}
+          />
+        </div>
+      )}
 
       {/* Hovedinnhold: Radaren, 3D-Galaksen, Tidslinjen, Idénettet, Listevisning osv. */}
       <main className="my-4 w-full flex flex-col items-center justify-center">
@@ -383,6 +470,8 @@ export const App: React.FC = () => {
                   openCard(focusId);
                 }
               }}
+              activeTab={exphilTab}
+              onTabChange={setExphilTab}
             />
           ) : view === 'quiz' ? (
             <QuizView
@@ -471,6 +560,36 @@ export const App: React.FC = () => {
         />
       )}
 
+      {/* 31 Filosofiske Historier (Story-galleri modal) */}
+      {isStoryGalleryOpen && (
+        <Suspense fallback={null}>
+          <StoryGalleryModal
+            onSelectStory={(story) => {
+              setIsStoryGalleryOpen(false);
+              setActiveStory(story);
+            }}
+            onClose={() => setIsStoryGalleryOpen(false)}
+          />
+        </Suspense>
+      )}
+
+      {/* StoryModal (når en historie spilles av direkte fra galleri eller toppmeny) */}
+      {activeStory && (
+        <Suspense fallback={null}>
+          <StoryModal
+            philosopherId={activeStory.philosopherId}
+            philosopherName={activeStory.philosopherName}
+            experiment={activeStory.experiment}
+            onClose={() => setActiveStory(null)}
+            onExploreDeepDive={() => {
+              const id = activeStory.philosopherId;
+              setActiveStory(null);
+              openCard(id);
+            }}
+          />
+        </Suspense>
+      )}
+
       {/* Footer med status og snarveier */}
       <footer className="w-full max-w-2xl text-center py-6 text-xs text-star-dim border-t border-white/10 flex flex-col items-center gap-2">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-serif">
@@ -479,6 +598,13 @@ export const App: React.FC = () => {
             className="hover:text-gold transition-colors underline underline-offset-4 text-amber-300 font-bold"
           >
             🎓 Ex.phil Studie-hub
+          </button>
+          <span>·</span>
+          <button
+            onClick={() => setIsStoryGalleryOpen(true)}
+            className="hover:text-gold transition-colors underline underline-offset-4 text-gold font-bold"
+          >
+            📖 31 Historier
           </button>
           <span>·</span>
           <button

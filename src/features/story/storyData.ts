@@ -2216,3 +2216,35 @@ export function getStoryScript(
     ],
   };
 }
+
+export interface StorySummary {
+  key: string;
+  philosopherId: string;
+  philosopherName: string;
+  experimentTitle: string;
+  image?: string;
+  icon?: string;
+  headline: string;
+  subheadline?: string;
+  teaser: string;
+  totalDurationSeconds: number;
+}
+
+/**
+ * Returnerer en oppsummering av alle kuraterte historier for gallerivisning.
+ */
+export function getAllBespokeStories(): StorySummary[] {
+  return Object.entries(BESPOKE_STORIES).map(([key, story]) => ({
+    key,
+    philosopherId: story.philosopherId,
+    philosopherName: story.philosopherName,
+    experimentTitle: story.experimentTitle,
+    image: story.image,
+    icon: story.icon,
+    headline: story.slides[0]?.headline || story.experimentTitle,
+    subheadline: story.slides[0]?.subheadline,
+    teaser: story.slides[0]?.body || '',
+    totalDurationSeconds: story.totalDurationSeconds || 45,
+  }));
+}
+
