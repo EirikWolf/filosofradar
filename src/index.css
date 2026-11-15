@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 :root {
   --color-cosmos-dark: #040714;
   --color-cosmos-card: #080e22;

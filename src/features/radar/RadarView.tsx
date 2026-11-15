@@ -85,7 +85,12 @@ export const RadarView: React.FC<RadarViewProps> = ({
     return map;
   }, [radarPoints]);
 
-  // Den valgte filosofen (eller den som holdes peker over)
+  // Den valgte filosofen (vises i Hurtigkort / Mini-observatoriet under radaren ved klikk)
+  const selectedPoint = useMemo(() => {
+    return selectedId ? pointsMap.get(selectedId) || null : null;
+  }, [selectedId, pointsMap]);
+
+  // Aktiv filosof for visuelle effekter på radaren (hover eller valgt)
   const activePoint = useMemo(() => {
     const id = hoveredId || selectedId;
     return id ? pointsMap.get(id) || null : null;
@@ -778,13 +783,16 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   }
                 }}
               >
+                {/* Usynlig treffsone (forhindrer flimring/jitter på stjernekanten) */}
+                <circle r="14" fill="transparent" />
+
                 {/* Supernova-puls ved fødsel i tidsmaskinen */}
                 {isBornSupernova && (
                   <circle
                     r="8"
                     fill="none"
                     stroke="#ffffff"
-                    className="animate-supernova text-cyan-glow"
+                    className="animate-supernova text-cyan-glow pointer-events-none"
                   />
                 )}
 
@@ -806,7 +814,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   r={starRadius * 1.8}
                   fill={meta.color}
                   opacity={isAlive ? 0.35 : 0.15}
-                  className="transition-transform group-hover:scale-125"
+                  className="transition-transform group-hover:scale-125 pointer-events-none"
                 />
 
                 {/* Hovedstjerne */}
@@ -815,21 +823,32 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   fill={isSelected ? '#f6c85f' : '#ffffff'}
                   stroke={meta.color}
                   strokeWidth={isSelected ? 2 : 1}
-                  className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.85)]"
+                  className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.85)] pointer-events-none"
                 />
 
-                {/* Navnelapp på radaren ved hover eller når valgt */}
+                {/* Navnelapp og levetid på radaren ved hover eller når valgt */}
                 {(isHovered || isSelected) && (
-                  <text
-                    y={starRadius + 13}
-                    textAnchor="middle"
-                    fill={isSelected ? '#f6c85f' : '#ffffff'}
-                    fontSize="10"
-                    fontWeight={isSelected ? 'bold' : '500'}
-                    className="font-serif pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
-                  >
-                    {p.name}
-                  </text>
+                  <g className="pointer-events-none select-none">
+                    <text
+                      y={pt.y > 730 ? -starRadius - 16 : starRadius + 14}
+                      textAnchor="middle"
+                      fill={isSelected ? '#f6c85f' : '#ffffff'}
+                      fontSize="11"
+                      fontWeight={isSelected ? 'bold' : '600'}
+                      className="font-serif drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]"
+                    >
+                      {p.name}
+                    </text>
+                    <text
+                      y={pt.y > 730 ? -starRadius - 5 : starRadius + 26}
+                      textAnchor="middle"
+                      fill="#ffd79e"
+                      fontSize="9"
+                      className="font-serif opacity-90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]"
+                    >
+                      {formatLifeSpan(p)}
+                    </text>
+                  </g>
                 )}
               </g>
             );
@@ -873,37 +892,37 @@ export const RadarView: React.FC<RadarViewProps> = ({
         </button>
       </div>
 
-      {/* Filosofens Hurtigkort / Mini-observatorium (vises ved klikk eller hover) */}
-      {activePoint && (
-        <div className="w-full max-w-2xl p-5 bg-cosmos-card/95 border border-gold/40 rounded-2xl shadow-2xl backdrop-blur animate-in fade-in slide-in-from-bottom-2">
+      {/* Filosofens Hurtigkort / Mini-observatorium (vises stabilt ved klikk/valg på stjerne) */}
+      {selectedPoint && (
+        <div id="radar-hurtigkort" className="w-full max-w-2xl p-5 bg-cosmos-card/95 border border-gold/40 rounded-2xl shadow-2xl backdrop-blur animate-in fade-in slide-in-from-bottom-2">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span
                   className="w-2.5 h-2.5 rounded-full"
-                  style={{ backgroundColor: getTraditionMeta(activePoint.tradition).color }}
+                  style={{ backgroundColor: getTraditionMeta(selectedPoint.tradition).color }}
                 />
                 <span className="text-xs uppercase font-serif tracking-widest text-star-dim">
-                  {getTraditionMeta(activePoint.tradition).name}
+                  {getTraditionMeta(selectedPoint.tradition).name}
                 </span>
               </div>
               <h3 className="text-2xl font-serif font-bold text-star-white flex items-center gap-2">
-                {activePoint.philosopher.name}
-                {activePoint.philosopher.nameOriginal && (
+                {selectedPoint.philosopher.name}
+                {selectedPoint.philosopher.nameOriginal && (
                   <span className="text-sm font-normal text-star-dim">
-                    ({activePoint.philosopher.nameOriginal})
+                    ({selectedPoint.philosopher.nameOriginal})
                   </span>
                 )}
               </h3>
               <p className="text-xs font-serif text-gold-bright mt-0.5">
-                {formatLifeSpan(activePoint.philosopher)}
+                {formatLifeSpan(selectedPoint.philosopher)}
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
               {onOpenCard && (
                 <button
-                  onClick={() => onOpenCard(activePoint.philosopher.id)}
+                  onClick={() => onOpenCard(selectedPoint.philosopher.id)}
                   className="px-3.5 py-1.5 rounded-lg bg-gold text-cosmos font-serif font-bold hover:bg-gold-bright text-xs transition-all shadow-[0_0_10px_rgba(246,200,95,0.4)] flex items-center gap-1"
                 >
                   <span>📖</span> Åpne filosofkort
@@ -911,7 +930,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
               )}
               {onStartCompare && (
                 <button
-                  onClick={() => onStartCompare(activePoint.philosopher.id)}
+                  onClick={() => onStartCompare(selectedPoint.philosopher.id)}
                   className="px-3 py-1.5 rounded-lg border border-gold/40 text-gold hover:bg-gold/10 text-xs font-serif transition-colors flex items-center gap-1"
                 >
                   <span>⚖️</span> Sammenlign
@@ -933,29 +952,27 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   📋 Liste
                 </button>
               )}
-              {selectedId && (
-                <button
-                  onClick={() => setSelectedId(null)}
-                  className="text-star-dim hover:text-white px-2 py-1 text-sm"
-                  title="Lukk forhåndsvisning"
-                >
-                  ✕
-                </button>
-              )}
+              <button
+                onClick={() => setSelectedId(null)}
+                className="text-star-dim hover:text-white px-2 py-1 text-sm rounded-lg hover:bg-white/10 transition-colors"
+                title="Lukk forhåndsvisning"
+              >
+                ✕
+              </button>
             </div>
           </div>
 
           {/* Kjerneidé eller sitat */}
           <div className="mt-4 text-xs text-star-dim leading-relaxed">
-            {activePoint.philosopher.quote ? (
+            {selectedPoint.philosopher.quote ? (
               <blockquote className="italic border-l-2 border-gold/50 pl-3 py-1 text-star-white/90">
-                «{activePoint.philosopher.quote.text}»
+                «{selectedPoint.philosopher.quote.text}»
                 <footer className="text-[10px] text-star-dim not-italic mt-1">
-                  — {activePoint.philosopher.quote.work}
+                  — {selectedPoint.philosopher.quote.work}
                 </footer>
               </blockquote>
             ) : (
-              <p>{activePoint.philosopher.keyIdeas[0]?.text}</p>
+              <p>{selectedPoint.philosopher.keyIdeas[0]?.text}</p>
             )}
           </div>
 
