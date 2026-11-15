@@ -43,9 +43,9 @@ export const RadarView: React.FC<RadarViewProps> = ({
   const [onlyExphil, setOnlyExphil] = useState<boolean>(false);
   const [showScaleHelp, setShowScaleHelp] = useState<boolean>(false);
 
-  // Sveipestråle-tilstander
+  // Sveipestråle-tilstander (pauset som standard etter brukerønske)
   const [sweepSpeed, setSweepSpeed] = useState<number>(8);
-  const [isSweepPaused, setIsSweepPaused] = useState<boolean>(false);
+  const [isSweepPaused, setIsSweepPaused] = useState<boolean>(true);
 
   // Tidsmaskin-tilstander
   const [isTimeMachineActive, setIsTimeMachineActive] = useState<boolean>(false);

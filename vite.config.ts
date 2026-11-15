@@ -7,6 +7,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
+        entryFileNames: 'assets/[name]-v2-[hash].js',
+        chunkFileNames: 'assets/[name]-v2-[hash].js',
+        assetFileNames: 'assets/[name]-v2-[hash].[ext]',
         manualChunks: {
           vendor: ['react', 'react-dom'],
           d3: ['d3-force'],
