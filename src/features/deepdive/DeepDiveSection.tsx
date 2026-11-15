@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import type { PhilosopherDeepDive } from './types';
+import type { PhilosopherDeepDive, ThoughtExperiment } from './types';
 import { PHILOSOPHER_DEEP_DIVES } from './deepDiveData';
 import { formatYear } from '../../lib/years';
 import { sound } from '../../lib/sound';
+import { VisualHookCard } from '../card/VisualHookCard';
 
 interface DeepDiveSectionProps {
   philosopherId: string;
+  philosopherName?: string;
+  onPlayStory?: (exp: ThoughtExperiment) => void;
 }
 
-export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({ philosopherId }) => {
+export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({
+  philosopherId,
+  philosopherName = 'Filosofen',
+  onPlayStory,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const deepDive: PhilosopherDeepDive | undefined = PHILOSOPHER_DEEP_DIVES[philosopherId];
@@ -95,29 +102,21 @@ export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({ philosopherId 
             </div>
           </div>
 
-          {/* 3. Kjente tankeeksperimenter & allegorier */}
+          {/* 3. Kjente tankeeksperimenter & allegorier (Visuelle knagger) */}
           {deepDive.thoughtExperiments && deepDive.thoughtExperiments.length > 0 && (
             <div>
               <h4 className="text-xs font-serif uppercase tracking-widest text-gold mb-2.5 flex items-center gap-2">
-                <span>🧪</span> 3. Kjente tankeeksperimenter & Allegorier:
+                <span>🧪</span> 3. Kjente tankeeksperimenter & Visuelle knagger:
               </h4>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {deepDive.thoughtExperiments.map((exp, idx) => (
-                  <div
+                  <VisualHookCard
                     key={idx}
-                    className="p-4 rounded-xl bg-amber-950/20 border border-amber-500/30 space-y-2"
-                  >
-                    <div className="text-xs font-serif font-bold text-amber-300 flex items-center gap-1.5">
-                      <span>▸</span> {exp.title}
-                    </div>
-                    <p className="text-xs text-star-white/95 font-sans leading-relaxed">
-                      {exp.description}
-                    </p>
-                    <div className="p-2.5 rounded-lg bg-cosmos border border-amber-500/20 text-xs text-amber-100 font-sans italic">
-                      <strong className="not-italic text-amber-300 font-serif">Poeng: </strong>
-                      {exp.takeaway}
-                    </div>
-                  </div>
+                    experiment={exp}
+                    philosopherName={philosopherName}
+                    philosopherId={philosopherId}
+                    onPlayStory={onPlayStory}
+                  />
                 ))}
               </div>
             </div>

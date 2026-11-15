@@ -56,11 +56,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Hulelignelsen',
+        icon: '🕯️',
         description: 'Fanger sitter lenket fast i en mørk hule og ser bare skygger på veggen kastet av et bål. En fange slipper fri, ledes opp til overflaten, blendes av sollyset, og ser til slutt solen – Det Godes Idé.',
         takeaway: 'Sanseverdenen er en skyggeverden; ekte kunnskap oppnås bare når fornuften skuer idéene bak de ytre fenomenene.',
       },
       {
         title: 'Gyges’ ring',
+        icon: '💍',
         description: 'En gjeter finner en magisk ring som gjør ham usynlig. Med ringen forfører han dronningen, dreper kongen og kupper tronen.',
         takeaway: 'Ville et menneske fortsatt være rettferdig dersom det visste med 100 % sikkerhet at det aldri ville bli avslørt eller straffet?',
       },
@@ -93,11 +95,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Eikenøtten og eiketreet (Teleologi)',
+        icon: '🌰',
         description: 'En eikenøtt er ikke bare en klump med materie; den bærer i seg en iboende hensikt (telos) om å bli et fullvoksent eiketre.',
         takeaway: 'Naturen gjør ingenting forgjeves; forandring er virkeliggjøring av slumrende muligheter (akt og potens).',
       },
       {
         title: 'De fire årsakene (Marmorstatuen)',
+        icon: '🏛️',
         description: 'For å forstå en statue må du kjenne: 1. Stoffet (marmoren), 2. Formen (statuens skikkelse), 3. Virkeårsaken (billedhuggerens meisel), og 4. Formålet (å hedre guden Apollo).',
         takeaway: 'Vitenskap krever en helhetlig forklaring som inkluderer både materiale, struktur og hensikt.',
       },
@@ -125,11 +129,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Den onde demonen (Malin génie)',
+        icon: '😈',
         description: 'Tenk deg at det finnes en allmektig, ond demon som bruker all sin kraft på å lure sansene dine, slik at himmelen, jorden, farger og til og med 2+2=4 er ren illusjon.',
         takeaway: 'Selv om demonen lurer meg om alt i universet, kan han ikke lure meg om at jeg eksisterer mens jeg tenker denne tanken.',
       },
       {
         title: 'Voksstykket',
+        icon: '🕯️',
         description: 'Et stykke nylaget voks har lukt av blomster, farge, fasthet og lager lyd når man slår på det. Nærmer man det ilden, forsvinner lukten, fargen endres og det smelter til en væske.',
         takeaway: 'Hva var voksen egentlig? Ikke sansekvalitetene, men en utstrakt, formbar substans som bare fornuften kan begripe.',
       },
@@ -268,11 +274,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Morderen ved døren',
+        icon: '🚪',
         description: 'En venn søker tilflukt i huset ditt. Like etter banker en morder på døren og spør om vennen din er inne. Kan du lyve for å redde vennens liv?',
         takeaway: 'Kant fastholder at løgn er uforenlig med moralloven fordi en universell lov om løgn opphever selve begrepet sannhet.',
       },
       {
         title: 'De fargede brillene (Kopernikansk vending)',
+        icon: '👓',
         description: 'Hvis du har på deg blå briller hele livet, vil alt fremstå blått. Menneskesinnet har innebygde briller: tid, rom og årsakssammenheng (kategoriene).',
         takeaway: 'Vi erkjenner aldri tingen i seg selv (Ding an sich), bare tingen slik den fremtrer for våre kognitive sanser og forstand.',
       },
@@ -423,11 +431,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Den evige gjenkomst',
+        icon: '⏳',
         description: 'Hva om en demon kom inn på rommet ditt i natt og sa: «Dette livet du nå lever, må du leve om igjen i nøyaktig samme rekkefølge og detalj en uendelighet av ganger»?',
         takeaway: 'Ville du kastet deg ned i fortvilelse, eller elsket skjebnen din (amor fati) så høyt at du jublet over beskjeden?',
       },
       {
         title: 'Det gale mennesket med lykten',
+        icon: '🏮',
         description: 'En mann løper inn på markedsplassen midt på dagen med en tent lykt og roper: «Jeg leter etter Gud! Vi har drept ham – dere og jeg!»',
         takeaway: 'Guds død betyr at det metafysiske ankeret for vestlig moral er borte, og mennesket står i fare for å synke ned i passiv nihilisme.',
       },
@@ -1431,6 +1441,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Den flytende mannen (Bevissthetens uavhengighet)",
+        icon: "🌌",
         description: "Tenk deg at du blir skapt fullt bevisst i dette øyeblikk, men svevende i et totalt mørkt tomrom. Armene og bena er spredt så de ikke rører hverandre; øynene er blinde, ørene døve, og luften har samme temperatur som huden så du kjenner ingenting fysisk.",
         takeaway: "Ville du likevel vite at du eksisterer? Ja! Dette beviser at sjelen er en immateriell substans, helt uavhengig av kroppen – 600 år før Descartes.",
       },
@@ -1694,11 +1705,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Russells tekanne",
+        icon: "🫖",
         description: "Hvis jeg påstår at det kretser en bitte liten porselenstekanne i bane rundt solen mellom jorden og Mars, kan ingen motbevise meg, for den er for liten til å sees i teleskoper. Betyr det at det er rimelig å tro på den?",
         takeaway: "Bevisbyrden hviler alltid på den som fremsetter en ekstraordinær påstand, ikke på skeptikeren som nekter å tro uten bevis.",
       },
       {
         title: "Barbererparadokset (Russells paradoks)",
+        icon: "✂️",
         description: "I en landsby finnes det en barberer som barberer alle menn som ikke barberer seg selv, og bare dem. Barberer han seg selv? Hvis ja, skal han ikke; hvis nei, må han.",
         takeaway: "Naiv mengdelære inneholder fundamentale selvmotsigelser og krever streng typeteori.",
       },

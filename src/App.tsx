@@ -21,9 +21,6 @@ const QuizView = React.lazy(() =>
 const ExphilHub = React.lazy(() =>
   import('./features/exphil/ExphilHub').then((m) => ({ default: m.ExphilHub })),
 );
-const FactCheckView = React.lazy(() =>
-  import('./features/factcheck/FactCheckView').then((m) => ({ default: m.FactCheckView })),
-);
 const AboutView = React.lazy(() =>
   import('./features/about/AboutView').then((m) => ({ default: m.AboutView })),
 );
@@ -53,10 +50,19 @@ type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 
 
 export const App: React.FC = () => {
   const [view, setView] = useState<ViewMode>('radar');
+  const [lastObservatoryView, setLastObservatoryView] = useState<ViewMode>('radar');
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [comparingIds, setComparingIds] = useState<string[] | null>(null);
   const [isClassroomMode, setIsClassroomMode] = useState<boolean>(false);
   const [isSoundEnabled, setIsSoundEnabled] = useState<boolean>(sound.enabled);
+
+  const isObservatoryView =
+    view === 'radar' || view === 'galaxy' || view === 'timeline' || view === 'network' || view === 'list';
+
+  const selectObservatoryView = useCallback((v: ViewMode) => {
+    setView(v);
+    setLastObservatoryView(v);
+  }, []);
 
   // Guidet tur tilstand
   const [isTourModalOpen, setIsTourModalOpen] = useState<boolean>(false);
@@ -143,46 +149,56 @@ export const App: React.FC = () => {
     >
       {/* Header */}
       <header className="text-center mt-2 flex flex-col items-center">
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-3">
+        {/* Kontroll-linje i toppen */}
+        <div className="flex items-center justify-between w-full max-w-4xl px-2 mb-3 text-xs">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-dim bg-cosmos-card/90 text-gold text-xs uppercase tracking-widest font-serif shadow-lg">
             <span className="w-2 h-2 rounded-full bg-cyan-glow animate-ping" />
-            Observatoriet // {philosophers.length} stjerner lastet
+            Observatoriet // {philosophers.length} stjerner aktive
           </div>
 
-          {/* Klasseromsmodus-knapp */}
-          <button
-            onClick={() => setIsClassroomMode((prev) => !prev)}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-lg ${
-              isClassroomMode
-                ? 'bg-amber-500/20 border-amber-400 text-amber-300 font-bold shadow-[0_0_10px_rgba(251,191,36,0.3)]'
-                : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
-            }`}
-            title="Skru av/på stor skrift og presentasjonsvisning for projektor"
-          >
-            <span>🎓</span> {isClassroomMode ? 'Klasseromsmodus på' : 'Klasserom'}
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Kosmisk lyd-knapp (kompakt ikon) */}
+            <button
+              onClick={toggleSound}
+              aria-label={isSoundEnabled ? 'Kosmisk lyd på' : 'Kosmisk lyd av'}
+              title={isSoundEnabled ? 'Kosmisk lyd på (klikk for å dempe)' : 'Skru på kosmiske lyder og synthesizer'}
+              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm transition-all border shadow-md ${
+                isSoundEnabled
+                  ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.35)]'
+                  : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
+              }`}
+            >
+              {isSoundEnabled ? '🔊' : '🔈'}
+            </button>
 
-          {/* Kosmisk lyd-knapp */}
-          <button
-            onClick={toggleSound}
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-lg ${
-              isSoundEnabled
-                ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 font-bold shadow-[0_0_10px_rgba(103,232,249,0.35)]'
-                : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
-            }`}
-            title={isSoundEnabled ? 'Kosmisk lyd på (klikk for å dempe)' : 'Skru på kosmiske lyder og synthesizer'}
-          >
-            <span>{isSoundEnabled ? '🔊' : '🔈'}</span> {isSoundEnabled ? 'Lyd på' : 'Lyd av'}
-          </button>
+            {/* Om-knapp */}
+            <button
+              onClick={() => setView('about')}
+              aria-label="Om observatoriet og kilder"
+              title="Om observatoriet, metodikk og kilder"
+              className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-sm ${
+                view === 'about' || view === 'factcheck'
+                  ? 'bg-gold/20 border-gold text-gold font-bold shadow-[0_0_10px_rgba(246,200,95,0.3)]'
+                  : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
+              }`}
+            >
+              <span>ℹ️</span> Om
+            </button>
 
-          {/* Guidede turer knapp */}
-          <button
-            onClick={() => setIsTourModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-serif transition-all border shadow-lg bg-gold/15 border-gold text-gold font-bold hover:bg-gold hover:text-cosmos shadow-[0_0_12px_rgba(246,200,95,0.3)] hover:scale-105"
-            title="Bli med på en kuratert historisk idé-reise"
-          >
-            <span>🧭</span> Guidede turer
-          </button>
+            {/* Klasseromsmodus-knapp */}
+            <button
+              onClick={() => setIsClassroomMode((prev) => !prev)}
+              aria-label="Klasseromsmodus for storskjerm"
+              title="Skru av/på stor skrift og presentasjonsvisning for projektor"
+              className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-sm ${
+                isClassroomMode
+                  ? 'bg-amber-500/20 border-amber-400 text-amber-300 font-bold shadow-[0_0_10px_rgba(251,191,36,0.3)]'
+                  : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
+              }`}
+            >
+              <span>🎓</span> {isClassroomMode ? 'Stor' : 'Klasserom'}
+            </button>
+          </div>
         </div>
 
         <h1 className="text-4xl md:text-5xl font-serif tracking-wider text-star-white drop-shadow-[0_0_25px_rgba(103,232,249,0.45)]">
@@ -192,115 +208,123 @@ export const App: React.FC = () => {
           Filosofiens historie som et levende stjernekart.
         </p>
 
-        {/* Visnings-velger */}
+        {/* De 3 Hovedrommene */}
         <nav
-          aria-label="Hovednavigasjon"
-          className="flex flex-wrap items-center justify-center gap-2 mt-5 p-1 bg-cosmos-card/90 border border-white/10 rounded-full shadow-xl"
+          aria-label="Hovedrom"
+          className="flex flex-wrap items-center justify-center gap-2 mt-5 p-1.5 bg-cosmos-card/95 border border-white/15 rounded-full shadow-2xl"
         >
           <button
-            onClick={() => setView('radar')}
-            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
-              view === 'radar'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
+            onClick={() => setView(lastObservatoryView)}
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-serif tracking-wider transition-all flex items-center gap-2 ${
+              isObservatoryView
+                ? 'bg-gold text-cosmos font-bold shadow-[0_0_15px_rgba(246,200,95,0.6)] scale-[1.02]'
                 : 'text-star-dim hover:text-white'
             }`}
           >
-            <span>✦</span> Radaren
+            <span>🔭</span> Observatoriet
           </button>
-          <button
-            onClick={() => setView('galaxy')}
-            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
-              view === 'galaxy'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
-                : 'text-star-dim hover:text-white'
-            }`}
-          >
-            <span>🌌</span> 3D-Galaksen
-          </button>
-          <button
-            onClick={() => setView('timeline')}
-            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
-              view === 'timeline'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
-                : 'text-star-dim hover:text-white'
-            }`}
-          >
-            <span>⏳</span> Tidslinjen
-          </button>
-          <button
-            onClick={() => setView('network')}
-            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
-              view === 'network'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
-                : 'text-star-dim hover:text-white'
-            }`}
-          >
-            <span>🕸️</span> Idénettet
-          </button>
-          <button
-            onClick={() => setView('list')}
-            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
-              view === 'list'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
-                : 'text-star-dim hover:text-white'
-            }`}
-          >
-            <span>📋</span> Listevisning ({philosophers.length})
-          </button>
-          <button
-            onClick={() => setView('quiz')}
-            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 ${
-              view === 'quiz'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
-                : 'text-star-dim hover:text-white'
-            }`}
-          >
-            <span>🎭</span> Quizen
-          </button>
+
           <button
             onClick={() => setView('exphil')}
-            className={`px-4 sm:px-5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border ${
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-serif tracking-wider transition-all flex items-center gap-2 border ${
               view === 'exphil'
-                ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-[0_0_15px_rgba(251,191,36,0.6)]'
-                : 'border-amber-400/40 text-amber-300 hover:bg-amber-400/10'
+                ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-[0_0_18px_rgba(251,191,36,0.6)] scale-[1.02]'
+                : 'border-amber-400/30 text-amber-300 hover:bg-amber-400/10'
             }`}
-            title="Eksamensmestring for Examen Philosophicum (dueller, flashcards og eksamenstips)"
+            title="Eksamensmestring for Examen Philosophicum (radar, flashcards og debattarena)"
           >
-            <span>🎓</span> Ex.phil
+            <span>🎓</span> Ex.phil Studie-Hub
           </button>
+
           <button
-            onClick={() => setIsTourModalOpen(true)}
-            className="px-4 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border border-gold/60 text-gold hover:bg-gold hover:text-cosmos shadow-[0_0_10px_rgba(246,200,95,0.25)] font-bold"
-          >
-            <span>🧭</span> Turer
-          </button>
-          <button
-            onClick={() => setComparingIds(['sokrates', 'platon'])}
-            className="px-4 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-2 border border-gold/40 text-gold hover:bg-gold/15 shadow-sm"
-          >
-            <span>⚖️</span> Sammenlign
-          </button>
-          <button
-            onClick={() => setView('factcheck')}
-            className={`px-3.5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
-              view === 'factcheck'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
+            onClick={() => setView('quiz')}
+            className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-serif tracking-wider transition-all flex items-center gap-2 ${
+              view === 'quiz'
+                ? 'bg-gold text-cosmos font-bold shadow-[0_0_15px_rgba(246,200,95,0.6)] scale-[1.02]'
                 : 'text-star-dim hover:text-white'
             }`}
           >
-            <span>🛡️</span> Faktasjekk
-          </button>
-          <button
-            onClick={() => setView('about')}
-            className={`px-3.5 py-2 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
-              view === 'about'
-                ? 'bg-gold text-cosmos font-bold shadow-[0_0_12px_rgba(246,200,95,0.6)]'
-                : 'text-star-dim hover:text-white'
-            }`}
-          >
-            <span>ℹ️</span> Om
+            <span>🎭</span> Quizen & Opplevelser
           </button>
         </nav>
+
+        {/* Under-velger for Observatoriet */}
+        {isObservatoryView && (
+          <nav
+            aria-label="Observatorie-visninger"
+            className="flex flex-wrap items-center justify-center gap-1.5 mt-3 p-1 bg-slate-900/70 border border-white/10 rounded-full shadow-lg animate-fadeIn"
+          >
+            <button
+              onClick={() => selectObservatoryView('radar')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                view === 'radar'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  : 'text-star-dim hover:text-white'
+              }`}
+            >
+              <span>✦</span> Radaren
+            </button>
+            <button
+              onClick={() => selectObservatoryView('galaxy')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                view === 'galaxy'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  : 'text-star-dim hover:text-white'
+              }`}
+            >
+              <span>🌌</span> 3D-Galaksen
+            </button>
+            <button
+              onClick={() => selectObservatoryView('timeline')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                view === 'timeline'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  : 'text-star-dim hover:text-white'
+              }`}
+            >
+              <span>⏳</span> Tidslinjen
+            </button>
+            <button
+              onClick={() => selectObservatoryView('network')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                view === 'network'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  : 'text-star-dim hover:text-white'
+              }`}
+            >
+              <span>🕸️</span> Idénettet
+            </button>
+            <button
+              onClick={() => selectObservatoryView('list')}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                view === 'list'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  : 'text-star-dim hover:text-white'
+              }`}
+            >
+              <span>📋</span> Tabell ({philosophers.length})
+            </button>
+          </nav>
+        )}
+
+        {/* Hurtig-snarveier når man er i Quizen & Opplevelser */}
+        {view === 'quiz' && (
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mt-3 animate-fadeIn text-xs">
+            <span className="text-star-dim italic">Utforsk flere opplevelser:</span>
+            <button
+              onClick={() => setIsTourModalOpen(true)}
+              className="px-3.5 py-1 rounded-full font-serif border border-gold/40 bg-gold/10 text-gold hover:bg-gold hover:text-cosmos transition-all flex items-center gap-1.5 font-bold shadow-sm"
+            >
+              <span>🧭</span> Start en guidet tur
+            </button>
+            <button
+              onClick={() => setComparingIds(['sokrates', 'platon'])}
+              className="px-3.5 py-1 rounded-full font-serif border border-cyan-400/40 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 transition-all flex items-center gap-1.5 font-bold shadow-sm"
+            >
+              <span>⚖️</span> Sammenlign to tenkere
+            </button>
+          </div>
+        )}
       </header>
 
       {/* Dagens filosof (vises elegant øverst i observatoriet) */}
@@ -371,13 +395,12 @@ export const App: React.FC = () => {
                 }
               }}
             />
-          ) : view === 'factcheck' ? (
-            <FactCheckView
+          ) : view === 'about' || view === 'factcheck' ? (
+            <AboutView
               philosophers={philosophers}
               onOpenCard={openCard}
+              defaultTab={view === 'factcheck' ? 'factcheck' : 'about'}
             />
-          ) : view === 'about' ? (
-            <AboutView />
           ) : (
             <PhilosopherList
               philosophers={philosophers}

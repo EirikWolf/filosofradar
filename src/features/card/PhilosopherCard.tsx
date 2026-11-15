@@ -226,8 +226,11 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
           </p>
         </div>
 
-        {/* 5. Seksjon: Dypdykk (Historisk kontekst, Hovedverker og Tankeeksperimenter) */}
-        <DeepDiveSection philosopherId={philosopher.id} />
+        {/* 5. Seksjon: Dypdykk (Historisk kontekst, Hovedverker og Tankeeksperimenter / Visuelle knagger) */}
+        <DeepDiveSection
+          philosopherId={philosopher.id}
+          philosopherName={philosopher.name}
+        />
 
         {/* 6. Seksjon: Påvirkningsnettverk (Idé-slekt) */}
         <div className="mb-6 space-y-3">

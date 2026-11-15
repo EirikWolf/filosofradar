@@ -8,6 +8,8 @@ export interface ThoughtExperiment {
   title: string;
   description: string;
   takeaway: string;
+  image?: string;
+  icon?: string;
 }
 
 export interface PhilosopherDeepDive {
