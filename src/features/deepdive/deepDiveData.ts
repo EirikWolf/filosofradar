@@ -13,9 +13,10 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Platons tidlige dialoger (Apologien, Kriton, Menon)',
         year: -390,
-        description: 'Vår fremste kilde til den historiske Sokrates: Forsvarstalen i rettssaken og de sokratiske definisjonssamtalene.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008060904033",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Vår fremste kilde til den historiske Sokrates: Forsvarstalen i rettssaken og de sokratiske definisjonssamtalene.',
+      
+        url: "https://www.gutenberg.org/ebooks/1656",
+        urlLabel: "Les på Project Gutenberg (Apology, Crito)",
       },
     ],
     thoughtExperiments: [
@@ -46,23 +47,26 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Staten (Politeia)',
         year: -375,
-        description: 'Hovedverket om rettferdighet, menneskesjelen, hulelignelsen og den ideelle stat ledet av filosofkonger.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008072100062",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Hovedverket om rettferdighet, menneskesjelen, hulelignelsen og den ideelle stat ledet av filosofkonger.',
+      
+        url: "https://www.gutenberg.org/ebooks/1497",
+        urlLabel: "Les på Project Gutenberg (The Republic)",
       },
       {
         title: 'Symposion (Drikkegildet)',
         year: -385,
-        description: 'En serie festtaler om kjærlighetens vesen (eros) som en stige fra fysisk skjønnhet til kjærlighet til selve Det Skjønne.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008062500049",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'En serie festtaler om kjærlighetens vesen (eros) som en stige fra fysisk skjønnhet til kjærlighet til selve Det Skjønne.',
+      
+        url: "https://www.gutenberg.org/ebooks/1600",
+        urlLabel: "Les på Project Gutenberg (Symposium)",
       },
       {
         title: 'Faidon',
         year: -380,
-        description: 'En dramatisk dialog om sjelens udødelighet og Sokrates’ siste timer i fengselscellen.',
+        description: 'En dramatisk dialog om sjelens udødelighet og Sokrates’ siste timer i fengselscellen.',
+      
         url: "https://www.gutenberg.org/ebooks/1658",
-        urlLabel: "Les på Project Gutenberg",
+        urlLabel: "Les på Project Gutenberg (Phaedo)",
       },
     ],
     thoughtExperiments: [
@@ -93,23 +97,26 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Den nikomakiske etikk',
         year: -340,
-        description: 'Klassikeren om dydsetikk, karakterutvikling, eudaimonia (oppblomstring) og den gylne middelvei.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2009042804021",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Klassikeren om dydsetikk, karakterutvikling, eudaimonia (oppblomstring) og den gylne middelvei.',
+      
+        url: "https://classics.mit.edu/Aristotle/nicomachaen.html",
+        urlLabel: "Les hos Classics MIT (Nicomachean Ethics)",
       },
       {
         title: 'Politikken',
         year: -335,
-        description: 'Analyse av styreformer og mennesket som et iboende samfunnsvesen (zoon politikon).',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2009062304036",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Analyse av styreformer og mennesket som et iboende samfunnsvesen (zoon politikon).',
+      
+        url: "https://classics.mit.edu/Aristotle/politics.html",
+        urlLabel: "Les hos Classics MIT (Politics)",
       },
       {
         title: 'Metafysikken',
         year: -330,
-        description: 'Læren om substans, form og stoff (hylomorfisme), akt og potens, og Den ubevegede beveger.',
+        description: 'Læren om substans, form og stoff (hylomorfisme), akt og potens, og Den ubevegede beveger.',
+      
         url: "https://classics.mit.edu/Aristotle/metaphysics.html",
-        urlLabel: "Les hos Classics MIT",
+        urlLabel: "Les hos Classics MIT (Metaphysics)",
       },
     ],
     thoughtExperiments: [
@@ -139,14 +146,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Meditasjoner over filosofiens grunnlag',
         year: 1641,
-        description: 'Seks filosofiske meditasjoner der han gjennomfører metodisk tvil og etablerer «Cogito, ergo sum» og substansdualismen.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008081100045",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Seks filosofiske meditasjoner der han gjennomfører metodisk tvil og etablerer «Cogito, ergo sum» og substansdualismen.',
+      
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090708092",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Om metoden',
         year: 1637,
-        description: 'Selvbiografisk innføring i analytisk geometri og hans fire regler for fornuftig tenkning.',
+        description: 'Selvbiografisk innføring i analytisk geometri og hans fire regler for fornuftig tenkning.',
+      
         url: "https://www.gutenberg.org/ebooks/59",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -179,14 +188,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Etikken (Ethica)',
         year: 1677,
-        description: 'Bygget opp med geometrisk stringens (aksiomer, teoremer, bevis) og presenterer hans panteistiske monisme: Deus sive Natura.',
+        description: 'Bygget opp med geometrisk stringens (aksiomer, teoremer, bevis) og presenterer hans panteistiske monisme: Deus sive Natura.',
+      
         url: "https://www.gutenberg.org/ebooks/3800",
-        urlLabel: "Les på Project Gutenberg",
+        urlLabel: "Les på Project Gutenberg (Ethics)",
       },
       {
         title: 'Teologisk-politisk traktat',
         year: 1670,
-        description: 'En banebrytende historisk-kritisk lesning av Bibelen og et glødende forsvar for ytringsfrihet og demokrati.',
+        description: 'En banebrytende historisk-kritisk lesning av Bibelen og et glødende forsvar for ytringsfrihet og demokrati.',
+      
         url: "https://www.gutenberg.org/ebooks/980",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -212,14 +223,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'To avhandlinger om styresettet (Two Treatises of Government)',
         year: 1689,
-        description: 'Det moderne demokratiets bibel: Naturrettigheter (liv, frihet, eiendom), samfunnskontrakt og retten til opprør.',
+        description: 'Det moderne demokratiets bibel: Naturrettigheter (liv, frihet, eiendom), samfunnskontrakt og retten til opprør.',
+      
         url: "https://www.gutenberg.org/ebooks/7370",
         urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Et essay om den menneskelige forstand',
         year: 1689,
-        description: 'Empirismens grunnlag: Menneskesinnet som en tabula rasa (blank tavle) uten medfødte idéer.',
+        description: 'Empirismens grunnlag: Menneskesinnet som en tabula rasa (blank tavle) uten medfødte idéer.',
+      
         url: "https://www.gutenberg.org/ebooks/10604",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -256,14 +269,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'En avhandling om menneskets natur (A Treatise of Human Nature)',
         year: 1739,
-        description: 'Humes mesterverk om sansning, årsakssammenheng, lidenskaper og moralens opprinnelse i følelser fremfor fornuft.',
+        description: 'Humes mesterverk om sansning, årsakssammenheng, lidenskaper og moralens opprinnelse i følelser fremfor fornuft.',
+      
         url: "https://www.gutenberg.org/ebooks/4705",
         urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Undersøkelse av den menneskelige forstand',
         year: 1748,
-        description: 'En mer tilgjengelig og spisset versjon av hans empiristiske kunnskapssyn og skepsis mot mirakler.',
+        description: 'En mer tilgjengelig og spisset versjon av hans empiristiske kunnskapssyn og skepsis mot mirakler.',
+      
         url: "https://www.gutenberg.org/ebooks/9662",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -299,16 +314,18 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Kritikk av den rene fornuft',
         year: 1781,
-        description: 'Filosofihistoriens kanskje mest krevende verk: Den kopernikanske vending, tid og rom som anskuelsesformer, og grensene for menneskelig erkjennelse.',
+        description: 'Filosofihistoriens kanskje mest krevende verk: Den kopernikanske vending, tid og rom som anskuelsesformer, og grensene for menneskelig erkjennelse.',
+      
         url: "https://www.gutenberg.org/ebooks/4280",
         urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Grunnlegging av moralens metafysikk',
         year: 1785,
-        description: 'Den klareste innføringen i Kants etikk: Det kategoriske imperativ og menneskeverdets ukrenkelighet.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2011040804043",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Den klareste innføringen i Kants etikk: Det kategoriske imperativ og menneskeverdets ukrenkelighet.',
+      
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2014061808064",
+        urlLabel: "Søk i Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Kritikk av den praktiske fornuft',
@@ -318,9 +335,10 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Til den evige fred',
         year: 1795,
-        description: 'Politisk filosofi som la grunnlaget for Folkeforbundet og FN: Fred krever republikanske stater og internasjonal folkerett.',
+        description: 'Politisk filosofi som la grunnlaget for Folkeforbundet og FN: Fred krever republikanske stater og internasjonal folkerett.',
+      
         url: "https://www.gutenberg.org/ebooks/50922",
-        urlLabel: "Les på Project Gutenberg",
+        urlLabel: "Les på Project Gutenberg (Perpetual Peace)",
       },
     ],
     thoughtExperiments: [
@@ -351,14 +369,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Et forsvar for kvinnens rettigheter (A Vindication of the Rights of Woman)',
         year: 1792,
-        description: 'Feminismens grunntekst: Kvinner og menn har samme fornuftsevne; ulikheter i dyder og intellekt skyldes samfunnets feilaktige oppdragelse.',
+        description: 'Feminismens grunntekst: Kvinner og menn har samme fornuftsevne; ulikheter i dyder og intellekt skyldes samfunnets feilaktige oppdragelse.',
+      
         url: "https://www.gutenberg.org/ebooks/3420",
         urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Et forsvar for menneskets rettigheter',
         year: 1790,
-        description: 'Et lidenskapelig oppgjør med Edmund Burkes konservative forsvar for arvelige privilegier og monarki.',
+        description: 'Et lidenskapelig oppgjør med Edmund Burkes konservative forsvar for arvelige privilegier og monarki.',
+      
         url: "https://www.gutenberg.org/ebooks/52431",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -384,9 +404,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Åndens fenomenologi',
         year: 1807,
-        description: 'Beskrivelsen av bevissthetens stormfulle utvikling fra naiv sansning til absolutt viten, inkludert herre-trell-dialektikken.',
-        url: "https://www.marxists.org/reference/archive/hegel/works/ph/",
-        urlLabel: "Les på Marxists Internet Archive",
+        description: 'Beskrivelsen av bevissthetens stormfulle utvikling fra naiv sansning til absolutt viten, inkludert herre-trell-dialektikken.',
       },
       {
         title: 'Rettsfilosofiens grunnlinjer',
@@ -415,14 +433,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Kapitalen (Das Kapital)',
         year: 1867,
-        description: 'En monumental økonomisk og filosofisk obduksjon av kapitalismen: Merverdilæren, varefetisjismen og akkumulasjonens kriser.',
-        url: "https://www.marxists.org/norsk/marx-engels/1867/kapitalen/",
-        urlLabel: "Les fulltekst på norsk (marxists.org)",
+        description: 'En monumental økonomisk og filosofisk obduksjon av kapitalismen: Merverdilæren, varefetisjismen og akkumulasjonens kriser.',
+      
+        url: "https://www.marxists.org/archive/marx/works/1867-c1/",
+        urlLabel: "Les på Marxists Internet Archive (Capital Vol 1)",
       },
       {
         title: 'Det kommunistiske manifest',
         year: 1848,
-        description: 'Verdenshistoriens mest berømte politiske kampskrift («Klassekamp er historiens drivkraft»).',
+        description: 'Verdenshistoriens mest berømte politiske kampskrift («Klassekamp er historiens drivkraft»).',
+      
         url: "https://www.marxists.org/norsk/marx-engels/1848/01/manifestet/",
         urlLabel: "Les fulltekst på norsk (marxists.org)",
       },
@@ -453,16 +473,12 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Enten – Eller',
         year: 1843,
-        description: 'Kontrasten mellom estetikerens søken etter nytelse og etikeren som velger seg selv og tar ansvar.',
-        url: "https://sks.dk/EE1/indhold.xml",
-        urlLabel: "Les hos Søren Kierkegaards Skrifter (sks.dk)",
+        description: 'Kontrasten mellom estetikerens søken etter nytelse og etikeren som velger seg selv og tar ansvar.',
       },
       {
         title: 'Frykt og beven',
         year: 1843,
-        description: 'Analyse av Abrahams prøve og troens paradoksale sprang bortenfor den allmenne fornuft og moral.',
-        url: "https://sks.dk/FB/indhold.xml",
-        urlLabel: "Les hos Søren Kierkegaards Skrifter (sks.dk)",
+        description: 'Analyse av Abrahams prøve og troens paradoksale sprang bortenfor den allmenne fornuft og moral.',
       },
       {
         title: 'Begrepet angst',
@@ -491,21 +507,24 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Slik talte Zarathustra',
         year: 1883,
-        description: 'Poetisk filosofisk profeti om Guds død, Overmennesket og Den evige gjenkomst.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008071804033",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Poetisk filosofisk profeti om Guds død, Overmennesket og Den evige gjenkomst.',
+      
+        url: "https://www.gutenberg.org/ebooks/1998",
+        urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Moralens genealogi',
         year: 1887,
-        description: 'Kritisk historisk analyse av herremoral kontra slavemoral og ressentimentets opprinnelse.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008090500052",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Kritisk historisk analyse av herremoral kontra slavemoral og ressentimentets opprinnelse.',
+      
+        url: "https://www.gutenberg.org/ebooks/52319",
+        urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Hinsides godt og ondt',
         year: 1886,
-        description: 'Oppgjør med tradisjonell filosofi, kristendom og dogmatiske fordommer.',
+        description: 'Oppgjør med tradisjonell filosofi, kristendom og dogmatiske fordommer.',
+      
         url: "https://www.gutenberg.org/ebooks/4363",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -543,9 +562,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Det åpne samfunn og dets fiender',
         year: 1945,
-        description: 'Det liberale demokratiets forsvarsskrift og et nådeløst oppgjør med Platon, Hegel og Marx som opphavsmenn til totalitær tenkning.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008092200060",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Det liberale demokratiets forsvarsskrift og et nådeløst oppgjør med Platon, Hegel og Marx som opphavsmenn til totalitær tenkning.',
       },
     ],
     thoughtExperiments: [
@@ -608,14 +625,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Det annet kjønn (Le Deuxième Sexe)',
         year: 1949,
-        description: 'Moderne kvinne- og kjønnsforsknings ubestridte grunntekst: «Man fødes ikke som kvinne, man blir det».',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008061900085",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Moderne kvinne- og kjønnsforsknings ubestridte grunntekst: «Man fødes ikke som kvinne, man blir det».',
+      
+        url: "https://www.nb.no/search?q=%22Det%20annet%20kj%C3%B8nn%22&creator=%22Beauvoir%22",
+        urlLabel: "Se utgaver hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Tvetydighetens etikk',
         year: 1947,
-        description: 'Eksistensialistisk moralfilosofi om forholdet mellom egen frihet og andres frigjøring.',
+        description: 'Eksistensialistisk moralfilosofi om forholdet mellom egen frihet og andres frigjøring.',
+      
         url: "https://www.marxists.org/reference/subject/ethics/de-beauvoir/ambiguity/",
         urlLabel: "Les på Marxists Internet Archive",
       },
@@ -641,16 +660,18 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Økologi, samfunn og livsstil',
         year: 1974,
-        description: 'Dypøkologiens manifest: Økosofi T, biosfærisk egalitarisme og et oppgjør med den vestlige vekstfilosofien.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008052104037",
+        description: 'Dypøkologiens manifest: Økosofi T, biosfærisk egalitarisme og et oppgjør med den vestlige vekstfilosofien.',
+      
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2007052500001",
         urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Tolkning og presisering',
         year: 1953,
-        description: 'En klassiker i semantikk og saklighetslære som la grunnlaget for norsk akademisk debattkultur.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2007052900010",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'En klassiker i semantikk og saklighetslære som la grunnlaget for norsk akademisk debattkultur.',
+      
+        url: "https://www.nb.no/search?q=%22Tolkning%20og%20presisering%22&creator=%22N%C3%A6ss%2C%20Arne%22",
+        urlLabel: "Se utgaver hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Livsfilosofi',
@@ -679,7 +700,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Leviathan',
         year: 1651,
-        description: 'Statsfilosofiens store mesterverk om menneskenaturen, naturtilstanden og opprettelsen av en mektig statssuveren.',
+        description: 'Statsfilosofiens store mesterverk om menneskenaturen, naturtilstanden og opprettelsen av en mektig statssuveren.',
+      
         url: "https://www.gutenberg.org/ebooks/3207",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -710,14 +732,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Samfunnskontrakten (Du contrat social)',
         year: 1762,
-        description: '«Mennesket er født fritt, men overalt er det i lenker». Læren om allmennviljen og ekte folkestyre.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008080800040",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: '«Mennesket er født fritt, men overalt er det i lenker». Læren om allmennviljen og ekte folkestyre.',
+      
+        url: "https://www.gutenberg.org/ebooks/46333",
+        urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Émile – eller om oppdragelsen',
         year: 1762,
-        description: 'Pedagogikkens klassiker: La barnet utvikle seg i pakt med naturen uten å bli ødelagt av samfunnets kunstigheter.',
+        description: 'Pedagogikkens klassiker: La barnet utvikle seg i pakt med naturen uten å bli ødelagt av samfunnets kunstigheter.',
+      
         url: "https://www.gutenberg.org/ebooks/5427",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -748,16 +772,15 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Tractatus Logico-Philosophicus',
         year: 1921,
-        description: 'Den tidlige logiske atomismen: Språket avbilder virkeligheten; «hva man ikke kan tale om, må man tie om».',
+        description: 'Den tidlige logiske atomismen: Språket avbilder virkeligheten; «hva man ikke kan tale om, må man tie om».',
+      
         url: "https://www.gutenberg.org/ebooks/5740",
         urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Filosofiske undersøkelser (Philosophische Untersuchungen)',
         year: 1953,
-        description: 'Utgitt posthumt; et totalt oppgjør med sin egen tidligere filosofi: Mening er ikke avbildning, men *bruk* i sosiale språkspill.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008090500059",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Utgitt posthumt; et totalt oppgjør med sin egen tidligere filosofi: Mening er ikke avbildning, men *bruk* i sosiale språkspill.',
       },
     ],
     thoughtExperiments: [
@@ -788,9 +811,10 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Bekjennelser (Confessiones)',
         year: 400,
-        description: 'Verdenslitteraturens første dype psykologiske selvbiografi: Om ungdommens synder, begjær og hans dramatiske omvendelse til Gud.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008082604005",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Verdenslitteraturens første dype psykologiske selvbiografi: Om ungdommens synder, begjær og hans dramatiske omvendelse til Gud.',
+      
+        url: "https://www.gutenberg.org/ebooks/3296",
+        urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Om Gudsstaten (De Civitate Dei)',
@@ -819,9 +843,10 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Summa Theologiae',
         year: 1274,
-        description: 'Middelalderens intellektuelle katedral: De fem gudsbevis, naturretten og menneskets dyder.',
+        description: 'Middelalderens intellektuelle katedral: De fem gudsbevis, naturretten og menneskets dyder.',
+      
         url: "https://www.newadvent.org/summa/",
-        urlLabel: "Les på New Advent",
+        urlLabel: "Les på New Advent (Summa Theologiae)",
       },
       {
         title: 'Summa contra Gentiles',
@@ -850,9 +875,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Overvåkning og straff (Surveiller et punir)',
         year: 1975,
-        description: 'Fra offentlig tortur på torget til moderne disiplinering, timeplaner og overvåkning.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008060304040",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Fra offentlig tortur på torget til moderne disiplinering, timeplaner og overvåkning.',
       },
       {
         title: 'Seksualitetens historie',
@@ -886,16 +909,12 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Eichmann i Jerusalem: En rapport om ondskapens banalitet',
         year: 1963,
-        description: 'Rapporten som sjokkerte verden: Eichmann var ikke et monster, men en skremmende ordinær byråkrat som manglet evnen til å tenke selv.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008091200051",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Rapporten som sjokkerte verden: Eichmann var ikke et monster, men en skremmende ordinær byråkrat som manglet evnen til å tenke selv.',
       },
       {
         title: 'Menneskets vilkår (The Human Condition / Vita Activa)',
         year: 1958,
-        description: 'Hovedverket om menneskelig handling: Skillet mellom arbeid (overlevelse), verk (gjenstander) og handling (politisk fellesskap).',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008090500057",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Hovedverket om menneskelig handling: Skillet mellom arbeid (overlevelse), verk (gjenstander) og handling (politisk fellesskap).',
       },
       {
         title: 'Totalitarismens opprinnelse',
@@ -986,9 +1005,10 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Til meg selv (Meditasjoner)',
         year: 180,
-        description: 'Verdenshistoriens mest leste personlige selvhjelpsbok og etiske dagbok om plikt, ydmykhet og fatning.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008060404021",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Verdenshistoriens mest leste personlige selvhjelpsbok og etiske dagbok om plikt, ydmykhet og fatning.',
+      
+        url: "https://classics.mit.edu/Antoninus/meditations.html",
+        urlLabel: "Les hos Classics MIT (Meditations)",
       },
     ],
     thoughtExperiments: [
@@ -1010,14 +1030,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Brev til Lucilius (Epistulae Morales)',
         year: 65,
-        description: '124 brev med praktiske råd om vennskap, tidssløsing, alderdom og frykt for døden.',
+        description: '124 brev med praktiske råd om vennskap, tidssløsing, alderdom og frykt for døden.',
+      
         url: "https://en.wikisource.org/wiki/Moral_letters_to_Lucilius",
-        urlLabel: "Les på Wikisource",
+        urlLabel: "Les på Wikisource (Moral Letters)",
       },
       {
         title: 'Om livets korthet (De Brevitate Vitae)',
         year: 49,
-        description: '«Livet er langt nok hvis du vet hvordan du skal bruke det; det meste kaster vi bort på unyttige gjøremål.»',
+        description: '«Livet er langt nok hvis du vet hvordan du skal bruke det; det meste kaster vi bort på unyttige gjøremål.»',
+      
         url: "https://en.wikisource.org/wiki/On_the_shortness_of_life",
         urlLabel: "Les på Wikisource",
       },
@@ -1041,9 +1063,10 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Håndbok i livskunst (Encheiridion)',
         year: 125,
-        description: 'En ultrakonsis praktisk guide til stoisk sjelefred og mental motstandskraft.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008061204018",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'En ultrakonsis praktisk guide til stoisk sjelefred og mental motstandskraft.',
+      
+        url: "https://classics.mit.edu/Epictetus/epicench.html",
+        urlLabel: "Les hos Classics MIT (The Enchiridion)",
       },
       {
         title: 'Samtaler (Diatribai)',
@@ -1100,7 +1123,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Verden som vilje og forestilling',
         year: 1818,
-        description: 'Hovedverket: Virkeligheten bak sanseverdenen er en blind, rastløs og hensynsløs «Vilje til liv» som dømmer oss til lidelse og savn.',
+        description: 'Hovedverket: Virkeligheten bak sanseverdenen er en blind, rastløs og hensynsløs «Vilje til liv» som dømmer oss til lidelse og savn.',
+      
         url: "https://www.gutenberg.org/ebooks/38427",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -1131,16 +1155,18 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Om det tragiske',
         year: 1941,
-        description: 'Filosofisk doktoravhandling om menneskets eksistensielle overutrustning og det tragiske i naturen.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2007051100004",
+        description: 'Filosofisk doktoravhandling om menneskets eksistensielle overutrustning og det tragiske i naturen.',
+      
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008061704041",
         urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Den siste Messias',
         year: 1933,
-        description: 'Klassisk essay om de fire forsvarsmekanismene mennesket bruker for ikke å gå til grunne i eksistensiell panikk.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2011032508078",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: 'Klassisk essay om de fire forsvarsmekanismene mennesket bruker for ikke å gå til grunne i eksistensiell panikk.',
+      
+        url: "https://www.nb.no/search?q=%22Den%20siste%20Messias%22&creator=%22Zapffe%22",
+        urlLabel: "Se tekst hos Nasjonalbiblioteket (nb.no)",
       },
     ],
     thoughtExperiments: [
@@ -1164,9 +1190,10 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Nils Klims underjordiske reise',
         year: 1741,
-        description: 'Satirisk science-fiction-roman om en bergenser som faller inn i jordens indre og oppdager utopiske samfunn hvor trær snakker og kvinner og menn er likestilt.',
-        url: "https://holbergskrifter.dk/holberg-public/view?docId=Klim_no%2FKlim_no.xml",
-        urlLabel: "Les hos Holbergs Skrifter (holbergskrifter.dk)",
+        description: 'Satirisk science-fiction-roman om en bergenser som faller inn i jordens indre og oppdager utopiske samfunn hvor trær snakker og kvinner og menn er likestilt.',
+      
+        url: "https://www.gutenberg.org/ebooks/15479",
+        urlLabel: "Les på Project Gutenberg",
       },
       {
         title: 'Moralske tanker',
@@ -1323,7 +1350,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Samtaler (Lunyu)",
         year: -475,
-        description: "Samling av Konfucius’ fyndord, dialoger med disiplene og leveregler om medmenneskelighet (ren), rituell verdighet (li) og sønlig respekt (xiao).",
+        description: "Samling av Konfucius’ fyndord, dialoger med disiplene og leveregler om medmenneskelighet (ren), rituell verdighet (li) og sønlig respekt (xiao).",
+      
         url: "https://ctext.org/analects",
         urlLabel: "Les på Chinese Text Project (ctext.org)",
       },
@@ -1352,7 +1380,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Daodejing (Boken om Veien og dens Kraft)",
         year: -500,
-        description: "81 korte, poetiske og paradoksale kapitler om Dao (den uutsigelige kilden til alt), wu wei (ikke-anstrengelse) og naturlig enkelhet.",
+        description: "81 korte, poetiske og paradoksale kapitler om Dao (den uutsigelige kilden til alt), wu wei (ikke-anstrengelse) og naturlig enkelhet.",
+      
         url: "https://ctext.org/dao-de-jing",
         urlLabel: "Les på Chinese Text Project (ctext.org)",
       },
@@ -1381,7 +1410,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Zhuangzi (De indre kapitlene)",
         year: -300,
-        description: "Et litterært og filosofisk mesterverk som utforsker relativisme, spontanitet, frihet og livets overganger.",
+        description: "Et litterært og filosofisk mesterverk som utforsker relativisme, spontanitet, frihet og livets overganger.",
+      
         url: "https://ctext.org/zhuangzi",
         urlLabel: "Les på Chinese Text Project (ctext.org)",
       },
@@ -1414,7 +1444,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Mengzi (Mencius)",
         year: -300,
-        description: "Klassiker i konfucianismen som beviser menneskets iboende godhet og forsvarer folkets rett til å avsette en tyrannisk hersker.",
+        description: "Klassiker i konfucianismen som beviser menneskets iboende godhet og forsvarer folkets rett til å avsette en tyrannisk hersker.",
+      
         url: "https://ctext.org/mengzi",
         urlLabel: "Les på Chinese Text Project (ctext.org)",
       },
@@ -1440,7 +1471,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Mozi",
         year: -400,
-        description: "Filosofisk traktat om allmenn kjærlighet (jian'ai), pragmatisk nytteetikk og pasifistisk forsvarsteori.",
+        description: "Filosofisk traktat om allmenn kjærlighet (jian'ai), pragmatisk nytteetikk og pasifistisk forsvarsteori.",
+      
         url: "https://ctext.org/mozi",
         urlLabel: "Les på Chinese Text Project (ctext.org)",
       },
@@ -1820,7 +1852,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Monadologien",
         year: 1714,
-        description: "Klassisk metafysisk verk: Universet består av uendelig mange uutstrakte, åndelige kraftsenter (monader) som samvirker i preetablert harmoni.",
+        description: "Klassisk metafysisk verk: Universet består av uendelig mange uutstrakte, åndelige kraftsenter (monader) som samvirker i preetablert harmoni.",
+      
         url: "https://www.earlymoderntexts.com/assets/pdfs/leibniz1714b.pdf",
         urlLabel: "Les på Early Modern Texts",
       },
@@ -1856,7 +1889,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Essayer (Les Essais)",
         year: 1580,
-        description: "Oppfant selve essaysjangeren: En personlig, ærlig og skeptisk utforskning av vennskap, frykt, kannibalisme, seksualitet og døden.",
+        description: "Oppfant selve essaysjangeren: En personlig, ærlig og skeptisk utforskning av vennskap, frykt, kannibalisme, seksualitet og døden.",
+      
         url: "https://www.gutenberg.org/ebooks/3600",
         urlLabel: "Les på Project Gutenberg",
       },
@@ -2041,9 +2075,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Shōbōgenzō (Den sanne dharmaens øye-skatt)",
         year: 1253,
-        description: "Et 95 kapitler langt filosofisk mesterverk om tid, væren, meditasjon og opplysning i hverdagens handlinger.",
-        url: "https://www.thezensite.com/ZenTeachings/Dogen_Teachings/Shobogenzo_Complete.html",
-        urlLabel: "Les på The Zen Site",
+        description: "Et 95 kapitler langt filosofisk mesterverk om tid, væren, meditasjon og opplysning i hverdagens handlinger.",
       },
       {
         title: "Fukanzazengi (Universelle retningslinjer for zazen)",
@@ -2404,15 +2436,17 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Svart hud, hvite masker (Peau noire, masques blancs)",
         year: 1952,
-        description: "En psykoanalytisk obduksjon av rasisme: Hvordan den koloniserte tvinges til å internalisere hvit overlegenhet og fremmedgjøres fra sitt eget selv.",
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008082900096",
-        urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
+        description: "En psykoanalytisk obduksjon av rasisme: Hvordan den koloniserte tvinges til å internalisere hvit overlegenhet og fremmedgjøres fra sitt eget selv.",
+      
+        url: "https://www.nb.no/search?q=%22Svart%20hud,%20hvite%20masker%22&creator=%22Fanon%22",
+        urlLabel: "Se utgaver hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: "Jordens fordømte (Les Damnés de la Terre)",
         year: 1961,
-        description: "Avkoloniseringens bibel (med forord av Jean-Paul Sartre): Analyse av voldens renselse, nasjonal kultur og den postkoloniale elitens forræderi.",
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008082604052",
+        description: "Avkoloniseringens bibel (med forord av Jean-Paul Sartre): Analyse av voldens renselse, nasjonal kultur og den postkoloniale elitens forræderi.",
+      
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2007071901090",
         urlLabel: "Les hos Nasjonalbiblioteket (nb.no)",
       },
     ],
