@@ -1,41 +1,38 @@
-const https = require('https');
-const http = require('http');
-
 // Curated dictionary of verified, high quality links for philosophers
 const VERIFIED_LINKS = {
-  // Sokrates / Platon
+  // Sokrates / Platon (Norske oversettelser hos Nasjonalbiblioteket)
   "sokrates:Platons tidlige dialoger (Apologien, Kriton, Menon)": {
-    url: "https://www.gutenberg.org/ebooks/1656", // Apology, Crito, and Phaedo by Plato
-    label: "Les på Project Gutenberg (Apology, Crito)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2012101507137", // Sokrates' forsvarstale, oversatt av Eiliv Skard
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
   "platon:Staten (Politeia)": {
-    url: "https://www.gutenberg.org/ebooks/1497", // The Republic by Plato
-    label: "Les på Project Gutenberg (The Republic)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008112700049", // Platons Samlede verker B. 5: Staten (overs. Henning Mørland)
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
   "platon:Symposion (Drikkegildet)": {
-    url: "https://www.gutenberg.org/ebooks/1600", // The Symposium by Plato
-    label: "Les på Project Gutenberg (Symposium)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008111800096", // Platons Samlede verker B. 4: Faidon, Symposion, Faidros
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
   "platon:Faidon": {
-    url: "https://www.gutenberg.org/ebooks/1658", // Phaedo by Plato
-    label: "Les på Project Gutenberg (Phaedo)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008111800096", // Platons Samlede verker B. 4: Faidon, Symposion, Faidros
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
 
-  // Aristoteles
+  // Aristoteles (Norske oversettelser hos Nasjonalbiblioteket)
   "aristoteles:Den nikomakiske etikk": {
-    url: "https://classics.mit.edu/Aristotle/nicomachaen.html",
-    label: "Les hos Classics MIT (Nicomachean Ethics)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008100600026", // Overs. Rabbås & Stigen
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
   "aristoteles:Politikken": {
-    url: "https://classics.mit.edu/Aristotle/politics.html",
-    label: "Les hos Classics MIT (Politics)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090706001", // Overs. Tormod Eide
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
   "aristoteles:Metafysikken": {
     url: "https://classics.mit.edu/Aristotle/metaphysics.html",
     label: "Les hos Classics MIT (Metaphysics)"
   },
 
-  // Descartes
+  // Descartes (Norsk oversettelse av Aarnes)
   "descartes:Meditasjoner over filosofiens grunnlag": {
     url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090708092", // Asbjørn Aarnes' oversettelse
     label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
@@ -189,14 +186,14 @@ const VERIFIED_LINKS = {
 
   // Epiktet
   "epiktet:Håndbok i livskunst (Encheiridion)": {
-    url: "https://classics.mit.edu/Epictetus/epicench.html",
-    label: "Les hos Classics MIT (The Enchiridion)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2011102106034", // Handbok i moral, oversatt av Hellesnes & Skard
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
 
   // Marcus Aurelius
   "marcus-aurelius:Til meg selv (Meditasjoner)": {
-    url: "https://classics.mit.edu/Antoninus/meditations.html",
-    label: "Les hos Classics MIT (Meditations)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008071604024", // Til meg selv, oversatt av Rebekka Hammering Bang
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
 
   // Schopenhauer
@@ -251,8 +248,8 @@ const VERIFIED_LINKS = {
     label: "Les på Marxists Internet Archive"
   },
   "de-beauvoir:Det annet kjønn (Le Deuxième Sexe)": {
-    url: "https://www.nb.no/search?q=%22Det%20annet%20kj%C3%B8nn%22&creator=%22Beauvoir%22",
-    label: "Se utgaver hos Nasjonalbiblioteket (nb.no)"
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2021062348604", // Det annet kjønn. 1, overs. Bente Christensen
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
 
   // Fanon

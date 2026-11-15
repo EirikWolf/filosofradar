@@ -45,4 +45,20 @@ describe('Deep Dive Links Integrity', () => {
     expect(tragicWork).toBeDefined();
     expect(tragicWork?.url).toBe('https://www.nb.no/items/URN:NBN:no-nb_digibok_2008061704041');
   });
+
+  it('should have verified working Norwegian translation URL for Plato Staten', () => {
+    const platon = PHILOSOPHER_DEEP_DIVES['platon'];
+    expect(platon).toBeDefined();
+    const stateWork = platon.majorWorks.find(w => w.title.includes('Staten'));
+    expect(stateWork).toBeDefined();
+    expect(stateWork?.url).toBe('https://www.nb.no/items/URN:NBN:no-nb_digibok_2008112700049');
+  });
+
+  it('should have verified working Norwegian translation URL for Beauvoir Det annet kjønn', () => {
+    const beauvoir = PHILOSOPHER_DEEP_DIVES['de-beauvoir'];
+    expect(beauvoir).toBeDefined();
+    const secondSexWork = beauvoir.majorWorks.find(w => w.title.includes('Det annet kjønn'));
+    expect(secondSexWork).toBeDefined();
+    expect(secondSexWork?.url).toBe('https://www.nb.no/items/URN:NBN:no-nb_digibok_2021062348604');
+  });
 });

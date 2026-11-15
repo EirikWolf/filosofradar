@@ -15,8 +15,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: -390,
         description: 'Vår fremste kilde til den historiske Sokrates: Forsvarstalen i rettssaken og de sokratiske definisjonssamtalene.',
       
-        url: "https://www.gutenberg.org/ebooks/1656",
-        urlLabel: "Les på Project Gutenberg (Apology, Crito)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2012101507137",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
     ],
     thoughtExperiments: [
@@ -49,24 +49,24 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: -375,
         description: 'Hovedverket om rettferdighet, menneskesjelen, hulelignelsen og den ideelle stat ledet av filosofkonger.',
       
-        url: "https://www.gutenberg.org/ebooks/1497",
-        urlLabel: "Les på Project Gutenberg (The Republic)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008112700049",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Symposion (Drikkegildet)',
         year: -385,
         description: 'En serie festtaler om kjærlighetens vesen (eros) som en stige fra fysisk skjønnhet til kjærlighet til selve Det Skjønne.',
       
-        url: "https://www.gutenberg.org/ebooks/1600",
-        urlLabel: "Les på Project Gutenberg (Symposium)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008111800096",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Faidon',
         year: -380,
         description: 'En dramatisk dialog om sjelens udødelighet og Sokrates’ siste timer i fengselscellen.',
       
-        url: "https://www.gutenberg.org/ebooks/1658",
-        urlLabel: "Les på Project Gutenberg (Phaedo)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008111800096",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
     ],
     thoughtExperiments: [
@@ -99,16 +99,16 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: -340,
         description: 'Klassikeren om dydsetikk, karakterutvikling, eudaimonia (oppblomstring) og den gylne middelvei.',
       
-        url: "https://classics.mit.edu/Aristotle/nicomachaen.html",
-        urlLabel: "Les hos Classics MIT (Nicomachean Ethics)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008100600026",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Politikken',
         year: -335,
         description: 'Analyse av styreformer og mennesket som et iboende samfunnsvesen (zoon politikon).',
       
-        url: "https://classics.mit.edu/Aristotle/politics.html",
-        urlLabel: "Les hos Classics MIT (Politics)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090706001",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Metafysikken',
@@ -627,8 +627,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: 1949,
         description: 'Moderne kvinne- og kjønnsforsknings ubestridte grunntekst: «Man fødes ikke som kvinne, man blir det».',
       
-        url: "https://www.nb.no/search?q=%22Det%20annet%20kj%C3%B8nn%22&creator=%22Beauvoir%22",
-        urlLabel: "Se utgaver hos Nasjonalbiblioteket (nb.no)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2021062348604",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Tvetydighetens etikk',
@@ -1007,8 +1007,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: 180,
         description: 'Verdenshistoriens mest leste personlige selvhjelpsbok og etiske dagbok om plikt, ydmykhet og fatning.',
       
-        url: "https://classics.mit.edu/Antoninus/meditations.html",
-        urlLabel: "Les hos Classics MIT (Meditations)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008071604024",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
     ],
     thoughtExperiments: [
@@ -1065,8 +1065,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: 125,
         description: 'En ultrakonsis praktisk guide til stoisk sjelefred og mental motstandskraft.',
       
-        url: "https://classics.mit.edu/Epictetus/epicench.html",
-        urlLabel: "Les hos Classics MIT (The Enchiridion)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2011102106034",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Samtaler (Diatribai)',
