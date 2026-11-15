@@ -97,6 +97,18 @@ export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({
                   <p className="text-xs text-star-dim font-sans leading-relaxed">
                     {work.description}
                   </p>
+                  {work.url && (
+                    <div className="mt-2.5 pt-2 border-t border-white/5 flex items-center justify-between">
+                      <a
+                        href={work.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 text-gold text-xs font-serif font-bold transition-all hover:scale-[1.02] shadow-sm"
+                      >
+                        <span>📖</span> {work.urlLabel || 'Les verket (åpen tilgang)'} ↗
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

@@ -2,6 +2,8 @@ export interface MajorWork {
   title: string;
   year?: number;
   description: string;
+  url?: string;
+  urlLabel?: string;
 }
 
 export interface ThoughtExperiment {

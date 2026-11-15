@@ -20,6 +20,7 @@ describe('Story-modus: Idéen på 45 sekunder', () => {
     { id: 'foucault', name: 'Michel Foucault', title: 'Panoptikon' },
     { id: 'hobbes', name: 'Thomas Hobbes', title: 'Naturtilstanden (Alles krig mot alle)' },
     { id: 'zhuangzi', name: 'Zhuangzi', title: 'Sommerfugldrømmen' },
+    { id: 'zhuangzi', name: 'Zhuangzi', title: 'Kokken Ding som parterer oksen' },
   ];
 
   it('har minst 15 kuraterte bespoke stories i databasen', () => {

@@ -1026,6 +1026,74 @@ export const BESPOKE_STORIES: Record<string, StoryScript> = {
     ],
   },
 
+  // Zhuangzi – Kokken Ding som parterer oksen
+  'zhuangzi:kokken ding som parterer oksen': {
+    experimentTitle: 'Kokken Ding som parterer oksen',
+    philosopherName: 'Zhuangzi',
+    philosopherId: 'zhuangzi',
+    image: '/images/hooks/zhuangzi-kokken-ding.webp',
+    icon: '🔪',
+    totalDurationSeconds: 46,
+    slides: [
+      {
+        chapter: 'krok',
+        chapterTitle: 'Kroken',
+        chapterNumber: 1,
+        durationSeconds: 11,
+        badge: '🪝 DEL 1 AV 4 // KROKEN',
+        headline: 'Mesteren og oksen',
+        subheadline: 'En uanstrengt dans med den skarpe kniven',
+        body: 'Kokken Ding skar opp en okse for fyrst Wenhui. Skuldrenes bevegelse, føttenes rytme og knivbladets hvesende kutt fulgte en uforklarlig harmoni – som om han danset til en gammel rituel sang.',
+        highlight: {
+          label: 'Mesterens flyt',
+          text: 'Hvert eneste kutt traff akkurat der det skulle, uten stans eller nøling.',
+          icon: '🐂',
+        },
+      },
+      {
+        chapter: 'konflikt',
+        chapterTitle: 'Konflikten',
+        chapterNumber: 2,
+        durationSeconds: 12,
+        badge: '⚔️ DEL 2 AV 4 // HEMMELIGHETEN',
+        headline: '19 år uten å sløve kniven',
+        subheadline: 'Hvordan teknikken viker for Dao',
+        body: 'Fyrsten utbrøt forbløffet: «Hvordan kan ferdighetene dine nå en slik høyde?» Ding la fra seg kniven og svarte: «Det jeg følger er **Dao** – Veien – som går langt dypere enn vanlig håndverk. En god kokk skifter kniv årlig fordi han skjærer; en middelmådig månedlig fordi han hogger. Min kniv har partert tusenvis av okser i 19 år, og eggen er like skarp som da den kom fra slipesteinen.»',
+        highlight: {
+          label: 'Uten rå makt',
+          text: 'Han kjemper aldri mot kjøttet eller beinet.',
+          icon: '✨',
+        },
+      },
+      {
+        chapter: 'fasit',
+        chapterTitle: 'Eksamens-fasit',
+        chapterNumber: 3,
+        durationSeconds: 13,
+        badge: '💡 DEL 3 AV 4 // EKSAMENS-FASIT',
+        headline: 'Mellomrommene i tilværelsen',
+        subheadline: 'Wu wei: Å handle i pakt med naturens tomrom',
+        body: 'Ding forklarte hemmeligheten: Oksens ledd og sener har naturlige sprekker og mellomrom, mens et slipt knivblad knapt har noen tykkelse. Når du fører det som er uten tykkelse inn der det er tomrom, har bladet uendelig god plass til å leke og gli fritt.',
+        highlight: {
+          label: 'Eksamens-knagg',
+          text: 'Wu wei (ikke-anstrengelse): Mestring oppnås ikke ved å tvinge verden med viljestyrke, men ved å navigere gjennom tilværelsens naturlige åpninger.',
+          icon: '🎓',
+        },
+      },
+      {
+        chapter: 'refleksjon',
+        chapterTitle: 'Refleksjon',
+        chapterNumber: 4,
+        durationSeconds: 10,
+        badge: '❓ DEL 4 AV 4 // DIN TUR',
+        headline: 'Kunsten å bevare livet',
+        subheadline: 'Hvor i hverdagen hogger du mot beinet?',
+        body: 'Da fyrst Wenhui hørte dette, utbrøt han: «Fra ordene til kokken min har jeg lært hvordan jeg skal leve og nære mitt eget liv!» Å mestre tilværelsen handler ikke om å overvinne motstand med vold, men om å finne linjene der motstanden forsvinner.',
+        reflectionPrompt: 'Hvilken knute i livet ditt kan løses ved å finne tomrommet i stedet for å hogge?',
+      },
+    ],
+  },
+
   // 16. Sokrates – Maieutikk (Jordmorkunsten)
   'sokrates:maieutikk (jordmorkunsten)': {
     experimentTitle: 'Maieutikk (Jordmorkunsten)',
