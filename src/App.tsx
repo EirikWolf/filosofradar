@@ -508,6 +508,14 @@ export const App: React.FC = () => {
           >
             🎭 Hvilken filosof ligner du på?
           </button>
+          <span>·</span>
+          <a
+            href="mailto:selvgaaende+filosofradar@gmail.com?subject=Henvendelse%20fra%20Filosofradaren"
+            className="hover:text-gold transition-colors underline underline-offset-4"
+            title="Send e-post til Filosofradaren"
+          >
+            ✉️ Kontakt (Molde)
+          </a>
         </div>
         <p className="mt-1 text-[11px] text-star-dim/70">
           Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig

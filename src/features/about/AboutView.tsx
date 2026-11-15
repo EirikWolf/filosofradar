@@ -150,8 +150,18 @@ export const AboutView: React.FC<AboutViewProps> = ({
               Bygget med kjærlighet for nysgjerrighet og undring
             </span>
             <p className="text-xs text-star-dim mt-1">
-              Oslo, 2026 · Bygget med React 19, TypeScript, Tailwind CSS og Vite.
+              Molde, 2026 · Bygget med React 19, TypeScript, Tailwind CSS og Vite.
             </p>
+            <div className="mt-2 text-xs flex items-center justify-center gap-1.5 flex-wrap">
+              <span className="text-star-dim">Kontakt & tilbakemeldinger:</span>
+              <a
+                href="mailto:selvgaaende+filosofradar@gmail.com?subject=Henvendelse%20fra%20Filosofradaren"
+                className="text-gold hover:text-gold-bright hover:underline font-mono font-medium inline-flex items-center gap-1"
+                title="Send e-post til Filosofradaren (merket automatisk i emne og adresse)"
+              >
+                <span>✉️</span> selvgaaende+filosofradar@gmail.com
+              </a>
+            </div>
           </div>
         </>
       )}
