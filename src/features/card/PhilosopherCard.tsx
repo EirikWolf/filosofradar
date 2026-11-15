@@ -62,7 +62,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header med lukk-knapp og tradisjon */}
-        <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-5">
+        <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-5 shrink-0">
           <div className="flex items-center gap-3">
             {/* Avatar eller stjerneglyf */}
             {philosopher.image ? (
@@ -132,7 +132,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         </div>
 
         {/* Handlingsknapper */}
-        <div className="flex flex-wrap items-center gap-2 my-4">
+        <div className="flex flex-wrap items-center gap-2 my-4 shrink-0">
           <button
             onClick={() => onStartCompare(philosopher.id)}
             className="px-3.5 py-1.5 rounded-lg bg-gold text-cosmos font-serif font-bold text-xs hover:bg-gold-bright transition-all shadow-[0_0_12px_rgba(246,200,95,0.4)] flex items-center gap-1.5"
@@ -147,11 +147,23 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
               <span>⏳</span> Se levetid i tidslinjen
             </button>
           )}
+          <button
+            onClick={() => {
+              const el = document.getElementById('dypdykk-seksjon');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className="px-3 py-1.5 rounded-lg border border-gold/40 bg-gold/10 hover:bg-gold/25 text-gold hover:text-gold-bright text-xs font-serif transition-all flex items-center gap-1.5"
+            title="Gå direkte til historisk kontekst, hovedverker og visuelt tankeeksperiment"
+          >
+            <span>📖</span> Dypdykk & tankeeksperiment ↓
+          </button>
         </div>
 
         {/* Skoler / Retninger */}
         {philosopher.schools.length > 0 && (
-          <div className="flex flex-wrap items-center gap-1.5 mb-5">
+          <div className="flex flex-wrap items-center gap-1.5 mb-5 shrink-0">
             <span className="text-xs font-serif text-star-dim">Retning:</span>
             {philosopher.schools.map((school) => (
               <span
@@ -165,7 +177,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         )}
 
         {/* 1. Seksjon: Temaradar (edderkoppdiagram) */}
-        <div className="p-4 bg-cosmos/80 border border-white/10 rounded-2xl mb-6 shadow-inner flex flex-col items-center">
+        <div className="p-4 bg-cosmos/80 border border-white/10 rounded-2xl mb-6 shadow-inner flex flex-col items-center shrink-0">
           <h3 className="text-xs uppercase font-serif tracking-widest text-gold mb-2 text-center">
             ✦ Temaradar (Hva brant {philosopher.name.split(' ')[0]} for?)
           </h3>
@@ -182,7 +194,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         />
 
         {/* 2. Seksjon: Kjerneidéer */}
-        <div className="mb-6">
+        <div className="mb-6 shrink-0">
           <h3 className="text-sm font-serif font-bold text-gold tracking-wide mb-3 flex items-center gap-2">
             <span>💡</span> Kjerneidéer
           </h3>
@@ -205,7 +217,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
 
         {/* 3. Seksjon: Sitat */}
         {philosopher.quote && (
-          <div className="mb-6 p-4 rounded-xl bg-cosmos-card border-l-4 border-gold bg-gradient-to-r from-gold/10 to-transparent">
+          <div className="mb-6 p-4 rounded-xl bg-cosmos-card border-l-4 border-gold bg-gradient-to-r from-gold/10 to-transparent shrink-0">
             <blockquote className="italic font-serif text-sm text-star-white leading-relaxed">
               «{philosopher.quote.text}»
             </blockquote>
@@ -217,7 +229,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         )}
 
         {/* 4. Seksjon: Tenk selv */}
-        <div className="mb-6 p-4 rounded-xl border border-cyan-glow/30 bg-cyan-glow/5">
+        <div className="mb-6 p-4 rounded-xl border border-cyan-glow/30 bg-cyan-glow/5 shrink-0">
           <div className="flex items-center gap-2 text-cyan-glow text-xs font-serif font-bold uppercase tracking-wider mb-1">
             <span>💭</span> Tenk selv
           </div>
@@ -233,7 +245,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         />
 
         {/* 6. Seksjon: Påvirkningsnettverk (Idé-slekt) */}
-        <div className="mb-6 space-y-3">
+        <div className="mb-6 space-y-3 shrink-0">
           <h3 className="text-sm font-serif font-bold text-gold tracking-wide flex items-center gap-2">
             <span>🕸️</span> Idé-slekt og påvirkning
           </h3>
@@ -290,7 +302,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         </div>
 
         {/* 6. Seksjon: Kilder og lisenser */}
-        <div className="mt-auto pt-4 border-t border-white/10 text-xs text-star-dim space-y-2">
+        <div className="mt-auto pt-4 border-t border-white/10 text-xs text-star-dim space-y-2 shrink-0">
           <div className="flex flex-wrap items-center gap-3">
             <span className="font-serif">Kilder:</span>
             {philosopher.links.map((link, idx) => (

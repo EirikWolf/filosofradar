@@ -16,7 +16,7 @@ export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({
   philosopherName = 'Filosofen',
   onPlayStory,
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const deepDive: PhilosopherDeepDive | undefined = PHILOSOPHER_DEEP_DIVES[philosopherId];
 
@@ -33,7 +33,7 @@ export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({
   };
 
   return (
-    <div className="my-6 rounded-2xl border border-gold/40 bg-gradient-to-b from-cosmos-card/90 to-cosmos/95 overflow-hidden shadow-xl transition-all">
+    <div id="dypdykk-seksjon" className="my-6 rounded-2xl border border-gold/40 bg-gradient-to-b from-cosmos-card/90 to-cosmos/95 overflow-hidden shadow-xl transition-all shrink-0">
       {/* Toggle-knapp i toppen */}
       <button
         onClick={handleToggle}
