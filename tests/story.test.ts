@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { getStoryScript, BESPOKE_STORIES } from '../src/features/story/storyData';
 import type { ThoughtExperiment } from '../src/features/deepdive/types';
+import { storySpeech } from '../src/features/story/storySpeech';
 
 describe('Story-modus: Idéen på 45 sekunder', () => {
   const targetPhilosophers = [
@@ -76,5 +77,16 @@ describe('Story-modus: Idéen på 45 sekunder', () => {
     expect(story.slides[1].headline).toContain('Ukjent Filosof');
     expect(story.slides[2].body).toContain('Viktig lærdom for studenten.');
     expect(story.slides[3].chapter).toBe('refleksjon');
+  });
+
+  it('håndterer fortellerstemme (storySpeech) trygt', () => {
+    // Sjekk at storySpeech modulen kan importeres og kalles uten feil
+    expect(typeof storySpeech.toggle).toBe('function');
+    expect(typeof storySpeech.stop).toBe('function');
+    const initial = storySpeech.enabled;
+    const toggled = storySpeech.toggle();
+    expect(toggled).toBe(!initial);
+    // Tilbakestill
+    storySpeech.toggle();
   });
 });

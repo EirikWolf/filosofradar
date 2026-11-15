@@ -1,7 +1,30 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import type { StoryModalProps } from './types';
+import type { StoryModalProps, StorySlide } from './types';
 import { getStoryScript } from './storyData';
 import { sound } from '../../lib/sound';
+import { storySpeech } from './storySpeech';
+
+function buildSlideSpeechText(slide: StorySlide): string {
+  const parts: string[] = [];
+  parts.push(slide.headline);
+  if (slide.subheadline) {
+    parts.push(slide.subheadline);
+  }
+  const cleanBody = slide.body.replace(/[*_#`]/g, '');
+  parts.push(cleanBody);
+
+  if (slide.highlight) {
+    const cleanHighlight = slide.highlight.text.replace(/[*_#`]/g, '');
+    parts.push(`${slide.highlight.label}: ${cleanHighlight}`);
+  }
+
+  if (slide.reflectionPrompt) {
+    const cleanPrompt = slide.reflectionPrompt.replace(/[*_#`]/g, '');
+    parts.push(cleanPrompt);
+  }
+
+  return parts.join('. ');
+}
 
 export const StoryModal: React.FC<StoryModalProps> = ({
   experiment,
@@ -17,10 +40,22 @@ export const StoryModal: React.FC<StoryModalProps> = ({
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHolding, setIsHolding] = useState(false);
   const [isSoundActive, setIsSoundActive] = useState(sound.enabled);
+  const [isNarratorActive, setIsNarratorActive] = useState(storySpeech.enabled);
   const [progress, setProgress] = useState(0); // 0 til 100 for gjeldende slide
 
   const currentSlide = story.slides[currentIndex];
-  const slideDurationMs = (currentSlide.durationSeconds || 10) * 1000;
+
+  // Beregn tidsvarighet per slide (forlenges automatisk hvis tale er aktiv så teksten rekker å bli lest)
+  const slideDurationMs = React.useMemo(() => {
+    if (!isNarratorActive) {
+      return (currentSlide.durationSeconds || 10) * 1000;
+    }
+    const text = buildSlideSpeechText(currentSlide);
+    const words = text.split(/\s+/).filter(Boolean).length;
+    // Norsk rolig tale: ca 2.2 ord per sekund pluss pauser
+    const speechSec = Math.max(currentSlide.durationSeconds || 10, Math.ceil(words / 2.2) + 2);
+    return speechSec * 1000;
+  }, [currentSlide, isNarratorActive]);
 
   const animFrameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
@@ -86,7 +121,10 @@ export const StoryModal: React.FC<StoryModalProps> = ({
       pausedProgressRef.current = currentPct;
 
       if (currentPct >= 100) {
-        handleNext();
+        // Hvis tale er aktiv, lar vi talen styre fullføringen og kalle handleNext()
+        if (!isNarratorActive) {
+          handleNext();
+        }
       } else {
         animFrameRef.current = requestAnimationFrame(tick);
       }
@@ -99,7 +137,42 @@ export const StoryModal: React.FC<StoryModalProps> = ({
         cancelAnimationFrame(animFrameRef.current);
       }
     };
-  }, [isPlaying, isHolding, slideDurationMs, handleNext]);
+  }, [isPlaying, isHolding, slideDurationMs, isNarratorActive, handleNext]);
+
+  // Fortellerstemme / Opplesnings-effekt: Start tale ved ny slide eller når tale slås på
+  useEffect(() => {
+    if (!isNarratorActive) {
+      storySpeech.stop();
+      return;
+    }
+
+    const textToSpeak = buildSlideSpeechText(currentSlide);
+    storySpeech.speak(textToSpeak, () => {
+      // Når talen er ferdig:
+      if (currentIndex < totalSlides - 1) {
+        setTimeout(() => {
+          handleNext();
+        }, 800);
+      } else {
+        setIsPlaying(false);
+        setProgress(100);
+      }
+    });
+
+    return () => {
+      storySpeech.stop();
+    };
+  }, [currentIndex, isNarratorActive, currentSlide, totalSlides, handleNext]);
+
+  // Pause / gjenoppta tale ved pause eller holding
+  useEffect(() => {
+    if (!isNarratorActive) return;
+    if (!isPlaying || isHolding) {
+      storySpeech.pause();
+    } else {
+      storySpeech.resume();
+    }
+  }, [isNarratorActive, isPlaying, isHolding]);
 
   // Tastatursnarveier
   useEffect(() => {
@@ -108,7 +181,12 @@ export const StoryModal: React.FC<StoryModalProps> = ({
         onClose();
       } else if (e.key === ' ' || e.key === 'Spacebar') {
         e.preventDefault();
-        setIsPlaying((p) => !p);
+        setIsPlaying((p) => {
+          const next = !p;
+          if (!next && isNarratorActive) storySpeech.pause();
+          else if (next && isNarratorActive) storySpeech.resume();
+          return next;
+        });
       } else if (e.key === 'ArrowRight') {
         handleNext();
       } else if (e.key === 'ArrowLeft') {
@@ -117,8 +195,11 @@ export const StoryModal: React.FC<StoryModalProps> = ({
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose, handleNext, handlePrev]);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      storySpeech.stop();
+    };
+  }, [onClose, handleNext, handlePrev, isNarratorActive]);
 
   // Lyd-toggle
   const handleToggleSound = (e: React.MouseEvent) => {
@@ -127,14 +208,27 @@ export const StoryModal: React.FC<StoryModalProps> = ({
     setIsSoundActive(newState);
   };
 
+  // Fortellerstemme-toggle
+  const handleToggleNarrator = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const next = storySpeech.toggle();
+    setIsNarratorActive(next);
+  };
+
   // Hold-down for å pause
   const handleHoldStart = () => {
     setIsHolding(true);
+    if (isNarratorActive) {
+      storySpeech.pause();
+    }
   };
 
   const handleHoldEnd = () => {
     setIsHolding(false);
     startTimeRef.current = null; // resynk i neste tick
+    if (isNarratorActive) {
+      storySpeech.resume();
+    }
   };
 
   return (
@@ -225,13 +319,36 @@ export const StoryModal: React.FC<StoryModalProps> = ({
               </div>
             </div>
 
-            <div className="flex items-center gap-2 shrink-0">
-              {/* Lydknapp */}
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+              {/* Fortellerstemme (Opplesning på norsk) */}
+              {storySpeech.isSupported && (
+                <button
+                  type="button"
+                  onClick={handleToggleNarrator}
+                  className={`h-8 px-2 sm:px-2.5 rounded-full border flex items-center gap-1 text-xs font-serif transition-all shadow-md ${
+                    isNarratorActive
+                      ? 'bg-amber-500/25 border-amber-400 text-amber-300 shadow-[0_0_12px_rgba(251,191,36,0.4)] font-bold'
+                      : 'bg-black/50 hover:bg-black/80 border-white/20 text-star-dim hover:text-white'
+                  }`}
+                  title={
+                    isNarratorActive
+                      ? `Fortellerstemme på (${storySpeech.currentVoiceName}) – klikk for å slå av`
+                      : 'Skru på norsk opplesning med fortellerstemme'
+                  }
+                >
+                  <span className={isNarratorActive ? 'animate-pulse' : ''}>🎙️</span>
+                  <span className="hidden xs:inline text-[10px] sm:text-[11px]">
+                    {isNarratorActive ? 'Tale på' : 'Tale av'}
+                  </span>
+                </button>
+              )}
+
+              {/* Lydknapp (Ambient dur) */}
               <button
                 type="button"
                 onClick={handleToggleSound}
                 className="w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 flex items-center justify-center text-xs text-star-white transition-all shadow-md"
-                title={isSoundActive ? 'Demp lyd' : 'Skru på ambient lyd'}
+                title={isSoundActive ? 'Demp ambient lyd' : 'Skru på ambient lyd'}
               >
                 {isSoundActive ? '🔊' : '🔇'}
               </button>
