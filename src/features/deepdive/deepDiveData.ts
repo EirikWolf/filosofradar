@@ -57,6 +57,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Hulelignelsen',
         icon: '🕯️',
+        image: '/images/hooks/platon-hulen.webp',
         description: 'Fanger sitter lenket fast i en mørk hule og ser bare skygger på veggen kastet av et bål. En fange slipper fri, ledes opp til overflaten, blendes av sollyset, og ser til slutt solen – Det Godes Idé.',
         takeaway: 'Sanseverdenen er en skyggeverden; ekte kunnskap oppnås bare når fornuften skuer idéene bak de ytre fenomenene.',
       },
@@ -130,6 +131,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Den onde demonen (Malin génie)',
         icon: '😈',
+        image: '/images/hooks/descartes-demonen.webp',
         description: 'Tenk deg at det finnes en allmektig, ond demon som bruker all sin kraft på å lure sansene dine, slik at himmelen, jorden, farger og til og med 2+2=4 er ren illusjon.',
         takeaway: 'Selv om demonen lurer meg om alt i universet, kan han ikke lure meg om at jeg eksisterer mens jeg tenker denne tanken.',
       },
@@ -796,7 +798,15 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     ],
     thoughtExperiments: [
       {
+        title: 'Sporvognsdilemmaet (Trolley-problemet)',
+        icon: '🚋',
+        image: '/images/hooks/philippa-foot-sporvogn.webp',
+        description: 'En løpsk sporvogn dundrer nedover sporet mot fem banearbeidere. Du står ved en sporveksel og kan styre den inn på et sidespor der én mann arbeider. Trekker du i spaken?',
+        takeaway: 'Formulert av Philippa Foot i forlengelsen av Anscombes etikk: Er det tillatt å omdirigere en eksisterende trussel (dobbel virkning), selv om det koster ett liv å redde fem?',
+      },
+      {
         title: 'Doktrinen om dobbel virkning',
+        icon: '⚖️',
         description: 'En bonde planter en bombe for å drepe en fiendtlig offiser vel vitende om at et barn i nærheten også vil omkomme, kontra en kirurg som fjerner en kreftsvulst vel vitende om at pasienten kan dø under inngrepet.',
         takeaway: 'Det er en moralsk fundamental forskjell på å ville et onde som middel, og å forutse et onde som en uunngåelig bieffekt.',
       },
@@ -1442,6 +1452,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Den flytende mannen (Bevissthetens uavhengighet)",
         icon: "🌌",
+        image: "/images/hooks/ibn-sina-mannen.webp",
         description: "Tenk deg at du blir skapt fullt bevisst i dette øyeblikk, men svevende i et totalt mørkt tomrom. Armene og bena er spredt så de ikke rører hverandre; øynene er blinde, ørene døve, og luften har samme temperatur som huden så du kjenner ingenting fysisk.",
         takeaway: "Ville du likevel vite at du eksisterer? Ja! Dette beviser at sjelen er en immateriell substans, helt uavhengig av kroppen – 600 år før Descartes.",
       },
@@ -1706,6 +1717,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Russells tekanne",
         icon: "🫖",
+        image: "/images/hooks/russell-tekanne.webp",
         description: "Hvis jeg påstår at det kretser en bitte liten porselenstekanne i bane rundt solen mellom jorden og Mars, kan ingen motbevise meg, for den er for liten til å sees i teleskoper. Betyr det at det er rimelig å tro på den?",
         takeaway: "Bevisbyrden hviler alltid på den som fremsetter en ekstraordinær påstand, ikke på skeptikeren som nekter å tro uten bevis.",
       },
