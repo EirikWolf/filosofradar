@@ -19,11 +19,14 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Maieutikk (Jordmorkunsten)',
+        icon: '🏺',
+        image: '/images/hooks/sokrates-jordmorkunsten.webp',
         description: 'Sokrates sammenlignet seg med sin mor som var jordmor. Han tilførte ingen ny lærdom, men hjalp samtalepartneren med å forløse sannheter som allerede lå slumrende i deres eget sinn.',
         takeaway: 'Ekte visdom er selvinnsikt og kan aldri tvinges inn utenfra som dogmer.',
       },
       {
         title: 'Geometritesten med slavegutten (Menon)',
+        icon: '📐',
         description: 'Sokrates viser hvordan en uutdannet slavegutt kan løse et komplekst geometrisk teorem bare ved å bli stilt de rette spørsmålene.',
         takeaway: 'Indikerer at menneskesinnet har medfødte rasjonelle strukturer som kan vekkes til live.',
       },
@@ -166,6 +169,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Deus sive Natura (Gud eller Naturen)',
+        icon: '🔍',
+        image: '/images/hooks/spinoza-linsen.webp',
         description: 'Det finnes ikke en konge i himmelen som skapte universet utenfra. Hele kosmos – stjernene, naturlovene, menneskekroppen og tankene – er uttrykk for én og samme evige substans.',
         takeaway: 'Vi er ikke isolerte herskere over naturen; vi er bølger på det samme uendelige havet.',
       },
@@ -198,11 +203,14 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Tabula Rasa (Den blanke tavlen)',
+        icon: '📜',
+        image: '/images/hooks/locke-vokstavlen.webp',
         description: 'Tenk deg sinnet ved fødselen som et hvitt papirark uten et eneste tegn. Hvor kommer alle forestillingene fra? Fra én eneste kilde: erfaring (sansning og refleksjon).',
         takeaway: 'Ingen mennesker er født med ferdige sannheter; kunnskap krever erfaringsbasert læring.',
       },
       {
         title: 'Eiendomsrettens opprinnelse (Eikenøttene i skogen)',
+        icon: '🌰',
         description: 'Jorden tilhører i utgangspunktet hele menneskeheten. Men når du plukker eikenøtter under treet, har du blandet ditt eget kroppslige arbeid med naturen.',
         takeaway: 'Arbeid gjør en del av felleseiet til rettmessig privat eiendom.',
       },
@@ -314,6 +322,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Fuglene i gullburet',
+        icon: '🕊️',
+        image: '/images/hooks/wollstonecraft-fakkelen.webp',
         description: 'Kvinner i samtiden ble oppdratt til å være pyntelige, svake og følelsesstyrte vesener som bare skulle sjarmere menn, lik finkultiverte sangfugler i forgylte bur.',
         takeaway: 'Når samfunnet klipper vingene av kvinner, kan man ikke etterpå håne dem for at de ikke kan fly.',
       },
@@ -341,6 +351,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Herre-trell-dialektikken',
+        icon: '⛓️',
+        image: '/images/hooks/hegel-herre-og-trell.webp',
         description: 'To bevisstheter møtes og kjemper en kamp på liv og død om anerkjennelse. Den ene frykter døden og underkaster seg (trellen), mens den andre blir herren. Men gjennom sitt arbeid med den fysiske verdenen oppnår trellen etter hvert en dypere mestring og frihet enn den passive herren.',
         takeaway: 'Menneskelig bevissthet og frihet er sosial og oppstår bare gjennom gjensidig anerkjennelse og arbeid.',
       },
@@ -373,6 +385,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Fremmedgjøringens fire former',
+        icon: '🏭',
+        image: '/images/hooks/marx-fabrikken.webp',
         description: 'Under kapitalismen mister fabrikkarbeideren kontroll over: 1. Produktet (som tilhører kapitaleieren), 2. Arbeidsprosessen (mekanisk slit), 3. Sin menneskelige natur (artsvesen redusert til et tannhjul), og 4. Sine medmennesker (konkurrenter i stedet for feller).',
         takeaway: 'Arbeid burde være menneskets fremste kilde til kreativ selvrealisering, ikke kilden til tap av verdighet.',
       },
@@ -405,6 +419,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Frihetens svimmelhet (Klippekanten)',
+        icon: '🧗',
+        image: '/images/hooks/kierkegaard-abraham.webp',
         description: 'Når du står på kanten av et stup, skyldes angsten ikke bare at du kan falle ned, men den skremmende vissheten om at du *kan velge å kaste deg ut*.',
         takeaway: 'Angst er ikke frykt for en ytre fare; angst er bevisstheten om din egen radikale valgfrihet.',
       },
@@ -540,6 +556,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Kvinnen som «den Andre»',
+        icon: '🪞',
+        image: '/images/hooks/de-beauvoir-den-andre.webp',
         description: 'I all historisk mytologi og samfunnsteori er mannen satt som det universelle Subjektet («Mennesket»), mens kvinnen defineres som det relative, det avvikende – «den Andre».',
         takeaway: 'Kvinners underordning er ikke en biologisk skjebne, men resultatet av en historisk og kulturell konstruksjon.',
       },
@@ -572,6 +590,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Det utvidede Selv',
+        icon: '🏔️',
+        image: '/images/hooks/arne-naess-tvergastein.webp',
         description: 'Når du ser et vakkert tre bli hugget ned, eller en elv bli lagt i rør, opplever du det ikke som et abstrakt tap; du kjenner det som et slag mot deg selv.',
         takeaway: 'Menneskelig modning handler om å utvide sin empati og identifikasjon til å omfatte hele det levende økosystemet.',
       },
@@ -633,6 +653,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Den første inngjerdringen av jord',
+        icon: '🪵',
+        image: '/images/hooks/rousseau-lenkene.webp',
         description: '«Den første som gjerdet inn et stykke jord og sa: Dette er mitt!, og fant folk enfoldige nok til å tro ham, var det borgerlige samfunns sanne grunnlegger.»',
         takeaway: 'Menneskelig ulikhet og krig er ikke en naturnødvendighet, men en historisk oppfinnelse.',
       },
@@ -694,6 +716,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Pæretreet i naboens hage',
+        icon: '🍐',
+        image: '/images/hooks/augustin-tidens-gate.webp',
         description: 'Som tenåring snek Augustin seg inn i en hage og stjal umodne pærer bare for å kaste dem til grisene. Hvorfor? Ikke fordi han var sulten, men fordi han nøt selve overtredelsen.',
         takeaway: 'Menneskets vilje er skadet av arvesynden og drives mot det gale for dets egen skyld uten Guds nåde.',
       },
@@ -721,6 +745,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'De fem veier (Gudsbevisene)',
+        icon: '⚙️',
+        image: '/images/hooks/aquinas-urverket.webp',
         description: 'Alt som beveger seg i universet, beveges av noe annet. Men en uendelig kjede av bevegere bakover i tid er umulig.',
         takeaway: 'Det må finnes en Første Ubevegede Beveger som setter alt i gang uten selv å bli beveget – og dette kaller vi Gud.',
       },
@@ -787,6 +813,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Ondskapens banalitet',
+        icon: '🏛️',
+        image: '/images/hooks/arendt-glassburet.webp',
         description: 'I rettssalen så Arendt ikke en demonisk morder, men en mann som snakket i klisjeer og bare «gjorde plikten sin» for å fremme karrieren i et byråkrati.',
         takeaway: 'Den største ondskapen i moderne tid begås av mennesker som frasier seg sin egen dømmekraft og slutter å tenke.',
       },
@@ -946,11 +974,14 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Lykten i dagslys',
+        icon: '🏮',
+        image: '/images/hooks/diogenes-lykten.webp',
         description: 'Diogenes gikk rundt i Athens gater med en tent lykt midt på blanke formiddagen. Da folk spurte hva han drev med, svarte han: «Jeg leter etter et oppriktig, ekte menneske.»',
         takeaway: 'Menneskene gjemmer seg bak masker av sosial prestisje og hykleri.',
       },
       {
         title: 'Møtet med Aleksander den store',
+        icon: '👑',
         description: 'Verdensherskeren Aleksander kom til Diogenes og sa: «Be om hva som helst du ønsker, og jeg skal gi deg det!» Diogenes svarte: «Flytt deg litt til siden, du skygger for solen min.»',
         takeaway: 'Ekte frihet er å trenge så lite at selv verdens mektigste mann ikke har noe å friste eller true deg med.',
       },
@@ -978,6 +1009,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Pinnsvinenes dilemma',
+        icon: '🦔',
+        image: '/images/hooks/schopenhauer-piggsvinene.webp',
         description: 'På en kald vinterdag må en flokk pinnsvin rykke tett sammen for å holde varmen. Men når de kommer for nær, stikker piggene deres hverandre smertefullt. Rygger de unna, fryser de i hjel.',
         takeaway: 'Menneskelige relasjoner er en evig balanse mellom ensomhetens kulde og nærhetens sår.',
       },
@@ -1005,6 +1038,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Kjempehjorten med for store gevir',
+        icon: '🦌',
+        image: '/images/hooks/zapffe-den-siste-messias.webp',
         description: 'Den forhistoriske kjempehjorten utviklet gjennom evolusjonen så enorme gevir at den til slutt ikke klarte å løfte hodet eller rømme fra rovdyr. Mennesket har på samme måte utviklet en overdimensjonert bevissthet.',
         takeaway: 'Mennesket krever mening og rettferdighet av et univers som er blindt og meningsløst; vi er en biologisk feilkonstruksjon.',
       },
