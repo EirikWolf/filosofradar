@@ -121,7 +121,8 @@ export const StoryModal: React.FC<StoryModalProps> = ({
   }, [onClose, handleNext, handlePrev]);
 
   // Lyd-toggle
-  const handleToggleSound = () => {
+  const handleToggleSound = (e: React.MouseEvent) => {
+    e.stopPropagation();
     const newState = sound.toggle();
     setIsSoundActive(newState);
   };
@@ -141,11 +142,16 @@ export const StoryModal: React.FC<StoryModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label={`Story: ${story.experimentTitle} av ${philosopherName}`}
-      className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-cosmos/90 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-[60] flex items-center justify-center p-0 sm:p-4 bg-cosmos/90 backdrop-blur-md animate-in fade-in duration-200"
+      onClick={(e) => {
+        e.stopPropagation();
+        onClose();
+      }}
     >
       {/* Selve story-kortet (9:16 format på desktop, fullskjerm på mobil) */}
       <div
         className="relative w-full sm:w-[420px] h-full sm:h-[780px] sm:max-h-[92vh] sm:rounded-3xl bg-cosmos-card border-0 sm:border sm:border-gold/50 shadow-[0_0_60px_rgba(0,0,0,0.9)] overflow-hidden flex flex-col justify-between select-none"
+        onClick={(e) => e.stopPropagation()}
         onMouseDown={handleHoldStart}
         onMouseUp={handleHoldEnd}
         onTouchStart={handleHoldStart}
@@ -183,7 +189,8 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                 <button
                   key={idx}
                   type="button"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     sound.playStarSelect();
                     setCurrentIndex(idx);
                     setProgress(0);
@@ -232,7 +239,10 @@ export const StoryModal: React.FC<StoryModalProps> = ({
               {/* Pause/Spill-knapp */}
               <button
                 type="button"
-                onClick={() => setIsPlaying((p) => !p)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsPlaying((p) => !p);
+                }}
                 className="w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 flex items-center justify-center text-xs text-star-white transition-all shadow-md"
                 title={isPlaying ? 'Pause story (Mellomrom)' : 'Fortsett story'}
               >
@@ -242,7 +252,10 @@ export const StoryModal: React.FC<StoryModalProps> = ({
               {/* Lukk-knapp */}
               <button
                 type="button"
-                onClick={onClose}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
                 className="w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 flex items-center justify-center text-xs text-star-white transition-all shadow-md"
                 title="Lukk story (Esc)"
               >

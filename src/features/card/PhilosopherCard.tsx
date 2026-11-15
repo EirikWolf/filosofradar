@@ -8,6 +8,7 @@ import { DeepDiveSection } from '../deepdive/DeepDiveSection';
 import { StoryModal } from '../story/StoryModal';
 import type { ThoughtExperiment } from '../deepdive/types';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
+import { sound } from '../../lib/sound';
 
 interface PhilosopherCardProps {
   philosopher: Philosopher;
@@ -31,6 +32,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
   const meta = getTraditionMeta(philosopher.tradition);
 
   const [activeStoryExperiment, setActiveStoryExperiment] = useState<ThoughtExperiment | null>(null);
+  const [isSoundEnabled, setIsSoundEnabled] = useState(sound.enabled);
 
   // Kart over filosofer for rask id-oppslag
   const philosophersById = React.useMemo(() => {
@@ -129,14 +131,34 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
             </div>
           </div>
 
-          <button
-            onClick={onClose}
-            aria-label="Lukk filosofkort (Esc)"
-            className="w-8 h-8 rounded-full border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors flex items-center justify-center text-sm"
-            title="Lukk (Esc)"
-          >
-            ✕
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                const next = sound.toggle();
+                setIsSoundEnabled(next);
+              }}
+              aria-label={isSoundEnabled ? 'Kosmisk lyd på' : 'Kosmisk lyd av'}
+              title={isSoundEnabled ? 'Kosmisk lyd på (klikk for å dempe)' : 'Skru på kosmisk ambient lyd'}
+              className={`w-8 h-8 rounded-full border flex items-center justify-center text-xs transition-colors ${
+                isSoundEnabled
+                  ? 'border-cyan-400 bg-cyan-500/20 text-cyan-300'
+                  : 'border-white/20 text-star-dim hover:text-white hover:border-gold'
+              }`}
+            >
+              {isSoundEnabled ? '🔊' : '🔈'}
+            </button>
+
+            <button
+              onClick={onClose}
+              aria-label="Lukk filosofkort (Esc)"
+              className="w-8 h-8 rounded-full border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors flex items-center justify-center text-sm"
+              title="Lukk (Esc)"
+            >
+              ✕
+            </button>
+          </div>
         </div>
 
         {/* Handlingsknapper */}
