@@ -619,9 +619,10 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 r={timeRingRadius}
                 fill="none"
                 stroke="#67e8f9"
-                strokeWidth="2"
+                strokeWidth="1.5"
                 strokeDasharray="4 3"
-                className="filter drop-shadow-[0_0_12px_#67e8f9] animate-pulse"
+                opacity="0.6"
+                className="filter drop-shadow-[0_0_8px_#67e8f9]"
               />
             </g>
           )}
@@ -656,10 +657,10 @@ export const RadarView: React.FC<RadarViewProps> = ({
             </g>
           )}
 
-          {/* Animerte konstellasjonsbuer for påvirkningsnettverk (Wow-funksjon) */}
+          {/* Konstellasjonsbuer for påvirkningsnettverk (rolige, elegante linjer uten forstyrrende lysblink) */}
           {activePoint && (
             <g className="pointer-events-none">
-              {/* Forgjengere: gyllen glødende bue fra inspiratorer til denne filosofen */}
+              {/* Forgjengere: gyllen bue fra inspiratorer til denne filosofen */}
               {activePoint.philosopher.influencedBy.map((ancestorId) => {
                 const anc = pointsMap.get(ancestorId);
                 if (!anc) return null;
@@ -676,17 +677,16 @@ export const RadarView: React.FC<RadarViewProps> = ({
                       d={`M ${p1.x} ${p1.y} Q ${qx} ${qy} ${p2.x} ${p2.y}`}
                       fill="none"
                       stroke="#ffd79e"
-                      strokeWidth="2.2"
+                      strokeWidth="2"
                       strokeDasharray="4 3"
-                      className="filter drop-shadow-[0_0_10px_#ffd79e] animate-pulse"
-                      opacity="0.9"
+                      className="filter drop-shadow-[0_0_6px_#ffd79e]"
+                      opacity="0.8"
                     />
-                    <circle cx={p1.x} cy={p1.y} r="5" fill="#ffd79e" opacity="0.7" className="animate-ping" />
                   </g>
                 );
               })}
 
-              {/* Etterfølgere: cyan/gull glødende bue videre til hvem denne inspirerte */}
+              {/* Etterfølgere: cyan bue videre til hvem denne inspirerte */}
               {(activePoint.philosopher.influences ?? []).map((descendantId) => {
                 const desc = pointsMap.get(descendantId);
                 if (!desc) return null;
@@ -703,12 +703,11 @@ export const RadarView: React.FC<RadarViewProps> = ({
                       d={`M ${p1.x} ${p1.y} Q ${qx} ${qy} ${p2.x} ${p2.y}`}
                       fill="none"
                       stroke="#67e8f9"
-                      strokeWidth="2.2"
+                      strokeWidth="2"
                       strokeDasharray="5 3"
-                      className="filter drop-shadow-[0_0_10px_#67e8f9] animate-pulse"
-                      opacity="0.9"
+                      className="filter drop-shadow-[0_0_6px_#67e8f9]"
+                      opacity="0.8"
                     />
-                    <circle cx={p2.x} cy={p2.y} r="5" fill="#67e8f9" opacity="0.7" className="animate-ping" />
                   </g>
                 );
               })}
