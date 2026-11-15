@@ -40,6 +40,9 @@ const StoryModal = React.lazy(() =>
 const StoryGalleryModal = React.lazy(() =>
   import('./features/story/StoryGalleryModal').then((m) => ({ default: m.StoryGalleryModal })),
 );
+const EthicsLabView = React.lazy(() =>
+  import('./features/ethics/EthicsLabView').then((m) => ({ default: m.EthicsLabView })),
+);
 
 const ViewFallback: React.FC = () => (
   <div
@@ -54,7 +57,7 @@ const ViewFallback: React.FC = () => (
 
 const philosophers = philosophersData as Philosopher[];
 
-type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 'exphil' | 'factcheck' | 'about';
+type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 'exphil' | 'factcheck' | 'about' | 'ethics';
 
 export const App: React.FC = () => {
   const [view, setView] = useState<ViewMode>('radar');
@@ -73,6 +76,7 @@ export const App: React.FC = () => {
 
   const isObservatoryView =
     view === 'radar' || view === 'galaxy' || view === 'timeline' || view === 'network' || view === 'list';
+  const isExperienceView = view === 'quiz' || view === 'ethics';
 
   const selectObservatoryView = useCallback((v: ViewMode) => {
     setView(v);
@@ -254,7 +258,7 @@ export const App: React.FC = () => {
           <button
             onClick={() => setView('quiz')}
             className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-serif tracking-wider transition-all flex items-center gap-2 ${
-              view === 'quiz'
+              isExperienceView
                 ? 'bg-gold text-cosmos font-bold shadow-[0_0_15px_rgba(246,200,95,0.6)] scale-[1.02]'
                 : 'text-star-dim hover:text-white'
             }`}
@@ -369,6 +373,13 @@ export const App: React.FC = () => {
               <span>📚</span> Pensumliste
             </button>
             <button
+              onClick={() => setView('ethics')}
+              className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-amber-300 hover:text-white hover:bg-amber-400/10 border border-amber-400/30"
+              title="Tren på etiske dilemmaer og normative teorier i Etikk-Laben"
+            >
+              <span>⚖️</span> Etikk-Lab
+            </button>
+            <button
               onClick={() => setComparingIds(['platon', 'aristoteles'])}
               className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-cyan-300 hover:text-white hover:bg-cyan-500/10 border border-cyan-400/30"
               title="Sammenlign to tenkere i sammenligningskammeret"
@@ -379,20 +390,37 @@ export const App: React.FC = () => {
         )}
 
         {/* Kontekstuell sub-meny for Opplevelser & Quiz */}
-        {view === 'quiz' && (
+        {isExperienceView && (
           <nav
             aria-label="Opplevelses-visninger"
             className="flex flex-wrap items-center justify-center gap-1.5 mt-3 p-1 bg-slate-900/70 border border-white/10 rounded-full shadow-lg animate-fadeIn text-xs"
           >
-            <div className="px-3.5 py-1.5 rounded-full font-serif tracking-wider bg-gold/20 border border-gold text-gold font-bold shadow-sm flex items-center gap-1.5">
+            <button
+              onClick={() => setView('quiz')}
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                view === 'quiz'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  : 'text-star-dim hover:text-white hover:bg-white/5'
+              }`}
+            >
               <span>🎭</span> Personlighetsquiz
-            </div>
+            </button>
+            <button
+              onClick={() => setView('ethics')}
+              className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
+                view === 'ethics'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  : 'text-star-dim hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <span>⚖️</span> Interaktiv Etikk-Lab
+            </button>
             <button
               onClick={() => setIsStoryGalleryOpen(true)}
               className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-gold-bright hover:text-white bg-gold/10 hover:bg-gold/20 border border-gold/40 shadow-sm font-bold"
-              title="Åpne de 31 dramatiserte filosofiske historiene med tale"
+              title="Åpne de 32 dramatiserte filosofiske historiene med tale"
             >
-              <span>📖</span> 31 Filosofiske Historier
+              <span>📖</span> 32 Filosofiske Historier
             </button>
             <button
               onClick={() => setIsTourModalOpen(true)}
@@ -483,6 +511,12 @@ export const App: React.FC = () => {
                   openCard(highlightId);
                 }
               }}
+            />
+          ) : view === 'ethics' ? (
+            <EthicsLabView
+              philosophers={philosophers}
+              onOpenPhilosopherCard={openCard}
+              onNavigateToExphilHub={() => setView('exphil')}
             />
           ) : view === 'about' || view === 'factcheck' ? (
             <AboutView
@@ -601,10 +635,17 @@ export const App: React.FC = () => {
           </button>
           <span>·</span>
           <button
+            onClick={() => setView('ethics')}
+            className="hover:text-gold transition-colors underline underline-offset-4 text-cyan-300 font-bold"
+          >
+            ⚖️ Interaktiv Etikk-Lab
+          </button>
+          <span>·</span>
+          <button
             onClick={() => setIsStoryGalleryOpen(true)}
             className="hover:text-gold transition-colors underline underline-offset-4 text-gold font-bold"
           >
-            📖 31 Historier
+            📖 32 Historier
           </button>
           <span>·</span>
           <button

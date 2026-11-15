@@ -113,7 +113,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="31 Filosofiske Historier (Story-modus)"
+        aria-label={`${allStories.length} Filosofiske Historier (Story-modus)`}
         className="relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
         onClick={(e) => e.stopPropagation()}
       >
@@ -124,7 +124,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               ✦ Opplevelser // Story-modus
             </div>
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-wide">
-              31 Filosofiske Historier
+              {allStories.length} Filosofiske Historier
             </h2>
             <p className="text-xs sm:text-sm text-star-dim mt-1 max-w-2xl font-sans">
               Opplev historiens største tankeeksperimenter som levende, 4-delte historier med stemmeopplesning,
