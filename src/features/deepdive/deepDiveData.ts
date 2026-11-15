@@ -29,6 +29,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Geometritesten med slavegutten (Menon)',
         icon: '📐',
+        image: '/images/hooks/sokrates-geometrien.webp',
         description: 'Sokrates viser hvordan en uutdannet slavegutt kan løse et komplekst geometrisk teorem bare ved å bli stilt de rette spørsmålene.',
         takeaway: 'Indikerer at menneskesinnet har medfødte rasjonelle strukturer som kan vekkes til live.',
       },
@@ -769,6 +770,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: 'And-kanin-figuren',
+        icon: '🦆',
+        image: '/images/hooks/wittgenstein-and-kanin.webp',
         description: 'En tegning som kan sees både som et andehode vendt mot venstre og et kaninhode vendt mot høyre.',
         takeaway: 'Vi ser ikke bare passive lysbølger; vi «ser som» (fortolker) basert på begrepene våre.',
       },
@@ -1080,6 +1083,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Møtet med Aleksander den store',
         icon: '👑',
+        image: '/images/hooks/diogenes-aleksander.webp',
         description: 'Verdensherskeren Aleksander kom til Diogenes og sa: «Be om hva som helst du ønsker, og jeg skal gi deg det!» Diogenes svarte: «Flytt deg litt til siden, du skygger for solen min.»',
         takeaway: 'Ekte frihet er å trenge så lite at selv verdens mektigste mann ikke har noe å friste eller true deg med.',
       },
@@ -1418,6 +1422,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Barnet ved brønnen",
+        icon: '🧒',
+        image: '/images/hooks/mengzi-bronnen.webp',
         description: "Tenk deg at du plutselig ser et lite barn som krabber mot kanten av en dyp brønn og er i ferd med å falle nedi. Enhver som ser dette vil kjenne et umiddelbart støkk av medfølelse og alarm, uten å tenke på belønning eller ros fra foreldrene.",
         takeaway: "Medfølelse er en medfødt impuls hos alle mennesker; menneskenaturen er opprinnelig god, akkurat som vann naturlig søker nedover.",
       },
@@ -1469,6 +1475,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Lignelsen om den forgiftede pilen",
+        icon: '🏹',
+        image: '/images/hooks/buddha-pilen.webp',
         description: "En mann blir skutt av en forgiftet pil. Før han lar legen trekke den ut, krever han å få vite: Hvem skjøt den? Hvilken kaste tilhørte han? Hva var buen laget av? Mannen vil dø før han får svar på sine teoretiske spørsmål.",
         takeaway: "Filosofiens oppgave er ikke abstrakt metafysisk spekulasjon, men å fjerne menneskets akutte lidelse her og nå.",
       },
@@ -1518,6 +1526,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "De blinde mennene og elefanten (Anekantavada)",
+        icon: '🐘',
+        image: '/images/hooks/mahavira-elefanten.webp',
         description: "Seks blinde menn undersøker en elefant: En kjenner på støttannen og sier elefanten er som et spyd; en annen kjenner på benet og sier den er som et tre; en tredje på halen og kaller den et rep. Alle har rett fra sitt perspektiv, men alle tar feil hvis de tror de sitter på hele sannheten.",
         takeaway: "Virkeligheten er uendelig kompleks (anekantavada); menneskelige sannheter er alltid partielle og betingede (syadvada).",
       },
@@ -1545,6 +1555,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Tauet og slangen (Maya-læren)",
+        icon: '🐍',
+        image: '/images/hooks/shankara-slangen.webp',
         description: "Du går langs en sti i skumringen og ser plutselig en giftslange som ligger kveilet opp. Hjertet hamrer av redsel. Når du lyser med en lykt, ser du at det bare var et gammelt stykke tau.",
         takeaway: "Frykten og slangen var en illusjon (maya) skapt av uvitenhet; på samme måte forsvinner verdens mangfold og frykt når fornuften ser enheten i Brahman.",
       },
@@ -1763,6 +1775,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Vannbøtten og fakkelen",
+        icon: '🔥',
+        image: '/images/hooks/rabia-fakkelen.webp',
         description: "Rabia ble sett løpende gjennom Basras gater med en bøtte vann i den ene hånden og en brennende fakkel i den andre. Da folk spurte hva hun skulle, svarte hun: «Jeg skal sette fyr på paradis og slukke helvetes flammer, så menneskene elsker Gud for Guds egen skyld, og ikke av frykt for straff eller håp om belønning!»",
         takeaway: "Sann kjærlighet og moralsk godhet må være fullstendig fri for egoistiske baktanker og frykt.",
       },
@@ -1819,6 +1833,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Leibniz’ mølle (Materialismens grense)",
+        icon: '⚙️',
+        image: '/images/hooks/leibniz-mollen.webp',
         description: "Se for deg at du forstørrer hjernen til størrelsen av en vindmølle, slik at du kan gå inn og se alt mekanisk arbeid: tannhjul, støtere og aksler. Ville du noensinne få øye på en *tanke*, en *følelse* eller fargen rød?",
         takeaway: "Subjektiv bevissthet (qualia) kan aldri reduseres til rent mekaniske partikkelbevegelser.",
       },
@@ -1853,6 +1869,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Katten og Montaigne (Perspektivets relativitet)",
+        icon: '🐱',
+        image: '/images/hooks/montaigne-katten.webp',
         description: "«Når jeg leker med katten min, hvem vet da om ikke hun morer seg mer over meg enn jeg gjør over henne?»",
         takeaway: "Menneskets tro på at vi er universets ubestridte herrer skyldes bare at vi mangler evnen til å se oss selv utenfra.",
       },
@@ -1897,7 +1915,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: "Barbererparadokset (Russells paradoks)",
-        icon: "✂️",
+        icon: '✂️',
+        image: '/images/hooks/russell-barbereren.webp',
         description: "I en landsby finnes det en barberer som barberer alle menn som ikke barberer seg selv, og bare dem. Barberer han seg selv? Hvis ja, skal han ikke; hvis nei, må han.",
         takeaway: "Naiv mengdelære inneholder fundamentale selvmotsigelser og krever streng typeteori.",
       },
@@ -2126,6 +2145,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Vannet fra hodeskallen i mørket",
+        icon: '💀',
+        image: '/images/hooks/wonhyo-hodeskallen.webp',
         description: "På vei til Kina for å studere søkte Wonhyo ly i en mørk hule i et voldsomt regnvær. Tørst i mørket drakk han av en skål med vann og syntes det smakte vidunderlig friskt og søtt. Da han våknet om morgenen, oppdaget han at hulen var en gammel grav, og «skålen» var en råtnende menneskeskalle full av mark.",
         takeaway: "Vannet hadde ikke endret seg; det var sinnets forestilling som gjorde det friskt i mørket og motbydelig i lyset. «Når sinnet oppstår, oppstår mangfoldet av ting; når sinnet stilner, forsvinner graven og skallen.»",
       },
