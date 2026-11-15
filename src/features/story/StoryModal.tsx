@@ -39,11 +39,20 @@ export const StoryModal: React.FC<StoryModalProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isHolding, setIsHolding] = useState(false);
-  const [isSoundActive, setIsSoundActive] = useState(sound.enabled);
   const [isNarratorActive, setIsNarratorActive] = useState(storySpeech.enabled);
   const [progress, setProgress] = useState(0); // 0 til 100 for gjeldende slide
 
   const currentSlide = story.slides[currentIndex];
+
+  // Demp kosmisk ambient dur mens story-modusen er åpen, så opplesningen er krystallklar
+  useEffect(() => {
+    sound.stopAmbientDrone();
+    return () => {
+      if (sound.enabled) {
+        sound.startAmbientDrone();
+      }
+    };
+  }, []);
 
   // Beregn tidsvarighet per slide (forlenges automatisk hvis tale er aktiv så teksten rekker å bli lest)
   const slideDurationMs = React.useMemo(() => {
@@ -61,10 +70,9 @@ export const StoryModal: React.FC<StoryModalProps> = ({
   const startTimeRef = useRef<number | null>(null);
   const pausedProgressRef = useRef<number>(0);
 
-  // Gå til neste slide
+  // Gå til neste slide (rolig og lydløs overgang for best lytteopplevelse)
   const handleNext = useCallback(() => {
     if (currentIndex < totalSlides - 1) {
-      sound.playStarSelect();
       setCurrentIndex((prev) => prev + 1);
       setProgress(0);
       pausedProgressRef.current = 0;
@@ -78,7 +86,6 @@ export const StoryModal: React.FC<StoryModalProps> = ({
 
   // Gå til forrige slide
   const handlePrev = useCallback(() => {
-    sound.playStarSelect();
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
     }
@@ -89,7 +96,6 @@ export const StoryModal: React.FC<StoryModalProps> = ({
 
   // Restart story
   const handleRestart = useCallback(() => {
-    sound.playStarSelect();
     setCurrentIndex(0);
     setProgress(0);
     pausedProgressRef.current = 0;
@@ -201,18 +207,26 @@ export const StoryModal: React.FC<StoryModalProps> = ({
     };
   }, [onClose, handleNext, handlePrev, isNarratorActive]);
 
-  // Lyd-toggle
-  const handleToggleSound = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const newState = sound.toggle();
-    setIsSoundActive(newState);
-  };
-
-  // Fortellerstemme-toggle
+  // Fortellerstemme-toggle (starter tale umiddelbart ved aktivering)
   const handleToggleNarrator = (e: React.MouseEvent) => {
     e.stopPropagation();
     const next = storySpeech.toggle();
     setIsNarratorActive(next);
+    if (next) {
+      const textToSpeak = buildSlideSpeechText(currentSlide);
+      storySpeech.speak(textToSpeak, () => {
+        if (currentIndex < totalSlides - 1) {
+          setTimeout(() => {
+            handleNext();
+          }, 800);
+        } else {
+          setIsPlaying(false);
+          setProgress(100);
+        }
+      });
+    } else {
+      storySpeech.stop();
+    }
   };
 
   // Hold-down for å pause
@@ -285,7 +299,6 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    sound.playStarSelect();
                     setCurrentIndex(idx);
                     setProgress(0);
                     pausedProgressRef.current = 0;
@@ -320,38 +333,30 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             </div>
 
             <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-              {/* Fortellerstemme (Opplesning på norsk) */}
+              {/* Fortellerstemme / Opplesning */}
               {storySpeech.isSupported && (
                 <button
                   type="button"
                   onClick={handleToggleNarrator}
-                  className={`h-8 px-2 sm:px-2.5 rounded-full border flex items-center gap-1 text-xs font-serif transition-all shadow-md ${
+                  className={`h-8 px-2.5 sm:px-3 rounded-full border flex items-center gap-1.5 text-xs font-serif transition-all shadow-md ${
                     isNarratorActive
                       ? 'bg-amber-500/25 border-amber-400 text-amber-300 shadow-[0_0_12px_rgba(251,191,36,0.4)] font-bold'
                       : 'bg-black/50 hover:bg-black/80 border-white/20 text-star-dim hover:text-white'
                   }`}
                   title={
                     isNarratorActive
-                      ? `Fortellerstemme på (${storySpeech.currentVoiceName}) – klikk for å slå av`
-                      : 'Skru på norsk opplesning med fortellerstemme'
+                      ? `Opplesning på (${storySpeech.currentVoiceName}) – klikk for å slå av`
+                      : 'Slå på norsk opplesning / fortellerstemme'
                   }
                 >
-                  <span className={isNarratorActive ? 'animate-pulse' : ''}>🎙️</span>
-                  <span className="hidden xs:inline text-[10px] sm:text-[11px]">
+                  <span className={isNarratorActive ? 'animate-pulse' : ''}>
+                    {isNarratorActive ? '🔊' : '🔈'}
+                  </span>
+                  <span className="text-[11px] font-medium">
                     {isNarratorActive ? 'Tale på' : 'Tale av'}
                   </span>
                 </button>
               )}
-
-              {/* Lydknapp (Ambient dur) */}
-              <button
-                type="button"
-                onClick={handleToggleSound}
-                className="w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 flex items-center justify-center text-xs text-star-white transition-all shadow-md"
-                title={isSoundActive ? 'Demp ambient lyd' : 'Skru på ambient lyd'}
-              >
-                {isSoundActive ? '🔊' : '🔇'}
-              </button>
 
               {/* Pause/Spill-knapp */}
               <button
@@ -454,7 +459,6 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                 <button
                   type="button"
                   onClick={() => {
-                    sound.playStarSelect();
                     onClose();
                     onExploreDeepDive();
                   }}

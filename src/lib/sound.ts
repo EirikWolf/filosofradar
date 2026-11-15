@@ -100,18 +100,18 @@ class CosmicSoundEngine {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
 
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(880, now); // A5
-    osc.frequency.exponentialRampToValueAtTime(440, now + 0.25); // Myk glidning ned
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(659.25, now); // E5
+    osc.frequency.exponentialRampToValueAtTime(440, now + 0.2); // Myk glidning ned til A4
 
-    gain.gain.setValueAtTime(0.12, now);
-    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+    gain.gain.setValueAtTime(0.04, now);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
 
     osc.connect(gain);
     gain.connect(ctx.destination);
 
     osc.start(now);
-    osc.stop(now + 0.5);
+    osc.stop(now + 0.38);
   }
 
   /**
@@ -140,7 +140,7 @@ class CosmicSoundEngine {
   }
 
   /**
-   * Starter en dyp, rolig kosmisk bakgrunnsdur (55 Hz A1) som gir en ekte observatorium-stemning.
+   * Starter en varm, rolig kosmisk bakgrunnsambiens (myk A2/E3 akkord) med behagelig observatoriefølelse.
    */
   public startAmbientDrone() {
     if (!this.isEnabled) return;
@@ -153,13 +153,13 @@ class CosmicSoundEngine {
 
     const filter = ctx.createBiquadFilter();
     filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(140, now);
+    filter.frequency.setValueAtTime(220, now);
 
     this.droneOsc.type = 'sine';
-    this.droneOsc.frequency.setValueAtTime(55, now); // A1
+    this.droneOsc.frequency.setValueAtTime(110, now); // A2 - varm og myk grunntone, ingen 50Hz brum
 
     this.droneGain.gain.setValueAtTime(0, now);
-    this.droneGain.gain.linearRampToValueAtTime(0.04, now + 2.0); // Myk 2s fade-in
+    this.droneGain.gain.linearRampToValueAtTime(0.015, now + 2.5); // Ekstremt myk og diskret fade-in
 
     this.droneOsc.connect(filter);
     filter.connect(this.droneGain);
