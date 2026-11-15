@@ -118,7 +118,7 @@ export const ExphilHub: React.FC<ExphilHubProps> = ({
                   Kjernepensum: {exphilPhilosophers.length} sentrale tenkere
                 </h3>
                 <p className="text-xs text-star-dim font-sans mt-0.5">
-                  Klikk på en filosof for å se full eksamensguide med sensors nøkkelord og typiske feller.
+                  Klikk på en filosof for å åpne filosofkortet med kjerneidéer, dypdykk og sensors eksamenstips.
                 </p>
               </div>
               <button
@@ -172,7 +172,7 @@ export const ExphilHub: React.FC<ExphilHubProps> = ({
                         onClick={() => onOpenCard(phil.id)}
                         className="text-xs font-serif font-bold text-gold hover:underline flex items-center gap-1"
                       >
-                        🎓 Eksamensguide ↗
+                        📖 Filosofkort ↗
                       </button>
                       <button
                         onClick={() => onNavigateToRadar(phil.id)}

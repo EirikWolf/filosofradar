@@ -116,7 +116,7 @@ export const ExphilDuelsView: React.FC<ExphilDuelsViewProps> = ({
                     onClick={() => onOpenPhilosopherCard(activeDuel.sideA.philosopherId)}
                     className="text-[11px] text-gold hover:underline font-serif"
                   >
-                    Profilkort ↗
+                    Filosofkort ↗
                   </button>
                 </div>
                 <h5 className="text-lg font-serif font-bold text-star-white">
@@ -179,7 +179,7 @@ export const ExphilDuelsView: React.FC<ExphilDuelsViewProps> = ({
                     onClick={() => onOpenPhilosopherCard(activeDuel.sideB.philosopherId)}
                     className="text-[11px] text-cyan-300 hover:underline font-serif"
                   >
-                    Profilkort ↗
+                    Filosofkort ↗
                   </button>
                 </div>
                 <h5 className="text-lg font-serif font-bold text-star-white">
