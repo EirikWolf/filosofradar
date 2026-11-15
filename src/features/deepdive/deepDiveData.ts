@@ -103,6 +103,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'De fire årsakene (Marmorstatuen)',
         icon: '🏛️',
+        image: '/images/hooks/aristoteles-marmorstatuen.webp',
         description: 'For å forstå en statue må du kjenne: 1. Stoffet (marmoren), 2. Formen (statuens skikkelse), 3. Virkeårsaken (billedhuggerens meisel), og 4. Formålet (å hedre guden Apollo).',
         takeaway: 'Vitenskap krever en helhetlig forklaring som inkluderer både materiale, struktur og hensikt.',
       },
@@ -234,6 +235,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Biljardkulene (Årsak og virkning)',
+        icon: '🎱',
+        image: '/images/hooks/hume-biljardkulene.webp',
         description: 'Du ser den hvite kulen rulle over bordet og treffe den røde, og deretter ser du den røde rulle videre. Men så du noen gang selve «nødvendigheten» eller «årsakskraften»?',
         takeaway: 'Vi observerer bare hendelse A etterfulgt av B i tid og rom. At B *må* skje, er en forventningsvane skapt i vårt eget sinn, ikke en logisk lov i naturen.',
       },
@@ -277,6 +280,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Morderen ved døren',
         icon: '🚪',
+        image: '/images/hooks/kant-morderen-ved-doren.webp',
         description: 'En venn søker tilflukt i huset ditt. Like etter banker en morder på døren og spør om vennen din er inne. Kan du lyve for å redde vennens liv?',
         takeaway: 'Kant fastholder at løgn er uforenlig med moralloven fordi en universell lov om løgn opphever selve begrepet sannhet.',
       },
@@ -440,6 +444,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Det gale mennesket med lykten',
         icon: '🏮',
+        image: '/images/hooks/nietzsche-lykten.webp',
         description: 'En mann løper inn på markedsplassen midt på dagen med en tent lykt og roper: «Jeg leter etter Gud! Vi har drept ham – dere og jeg!»',
         takeaway: 'Guds død betyr at det metafysiske ankeret for vestlig moral er borte, og mennesket står i fare for å synke ned i passiv nihilisme.',
       },
@@ -467,6 +472,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Svaneproblemet (Asymmetrien)',
+        icon: '🦢',
+        image: '/images/hooks/popper-svanen.webp',
         description: 'Uansett hvor mange tusen hvite svaner du observerer, kan du aldri være logisk sikker på at «alle svaner er hvite». Men ser du én eneste sort svane, vet du med 100 % logisk sikkerhet at hypotesen er falsk.',
         takeaway: 'Verifikasjon er logisk umulig; falsifikasjon er logisk tvingende.',
       },
@@ -499,6 +506,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Kelneren på kaféen (Ond tro)',
+        icon: '☕',
+        image: '/images/hooks/sartre-kelneren.webp',
         description: 'Se på kafékelneren: Bevegelsene hans er litt for presise, stemmen litt for høflig, balansen med brettet litt for overdrevet. Han spiller rollen som «kelner» for å late som om han *er* en gjenstand med fastlagte funksjoner.',
         takeaway: 'Ond tro er å flykte fra din egen ubegrensede frihet og gjemme deg bak en sosial fasade.',
       },
@@ -590,6 +599,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Naturtilstanden (Alles krig mot alle)',
+        icon: '👑',
+        image: '/images/hooks/hobbes-leviathan.webp',
         description: 'Se for deg hva som skjer hvis politiet, domstolene og lovene forsvinner over natten. Uten en felles overordnet makt vil alles frykt for alle føre til forebyggende angrep.',
         takeaway: 'Uten en sterk stat er menneskelivet «ensomt, fattig, ekkelt, brutalt og kort».',
       },
@@ -649,6 +660,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Bille i esken (Privatspråkargumentet)',
+        icon: '🪲',
+        image: '/images/hooks/wittgenstein-bille-eske.webp',
         description: 'Anta at alle mennesker har en liten eske med noe inni som kalles en «bille». Ingen kan noensinne se inn i en annens eske. Kunne ordet «bille» bety en privat følelse?',
         takeaway: 'Språklig mening kan ikke være rent privat i sinnet; mening forutsetter felles sosiale regler.',
       },
@@ -740,6 +753,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Panoptikon',
+        icon: '👁️',
+        image: '/images/hooks/foucault-panoptikon.webp',
         description: 'Et sirkulært fengsel tegnet av Jeremy Bentham der et sentralt tårn kan se inn i alle celler, men fangene kan aldri se om vakten er der eller ikke.',
         takeaway: 'Makt fungerer mest effektivt når den overvåkede internaliserer blikket og disiplinerer seg selv.',
       },
@@ -1223,6 +1238,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Sommerfugldrømmen",
+        icon: "🦋",
+        image: "/images/hooks/zhuangzi-sommerfuglen.webp",
         description: "Zhuangzi drømte en gang at han var en sommerfugl som flagret sorgløst omkring uten å vite at han var Zhuangzi. Da han våknet, var han igjen Zhuangzi. Men drømte han at han var en sommerfugl, eller drømmer en sommerfugl nå at den er Zhuangzi?",
         takeaway: "Våre faste forestillinger om identitet og virkelighet er relative; grensene mellom bevissthetstilstander er flytende.",
       },
