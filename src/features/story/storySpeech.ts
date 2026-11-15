@@ -2,11 +2,13 @@
  * FORTELLERSTEMME FOR STORY-MODUS (Web Speech API)
  *
  * Bruker nettleserens innebygde talesyntese med norsk språkstøtte (nb-NO).
- * Gir naturlig opplesning av hvert kapittel i historiene uten forsinkelse
- * eller eksterne API-avhengigheter.
+ * Sikret mot kjente Chromium/Safari/Windows bugs:
+ * 1. Garbage collection av utterance midt i setningen
+ * 2. Asynkron cancel() krasj ved slide-overganger
+ * 3. Chrome pause-frys etter 15 sekunder
+ * 4. Asynkron innlasting av stemmelister (voiceschanged)
  */
 
-// Sett for å hindre at Chrome/Edge sin garbage collector sletter pågående tale (kjent Chromium-bug)
 const activeUtterances = new Set<SpeechSynthesisUtterance>();
 
 class StorySpeechEngine {
@@ -14,21 +16,22 @@ class StorySpeechEngine {
   private selectedVoice: SpeechSynthesisVoice | null = null;
   private currentUtterance: SpeechSynthesisUtterance | null = null;
   private isVoiceActive: boolean = false;
+  private keepAliveTimer: number | null = null;
 
   constructor() {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
       this.synth = window.speechSynthesis;
       this.initVoices();
 
-      // Lytt til voiceschanged (både onvoiceschanged og addEventListener for bredest nettleserstøtte)
+      // Lytt til voiceschanged for å fange opp stemmer som lastes asynkront
       if (this.synth.onvoiceschanged !== undefined) {
         this.synth.onvoiceschanged = () => this.initVoices();
       }
-      if (window.speechSynthesis && typeof window.speechSynthesis.addEventListener === 'function') {
+      if (typeof window.speechSynthesis.addEventListener === 'function') {
         window.speechSynthesis.addEventListener('voiceschanged', () => this.initVoices());
       }
 
-      // Sjekk om brukeren tidligere har slått på fortellerstemme
+      // Hent lagret innstilling
       try {
         const saved = localStorage.getItem('filosofradar_story_voice');
         this.isVoiceActive = saved === 'true';
@@ -43,7 +46,7 @@ class StorySpeechEngine {
     const voices = this.synth.getVoices();
     if (!voices || voices.length === 0) return;
 
-    // 1. Finn norske stemmer (nb-NO, no-NO, nn-NO, norsk, norwegian)
+    // 1. Finn norske stemmer (nb, no, nn, norsk, norwegian, bokmål)
     const norwegianVoices = voices.filter((v) => {
       const l = (v.lang || '').toLowerCase().replace(/_/g, '-');
       const n = (v.name || '').toLowerCase();
@@ -57,17 +60,16 @@ class StorySpeechEngine {
       );
     });
 
-    // 2. Ranger de beste naturlige stemmene (Neural/Natural/Iselin/Jon/Nora/Google/Henrik)
+    // 2. Foretrekk naturlige/OneCore stemmer (f.eks. Jon, Iselin, Nora, Neural, Natural)
     const preferred = norwegianVoices.find((v) => {
       const n = v.name.toLowerCase();
       return (
+        n.includes('jon') ||
+        n.includes('iselin') ||
         n.includes('natural') ||
         n.includes('neural') ||
-        n.includes('iselin') ||
-        n.includes('jon') ||
         n.includes('nora') ||
-        n.includes('google') ||
-        n.includes('online')
+        n.includes('google')
       );
     });
 
@@ -76,7 +78,7 @@ class StorySpeechEngine {
     } else if (norwegianVoices.length > 0) {
       this.selectedVoice = norwegianVoices[0];
     } else {
-      // 3. Fallback: Se etter skandinaviske stemmer eller standardstemme
+      // 3. Fallback: skandinavisk eller standardstemme
       const scandi = voices.find((v) => {
         const l = (v.lang || '').toLowerCase();
         return l.startsWith('da') || l.startsWith('sv');
@@ -99,7 +101,7 @@ class StorySpeechEngine {
       try {
         localStorage.setItem('filosofradar_story_voice', String(this.isVoiceActive));
       } catch {
-        // Ignorer localStorage feil
+        // Ignorer
       }
     }
     if (!this.isVoiceActive) {
@@ -117,77 +119,129 @@ class StorySpeechEngine {
   }
 
   /**
-   * Leser opp en tekst med norsk uttale og kaller onEnd når opplesningen er fullført.
+   * Leser opp teksten for gjeldende slide.
    */
-  public speak(text: string, onEnd?: () => void): void {
+  public speak(text: string, onEnd?: () => void, onStart?: () => void): void {
     if (!this.synth || !this.isVoiceActive) return;
 
-    // Avbryt eventuell pågående tale
-    this.stop();
-
-    // Sørg for at stemmer er lastet
-    if (!this.selectedVoice) {
-      this.initVoices();
-    }
-
-    // Chromium fiks: hvis syntesen er satt på pause av nettleseren, må vi vekke den
-    if (this.synth.paused) {
+    // Hvis forrige ytring fortsatt spiller (f.eks. brukeren klikket manuelt til neste slide),
+    // må vi avbryte. Hvis den derimot er ferdig på naturlig vis, trenger vi ikke cancel()!
+    const isCurrentlySpeaking = this.synth.speaking || this.synth.pending;
+    if (isCurrentlySpeaking) {
       try {
-        this.synth.resume();
+        this.synth.cancel();
       } catch {
         // Ignorer
       }
     }
 
-    const utterance = new SpeechSynthesisUtterance(text);
+    // Chromium-fiks: Hvis vi måtte avbryte, må vi gi nettleserens lyd-IPC 60ms til å tømme køen,
+    // ellers sletter det asynkrone cancel-signalet den nye talen vi akkurat la til!
+    const startDelay = isCurrentlySpeaking ? 70 : 10;
 
-    if (this.selectedVoice) {
-      utterance.voice = this.selectedVoice;
-      utterance.lang = this.selectedVoice.lang || 'nb-NO';
-    } else {
-      utterance.lang = 'nb-NO';
-    }
+    setTimeout(() => {
+      if (!this.synth || !this.isVoiceActive) return;
 
-    // Rolig, behagelig fortellertempo med god diksjon
-    utterance.rate = 0.95;
-    utterance.pitch = 1.0;
-
-    // Chromium fiks: hold referanse i settet så den ikke GC-slettes midt i setningen
-    activeUtterances.add(utterance);
-
-    utterance.onend = () => {
-      activeUtterances.delete(utterance);
-      if (this.currentUtterance === utterance) {
-        this.currentUtterance = null;
+      if (!this.selectedVoice) {
+        this.initVoices();
       }
-      if (onEnd) {
-        onEnd();
-      }
-    };
 
-    utterance.onerror = (e) => {
-      activeUtterances.delete(utterance);
-      if (this.currentUtterance === utterance) {
-        this.currentUtterance = null;
+      // Chrome vekking
+      try {
+        if (this.synth.paused) {
+          this.synth.resume();
+        }
+      } catch {
+        // Ignorer
       }
-      // 'canceled' og 'interrupted' er normalt når brukeren skifter slide eller stopper
-      if (e.error !== 'canceled' && e.error !== 'interrupted') {
-        console.warn('SpeechSynthesis advarsel:', e.error);
+
+      const utterance = new SpeechSynthesisUtterance(text);
+
+      if (this.selectedVoice) {
+        utterance.voice = this.selectedVoice;
+        utterance.lang = this.selectedVoice.lang || 'nb-NO';
+      } else {
+        utterance.lang = 'nb-NO';
       }
-    };
 
-    this.currentUtterance = utterance;
+      utterance.rate = 0.95;
+      utterance.pitch = 1.0;
 
-    try {
-      this.synth.speak(utterance);
-    } catch (err) {
-      console.warn('Kunne ikke starte talesyntese:', err);
-    }
+      activeUtterances.add(utterance);
+      this.currentUtterance = utterance;
+
+      let hasFired = false;
+      const complete = () => {
+        if (hasFired) return;
+        hasFired = true;
+        this.stopKeepAlive();
+        activeUtterances.delete(utterance);
+        if (this.currentUtterance === utterance) {
+          this.currentUtterance = null;
+        }
+        if (onEnd) {
+          onEnd();
+        }
+      };
+
+      utterance.onstart = () => {
+        if (onStart) {
+          onStart();
+        }
+      };
+
+      utterance.onend = () => {
+        complete();
+      };
+
+      utterance.onerror = (e) => {
+        this.stopKeepAlive();
+        activeUtterances.delete(utterance);
+        if (this.currentUtterance === utterance) {
+          this.currentUtterance = null;
+        }
+        // Hvis avbrutt av brukeren, ikke kall onEnd
+        if (e.error !== 'canceled' && e.error !== 'interrupted') {
+          console.warn('SpeechSynthesis error:', e.error);
+          complete(); // Sikre fremdrift selv ved uventet feil
+        }
+      };
+
+      try {
+        this.synth.speak(utterance);
+        this.startKeepAlive();
+      } catch (err) {
+        console.warn('Kunne ikke starte tale:', err);
+        complete();
+      }
+    }, startDelay);
   }
 
   /**
-   * Pauser opplesningen (f.eks. når brukeren holder fingeren på skjermen)
+   * Chrome keep-alive: forhindrer at Chromium pauser lange ytringer etter 15 sekunder
    */
+  private startKeepAlive() {
+    this.stopKeepAlive();
+    if (typeof window === 'undefined') return;
+    this.keepAliveTimer = window.setInterval(() => {
+      if (this.synth && this.synth.speaking && !this.synth.paused) {
+        try {
+          this.synth.pause();
+          this.synth.resume();
+        } catch {
+          // Ignorer
+        }
+      }
+    }, 12000);
+  }
+
+  private stopKeepAlive() {
+    if (this.keepAliveTimer !== null) {
+      clearInterval(this.keepAliveTimer);
+      this.keepAliveTimer = null;
+    }
+  }
+
   public pause(): void {
     if (this.synth && this.synth.speaking && !this.synth.paused) {
       try {
@@ -198,9 +252,6 @@ class StorySpeechEngine {
     }
   }
 
-  /**
-   * Gjenopptar opplesningen
-   */
   public resume(): void {
     if (this.synth && this.synth.paused) {
       try {
@@ -211,10 +262,8 @@ class StorySpeechEngine {
     }
   }
 
-  /**
-   * Stopper all opplesning umiddelbart
-   */
   public stop(): void {
+    this.stopKeepAlive();
     if (this.synth) {
       try {
         this.synth.cancel();

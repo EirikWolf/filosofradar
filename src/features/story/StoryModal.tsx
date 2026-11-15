@@ -145,6 +145,13 @@ export const StoryModal: React.FC<StoryModalProps> = ({
     };
   }, [isPlaying, isHolding, slideDurationMs, isNarratorActive, handleNext]);
 
+  // Rydd opp all tale når StoryModal lukkes helt
+  useEffect(() => {
+    return () => {
+      storySpeech.stop();
+    };
+  }, []);
+
   // Fortellerstemme / Opplesnings-effekt: Start tale ved ny slide eller når tale slås på
   useEffect(() => {
     if (!isNarratorActive) {
@@ -153,21 +160,25 @@ export const StoryModal: React.FC<StoryModalProps> = ({
     }
 
     const textToSpeak = buildSlideSpeechText(currentSlide);
-    storySpeech.speak(textToSpeak, () => {
-      // Når talen er ferdig:
-      if (currentIndex < totalSlides - 1) {
-        setTimeout(() => {
-          handleNext();
-        }, 800);
-      } else {
-        setIsPlaying(false);
-        setProgress(100);
+    storySpeech.speak(
+      textToSpeak,
+      () => {
+        // Når talen er ferdig: kort og naturlig pustepause før neste del
+        if (currentIndex < totalSlides - 1) {
+          setTimeout(() => {
+            handleNext();
+          }, 300);
+        } else {
+          setIsPlaying(false);
+          setProgress(100);
+        }
+      },
+      () => {
+        // onStart: stemmen har fysisk begynt å snakke – synkroniser fremdriftsindikatoren nøyaktig
+        startTimeRef.current = performance.now();
+        setProgress(0);
       }
-    });
-
-    return () => {
-      storySpeech.stop();
-    };
+    );
   }, [currentIndex, isNarratorActive, currentSlide, totalSlides, handleNext]);
 
   // Pause / gjenoppta tale ved pause eller holding
@@ -203,30 +214,14 @@ export const StoryModal: React.FC<StoryModalProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      storySpeech.stop();
     };
   }, [onClose, handleNext, handlePrev, isNarratorActive]);
 
-  // Fortellerstemme-toggle (starter tale umiddelbart ved aktivering)
+  // Fortellerstemme-toggle
   const handleToggleNarrator = (e: React.MouseEvent) => {
     e.stopPropagation();
     const next = storySpeech.toggle();
     setIsNarratorActive(next);
-    if (next) {
-      const textToSpeak = buildSlideSpeechText(currentSlide);
-      storySpeech.speak(textToSpeak, () => {
-        if (currentIndex < totalSlides - 1) {
-          setTimeout(() => {
-            handleNext();
-          }, 800);
-        } else {
-          setIsPlaying(false);
-          setProgress(100);
-        }
-      });
-    } else {
-      storySpeech.stop();
-    }
   };
 
   // Hold-down for å pause
