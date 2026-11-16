@@ -72,3 +72,22 @@ Rekkefølgen kan justeres i fase 4 for at naboer skal ha mest mulig historisk ko
 - `quote` har `work` og `source`.
 - Advarsel (ikke feil) for `reviewed: false`, manglende bilde og manglende norsk Wikipedia-lenke.
 - Statistikk skrives ut: antall per tradisjon, per kjønn, per århundre.
+
+## Sitatregister (`content/quotes/quote-register.json`)
+Dypdykk, Ex.phil, dilemmaer og turer ligger i TypeScript-filer under `src/features/` og går ikke gjennom
+filosof-skjemaet. All tekst der i «…» med minst tre ord skal derfor stå i nøyaktig én liste i registeret
+(skjema: `src/schemas/quoteRegister.ts`, beslutning B-010):
+
+| Liste | Innhold | Krav |
+|---|---|---|
+| `sourced` | Ekte sitater med kilde | Samme felt som `quote` over: `text`, `work`, `source`, ev. `translator` |
+| `notQuotes` | Begreper, titler, eksempelsetninger, tenkte replikker | `text` og `reason` |
+| `unsourced` | Ekte sitater som venter på kilde | `text`, ev. `note`. Listen skal bare krympe |
+
+`tests/quote-guard.test.ts` feiler hvis en tekst mangler i registeret, står i to lister, ikke lenger finnes
+i innholdet, eller hvis `unsourced` blir lengre enn taket `UNSOURCED_CEILING`.
+
+**Slik retter du et sitat:** finn verk og kilde, flytt oppføringen fra `unsourced` til `sourced`, og senk
+`UNSOURCED_CEILING` med én. Finner du ingen sikker kilde: skriv teksten om med egne ord uten anførselstegn,
+og fjern oppføringen.
+
