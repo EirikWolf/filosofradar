@@ -4,7 +4,7 @@ import { TRADITION_SECTOR_ORDER, getSectorAngles } from '../../lib/polar';
 import { getTraditionMeta, TRADITIONS } from '../../lib/traditions';
 import { formatLifeSpan } from '../../lib/years';
 import { sound } from '../../lib/sound';
-import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
+import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 
 interface Galaxy3DViewProps {
   philosophers: Philosopher[];

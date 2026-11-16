@@ -7,6 +7,7 @@
     "dev": "tsx scripts/build-content.ts && vite",
     "build": "tsx scripts/build-content.ts && tsc && vite build",
     "preview": "vite preview",
+    "budget": "tsx scripts/check-bundle-budget.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
@@ -17,7 +18,7 @@
     "longest-life": "tsx scripts/longest-life.ts",
     "find-socrates": "tsx scripts/find-socrates.ts",
     "longest-lineage": "tsx scripts/find-lineage.ts",
-    "publiser": "npm run check && npm run build && npx firebase-tools deploy --only hosting",
+    "publiser": "npm run check && npm run build && npm run budget && npx firebase-tools deploy --only hosting",
     "check": "npm run typecheck && npm run lint && npm run test && npm run validate"
   },
   "dependencies": {

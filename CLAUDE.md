@@ -51,6 +51,7 @@ Nye avhengigheter: begrunn og loggfør i BESLUTNINGER.md.
 ## Kommandoer
 - `npm run dev` – utviklingsserver
 - `npm run build` – bygg (validerer også alt innhold)
+- `npm run budget` – sjekk at JS på første side er under 200 kB gzip (kjøres etter build)
 - `npm run validate` – sjekk alle filosof-filer mot skjemaet
 - `npm run lint` · `npm run typecheck` · `npm test` · `npm run e2e`
 - `npm run check` – alt over; må være grønn før en fase er ferdig

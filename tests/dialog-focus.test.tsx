@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import React from 'react';
 import { describe, it, expect, afterEach } from 'vitest';
-import { render, cleanup, act } from '@testing-library/react';
+import { render, cleanup, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import philosophersData from '../src/generated/philosophers.json';
 import type { Philosopher } from '../src/schemas/philosopher';
@@ -162,14 +162,19 @@ describe('Nestede dialoger: historie åpnet fra Filosofkortet', () => {
     renderCard();
     await settle();
 
-    const playButton = Array.from(document.querySelectorAll('button')).find((b) =>
-      b.textContent?.includes('Se idéen på 45 sek'),
-    );
-    if (!playButton) throw new Error('Fant ingen «Se idéen på 45 sek»-knapp i kortet');
+    // Dypdykket og historien lastes først når de trengs (kodesplitting), så vi
+    // venter til de faktisk er på plass i stedet for en fast tid.
+    const playButton = await waitFor(() => {
+      const button = Array.from(document.querySelectorAll('button')).find((b) =>
+        b.textContent?.includes('Se idéen på 45 sek'),
+      );
+      if (!button) throw new Error('Fant ingen «Se idéen på 45 sek»-knapp i kortet');
+      return button;
+    });
     await user.click(playButton);
-    await settle();
 
-    const story = getStoryDialog();
+    const story = await waitFor(() => getStoryDialog());
+    await waitFor(() => expect(story.contains(document.activeElement)).toBe(true));
     expect(story.contains(document.activeElement)).toBe(true);
     // Fokus skal både bli i historien OG bevege seg. Kjemper to fokusfeller,
     // blir fokus stående fast på historiens første knapp.

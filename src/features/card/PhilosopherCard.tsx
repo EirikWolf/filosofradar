@@ -1,15 +1,22 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Suspense } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { ThemeRadar } from '../../components/ThemeRadar';
-import { ExphilCardExamBox } from '../exphil/ExphilCardExamBox';
-import { DeepDiveSection } from '../deepdive/DeepDiveSection';
-import { StoryModal } from '../story/StoryModal';
 import type { ThoughtExperiment } from '../deepdive/types';
-import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
+import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import { sound } from '../../lib/sound';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
+
+// Dypdykk, Ex.phil-boksen og historiene bærer mye tekst. De lastes først når et
+// kort åpnes, slik at forsiden holder seg under ytelsesbudsjettet (200 kB gzip).
+const ExphilCardExamBox = React.lazy(() =>
+  import('../exphil/ExphilCardExamBox').then((m) => ({ default: m.ExphilCardExamBox })),
+);
+const DeepDiveSection = React.lazy(() =>
+  import('../deepdive/DeepDiveSection').then((m) => ({ default: m.DeepDiveSection })),
+);
+const StoryModal = React.lazy(() => import('../story/StoryModal').then((m) => ({ default: m.StoryModal })));
 
 interface PhilosopherCardProps {
   philosopher: Philosopher;
@@ -225,10 +232,12 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         </div>
 
         {/* Examen Philosophicum Eksamens-boks (vises kun for pensum-filosofer) */}
-        <ExphilCardExamBox
-          philosopherId={philosopher.id}
-          onNavigateToExphilHub={onNavigateToExphilHub}
-        />
+        <Suspense fallback={null}>
+          <ExphilCardExamBox
+            philosopherId={philosopher.id}
+            onNavigateToExphilHub={onNavigateToExphilHub}
+          />
+        </Suspense>
 
         {/* 2. Seksjon: Kjerneidéer */}
         <div className="mb-6 shrink-0">
@@ -276,11 +285,15 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         </div>
 
         {/* 5. Seksjon: Dypdykk (Historisk kontekst, Hovedverker og Tankeeksperimenter / Visuelle knagger) */}
-        <DeepDiveSection
-          philosopherId={philosopher.id}
-          philosopherName={philosopher.name}
-          onPlayStory={(exp) => setActiveStoryExperiment(exp)}
-        />
+        <Suspense
+          fallback={<p className="mb-6 text-xs text-star-dim italic">Laster dypdykk …</p>}
+        >
+          <DeepDiveSection
+            philosopherId={philosopher.id}
+            philosopherName={philosopher.name}
+            onPlayStory={(exp) => setActiveStoryExperiment(exp)}
+          />
+        </Suspense>
 
         {/* 6. Seksjon: Påvirkningsnettverk (Idé-slekt) */}
         <div className="mb-6 space-y-3 shrink-0">
@@ -383,12 +396,14 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
 
       {/* Story-modus modal: "Idéen på 45 sekunder" */}
       {activeStoryExperiment && (
-        <StoryModal
-          experiment={activeStoryExperiment}
-          philosopherName={philosopher.name}
-          philosopherId={philosopher.id}
-          onClose={() => setActiveStoryExperiment(null)}
-        />
+        <Suspense fallback={null}>
+          <StoryModal
+            experiment={activeStoryExperiment}
+            philosopherName={philosopher.name}
+            philosopherId={philosopher.id}
+            onClose={() => setActiveStoryExperiment(null)}
+          />
+        </Suspense>
       )}
     </div>
   );

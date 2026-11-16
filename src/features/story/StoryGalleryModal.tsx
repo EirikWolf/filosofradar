@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { getAllBespokeStories, type StorySummary } from './storyData';
 import { PHILOSOPHER_DEEP_DIVES } from '../deepdive/deepDiveData';
-import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
+import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import type { ThoughtExperiment } from '../deepdive/types';
 import { sound } from '../../lib/sound';
 import { useDialogFocus } from '../../hooks/useDialogFocus';

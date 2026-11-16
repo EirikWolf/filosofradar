@@ -7,7 +7,7 @@ import { formatYear, formatLifeSpan, checkOverlap } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
-import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
+import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 
 interface RadarViewProps {
   philosophers: Philosopher[];
