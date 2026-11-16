@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, Suspense } from 'react';
+import React, { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import { PhilosopherList } from './features/list/PhilosopherList';
 import { TimelineView } from './features/timeline/TimelineView';
 import { RadarView } from './features/radar/RadarView';
@@ -8,6 +8,7 @@ import { DailyPhilosopher } from './features/daily/DailyPhilosopher';
 import { TourPlayer } from './features/tours/TourPlayer';
 import type { Tour } from './features/tours/types';
 import { sound } from './lib/sound';
+import { trackPageView, trackEvent } from './lib/telemetry';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
 import type { ExphilTab } from './features/exphil/ExphilHub';
@@ -110,6 +111,7 @@ export const App: React.FC = () => {
     setActiveTour(tour);
     setActiveTourStopIndex(0);
     setIsTourModalOpen(false);
+    trackEvent('tur-startet-' + tour.id, 'Guidet tur: ' + tour.title);
     if (view !== 'radar' && view !== 'galaxy') {
       changeView('radar');
     }
@@ -182,6 +184,17 @@ export const App: React.FC = () => {
     window.addEventListener('popstate', handleUrlChange);
     return () => window.removeEventListener('popstate', handleUrlChange);
   }, []);
+
+  // Telemetri: Registrer sidevisninger ved SPA-navigasjon (GoatCounter)
+  const isInitialMount = useRef(true);
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return; // GoatCounters skript teller automatisk første sidevisning ved lasting
+    }
+    const currentPath = window.location.pathname + window.location.search;
+    trackPageView(currentPath);
+  }, [view, activeCardId]);
 
   const openCard = useCallback((id: string) => {
     setActiveCardId(id);

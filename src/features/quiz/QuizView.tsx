@@ -6,6 +6,7 @@ import { calculateUserThemeScores, findTopMatches, type QuizMatch } from '../../
 import { ThemeRadar } from '../../components/ThemeRadar';
 import { exportQuizResultAsPng } from '../../lib/quizExport';
 import { getThemeMeta } from '../../lib/themes';
+import { trackEvent } from '../../lib/telemetry';
 
 const questions = quizQuestionsData as QuizQuestion[];
 
@@ -68,6 +69,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
     // Hvis dette var siste spørsmål, fullfør quizen
     if (currentIndex + 1 >= totalQuestions) {
       setIsCompleted(true);
+      trackEvent('quiz-fullfort', 'Filosofi-quiz fullført');
     } else {
       setCurrentIndex((prev) => prev + 1);
     }
