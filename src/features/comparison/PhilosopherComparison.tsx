@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
-import { THEME_IDS } from '../../schemas/philosopher';
+import { THEME_IDS } from '../../schemas/ids';
 import { getThemeMeta } from '../../lib/themes';
 import { getTraditionMeta } from '../../lib/traditions';
 import { formatLifeSpan, formatYear, calculateLifespan, checkOverlap } from '../../lib/years';

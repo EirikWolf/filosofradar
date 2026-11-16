@@ -1,31 +1,9 @@
 import { z } from 'zod';
 
-export const THEME_IDS = [
-  'ethics',
-  'metaphysics',
-  'knowledge',
-  'politics',
-  'logic',
-  'mind',
-  'meaning',
-  'beauty',
-] as const;
+import { THEME_IDS, TRADITION_IDS } from './ids';
 
-export type ThemeId = (typeof THEME_IDS)[number];
-
-export const TRADITION_IDS = [
-  'chinese',
-  'japanese-korean',
-  'indian',
-  'greek-roman',
-  'islamic-jewish',
-  'european',
-  'nordic',
-  'americas',
-  'african',
-] as const;
-
-export type TraditionId = (typeof TRADITION_IDS)[number];
+export { THEME_IDS, TRADITION_IDS };
+export type { ThemeId, TraditionId } from './ids';
 
 export const YearSchema = z.object({
   year: z.number().int(),

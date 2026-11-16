@@ -1,33 +1,6 @@
 import type { ExphilProfile, ExphilDuel, ExphilFlashcard, ExphilQuizQuestion } from './types';
 
-export const EXPHIL_PHILOSOPHER_IDS = new Set<string>([
-  'sokrates',
-  'platon',
-  'aristoteles',
-  'augustin',
-  'aquinas',
-  'descartes',
-  'spinoza',
-  'locke',
-  'hume',
-  'kant',
-  'wollstonecraft',
-  'hegel',
-  'marx',
-  'kierkegaard',
-  'nietzsche',
-  'popper',
-  'russell',
-  'wittgenstein',
-  'sartre',
-  'de-beauvoir',
-  'arendt',
-  'arne-naess',
-  'foucault',
-  'anscombe',
-  'hobbes',
-  'rousseau',
-]);
+export { EXPHIL_PHILOSOPHER_IDS } from './exphilIds';
 
 export const EXPHIL_PROFILES: Record<string, ExphilProfile> = {
   sokrates: {

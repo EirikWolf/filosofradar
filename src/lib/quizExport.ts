@@ -1,5 +1,5 @@
 import type { ThemeId } from '../schemas/philosopher';
-import { THEME_IDS } from '../schemas/philosopher';
+import { THEME_IDS } from '../schemas/ids';
 import { getThemeMeta } from './themes';
 import type { QuizMatch } from './similarity';
 

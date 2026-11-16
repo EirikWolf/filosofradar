@@ -1,5 +1,6 @@
 import React from 'react';
-import { THEME_IDS, type Philosopher, type ThemeId } from '../schemas/philosopher';
+import { THEME_IDS, type ThemeId } from '../schemas/ids';
+import type { Philosopher } from '../schemas/philosopher';
 import { getThemeMeta } from '../lib/themes';
 import { degToRad } from '../lib/polar';
 
