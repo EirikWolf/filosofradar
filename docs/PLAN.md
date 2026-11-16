@@ -1,7 +1,6 @@
 # Faseplan – Filosofradaren
 
 ⬜ ikke startet · 🟨 pågår · ✅ ferdig. En fase er ferdig når alle kriterier er oppfylt og `npm run check` er grønn.
-Hver fase avsluttes med minst én «Din tur»-oppgave.
 
 ---
 
@@ -17,22 +16,19 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Tema (farger, font) fra valgt stil som CSS-variabler
 - [x] Forside med appnavn og en enkel animert sveipestråle (kun pynt ennå)
 - [x] Firebase-oppsett og produksjonsbygg (`npm run build`) testet lokalt
-- 🎯 Din tur: endre sveipens farge og hastighet
 
 ## Fase 2 – Data og innhold ✅
 - [x] Zod-skjema etter DATAMODELL.md; `build-content` og `validate` med alle regler
 - [x] `src/lib/years.ts` med tester (f.Kr./e.Kr., ingen år 0, overlapp)
 - [x] `scripts/wikidata.ts`: henter fødsel/død for alle Q-numre og rapporterer avvik
-- [x] De 20 ★-filosofene i INNHOLD.md skrevet, validert, Olai har godkjent topp 5
+- [x] De 20 ★-filosofene i INNHOLD.md skrevet, validert, topp 5 godkjent
 - [x] Listevisning (søkbar tabell) som første ekte side
-- 🎯 Din tur: skriv én filosof helt selv og få valideringen grønn
 
 ## Fase 3 – Tidslinjen ✅
 - [x] `timeScale.ts` (lineær og komprimert) med tester
 - [x] Horisontal tidslinje: levetid som stolper per tradisjon, akse med f.Kr./e.Kr.
 - [x] Zoom/panorering (mus og touch)
 - [x] «Hvem levde samtidig?»: velg én → overlappende fremheves
-- 🎯 Din tur: finn ut hvem av filosofene som levde lengst – i koden, ikke ved å lete
 
 ## Fase 4 – Radaren ✨ ✅
 - [x] `polar.ts` og `layout.ts` med tester (år + tradisjon → x,y; deterministisk spredning, ingen overlapp)
@@ -44,28 +40,24 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Filter på tradisjon, tema og søk; bortfiltrerte tones ned
 - [x] `prefers-reduced-motion` respektert; tastaturnavigasjon mellom punkter
 - [x] Radaren er forsiden; publisert til forhåndsvisning
-- 🎯 Din tur: regn ut for hånd hvor Sokrates skal stå (x, y), og sjekk i appen
 
 ## Fase 5 – Filosofkort og sammenligning ✅
 - [x] Filosofkort etter DESIGN.md §5 (glir inn; ark på mobil); URL `?f=id`
 - [x] Temaradar (edderkoppdiagram) som gjenbrukbar komponent, animert inn
 - [x] Sammenlign 2–3 filosofer: overlagte temaradarer + levetid på felles akse
 - [x] Portretter med lisenskreditering der de finnes
-- 🎯 Din tur: legg til en niende akse i temaradaren på en egen git-gren – og se hva som skjer
 
 ## Fase 6 – Påvirkningsnett ✅
 - [x] `influence.ts`: omvendte lenker, idéslekt bakover/fremover, med tester
 - [x] Animerte buer på radaren når en filosof er valgt
 - [x] Egen nettverksvisning med `d3-force`, dra i noder, tidsakse som svak kraft
 - [x] Minst 40 påvirkningslenker i innholdet (totalt 46 lenker)
-- 🎯 Din tur: finn den lengste idéslekten i dataene
 
 ## Fase 7 – «Hvilken filosof ligner du på?» ✅
 - [x] 10–12 spørsmål, hvert koblet til temaer med vekter (i JSON, ikke hardkodet)
 - [x] `similarity.ts` (cosinuslikhet) med tester og forklaring i koden
 - [x] Brukerens temaradar vokser mens man svarer; resultat med topp 3, prosent og begrunnelse
 - [x] Last ned resultat som PNG; ingenting lagres eller sendes
-- 🎯 Din tur: lag to egne spørsmål og test at de påvirker resultatet slik du tror
 
 ## Fase 8 – Innhold, kvalitet og lansering ✅
 - [x] 70+ filosofer (totalt 80), alle 9 tradisjoner, 13 kvinner, 6 nordiske; alle `reviewed: true`
@@ -75,7 +67,6 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Ytelse og røyktest: 62/62 tester grønne (`npm run e2e`)
 - [x] Delbare lenker med forhåndsvisningsbilde (Open Graph og Twitter Cards i `index.html`)
 - [x] `npm run publiser` klargjort for Firebase Hosting 🎉
-- 🎯 Din tur: vis appen til tre venner og noter hva de klikker på først
 
 ## Fase 9 (valgfri) – Ekstra wow ✅
 - [x] Kosmisk lydlandskap med Web Audio API: ambient drone, supernova-akkord og stjerne-harpe
@@ -83,7 +74,6 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] 3D-galakse: interaktiv 3D-perspektivprojeksjon for alle 80 stjerner og konstellasjoner i HTML5 Canvas
 - [x] Lydkontroll og 3D-knapp i navigasjonslinjen
 - [x] Tester for Fase 9 grønne (`tests/fase9-wow.test.ts`), 66/66 tester bestått
-- 🎯 Din tur: Juster klangfargen eller frekvensen på stjernelyden i `src/lib/sound.ts` og hør forskjellen!
 
 ## Fase 10 – Ex.phil Studie-Hub & Komplette Dypdykk ✅
 - [x] Eksamensradar med pensumrelevans, sensors nøkkelbegreper, typiske eksamensfeller og eksamensoppgaver for sentrale Ex.phil-filosofer
@@ -91,10 +81,9 @@ Hver fase avsluttes med minst én «Din tur»-oppgave.
 - [x] Filosofisk debattarena: Sammenligning av tenkere på tvers av klassiske filosofiske dilemmaer (erkjennelsesteori, etikk, samfunnsfilosofi)
 - [x] Komplette dypdykk for samtlige 80 filosofer: Historisk kontekst, hovedverker, klassiske tankeeksperimenter og resepsjon/kritikk
 - [x] Tester for Ex.phil og dypdykk grønne (`tests/exphil.test.ts`, `tests/deepdive.test.ts`)
-- 🎯 Din tur: Velg to filosofer i debattarenaen og formuler din egen konklusjon på etikken deres!
 
 ## Fase 11 (valgfri) – «Spør filosofen» ⬜
-Krever Blaze-plan, Cloud Functions og API-nøkkel (Asbjørns eller Olais, lagret som Firebase secret – aldri i koden).
+Krever Blaze-plan, Cloud Functions og API-nøkkel (prosjekteierens, lagret som Firebase secret – aldri i koden).
 - [ ] Budsjettvarsel og hard grense satt; antall spørsmål per besøk begrenset
 - [ ] Svarene er tydelig merket som AI-simulering, bygger på filosof-filen, og er alderstilpasset
 - [ ] Beslutning om dette er verdt kostnaden loggført

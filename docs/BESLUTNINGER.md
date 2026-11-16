@@ -29,23 +29,23 @@ Beslutning: 0–5 per tema, begrunnet i `themeNotes`, og forklart åpent på Om-
 Konsekvens: Quizresultatet presenteres som en lek, ikke en sannhet.
 
 ## B-005 – Navn: Filosofradaren (2026-09-25)
-Kontekst: Arbeidstittelen i PRD var «Filosofradaren». Olai vurderte alternativer som «Tankekartet», «Ideon» og «Filosfæren».
+Kontekst: Arbeidstittelen i PRD var «Filosofradaren». Alternativer som «Tankekartet», «Ideon» og «Filosfæren» ble vurdert.
 Beslutning: Appen skal hete «Filosofradaren».
 Alternativer: Tankekartet, Ideon, Filosfæren, TankeRadar.
 Konsekvens: Arbeidstittelen stadfestes som offisielt appnavn. Brukes i UI, tittellinje og dokumentasjon.
 
 ## B-006 – Visuell stil: Observatoriet (2026-09-25)
 Kontekst: Tre klikkbare konseptskisser ble bygget i `docs/skisser/` (Sonar, Observatoriet, Pergament) og testet i nettleseren.
-Beslutning: Olai valgte stilen «Observatoriet».
+Beslutning: Stilen «Observatoriet» ble valgt.
 Alternativer: Sonar (retro CRT/ubåt-radar i grønt), Pergament (gammelt sjøkart i varme papirtoner).
 Konsekvens: UI designes med dyp nattblå/kosmisk bakgrunn, stjernehvite glødende punkter, gylne sirkler og baner, celestial glassmorphism og elegant serif-typografi til overskrifter.
 
 ## B-007 – Prioriterte animasjoner og topp 5 favorittfilosofer (2026-09-25)
-Kontekst: Fastsette kjerneopplevelsen og første innholdspulje tilpasset Olais interesser for læring av animasjon, design og webutvikling.
+Kontekst: Fastsette kjerneopplevelsen og første innholdspulje, med vekt på læring av animasjon, design og webutvikling.
 Beslutning: 
 1. Tidsmaskinen implementeres med et energisk «supernova»-lysglimt (glitrende puls) idet filosofer blir født langs tidslinjen.
 2. Påvirkningsnettverket visualiseres med elegante, gylne stjernebilder/konstellasjonsbuer.
-3. Olais topp 5 favoritter settes til: Hypatia av Alexandria, Sokrates, Arne Næss, Buddha (Siddhartha Gautama) og Marcus Aurelius.
+3. Topp 5 favoritter settes til: Hypatia av Alexandria, Sokrates, Arne Næss, Buddha (Siddhartha Gautama) og Marcus Aurelius.
 Alternativer: Myk innfading ved fødsel; stjernestøv/stjerneskudd for nettverk.
 Konsekvens: De fem filosofene gis hedersplass øverst i `docs/INNHOLD.md` og implementeres først i Fase 2 for testing av tidsmaskin og stjernebilder.
 

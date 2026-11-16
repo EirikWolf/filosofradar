@@ -9,7 +9,7 @@
 4. **Rolig når det trengs.** Animasjon forsterker, den forstyrrer ikke lesing.
 
 ## 2. Valgt stil: Observatoriet **[endret]**
-Olai har valgt **Observatoriet** etter utprøving av de tre konseptskissene i `docs/skisser/`:
+**Observatoriet** er valgt etter utprøving av de tre konseptskissene i `docs/skisser/`:
 - **Stemning:** Stjernekart, kosmos, nattblå himmel, mystikk og historisk undring.
 - **Farger:** Dyp marineblå/nattblå bakgrunn (`#040714` til `#0b1433`), stjernehvite glødende punkter, gylne sirkler og aksenter (`#f6c85f`), subtile fargetoner per tradisjon (som stjernebilder), og en eterisk stjernelys-sveipestråle.
 - **Typografi:** Elegant serif til navn og overskrifter (f.eks. Georgia/Cinzel), ren og lesbar sans-serif til brødtekst.

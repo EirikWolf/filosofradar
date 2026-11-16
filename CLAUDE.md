@@ -4,17 +4,9 @@ En interaktiv, animert visualisering av filosofiens historie: når filosofene le
 samtidig, hvem som påvirket hvem, og hva de var opptatt av. Statisk webapp på Firebase Hosting.
 
 ## Hvem du jobber med
-**Olai** (voksen, nybegynner i programmering) er hovedpersonen og tar produkt- og designvalgene.
-**Asbjørn**, faren hans, er med som co-pilot; han har lært Claude Code gjennom et tidligere Firebase-prosjekt.
-Olai og Asbjørn leser også denne filen. Er det uklart hvem som skriver, spør.
+**Eirik** eier prosjektet og tar produkt-, design- og innholdsvalgene.
 
-**Lærermodus – gjelder hele prosjektet:**
-- Snakk til Olai når det gjelder design, innhold og valg. Vær entusiastisk, men ikke barnslig.
-- Første gang et nytt begrep dukker opp (komponent, state, SVG, polarkoordinat, commit …):
-  forklar det i 1–2 setninger med et hverdagseksempel.
-- Når du har bygget noe med et interessant prinsipp (matte, animasjon, data), tilby én kort
-  «Din tur»-oppgave han kan gjøre selv på under 10 minutter. Ikke gi fasiten før han ber om det.
-- Vis resultatet: fortell nøyaktig hvor i appen han kan se endringen.
+- Fortell hvor i appen en endring kan sees.
 - Spør før du gjør noe som er vanskelig å reversere (sletting, publisering, git push).
 - Svar på norsk bokmål. Kode, variabelnavn og commit-meldinger på engelsk.
 
@@ -37,7 +29,7 @@ Endrer du noe som motsier et dokument, oppdater dokumentet i samme endring.
   Regelen gjelder også dypdykk, Ex.phil, dilemmaer og turer (B-010): tekst i «…» der registreres i
   `content/quotes/quote-register.json`, og `tests/quote-guard.test.ts` stopper nye sitater uten kilde.
 - Årstall hentes fra eller kontrolleres mot Wikidata. Usikre årstall markeres `approx: true`.
-- Nye filosofer får `reviewed: false` til Asbjørn og Olai har lest gjennom.
+- Nye filosofer får `reviewed: false` til prosjekteier har lest gjennom.
 - Beskriv idéer nøytralt og alderstilpasset. Kontroversielle sider nevnes saklig, uten å forherlige.
 - Temaprofiler (0–5) er redaksjonelt skjønn – begrunn kort i `themeNotes`.
 - Bredde: alle tradisjoner i `docs/DATAMODELL.md` skal være representert, og kvinnelige filosofer skal være med.
@@ -66,9 +58,14 @@ Nye avhengigheter: begrunn og loggfør i BESLUTNINGER.md.
 
 ## Arbeidsmåte
 1. Én fase fra `docs/PLAN.md` om gangen. Presenter plan, vent på «kjør».
-2. Små steg, `npm run check` underveis, commit etter hvert delmål (`feat:`, `fix:`, `content:`, `docs:`).
-3. Kryss av i PLAN.md først når kriteriene er oppfylt.
-4. Avslutt fasen med: hva er nytt, hvor man ser det, én «Din tur»-oppgave, hva som kommer neste.
+2. Jobb på en egen gren (`feat/…`, `fix/…`, `content/…`, `docs/…`), aldri direkte på `main`. Små steg,
+   `npm run check` underveis, commit etter hvert delmål (`feat:`, `fix:`, `content:`, `docs:`).
+3. Lever som PR mot `main`. `main` er beskyttet av regelsettet «main krever grønn CI»: CI-sjekken
+   «Sjekk og bygg» må være grønn før merge, og direkte push til `main` avvises. Auto-merge kan slås på
+   i PR-en, så merges den når CI blir grønn.
+4. Merget er ikke publisert. Produksjon oppdateres med `/publiser` (forhåndsvisning først).
+5. Kryss av i PLAN.md først når kriteriene er oppfylt.
+6. Avslutt fasen med: hva er nytt, hvor man ser det, og hva som kommer neste.
 
 ## Windows
 Stier med mellomrom i anførselstegn. Kommando ikke funnet etter installasjon → start Claude Desktop på nytt.

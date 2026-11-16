@@ -49,7 +49,7 @@ hørt om – og funnet ut hvilken filosof man selv ligner mest på.
 - Hvordan dataene er laget, hva temaprofilene betyr (skjønn, ikke fasit), kilder og lisenser.
 
 ## 4. Innhold
-- **[endret] Olais topp 5 favoritter (prioritert for tidlig lansering og testing):**
+- **[endret] Topp 5 favoritter (prioritert for tidlig lansering og testing):**
   1. Hypatia av Alexandria
   2. Sokrates
   3. Arne Næss

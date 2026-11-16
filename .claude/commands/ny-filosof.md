@@ -14,5 +14,5 @@ Lag en ny filosof: $ARGUMENTS
    - sitat **kun** hvis du har verk og kilde; ellers utelat feltet
    - bilde kun med fri lisens fra Wikimedia Commons, med forfatter og lisens
 4. Kjør `npm run validate`.
-5. Vis Olai et kort sammendrag og spør om temaprofilen: «Er du enig i at X var mest opptatt av Y?»
-   Juster etter svaret. Minn om at `reviewed` settes til true først når dere har lest filen.
+5. Vis et kort sammendrag og spør om temaprofilen: «Er du enig i at X var mest opptatt av Y?»
+   Juster etter svaret. Minn om at `reviewed` settes til true først når filen er lest gjennom.

@@ -31,7 +31,7 @@ Ingen database – innhold endres med vanlige commits.
 | links | `{ label, url }[]` | Wikipedia (no/en), SNL, Stanford Encyclopedia |
 | image | `{ file, author, license, sourceUrl }?` | Wikimedia Commons |
 | gender | `"kvinne"` \| `"mann"` \| `"annet"`? | brukes kun til bredde-statistikk |
-| reviewed | boolean | settes til true når Asbjørn og Olai har lest gjennom |
+| reviewed | boolean | settes til true når prosjekteier har lest gjennom |
 
 `influences` (hvem filosofen påvirket) beregnes automatisk som det omvendte av `influencedBy`.
 
