@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react'
 import type { Philosopher, TraditionId } from '../../schemas/philosopher';
 import { TRADITION_SECTOR_ORDER, getSectorAngles } from '../../lib/polar';
 import { getTraditionMeta, TRADITIONS } from '../../lib/traditions';
-import { formatLifeSpan } from '../../lib/years';
+import { formatLifeSpan, getStartYear } from '../../lib/years';
 import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 
@@ -122,7 +122,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
       // Radius basert på kronologi:
       // Eldste filosofer (~800 f.Kr.) i den lysende galaksekjernen (~85 enheter)
       // Moderne filosofer (1900-2025) i de ytre spiralarmene (~340 enheter)
-      const birth = p.born?.year ?? p.floruit?.from ?? -400;
+      const birth = getStartYear(p);
       const normalizedYear = Math.max(0, Math.min(1, (birth - -800) / (2025 - -800)));
       const radius = 80 + Math.pow(normalizedYear, 0.85) * 260;
 

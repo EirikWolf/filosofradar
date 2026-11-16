@@ -3,7 +3,15 @@ import type { Philosopher } from '../../schemas/philosopher';
 import { THEME_IDS } from '../../schemas/ids';
 import { getThemeMeta } from '../../lib/themes';
 import { getTraditionMeta } from '../../lib/traditions';
-import { formatLifeSpan, formatYear, calculateLifespan, checkOverlap } from '../../lib/years';
+import {
+  formatLifeSpan,
+  formatYear,
+  calculateLifespan,
+  checkOverlap,
+  getStartYear,
+  getEndYear,
+  CURRENT_YEAR,
+} from '../../lib/years';
 import { ThemeRadar } from '../../components/ThemeRadar';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
 
@@ -76,10 +84,10 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
   const haveOverlap = selectedPhilosophers.length >= 2 && (() => {
     const p1 = selectedPhilosophers[0];
     const p2 = selectedPhilosophers[1];
-    const s1 = p1.born?.year ?? p1.floruit?.from ?? -400;
-    const e1 = p1.died?.year ?? p1.floruit?.to ?? (s1 + 65);
-    const s2 = p2.born?.year ?? p2.floruit?.from ?? -400;
-    const e2 = p2.died?.year ?? p2.floruit?.to ?? (s2 + 65);
+    const s1 = getStartYear(p1);
+    const e1 = getEndYear(p1, CURRENT_YEAR);
+    const s2 = getStartYear(p2);
+    const e2 = getEndYear(p2, CURRENT_YEAR);
     return checkOverlap({ start: s1, end: e1 }, { start: s2, end: e2 });
   })();
 
@@ -263,8 +271,8 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
 
           <div className="space-y-3 mt-3">
             {selectedPhilosophers.map((p, idx) => {
-              const b = p.born?.year ?? p.floruit?.from ?? -400;
-              const d = p.died?.year ?? p.floruit?.to ?? (b + 60);
+              const b = getStartYear(p);
+              const d = getEndYear(p, CURRENT_YEAR);
               const age = p.born && p.died ? calculateLifespan(p.born.year, p.died.year) : null;
 
               return (
