@@ -34,6 +34,8 @@ Endrer du noe som motsier et dokument, oppdater dokumentet i samme endring.
 ## Innholdsregler – ufravikelige
 - **Ingen oppdiktede sitater.** Et sitat må ha verk og kilde. Finner du ikke en sikker kilde: bruk
   «kjerneidé med egne ord» i stedet, og la sitatfeltet stå tomt.
+  Regelen gjelder også dypdykk, Ex.phil, dilemmaer og turer (B-010): tekst i «…» der registreres i
+  `content/quotes/quote-register.json`, og `tests/quote-guard.test.ts` stopper nye sitater uten kilde.
 - Årstall hentes fra eller kontrolleres mot Wikidata. Usikre årstall markeres `approx: true`.
 - Nye filosofer får `reviewed: false` til Asbjørn og Olai har lest gjennom.
 - Beskriv idéer nøytralt og alderstilpasset. Kontroversielle sider nevnes saklig, uten å forherlige.
