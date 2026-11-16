@@ -30,6 +30,11 @@ updates:
           - "postcss"
           - "autoprefixer"
           - "typescript"
+        # Store versjonshopp (Vite, Tailwind, TypeScript) krever en plan og kommer
+        # derfor som egne PR-er, ikke samlet med rutineoppdateringer (B-013).
+        update-types:
+          - minor
+          - patch
       react:
         patterns:
           - "react"

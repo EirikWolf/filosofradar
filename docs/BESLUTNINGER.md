@@ -81,3 +81,14 @@ Kontekst: 48 illustrasjoner til tankeeksperimentene (`public/images/hooks/`) er 
 Beslutning (Eirik): Illustrasjonene beholdes og merkes ikke. Bilderegelen gjelder portretter av ekte personer, som fortsatt bare hentes fra Wikimedia Commons med fri lisens og kreditering.
 Alternativer: Merke hvert bilde som KI-generert; bytte til bilder fra Commons; fjerne illustrasjonene.
 Konsekvens: `CLAUDE.md` er presisert. Nye illustrasjoner kan genereres uten merking. Portretter følger den gamle regelen.
+
+## B-013 – ESLint 10 og React Compiler-reglene (2026-11-16)
+Kontekst: Dependabot-PR #8 hevet `@eslint/js` til 10 mens `eslint` sto på 9. `@eslint/js` 10 krever `eslint` 10, så `main` hadde en ugyldig avhengighetskombinasjon som bare virket fordi låsefila var godtatt. Dependabot-PR #9 (`eslint-plugin-react-hooks` 7) slår på React Compiler-reglene og var rød med 13 funn.
+Beslutning: Løft `eslint` til 10 og `eslint-plugin-react-hooks` til 7. Rett funnene i koden:
+- Stjernestøvet i galaksen lages én gang i stedet for med `Math.random()` under rendring.
+- Fokus fra guidet tur og nullstilling av flashcards gjøres uten `setState` i effekt.
+- Supernova-glimtet utløses der tiden endres, ikke i en effekt. Det retter også at glimtene ble liggende mens tidsmaskinen spilte.
+
+`react-hooks/preserve-manual-memoization` slås av, fordi React Compiler ikke brukes i bygget og regelen bare melder at kompilatoren ville hoppet over en komponent. Dependabot-gruppen `byggkjede` tar bare minor- og patch-oppdateringer. Store versjonshopp (Vite 8, Tailwind 4) kommer som egne PR-er.
+Alternativer: Slå av alle de nye reglene (skjuler reelle mønstre); rulle `@eslint/js` tilbake til 9 (utsetter problemet); ta Vite 8 og Tailwind 4 nå (store migreringer uten plan).
+Konsekvens: Lint-verktøyene er konsistente. Slås React Compiler på senere, må regelen slås på igjen og memoiseringen i `StoryModal` ryddes.

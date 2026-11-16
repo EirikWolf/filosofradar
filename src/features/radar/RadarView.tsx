@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import type { Philosopher, ThemeId } from '../../schemas/philosopher';
 import { TRADITION_SECTOR_ORDER, getSectorAngles, polarToCartesian, radiusForYear } from '../../lib/polar';
 import { computeRadarLayout, type RadarPoint } from '../../lib/layout';
@@ -15,6 +15,9 @@ import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
+
+/** Hvor lenge supernova-glimtet vises når en filosof fødes i tidsmaskinen. */
+const SUPERNOVA_GLOW_MS = 1400;
 
 interface RadarViewProps {
   philosophers: Philosopher[];
@@ -42,7 +45,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
 
   // Visnings- og filter-tilstander
   const [scaleMode, setScaleMode] = useState<ScaleMode>('compressed');
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(focusPhilosopherId ?? null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedTradition, setSelectedTradition] = useState<string>('all');
   const [selectedTheme, setSelectedTheme] = useState<string>('all');
@@ -78,14 +81,20 @@ export const RadarView: React.FC<RadarViewProps> = ({
   const [bornRecently, setBornRecently] = useState<Set<string>>(new Set());
 
   const lastAnimTimeRef = useRef<number | null>(null);
-  const prevTimeRef = useRef<number>(currentTime);
+  // Siste årstall tidsmaskinen ble flyttet til; brukes for å finne hvem som fødes i spranget
+  const timeRef = useRef<number>(currentTime);
+  const glowTimersRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set());
 
-  // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur)
-  useEffect(() => {
+  // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur). Justeres
+  // under rendring når propen endrer seg, i stedet for i en effekt som ville gitt
+  // en ekstra rendring (react-hooks/set-state-in-effect).
+  const [prevFocusId, setPrevFocusId] = useState(focusPhilosopherId);
+  if (focusPhilosopherId !== prevFocusId) {
+    setPrevFocusId(focusPhilosopherId);
     if (focusPhilosopherId) {
       setSelectedId(focusPhilosopherId);
     }
-  }, [focusPhilosopherId]);
+  }
 
   // Beregn deterministiske stjerneposisjoner
   const radarPoints = useMemo<RadarPoint[]>(() => {
@@ -208,6 +217,55 @@ export const RadarView: React.FC<RadarViewProps> = ({
     return ids;
   }, [radarPoints, selectedTradition, selectedTheme, searchQuery, onlyExphil]);
 
+  // Rydd opp ventende supernova-tidtakere når radaren lukkes
+  useEffect(() => {
+    const timers = glowTimersRef.current;
+    return () => {
+      timers.forEach(clearTimeout);
+      timers.clear();
+    };
+  }, []);
+
+  // Flytter tidsmaskinen til et nytt årstall. Filosofer som fødes i spranget
+  // fremover får supernova-glimt og lyd. Kalles der tiden faktisk endres
+  // (animasjonen og glideren), ikke fra en effekt som reagerer på tiden:
+  // den effekten avbrøt tidligere 1,4-sekunders-tidtakeren ved neste bilde,
+  // så glimtene ble aldri fjernet mens tidsmaskinen spilte.
+  const moveTimeTo = useCallback(
+    (nextYear: number) => {
+      const fromYear = timeRef.current;
+      timeRef.current = nextYear;
+      setCurrentTime(nextYear);
+      if (nextYear <= fromYear) return;
+
+      const newlyBorn = new Set<string>();
+      for (const pt of radarPoints) {
+        if (pt.birthYear >= fromYear && pt.birthYear <= nextYear) {
+          newlyBorn.add(pt.id);
+        }
+      }
+      if (newlyBorn.size === 0) return;
+
+      sound.playSupernovaBirth();
+      setBornRecently((prev) => {
+        const merged = new Set(prev);
+        newlyBorn.forEach((id) => merged.add(id));
+        return merged;
+      });
+
+      const timer = setTimeout(() => {
+        glowTimersRef.current.delete(timer);
+        setBornRecently((prev) => {
+          const next = new Set(prev);
+          newlyBorn.forEach((id) => next.delete(id));
+          return next;
+        });
+      }, SUPERNOVA_GLOW_MS);
+      glowTimersRef.current.add(timer);
+    },
+    [radarPoints],
+  );
+
   // Tidsmaskin animasjonsløkke
   useEffect(() => {
     if (!isTimeMachineActive || !isPlaying) {
@@ -228,59 +286,21 @@ export const RadarView: React.FC<RadarViewProps> = ({
       const yearsPerSec = playSpeed === 1 ? 12 : playSpeed === 2 ? 25 : 60;
       const advanceYears = deltaSec * yearsPerSec;
 
-      setCurrentTime((prev) => {
-        const next = prev + advanceYears;
-        if (next >= 2025) {
-          setIsPlaying(false);
-          return 2025;
-        }
-        return next;
-      });
+      const next = timeRef.current + advanceYears;
+      if (next >= 2025) {
+        setIsPlaying(false);
+        moveTimeTo(2025);
+        return;
+      }
+      moveTimeTo(next);
 
       animFrameId = requestAnimationFrame(tick);
     };
 
     animFrameId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(animFrameId);
-  }, [isTimeMachineActive, isPlaying, playSpeed]);
+  }, [isTimeMachineActive, isPlaying, playSpeed, moveTimeTo]);
 
-  // Sjekk hvem som blir "født" i tidsintervallet for å trigge supernova-puls
-  useEffect(() => {
-    if (!isTimeMachineActive) return;
-
-    const fromYear = prevTimeRef.current;
-    const toYear = currentTime;
-    prevTimeRef.current = currentTime;
-
-    if (toYear > fromYear) {
-      const newlyBorn = new Set<string>();
-      for (const pt of radarPoints) {
-        if (pt.birthYear >= fromYear && pt.birthYear <= toYear) {
-          newlyBorn.add(pt.id);
-        }
-      }
-
-      if (newlyBorn.size > 0) {
-        sound.playSupernovaBirth();
-        setBornRecently((prev) => {
-          const merged = new Set(prev);
-          newlyBorn.forEach((id) => merged.add(id));
-          return merged;
-        });
-
-        // Fjern supernova-glimt etter 1,4 sekunder
-        const timer = setTimeout(() => {
-          setBornRecently((prev) => {
-            const next = new Set(prev);
-            newlyBorn.forEach((id) => next.delete(id));
-            return next;
-          });
-        }, 1400);
-
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [currentTime, isTimeMachineActive, radarPoints]);
 
   // Årstall-ringer som skal tegnes
   const centuryRings = useMemo(() => {
@@ -337,11 +357,14 @@ export const RadarView: React.FC<RadarViewProps> = ({
             onClick={() => {
               const next = !isTimeMachineActive;
               setIsTimeMachineActive(next);
+              // Hopp direkte (uten supernova-glimt) til start eller slutt
               if (next) {
+                timeRef.current = -650;
                 setCurrentTime(-650);
                 setIsPlaying(true);
               } else {
                 setIsPlaying(false);
+                timeRef.current = 2025;
                 setCurrentTime(2025);
               }
             }}
@@ -452,7 +475,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
               max={2025}
               value={Math.round(currentTime)}
               onChange={(e) => {
-                setCurrentTime(Number(e.target.value));
+                moveTimeTo(Number(e.target.value));
                 setIsPlaying(false);
               }}
               className="flex-1 accent-cyan-glow cursor-pointer h-2 bg-cosmos-dark rounded-lg border border-cyan-glow/30"

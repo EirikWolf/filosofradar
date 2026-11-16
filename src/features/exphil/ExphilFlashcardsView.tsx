@@ -32,11 +32,14 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
 
   const activeCard = filteredCards[currentIndex] || filteredCards[0];
 
-  // Nullstill index og snu kort hvis filter endres
-  useEffect(() => {
+  // Bytt filter og start på første kort, uten å snu det. Gjøres i
+  // klikkhåndteringen i stedet for i en effekt (react-hooks/set-state-in-effect).
+  const selectPillar = (pillar: ExphilPillar | 'alle') => {
+    if (pillar === selectedPillar) return;
+    setSelectedPillar(pillar);
     setCurrentIndex(0);
     setIsFlipped(false);
-  }, [selectedPillar]);
+  };
 
   // Lagre mestring i localStorage
   const toggleMastered = useCallback((id: string, mastered: boolean) => {
@@ -159,7 +162,7 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
       {/* Filterknapper for pilar */}
       <div className="flex flex-wrap items-center justify-center gap-2">
         <button
-          onClick={() => setSelectedPillar('alle')}
+          onClick={() => selectPillar('alle')}
           className={`px-3.5 py-1.5 rounded-full text-xs font-serif transition-all border ${
             selectedPillar === 'alle'
               ? 'bg-gold text-cosmos font-bold border-gold shadow-[0_0_10px_rgba(246,200,95,0.4)]'
@@ -169,7 +172,7 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
           Alle pilarer ({EXPHIL_FLASHCARDS.length})
         </button>
         <button
-          onClick={() => setSelectedPillar('etikk')}
+          onClick={() => selectPillar('etikk')}
           className={`px-3.5 py-1.5 rounded-full text-xs font-serif transition-all border ${
             selectedPillar === 'etikk'
               ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.4)]'
@@ -179,7 +182,7 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
           Etikk & Politikk
         </button>
         <button
-          onClick={() => setSelectedPillar('erkjennelse')}
+          onClick={() => selectPillar('erkjennelse')}
           className={`px-3.5 py-1.5 rounded-full text-xs font-serif transition-all border ${
             selectedPillar === 'erkjennelse'
               ? 'bg-cyan-400 text-cosmos font-bold border-cyan-400 shadow-[0_0_10px_rgba(103,232,249,0.4)]'
@@ -189,7 +192,7 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
           Erkjennelse & Vitenskap
         </button>
         <button
-          onClick={() => setSelectedPillar('menneskesyn')}
+          onClick={() => selectPillar('menneskesyn')}
           className={`px-3.5 py-1.5 rounded-full text-xs font-serif transition-all border ${
             selectedPillar === 'menneskesyn'
               ? 'bg-purple-400 text-cosmos font-bold border-purple-400 shadow-[0_0_10px_rgba(192,132,252,0.4)]'
