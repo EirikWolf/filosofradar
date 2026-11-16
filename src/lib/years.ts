@@ -84,3 +84,35 @@ export function checkOverlap(
 ): boolean {
   return span1.start <= span2.end && span2.start <= span1.end;
 }
+
+/**
+ * Startår for en filosof: fødselsår, ellers starten på floruit (aktiv periode).
+ * Skjemaet krever at én av dem finnes. Mangler begge, kaster vi i stedet for å
+ * gjette, fordi en reserveverdi som 0 eller -400 ville gitt feil plassering stille.
+ */
+export function getStartYear(p: LifeSpan): number {
+  if (p.born) return p.born.year;
+  if (p.floruit) return p.floruit.from;
+  throw new Error('Filosofen mangler både fødselsår og floruit');
+}
+
+/**
+ * Nålevende: verken dødsår eller floruit er oppgitt (f.eks. Angela Davis).
+ */
+export function isLiving(p: LifeSpan): boolean {
+  return !p.died && !p.floruit;
+}
+
+/**
+ * Sluttår for «levde samtidig» og tidslinjen: dødsår, ellers slutten på floruit,
+ * og for nålevende inneværende år. Tidligere fikk nålevende et påfunnet dødsår
+ * (+60 eller +65 år) som var ulikt i ulike visninger.
+ */
+/** Inneværende år, lest én gang når appen lastes. */
+export const CURRENT_YEAR = new Date().getFullYear();
+
+export function getEndYear(p: LifeSpan, currentYear: number): number {
+  if (p.died) return p.died.year;
+  if (p.floruit) return p.floruit.to;
+  return currentYear;
+}

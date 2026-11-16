@@ -3,7 +3,14 @@ import type { Philosopher, ThemeId } from '../../schemas/philosopher';
 import { TRADITION_SECTOR_ORDER, getSectorAngles, polarToCartesian, radiusForYear } from '../../lib/polar';
 import { computeRadarLayout, type RadarPoint } from '../../lib/layout';
 import type { ScaleMode } from '../../lib/timeScale';
-import { formatYear, formatLifeSpan, checkOverlap } from '../../lib/years';
+import {
+  formatYear,
+  formatLifeSpan,
+  checkOverlap,
+  getStartYear,
+  getEndYear,
+  CURRENT_YEAR,
+} from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
@@ -128,8 +135,8 @@ export const RadarView: React.FC<RadarViewProps> = ({
         if (bName === query) return 1;
         if (aName.startsWith(query) && !bName.startsWith(query)) return -1;
         if (!aName.startsWith(query) && bName.startsWith(query)) return 1;
-        const aYear = a.born?.year ?? a.floruit?.from ?? 0;
-        const bYear = b.born?.year ?? b.floruit?.from ?? 0;
+        const aYear = getStartYear(a);
+        const bYear = getStartYear(b);
         return aYear - bYear;
       })
       .slice(0, 6);
@@ -150,13 +157,13 @@ export const RadarView: React.FC<RadarViewProps> = ({
   const contemporaryIds = useMemo(() => {
     if (!activePoint) return new Set<string>();
     const actStart = activePoint.birthYear;
-    const actEnd = activePoint.deathYear ?? (actStart + 60);
+    const actEnd = getEndYear(activePoint.philosopher, CURRENT_YEAR);
 
     const ids = new Set<string>();
     for (const pt of radarPoints) {
       if (pt.id === activePoint.id) continue;
       const ptStart = pt.birthYear;
-      const ptEnd = pt.deathYear ?? (ptStart + 60);
+      const ptEnd = getEndYear(pt.philosopher, CURRENT_YEAR);
       if (checkOverlap({ start: actStart, end: actEnd }, { start: ptStart, end: ptEnd })) {
         ids.add(pt.id);
       }

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import type { Philosopher, TraditionId } from '../../schemas/philosopher';
 import { TRADITIONS } from '../../lib/traditions';
+import { getStartYear } from '../../lib/years';
 
 interface FactCheckViewProps {
   philosophers: Philosopher[];
@@ -37,11 +38,11 @@ export const FactCheckView: React.FC<FactCheckViewProps> = ({
 
     // Sjekk kronologisk gyldighet for alle lenker
     for (const p of philosophers) {
-      const pYear = p.born?.year ?? p.floruit?.from ?? 0;
+      const pYear = getStartYear(p);
       for (const inflId of p.influencedBy) {
         const parent = idMap.get(inflId);
         if (parent) {
-          const parentYear = parent.born?.year ?? parent.floruit?.from ?? 0;
+          const parentYear = getStartYear(parent);
           if (parentYear > pYear) {
             chronologicalErrors++;
           }
