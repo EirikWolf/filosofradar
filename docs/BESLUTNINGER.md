@@ -69,3 +69,15 @@ Kontekst: Helhetsrevisjonen 2026-11-16 (HEL-01) fant rundt 59 sitater uten kilde
 Beslutning: Regelen «et sitat må ha verk og kilde» gjelder fullt ut i dypdykk, Ex.phil, dilemmaer og turer. I fortellingene (`storyData.ts`) er diktede replikker lov, men ekte sitater følger regelen. Håndheves med et sitatregister (`content/quotes/quote-register.json`) og en vakt-test (`tests/quote-guard.test.ts`). Sitater som manglet kilde da vakten kom, står på en liste som bare kan krympe (tak 59).
 Alternativer: Flytte alt innholdet inn i `content/` med eget Zod-skjema (riktig på sikt, men stort); kildefelt per objekt i datafilene (sitatene står midt i løpende tekst, så det passer dårlig); unntak for alt utenom filosof-filene (avvist).
 Konsekvens: Et nytt sitat uten kilde stopper `npm run check`. De 59 eksisterende rettes redaksjonelt, ett og ett. Fortellingene er ikke med i vakten ennå, fordi det først må avgjøres hvilke «…» der som er ekte sitater.
+
+## B-011 – Besøksstatistikk med GoatCounter (2026-11-16, loggført i ettertid)
+Kontekst: Prosjekteier ville vite hvor mange som bruker appen og hvilke deler som brukes, uten å bryte løftet om ingen innlogging og ingen sporingskapsler. GoatCounter ble tatt inn i `6155809` uten at beslutningen ble loggført. Helhetsrevisjonen 2026-11-16 (mistanke 4) påpekte det.
+Beslutning: GoatCounter (`filosofradar.goatcounter.com`) teller sidevisninger og to hendelser (guidet tur startet, quiz fullført). Skriptet lastes fra `gc.zgo.at`, og CSP-en tillater bare det domenet i tillegg til egne filer. Ingen svar fra quizen sendes.
+Alternativer: Ingen statistikk (vet ikke om noen bruker appen); Google Analytics (sporingskapsler og samtykkebanner); Plausible (betalt); egen innsamling via Firebase (krever backend, i strid med B-001).
+Konsekvens: Appen gjør ett eksternt kall ved kjøring. GoatCounter er databehandler og står i `docs/databehandlere.md`. Om-siden og README beskriver hva som samles inn. Flåtefasiten (ADR 0052) har ingen rad for webanalyse, så valget er prosjektlokalt.
+
+## B-012 – KI-genererte illustrasjoner uten merking (2026-11-16)
+Kontekst: 48 illustrasjoner til tankeeksperimentene (`public/images/hooks/`) er generert på kitor. Bilderegelen i `CLAUDE.md` sa «Bilder kun fra Wikimedia Commons», og helhetsrevisjonen (mistanke 5) pekte på motsigelsen.
+Beslutning (Eirik): Illustrasjonene beholdes og merkes ikke. Bilderegelen gjelder portretter av ekte personer, som fortsatt bare hentes fra Wikimedia Commons med fri lisens og kreditering.
+Alternativer: Merke hvert bilde som KI-generert; bytte til bilder fra Commons; fjerne illustrasjonene.
+Konsekvens: `CLAUDE.md` er presisert. Nye illustrasjoner kan genereres uten merking. Portretter følger den gamle regelen.

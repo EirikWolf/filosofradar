@@ -34,11 +34,13 @@ Endrer du noe som motsier et dokument, oppdater dokumentet i samme endring.
 - Beskriv idéer nøytralt og alderstilpasset. Kontroversielle sider nevnes saklig, uten å forherlige.
 - Temaprofiler (0–5) er redaksjonelt skjønn – begrunn kort i `themeNotes`.
 - Bredde: alle tradisjoner i `docs/DATAMODELL.md` skal være representert, og kvinnelige filosofer skal være med.
-- Bilder kun fra Wikimedia Commons med fri lisens eller public domain; lisens og kreditering lagres.
+- Portretter av ekte personer kun fra Wikimedia Commons med fri lisens eller public domain; lisens og
+  kreditering lagres. Illustrasjoner (f.eks. til tankeeksperimenter) kan være KI-generert og merkes ikke (B-012).
+- Nye eksterne tjenester føres i `docs/databehandlere.md` samme dag.
 
 ## Teknologi (detaljer i ARKITEKTUR.md)
-Vite · React · TypeScript (strict) · D3 (skalaer, former, kraftsimulering) · Motion (animasjon) ·
-Tailwind CSS · Zod · Vitest · Playwright (røyktest) · Firebase Hosting. Ingen backend i MVP.
+Vite · React · TypeScript (strict) · `d3-force` (kraftsimulering) · Tailwind CSS · Zod (bare ved bygg) ·
+Vitest + jsdom/Testing Library · Firebase Hosting · GoatCounter (besøksstatistikk). Ingen backend.
 Nye avhengigheter: begrunn og loggfør i BESLUTNINGER.md.
 
 ## Kommandoer
