@@ -15,6 +15,15 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    ignore:
+      # @types/node følger KJØRETIDEN, ikke nyeste utgivelse. CI bygger på
+      # node 24; #23 foreslo typene 22 -> 26. Typer foran kjøretiden fjerner
+      # den ene sjekken som stopper kode noden ikke kan kjøre (samme regel som
+      # i HR_system og KvalitetsPuls). Minor/patch slipper.
+      #
+      # UTLØSER: løft typene i samme endring som node-version i ci.yml.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       # Sikkerhetsoppdateringer samles i én PR så de kan vurderes samlet.
       sikkerhetsoppdateringer:
