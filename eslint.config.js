@@ -19,6 +19,9 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      // React Compiler er ikke slått på i bygget. Regelen melder bare at kompilatoren
+      // ville hoppet over en komponent, og har ingen effekt på appen i dag (B-013).
+      'react-hooks/preserve-manual-memoization': 'off',
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

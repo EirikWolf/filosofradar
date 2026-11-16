@@ -42,6 +42,31 @@ interface DustParticle {
   speed: number;
 }
 
+/**
+ * Bakgrunnsstøv for 3D-galaksen. Lages én gang når modulen lastes, ikke under
+ * rendring: Math.random() i rendring gir nye posisjoner hver gang komponenten
+ * tegnes på nytt (react-hooks/purity).
+ */
+function createDustParticles(): DustParticle[] {
+  const particles: DustParticle[] = [];
+  for (let i = 0; i < 180; i++) {
+    const theta = Math.random() * Math.PI * 2;
+    const phi = (Math.random() - 0.5) * Math.PI;
+    const dist = 300 + Math.random() * 450;
+    particles.push({
+      x: Math.cos(phi) * Math.cos(theta) * dist,
+      y: Math.sin(phi) * dist * 0.45,
+      z: Math.cos(phi) * Math.sin(theta) * dist,
+      size: 0.8 + Math.random() * 1.6,
+      brightness: 0.2 + Math.random() * 0.6,
+      speed: 0.001 + Math.random() * 0.002,
+    });
+  }
+  return particles;
+}
+
+const DUST_PARTICLES = createDustParticles();
+
 export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   philosophers,
   onOpenCard,
@@ -51,18 +76,22 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   // Filter- og utvalgstilstander
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(focusPhilosopherId ?? null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedTradition, setSelectedTradition] = useState<string>('all');
   const [onlyExphil, setOnlyExphil] = useState<boolean>(false);
   const [isAutoRotating, setIsAutoRotating] = useState<boolean>(true);
 
-  // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur)
-  useEffect(() => {
+  // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur). Justeres
+  // under rendring når propen endrer seg, i stedet for i en effekt som ville gitt
+  // en ekstra rendring (react-hooks/set-state-in-effect).
+  const [prevFocusId, setPrevFocusId] = useState(focusPhilosopherId);
+  if (focusPhilosopherId !== prevFocusId) {
+    setPrevFocusId(focusPhilosopherId);
     if (focusPhilosopherId) {
       setSelectedId(focusPhilosopherId);
     }
-  }, [focusPhilosopherId]);
+  }
 
   // Kameraorientering og zoom
   const cameraRef = useRef({
@@ -124,24 +153,8 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
     });
   }, [philosophers]);
 
-  // Bakgrunnsstøv og fjerne stjerner (3D kosmos)
-  const dustParticles = useMemo<DustParticle[]>(() => {
-    const particles: DustParticle[] = [];
-    for (let i = 0; i < 180; i++) {
-      const theta = Math.random() * Math.PI * 2;
-      const phi = (Math.random() - 0.5) * Math.PI;
-      const dist = 300 + Math.random() * 450;
-      particles.push({
-        x: Math.cos(phi) * Math.cos(theta) * dist,
-        y: Math.sin(phi) * dist * 0.45,
-        z: Math.cos(phi) * Math.sin(theta) * dist,
-        size: 0.8 + Math.random() * 1.6,
-        brightness: 0.2 + Math.random() * 0.6,
-        speed: 0.001 + Math.random() * 0.002,
-      });
-    }
-    return particles;
-  }, []);
+  // Bakgrunnsstøv og fjerne stjerner (3D kosmos), laget én gang per sidelast
+  const dustParticles = DUST_PARTICLES;
 
   // Kart for raskt oppslag
   const starsMap = useMemo(() => {
