@@ -9,7 +9,7 @@
 4. **Nøytral og alderstilpasset.** Forklar hva filosofen mente, ikke om det var riktig. Mørke sider
    (f.eks. syn på kvinner eller slaveri) nevnes kort og saklig når de er relevante.
 5. **Temaprofilen er skjønn.** Diskuter den, begrunn den i `themeNotes`.
-6. **Gjennomlest.** `reviewed: true` først når Asbjørn og Olai har lest filen.
+6. **Gjennomlest.** `reviewed: true` først når prosjekteier har lest filen.
 
 ## Språknivå
 Skriv for en nysgjerrig 13-åring. Korte setninger. Forklar fagord i en bisetning.
@@ -17,14 +17,14 @@ Eksempel: «Sokrates mente at ingen gjør galt med vilje – vi gjør galt fordi
 
 ## Startliste (~70)
 
-### Olais topp 5 favoritter (hedersplass – de første stjernene som tennes) **[endret]**
+### Topp 5 favoritter (hedersplass – de første stjernene som tennes) **[endret]**
 1. **Hypatia av Alexandria** ★ (Gresk-romersk / Alexandria) – matematiker, astronom, laget astrolabier og ledet vitenskapsskolen.
 2. **Sokrates** ★ (Gresk-romersk / Athen) – ur-filosofen, gatas spørrekonge som lærte opp Platon.
 3. **Arne Næss** ★ (Nordisk / Norge) – fjellklatrer, bokser og grunnleggeren av dypøkologien.
 4. **Buddha (Siddhartha Gautama)** ★ (Indisk) – sinnsutforskeren, meditasjon og medfølelse.
 5. **Marcus Aurelius** ★ (Gresk-romersk / Roma) – filosofkeiseren og stoisk ro.
 
-Fase 2: Olais topp 5 + de 15 øvrige stjernene merket med ★ (totalt 20). Fase 8: resten.
+Fase 2: Topp 5 + de 15 øvrige stjernene merket med ★ (totalt 20). Fase 8: resten.
 
 **Kinesisk:** Konfucius ★, Laozi ★, Mozi, Mengzi, Zhuangzi, Xunzi, Zhu Xi, Wang Yangming
 **Japansk og koreansk:** Dōgen, Yi Hwang (Toegye), Nishida Kitarō
