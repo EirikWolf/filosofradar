@@ -11,7 +11,7 @@ import {
 import type { Philosopher } from '../../schemas/philosopher';
 import { getNetworkData, getLongestLineage, type NetworkNode, type NetworkLink } from '../../lib/influence';
 import { getTraditionMeta } from '../../lib/traditions';
-import { formatLifeSpan, formatYear } from '../../lib/years';
+import { formatLifeSpan, formatYear, getStartYear } from '../../lib/years';
 
 interface NetworkViewProps {
   philosophers: Philosopher[];
@@ -459,7 +459,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
                   <div className="flex items-center gap-1.5 font-serif font-bold text-gold text-sm">
                     <span>✦</span> {p.name}
                     <span className="text-[11px] font-normal text-star-dim">
-                      ({formatYear(p.born?.year ?? p.floruit?.from ?? 0)})
+                      ({formatYear(getStartYear(p))})
                     </span>
                   </div>
                   <p className="text-star-dim text-[11px] mt-0.5">

@@ -1,4 +1,5 @@
 import type { Philosopher, TraditionId } from '../schemas/philosopher';
+import { getStartYear } from './years';
 
 export interface NetworkNode {
   id: string;
@@ -156,7 +157,7 @@ export function getNetworkData(philosophers: Philosopher[]): {
   const nodes: NetworkNode[] = philosophers.map((p) => ({
     id: p.id,
     name: p.name,
-    bornYear: p.born?.year ?? p.floruit?.from ?? -400,
+    bornYear: getStartYear(p),
     tradition: p.tradition,
     connectionCount: connectionCounts.get(p.id) ?? 0,
     philosopher: p,

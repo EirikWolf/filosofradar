@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
 import { createLinearScale, createCompressedScale, type ScaleMode } from '../../lib/timeScale';
-import { formatLifeSpan, checkOverlap } from '../../lib/years';
+import { formatLifeSpan, checkOverlap, getStartYear, getEndYear, CURRENT_YEAR } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 
 interface TimelineViewProps {
@@ -27,8 +27,8 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
   // Forbered data med start- og sluttår
   const spans: PhilosopherSpan[] = useMemo(() => {
     return philosophers.map((p) => {
-      const start = p.born?.year ?? p.floruit?.from ?? -400;
-      const end = p.died?.year ?? p.floruit?.to ?? (start + 65);
+      const start = getStartYear(p);
+      const end = getEndYear(p, CURRENT_YEAR);
       return {
         philosopher: p,
         startYear: start,
@@ -55,8 +55,8 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
   // Bygg tidsskala
   const scale = useMemo(() => {
     return scaleMode === 'compressed'
-      ? createCompressedScale(totalWidth, -650, 2025)
-      : createLinearScale(totalWidth, -650, 2025);
+      ? createCompressedScale(totalWidth, -650, CURRENT_YEAR)
+      : createLinearScale(totalWidth, -650, CURRENT_YEAR);
   }, [scaleMode, totalWidth]);
 
   // Pakk stolpene inn i rader slik at de ikke overlapper vertikalt (Lane Packing)
