@@ -8,7 +8,8 @@ samtidig, hvem som påvirket hvem, og hva de var opptatt av. Statisk webapp på 
 
 - Fortell hvor i appen en endring kan sees.
 - Spør før du gjør noe som er vanskelig å reversere (sletting, publisering, git push).
-- Svar på norsk bokmål. Kode, variabelnavn og commit-meldinger på engelsk.
+- Svar på norsk bokmål. Kode og variabelnavn på engelsk. Commit-meldinger og PR-tekster på norsk,
+  konvensjonelle (`feat:`, `fix:`, `content:`, `docs:`, `chore:`), slik globale regler krever.
 
 ## Styringsdokumenter – les ved behov, hold dem oppdatert
 | Fil | Innhold |
