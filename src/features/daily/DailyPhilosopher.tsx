@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
+import { getTraditionMeta } from '../../lib/traditions';
 import { sound } from '../../lib/sound';
 
 interface DailyPhilosopherProps {
@@ -81,12 +82,17 @@ export const DailyPhilosopher: React.FC<DailyPhilosopherProps> = ({
         {/* Innhold */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2">
           <div className="flex-1">
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-baseline gap-2 flex-wrap">
               <h3 className="text-xl sm:text-2xl font-serif font-bold text-white tracking-wide">
                 {dailyPhilosopher.name}
               </h3>
-              <span className="text-xs text-star-dim capitalize font-sans">
-                {dailyPhilosopher.tradition} · f. {bornStr}
+              <span className="text-xs text-star-dim font-sans flex items-center gap-1.5">
+                <span
+                  className="w-2 h-2 rounded-full inline-block"
+                  style={{ backgroundColor: getTraditionMeta(dailyPhilosopher.tradition).color }}
+                  aria-hidden="true"
+                />
+                {getTraditionMeta(dailyPhilosopher.tradition).name} · f. {bornStr}
               </span>
             </div>
 

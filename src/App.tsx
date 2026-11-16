@@ -68,6 +68,7 @@ export const App: React.FC = () => {
   const [isClassroomMode, setIsClassroomMode] = useState<boolean>(false);
   const [isSoundEnabled, setIsSoundEnabled] = useState<boolean>(sound.enabled);
   const [isStoryGalleryOpen, setIsStoryGalleryOpen] = useState<boolean>(false);
+  const [focusedRadarId, setFocusedRadarId] = useState<string | null>(null);
   const [activeStory, setActiveStory] = useState<{
     philosopherId: string;
     philosopherName: string;
@@ -203,6 +204,7 @@ export const App: React.FC = () => {
     setComparingIds(null);
     setIsStoryGalleryOpen(false);
     setIsTourModalOpen(false);
+    setFocusedRadarId(null);
     const url = new URL(window.location.href);
     url.searchParams.delete('v');
     url.searchParams.delete('f');
@@ -511,7 +513,14 @@ export const App: React.FC = () => {
             onOpenCard={openCard}
             onNavigateToRadar={(id) => {
               changeView('radar');
-              openCard(id);
+              setActiveCardId(null);
+              setFocusedRadarId(id);
+              setTimeout(() => {
+                const el = document.getElementById('radar-canvas-container');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+              }, 50);
             }}
           />
         </div>
@@ -527,7 +536,7 @@ export const App: React.FC = () => {
               onStartCompare={(id) => setComparingIds([id])}
               onNavigateToTimeline={() => changeView('timeline')}
               onNavigateToList={() => changeView('list')}
-              focusPhilosopherId={currentTourStop?.philosopherId}
+              focusPhilosopherId={focusedRadarId || currentTourStop?.philosopherId}
             />
           ) : view === 'galaxy' ? (
             <Galaxy3DView

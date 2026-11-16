@@ -67,7 +67,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
   const [isTimeMachineActive, setIsTimeMachineActive] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentTime, setCurrentTime] = useState<number>(2025);
-  const [playSpeed, setPlaySpeed] = useState<number>(2); // 1x, 2x, 4x
+  const [playSpeed, setPlaySpeed] = useState<number>(1); // 1x (12 år/s), 2x (25 år/s), 4x (60 år/s)
   const [bornRecently, setBornRecently] = useState<Set<string>>(new Set());
 
   const lastAnimTimeRef = useRef<number | null>(null);
@@ -217,8 +217,8 @@ export const RadarView: React.FC<RadarViewProps> = ({
       const deltaSec = (now - lastAnimTimeRef.current) / 1000;
       lastAnimTimeRef.current = now;
 
-      // År per sekund: 1x = 35 år/s, 2x = 80 år/s, 4x = 180 år/s
-      const yearsPerSec = playSpeed === 1 ? 35 : playSpeed === 2 ? 80 : 180;
+      // År per sekund: 1x = 12 år/s (rolig og lesbar), 2x = 25 år/s, 4x = 60 år/s
+      const yearsPerSec = playSpeed === 1 ? 12 : playSpeed === 2 ? 25 : 60;
       const advanceYears = deltaSec * yearsPerSec;
 
       setCurrentTime((prev) => {
@@ -312,6 +312,14 @@ export const RadarView: React.FC<RadarViewProps> = ({
     return radiusForYear(Math.min(2025, Math.max(-650, currentTime)), scaleMode, minRadius, maxRadius);
   }, [isTimeMachineActive, currentTime, scaleMode]);
 
+  // Den sist ankomne filosofen i tidsmaskinen for "Historiens Lyskaster"
+  const currentArrival = useMemo(() => {
+    if (!isTimeMachineActive) return null;
+    const currentYearRound = Math.round(currentTime);
+    const passed = sortedRadarPoints.filter((pt) => pt.birthYear <= currentYearRound);
+    return passed.length > 0 ? passed[passed.length - 1] : null;
+  }, [isTimeMachineActive, currentTime, sortedRadarPoints]);
+
   return (
     <div className="w-full flex flex-col items-center gap-6 select-none">
       {/* Topp-rad: Tidsmaskin / Skala / Filter-kontroller */}
@@ -323,7 +331,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
               const next = !isTimeMachineActive;
               setIsTimeMachineActive(next);
               if (next) {
-                setCurrentTime(-600);
+                setCurrentTime(-650);
                 setIsPlaying(true);
               } else {
                 setIsPlaying(false);
@@ -353,11 +361,12 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   <button
                     key={spd}
                     onClick={() => setPlaySpeed(spd)}
+                    title={spd === 1 ? '1× (12 år/sekund - rolig og lesbar)' : spd === 2 ? '2× (25 år/sekund)' : '4× (60 år/sekund)'}
                     className={`px-2 py-1 text-[11px] font-mono transition-colors ${
                       playSpeed === spd ? 'bg-gold text-cosmos font-bold' : 'text-star-dim hover:text-white'
                     }`}
                   >
-                    {spd}×
+                    {spd === 1 ? '1× (rolig)' : spd === 2 ? '2×' : '4×'}
                   </button>
                 ))}
               </div>
@@ -424,22 +433,109 @@ export const RadarView: React.FC<RadarViewProps> = ({
         </div>
       </div>
 
-      {/* Tidsmaskin-glider når tidsmaskin er aktiv */}
+      {/* Tidsmaskin-glider og Historiens lyskaster når tidsmaskin er aktiv */}
       {isTimeMachineActive && (
-        <div className="w-full max-w-4xl px-6 py-3 bg-cosmos-card/60 border border-cyan-glow/20 rounded-xl backdrop-blur flex items-center gap-4 animate-in fade-in">
-          <span className="text-xs text-star-dim font-mono">650 f.Kr.</span>
-          <input
-            type="range"
-            min={-650}
-            max={2025}
-            value={Math.round(currentTime)}
-            onChange={(e) => {
-              setCurrentTime(Number(e.target.value));
-              setIsPlaying(false);
-            }}
-            className="flex-1 accent-cyan-glow cursor-pointer h-2 bg-cosmos-dark rounded-lg border border-cyan-glow/30"
-          />
-          <span className="text-xs text-star-dim font-mono">2025 e.Kr.</span>
+        <div className="w-full max-w-4xl flex flex-col gap-3 animate-in fade-in">
+          {/* Tidsmaskin-glider */}
+          <div className="w-full px-6 py-3 bg-cosmos-card/60 border border-cyan-glow/20 rounded-xl backdrop-blur flex items-center gap-4">
+            <span className="text-xs text-star-dim font-mono">650 f.Kr.</span>
+            <input
+              type="range"
+              min={-650}
+              max={2025}
+              value={Math.round(currentTime)}
+              onChange={(e) => {
+                setCurrentTime(Number(e.target.value));
+                setIsPlaying(false);
+              }}
+              className="flex-1 accent-cyan-glow cursor-pointer h-2 bg-cosmos-dark rounded-lg border border-cyan-glow/30"
+            />
+            <span className="text-xs text-star-dim font-mono">2025 e.Kr.</span>
+          </div>
+
+          {/* Historiens Lyskaster: Viser filosofen som nettopp trer frem i historien */}
+          {currentArrival && (
+            <div className="w-full p-4 sm:p-5 bg-gradient-to-r from-cosmos-card/95 via-cosmos-card/90 to-cosmos-card/95 border border-cyan-glow/40 rounded-2xl shadow-[0_0_25px_rgba(103,232,249,0.2)] backdrop-blur-md animate-fadeIn flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-start sm:items-center gap-3.5 min-w-0">
+                {/* Avatar eller stjerneglyf */}
+                {currentArrival.philosopher.image ? (
+                  <img
+                    src={currentArrival.philosopher.image.file}
+                    alt={currentArrival.philosopher.name}
+                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-cyan-glow shadow-[0_0_12px_rgba(103,232,249,0.4)] shrink-0"
+                  />
+                ) : (
+                  <div
+                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center font-serif text-xl sm:text-2xl font-bold border shrink-0 shadow-lg"
+                    style={{
+                      backgroundColor: `${getTraditionMeta(currentArrival.tradition).color}25`,
+                      borderColor: getTraditionMeta(currentArrival.tradition).color,
+                      color: getTraditionMeta(currentArrival.tradition).color,
+                    }}
+                  >
+                    {currentArrival.philosopher.name.charAt(0)}
+                  </div>
+                )}
+
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                    <span
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
+                      style={{ backgroundColor: getTraditionMeta(currentArrival.tradition).color }}
+                      aria-hidden="true"
+                    />
+                    <span className="text-[11px] uppercase tracking-widest font-serif text-star-dim font-bold">
+                      {getTraditionMeta(currentArrival.tradition).name}
+                    </span>
+                    <span className="text-[11px] text-cyan-300 font-serif">
+                      // Trer frem ca. {formatYear(currentArrival.birthYear)}
+                    </span>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-serif font-bold text-white truncate flex items-baseline gap-2">
+                    {currentArrival.philosopher.name}
+                    {currentArrival.philosopher.nameOriginal && (
+                      <span className="text-xs text-star-dim font-normal font-sans">
+                        ({currentArrival.philosopher.nameOriginal})
+                      </span>
+                    )}
+                  </h4>
+                  <p className="text-xs text-cyan-100/90 font-sans line-clamp-2 mt-0.5">
+                    {currentArrival.philosopher.keyIdeas[0] ? (
+                      <span>
+                        💡 <strong className="text-gold-light">{currentArrival.philosopher.keyIdeas[0].title}:</strong>{' '}
+                        {currentArrival.philosopher.keyIdeas[0].text}
+                      </span>
+                    ) : (
+                      currentArrival.philosopher.thinkAbout
+                    )}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playStarSelect();
+                    setSelectedId(currentArrival.id);
+                  }}
+                  className="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-serif text-white transition-all active:scale-95"
+                >
+                  ✦ Marker stjerne
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playStarSelect();
+                    if (onOpenCard) onOpenCard(currentArrival.id);
+                  }}
+                  className="px-4 py-1.5 rounded-full bg-gold hover:bg-gold-light text-cosmos font-serif font-bold text-xs transition-all shadow-[0_0_12px_rgba(246,200,95,0.4)] active:scale-95"
+                >
+                  Les filosofkort ↗
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -672,7 +768,10 @@ export const RadarView: React.FC<RadarViewProps> = ({
       </div>
 
       {/* Selve Radaren (SVG) */}
-      <div className="relative w-full max-w-[680px] aspect-square flex items-center justify-center">
+      <div
+        id="radar-canvas-container"
+        className="relative w-full max-w-[680px] aspect-square flex items-center justify-center"
+      >
         {/* Roterende sveipestråle bakgrunn */}
         <div
           className="absolute inset-0 pointer-events-none rounded-full overflow-hidden animate-sweep-beam"
@@ -978,13 +1077,26 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 {/* Usynlig treffsone (forhindrer flimring/jitter på stjernekanten) */}
                 <circle r="14" fill="transparent" />
 
-                {/* Supernova-puls ved fødsel i tidsmaskinen */}
+                {/* Myk oppgløding ved ankomst i tidsmaskinen (erstatter snøball-effekt) */}
                 {isBornSupernova && (
                   <circle
-                    r="8"
+                    r={starRadius * 2.2}
+                    fill={meta.color}
+                    opacity="0.4"
+                    className="animate-pulse pointer-events-none"
+                  />
+                )}
+
+                {/* Historiens Lyskaster aktiv stjerne */}
+                {isTimeMachineActive && currentArrival && currentArrival.id === pt.id && (
+                  <circle
+                    r={starRadius * 2.5}
                     fill="none"
-                    stroke="#ffffff"
-                    className="animate-supernova text-cyan-glow pointer-events-none"
+                    stroke="#67e8f9"
+                    strokeWidth="1.5"
+                    strokeDasharray="3 3"
+                    className="animate-spin pointer-events-none"
+                    style={{ animationDuration: '6s' }}
                   />
                 )}
 
