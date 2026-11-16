@@ -10,9 +10,11 @@ export default defineConfig({
         entryFileNames: 'assets/[name]-v2-[hash].js',
         chunkFileNames: 'assets/[name]-v2-[hash].js',
         assetFileNames: 'assets/[name]-v2-[hash].[ext]',
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          d3: ['d3-force'],
+        // Vite 8 (Rolldown) tar bare funksjonsformen av manualChunks.
+        // Samme oppdeling som før: react og d3-force i hver sin chunk.
+        manualChunks(id) {
+          if (/[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/.test(id)) return 'vendor';
+          if (/[\\/]node_modules[\\/]d3-[^\\/]+[\\/]/.test(id)) return 'd3';
         },
       },
     },
