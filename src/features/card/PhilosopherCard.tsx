@@ -9,6 +9,7 @@ import { StoryModal } from '../story/StoryModal';
 import type { ThoughtExperiment } from '../deepdive/types';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
 import { sound } from '../../lib/sound';
+import { useDialogFocus } from '../../hooks/useDialogFocus';
 
 interface PhilosopherCardProps {
   philosopher: Philosopher;
@@ -44,66 +45,18 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
   }, [allPhilosophers]);
 
   const dialogRef = useRef<HTMLElement>(null);
-  const previousActiveElementRef = useRef<HTMLElement | null>(null);
 
-  // UU-01: Flytt fokus inn i modalen ved åpning og returner fokus ved lukking
-  useEffect(() => {
-    previousActiveElementRef.current = document.activeElement as HTMLElement | null;
+  // UU-01/HEL-02: fokus inn ved åpning, fokusfelle og fokus tilbake ved lukking
+  useDialogFocus(dialogRef);
 
-    // Fokuser dialog eller første fokuserbare element
-    const timer = setTimeout(() => {
-      if (dialogRef.current) {
-        const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
-        if (focusable.length > 0) {
-          focusable[0].focus();
-        } else {
-          dialogRef.current.focus();
-        }
-      }
-    }, 50);
-
-    return () => {
-      clearTimeout(timer);
-      if (previousActiveElementRef.current && typeof previousActiveElementRef.current.focus === 'function') {
-        previousActiveElementRef.current.focus();
-      }
-    };
-  }, []);
-
-  // Tastaturhåndtering: Escape lukker, og Tab fanges inne i modalen (fokusfelle)
+  // Escape lukker en åpen historie først, deretter selve kortet
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        if (activeStoryExperiment) {
-          setActiveStoryExperiment(null);
-        } else {
-          onClose();
-        }
-      } else if (e.key === 'Tab' && dialogRef.current && !activeStoryExperiment) {
-        const focusable = Array.from(
-          dialogRef.current.querySelectorAll<HTMLElement>(
-            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-          )
-        ).filter((el) => !el.hasAttribute('disabled') && el.offsetParent !== null);
-
-        if (focusable.length === 0) return;
-
-        const firstElement = focusable[0];
-        const lastElement = focusable[focusable.length - 1];
-
-        if (e.shiftKey) {
-          if (document.activeElement === firstElement || !dialogRef.current.contains(document.activeElement)) {
-            e.preventDefault();
-            lastElement.focus();
-          }
-        } else {
-          if (document.activeElement === lastElement || !dialogRef.current.contains(document.activeElement)) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
+      if (e.key !== 'Escape') return;
+      if (activeStoryExperiment) {
+        setActiveStoryExperiment(null);
+      } else {
+        onClose();
       }
     };
     window.addEventListener('keydown', handleKeyDown);

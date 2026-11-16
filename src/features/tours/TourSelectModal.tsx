@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { Tour } from './types';
 import { TOURS } from './tourData';
 import type { Philosopher } from '../../schemas/philosopher';
 import { sound } from '../../lib/sound';
+import { useDialogFocus } from '../../hooks/useDialogFocus';
 
 interface TourSelectModalProps {
   philosophers: Philosopher[];
@@ -16,6 +17,8 @@ export const TourSelectModal: React.FC<TourSelectModalProps> = ({
   onClose,
 }) => {
   const pMap = new Map(philosophers.map((p) => [p.id, p]));
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(dialogRef);
 
   // Tastatursnarvei: Escape lukker tur-modalen
   useEffect(() => {
@@ -34,10 +37,12 @@ export const TourSelectModal: React.FC<TourSelectModalProps> = ({
       onClick={onClose}
     >
       <div
+        ref={dialogRef}
+        tabIndex={-1}
         role="dialog"
         aria-modal="true"
         aria-label="Velg en historisk idéreise"
-        className="relative w-full max-w-4xl max-h-[90vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
+        className="focus:outline-none relative w-full max-w-4xl max-h-[90vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

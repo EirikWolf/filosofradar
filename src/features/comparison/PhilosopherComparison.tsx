@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
 import { THEME_IDS } from '../../schemas/philosopher';
 import { getThemeMeta } from '../../lib/themes';
 import { getTraditionMeta } from '../../lib/traditions';
 import { formatLifeSpan, formatYear, calculateLifespan, checkOverlap } from '../../lib/years';
 import { ThemeRadar } from '../../components/ThemeRadar';
+import { useDialogFocus } from '../../hooks/useDialogFocus';
 
 interface PhilosopherComparisonProps {
   initialIds: string[];
@@ -57,6 +58,9 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
     setSelectedIds(updated);
   };
 
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(dialogRef);
+
   // Tastatursnarvei: Escape lukker sammenligningskammeret
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -85,10 +89,12 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
       onClick={onClose}
     >
       <div
+        ref={dialogRef}
+        tabIndex={-1}
         role="dialog"
         aria-modal="true"
         aria-label="Sammenligningskammer"
-        className="w-full max-w-4xl max-h-[92vh] bg-cosmos-card border border-gold/40 rounded-2xl shadow-2xl flex flex-col p-6 sm:p-8 overflow-y-auto animate-in zoom-in-95"
+        className="focus:outline-none w-full max-w-4xl max-h-[92vh] bg-cosmos-card border border-gold/40 rounded-2xl shadow-2xl flex flex-col p-6 sm:p-8 overflow-y-auto animate-in zoom-in-95"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

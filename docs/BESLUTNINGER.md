@@ -57,3 +57,9 @@ Beslutning:
 3. Kollisjoner unngås deterministisk med alternerende viftevinkler og svak radial forskyvning (16 iterasjoner 2D-relaxation).
 Alternativer: Midtpunkt i levetiden; tilfeldig Math.random()-spredning; kun vinkelspredning uten radial forskyvning (ga overlapp i trange antikk-klynger).
 Konsekvens: Tidsmaskinen fungerer intuitivt: når tidsringen treffer punktets radius, fødes filosofen med supernova-puls. Alle 21 stjerner (og framtidige 70+) har garantert synlig separasjon.
+
+## B-009 – Komponenttester med jsdom og Testing Library (2026-11-16)
+Kontekst: Helhetsrevisjonen 2026-11-16 (HEL-02) fant at fire dialoger slapp tastaturfokus ut bak seg, selv om alle UU-testene var grønne. Testene leste bare kildekoden og så etter tekst, så de kunne ikke se hvor fokus faktisk havnet.
+Beslutning: Ta inn `jsdom`, `@testing-library/react`, `@testing-library/dom` og `@testing-library/user-event` som dev-avhengigheter. Komponenttester slår på jsdom per fil med `// @vitest-environment jsdom`; resten av testene kjører fortsatt i Node. Felles fokuslogikk for dialoger ligger i `src/hooks/useDialogFocus.ts`.
+Alternativer: Playwright (tyngre, krever nettleser i CI); happy-dom (lettere, men dårligere støtte for fokus og tastatur); fortsette med grep-tester (fanger ikke oppførsel).
+Konsekvens: Dialoger testes nå på oppførsel: fokus inn, fokusfelle og fokus tilbake (`tests/dialog-focus.test.tsx`). Ingen påvirkning på det som lastes ned av brukerne, fordi alt er dev-avhengigheter.

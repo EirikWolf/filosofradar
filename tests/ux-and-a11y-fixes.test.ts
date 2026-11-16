@@ -106,15 +106,8 @@ describe('UX, Navigasjonslogikk og Tilgjengelighetsutbedringer (UU-01 til UU-10)
     expect(listCode).toContain('aria-label="Søk etter filosof, idé, retning eller verdensdel"');
   });
 
-  it('[UU-01] PhilosopherCard inneholder fokusfelle og aria-modal', () => {
-    const cardPath = path.resolve(__dirname, '../src/features/card/PhilosopherCard.tsx');
-    const cardCode = fs.readFileSync(cardPath, 'utf-8');
-    expect(cardCode).toContain('aria-modal="true"');
-    expect(cardCode).toContain('role="dialog"');
-    expect(cardCode).toContain('previousActiveElementRef');
-    expect(cardCode).toContain('firstElement.focus()');
-    expect(cardCode).toContain('lastElement.focus()');
-  });
+  // [UU-01] Fokusfellen i PhilosopherCard testes nå på oppførsel, ikke kildekode,
+  // sammen med de andre dialogene i tests/dialog-focus.test.tsx (HEL-02).
 
   it('[UU-02] ExphilFlashcardsView blokkerer ikke Enter/Mellomrom på knapper og lenker', () => {
     const flashcardsPath = path.resolve(__dirname, '../src/features/exphil/ExphilFlashcardsView.tsx');
