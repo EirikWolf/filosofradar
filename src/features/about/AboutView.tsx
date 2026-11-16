@@ -151,7 +151,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                   <span>🛡️</span> <strong>Personvernerklæring (100 % cookie-fri)</strong>
                 </div>
                 <p className="text-xs text-star-dim leading-relaxed">
-                  Løsningen benytter ingen sporingskapsler (cookies) og krever intet samtykkebanner. For aggregert statistikk og feilsøking benyttes den åpne, personvernvennlige tjenesten <em>GoatCounter</em>. Det lagres ingen personopplysninger eller unike IP-adresser.
+                  Løsningen bruker ingen informasjonskapsler (cookies) og har ingen innlogging. Besøk telles med den åpne tjenesten <em>GoatCounter</em>, som bare lagrer samlet statistikk (side, henviser, nettleser, skjermstørrelse og land). IP-adressen lagres ikke. Svarene dine i quizen sendes ikke noe sted.
                 </p>
               </div>
             </div>

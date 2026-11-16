@@ -6,7 +6,7 @@
 [![Live Demo](https://img.shields.io/badge/Live-filosofradar.web.app-gold?style=for-the-badge&logo=firebase)](https://filosofradar.web.app)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
-[![Tests](https://img.shields.io/badge/Tests-86%20passed-success?style=for-the-badge&logo=vitest)](https://vitest.dev/)
+[![CI](https://github.com/EirikWolf/filosofradar/actions/workflows/ci.yml/badge.svg)](https://github.com/EirikWolf/filosofradar/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 ---
@@ -39,7 +39,7 @@ Gjennom visuell matematikk (polarkoordinater, tidslinjer, kraftsimulerte påvirk
 * **Stil & Design:** [Tailwind CSS](https://tailwindcss.com/) med skreddersydd kosmisk tema
 * **Matematikk & Grafikk:** D3-skalaer, `d3-force`, HTML5 Canvas og ren SVG-tegning
 * **Lyd:** Web Audio API (syntetisert, ingen eksterne lydfiler)
-* **Testing:** [Vitest](https://vitest.dev/) (enhetstester, innholdsvalidering, tidsberegning)
+* **Testing:** [Vitest](https://vitest.dev/) (enhetstester, innholdsvalidering, sitatvakt) og jsdom + Testing Library (komponenter)
 * **Hosting:** Firebase Hosting (statiske filer med Cache-Control og HTTP-sikkerhetsheadere)
 
 ---
@@ -47,7 +47,7 @@ Gjennom visuell matematikk (polarkoordinater, tidslinjer, kraftsimulerte påvirk
 ## 🚀 Kom i gang lokalt
 
 ### Forutsetninger
-* Node.js v18+ (testet på v20+)
+* Node.js LTS (CI kjører v24)
 * npm v9+
 
 ### Installasjon
@@ -79,7 +79,7 @@ npm run check
 # Enkelttester:
 npm run typecheck    # TypeScript compiler-sjekk
 npm run lint         # ESLint med React Hooks-regler
-npm test             # Vitest testsuite (14 testfiler, 86 tester)
+npm test             # Vitest-testene
 npm run validate     # Zod-validering av alle 80 JSON-filosofdokumenter
 ```
 
@@ -108,8 +108,8 @@ filosofradar/
 
 ## 🔒 Personvern og sikkerhet
 
-* **100% Statisk:** Applikasjonen sender ingen persondata til noen ekstern server.
-* **Ingen cookies / sporing:** Ingen Google Analytics, tredjeparts-cookies eller sporingspiksler.
+* **Statisk app:** Ingen innlogging, ingen backend og ingen database. Quizsvar sendes ikke noe sted.
+* **Besøksstatistikk uten cookies:** [GoatCounter](https://www.goatcounter.com/) teller besøk og lagrer bare samlet statistikk, ikke IP-adresser. Se `docs/databehandlere.md`.
 * **Sikkerhetsheadere:** Konfigurert med `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` og `Content-Security-Policy`.
 
 ---
@@ -118,4 +118,4 @@ filosofradar/
 
 Dette prosjektet er lisensiert under [MIT-lisensen](LICENSE).
 
-Innholdet om tenkere og verk er samlet og bearbeidet fra offentlige kilder, med portrettbilder fra Wikimedia Commons (kreditert i applikasjonens Om-seksjon).
+Innholdet om tenkere og verk er samlet og bearbeidet fra offentlige kilder.

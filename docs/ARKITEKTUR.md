@@ -17,14 +17,15 @@ content/philosophers/*.json ──(scripts/build-content.ts: valider + slå samm
 |---|---|---|
 | Bygg | Vite | Raskt, enkelt |
 | UI | React + TypeScript (strict) | Stort økosystem, typer fanger feil |
-| Visualisering | SVG tegnet av React, **D3** til skalaer, buer (`d3-shape`), kraftsimulering (`d3-force`) | D3 er standarden; React eier DOM |
-| Animasjon | **Motion** (tidligere Framer Motion) + `requestAnimationFrame` for sveipen | Myke overganger, enkel API |
+| Visualisering | SVG tegnet av React; egne skalaer og polarmatte i `src/lib/`; **`d3-force`** til kraftsimulering; Canvas for 3D-galaksen | React eier DOM; D3 brukes bare der det sparer mye kode |
+| Animasjon | CSS-animasjoner (Tailwind) + `requestAnimationFrame` for sveip, galakse og historier | Ingen ekstra avhengighet |
 | Styling | Tailwind CSS + CSS-variabler for temafarger | Rask stil, enkelt å bytte tema |
 | Validering | Zod | Samme skjema for innhold og typer |
 | Tilstand | React state + URL-parametre (`?f=sokrates&year=-400`) | Delbare lenker, ingen ekstra bibliotek |
-| Bilde-eksport | `html-to-image` eller canvas | Del-bilde fra quizen |
+| Bilde-eksport | Canvas (`src/lib/quizExport.ts`) | Del-bilde fra quizen uten ekstra avhengighet |
 | Tester | Vitest (logikk), Vitest + jsdom + Testing Library (komponenter, se B-009), Playwright (røyktest av hovedflyt, ikke innført ennå) | |
 | Hosting | Firebase Hosting, Spark-plan | Gratis, enkel publisering, forhåndsvisningskanaler |
+| Besøksstatistikk | GoatCounter (B-011) | Uten informasjonskapsler; se `docs/databehandlere.md` |
 
 Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<canvas>` og behold SVG for aksene. Loggfør.
 
@@ -32,29 +33,29 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 ```
 /
 ├─ CLAUDE.md
-├─ docs/                        krav, design, plan, beslutninger, skisser/
-├─ .claude/                     innstillinger og kommandoer
-├─ content/philosophers/        én JSON per filosof (kilden til sannhet)
-├─ public/portraits/            bilder med fri lisens
+├─ docs/                        krav, design, plan, beslutninger, databehandlere, revisjoner/, skisser/
+├─ .claude/                     innstillinger og slash-kommandoer
+├─ .github/workflows/ci.yml     check + build + budget på hver PR
+├─ content/
+│  ├─ philosophers/             én JSON per filosof (kilden til sannhet, Zod-validert)
+│  ├─ quiz/                     spørsmål til «Hvilken filosof ligner du på?»
+│  └─ quotes/                   sitatregister for sitatvakten (B-010)
+├─ public/images/hooks/         illustrasjoner til tankeeksperimenter (B-012)
 ├─ scripts/
-│  ├─ build-content.ts          valider + slå sammen + statistikk
+│  ├─ build-content.ts          valider + slå sammen + statistikk + sitemap
+│  ├─ check-bundle-budget.ts    ytelsesbudsjett for første side
 │  └─ wikidata.ts               hent/kontroller årstall fra Wikidata (SPARQL)
 ├─ src/
-│  ├─ main.tsx, App.tsx, routes.tsx
-│  ├─ i18n/nb.ts
-│  ├─ schemas/philosopher.ts    Zod-skjema
+│  ├─ main.tsx, App.tsx         visningsvalg og URL-parametre (?v=, ?f=)
+│  ├─ schemas/                  Zod-skjemaer; ids.ts har konstanter uten Zod
 │  ├─ generated/                bygget innhold (git-ignorert)
-│  ├─ lib/
-│  │  ├─ years.ts               f.Kr./e.Kr., levetid, overlapp
-│  │  ├─ polar.ts               år + tradisjon → (x, y)
-│  │  ├─ timeScale.ts           lineær og komprimert skala
-│  │  ├─ layout.ts              deterministisk spredning i sektor
-│  │  ├─ influence.ts           graf, idéslekt, omvendte lenker
-│  │  └─ similarity.ts          likhet mellom temaprofiler (quiz)
-│  ├─ components/               Radar, SweepBeam, Blip, TimeSlider, ThemeRadar, PhilosopherCard, ...
-│  ├─ features/                 radar, timeline, compare, network, quiz, about, list
-│  └─ hooks/
-├─ tests/e2e/                   Playwright
+│  ├─ lib/                      ren logikk med tester: years, polar, timeScale, layout, influence,
+│  │                            similarity, quotes, sound, telemetry …
+│  ├─ components/               ErrorBoundary, SweepBeam, ThemeRadar
+│  ├─ hooks/                    useDialogFocus (fokus i alle dialoger)
+│  └─ features/                 radar, timeline, galaxy, network, list, card, comparison, deepdive,
+│                               exphil, ethics, story, tours, quiz, factcheck, daily, about
+├─ tests/                       Vitest; komponenttester i jsdom (*.test.tsx)
 └─ firebase.json, .firebaserc
 ```
 
@@ -69,11 +70,12 @@ Ny maskin: installer med `winget install -e --id Git.Git`, `OpenJS.NodeJS.LTS`, 
 deretter `npm install -g firebase-tools`.
 
 ## Firebase
-- Prosjekt-id: **[fylles inn i prompt C]**
-- Kun Hosting. `firebase.json`: `public: dist`, SPA-rewrite til `/index.html`, lang cache på `assets/**`.
+- Prosjekt-id: **filosofradar** (`.firebaserc`), produksjon på https://filosofradar.web.app
+- Kun Hosting. `firebase.json`: `public: dist`, SPA-rewrite til `/index.html`, `no-cache` på HTML, lang cache på `assets/**`, og sikkerhetsheadere (CSP m.m.).
 - Forhåndsvisning: `firebase hosting:channel:deploy preview --expires 7d`
 - Produksjon: `firebase deploy --only hosting`
 
 ## Nettverk
 `scripts/wikidata.ts` kaller `https://query.wikidata.org/sparql` fra utviklermaskinen ved behov. Appen selv gjør
-ingen eksterne kall ved kjøring (unntatt eventuelt valgfri fase 10).
+ett eksternt kall ved kjøring: GoatCounter (`gc.zgo.at` for skriptet, `filosofradar.goatcounter.com` for tellingen),
+se B-011 og `docs/databehandlere.md`.
