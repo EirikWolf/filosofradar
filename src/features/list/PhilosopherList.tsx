@@ -44,9 +44,10 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
       <div className="bg-cosmos-card/80 border border-gold-dim/40 rounded-2xl p-5 shadow-2xl backdrop-blur-md flex flex-col gap-4">
         <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
           <div className="relative flex-1">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-star-dim">🔍</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-star-dim" aria-hidden="true">🔍</span>
             <input
               type="text"
+              aria-label="Søk etter filosof, idé, retning eller verdensdel"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Søk etter filosof, idé, retning eller verdensdel..."
@@ -55,11 +56,15 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
             {search && (
               <button
                 onClick={() => setSearch('')}
+                aria-label="Nullstill søk"
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-star-dim hover:text-white"
               >
                 Nullstill
               </button>
             )}
+            <div className="sr-only" aria-live="polite" aria-atomic="true">
+              {filtered.length === 1 ? '1 filosof funnet' : `${filtered.length} filosofer funnet`}
+            </div>
           </div>
           <div className="text-xs text-star-dim font-serif whitespace-nowrap self-center">
             Viser <span className="text-gold font-bold">{filtered.length}</span> av {philosophers.length} stjerner
@@ -151,7 +156,7 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
                           {p.name}
                         </h3>
                         {p.nameOriginal && (
-                          <span className="text-xs text-star-dim/70 font-serif">
+                          <span className="text-xs text-star-dim font-serif">
                             ({p.nameOriginal})
                           </span>
                         )}

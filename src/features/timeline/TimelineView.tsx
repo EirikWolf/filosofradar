@@ -194,7 +194,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
             </span>
           )}
         </p>
-        <span className="text-[11px] text-star-dim/70 hidden sm:inline">
+        <span className="text-[11px] text-star-dim hidden sm:inline">
           Dra eller rull sidelengs for å navigere
         </span>
       </div>

@@ -78,10 +78,27 @@ export const App: React.FC = () => {
     view === 'radar' || view === 'galaxy' || view === 'timeline' || view === 'network' || view === 'list';
   const isExperienceView = view === 'quiz' || view === 'ethics';
 
-  const selectObservatoryView = useCallback((v: ViewMode) => {
-    setView(v);
-    setLastObservatoryView(v);
+  const changeView = useCallback((nextView: ViewMode, pushHistory = true) => {
+    setView(nextView);
+    if (['radar', 'galaxy', 'timeline', 'network', 'list'].includes(nextView)) {
+      setLastObservatoryView(nextView);
+    }
+    const url = new URL(window.location.href);
+    if (nextView === 'radar') {
+      url.searchParams.delete('v');
+    } else {
+      url.searchParams.set('v', nextView);
+    }
+    if (pushHistory) {
+      window.history.pushState({}, '', url.toString());
+    } else {
+      window.history.replaceState({}, '', url.toString());
+    }
   }, []);
+
+  const selectObservatoryView = useCallback((v: ViewMode) => {
+    changeView(v, true);
+  }, [changeView]);
 
   // Guidet tur tilstand
   const [isTourModalOpen, setIsTourModalOpen] = useState<boolean>(false);
@@ -93,9 +110,9 @@ export const App: React.FC = () => {
     setActiveTourStopIndex(0);
     setIsTourModalOpen(false);
     if (view !== 'radar' && view !== 'galaxy') {
-      setView('radar');
+      changeView('radar');
     }
-  }, [view]);
+  }, [view, changeView]);
 
   const nextTourStop = useCallback(() => {
     if (!activeTour) return;
@@ -125,10 +142,33 @@ export const App: React.FC = () => {
     setIsSoundEnabled(next);
   }, []);
 
-  // Synkroniser med URL (?f=filosof-id)
+  // Synkroniser med URL (?v=visning & ?f=filosof-id) (UU-10)
   useEffect(() => {
     const handleUrlChange = () => {
       const params = new URLSearchParams(window.location.search);
+      const vParam = params.get('v') as ViewMode | null;
+      const validViews: ViewMode[] = [
+        'radar',
+        'galaxy',
+        'timeline',
+        'network',
+        'list',
+        'quiz',
+        'exphil',
+        'factcheck',
+        'about',
+        'ethics',
+      ];
+      if (vParam && validViews.includes(vParam)) {
+        setView(vParam);
+        if (['radar', 'galaxy', 'timeline', 'network', 'list'].includes(vParam)) {
+          setLastObservatoryView(vParam);
+        }
+      } else if (!vParam) {
+        setView('radar');
+        setLastObservatoryView('radar');
+      }
+
       const fParam = params.get('f');
       if (fParam && philosophers.some((p) => p.id === fParam)) {
         setActiveCardId(fParam);
@@ -156,6 +196,20 @@ export const App: React.FC = () => {
     window.history.pushState({}, '', url.toString());
   }, []);
 
+  // Hjem-knapp som nullstiller til Radaren fra hvilken som helst side
+  const handleGoHome = useCallback(() => {
+    changeView('radar', true);
+    setActiveCardId(null);
+    setComparingIds(null);
+    setIsStoryGalleryOpen(false);
+    setIsTourModalOpen(false);
+    const url = new URL(window.location.href);
+    url.searchParams.delete('v');
+    url.searchParams.delete('f');
+    window.history.pushState({}, '', url.toString());
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [changeView]);
+
   const activePhilosopher = activeCardId
     ? philosophers.find((p) => p.id === activeCardId) || null
     : null;
@@ -176,12 +230,12 @@ export const App: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Kosmisk lyd-knapp (kompakt ikon) */}
+            {/* Kosmisk lyd-knapp (kompakt ikon med garantert berøringsflate UU-07) */}
             <button
               onClick={toggleSound}
               aria-label={isSoundEnabled ? 'Kosmisk lyd på' : 'Kosmisk lyd av'}
               title={isSoundEnabled ? 'Kosmisk lyd på (klikk for å dempe)' : 'Skru på kosmiske lyder og synthesizer'}
-              className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm transition-all border shadow-md ${
+              className={`w-7 h-7 sm:w-8 sm:h-8 min-w-[28px] min-h-[28px] shrink-0 rounded-full flex items-center justify-center text-xs sm:text-sm transition-all border shadow-md ${
                 isSoundEnabled
                   ? 'bg-cyan-500/20 border-cyan-400 text-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.35)]'
                   : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
@@ -192,7 +246,7 @@ export const App: React.FC = () => {
 
             {/* Om-knapp */}
             <button
-              onClick={() => setView('about')}
+              onClick={() => changeView('about')}
               aria-label="Om observatoriet og kilder"
               title="Om observatoriet, metodikk og kilder"
               className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-sm ${
@@ -201,13 +255,13 @@ export const App: React.FC = () => {
                   : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
               }`}
             >
-              <span>ℹ️</span> Om
+              <span aria-hidden="true">ℹ️</span> Om
             </button>
 
             {/* Klasseromsmodus-knapp */}
             <button
               onClick={() => setIsClassroomMode((prev) => !prev)}
-              aria-label="Klasseromsmodus for storskjerm"
+              aria-label={isClassroomMode ? 'Klasserom: Stor skrift på' : 'Klasserom: Presentasjonsvisning'}
               title="Skru av/på stor skrift og presentasjonsvisning for projektor"
               className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-sm ${
                 isClassroomMode
@@ -215,14 +269,23 @@ export const App: React.FC = () => {
                   : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
               }`}
             >
-              <span>🎓</span> {isClassroomMode ? 'Stor' : 'Klasserom'}
+              <span aria-hidden="true">🎓</span> {isClassroomMode ? 'Stor' : 'Klasserom'}
             </button>
           </div>
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-serif tracking-wider text-star-white drop-shadow-[0_0_25px_rgba(103,232,249,0.45)]">
-          FILOSOFRADAREN
-        </h1>
+        {/* Tittel som fungerer som Hjem-knapp og nullstiller til Radaren */}
+        <button
+          type="button"
+          onClick={handleGoHome}
+          aria-label="Gå til forsiden av Filosofradaren"
+          title="Klikk for å gå til forsiden av Filosofradaren (radaren)"
+          className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl px-3 py-1 cursor-pointer transition-all"
+        >
+          <h1 className="text-4xl md:text-5xl font-serif tracking-wider text-star-white drop-shadow-[0_0_25px_rgba(103,232,249,0.45)] group-hover:text-cyan-200 group-hover:drop-shadow-[0_0_30px_rgba(103,232,249,0.7)] transition-all">
+            FILOSOFRADAREN
+          </h1>
+        </button>
         <p className="text-star-dim text-sm md:text-base mt-2 max-w-md mx-auto font-sans">
           Filosofiens historie som et levende stjernekart.
         </p>
@@ -244,7 +307,7 @@ export const App: React.FC = () => {
           </button>
 
           <button
-            onClick={() => setView('exphil')}
+            onClick={() => changeView('exphil')}
             className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-serif tracking-wider transition-all flex items-center gap-2 border ${
               view === 'exphil'
                 ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-[0_0_18px_rgba(251,191,36,0.6)] scale-[1.02]'
@@ -256,7 +319,7 @@ export const App: React.FC = () => {
           </button>
 
           <button
-            onClick={() => setView('quiz')}
+            onClick={() => changeView('quiz')}
             className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-serif tracking-wider transition-all flex items-center gap-2 ${
               isExperienceView
                 ? 'bg-gold text-cosmos font-bold shadow-[0_0_15px_rgba(246,200,95,0.6)] scale-[1.02]'
@@ -373,7 +436,7 @@ export const App: React.FC = () => {
               <span>📚</span> Pensumliste
             </button>
             <button
-              onClick={() => setView('ethics')}
+              onClick={() => changeView('ethics')}
               className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-amber-300 hover:text-white hover:bg-amber-400/10 border border-amber-400/30"
               title="Tren på etiske dilemmaer og normative teorier i Etikk-Laben"
             >
@@ -396,7 +459,7 @@ export const App: React.FC = () => {
             className="flex flex-wrap items-center justify-center gap-1.5 mt-3 p-1 bg-slate-900/70 border border-white/10 rounded-full shadow-lg animate-fadeIn text-xs"
           >
             <button
-              onClick={() => setView('quiz')}
+              onClick={() => changeView('quiz')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'quiz'
                   ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
@@ -406,7 +469,7 @@ export const App: React.FC = () => {
               <span>🎭</span> Personlighetsquiz
             </button>
             <button
-              onClick={() => setView('ethics')}
+              onClick={() => changeView('ethics')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'ethics'
                   ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
@@ -447,7 +510,7 @@ export const App: React.FC = () => {
             philosophers={philosophers}
             onOpenCard={openCard}
             onNavigateToRadar={(id) => {
-              setView('radar');
+              changeView('radar');
               openCard(id);
             }}
           />
@@ -462,8 +525,8 @@ export const App: React.FC = () => {
               philosophers={philosophers}
               onOpenCard={openCard}
               onStartCompare={(id) => setComparingIds([id])}
-              onNavigateToTimeline={() => setView('timeline')}
-              onNavigateToList={() => setView('list')}
+              onNavigateToTimeline={() => changeView('timeline')}
+              onNavigateToList={() => changeView('list')}
               focusPhilosopherId={currentTourStop?.philosopherId}
             />
           ) : view === 'galaxy' ? (
@@ -471,7 +534,7 @@ export const App: React.FC = () => {
               philosophers={philosophers}
               onOpenCard={openCard}
               onNavigateToRadar={(id) => {
-                setView('radar');
+                changeView('radar');
                 if (id) openCard(id);
               }}
               focusPhilosopherId={currentTourStop?.philosopherId}
@@ -485,7 +548,7 @@ export const App: React.FC = () => {
             <NetworkView
               philosophers={philosophers}
               onOpenCard={openCard}
-              onNavigateToRadar={() => setView('radar')}
+              onNavigateToRadar={() => changeView('radar')}
             />
           ) : view === 'exphil' ? (
             <ExphilHub
@@ -493,7 +556,7 @@ export const App: React.FC = () => {
               onOpenCard={openCard}
               onComparePhilosophers={(ids) => setComparingIds(ids)}
               onNavigateToRadar={(focusId) => {
-                setView('radar');
+                changeView('radar');
                 if (focusId) {
                   openCard(focusId);
                 }
@@ -506,7 +569,7 @@ export const App: React.FC = () => {
               philosophers={philosophers}
               onOpenCard={openCard}
               onNavigateToRadar={(highlightId) => {
-                setView('radar');
+                changeView('radar');
                 if (highlightId) {
                   openCard(highlightId);
                 }
@@ -516,7 +579,7 @@ export const App: React.FC = () => {
             <EthicsLabView
               philosophers={philosophers}
               onOpenPhilosopherCard={openCard}
-              onNavigateToExphilHub={() => setView('exphil')}
+              onNavigateToExphilHub={() => changeView('exphil')}
             />
           ) : view === 'about' || view === 'factcheck' ? (
             <AboutView
@@ -546,11 +609,11 @@ export const App: React.FC = () => {
           }}
           onViewTimeline={() => {
             closeCard();
-            setView('timeline');
+            changeView('timeline');
           }}
           onNavigateToExphilHub={() => {
             closeCard();
-            setView('exphil');
+            changeView('exphil');
           }}
         />
       )}
@@ -626,65 +689,65 @@ export const App: React.FC = () => {
 
       {/* Footer med status og snarveier */}
       <footer className="w-full max-w-2xl text-center py-6 text-xs text-star-dim border-t border-white/10 flex flex-col items-center gap-2">
-        <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-serif">
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs font-serif">
           <button
-            onClick={() => setView('exphil')}
-            className="hover:text-gold transition-colors underline underline-offset-4 text-amber-300 font-bold"
+            onClick={() => changeView('exphil')}
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4 text-amber-300 font-bold"
           >
             🎓 Ex.phil Studie-hub
           </button>
-          <span>·</span>
+          <span aria-hidden="true">·</span>
           <button
-            onClick={() => setView('ethics')}
-            className="hover:text-gold transition-colors underline underline-offset-4 text-cyan-300 font-bold"
+            onClick={() => changeView('ethics')}
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4 text-cyan-300 font-bold"
           >
             ⚖️ Interaktiv Etikk-Lab
           </button>
-          <span>·</span>
+          <span aria-hidden="true">·</span>
           <button
             onClick={() => setIsStoryGalleryOpen(true)}
-            className="hover:text-gold transition-colors underline underline-offset-4 text-gold font-bold"
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4 text-gold font-bold"
           >
             📖 32 Historier
           </button>
-          <span>·</span>
+          <span aria-hidden="true">·</span>
           <button
             onClick={() => setIsTourModalOpen(true)}
-            className="hover:text-gold transition-colors underline underline-offset-4"
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4"
           >
             🧭 Guidede turer
           </button>
-          <span>·</span>
+          <span aria-hidden="true">·</span>
           <button
-            onClick={() => setView('factcheck')}
-            className="hover:text-gold transition-colors underline underline-offset-4"
+            onClick={() => changeView('factcheck')}
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4"
           >
             🛡️ Faktasjekk & Kvalitet
           </button>
-          <span>·</span>
+          <span aria-hidden="true">·</span>
           <button
-            onClick={() => setView('about')}
-            className="hover:text-gold transition-colors underline underline-offset-4"
+            onClick={() => changeView('about')}
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4"
           >
             ℹ️ Om Observatoriet & Metodikk
           </button>
-          <span>·</span>
+          <span aria-hidden="true">·</span>
           <button
-            onClick={() => setView('quiz')}
-            className="hover:text-gold transition-colors underline underline-offset-4"
+            onClick={() => changeView('quiz')}
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4"
           >
             🎭 Hvilken filosof ligner du på?
           </button>
-          <span>·</span>
+          <span aria-hidden="true">·</span>
           <a
             href="mailto:selvgaaende+filosofradar@gmail.com?subject=Henvendelse%20fra%20Filosofradaren"
-            className="hover:text-gold transition-colors underline underline-offset-4"
+            className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4"
             title="Send e-post til Filosofradaren"
           >
             ✉️ Kontakt (Molde)
           </a>
         </div>
-        <p className="mt-1 text-[11px] text-star-dim/70">
+        <p className="mt-1 text-[11px] text-star-dim">
           Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig
         </p>
       </footer>

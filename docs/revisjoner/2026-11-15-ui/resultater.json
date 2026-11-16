@@ -1,0 +1,2036 @@
+{
+  "axe": {
+    "radar-1280": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".mt-1",
+              "html": "<p class=\"mt-1 text-[11px] text-star-dim/70\">Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig</p>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #697487, background color: #040714, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "tags": [],
+          "n": 1,
+          "nodes": [
+            {
+              "target": "h3",
+              "html": "<h3 class=\"text-xl sm:text-2xl font-serif font-bold text-white tracking-wide\">Zhuangzi</h3>",
+              "summary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "wcag21a",
+            "wcag253"
+          ],
+          "n": 2,
+          "nodes": [
+            {
+              "target": "button[aria-label=\"Om observatoriet og kilder\"]",
+              "html": "<button aria-label=\"Om observatoriet og kilder\" title=\"Om observatoriet, metodikk og kilder\" class=\"px-3 py-1 rounded-full text-xs font-serif transition-all bor",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "button[aria-label=\"Klasseromsmodus for storskjerm\"]",
+              "html": "<button aria-label=\"Klasseromsmodus for storskjerm\" title=\"Skru av/på stor skrift og presentasjonsvisning for projektor\" class=\"px-3 py-1 rounded-full text-xs f",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "tags": [],
+          "n": 2,
+          "nodes": [
+            {
+              "target": ".mb-2 > .inline-flex.uppercase.tracking-widest",
+              "html": "<div class=\"inline-flex items-center gap-1.5 text-xs font-serif uppercase tracking-widest text-gold font-bold\"><span class=\"w-2 h-2 rounded-full bg-gold animate",
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            },
+            {
+              "target": ".sm\\:flex-row > .flex-1",
+              "html": "<div class=\"flex-1\">",
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            }
+          ]
+        },
+        {
+          "id": "select-name",
+          "impact": "critical",
+          "tags": [
+            "wcag2a",
+            "wcag412"
+          ],
+          "n": 2,
+          "nodes": [
+            {
+              "target": ".overflow-x-auto > select",
+              "html": "<select class=\"px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-none font-serif text-xs\">",
+              "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, re"
+            },
+            {
+              "target": ".gap-1\\.5:nth-child(3) > select",
+              "html": "<select class=\"px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-none font-serif text-xs\">",
+              "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, re"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "n": 24
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "n": 1
+        }
+      ]
+    },
+    "tabell-1280": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "n": 81,
+          "nodes": [
+            {
+              "target": "article:nth-child(1) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70.font-serif",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Achille Mbembe)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": "article:nth-child(2) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70.font-serif",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(أبو نصر محمد الفارابي)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": "article:nth-child(3) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70.font-serif",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(أبو حامد الغزالي)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": "article:nth-child(4) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70.font-serif",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Angela Yvonne Davis)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": "article:nth-child(5) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70.font-serif",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Gertrude Elizabeth Margaret Anscombe)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": "article:nth-child(6) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70.font-serif",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Anton Wilhelm Amo)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "tags": [],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".text-xl",
+              "html": "<h3 class=\"text-xl sm:text-2xl font-serif font-bold text-white tracking-wide\">Zhuangzi</h3>",
+              "summary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "wcag21a",
+            "wcag253"
+          ],
+          "n": 82,
+          "nodes": [
+            {
+              "target": "button[aria-label=\"Om observatoriet og kilder\"]",
+              "html": "<button aria-label=\"Om observatoriet og kilder\" title=\"Om observatoriet, metodikk og kilder\" class=\"px-3 py-1 rounded-full text-xs font-serif transition-all bor",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "button[aria-label=\"Klasseromsmodus for storskjerm\"]",
+              "html": "<button aria-label=\"Klasseromsmodus for storskjerm\" title=\"Skru av/på stor skrift og presentasjonsvisning for projektor\" class=\"px-3 py-1 rounded-full text-xs f",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "article:nth-child(1) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "article:nth-child(2) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "article:nth-child(3) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "article:nth-child(4) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "tags": [],
+          "n": 2,
+          "nodes": [
+            {
+              "target": ".mb-2 > .inline-flex.uppercase.tracking-widest",
+              "html": "<div class=\"inline-flex items-center gap-1.5 text-xs font-serif uppercase tracking-widest text-gold font-bold\"><span class=\"w-2 h-2 rounded-full bg-gold animate",
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            },
+            {
+              "target": ".gap-4.mt-2.items-start > .flex-1",
+              "html": "<div class=\"flex-1\">",
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "n": 8
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "n": 1
+        }
+      ]
+    },
+    "filosofkort-1280": {
+      "violations": [
+        {
+          "id": "aria-allowed-role",
+          "impact": "minor",
+          "tags": [],
+          "n": 1,
+          "nodes": [
+            {
+              "target": "aside",
+              "html": "<aside role=\"dialog\" aria-modal=\"true\" aria-label=\"Filosofkort for Achille Mbembe\" class=\"w-full max-w-lg md:max-w-xl h-full bg-cosmos-card border-l border-gold",
+              "summary": "Fix any of the following:\n  ARIA role dialog is not allowed for given element"
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "n": 81,
+          "nodes": [
+            {
+              "target": ".border-gold\\/60 > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Achille Mbembe)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(2) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(أبو نصر محمد الفارابي)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(3) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(أبو حامد الغزالي)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(4) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Angela Yvonne Davis)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(5) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Gertrude Elizabeth Margaret Anscombe)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(6) > .cursor-pointer.select-none.sm\\:flex-row > .items-start.gap-3.sm\\:items-center > div > .items-baseline.flex-wrap.gap-2 > .text-star-dim\\/70",
+              "html": "<span class=\"text-xs text-star-dim/70 font-serif\">(Anton Wilhelm Amo)</span>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #6a768a, background color: #070d1f, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "tags": [],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".sm\\:text-2xl",
+              "html": "<h3 class=\"text-xl sm:text-2xl font-serif font-bold text-white tracking-wide\">Zhuangzi</h3>",
+              "summary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "wcag21a",
+            "wcag253"
+          ],
+          "n": 81,
+          "nodes": [
+            {
+              "target": "button[aria-label=\"Om observatoriet og kilder\"]",
+              "html": "<button aria-label=\"Om observatoriet og kilder\" title=\"Om observatoriet, metodikk og kilder\" class=\"px-3 py-1 rounded-full text-xs font-serif transition-all bor",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "button[aria-label=\"Klasseromsmodus for storskjerm\"]",
+              "html": "<button aria-label=\"Klasseromsmodus for storskjerm\" title=\"Skru av/på stor skrift og presentasjonsvisning for projektor\" class=\"px-3 py-1 rounded-full text-xs f",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(2) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(3) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(4) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": ".hover\\:bg-cosmos-card\\/95:nth-child(5) > .cursor-pointer.select-none.sm\\:flex-row > .self-start.sm\\:self-center.items-center > .px-2.hover\\:text-white[aria-label=\"Åpne detaljer\"]",
+              "html": "<button class=\"text-xs text-star-dim hover:text-white px-2 py-1\" aria-label=\"Åpne detaljer\">▼ Mer</button>",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        },
+        {
+          "id": "landmark-no-duplicate-contentinfo",
+          "impact": "moderate",
+          "tags": [],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".border-l-4 > footer",
+              "html": "<footer class=\"text-[11px] text-star-dim font-sans mt-2\">— Sort fornuft (2013) (https://snl.no/Achille_Mbembe)</footer>",
+              "summary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+            }
+          ]
+        },
+        {
+          "id": "landmark-unique",
+          "impact": "moderate",
+          "tags": [],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".border-l-4 > footer",
+              "html": "<footer class=\"text-[11px] text-star-dim font-sans mt-2\">— Sort fornuft (2013) (https://snl.no/Achille_Mbembe)</footer>",
+              "summary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+            }
+          ]
+        },
+        {
+          "id": "region",
+          "impact": "moderate",
+          "tags": [],
+          "n": 2,
+          "nodes": [
+            {
+              "target": ".mb-2.justify-between.items-center > .inline-flex.tracking-widest.uppercase",
+              "html": "<div class=\"inline-flex items-center gap-1.5 text-xs font-serif uppercase tracking-widest text-gold font-bold\"><span class=\"w-2 h-2 rounded-full bg-gold animate",
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            },
+            {
+              "target": ".mt-2.gap-4.sm\\:flex-row > .flex-1",
+              "html": "<div class=\"flex-1\">",
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "n": 17
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "n": 3
+        }
+      ]
+    },
+    "exphil-dueller-1280": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".mt-1",
+              "html": "<p class=\"mt-1 text-[11px] text-star-dim/70\">Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig</p>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #697487, background color: #040714, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "wcag21a",
+            "wcag253"
+          ],
+          "n": 2,
+          "nodes": [
+            {
+              "target": "button[aria-label=\"Om observatoriet og kilder\"]",
+              "html": "<button aria-label=\"Om observatoriet og kilder\" title=\"Om observatoriet, metodikk og kilder\" class=\"px-3 py-1 rounded-full text-xs font-serif transition-all bor",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "button[aria-label=\"Klasseromsmodus for storskjerm\"]",
+              "html": "<button aria-label=\"Klasseromsmodus for storskjerm\" title=\"Skru av/på stor skrift og presentasjonsvisning for projektor\" class=\"px-3 py-1 rounded-full text-xs f",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "n": 8
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "n": 1
+        }
+      ]
+    },
+    "exphil-pensum-1280": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".text-\\[11px\\]",
+              "html": "<p class=\"mt-1 text-[11px] text-star-dim/70\">Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig</p>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #697487, background color: #040714, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "heading-order",
+          "impact": "moderate",
+          "tags": [],
+          "n": 1,
+          "nodes": [
+            {
+              "target": "h3",
+              "html": "<h3 class=\"text-base font-serif font-bold text-star-white\">Kjernepensum: 26 sentrale tenkere</h3>",
+              "summary": "Fix any of the following:\n  Heading order invalid"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "wcag21a",
+            "wcag253"
+          ],
+          "n": 2,
+          "nodes": [
+            {
+              "target": "button[aria-label=\"Om observatoriet og kilder\"]",
+              "html": "<button aria-label=\"Om observatoriet og kilder\" title=\"Om observatoriet, metodikk og kilder\" class=\"px-3 py-1 rounded-full text-xs font-serif transition-all bor",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "button[aria-label=\"Klasseromsmodus for storskjerm\"]",
+              "html": "<button aria-label=\"Klasseromsmodus for storskjerm\" title=\"Skru av/på stor skrift og presentasjonsvisning for projektor\" class=\"px-3 py-1 rounded-full text-xs f",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "label-content-name-mismatch",
+          "n": 1
+        }
+      ]
+    },
+    "quiz-1280": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".mt-1",
+              "html": "<p class=\"mt-1 text-[11px] text-star-dim/70\">Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig</p>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #697487, background color: #040714, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "wcag21a",
+            "wcag253"
+          ],
+          "n": 2,
+          "nodes": [
+            {
+              "target": "button[aria-label=\"Om observatoriet og kilder\"]",
+              "html": "<button aria-label=\"Om observatoriet og kilder\" title=\"Om observatoriet, metodikk og kilder\" class=\"px-3 py-1 rounded-full text-xs font-serif transition-all bor",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "button[aria-label=\"Klasseromsmodus for storskjerm\"]",
+              "html": "<button aria-label=\"Klasseromsmodus for storskjerm\" title=\"Skru av/på stor skrift og presentasjonsvisning for projektor\" class=\"px-3 py-1 rounded-full text-xs f",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "n": 10
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "n": 1
+        }
+      ]
+    },
+    "exphil-360": {
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "wcag2aa",
+            "wcag143"
+          ],
+          "n": 1,
+          "nodes": [
+            {
+              "target": ".mt-1",
+              "html": "<p class=\"mt-1 text-[11px] text-star-dim/70\">Filosofradaren · Et åpent observatorium over filosofiens historie · 100% åpen og personvernvennlig</p>",
+              "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.25 (foreground color: #697487, background color: #040714, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "wcag21a",
+            "wcag253"
+          ],
+          "n": 2,
+          "nodes": [
+            {
+              "target": "button[aria-label=\"Om observatoriet og kilder\"]",
+              "html": "<button aria-label=\"Om observatoriet og kilder\" title=\"Om observatoriet, metodikk og kilder\" class=\"px-3 py-1 rounded-full text-xs font-serif transition-all bor",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": "button[aria-label=\"Klasseromsmodus for storskjerm\"]",
+              "html": "<button aria-label=\"Klasseromsmodus for storskjerm\" title=\"Skru av/på stor skrift og presentasjonsvisning for projektor\" class=\"px-3 py-1 rounded-full text-xs f",
+              "summary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "n": 9
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "n": 1
+        }
+      ]
+    }
+  },
+  "keyboard": {
+    "tabSequenceRadar": [
+      {
+        "tag": "BUTTON",
+        "name": "Kosmisk lyd av",
+        "inDialog": false,
+        "outline": "auto 2px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          716,
+          32,
+          32,
+          32
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "Om observatoriet og kilder",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          756,
+          35,
+          65,
+          26
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "Klasseromsmodus for storskjerm",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          829,
+          35,
+          101,
+          26
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "🔭 Observatoriet",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          332,
+          184,
+          188,
+          41
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "🎓 Ex.phil & Studie",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          526,
+          183,
+          190,
+          42
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "🎭 Opplevelser & Quiz",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          724,
+          184,
+          208,
+          40
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "✦ Radaren",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          339,
+          249,
+          104,
+          30
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "🌌 3D-Galaksen",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          449,
+          250,
+          127,
+          28
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "⏳ Tidslinjen",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          581,
+          250,
+          111,
+          28
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "🕸️ Idénettet",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          698,
+          250,
+          105,
+          28
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "📋 Tabell (80)",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          809,
+          250,
+          117,
+          28
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "✕ Minimer",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          904,
+          321,
+          75,
+          20
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "Les filosofkort ↗",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          727,
+          373,
+          118,
+          30
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "Se på radaren ✦",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          853,
+          374,
+          127,
+          28
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "🌀 Aktiver Tidsmaskin",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          202,
+          493,
+          173,
+          34
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "Komprimert",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          865,
+          498,
+          102,
+          24
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "Lineær",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          967,
+          498,
+          61,
+          24
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "?",
+        "inDialog": false,
+        "outline": "auto 1px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          1040,
+          498,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "INPUT",
+        "name": "Søk på filosof eller idé...",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          202,
+          577,
+          275,
+          30
+        ]
+      },
+      {
+        "tag": "SELECT",
+        "name": "Alle tradisjonerKinesiskJapansk og koreanskIndiskG",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          554,
+          577,
+          153,
+          30
+        ]
+      },
+      {
+        "tag": "SELECT",
+        "name": "Alle temaerEtikkMetafysikkErkjennelseSamfunn og po",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          762,
+          577,
+          156,
+          30
+        ]
+      },
+      {
+        "tag": "BUTTON",
+        "name": "🎓 Ex.phil-pensum",
+        "inDialog": false,
+        "outline": "auto 3px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          930,
+          577,
+          133,
+          30
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Ptahhotep (ca. 2400 f.Kr. – ca. 2350 f.Kr.)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          605,
+          388,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Augustin (354 – 430)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          579,
+          317,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Zera Yacob (1599 – 1692)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          551,
+          241,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Anton Wilhelm Amo (ca. 1703 – ca. 1759)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          544,
+          220,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Frantz Fanon (1925 – 1961)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          528,
+          176,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Achille Mbembe (f. 1957)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          511,
+          180,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Rabia al-Adawiyya (ca. 714 – 801)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          619,
+          574,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Al-Farabi (ca. 872 – 950)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          631,
+          579,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Ibn Sina (Avicenna) (980 – 1037)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          609,
+          593,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Al-Ghazali (1058 – 1111)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          634,
+          592,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Ibn Rushd (1126 – 1198)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          600,
+          602,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Moses Maimonides (1138 – 1204)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          653,
+          577,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Rumi (1207 – 1273)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          647,
+          588,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Sor Juana Inés de la Cruz (1648 – 1695)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          436,
+          325,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Ralph Waldo Emerson (1803 – 1882)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          407,
+          309,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Henry David Thoreau (1817 – 1862)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          401,
+          323,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Charles Sanders Peirce (1839 – 1914)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          405,
+          290,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "William James (1842 – 1910)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          394,
+          333,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "John Dewey (1859 – 1952)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          406,
+          275,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Angela Davis (f. 1944)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          377,
+          311,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Judith Butler (f. 1956)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          385,
+          276,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Hildegard von Bingen (1098 – 1179)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          516,
+          556,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Thomas Aquinas (1225 – 1274)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          524,
+          566,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Michel de Montaigne (1533 – 1592)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          499,
+          577,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Thomas Hobbes (1588 – 1679)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          503,
+          590,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "René Descartes (1596 – 1650)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          481,
+          582,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "John Locke (1632 – 1704)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          508,
+          601,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Baruch Spinoza (1632 – 1677)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          467,
+          583,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Gottfried Wilhelm Leibniz (1646 – 1716)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          454,
+          583,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "David Hume (1711 – 1776)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          461,
+          600,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Jean-Jacques Rousseau (1712 – 1778)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          499,
+          615,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Immanuel Kant (1724 – 1804)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          449,
+          596,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Mary Wollstonecraft (1759 – 1797)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          512,
+          625,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "G. W. F. Hegel (1770 – 1831)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          499,
+          628,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Arthur Schopenhauer (1788 – 1860)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          484,
+          628,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Karl Marx (1818 – 1883)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          451,
+          617,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Friedrich Nietzsche (1844 – 1900)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          436,
+          614,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Bertrand Russell (1872 – 1970)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          442,
+          628,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Ludwig Wittgenstein (1889 – 1951)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          477,
+          642,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Edith Stein (1891 – 1942)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          423,
+          620,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Karl Popper (1902 – 1994)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          488,
+          653,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Jean-Paul Sartre (1905 – 1980)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          412,
+          615,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Hannah Arendt (1906 – 1975)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          449,
+          639,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Simone de Beauvoir (1908 – 1986)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          463,
+          645,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "G. E. M. Anscombe (1919 – 2001)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          428,
+          632,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Michel Foucault (1926 – 1984)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          475,
+          655,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Pytagoras (ca. 570 f.Kr. – ca. 495 f.Kr.)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          651,
+          477,
+          24,
+          24
+        ]
+      },
+      {
+        "tag": "g",
+        "name": "Heraklit (ca. 535 f.Kr. – ca. 475 f.Kr.)",
+        "inDialog": false,
+        "outline": "solid 2px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          654,
+          465,
+          24,
+          24
+        ]
+      }
+    ],
+    "firstStar": {
+      "tabPresses": 23,
+      "label": "Ptahhotep (ca. 2400 f.Kr. – ca. 2350 f.Kr.)"
+    },
+    "starFocusStyle": {
+      "tag": "g",
+      "name": "Ptahhotep (ca. 2400 f.Kr. – ca. 2350 f.Kr.)",
+      "inDialog": false,
+      "outline": "solid 2px",
+      "boxShadow": "none",
+      "visibleIndicator": true,
+      "rect": [
+        605,
+        388,
+        24,
+        24
+      ]
+    },
+    "starOrder": [
+      "Ptahhotep (ca. 2400 f.Kr. – ca. 2350 f.Kr.)",
+      "Augustin (354 – 430)",
+      "Zera Yacob (1599 – 1692)",
+      "Anton Wilhelm Amo (ca. 1703 – ca. 1759)",
+      "Frantz Fanon (1925 – 1961)",
+      "Achille Mbembe (f. 1957)",
+      "Rabia al-Adawiyya (ca. 714 – 801)",
+      "Al-Farabi (ca. 872 – 950)",
+      "Ibn Sina (Avicenna) (980 – 1037)"
+    ],
+    "dialog": {
+      "opener": "📖 Åpne filosofkort",
+      "focusAfterOpen": {
+        "tag": "BUTTON",
+        "name": "📖 Åpne filosofkort",
+        "inDialog": false,
+        "outline": "auto 1px",
+        "boxShadow": "set",
+        "visibleIndicator": true,
+        "rect": [
+          918,
+          759,
+          145,
+          24
+        ]
+      },
+      "focusLeftDialog": 60,
+      "firstOutside": [
+        {
+          "press": 1,
+          "tag": "A",
+          "name": "Store norske leksikon ↗",
+          "inDialog": false,
+          "outline": "auto 1px",
+          "boxShadow": "none",
+          "visibleIndicator": true,
+          "rect": [
+            270,
+            392,
+            124,
+            16
+          ]
+        },
+        {
+          "press": 2,
+          "tag": "BUTTON",
+          "name": "Åpne detaljer",
+          "inDialog": false,
+          "outline": "auto 1px",
+          "boxShadow": "none",
+          "visibleIndicator": true,
+          "rect": [
+            1013,
+            465,
+            51,
+            24
+          ]
+        },
+        {
+          "press": 3,
+          "tag": "BUTTON",
+          "name": "Åpne detaljer",
+          "inDialog": false,
+          "outline": "auto 1px",
+          "boxShadow": "none",
+          "visibleIndicator": true,
+          "rect": [
+            1013,
+            557,
+            51,
+            24
+          ]
+        },
+        {
+          "press": 4,
+          "tag": "BUTTON",
+          "name": "Åpne detaljer",
+          "inDialog": false,
+          "outline": "auto 1px",
+          "boxShadow": "none",
+          "visibleIndicator": true,
+          "rect": [
+            1013,
+            649,
+            51,
+            24
+          ]
+        }
+      ],
+      "dialogOpenAfterEsc": 0,
+      "focusAfterClose": {
+        "tag": "BUTTON",
+        "name": "Åpne detaljer",
+        "inDialog": false,
+        "outline": "auto 1px",
+        "boxShadow": "none",
+        "visibleIndicator": true,
+        "rect": [
+          1013,
+          756,
+          51,
+          24
+        ]
+      }
+    }
+  },
+  "reflow": {
+    "320": [
+      {
+        "label": "radar",
+        "scrollWidth": 305,
+        "clientWidth": 320,
+        "hScroll": false,
+        "overflowing": [
+          "HEADER.text-center.mt-2.flex",
+          "DIV.flex.items-center.justify-between",
+          "DIV.flex.items-center.gap-2",
+          "BUTTON.px-3.py-1.rounded-full",
+          "H1.text-4xl.md:text-5xl.font-serif"
+        ]
+      },
+      {
+        "label": "filosofkort",
+        "scrollWidth": 305,
+        "clientWidth": 320,
+        "hScroll": false,
+        "overflowing": [
+          "HEADER.text-center.mt-2.flex",
+          "DIV.flex.items-center.justify-between",
+          "DIV.flex.items-center.gap-2",
+          "BUTTON.px-3.py-1.rounded-full",
+          "H1.text-4xl.md:text-5xl.font-serif"
+        ]
+      },
+      {
+        "label": "exphil",
+        "scrollWidth": 305,
+        "clientWidth": 320,
+        "hScroll": false,
+        "overflowing": [
+          "HEADER.text-center.mt-2.flex",
+          "DIV.flex.items-center.justify-between",
+          "H1.text-4xl.md:text-5xl.font-serif",
+          "NAV.flex.flex-wrap.items-center",
+          "NAV.flex.flex-wrap.items-center"
+        ]
+      }
+    ],
+    "360": [
+      {
+        "label": "radar",
+        "scrollWidth": 345,
+        "clientWidth": 360,
+        "hScroll": false,
+        "overflowing": []
+      },
+      {
+        "label": "filosofkort",
+        "scrollWidth": 345,
+        "clientWidth": 360,
+        "hScroll": false,
+        "overflowing": [
+          "DIV.flex.items-center.gap-2",
+          "BUTTON.w-8.h-8.rounded-full",
+          "BUTTON.w-8.h-8.rounded-full"
+        ]
+      },
+      {
+        "label": "exphil",
+        "scrollWidth": 345,
+        "clientWidth": 360,
+        "hScroll": false,
+        "overflowing": []
+      }
+    ],
+    "768": [
+      {
+        "label": "radar",
+        "scrollWidth": 753,
+        "clientWidth": 768,
+        "hScroll": false,
+        "overflowing": []
+      },
+      {
+        "label": "filosofkort",
+        "scrollWidth": 753,
+        "clientWidth": 768,
+        "hScroll": false,
+        "overflowing": []
+      },
+      {
+        "label": "exphil",
+        "scrollWidth": 753,
+        "clientWidth": 768,
+        "hScroll": false,
+        "overflowing": []
+      }
+    ]
+  },
+  "targets": {
+    "320": {
+      "total": 114,
+      "under24": 89,
+      "examples": [
+        {
+          "w": 20,
+          "h": 28,
+          "name": "Kosmisk lyd av",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 135,
+          "h": 16,
+          "name": "🎓 Ex.phil Studie-hub",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 145,
+          "h": 16,
+          "name": "⚖️ Interaktiv Etikk-Lab",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 95,
+          "h": 16,
+          "name": "📖 32 Historier",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 93,
+          "h": 16,
+          "name": "🧭 Guidede turer",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 132,
+          "h": 16,
+          "name": "🛡️ Faktasjekk & Kvalitet",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 179,
+          "h": 16,
+          "name": "ℹ️ Om Observatoriet & Metodikk",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 169,
+          "h": 16,
+          "name": "🎭 Hvilken filosof ligner du p",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 108,
+          "h": 16,
+          "name": "✉️ Kontakt (Molde)",
+          "tag": "A"
+        }
+      ],
+      "starsUnder24": 80
+    },
+    "360": {
+      "total": 114,
+      "under24": 89,
+      "examples": [
+        {
+          "w": 20,
+          "h": 28,
+          "name": "Kosmisk lyd av",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 135,
+          "h": 16,
+          "name": "🎓 Ex.phil Studie-hub",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 145,
+          "h": 16,
+          "name": "⚖️ Interaktiv Etikk-Lab",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 95,
+          "h": 16,
+          "name": "📖 32 Historier",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 93,
+          "h": 16,
+          "name": "🧭 Guidede turer",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 132,
+          "h": 16,
+          "name": "🛡️ Faktasjekk & Kvalitet",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 179,
+          "h": 16,
+          "name": "ℹ️ Om Observatoriet & Metodikk",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 169,
+          "h": 16,
+          "name": "🎭 Hvilken filosof ligner du p",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 108,
+          "h": 16,
+          "name": "✉️ Kontakt (Molde)",
+          "tag": "A"
+        }
+      ],
+      "starsUnder24": 80
+    },
+    "768": {
+      "total": 114,
+      "under24": 9,
+      "examples": [
+        {
+          "w": 75,
+          "h": 20,
+          "name": "✕ Minimer",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 135,
+          "h": 16,
+          "name": "🎓 Ex.phil Studie-hub",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 145,
+          "h": 16,
+          "name": "⚖️ Interaktiv Etikk-Lab",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 95,
+          "h": 16,
+          "name": "📖 32 Historier",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 93,
+          "h": 16,
+          "name": "🧭 Guidede turer",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 132,
+          "h": 16,
+          "name": "🛡️ Faktasjekk & Kvalitet",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 179,
+          "h": 16,
+          "name": "ℹ️ Om Observatoriet & Metodikk",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 169,
+          "h": 16,
+          "name": "🎭 Hvilken filosof ligner du p",
+          "tag": "BUTTON"
+        },
+        {
+          "w": 108,
+          "h": 16,
+          "name": "✉️ Kontakt (Molde)",
+          "tag": "A"
+        }
+      ],
+      "starsUnder24": 0
+    }
+  },
+  "misc": {
+    "htmlLang": "no",
+    "title": "Filosofradaren – Filosofiens historie som et levende stjernekart",
+    "headings": [
+      "H1:FILOSOFRADAREN",
+      "H3:Zhuangzi"
+    ],
+    "landmarks": [
+      "HEADER",
+      "NAV[Hovedrom]",
+      "NAV[Observatorie-visninger]",
+      "MAIN",
+      "FOOTER"
+    ],
+    "exphilTabButtons": 2,
+    "quizButtons": [
+      "✕Helt uenig",
+      "–Litt uenig",
+      "•Nøytral",
+      "+Litt enig",
+      "✓Helt enig",
+      "← Forrige spørsmål"
+    ],
+    "urlAfterExphil": "http://localhost:4317/",
+    "urlAfterBackFromExphil": "http://localhost:4317/?f=achille-mbembe",
+    "cardReopenedAfterBack": 1,
+    "reducedMotion": {
+      "runningAnimations": 2,
+      "sample": [
+        "ping:w-2 h-2 rounded-full bg-cyan-glow animate-ping",
+        "pulse:w-2 h-2 rounded-full bg-gold animate-pulse"
+      ]
+    },
+    "reducedMotionRaf": {
+      "transformsChanged": false
+    }
+  }
+}

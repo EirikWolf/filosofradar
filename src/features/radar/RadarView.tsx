@@ -43,6 +43,22 @@ export const RadarView: React.FC<RadarViewProps> = ({
   const [onlyExphil, setOnlyExphil] = useState<boolean>(false);
   const [showScaleHelp, setShowScaleHelp] = useState<boolean>(false);
 
+  // Autofullfør / Dropdown for søk
+  const [isSearchFocused, setIsSearchFocused] = useState<boolean>(false);
+  const [searchSelectedIndex, setSearchSelectedIndex] = useState<number>(-1);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // Lukk søkedropdown ved klikk utenfor
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setIsSearchFocused(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   // Sveipestråle-tilstander (pauset som standard etter brukerønske)
   const [sweepSpeed, setSweepSpeed] = useState<number>(8);
   const [isSweepPaused, setIsSweepPaused] = useState<boolean>(true);
@@ -84,6 +100,40 @@ export const RadarView: React.FC<RadarViewProps> = ({
     }
     return map;
   }, [radarPoints]);
+
+  // Sortert stjerneliste etter fødselsår for kronologisk tastaturnavigasjon (UU-04)
+  const sortedRadarPoints = useMemo(() => {
+    return [...radarPoints].sort((a, b) => a.birthYear - b.birthYear);
+  }, [radarPoints]);
+
+  // Søkematching for hurtig-dropdown
+  const searchMatches = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return [];
+
+    return philosophers
+      .filter((p) => {
+        const matchesName = p.name.toLowerCase().includes(query);
+        const matchesOrig = p.nameOriginal?.toLowerCase().includes(query);
+        const matchesSchool = p.schools.some((s) => s.toLowerCase().includes(query));
+        const matchesIdea = p.keyIdeas.some(
+          (k) => k.title.toLowerCase().includes(query) || k.text.toLowerCase().includes(query)
+        );
+        return matchesName || matchesOrig || matchesSchool || matchesIdea;
+      })
+      .sort((a, b) => {
+        const aName = a.name.toLowerCase();
+        const bName = b.name.toLowerCase();
+        if (aName === query) return -1;
+        if (bName === query) return 1;
+        if (aName.startsWith(query) && !bName.startsWith(query)) return -1;
+        if (!aName.startsWith(query) && bName.startsWith(query)) return 1;
+        const aYear = a.born?.year ?? a.floruit?.from ?? 0;
+        const bYear = b.born?.year ?? b.floruit?.from ?? 0;
+        return aYear - bYear;
+      })
+      .slice(0, 6);
+  }, [philosophers, searchQuery]);
 
   // Den valgte filosofen (vises i Hurtigkort / Mini-observatoriet under radaren ved klikk)
   const selectedPoint = useMemo(() => {
@@ -395,23 +445,164 @@ export const RadarView: React.FC<RadarViewProps> = ({
 
       {/* Filter-bar: Tradisjoner, Tema og Søk */}
       <div className="w-full max-w-4xl flex flex-wrap items-center gap-3 px-4 py-2 bg-cosmos-card/50 border border-white/5 rounded-xl text-xs">
-        {/* Søkefelt */}
-        <div className="relative flex-1 min-w-[180px]">
+        {/* Søkefelt med hurtig-dropdown og direkte åpning */}
+        <div ref={searchContainerRef} className="relative flex-1 min-w-[220px]">
           <input
             type="text"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded={isSearchFocused && searchMatches.length > 0}
+            aria-controls="radar-search-dropdown"
+            aria-label="Søk etter filosof eller idé"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Søk på filosof eller idé..."
-            className="w-full px-3 py-1.5 pl-8 rounded-lg bg-cosmos/80 border border-white/10 text-star-white placeholder-star-dim/50 focus:border-gold focus:outline-none"
+            onFocus={() => {
+              setIsSearchFocused(true);
+              setSearchSelectedIndex(-1);
+            }}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setIsSearchFocused(true);
+              setSearchSelectedIndex(-1);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                setIsSearchFocused(true);
+                setSearchSelectedIndex((prev) =>
+                  prev < searchMatches.length - 1 ? prev + 1 : 0
+                );
+              } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                setIsSearchFocused(true);
+                setSearchSelectedIndex((prev) =>
+                  prev > 0 ? prev - 1 : searchMatches.length - 1
+                );
+              } else if (e.key === 'Enter') {
+                if (searchSelectedIndex >= 0 && searchMatches[searchSelectedIndex]) {
+                  e.preventDefault();
+                  const targetPhilosopher = searchMatches[searchSelectedIndex];
+                  sound.playStarSelect();
+                  if (onOpenCard) {
+                    onOpenCard(targetPhilosopher.id);
+                  } else {
+                    setSelectedId(targetPhilosopher.id);
+                  }
+                  setIsSearchFocused(false);
+                } else if (searchMatches.length === 1) {
+                  e.preventDefault();
+                  sound.playStarSelect();
+                  if (onOpenCard) {
+                    onOpenCard(searchMatches[0].id);
+                  } else {
+                    setSelectedId(searchMatches[0].id);
+                  }
+                  setIsSearchFocused(false);
+                }
+              } else if (e.key === 'Escape') {
+                setIsSearchFocused(false);
+              }
+            }}
+            placeholder="Søk på filosof eller idé (f.eks. Sokrates)..."
+            className="w-full px-3 py-1.5 pl-8 pr-7 rounded-lg bg-cosmos/80 border border-white/10 text-star-white placeholder-star-dim/50 focus:border-gold focus:outline-none"
           />
-          <span className="absolute left-2.5 top-2 text-star-dim">🔍</span>
+          <span className="absolute left-2.5 top-2 text-star-dim" aria-hidden="true">🔍</span>
           {searchQuery && (
             <button
-              onClick={() => setSearchQuery('')}
+              onClick={() => {
+                setSearchQuery('');
+                setIsSearchFocused(false);
+              }}
+              aria-label="Tøm søkefelt"
               className="absolute right-2.5 top-2 text-star-dim hover:text-white"
             >
               ✕
             </button>
+          )}
+
+          {/* UU-08: Skjermleser-tilbakemelding på søkeresultat */}
+          <div className="sr-only" aria-live="polite" aria-atomic="true">
+            {searchQuery.trim()
+              ? searchMatches.length === 1
+                ? '1 filosof funnet'
+                : `${searchMatches.length} filosofer funnet`
+              : ''}
+          </div>
+
+          {/* Hurtig-dropdown for søketreff */}
+          {isSearchFocused && searchMatches.length > 0 && (
+            <ul
+              id="radar-search-dropdown"
+              role="listbox"
+              aria-label="Søkeresultater"
+              className="absolute left-0 right-0 top-full mt-1.5 z-50 bg-cosmos-card/95 border border-gold/40 rounded-xl shadow-2xl backdrop-blur-md overflow-hidden divide-y divide-white/5 py-1"
+            >
+              {searchMatches.map((p, idx) => {
+                const tradMeta = getTraditionMeta(p.tradition);
+                const isSelected = idx === searchSelectedIndex;
+                return (
+                  <li
+                    key={p.id}
+                    role="option"
+                    aria-selected={isSelected}
+                    className={`px-3 py-2 flex items-center justify-between gap-3 cursor-pointer transition-colors ${
+                      isSelected
+                        ? 'bg-gold/20 text-star-white'
+                        : 'hover:bg-white/10 text-star-white'
+                    }`}
+                    onMouseDown={(e) => {
+                      e.preventDefault();
+                      sound.playStarSelect();
+                      if (onOpenCard) {
+                        onOpenCard(p.id);
+                      } else {
+                        setSelectedId(p.id);
+                      }
+                      setIsSearchFocused(false);
+                    }}
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <span
+                        className="w-2.5 h-2.5 rounded-full shrink-0"
+                        style={{ backgroundColor: tradMeta.color }}
+                        aria-hidden="true"
+                      />
+                      <div className="truncate">
+                        <span className="font-serif font-bold text-sm text-star-white mr-1.5">
+                          {p.name}
+                        </span>
+                        {p.nameOriginal && (
+                          <span className="text-xs text-star-dim mr-1.5 font-normal">
+                            ({p.nameOriginal})
+                          </span>
+                        )}
+                        <span className="text-[11px] text-gold-bright font-serif">
+                          {formatLifeSpan(p)}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 shrink-0">
+                      <button
+                        type="button"
+                        title="Vis og marker stjernen på radaren"
+                        className="px-2 py-0.5 rounded text-[10px] font-serif border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedId(p.id);
+                          sound.playStarSelect();
+                          setIsSearchFocused(false);
+                        }}
+                      >
+                        ✦ Marker
+                      </button>
+                      <span className="text-xs font-serif text-gold font-bold">
+                        Åpne kort ↗
+                      </span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </div>
 
@@ -420,6 +611,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
           <span className="text-star-dim font-serif mr-1">Tradisjon:</span>
           <select
             value={selectedTradition}
+            aria-label="Filtrer etter tradisjon"
             onChange={(e) => setSelectedTradition(e.target.value)}
             className="px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-none font-serif text-xs"
           >
@@ -437,6 +629,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
           <span className="text-star-dim font-serif mr-1">Tema:</span>
           <select
             value={selectedTheme}
+            aria-label="Filtrer etter tema"
             onChange={(e) => setSelectedTheme(e.target.value)}
             className="px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-none font-serif text-xs"
           >
@@ -714,8 +907,8 @@ export const RadarView: React.FC<RadarViewProps> = ({
             </g>
           )}
 
-          {/* Stjernelaget (alle 21+ filosofene) */}
-          {radarPoints.map((pt) => {
+          {/* Stjernelaget (alle 80 filosofene, gjengitt i kronologisk DOM-rekkefølge for universell utforming UU-04) */}
+          {sortedRadarPoints.map((pt) => {
             const p = pt.philosopher;
             const meta = getTraditionMeta(pt.tradition);
 

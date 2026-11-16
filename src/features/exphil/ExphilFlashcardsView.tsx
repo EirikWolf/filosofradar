@@ -92,6 +92,19 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
   // Tastatursnarveier
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      // Ikke avskjær tastaturhandlinger hvis brukeren har fokus på en interaktiv knapp eller lenke
+      const target = e.target as HTMLElement | null;
+      if (
+        target &&
+        (target.tagName === 'BUTTON' ||
+          target.tagName === 'A' ||
+          target.tagName === 'INPUT' ||
+          target.tagName === 'SELECT' ||
+          target.tagName === 'TEXTAREA')
+      ) {
+        return;
+      }
+
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
         handleFlip();

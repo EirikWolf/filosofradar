@@ -115,7 +115,7 @@ export const TourSelectModal: React.FC<TourSelectModalProps> = ({
                   <div className="text-left md:text-right text-[11px] text-star-dim">
                     <span className="text-gold font-serif">{tour.stops.length} stopp</span> · ca.{' '}
                     {tour.durationMinutes} min
-                    <div className="text-[10px] text-star-dim/70">{tour.era}</div>
+                    <div className="text-[10px] text-star-dim">{tour.era}</div>
                   </div>
 
                   <button

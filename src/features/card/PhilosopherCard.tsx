@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
@@ -43,7 +43,36 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
     return map;
   }, [allPhilosophers]);
 
-  // Tastatursnarvei: Escape lukker kortet (eller aktiv story)
+  const dialogRef = useRef<HTMLElement>(null);
+  const previousActiveElementRef = useRef<HTMLElement | null>(null);
+
+  // UU-01: Flytt fokus inn i modalen ved åpning og returner fokus ved lukking
+  useEffect(() => {
+    previousActiveElementRef.current = document.activeElement as HTMLElement | null;
+
+    // Fokuser dialog eller første fokuserbare element
+    const timer = setTimeout(() => {
+      if (dialogRef.current) {
+        const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length > 0) {
+          focusable[0].focus();
+        } else {
+          dialogRef.current.focus();
+        }
+      }
+    }, 50);
+
+    return () => {
+      clearTimeout(timer);
+      if (previousActiveElementRef.current && typeof previousActiveElementRef.current.focus === 'function') {
+        previousActiveElementRef.current.focus();
+      }
+    };
+  }, []);
+
+  // Tastaturhåndtering: Escape lukker, og Tab fanges inne i modalen (fokusfelle)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -51,6 +80,29 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
           setActiveStoryExperiment(null);
         } else {
           onClose();
+        }
+      } else if (e.key === 'Tab' && dialogRef.current && !activeStoryExperiment) {
+        const focusable = Array.from(
+          dialogRef.current.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => !el.hasAttribute('disabled') && el.offsetParent !== null);
+
+        if (focusable.length === 0) return;
+
+        const firstElement = focusable[0];
+        const lastElement = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement || !dialogRef.current.contains(document.activeElement)) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement || !dialogRef.current.contains(document.activeElement)) {
+            e.preventDefault();
+            firstElement.focus();
+          }
         }
       }
     };
@@ -65,10 +117,12 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
     >
       {/* Kort-panel som glir inn fra høyre */}
       <aside
+        ref={dialogRef}
+        tabIndex={-1}
         role="dialog"
         aria-modal="true"
         aria-label={`Filosofkort for ${philosopher.name}`}
-        className="w-full max-w-lg md:max-w-xl h-full bg-cosmos-card border-l border-gold/30 shadow-2xl overflow-y-auto flex flex-col p-6 sm:p-8 animate-in slide-in-from-right duration-300 select-text"
+        className="w-full max-w-lg md:max-w-xl h-full bg-cosmos-card border-l border-gold/30 shadow-2xl overflow-y-auto flex flex-col p-6 sm:p-8 animate-in slide-in-from-right duration-300 select-text focus:outline-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header med lukk-knapp og tradisjon */}

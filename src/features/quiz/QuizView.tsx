@@ -266,7 +266,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
           </button>
         </div>
 
-        <p className="text-xs text-star-dim/70 text-center max-w-md pb-4">
+        <p className="text-xs text-star-dim text-center max-w-md pb-4">
           🔒 100% anonymt. Svarene dine behandles utelukkende lokalt i nettleseren din og lagres aldri på noen server.
         </p>
       </div>

@@ -166,7 +166,7 @@ export const TourPlayer: React.FC<TourPlayerProps> = ({
             <span>◀</span> Forrige
           </button>
 
-          <span className="text-[10px] text-star-dim/70 hidden sm:inline font-mono">
+          <span className="text-[10px] text-star-dim hidden sm:inline font-mono">
             Bruk piltaster [◀ / ▶]
           </span>
 
