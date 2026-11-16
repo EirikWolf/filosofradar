@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { getAllBespokeStories, type StorySummary } from './storyData';
 import { PHILOSOPHER_DEEP_DIVES } from '../deepdive/deepDiveData';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilData';
 import type { ThoughtExperiment } from '../deepdive/types';
 import { sound } from '../../lib/sound';
+import { useDialogFocus } from '../../hooks/useDialogFocus';
 
 interface StoryGalleryModalProps {
   onSelectStory: (story: {
@@ -47,6 +48,8 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('all');
 
   const allStories = useMemo(() => getAllBespokeStories(), []);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(dialogRef);
 
   // Tastatursnarvei: Escape lukker modalen
   useEffect(() => {
@@ -111,10 +114,12 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
       onClick={onClose}
     >
       <div
+        ref={dialogRef}
+        tabIndex={-1}
         role="dialog"
         aria-modal="true"
         aria-label={`${allStories.length} Filosofiske Historier (Story-modus)`}
-        className="relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
+        className="focus:outline-none relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

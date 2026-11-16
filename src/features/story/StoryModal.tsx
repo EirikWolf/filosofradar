@@ -3,6 +3,7 @@ import type { StoryModalProps, StorySlide } from './types';
 import { getStoryScript } from './storyData';
 import { sound } from '../../lib/sound';
 import { storySpeech } from './storySpeech';
+import { useDialogFocus } from '../../hooks/useDialogFocus';
 
 function buildSlideSpeechText(slide: StorySlide): string {
   const parts: string[] = [];
@@ -69,6 +70,8 @@ export const StoryModal: React.FC<StoryModalProps> = ({
   const animFrameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
   const pausedProgressRef = useRef<number>(0);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(dialogRef);
 
   // Gå til neste slide (rolig og lydløs overgang for best lytteopplevelse)
   const handleNext = useCallback(() => {
@@ -242,10 +245,12 @@ export const StoryModal: React.FC<StoryModalProps> = ({
 
   return (
     <div
+      ref={dialogRef}
+      tabIndex={-1}
       role="dialog"
       aria-modal="true"
       aria-label={`Story: ${story.experimentTitle} av ${philosopherName}`}
-      className="fixed inset-0 z-[60] flex items-center justify-center p-0 sm:p-4 bg-cosmos/90 backdrop-blur-md animate-in fade-in duration-200"
+      className="focus:outline-none fixed inset-0 z-[60] flex items-center justify-center p-0 sm:p-4 bg-cosmos/90 backdrop-blur-md animate-in fade-in duration-200"
       onClick={(e) => {
         e.stopPropagation();
         onClose();
