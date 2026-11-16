@@ -129,18 +129,31 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <div className="flex items-center gap-3">
                 <span className="text-2xl">♿</span>
                 <h3 className="font-serif font-bold text-lg text-white">
-                  Tilgjengelighet & Personvern
+                  Tilgjengelighetserklæring (WCAG 2.1 AA)
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                Filosofradaren følger WCAG 2.1 AA-retningslinjene for universell utforming:
+                Filosofradaren følger kravene til universell utforming av nettløsninger (WCAG 2.1 nivå AA):
               </p>
-              <ul className="text-xs text-star-dim list-disc list-inside space-y-1">
-                <li>Full tastaturnavigasjon med Escape-lukking av alle modaler.</li>
-                <li>Skjermleservennlige ARIA-attributter og kontrastkontroller.</li>
-                <li>Respekterer brukerens systemvalg for redusert bevegelse (<code>prefers-reduced-motion</code>).</li>
-                <li>100 % åpen, statisk arkitektur uten sporingskapsler (cookies) eller tredjepartslogger.</li>
+              <ul className="text-xs text-star-dim list-disc list-inside space-y-1.5">
+                <li>
+                  <strong className="text-slate-200">Tekstlig likeverdighet (WCAG 1.1.1):</strong> Det visuelle stjernekartet har fullverdige, skjermleservennlige tekstalternativer i <span className="text-gold font-mono">Filosofliste</span> og <span className="text-gold font-mono">Tidslinje</span>.
+                </li>
+                <li>
+                  <strong className="text-slate-200">Tastaturnavigasjon:</strong> Full fokusstyring med fokustrap og Escape-lukking i dialoger, samt piltaststøtte i søk og quizer.
+                </li>
+                <li>
+                  <strong className="text-slate-200">Sansing og bevegelse:</strong> Respekterer brukerens systeminnstilling for redusert bevegelse (<code>prefers-reduced-motion</code>). Kontraster er revidert mot WCAG AA.
+                </li>
               </ul>
+              <div className="mt-2 pt-3 border-t border-white/10 flex flex-col gap-1.5">
+                <div className="flex items-center gap-2 text-xs font-serif text-gold">
+                  <span>🛡️</span> <strong>Personvernerklæring (100 % cookie-fri)</strong>
+                </div>
+                <p className="text-xs text-star-dim leading-relaxed">
+                  Løsningen benytter ingen sporingskapsler (cookies) og krever intet samtykkebanner. For aggregert statistikk og feilsøking benyttes den åpne, personvernvennlige tjenesten <em>GoatCounter</em>. Det lagres ingen personopplysninger eller unike IP-adresser.
+                </p>
+              </div>
             </div>
           </div>
 

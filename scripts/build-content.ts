@@ -12,6 +12,7 @@ const QUIZ_FILE = path.resolve(__dirname, '../content/quiz/questions.json');
 const OUTPUT_DIR = path.resolve(__dirname, '../src/generated');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'philosophers.json');
 const QUIZ_OUTPUT_FILE = path.join(OUTPUT_DIR, 'quizQuestions.json');
+const SITEMAP_FILE = path.resolve(__dirname, '../public/sitemap.xml');
 
 const isValidateOnly = process.argv.includes('--validate-only');
 
@@ -197,6 +198,40 @@ function run() {
     fs.writeFileSync(QUIZ_OUTPUT_FILE, JSON.stringify(quizQuestions, null, 2), 'utf-8');
     console.log(`📦 Bygget og lagret: ${QUIZ_OUTPUT_FILE}`);
   }
+
+  // Generer sitemap.xml for søkemotorer og robots.txt
+  const siteUrls = [
+    { loc: 'https://filosofradar.web.app/', priority: '1.0', changefreq: 'weekly' },
+    { loc: 'https://filosofradar.web.app/?v=radar', priority: '0.9', changefreq: 'weekly' },
+    { loc: 'https://filosofradar.web.app/?v=timeline', priority: '0.8', changefreq: 'weekly' },
+    { loc: 'https://filosofradar.web.app/?v=list', priority: '0.8', changefreq: 'weekly' },
+    { loc: 'https://filosofradar.web.app/?v=quiz', priority: '0.8', changefreq: 'monthly' },
+    { loc: 'https://filosofradar.web.app/?v=exphil', priority: '0.8', changefreq: 'monthly' },
+    { loc: 'https://filosofradar.web.app/?v=ethics', priority: '0.8', changefreq: 'monthly' },
+    { loc: 'https://filosofradar.web.app/?v=about', priority: '0.6', changefreq: 'monthly' },
+    ...finalPhilosophers.map((p) => ({
+      loc: `https://filosofradar.web.app/?f=${p.id}`,
+      priority: '0.7',
+      changefreq: 'monthly',
+    })),
+  ];
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${siteUrls
+  .map(
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
+  </url>`,
+  )
+  .join('\n')}
+</urlset>
+`;
+
+  fs.writeFileSync(SITEMAP_FILE, sitemapXml, 'utf-8');
+  console.log(`🗺️  Generert sitemap: ${SITEMAP_FILE} (${siteUrls.length} nettadresser)`);
 }
 
 run();
