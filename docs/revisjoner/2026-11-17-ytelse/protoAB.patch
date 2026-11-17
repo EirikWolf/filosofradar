@@ -1,0 +1,415 @@
+diff --git a/src/features/radar/RadarView.tsx b/src/features/radar/RadarView.tsx
+index 38c2fee..87c63f4 100644
+--- a/src/features/radar/RadarView.tsx
++++ b/src/features/radar/RadarView.tsx
+@@ -339,6 +339,12 @@ export const RadarView: React.FC<RadarViewProps> = ({
+     return radiusForYear(Math.min(2025, Math.max(-650, currentTime)), scaleMode, minRadius, maxRadius);
+   }, [isTimeMachineActive, currentTime, scaleMode]);
+ 
++  // PROTOTYPE: livsstatus endres bare når tiden krysser et fødsels- eller dødsår
++  const bornCount = isTimeMachineActive ? sortedRadarPoints.filter((pt) => pt.birthYear <= currentTime).length : -1;
++  const deadCount = isTimeMachineActive ? sortedRadarPoints.filter((pt) => pt.deathYear != null && pt.deathYear < currentTime).length : -1;
++  // eslint-disable-next-line react-hooks/exhaustive-deps
++  const lifeTime = useMemo(() => currentTime, [bornCount, deadCount]);
++
+   // Den sist ankomne filosofen i tidsmaskinen for "Historiens Lyskaster"
+   const currentArrival = useMemo(() => {
+     if (!isTimeMachineActive) return null;
+@@ -825,7 +831,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+ 
+         <svg
+           viewBox="0 0 800 800"
+-          className="w-full h-full drop-shadow-[0_0_50px_rgba(4,7,20,0.9)] overflow-visible"
++          className="w-full h-full  overflow-visible"
+         >
+           <defs>
+             {/* Kosmisk radialglød for sentrum */}
+@@ -909,7 +915,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                   fill="rgba(246, 200, 95, 0.75)"
+                   fontSize="9.5"
+                   fontWeight="bold"
+-                  className="font-serif pointer-events-none drop-shadow"
++                  className="font-serif pointer-events-none "
+                 >
+                   {ring.label}
+                 </text>
+@@ -919,7 +925,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+ 
+           {/* Ur-stjerne og kompassrose i sentrum (ca. 650 f.Kr.) */}
+           <circle cx={cx} cy={cy} r={minRadius} fill="url(#centerGlow)" className="pointer-events-none" />
+-          <circle cx={cx} cy={cy} r={4} fill="#f6c85f" className="filter drop-shadow-[0_0_8px_#f6c85f]" />
++          <circle cx={cx} cy={cy} r={4} fill="#f6c85f" className="" />
+           <text
+             x={cx}
+             y={cy + 14}
+@@ -944,7 +950,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                 strokeWidth="1.5"
+                 strokeDasharray="4 3"
+                 opacity="0.6"
+-                className="filter drop-shadow-[0_0_8px_#67e8f9]"
++                className=""
+               />
+             </g>
+           )}
+@@ -974,7 +980,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                 stroke="#f6c85f"
+                 strokeWidth="2.5"
+                 strokeLinecap="round"
+-                className="filter drop-shadow-[0_0_6px_#f6c85f]"
++                className=""
+               />
+             </g>
+           )}
+@@ -1001,7 +1007,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                       stroke="#ffd79e"
+                       strokeWidth="2"
+                       strokeDasharray="4 3"
+-                      className="filter drop-shadow-[0_0_6px_#ffd79e]"
++                      className=""
+                       opacity="0.8"
+                     />
+                   </g>
+@@ -1027,7 +1033,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                       stroke="#67e8f9"
+                       strokeWidth="2"
+                       strokeDasharray="5 3"
+-                      className="filter drop-shadow-[0_0_6px_#67e8f9]"
++                      className=""
+                       opacity="0.8"
+                     />
+                   </g>
+@@ -1037,156 +1043,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+           )}
+ 
+           {/* Stjernelaget (alle 80 filosofene, gjengitt i kronologisk DOM-rekkefølge for universell utforming UU-04) */}
+-          {sortedRadarPoints.map((pt) => {
+-            const p = pt.philosopher;
+-            const meta = getTraditionMeta(pt.tradition);
+-
+-            const isMatches = matchingIds.has(pt.id);
+-            const isSelected = selectedId === pt.id;
+-            const isHovered = hoveredId === pt.id;
+-            const isContemporary = contemporaryIds.has(pt.id);
+-            const isBornSupernova = bornRecently.has(pt.id);
+-
+-            // Tidsmaskin livsstatus
+-            let isAlive = true;
+-            let isUnborn = false;
+-            let isDeceased = false;
+-
+-            if (isTimeMachineActive) {
+-              if (pt.birthYear > currentTime) {
+-                isUnborn = true;
+-                isAlive = false;
+-              } else if (pt.deathYear && pt.deathYear < currentTime) {
+-                isDeceased = true;
+-                isAlive = false;
+-              }
+-            }
+-
+-            // Opasitet basert på filter og tidsmaskin
+-            let opacity = 1;
+-            if (!isMatches) {
+-              opacity = 0.12;
+-            } else if (isUnborn) {
+-              opacity = 0.04;
+-            } else if (isDeceased) {
+-              opacity = 0.5;
+-            } else if (activePoint && !isSelected && !isHovered && !isContemporary) {
+-              opacity = 0.35;
+-            }
+-
+-            // Star size
+-            const baseRadius = 4.5;
+-            const starRadius = isSelected || isHovered ? baseRadius * 1.5 : baseRadius;
+-
+-            return (
+-              <g
+-                key={pt.id}
+-                tabIndex={isUnborn ? -1 : 0}
+-                role="button"
+-                aria-label={`${p.name} (${formatLifeSpan(p)})`}
+-                transform={`translate(${pt.x}, ${pt.y})`}
+-                opacity={opacity}
+-                className={`cursor-pointer transition-opacity duration-300 focus:outline-none group`}
+-                onMouseEnter={() => setHoveredId(pt.id)}
+-                onMouseLeave={() => setHoveredId(null)}
+-                onClick={() => {
+-                  sound.playStarSelect();
+-                  setSelectedId(selectedId === pt.id ? null : pt.id);
+-                }}
+-                onKeyDown={(e) => {
+-                  if (e.key === 'Enter' || e.key === ' ') {
+-                    e.preventDefault();
+-                    sound.playStarSelect();
+-                    setSelectedId(selectedId === pt.id ? null : pt.id);
+-                  } else if (e.key === 'Escape') {
+-                    setSelectedId(null);
+-                    setHoveredId(null);
+-                  }
+-                }}
+-              >
+-                {/* Usynlig treffsone (forhindrer flimring/jitter på stjernekanten) */}
+-                <circle r="14" fill="transparent" />
+-
+-                {/* Myk oppgløding ved ankomst i tidsmaskinen (erstatter snøball-effekt) */}
+-                {isBornSupernova && (
+-                  <circle
+-                    r={starRadius * 2.2}
+-                    fill={meta.color}
+-                    opacity="0.4"
+-                    className="animate-pulse pointer-events-none"
+-                  />
+-                )}
+-
+-                {/* Historiens Lyskaster aktiv stjerne */}
+-                {isTimeMachineActive && currentArrival && currentArrival.id === pt.id && (
+-                  <circle
+-                    r={starRadius * 2.5}
+-                    fill="none"
+-                    stroke="#67e8f9"
+-                    strokeWidth="1.5"
+-                    strokeDasharray="3 3"
+-                    className="animate-spin pointer-events-none"
+-                    style={{ animationDuration: '6s' }}
+-                  />
+-                )}
+-
+-                {/* Diskret, rolig samtids-ring hvis samtidig med fokusert filosof (statisk) */}
+-                {isContemporary && (
+-                  <circle
+-                    r={starRadius * 1.9}
+-                    fill="none"
+-                    stroke="#f6c85f"
+-                    strokeWidth="1.2"
+-                    strokeDasharray="2 2"
+-                    opacity="0.65"
+-                    className="pointer-events-none"
+-                  />
+-                )}
+-
+-                {/* Ytre tradisjons-aura */}
+-                <circle
+-                  r={starRadius * 1.8}
+-                  fill={meta.color}
+-                  opacity={isAlive ? 0.35 : 0.15}
+-                  className="transition-transform group-hover:scale-125 pointer-events-none"
+-                />
+-
+-                {/* Hovedstjerne */}
+-                <circle
+-                  r={starRadius}
+-                  fill={isSelected ? '#f6c85f' : '#ffffff'}
+-                  stroke={meta.color}
+-                  strokeWidth={isSelected ? 2 : 1}
+-                  className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.85)] pointer-events-none"
+-                />
+-
+-                {/* Navnelapp og levetid på radaren ved hover eller når valgt */}
+-                {(isHovered || isSelected) && (
+-                  <g className="pointer-events-none select-none">
+-                    <text
+-                      y={pt.y > 730 ? -starRadius - 16 : starRadius + 14}
+-                      textAnchor="middle"
+-                      fill={isSelected ? '#f6c85f' : '#ffffff'}
+-                      fontSize="11"
+-                      fontWeight={isSelected ? 'bold' : '600'}
+-                      className="font-serif drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]"
+-                    >
+-                      {p.name}
+-                    </text>
+-                    <text
+-                      y={pt.y > 730 ? -starRadius - 5 : starRadius + 26}
+-                      textAnchor="middle"
+-                      fill="#ffd79e"
+-                      fontSize="9"
+-                      className="font-serif opacity-90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]"
+-                    >
+-                      {formatLifeSpan(p)}
+-                    </text>
+-                  </g>
+-                )}
+-              </g>
+-            );
+-          })}
++          <StarLayer sortedRadarPoints={sortedRadarPoints} matchingIds={matchingIds} selectedId={selectedId} hoveredId={hoveredId} contemporaryIds={contemporaryIds} bornRecently={bornRecently} isTimeMachineActive={isTimeMachineActive} lifeTime={lifeTime} activePoint={activePoint} currentArrival={currentArrival} setHoveredId={setHoveredId} setSelectedId={setSelectedId} />
+         </svg>
+       </div>
+ 
+@@ -1343,3 +1200,176 @@ export const RadarView: React.FC<RadarViewProps> = ({
+     </div>
+   );
+ };
++
++// PROTOTYPE (revisjon 2026-11-17, committes ikke): stjernelaget som memo-komponent
++interface StarLayerProps {
++  sortedRadarPoints: RadarPoint[];
++  matchingIds: Set<string>;
++  selectedId: string | null;
++  hoveredId: string | null;
++  contemporaryIds: Set<string>;
++  bornRecently: Set<string>;
++  isTimeMachineActive: boolean;
++  lifeTime: number;
++  activePoint: RadarPoint | null;
++  currentArrival: RadarPoint | null;
++  setHoveredId: (id: string | null) => void;
++  setSelectedId: (id: string | null) => void;
++}
++const StarLayer = React.memo(function StarLayer({
++  sortedRadarPoints, matchingIds, selectedId, hoveredId, contemporaryIds, bornRecently,
++  isTimeMachineActive, lifeTime, activePoint, currentArrival, setHoveredId, setSelectedId,
++}: StarLayerProps) {
++  return (<>
++          {sortedRadarPoints.map((pt) => {
++            const p = pt.philosopher;
++            const meta = getTraditionMeta(pt.tradition);
++
++            const isMatches = matchingIds.has(pt.id);
++            const isSelected = selectedId === pt.id;
++            const isHovered = hoveredId === pt.id;
++            const isContemporary = contemporaryIds.has(pt.id);
++            const isBornSupernova = bornRecently.has(pt.id);
++
++            // Tidsmaskin livsstatus
++            let isAlive = true;
++            let isUnborn = false;
++            let isDeceased = false;
++
++            if (isTimeMachineActive) {
++              if (pt.birthYear > lifeTime) {
++                isUnborn = true;
++                isAlive = false;
++              } else if (pt.deathYear && pt.deathYear < lifeTime) {
++                isDeceased = true;
++                isAlive = false;
++              }
++            }
++
++            // Opasitet basert på filter og tidsmaskin
++            let opacity = 1;
++            if (!isMatches) {
++              opacity = 0.12;
++            } else if (isUnborn) {
++              opacity = 0.04;
++            } else if (isDeceased) {
++              opacity = 0.5;
++            } else if (activePoint && !isSelected && !isHovered && !isContemporary) {
++              opacity = 0.35;
++            }
++
++            // Star size
++            const baseRadius = 4.5;
++            const starRadius = isSelected || isHovered ? baseRadius * 1.5 : baseRadius;
++
++            return (
++              <g
++                key={pt.id}
++                tabIndex={isUnborn ? -1 : 0}
++                role="button"
++                aria-label={`${p.name} (${formatLifeSpan(p)})`}
++                transform={`translate(${pt.x}, ${pt.y})`}
++                opacity={opacity}
++                className={`cursor-pointer transition-opacity duration-300 focus:outline-none group`}
++                onMouseEnter={() => setHoveredId(pt.id)}
++                onMouseLeave={() => setHoveredId(null)}
++                onClick={() => {
++                  sound.playStarSelect();
++                  setSelectedId(selectedId === pt.id ? null : pt.id);
++                }}
++                onKeyDown={(e) => {
++                  if (e.key === 'Enter' || e.key === ' ') {
++                    e.preventDefault();
++                    sound.playStarSelect();
++                    setSelectedId(selectedId === pt.id ? null : pt.id);
++                  } else if (e.key === 'Escape') {
++                    setSelectedId(null);
++                    setHoveredId(null);
++                  }
++                }}
++              >
++                {/* Usynlig treffsone (forhindrer flimring/jitter på stjernekanten) */}
++                <circle r="14" fill="transparent" />
++
++                {/* Myk oppgløding ved ankomst i tidsmaskinen (erstatter snøball-effekt) */}
++                {isBornSupernova && (
++                  <circle
++                    r={starRadius * 2.2}
++                    fill={meta.color}
++                    opacity="0.4"
++                    className="animate-pulse pointer-events-none"
++                  />
++                )}
++
++                {/* Historiens Lyskaster aktiv stjerne */}
++                {isTimeMachineActive && currentArrival && currentArrival.id === pt.id && (
++                  <circle
++                    r={starRadius * 2.5}
++                    fill="none"
++                    stroke="#67e8f9"
++                    strokeWidth="1.5"
++                    strokeDasharray="3 3"
++                    className="animate-spin pointer-events-none"
++                    style={{ animationDuration: '6s' }}
++                  />
++                )}
++
++                {/* Diskret, rolig samtids-ring hvis samtidig med fokusert filosof (statisk) */}
++                {isContemporary && (
++                  <circle
++                    r={starRadius * 1.9}
++                    fill="none"
++                    stroke="#f6c85f"
++                    strokeWidth="1.2"
++                    strokeDasharray="2 2"
++                    opacity="0.65"
++                    className="pointer-events-none"
++                  />
++                )}
++
++                {/* Ytre tradisjons-aura */}
++                <circle
++                  r={starRadius * 1.8}
++                  fill={meta.color}
++                  opacity={isAlive ? 0.35 : 0.15}
++                  className="transition-transform group-hover:scale-125 pointer-events-none"
++                />
++
++                {/* Hovedstjerne */}
++                <circle
++                  r={starRadius}
++                  fill={isSelected ? '#f6c85f' : '#ffffff'}
++                  stroke={meta.color}
++                  strokeWidth={isSelected ? 2 : 1}
++                  className=" pointer-events-none"
++                />
++
++                {/* Navnelapp og levetid på radaren ved hover eller når valgt */}
++                {(isHovered || isSelected) && (
++                  <g className="pointer-events-none select-none">
++                    <text
++                      y={pt.y > 730 ? -starRadius - 16 : starRadius + 14}
++                      textAnchor="middle"
++                      fill={isSelected ? '#f6c85f' : '#ffffff'}
++                      fontSize="11"
++                      fontWeight={isSelected ? 'bold' : '600'}
++                      className="font-serif "
++                    >
++                      {p.name}
++                    </text>
++                    <text
++                      y={pt.y > 730 ? -starRadius - 5 : starRadius + 26}
++                      textAnchor="middle"
++                      fill="#ffd79e"
++                      fontSize="9"
++                      className="font-serif opacity-90 "
++                    >
++                      {formatLifeSpan(p)}
++                    </text>
++                  </g>
++                )}
++              </g>
++            );
++          })}
++  </>);
++});

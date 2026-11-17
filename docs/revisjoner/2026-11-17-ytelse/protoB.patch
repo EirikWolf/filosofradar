@@ -1,0 +1,94 @@
+diff --git a/src/features/radar/RadarView.tsx b/src/features/radar/RadarView.tsx
+index 38c2fee..1c30757 100644
+--- a/src/features/radar/RadarView.tsx
++++ b/src/features/radar/RadarView.tsx
+@@ -825,7 +825,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+ 
+         <svg
+           viewBox="0 0 800 800"
+-          className="w-full h-full drop-shadow-[0_0_50px_rgba(4,7,20,0.9)] overflow-visible"
++          className="w-full h-full  overflow-visible"
+         >
+           <defs>
+             {/* Kosmisk radialglød for sentrum */}
+@@ -909,7 +909,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                   fill="rgba(246, 200, 95, 0.75)"
+                   fontSize="9.5"
+                   fontWeight="bold"
+-                  className="font-serif pointer-events-none drop-shadow"
++                  className="font-serif pointer-events-none "
+                 >
+                   {ring.label}
+                 </text>
+@@ -919,7 +919,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+ 
+           {/* Ur-stjerne og kompassrose i sentrum (ca. 650 f.Kr.) */}
+           <circle cx={cx} cy={cy} r={minRadius} fill="url(#centerGlow)" className="pointer-events-none" />
+-          <circle cx={cx} cy={cy} r={4} fill="#f6c85f" className="filter drop-shadow-[0_0_8px_#f6c85f]" />
++          <circle cx={cx} cy={cy} r={4} fill="#f6c85f" className="" />
+           <text
+             x={cx}
+             y={cy + 14}
+@@ -944,7 +944,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                 strokeWidth="1.5"
+                 strokeDasharray="4 3"
+                 opacity="0.6"
+-                className="filter drop-shadow-[0_0_8px_#67e8f9]"
++                className=""
+               />
+             </g>
+           )}
+@@ -974,7 +974,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                 stroke="#f6c85f"
+                 strokeWidth="2.5"
+                 strokeLinecap="round"
+-                className="filter drop-shadow-[0_0_6px_#f6c85f]"
++                className=""
+               />
+             </g>
+           )}
+@@ -1001,7 +1001,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                       stroke="#ffd79e"
+                       strokeWidth="2"
+                       strokeDasharray="4 3"
+-                      className="filter drop-shadow-[0_0_6px_#ffd79e]"
++                      className=""
+                       opacity="0.8"
+                     />
+                   </g>
+@@ -1027,7 +1027,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                       stroke="#67e8f9"
+                       strokeWidth="2"
+                       strokeDasharray="5 3"
+-                      className="filter drop-shadow-[0_0_6px_#67e8f9]"
++                      className=""
+                       opacity="0.8"
+                     />
+                   </g>
+@@ -1157,7 +1157,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                   fill={isSelected ? '#f6c85f' : '#ffffff'}
+                   stroke={meta.color}
+                   strokeWidth={isSelected ? 2 : 1}
+-                  className="filter drop-shadow-[0_0_6px_rgba(255,255,255,0.85)] pointer-events-none"
++                  className=" pointer-events-none"
+                 />
+ 
+                 {/* Navnelapp og levetid på radaren ved hover eller når valgt */}
+@@ -1169,7 +1169,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                       fill={isSelected ? '#f6c85f' : '#ffffff'}
+                       fontSize="11"
+                       fontWeight={isSelected ? 'bold' : '600'}
+-                      className="font-serif drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]"
++                      className="font-serif "
+                     >
+                       {p.name}
+                     </text>
+@@ -1178,7 +1178,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
+                       textAnchor="middle"
+                       fill="#ffd79e"
+                       fontSize="9"
+-                      className="font-serif opacity-90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.95)]"
++                      className="font-serif opacity-90 "
+                     >
+                       {formatLifeSpan(p)}
+                     </text>
