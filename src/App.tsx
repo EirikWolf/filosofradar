@@ -267,7 +267,7 @@ export const App: React.FC = () => {
               onClick={() => changeView('about')}
               aria-label="Om observatoriet og kilder"
               title="Om observatoriet, metodikk og kilder"
-              className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-sm ${
+              className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-xs ${
                 view === 'about' || view === 'factcheck'
                   ? 'bg-gold/20 border-gold text-gold font-bold shadow-[0_0_10px_rgba(246,200,95,0.3)]'
                   : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
@@ -281,7 +281,7 @@ export const App: React.FC = () => {
               onClick={() => setIsClassroomMode((prev) => !prev)}
               aria-label={isClassroomMode ? 'Klasserom: Stor skrift på' : 'Klasserom: Presentasjonsvisning'}
               title="Skru av/på stor skrift og presentasjonsvisning for projektor"
-              className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-sm ${
+              className={`px-3 py-1 rounded-full text-xs font-serif transition-all border shadow-xs ${
                 isClassroomMode
                   ? 'bg-amber-500/20 border-amber-400 text-amber-300 font-bold shadow-[0_0_10px_rgba(251,191,36,0.3)]'
                   : 'bg-cosmos-card/80 border-white/15 text-star-dim hover:text-white'
@@ -298,7 +298,7 @@ export const App: React.FC = () => {
           onClick={handleGoHome}
           aria-label="Gå til forsiden av Filosofradaren"
           title="Klikk for å gå til forsiden av Filosofradaren (radaren)"
-          className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl px-3 py-1 cursor-pointer transition-all"
+          className="group focus:outline-hidden focus-visible:ring-2 focus-visible:ring-gold rounded-xl px-3 py-1 cursor-pointer transition-all"
         >
           <h1 className="text-4xl md:text-5xl font-serif tracking-wider text-star-white drop-shadow-[0_0_25px_rgba(103,232,249,0.45)] group-hover:text-cyan-200 group-hover:drop-shadow-[0_0_30px_rgba(103,232,249,0.7)] transition-all">
             FILOSOFRADAREN
@@ -358,7 +358,7 @@ export const App: React.FC = () => {
               onClick={() => selectObservatoryView('radar')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'radar'
-                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-xs'
                   : 'text-star-dim hover:text-white'
               }`}
             >
@@ -368,7 +368,7 @@ export const App: React.FC = () => {
               onClick={() => selectObservatoryView('galaxy')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'galaxy'
-                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-xs'
                   : 'text-star-dim hover:text-white'
               }`}
             >
@@ -378,7 +378,7 @@ export const App: React.FC = () => {
               onClick={() => selectObservatoryView('timeline')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'timeline'
-                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-xs'
                   : 'text-star-dim hover:text-white'
               }`}
             >
@@ -388,7 +388,7 @@ export const App: React.FC = () => {
               onClick={() => selectObservatoryView('network')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'network'
-                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-xs'
                   : 'text-star-dim hover:text-white'
               }`}
             >
@@ -398,7 +398,7 @@ export const App: React.FC = () => {
               onClick={() => selectObservatoryView('list')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'list'
-                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-xs'
                   : 'text-star-dim hover:text-white'
               }`}
             >
@@ -417,7 +417,7 @@ export const App: React.FC = () => {
               onClick={() => setExphilTab('duels')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 exphilTab === 'duels'
-                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-xs'
                   : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
               }`}
             >
@@ -427,7 +427,7 @@ export const App: React.FC = () => {
               onClick={() => setExphilTab('flashcards')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 exphilTab === 'flashcards'
-                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-xs'
                   : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
               }`}
             >
@@ -437,7 +437,7 @@ export const App: React.FC = () => {
               onClick={() => setExphilTab('quiz')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 exphilTab === 'quiz'
-                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-xs'
                   : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
               }`}
             >
@@ -447,7 +447,7 @@ export const App: React.FC = () => {
               onClick={() => setExphilTab('syllabus')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 exphilTab === 'syllabus'
-                  ? 'bg-amber-400 text-cosmos font-bold shadow-sm'
+                  ? 'bg-amber-400 text-cosmos font-bold shadow-xs'
                   : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
               }`}
             >
@@ -480,7 +480,7 @@ export const App: React.FC = () => {
               onClick={() => changeView('quiz')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'quiz'
-                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-xs'
                   : 'text-star-dim hover:text-white hover:bg-white/5'
               }`}
             >
@@ -490,7 +490,7 @@ export const App: React.FC = () => {
               onClick={() => changeView('ethics')}
               className={`px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 ${
                 view === 'ethics'
-                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-sm'
+                  ? 'bg-gold/20 border border-gold text-gold font-bold shadow-xs'
                   : 'text-star-dim hover:text-white hover:bg-white/5'
               }`}
             >
@@ -498,7 +498,7 @@ export const App: React.FC = () => {
             </button>
             <button
               onClick={() => setIsStoryGalleryOpen(true)}
-              className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-gold-bright hover:text-white bg-gold/10 hover:bg-gold/20 border border-gold/40 shadow-sm font-bold"
+              className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-gold-bright hover:text-white bg-gold/10 hover:bg-gold/20 border border-gold/40 shadow-xs font-bold"
               title="Åpne de 32 dramatiserte filosofiske historiene med tale"
             >
               <span>📖</span> 32 Filosofiske Historier

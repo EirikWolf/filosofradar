@@ -102,7 +102,7 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
         role="dialog"
         aria-modal="true"
         aria-label="Sammenligningskammer"
-        className="focus:outline-none w-full max-w-4xl max-h-[92vh] bg-cosmos-card border border-gold/40 rounded-2xl shadow-2xl flex flex-col p-6 sm:p-8 overflow-y-auto animate-in zoom-in-95"
+        className="focus:outline-hidden w-full max-w-4xl max-h-[92vh] bg-cosmos-card border border-gold/40 rounded-2xl shadow-2xl flex flex-col p-6 sm:p-8 overflow-y-auto animate-in zoom-in-95"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -162,7 +162,7 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
               <select
                 value={p.id}
                 onChange={(e) => changePhilosopher(idx, e.target.value)}
-                className="w-full px-2 py-1.5 rounded-lg bg-cosmos border border-white/20 text-star-white font-serif text-xs focus:border-gold focus:outline-none"
+                className="w-full px-2 py-1.5 rounded-lg bg-cosmos border border-white/20 text-star-white font-serif text-xs focus:border-gold focus:outline-hidden"
               >
                 {allPhilosophers.map((opt) => (
                   <option key={opt.id} value={opt.id}>
@@ -193,7 +193,7 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
                   if (e.target.value) addPhilosopher(e.target.value);
                 }}
                 defaultValue=""
-                className="px-2 py-1 rounded bg-cosmos border border-white/20 text-xs text-star-white font-serif"
+                className="px-2 py-1 rounded-sm bg-cosmos border border-white/20 text-xs text-star-white font-serif"
               >
                 <option value="" disabled>
                   Velg filosof...

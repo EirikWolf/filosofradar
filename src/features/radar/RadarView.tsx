@@ -350,7 +350,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
   return (
     <div className="w-full flex flex-col items-center gap-6 select-none">
       {/* Topp-rad: Tidsmaskin / Skala / Filter-kontroller */}
-      <div className="w-full max-w-4xl flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-cosmos-card/80 border border-white/10 rounded-2xl backdrop-blur shadow-2xl">
+      <div className="w-full max-w-4xl flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-cosmos-card/80 border border-white/10 rounded-2xl backdrop-blur-sm shadow-2xl">
         {/* Tidsmaskin-bryter & status */}
         <div className="flex items-center gap-3">
           <button
@@ -467,7 +467,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
       {isTimeMachineActive && (
         <div className="w-full max-w-4xl flex flex-col gap-3 animate-in fade-in">
           {/* Tidsmaskin-glider */}
-          <div className="w-full px-6 py-3 bg-cosmos-card/60 border border-cyan-glow/20 rounded-xl backdrop-blur flex items-center gap-4">
+          <div className="w-full px-6 py-3 bg-cosmos-card/60 border border-cyan-glow/20 rounded-xl backdrop-blur-sm flex items-center gap-4">
             <span className="text-xs text-star-dim font-mono">650 f.Kr.</span>
             <input
               type="range"
@@ -485,7 +485,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
 
           {/* Historiens Lyskaster: Viser filosofen som nettopp trer frem i historien */}
           {currentArrival && (
-            <div className="w-full p-4 sm:p-5 bg-gradient-to-r from-cosmos-card/95 via-cosmos-card/90 to-cosmos-card/95 border border-cyan-glow/40 rounded-2xl shadow-[0_0_25px_rgba(103,232,249,0.2)] backdrop-blur-md animate-fadeIn flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="w-full p-4 sm:p-5 bg-linear-to-r from-cosmos-card/95 via-cosmos-card/90 to-cosmos-card/95 border border-cyan-glow/40 rounded-2xl shadow-[0_0_25px_rgba(103,232,249,0.2)] backdrop-blur-md animate-fadeIn flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-start sm:items-center gap-3.5 min-w-0">
                 {/* Avatar eller stjerneglyf */}
                 {currentArrival.philosopher.image ? (
@@ -629,7 +629,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
               }
             }}
             placeholder="Søk på filosof eller idé (f.eks. Sokrates)..."
-            className="w-full px-3 py-1.5 pl-8 pr-7 rounded-lg bg-cosmos/80 border border-white/10 text-star-white placeholder-star-dim/50 focus:border-gold focus:outline-none"
+            className="w-full px-3 py-1.5 pl-8 pr-7 rounded-lg bg-cosmos/80 border border-white/10 text-star-white placeholder-star-dim/50 focus:border-gold focus:outline-hidden"
           />
           <span className="absolute left-2.5 top-2 text-star-dim" aria-hidden="true">🔍</span>
           {searchQuery && (
@@ -711,7 +711,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                       <button
                         type="button"
                         title="Vis og marker stjernen på radaren"
-                        className="px-2 py-0.5 rounded text-[10px] font-serif border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors"
+                        className="px-2 py-0.5 rounded-sm text-[10px] font-serif border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors"
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedId(p.id);
@@ -739,7 +739,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             value={selectedTradition}
             aria-label="Filtrer etter tradisjon"
             onChange={(e) => setSelectedTradition(e.target.value)}
-            className="px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-none font-serif text-xs"
+            className="px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-hidden font-serif text-xs"
           >
             <option value="all">Alle tradisjoner</option>
             {TRADITION_SECTOR_ORDER.map((tId) => (
@@ -757,7 +757,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             value={selectedTheme}
             aria-label="Filtrer etter tema"
             onChange={(e) => setSelectedTheme(e.target.value)}
-            className="px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-none font-serif text-xs"
+            className="px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-hidden font-serif text-xs"
           >
             <option value="all">Alle temaer</option>
             {THEME_LIST.map((theme) => (
@@ -820,7 +820,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             }}
           />
           {/* Frontstråle */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1.5px] h-1/2 bg-gradient-to-t from-gold-bright via-cyan-glow to-transparent shadow-[0_0_8px_#67e8f9]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1.5px] h-1/2 bg-linear-to-t from-gold-bright via-cyan-glow to-transparent shadow-[0_0_8px_#67e8f9]" />
         </div>
 
         <svg
@@ -909,7 +909,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   fill="rgba(246, 200, 95, 0.75)"
                   fontSize="9.5"
                   fontWeight="bold"
-                  className="font-serif pointer-events-none drop-shadow"
+                  className="font-serif pointer-events-none drop-shadow-sm"
                 >
                   {ring.label}
                 </text>
@@ -1086,7 +1086,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 aria-label={`${p.name} (${formatLifeSpan(p)})`}
                 transform={`translate(${pt.x}, ${pt.y})`}
                 opacity={opacity}
-                className={`cursor-pointer transition-opacity duration-300 focus:outline-none group`}
+                className={`cursor-pointer transition-opacity duration-300 focus:outline-hidden group`}
                 onMouseEnter={() => setHoveredId(pt.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 onClick={() => {
@@ -1191,7 +1191,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
       </div>
 
       {/* Kontroller for radarens sveipehastighet */}
-      <div className="flex flex-wrap items-center justify-center gap-3 bg-cosmos-card/70 border border-white/10 rounded-full px-5 py-2 backdrop-blur shadow-lg">
+      <div className="flex flex-wrap items-center justify-center gap-3 bg-cosmos-card/70 border border-white/10 rounded-full px-5 py-2 backdrop-blur-sm shadow-lg">
         <span className="text-xs text-star-dim font-serif mr-1">Sveip-fart:</span>
         <button
           onClick={() => setSweepSpeed(14)}
@@ -1217,7 +1217,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
         >
           Rask (4s)
         </button>
-        <span className="w-[1px] h-4 bg-white/20 mx-1" />
+        <span className="w-px h-4 bg-white/20 mx-1" />
         <button
           onClick={() => setIsSweepPaused(!isSweepPaused)}
           className="px-3 py-1 rounded-full text-xs font-serif border border-white/20 text-star-white hover:border-gold hover:text-gold transition-all"
@@ -1228,7 +1228,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
 
       {/* Filosofens Hurtigkort / Mini-observatorium (vises stabilt ved klikk/valg på stjerne) */}
       {selectedPoint && (
-        <div id="radar-hurtigkort" className="w-full max-w-2xl p-5 bg-cosmos-card/95 border border-gold/40 rounded-2xl shadow-2xl backdrop-blur animate-in fade-in slide-in-from-bottom-2">
+        <div id="radar-hurtigkort" className="w-full max-w-2xl p-5 bg-cosmos-card/95 border border-gold/40 rounded-2xl shadow-2xl backdrop-blur-sm animate-in fade-in slide-in-from-bottom-2">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
             <div>
               <div className="flex items-center gap-2 mb-1">

@@ -249,7 +249,7 @@ export const ExphilDuelsView: React.FC<ExphilDuelsViewProps> = ({
         </div>
 
         {/* 4. Sensors råd for A-besvarelse */}
-        <div className="p-4.5 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-cosmos-card to-cosmos border-2 border-emerald-500/40">
+        <div className="p-4.5 rounded-2xl bg-linear-to-r from-emerald-950/40 via-cosmos-card to-cosmos border-2 border-emerald-500/40">
           <div className="flex items-center gap-2 text-emerald-300 text-xs font-serif font-bold uppercase tracking-wider mb-1.5">
             <span>🎓</span> Sensors vurderingskriterier (Tips for A-besvarelse):
           </div>

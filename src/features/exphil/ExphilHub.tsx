@@ -159,7 +159,7 @@ export const ExphilHub: React.FC<ExphilHubProps> = ({
                         {profile.examKeywords.slice(0, 3).map((kw, idx) => (
                           <span
                             key={idx}
-                            className="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gold-bright font-serif"
+                            className="text-[10px] px-2 py-0.5 rounded-sm bg-white/5 border border-white/10 text-gold-bright font-serif"
                           >
                             {kw}
                           </span>

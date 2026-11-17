@@ -119,7 +119,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
         role="dialog"
         aria-modal="true"
         aria-label={`${allStories.length} Filosofiske Historier (Story-modus)`}
-        className="focus:outline-none relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
+        className="focus:outline-hidden relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -154,7 +154,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               onClick={() => setActiveCategory('all')}
               className={`px-3 py-1 rounded-full border transition-all ${
                 activeCategory === 'all'
-                  ? 'bg-gold text-cosmos font-bold border-gold shadow-sm'
+                  ? 'bg-gold text-cosmos font-bold border-gold shadow-xs'
                   : 'bg-cosmos-card/80 border-white/10 text-star-dim hover:text-white'
               }`}
             >
@@ -164,7 +164,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               onClick={() => setActiveCategory('exphil')}
               className={`px-3 py-1 rounded-full border transition-all ${
                 activeCategory === 'exphil'
-                  ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-sm'
+                  ? 'bg-amber-400 text-cosmos font-bold border-amber-400 shadow-xs'
                   : 'bg-cosmos-card/80 border-amber-400/30 text-amber-300 hover:bg-amber-400/10'
               }`}
             >
@@ -174,7 +174,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               onClick={() => setActiveCategory('ancient')}
               className={`px-3 py-1 rounded-full border transition-all ${
                 activeCategory === 'ancient'
-                  ? 'bg-gold text-cosmos font-bold border-gold shadow-sm'
+                  ? 'bg-gold text-cosmos font-bold border-gold shadow-xs'
                   : 'bg-cosmos-card/80 border-white/10 text-star-dim hover:text-white'
               }`}
             >
@@ -184,7 +184,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               onClick={() => setActiveCategory('early-modern')}
               className={`px-3 py-1 rounded-full border transition-all ${
                 activeCategory === 'early-modern'
-                  ? 'bg-gold text-cosmos font-bold border-gold shadow-sm'
+                  ? 'bg-gold text-cosmos font-bold border-gold shadow-xs'
                   : 'bg-cosmos-card/80 border-white/10 text-star-dim hover:text-white'
               }`}
             >
@@ -194,7 +194,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               onClick={() => setActiveCategory('modern')}
               className={`px-3 py-1 rounded-full border transition-all ${
                 activeCategory === 'modern'
-                  ? 'bg-gold text-cosmos font-bold border-gold shadow-sm'
+                  ? 'bg-gold text-cosmos font-bold border-gold shadow-xs'
                   : 'bg-cosmos-card/80 border-white/10 text-star-dim hover:text-white'
               }`}
             >
@@ -210,7 +210,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Søk i historier..."
               aria-label="Søk i historier"
-              className="w-full px-3 py-1.5 text-xs bg-cosmos/80 border border-white/15 rounded-full text-white placeholder-star-dim/60 focus:outline-none focus:border-gold/60"
+              className="w-full px-3 py-1.5 text-xs bg-cosmos/80 border border-white/15 rounded-full text-white placeholder-star-dim/60 focus:outline-hidden focus:border-gold/60"
             />
             {searchTerm && (
               <button
@@ -247,11 +247,11 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center text-4xl bg-gradient-to-br from-indigo-950 to-slate-900">
+                      <div className="w-full h-full flex items-center justify-center text-4xl bg-linear-to-br from-indigo-950 to-slate-900">
                         {story.icon || '📖'}
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-cosmos-card via-transparent to-black/30" />
+                    <div className="absolute inset-0 bg-linear-to-t from-cosmos-card via-transparent to-black/30" />
 
                     {/* Filosof-merke */}
                     <div className="absolute bottom-2.5 left-3 flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cosmos-darkest/90 border border-white/20 text-xs font-serif font-bold text-star-white shadow-md">
@@ -260,7 +260,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
                     </div>
 
                     {/* Tale-merke */}
-                    <div className="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-400/40 text-[10px] text-cyan-300 font-sans shadow-sm">
+                    <div className="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-400/40 text-[10px] text-cyan-300 font-sans shadow-xs">
                       <span>🔊</span> Tale
                     </div>
                   </div>

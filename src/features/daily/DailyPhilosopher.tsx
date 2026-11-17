@@ -60,7 +60,7 @@ export const DailyPhilosopher: React.FC<DailyPhilosopherProps> = ({
 
   return (
     <div className="w-full max-w-3xl mx-auto px-2 sm:px-4 mb-4 animate-fadeIn">
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-cosmos-card/95 via-cosmos-card/90 to-cosmos-card/95 border border-gold/40 p-4 sm:p-5 backdrop-blur-md shadow-[0_0_20px_rgba(246,200,95,0.15)]">
+      <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-cosmos-card/95 via-cosmos-card/90 to-cosmos-card/95 border border-gold/40 p-4 sm:p-5 backdrop-blur-md shadow-[0_0_20px_rgba(246,200,95,0.15)]">
         {/* Dekorativ gyllen glød */}
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
 
@@ -72,7 +72,7 @@ export const DailyPhilosopher: React.FC<DailyPhilosopherProps> = ({
           </div>
           <button
             onClick={() => setIsMinimized(true)}
-            className="text-star-dim hover:text-white text-xs font-serif px-2 py-0.5 rounded hover:bg-white/5 transition-all"
+            className="text-star-dim hover:text-white text-xs font-serif px-2 py-0.5 rounded-sm hover:bg-white/5 transition-all"
             title="Minimer dagens filosof"
           >
             ✕ Minimer

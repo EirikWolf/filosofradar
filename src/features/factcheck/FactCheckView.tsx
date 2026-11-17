@@ -193,7 +193,7 @@ export const FactCheckView: React.FC<FactCheckViewProps> = ({
           placeholder="Søk i navn, skole eller nøkkelord..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="bg-cosmos border border-white/15 px-3 py-1.5 rounded-lg text-xs font-sans text-star-white placeholder:text-star-dim/50 focus:outline-none focus:border-gold/50 min-w-[220px]"
+          className="bg-cosmos border border-white/15 px-3 py-1.5 rounded-lg text-xs font-sans text-star-white placeholder:text-star-dim/50 focus:outline-hidden focus:border-gold/50 min-w-[220px]"
         />
 
         <div className="flex items-center gap-1.5 overflow-x-auto py-1">
@@ -261,7 +261,7 @@ export const FactCheckView: React.FC<FactCheckViewProps> = ({
                   <td className="p-3 font-serif font-bold text-white flex items-center gap-2">
                     <span>{p.name}</span>
                     {p.gender === 'kvinne' && (
-                      <span className="text-[10px] px-1.5 py-0.2 rounded bg-pink-950/60 text-pink-300 border border-pink-500/30">
+                      <span className="text-[10px] px-1.5 py-0.2 rounded-sm bg-pink-950/60 text-pink-300 border border-pink-500/30">
                         kvinne
                       </span>
                     )}

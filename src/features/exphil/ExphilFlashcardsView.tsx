@@ -154,7 +154,7 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
         </div>
         <div className="w-full h-2.5 bg-cosmos rounded-full overflow-hidden border border-white/10">
           <div
-            className="h-full bg-gradient-to-r from-gold to-emerald-400 transition-all duration-300 rounded-full"
+            className="h-full bg-linear-to-r from-gold to-emerald-400 transition-all duration-300 rounded-full"
             style={{ width: `${progressPercent}%` }}
           />
         </div>

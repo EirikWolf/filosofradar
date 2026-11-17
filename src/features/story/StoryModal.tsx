@@ -250,7 +250,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label={`Story: ${story.experimentTitle} av ${philosopherName}`}
-      className="focus:outline-none fixed inset-0 z-[60] flex items-center justify-center p-0 sm:p-4 bg-cosmos/90 backdrop-blur-md animate-in fade-in duration-200"
+      className="focus:outline-hidden fixed inset-0 z-60 flex items-center justify-center p-0 sm:p-4 bg-cosmos/90 backdrop-blur-md animate-in fade-in duration-200"
       onClick={(e) => {
         e.stopPropagation();
         onClose();
@@ -271,16 +271,16 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             <img
               src={story.image}
               alt={story.experimentTitle}
-              className={`w-full h-full object-cover transition-transform duration-[12000ms] ease-out pointer-events-none ${
+              className={`w-full h-full object-cover transition-transform duration-12000 ease-out pointer-events-none ${
                 isPlaying && !isHolding ? 'scale-110' : 'scale-105'
               }`}
             />
             {/* Multi-stopp gradient: mørk i topp og bunn for perfekt kontrast */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/40 to-slate-950/95" />
+            <div className="absolute inset-0 bg-linear-to-b from-black/85 via-black/40 to-slate-950/95" />
           </div>
         ) : (
-          <div className="absolute inset-0 z-0 bg-gradient-to-b from-indigo-950 via-slate-900 to-cosmos">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/15 via-transparent to-transparent" />
+          <div className="absolute inset-0 z-0 bg-linear-to-b from-indigo-950 via-slate-900 to-cosmos">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-gold/15 via-transparent to-transparent" />
           </div>
         )}
 
@@ -304,7 +304,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                     pausedProgressRef.current = 0;
                     startTimeRef.current = null;
                   }}
-                  className="flex-1 h-1 rounded-full bg-white/25 overflow-hidden transition-all hover:h-1.5 focus:outline-none"
+                  className="flex-1 h-1 rounded-full bg-white/25 overflow-hidden transition-all hover:h-1.5 focus:outline-hidden"
                   title={`Gå til del ${idx + 1}`}
                 >
                   <div
@@ -413,7 +413,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
         </div>
 
         {/* BUNN: Innholdskort for den aktive sliden */}
-        <div className="relative z-20 p-5 sm:p-6 space-y-3.5 bg-gradient-to-t from-black via-black/95 to-transparent pointer-events-auto">
+        <div className="relative z-20 p-5 sm:p-6 space-y-3.5 bg-linear-to-t from-black via-black/95 to-transparent pointer-events-auto">
           {/* Kapittel-merke */}
           <div className="flex items-center justify-between">
             <span className="inline-block px-2.5 py-1 rounded-full bg-gold/15 border border-gold/40 text-[10px] font-mono tracking-wider font-bold text-gold">
@@ -437,7 +437,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
           </div>
 
           {/* Hovedtekst */}
-          <p className="text-xs sm:text-sm text-star-white/95 leading-relaxed font-sans whitespace-pre-line drop-shadow-sm">
+          <p className="text-xs sm:text-sm text-star-white/95 leading-relaxed font-sans whitespace-pre-line drop-shadow-xs">
             {currentSlide.body}
           </p>
 

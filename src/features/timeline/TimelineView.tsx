@@ -112,7 +112,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
   return (
     <div className="w-full max-w-6xl mx-auto flex flex-col gap-5 animate-fade-in">
       {/* Kontrollpanel over tidslinjen */}
-      <div className="bg-cosmos-card/90 border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur shadow-2xl flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+      <div className="bg-cosmos-card/90 border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-sm shadow-2xl flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
         {/* Skala- og tradisjonsvalg */}
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-1.5 p-1 bg-cosmos rounded-xl border border-white/10 text-xs font-serif">
@@ -142,7 +142,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
           <select
             value={selectedTradition}
             onChange={(e) => setSelectedTradition(e.target.value)}
-            className="bg-cosmos border border-white/15 rounded-xl px-3 py-2 text-xs font-serif text-star-white focus:outline-none focus:border-gold"
+            className="bg-cosmos border border-white/15 rounded-xl px-3 py-2 text-xs font-serif text-star-white focus:outline-hidden focus:border-gold"
           >
             <option value="all">Alle tradisjoner ({philosophers.length})</option>
             <option value="greek-roman">Gresk og romersk</option>
@@ -346,7 +346,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
 
       {/* Detaljboks: Hvem levde samtidig? */}
       {selectedSpan ? (
-        <div className="bg-cosmos-card border border-gold/50 rounded-2xl p-5 shadow-2xl backdrop-blur animate-fade-in flex flex-col md:flex-row gap-5 items-start justify-between">
+        <div className="bg-cosmos-card border border-gold/50 rounded-2xl p-5 shadow-2xl backdrop-blur-sm animate-fade-in flex flex-col md:flex-row gap-5 items-start justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
               <span className="text-xs uppercase tracking-wider font-serif text-gold font-bold">
