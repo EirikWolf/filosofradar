@@ -182,7 +182,7 @@ som fagstoff.
   induksjonsproblemet (mange like tilfeller gir ingen logisk garanti), vanen
   som livets veileder, og skillet mellom er og bør.
 - **Kilde:** *Abstract* (1740); *An Enquiry concerning Human Understanding*
-  (1748) seksjon IV (biljardkulene) og V (vanen); *A Treatise of Human Nature*
+  (1748 som *Philosophical Essays*, med tittelen *Enquiry* fra 1758) seksjon IV (biljardkulene) og V (vanen); *A Treatise of Human Nature*
   3.1.1 (er og bør); debatten `descartes-vs-hume`.
 - **Det som blir igjen:** én biljardkule.
 
