@@ -339,7 +339,8 @@ montasjen og de visuelle gagene gir det rundt 5 minutter, innenfor målet.
    tømte giftbegeret (*Faidon* 117a–118a). Begeret er en stille henvisning for
    de seerne som kjenner historien.
 4. **Hobbes og Locke:** «Alles krig mot alle» er en ordrett norsk gjengivelse
-   av Hobbes' *bellum omnium contra omnes* (forordet til *De Cive*, 1642) og
+   av Hobbes' *bellum omnium contra omnes* (forordet til 2. utgave av *De
+   Cive*, 1647; førsteutgaven fra 1642 har *bellum omnium in omnes*) og
    tilsvarer formuleringen i *Leviathan* (1651) kap. 13. Lockes replikk
    bygger på *Den annen avhandling om styreformen* kap. 5 §§ 27–28: Man får
    eiendom ved å blande arbeidet sitt med noe som er felles og ikke eid av en
