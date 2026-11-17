@@ -135,6 +135,7 @@ rettet. De viktigste:
 `docs/tegnefilm/`. Sitatregelen for manusene håndheves manuelt, med
 kildelister i hvert manus.
 
-**Til appen (ikke rettet her):** Debatten `hobbes-vs-locke` sier at Hobbes
-avviser opprørsrett «totalt». Det er upresist. Hobbes beholder retten til å
-forsvare sitt eget liv (*Leviathan* kap. 14 og 21).
+**Til appen (rettet 2026-11-17):** Debatten `hobbes-vs-locke` sa at Hobbes
+avviser opprørsrett «totalt». Det var upresist. Hobbes beholder retten til å
+forsvare sitt eget liv (*Leviathan* kap. 14 og 21). Rettet i
+`exphilData.ts` på grenen `fix/hobbes-opprorsrett`.
