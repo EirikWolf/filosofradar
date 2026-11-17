@@ -98,3 +98,9 @@ Kontekst: Revisjonen 2026-11-17 (ARK-01) fant at innholdet omtaler åtte tenkere
 Beslutning: Omtalte personer uten filosofkort står i `NOT_IN_RADAR` i `src/lib/philosopherIndex.ts`. Knapper til filosofkort vises bare for ID-er som finnes i `content/`, og `openCard` ignorerer ukjente ID-er. Kuhn har ingen `philosopherId`. `tests/philosopher-references.test.ts` krever at hver ID finnes eller står på lista, og at navnet stemmer med personen.
 Alternativer: Legge alle åtte inn som filosofer nå (redaksjonelt arbeid som krever beslutning); beholde stedfortredere (gir feil fagstoff).
 Konsekvens: Ingen døde eller feilpekende knapper. Etikk-labens tvilling «John Stuart Mill» vises uten knapp til radaren. Om Mill og Bentham skal bli filosofer i radaren, er fortsatt et åpent beslutningspunkt.
+
+## B-015 – Tailwind CSS 4 (2026-11-17)
+Kontekst: Dependabot-PR #24 løftet Tailwind fra 3 til 4 uten migrering, og bygget feilet fordi PostCSS-pluginen er flyttet til `@tailwindcss/postcss`.
+Beslutning: Migrere med det offisielle `@tailwindcss/upgrade` og kontrollere med skjermbilder før og etter (10 visninger, desktop og mobil) og høydemåling per element. `@tailwindcss/postcss` erstatter `tailwindcss` som PostCSS-plugin, og `autoprefixer` er fjernet (Tailwind 4 håndterer prefikser selv). Kantfarge og hånd-markør på knapper beholdes som i Tailwind 3.
+Alternativer: Bli på Tailwind 3 (krever at store versjonshopp ignoreres for godt); `@tailwindcss/vite` i stedet for PostCSS (større endring, ingen målt gevinst).
+Konsekvens: Verktøyet endret ord i innholdet (`ring` i «Gyges' ring»), så innholdsfilene skal aldri tas med i en slik automatisk migrering. CSS-en ble 108 kB rå mot 63 kB før. JS på første side er uendret, 134,0 kB.
