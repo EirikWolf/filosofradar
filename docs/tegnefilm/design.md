@@ -1,6 +1,6 @@
 # Design: tegnefilmserien «Kollektivet»
 
-Dato: 2026-11-17 · Status: til godkjenning
+Dato: 2026-11-17 · Status: godkjent 2026-11-17, justert etter faktasjekk samme dag (se siste avsnitt)
 
 ## Hensikt
 
@@ -33,13 +33,12 @@ Alternativ B, valgt 2026-11-17:
 - **Minnepalass:** Huset er et minnepalass. Hver filosof har sitt rom, og
   rommet er knaggen for idéen.
 - **Vendingen:** Hver gang Maja forstår en filosof, står rommet tomt dagen
-  etter, og en stjerne dukker opp i taket hennes. Huseieren har ingen sett.
-  På eksamensdagen skjønner Maja at huset er hennes eget minnepalass, og hun
+  etter, og en stjerne dukker opp i taket hennes. På eksamensdagen skjønner Maja at huset er hennes eget minnepalass, og hun
   går gjennom det i hodet mens hun skriver. Seeren får se teknikken i bruk og
   kan bruke den selv. Taket fullt av stjerner blir til Filosofradaren.
 - **Format:** 8 episoder på 4–6 minutter. Hver episode har ett rom og én
-  konflikt, og ender med en repetisjonsscene på rundt 20 sekunder der Maja
-  går gjennom huset.
+  konflikt, og ender med en repetisjonsscene der Maja går gjennom huset. Den
+  tar rundt 20 sekunder i episode 1 og vokser for hver episode.
 
 ## Forslag til husets rom (kan justeres i bibelen)
 
@@ -48,17 +47,19 @@ Alternativ B, valgt 2026-11-17:
 | Gangen | Sokrates | Stiller spørsmål ved døra og slipper ingen inn før de har definert ordet de bruker | Sokratisk metode |
 | Kjelleren | Platon | Mørk kjeller, skygger på veggen, en trapp opp mot lyset | Hulelignelsen, idélæren |
 | Kjøkkenet | Aristoteles | Hver ting har en hylle og et formål | Form i tingene, telos, dyd som midten |
-| Stua | Hobbes og Locke (+ Wollstonecraft) | Vaskelista på kjøleskapet | Naturtilstand, samfunnskontrakt, eiendomsrett, rettigheter |
-| Ovnsrommet | Descartes | Det oppvarmede rommet der han tviler på alt | Metodisk tvil, *cogito* |
+| Stua | Hobbes og Locke | Vaskelista på kjøleskapet | Naturtilstand, samfunnskontrakt, eiendomsrett, opprørsrett |
+| Hybelen ved stua | Wollstonecraft | Står ikke på listen over dem som får stemme | Fornuften har ikke kjønn, rettigheter, utdanning |
+| Fyrrommet | Descartes | Det varme rommet, som rommet med ovnen der han la opp metoden | Metodisk tvil, *cogito* |
 | Spillrommet | Hume | Biljardbordet: vi ser ballen støte, aldri årsaken | Inntrykk og idéer, kausalitet, induksjon |
-| 2. etasje | Kant | Ryddigst i huset, husregelen «hva om alle gjorde det?» | Det kategoriske imperativ, plikt |
-| Trappa | Kierkegaard | Bor på trappa: tre avsatser er tre stadier | Estetisk, etisk og religiøst stadium |
-| Balkongen | Sartre og de Beauvoir | Kafébordet på balkongen | Frihet, eksistensen går forut for essensen (Sartre, *L'existentialisme est un humanisme*, 1946), situasjon |
+| 2. etasje | Kant | Ryddigst i huset, skiltet *Kan regelen din bli lov for alle?* | Det kategoriske imperativ, plikt |
+| Loftstrappa | Kierkegaard | Bor i den bratte loftstrappa: tre avsatser er tre stadier | Estetisk, etisk og religiøst stadium |
+| Arkbalkongen | Sartre og de Beauvoir | Kafébordet på balkongen øverst i huset | Frihet, eksistensen går forut for essensen (Sartre, *L'existentialisme est un humanisme*, 1946), situasjon |
 | Loftet | Popper (+ Kuhn på besøk) | Fuglekasser med hvite svaner, til én er svart | Falsifikasjon, paradigmeskifte |
 
-Descartes' oppvarmede rom (*Discours de la méthode*, del 2), Humes biljardkuler
-(*Abstract*, 1740, og *Enquiry*, del 4) og Poppers svaner er ekte eksempler fra
-verkene. Kants faste spaserturer er en anekdote og skal merkes som det.
+Descartes' oppvarmede rom (*Discours de la méthode*, del 2, der han la opp
+metoden; *cogito* kommer i del 4), Humes biljardkuler (*Abstract*, 1740, og
+*Enquiry*, seksjon IV) og Poppers svaner er ekte eksempler fra verkene. Kants
+faste spaserturer er en anekdote og skal merkes som det.
 
 ## Episodeplan (utkast)
 
@@ -89,8 +90,10 @@ Episode 2–7 følger debattene som allerede finnes i appens Ex.phil-hub
     ha verk og kilde, som appens innholdsregel krever.
   - En forelesning med tegninger til.
   - Lån fra *Sofies verden*: ingen figurer, ingen mystiske brev fra en lærer,
-    ingen vending om at personene er figurer i en bok. Vår vending er
-    minnepalasset.
+    ingen usett huseier eller annen skikkelse bak kulissene, og ingen vending
+    om at personene er figurer i en bok. Vår vending er minnepalasset.
+  - Å blande Platons *anamnese* (sjelen husker idéer fra før fødselen) med
+    minnepalasset, som er en teknikk. Episode 8 skiller dem tydelig.
 
 ## Begrensninger
 
@@ -106,5 +109,32 @@ Episode 2–7 følger debattene som allerede finnes i appens Ex.phil-hub
 - Hvordan rommene tømmes visuelt, og hvordan stjernene samles.
 - Vitser, replikker og regi i piloten innenfor anti-målene over.
 - Faktasjekk av hvert pensumpoeng mot appens filosof-filer og Ex.phil-data.
-  Dessuten sjekke at `tests/quote-guard.test.ts` ikke fanger opp tekst i
-  `docs/tegnefilm/`.
+
+## Etter faktasjekken 2026-11-17
+
+En uavhengig faglig leser sjekket rundt 95 påstander og henvisninger i alle
+fire dokumentene. Det fantes ingen oppdiktede sitater, men rundt 30 punkter ble
+rettet. De viktigste:
+
+- **Platon** skriver nå *samtaler* der Sokrates er hovedperson, ikke referater.
+  Det er appens egen eksamensfelle å blande Sokrates med Platons idélære.
+- **Anamnese og minnepalass** holdes atskilt. Aristoteles, som skrev om å huske
+  ved hjelp av steder, står for skillet i episode 8.
+- **Den usette huseieren og «M.»** er fjernet fordi de lignet for mye på
+  *Sofies verden*. Vendingen om minnepalasset står.
+- **Locke** får eiendom ved å plukke blåbær i Marka, noe som er felles og ikke
+  eid, ikke ved å kjøpe yoghurt.
+- **Hume** slutter ut fra vane, men kan ikke bevise slutningen. Han nekter ikke å
+  konkludere.
+- **Kants skilt** spør om regelen kan bli lov for alle, ikke om det ville gått
+  dårlig hvis alle gjorde det.
+- **Descartes** har bivoks, ikke stearin.
+- **Kierkegaard** skifter ikke stadium etter humør.
+
+**Kjent begrensning:** `tests/quote-guard.test.ts` skanner ikke
+`docs/tegnefilm/`. Sitatregelen for manusene håndheves manuelt, med
+kildelister i hvert manus.
+
+**Til appen (ikke rettet her):** Debatten `hobbes-vs-locke` sier at Hobbes
+avviser opprørsrett «totalt». Det er upresist. Hobbes beholder retten til å
+forsvare sitt eget liv (*Leviathan* kap. 14 og 21).
