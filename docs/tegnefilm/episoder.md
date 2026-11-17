@@ -15,6 +15,33 @@ Hver episode har samme oppbygning:
 4. **Morgenen etter** (ca. 15 s): rommet står tomt med én ting igjen, og det
    har kommet en ny stjerne i taket.
 
+## Skriveregler etter produksjonstesten
+
+Den 17.11.2026 ble fire klipp fra piloten laget som en intern test med
+KI-video: Sokrates i gangen, Platon i kjelleren, repetisjonsscenen som skisse
+og stjernen i taket. Figurene holdt seg like fra klipp til klipp, men testen
+viste hva et manus må ta hensyn til når filmen lages på denne måten. Fra
+episode 2 skrives manusene etter disse reglene:
+
+1. **Ett BILDE er én handling på 5–6 sekunder.** Et klipp er rundt 6
+   sekunder langt. En scene skrives som en rekke korte bilder, ikke som én
+   lang beskrivelse. Klippet slutter når handlingen er ferdig, ellers finner
+   modellen på en ekstra bevegelse.
+2. **Én replikk per bilde, og høyst rundt 15 ord.** Lengre replikker deles
+   over flere bilder. Hver replikk lages i flere stemmevarianter, og den som
+   gjengir teksten ordrett, velges. I testen svelget stemmen «hva er et».
+3. **Høyst tre figurer i bildet,** og helst bare én som snakker.
+4. **Stillestående kamera.** Kamerabevegelser får rommet til å endre seg.
+   Repetisjonsscenen skrives derfor som ett skissebilde per rom, ikke som en
+   kameratur gjennom huset. Skissestilen med gull-linjer virket i testen.
+5. **Rekvisitter beskrives konkret:** materiale, form og størrelse. «Figurer
+   av papp» ble en tredimensjonal lekehest. Skriv heller «en flat, papirtynn
+   silhuett av brun papp».
+6. **Tekst i bildet holdes kort** (skilt, lapper, overskrifter). Den legges
+   inn i etterarbeidet, fordi modellen skriver tull.
+7. **Beskriv det som skal være der.** Et bilde som sier hva som *ikke* skal
+   vises, får ofte nettopp det med.
+
 ## Repetisjonslinjene
 
 Linjene er Majas oppsummeringer og skrives i kursiv. Noen av dem gjengir
@@ -72,6 +99,7 @@ gang, så seeren lærer dem utenat.
   Aristoteles blir boende og kommer tilbake i episode 5.
 - **I appen:** Ex.phil-debatten «Platon vs. Aristoteles: Hvor finnes
   virkeligheten?».
+- Fullt manus: `docs/tegnefilm/ep2-manus.md`.
 
 ## Episode 3 · Vaskelista
 
