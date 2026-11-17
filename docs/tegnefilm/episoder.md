@@ -122,11 +122,12 @@ gang, så seeren lærer dem utenat.
   opprørsrett og Wollstonecrafts krav om lik fornuft og lik utdanning.
 - **Eksamensfelle:** Hobbes avviser retten til å avsette suverenen, men ikke
   retten til å forsvare sitt eget liv. Locke ser opprørsretten som en
-  nødventil. *Merk: appens tekst sier at Hobbes avviser opprørsrett «totalt».
-  Det er upresist og bør rettes i appen (se `design.md`).*
+  nødventil. Appen sa tidligere at Hobbes avviser opprørsrett «totalt». Det er
+  rettet 17.11.2026 (se `design.md`).
 - **Forsvinner:** Hobbes, Locke og Wollstonecraft. Igjen blir vaskelista med
   underskriftene og bokstabelen på hybelpulten.
 - **I appen:** Ex.phil-debatten «Hobbes vs. Locke: Hvorfor trenger vi en stat?».
+- Fullt manus: `docs/tegnefilm/ep3-manus.md`.
 
 ## Episode 4 · Hvem spiste yoghurten?
 

@@ -131,7 +131,8 @@ som fagstoff.
   at mora hans fødte tvillinger, ham og frykten, fordi hun gikk i fødsel av
   skrekk for den spanske armadaen. Det står i selvbiografien hans på vers,
   skrevet ca. 1672 og trykt 1679. Gjengis med egne ord.
-- **Locke:** Rolig og ryddig. Har plukket blåbær i Marka, som ingen eier, og
+- **Locke:** Rolig og ryddig. Har plukket blåbær i Marka, der bærene er
+  felles etter allemannsretten, og
   laget sin egen yoghurt. Skriver navnet sitt på boksen: arbeidet hans gjorde
   bærene til hans. Mener at husformannen kan avsettes hvis han misbruker makten.
 - **Pensum:** naturtilstanden, samfunnskontrakten, eiendom ved å blande eget
