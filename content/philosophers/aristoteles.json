@@ -29,7 +29,7 @@
   "keyIdeas": [
     {
       "title": "Den gylne middelvei",
-      "text": "I etikken mente han at dyd og gode handlinger ligger i midten mellom to ytterpunkter. Mote er for eksempel balansen mellom feighet og dumdristighet."
+      "text": "I etikken mente han at dyd og gode handlinger ligger i midten mellom to ytterpunkter. Mot er for eksempel balansen mellom feighet og dumdristighet."
     },
     {
       "title": "Formell logikk (syllogismer)",
@@ -41,10 +41,10 @@
     }
   ],
   "quote": {
-    "text": "Vi er det vi gjør gjentatte ganger. Fortreffelighet er derfor ikke en enkel handling, men en vane.",
-    "work": "Den nikomakiske etikk",
-    "source": "https://snl.no/Aristoteles",
-    "translator": "egen oversettelse fra gresk"
+    "text": "Vi blir rettferdige ved å gjøre rettferdige handlinger, måteholdne ved å gjøre måteholdne handlinger og modige ved å gjøre modige handlinger.",
+    "work": "Den nikomakiske etikk, bok II, kap. 1 (1103a–b)",
+    "source": "https://classics.mit.edu/Aristotle/nicomachaen.2.ii.html",
+    "translator": "egen oversettelse fra gresk via engelsk (W. D. Ross)"
   },
   "thinkAbout": "Er det lettere å bli en god person hvis du øver på gode handlinger hver dag, akkurat som å øve på et instrument?",
   "influencedBy": [
