@@ -1,5 +1,268 @@
 {
-  "sourced": [],
+  "sourced": [
+    {
+      "text": "Cogito, ergo sum",
+      "work": "Principia philosophiae (1644)",
+      "source": "Del I, art. 7 (fransk form «je pense, donc je suis» i Discours de la méthode, del IV). Kontrollert mot https://la.wikisource.org/wiki/Principia_philosophiae (2026-11-16)"
+    },
+    {
+      "text": "en gudberuset mann",
+      "work": "Novalis, Fragmente (religiøse fragmenter, ca. 1799–1800)",
+      "source": "Fragmentet «Spinoza ist ein gotttrunkener Mensch» (Fragmente I, religionsavsnittet, Jess-utgaven 1929). Kontrollert mot https://projekt-gutenberg.org/authors/novalis/books/fragmente-i/chapter/21/ (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Jeg søker Gud! … Vi har drept ham – dere og jeg!",
+      "work": "Die fröhliche Wissenschaft (1882)",
+      "source": "Bok III, § 125 «Der tolle Mensch». Kontrollert mot http://www.zeno.org/Philosophie/M/Nietzsche,+Friedrich/Die+fr%C3%B6hliche+Wissenschaft/Drittes+Buch/125.+Der+tolle+Mensch (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Man fødes ikke som kvinne, man blir det",
+      "work": "Le Deuxième Sexe (1949)",
+      "source": "Bind II, del 1 «Formation», kap. I «Enfance», første setning. Kontrollert mot https://www.schoolmouv.fr/cours/identite-et-genre/fiche-de-cours (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "ensomt, fattig, ekkelt, brutalt og kort",
+      "work": "Leviathan (1651)",
+      "source": "Del I, kap. XIII «Of the Naturall Condition of Mankind». Kontrollert mot https://gutenberg.pglaf.org/3/2/0/3207/3207-h/3207-h.htm (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Mennesket er født fritt, men overalt er det i lenker",
+      "work": "Du contrat social (1762)",
+      "source": "Bok I, kap. 1. Kontrollert mot https://fr.wikisource.org/wiki/Du_contrat_social/%C3%89dition_1762/Livre_I/Chapitre_1 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "tvinges til å være fri",
+      "work": "Du contrat social (1762)",
+      "source": "Bok I, kap. 7. Kontrollert mot https://fr.wikisource.org/wiki/Du_contrat_social/%C3%89dition_1762/Livre_I/Chapitre_7 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "hva man ikke kan tale om, må man tie om",
+      "work": "Logisch-philosophische Abhandlung / Tractatus logico-philosophicus (1921/22)",
+      "source": "Proposisjon 7 (jf. forordet). Kontrollert mot https://www.wittgensteinproject.org/w/index.php/Logisch-philosophische_Abhandlung (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "gjorde plikten sin",
+      "work": "Eichmann in Jerusalem: A Report on the Banality of Evil (1963)",
+      "source": "kap. VIII «Duties of a Law-Abiding Citizen». Kontrollert mot https://app.myeducator.com/reader/web/1156b/topic3/fl5zy (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Be meg om hva du vil!",
+      "work": "Diogenes Laertios, Filosofenes liv og lære",
+      "source": "VI.38. Kontrollert mot https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0258:book=6:chapter=2 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Flytt deg litt til siden, du skygger for solen min.",
+      "work": "Plutark, Aleksanders liv (jf. Diogenes Laertios, Filosofenes liv og lære)",
+      "source": "Plutark, Alexander 14.2–3; Diogenes Laertios VI.38. Kontrollert mot https://lexundria.com/plut_alex/14/prr (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "den ærverdige og fryktinngytende Parmenides",
+      "work": "Platon, Theaitetos",
+      "source": "183e. Kontrollert mot https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0172:text=Theaet.:page=183 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Finnes det ett ord som kan tjene som rettesnor for hele livet?",
+      "work": "Samtaler (Lunyu)",
+      "source": "15.23 i Wikisource-nummereringen (15.24 hos ctext/D.C. Lau). Kontrollert mot https://zh.wikisource.org/wiki/%E8%AB%96%E8%AA%9E/%E8%A1%9B%E9%9D%88%E5%85%AC%E7%AC%AC%E5%8D%81%E4%BA%94 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Spør ikke for langt, Gargi, ellers vil hodet ditt falle av!",
+      "work": "Brihadaranyaka-upanishaden",
+      "source": "3.6.1. Kontrollert mot https://sacred-texts.com/hin/sbe15/sbe15069.htm (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Sannhet kan aldri motsi sannhet",
+      "work": "Faṣl al-maqāl (Den avgjørende avhandling)",
+      "source": "kap. 2, innledningen (Hourani-oversettelsen 1961). Kontrollert mot https://www.muslimphilosophy.com/ir/fasl.htm (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "den beste av alle mulige verdener",
+      "work": "Essais de Théodicée (1710)",
+      "source": "Del I, § 8. Kontrollert mot https://fr.wikisource.org/wiki/Essais_de_Th%C3%A9odic%C3%A9e/Premi%C3%A8re_partie (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Hva vet jeg?",
+      "work": "Essais",
+      "source": "II.12 «Apologie de Raimond Sebond». Kontrollert mot https://fr.wikisource.org/wiki/Essais/Livre_II/Chapitre_12 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Jeg gikk ut i skogen fordi jeg ønsket å leve bevisst, bare møte livets essensielle fakta.",
+      "work": "Walden; or, Life in the Woods (1854)",
+      "source": "Kapittel 2, «Where I Lived, and What I Lived For». Kontrollert mot https://en.wikisource.org/wiki/Walden,_or,_Life_in_the_Woods/Where_I_Lived,_and_What_I_Lived_for (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Kostnaden for en ting er mengden liv du må bytte bort for å skaffe den.",
+      "work": "Walden; or, Life in the Woods (1854)",
+      "source": "Kapittel 1, «Economy». Kontrollert mot https://en.wikisource.org/wiki/Walden,_or,_Life_in_the_Woods/Economy (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Hvis Aristoteles hadde laget mat, ville han skrevet langt mer!",
+      "work": "Respuesta a Sor Filotea de la Cruz (1691)",
+      "source": "Avsnittet om iakttakelsene i kjøkkenet, etter at en priorinne hadde forbudt henne å studere i tre måneder. Kontrollert mot https://es.wikisource.org/wiki/Respuesta_a_sor_Filotea_de_la_Cruz (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "ingen gjør galt med vilje",
+      "work": "Platon, Protagoras",
+      "source": "345d–e (jf. også Gorgias 509e og Menon 77b–78b). Kontrollert mot https://el.wikisource.org/wiki/%CE%A0%CF%81%CF%89%CF%84%CE%B1%CE%B3%CF%8C%CF%81%CE%B1%CF%82 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "alles krig mot alle",
+      "work": "Leviathan (1651)",
+      "source": "Del I, kap. 13 (latinsk form «bellum omnium contra/in omnes» i De Cive og den latinske Leviathan). Kontrollert mot https://en.wikisource.org/wiki/Leviathan_(1651)/Chapter_13 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Eksistensen går forut for essensen",
+      "work": "L'existentialisme est un humanisme (1946)",
+      "source": "Foredraget 29.10.1945; Nagel-utg. 1970, s. 17 (jf. også «si Dieu n'existe pas, il y a au moins un être chez qui l'existence précède l'essence»). Kontrollert mot https://fr.wikiquote.org/wiki/Jean-Paul_Sartre (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "eksistensen går forut for essensen",
+      "work": "L'existentialisme est un humanisme (1946)",
+      "source": "Foredraget 29.10.1945; Nagel-utg. 1970, s. 17 (jf. også «si Dieu n'existe pas, il y a au moins un être chez qui l'existence précède l'essence»). Kontrollert mot https://fr.wikiquote.org/wiki/Jean-Paul_Sartre (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "dømt til frihet",
+      "work": "L'existentialisme est un humanisme (1946)",
+      "source": "Nagel-utg. 1970, s. 37 (tanken også i L'Être et le néant, 1943, del IV). Kontrollert mot https://fr.wikiquote.org/wiki/Jean-Paul_Sartre (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "subjektiviteten er sannheten",
+      "work": "Afsluttende uvidenskabelig Efterskrift (1846)",
+      "source": "Anden Deel, Andet Afsnit, Cap. 2: «Den subjektive Sandhed, Inderligheden; Sandheden er Subjektiviteten» (SKS 7). Kontrollert mot https://tekster.kb.dk/text/sks-ae-txt-root (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Tro for at du kan forstå",
+      "work": "In Iohannis Evangelium Tractatus (Traktater om Johannesevangeliet)",
+      "source": "Tractatus 29.6 (også Sermo 43.7.9: «crede ut intellegas»); bygger på Jes 7,9 (LXX/Vetus Latina). Kontrollert mot https://www.augustinus.it/latino/commento_vsg/omelia_029_testo.htm (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Deus sive Natura",
+      "work": "Ethica ordine geometrico demonstrata (1677)",
+      "source": "Del IV, forord («Deus seu Natura») og del IV, prop. 4, bevis («Dei sive Naturæ potentia»). Kontrollert mot https://la.wikisource.org/wiki/Ethica/Pars_quarta_-_De_servitute_humana_seu_de_affectuum_viribus (2026-11-16)"
+    },
+    {
+      "text": "Gud er død",
+      "work": "Die fröhliche Wissenschaft (1882)",
+      "source": "Drittes Buch, § 125 «Der tolle Mensch» (også § 108 og Also sprach Zarathustra, Vorrede 2). Kontrollert mot http://www.zeno.org/Philosophie/M/Nietzsche,+Friedrich/Die+fr%C3%B6hliche+Wissenschaft/Drittes+Buch/125 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Handle slik at du bruker menneskeheten, både i din egen person og i enhver annens, alltid samtidig som mål og aldri bare som middel",
+      "work": "Grundlegung zur Metaphysik der Sitten (1785), 2. Abschnitt",
+      "source": "AA 4:429. Kontrollert mot https://archive.org/stream/immanuelkantsgru00kant/immanuelkantsgru00kant_djvu.txt (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Jeg tenker, altså er jeg",
+      "work": "Discours de la méthode (1637), 4. del; jf. Principia philosophiae I.7 (1644)",
+      "source": "Discours IV (AT VI 32). Kontrollert mot https://fr.wikisource.org/wiki/Discours_de_la_m%C3%A9thode_(%C3%A9d._Cousin)/Quatri%C3%A8me_partie (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "nok og like godt igjen til andre",
+      "work": "Two Treatises of Government, Second Treatise, kap. V «Of Property»",
+      "source": "§27. Kontrollert mot https://en.wikisource.org/wiki/Two_Treatises_of_Government_(1764)/Book_II (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Den første som gjerdet inn et stykke jord og sa: Dette er mitt!, og fant folk enfoldige nok til å tro ham, var det borgerlige samfunns sanne grunnlegger.",
+      "work": "Discours sur l’origine et les fondements de l’inégalité parmi les hommes (1755)",
+      "source": "Seconde partie, første setning. Kontrollert mot https://fr.wikisource.org/wiki/Discours_sur_l%E2%80%99origine_et_les_fondements_de_l%E2%80%99in%C3%A9galit%C3%A9_parmi_les_hommes/Seconde_partie (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Den som styrer ved hjelp av sin egen moralske styrke, er som Nordstjernen: Den forblir på sin faste plass, mens alle de andre stjernene bøyer seg og kretser omkring den.",
+      "work": "Lunyu (Analektene), bok 2 Wei zheng",
+      "source": "Analektene 2.1. Kontrollert mot https://en.wikisource.org/wiki/The_Chinese_Classics/Volume_1/Confucian_Analects/II (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Gjensidighet (shu): Det du ikke ønsker at andre skal gjøre mot deg, skal du heller ikke gjøre mot dem.",
+      "work": "Lunyu (Analektene), bok 15 Wei Ling Gong",
+      "source": "Analektene 15.24 (Legge: XV.23). Kontrollert mot https://en.wikisource.org/wiki/The_Chinese_Classics/Volume_1/Confucian_Analects/XV (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Når jeg leker med katten min, hvem vet da om ikke hun morer seg mer over meg enn jeg gjør over henne?",
+      "work": "Essais, bok II, kap. 12 «Apologie de Raimond Sebond»",
+      "source": "Essais II.12. Kontrollert mot https://fr.wikisource.org/wiki/Essais/Livre_II/Chapitre_12 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Når jeg står på den bare marken med hodet løftet mot den uendelige himmelen, forsvinner all egoisme. Jeg blir et gjennomsiktig øyeeple: Jeg er ingenting; jeg ser alt; den universelle Væren strømmer gjennom meg.",
+      "work": "Nature (1836)",
+      "source": "kap. 1 «Nature». Kontrollert mot https://en.wikisource.org/wiki/Nature_(1836)/Chapter_1 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "den europeiske filosofiske tradisjonen består av en serie fotnoter til Platon",
+      "work": "Process and Reality (1929)",
+      "source": "Part II, kap. I «Fact and Form», seksjon I (s. 63 i 1929-utgaven; s. 39 i korrigert utg. 1978). Kontrollert mot https://archive.org/stream/processrealityes00whit_1/processrealityes00whit_1_djvu.txt (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Historien til alle hittil eksisterende samfunn er historien om klassekamper",
+      "work": "Manifest der Kommunistischen Partei (1848)",
+      "source": "Kap. I «Bourgeois und Proletarier», første setning. Kontrollert mot https://www.marxists.org/deutsch/archiv/marx-engels/1848/manifest/1-bourprol.htm (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Dette livet, slik du nå lever det og har levd det, må du leve én gang til og utallige ganger til",
+      "work": "Die fröhliche Wissenschaft (1882)",
+      "source": "Bok IV, § 341 «Das größte Schwergewicht». Kontrollert mot http://www.zeno.org/Philosophie/M/Nietzsche,+Friedrich/Die+fr%C3%B6hliche+Wissenschaft/Viertes+Buch.+Sanctus+Januarius/341.+Das+gr%C3%B6%C3%9Fte+Schwergewicht (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "den like retten til å leve og blomstre",
+      "work": "«The Shallow and the Deep, Long-Range Ecology Movement. A Summary», Inquiry 16 (1973), s. 95–100",
+      "source": "Punkt 2 «Biospherical egalitarianism – in principle» (s. 95–96). Kontrollert mot https://theanarchistlibrary.org/library/ame-naess-the-shallow-and-the-deep (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Jeg leter etter et menneske.",
+      "work": "Diogenes Laertios, Filosofenes liv og lære",
+      "source": "VI.41. Kontrollert mot https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0258:book=6:chapter=2 (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Livet er langt hvis du vet å bruke det.",
+      "work": "De brevitate vitae",
+      "source": "1.3–2.1. Kontrollert mot https://www.thelatinlibrary.com/sen/sen.brevita.shtml (2026-11-16)",
+      "translator": "Egen oversettelse"
+    },
+    {
+      "text": "Vær ikke hovmodig over din lærdom; rådspør både den uvitende og den vise. For kunnskapens grenser kan aldri nås, og ingen håndverker mestrer sitt fag fullkomment.",
+      "work": "Ptahhoteps leveregler (Papyrus Prisse)",
+      "source": "Maksime 1. Kontrollert mot https://en.wikisource.org/wiki/The_Sacred_Books_and_Early_Literature_of_the_East/Volume_2/The_Oldest_Book_in_the_World (2026-11-16)",
+      "translator": "Egen oversettelse"
+    }
+  ],
   "notQuotes": [
     {
       "text": "tingen i seg selv",
@@ -178,185 +441,5 @@
       "reason": "Tittel på verk eller navn"
     }
   ],
-  "unsourced": [
-    {
-      "text": "ingen gjør galt med vilje, bare av uvitenhet"
-    },
-    {
-      "text": "hele filosofihistorien er en serie fotnoter til Platon"
-    },
-    {
-      "text": "Cogito, ergo sum"
-    },
-    {
-      "text": "en gudberuset mann"
-    },
-    {
-      "text": "verdensånden til hest"
-    },
-    {
-      "text": "Klassekamp er historiens drivkraft",
-      "note": "Står som sitat fra Det kommunistiske manifest, men er trolig en omskrivning. Kontroller mot norsk utgave eller skriv om uten anførselstegn."
-    },
-    {
-      "text": "Dette livet du nå lever, må du leve om igjen i nøyaktig samme rekkefølge og detalj en uendelighet av ganger"
-    },
-    {
-      "text": "Jeg leter etter Gud! Vi har drept ham – dere og jeg!"
-    },
-    {
-      "text": "Man fødes ikke som kvinne, man blir det"
-    },
-    {
-      "text": "alt levendes like rett til å utfolde seg"
-    },
-    {
-      "text": "min mor fødte tvillinger: meg og frykten"
-    },
-    {
-      "text": "ensomt, fattig, ekkelt, brutalt og kort"
-    },
-    {
-      "text": "Mennesket er født fritt, men overalt er det i lenker"
-    },
-    {
-      "text": "tvinges til å være fri"
-    },
-    {
-      "text": "hva man ikke kan tale om, må man tie om"
-    },
-    {
-      "text": "gjorde plikten sin"
-    },
-    {
-      "text": "Jeg leter etter et oppriktig, ekte menneske."
-    },
-    {
-      "text": "Be om hva som helst du ønsker, og jeg skal gi deg det!"
-    },
-    {
-      "text": "Flytt deg litt til siden, du skygger for solen min."
-    },
-    {
-      "text": "den ærverdige og fryktinngytende Parmenides"
-    },
-    {
-      "text": "Alt er tall"
-    },
-    {
-      "text": "Finnes det ett ord som kan tjene som rettesnor for hele livet?"
-    },
-    {
-      "text": "Vann er vevd på luft, men hva er luften vevd på?"
-    },
-    {
-      "text": "Hva er ilden vevd på? Stjernene? Gudene?"
-    },
-    {
-      "text": "Spør ikke for langt, Gargi, ellers vil hodet ditt falle av!"
-    },
-    {
-      "text": "Sannhet kan aldri motsi sannhet"
-    },
-    {
-      "text": "fra Moses til Moses fantes det ingen som Moses"
-    },
-    {
-      "text": "den beste av alle mulige verdener"
-    },
-    {
-      "text": "Hva vet jeg?"
-    },
-    {
-      "text": "århundrets største statsmann"
-    },
-    {
-      "text": "Kast av kropp og sinn!"
-    },
-    {
-      "text": "Å stole på seg selv er å stole på det guddommelige"
-    },
-    {
-      "text": "Jeg gikk ut i skogen fordi jeg ønsket å leve bevisst, bare møte livets essensielle fakta."
-    },
-    {
-      "text": "Kostnaden for en ting er mengden liv du må bytte bort for å skaffe den."
-    },
-    {
-      "text": "Hvis Aristoteles hadde laget mat, ville han skrevet langt mer!"
-    },
-    {
-      "text": "Se, en neger! Mamma, se på negeren, jeg er redd!"
-    },
-    {
-      "text": "ingen gjør galt med vilje"
-    },
-    {
-      "text": "alles krig mot alle"
-    },
-    {
-      "text": "Eksistensen går forut for essensen"
-    },
-    {
-      "text": "eksistensen går forut for essensen"
-    },
-    {
-      "text": "dømt til frihet"
-    },
-    {
-      "text": "subjektiviteten er sannheten"
-    },
-    {
-      "text": "Tro for at du kan forstå"
-    },
-    {
-      "text": "Deus sive Natura"
-    },
-    {
-      "text": "Gud er død"
-    },
-    {
-      "text": "Behandle alltid mennesker som et formål i seg selv, aldri bare som et middel"
-    },
-    {
-      "text": "Jeg tenker, altså er jeg"
-    },
-    {
-      "text": "Primum non nocere"
-    },
-    {
-      "text": "nok og like godt igjen til andre"
-    },
-    {
-      "text": "det eneste jeg vet er at jeg intet vet",
-      "note": "Vanlig tillagt Sokrates, men ikke ordrett hos Platon. Kontroller eller skriv om."
-    },
-    {
-      "text": "Den første som gjerdet inn et stykke jord og sa: Dette er mitt!, og fant folk enfoldige nok til å tro ham, var det borgerlige samfunns sanne grunnlegger."
-    },
-    {
-      "text": "Livet er langt nok hvis du vet hvordan du skal bruke det; det meste kaster vi bort på unyttige gjøremål."
-    },
-    {
-      "text": "Den som styrer ved hjelp av sin egen moralske styrke, er som Nordstjernen: Den forblir på sin faste plass, mens alle de andre stjernene bøyer seg og kretser omkring den."
-    },
-    {
-      "text": "Gjensidighet (shu): Det du ikke ønsker at andre skal gjøre mot deg, skal du heller ikke gjøre mot dem."
-    },
-    {
-      "text": "Jeg skal sette fyr på paradis og slukke helvetes flammer, så menneskene elsker Gud for Guds egen skyld, og ikke av frykt for straff eller håp om belønning!"
-    },
-    {
-      "text": "Når jeg leker med katten min, hvem vet da om ikke hun morer seg mer over meg enn jeg gjør over henne?"
-    },
-    {
-      "text": "Når sinnet oppstår, oppstår mangfoldet av ting; når sinnet stilner, forsvinner graven og skallen."
-    },
-    {
-      "text": "Når jeg står på den bare marken med hodet løftet mot den uendelige himmelen, forsvinner all egoisme. Jeg blir et gjennomsiktig øyeeple: Jeg er ingenting; jeg ser alt; den universelle Væren strømmer gjennom meg."
-    },
-    {
-      "text": "Vær ikke hovmodig over din lærdom; rådspør både den uvitende og den vise. For kunnskapens grenser kan aldri nås, og ingen håndverker mestrer sitt fag fullkomment. Kloke ord kan finnes like ofte hos slavinnen ved kvernen som blant de lærde."
-    }
-  ]
+  "unsourced": []
 }

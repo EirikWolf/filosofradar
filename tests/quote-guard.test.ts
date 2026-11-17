@@ -24,7 +24,7 @@ import { TOURS } from '../src/features/tours/tourData';
  * sitat fra «unsourced» til «sourced». Øk det aldri: et nytt sitat skal ha
  * kilde fra første dag.
  */
-const UNSOURCED_CEILING = 59;
+const UNSOURCED_CEILING = 0;
 
 const register = QuoteRegisterSchema.parse(registerJson);
 
