@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { preloadCardContent } from '../card/cardContent';
 import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { TRADITIONS, getTraditionMeta } from '../../lib/traditions';
@@ -143,7 +144,10 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
               >
                 <div
                   className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 cursor-pointer select-none"
-                  onClick={() => setExpandedId(isExpanded ? null : p.id)}
+                  onClick={() => {
+                    if (!isExpanded) preloadCardContent();
+                    setExpandedId(isExpanded ? null : p.id);
+                  }}
                 >
                   <div className="flex items-start sm:items-center gap-3">
                     <span

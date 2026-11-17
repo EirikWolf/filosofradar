@@ -7,15 +7,13 @@ import type { ThoughtExperiment } from '../deepdive/types';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import { sound } from '../../lib/sound';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
+import { loadDeepDiveSection, loadExphilCardExamBox } from './cardContent';
 
 // Dypdykk, Ex.phil-boksen og historiene bærer mye tekst. De lastes først når et
 // kort åpnes, slik at forsiden holder seg under ytelsesbudsjettet (200 kB gzip).
-const ExphilCardExamBox = React.lazy(() =>
-  import('../exphil/ExphilCardExamBox').then((m) => ({ default: m.ExphilCardExamBox })),
-);
-const DeepDiveSection = React.lazy(() =>
-  import('../deepdive/DeepDiveSection').then((m) => ({ default: m.DeepDiveSection })),
-);
+// Samme lastere som forhåndslastingen bruker (YTE-04), så biten hentes bare én gang.
+const ExphilCardExamBox = React.lazy(() => loadExphilCardExamBox().then((m) => ({ default: m.ExphilCardExamBox })));
+const DeepDiveSection = React.lazy(() => loadDeepDiveSection().then((m) => ({ default: m.DeepDiveSection })));
 const StoryModal = React.lazy(() => import('../story/StoryModal').then((m) => ({ default: m.StoryModal })));
 
 interface PhilosopherCardProps {

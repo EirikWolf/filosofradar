@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
 import { getTraditionMeta } from '../../lib/traditions';
 import { sound } from '../../lib/sound';
+import { preloadCardContent } from '../card/cardContent';
 
 interface DailyPhilosopherProps {
   philosophers: Philosopher[];
@@ -110,6 +111,8 @@ export const DailyPhilosopher: React.FC<DailyPhilosopherProps> = ({
           {/* Knapper */}
           <div className="flex items-center gap-2 shrink-0">
             <button
+              onPointerEnter={preloadCardContent}
+              onFocus={preloadCardContent}
               onClick={() => {
                 sound.playStarSelect();
                 onOpenCard(dailyPhilosopher.id);
