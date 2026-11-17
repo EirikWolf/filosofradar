@@ -583,7 +583,7 @@ export const EXPHIL_DUELS: ExphilDuel[] = [
     synthesisAndComparison:
       'Hobbes prioriterer orden og overlevelse over frihet (enevelde). Locke prioriterer individuell frihet og rettssikkerhet over blind orden (konstitusjonelt demokrati).',
     gradingAdvice:
-      'Husk å poengtere forskjellen i synet på opprørsrett: Hobbes avviser opprørsrett totalt; Locke anser opprørsretten som en legitim og nødvendig nødventil.',
+      'Husk å poengtere forskjellen i synet på opprørsrett: Hobbes avviser at borgerne kan gjøre opprør mot suverenen, men den enkelte beholder retten til å forsvare sitt eget liv, og lydighetsplikten faller bort når suverenen ikke lenger kan beskytte borgerne (Leviathan kap. 14 og 21). Locke anser opprørsretten som en legitim og nødvendig nødventil.',
   },
   {
     id: 'sartre-vs-de-beauvoir',
