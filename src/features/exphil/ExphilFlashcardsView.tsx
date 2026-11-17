@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import type { ExphilPillar } from './types';
 import { EXPHIL_FLASHCARDS } from './exphilData';
+import { isKnownPhilosopherId } from '../../lib/philosopherIndex';
 import { sound } from '../../lib/sound';
 
 interface ExphilFlashcardsViewProps {
@@ -289,7 +290,7 @@ export const ExphilFlashcardsView: React.FC<ExphilFlashcardsViewProps> = ({
             )}
 
             {/* Bunn med filosof-lenke hvis aktuelt */}
-            {activeCard.philosopherId && onOpenPhilosopherCard && (
+            {isKnownPhilosopherId(activeCard.philosopherId) && onOpenPhilosopherCard && (
               <div className="border-t border-white/10 pt-3 flex items-center justify-between text-xs">
                 <span className="text-[11px] text-star-dim font-serif">
                   Tilhørende filosof:

@@ -92,3 +92,9 @@ Beslutning: Løft `eslint` til 10 og `eslint-plugin-react-hooks` til 7. Rett fun
 `react-hooks/preserve-manual-memoization` slås av, fordi React Compiler ikke brukes i bygget og regelen bare melder at kompilatoren ville hoppet over en komponent. Dependabot-gruppen `byggkjede` tar bare minor- og patch-oppdateringer. Store versjonshopp (Vite 8, Tailwind 4) kommer som egne PR-er.
 Alternativer: Slå av alle de nye reglene (skjuler reelle mønstre); rulle `@eslint/js` tilbake til 9 (utsetter problemet); ta Vite 8 og Tailwind 4 nå (store migreringer uten plan).
 Konsekvens: Lint-verktøyene er konsistente. Slås React Compiler på senere, må regelen slås på igjen og memoiseringen i `StoryModal` ryddes.
+
+## B-014 – Personer utenfor radaren har ikke filosofkort (2026-11-17)
+Kontekst: Revisjonen 2026-11-17 (ARK-01) fant at innholdet omtaler åtte tenkere som ikke er filosofer i radaren (Mill, Bentham, Foot, Singer, Løgstrup, Hippokrates, Jonas og Kuhn). ID-ene deres pekte på filosofer som ikke finnes, eller på stedfortredere: Kuhn-kortene åpnet Foucault og Popper.
+Beslutning: Omtalte personer uten filosofkort står i `NOT_IN_RADAR` i `src/lib/philosopherIndex.ts`. Knapper til filosofkort vises bare for ID-er som finnes i `content/`, og `openCard` ignorerer ukjente ID-er. Kuhn har ingen `philosopherId`. `tests/philosopher-references.test.ts` krever at hver ID finnes eller står på lista, og at navnet stemmer med personen.
+Alternativer: Legge alle åtte inn som filosofer nå (redaksjonelt arbeid som krever beslutning); beholde stedfortredere (gir feil fagstoff).
+Konsekvens: Ingen døde eller feilpekende knapper. Etikk-labens tvilling «John Stuart Mill» vises uten knapp til radaren. Om Mill og Bentham skal bli filosofer i radaren, er fortsatt et åpent beslutningspunkt.

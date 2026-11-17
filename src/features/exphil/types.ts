@@ -12,7 +12,8 @@ export interface ExphilProfile {
 }
 
 export interface ExphilDuelParty {
-  philosopherId: string;
+  /** Mangler når personen ikke er en filosof i radaren (f.eks. Thomas Kuhn). */
+  philosopherId?: string;
   philosopherName: string;
   positionName: string;
   mainThesis: string;
