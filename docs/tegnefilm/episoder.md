@@ -179,6 +179,7 @@ gang, så seeren lærer dem utenat.
   vedøksa ved kjøkkenovnen.
 - **I appen:** Ex.phil-debatten «Kant vs. Aristoteles» og dilemmaet
   «Morderen ved døren».
+- Fullt manus: `docs/tegnefilm/ep5-manus.md`.
 
 ## Episode 6 · Kelneren
 
