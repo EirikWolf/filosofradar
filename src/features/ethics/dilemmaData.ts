@@ -323,7 +323,7 @@ export const ETHICAL_DILEMMAS: EthicalDilemma[] = [
             stance: 'disagree',
             verdict: 'Brudd på legeeden!',
             comment:
-              '«Primum non nocere» – Først og fremst: Gjør ingen skade! Å bruke medisinens makt til å myrde pasienter er medisinens endelikt.',
+              'Primum non nocere – først og fremst: gjør ingen skade! Å bruke medisinens makt til å myrde pasienter er medisinens endelikt.',
             exphilConcept: 'Medisinsk deontologi',
           },
         ],

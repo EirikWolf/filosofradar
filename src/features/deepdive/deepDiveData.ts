@@ -36,7 +36,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
     ],
     receptionAndCritique:
-      'Ble stående som filosofiens fremste martyr og et evig ideal for selvkritisk fornuft. Samtidig er hans etiske intellektualisme («ingen gjør galt med vilje, bare av uvitenhet») blitt sterkt kritisert av bl.a. Aristoteles for å ignorere viljens svakhet (akrasia) og følelsenes makt.',
+      'Ble stående som filosofiens fremste martyr og et evig ideal for selvkritisk fornuft. Samtidig er hans etiske intellektualisme («ingen gjør galt med vilje») blitt sterkt kritisert av bl.a. Aristoteles for å ignorere viljens svakhet (akrasia) og følelsenes makt.',
   },
 
   platon: {
@@ -86,7 +86,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
     ],
     receptionAndCritique:
-      'Formet hele den vestlige metafysiske tradisjonen («hele filosofihistorien er en serie fotnoter til Platon» – A.N. Whitehead). Kritisert av sin elev Aristoteles for å splitte virkeligheten i to unødvendige verdener, og av Karl Popper for totalitære samfunnsidealer i Staten.',
+      'Formet hele den vestlige metafysiske tradisjonen («den europeiske filosofiske tradisjonen består av en serie fotnoter til Platon» – A.N. Whitehead). Kritisert av sin elev Aristoteles for å splitte virkeligheten i to unødvendige verdener, og av Karl Popper for totalitære samfunnsidealer i Staten.',
   },
 
   aristoteles: {
@@ -212,7 +212,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
     ],
     receptionAndCritique:
-      'Lenge beryktet og fordømt som en farlig ateist på 1600- og 1700-tallet. Ble på slutten av 1700-tallet gjenoppdaget av Goethe, Lessing og Hegel, som kalte ham «en gudberuset mann». I dag regnes han som en forløper for moderne sekularisme, nevrovitenskap og økologisk helhetstenkning.',
+      'Lenge beryktet og fordømt som en farlig ateist på 1600- og 1700-tallet. Ble på slutten av 1700-tallet gjenoppdaget av Goethe, Lessing og Hegel, og dikteren Novalis kalte ham «en gudberuset mann». I dag regnes han som en forløper for moderne sekularisme, nevrovitenskap og økologisk helhetstenkning.',
   },
 
   locke: {
@@ -399,7 +399,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
   hegel: {
     philosopherId: 'hegel',
     historicalContext:
-      'Levde gjennom Napoleonskrigene og Europas oppbrudd fra føydalsamfunnet. Han opplevde slaget ved Jena i 1806 på kloss hold, og da han så Napoleon ri gjennom gatene, skrev han berømt at han så «verdensånden til hest». Ble senere professor i Berlin og Det prøyssiske kongerikets mest feirede offisielle filosof.',
+      'Levde gjennom Napoleonskrigene og Europas oppbrudd fra føydalsamfunnet. Han opplevde slaget ved Jena i 1806 på kloss hold, og da han så Napoleon ri gjennom gatene, skrev han i et brev at han hadde sett verdenssjelen til hest. Ble senere professor i Berlin og Det prøyssiske kongerikets mest feirede offisielle filosof.',
     majorWorks: [
       {
         title: 'Åndens fenomenologi',
@@ -441,7 +441,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Det kommunistiske manifest',
         year: 1848,
-        description: 'Verdenshistoriens mest berømte politiske kampskrift («Klassekamp er historiens drivkraft»).',
+        description: 'Verdenshistoriens mest berømte politiske kampskrift («Historien til alle hittil eksisterende samfunn er historien om klassekamper»).',
       
         url: "https://www.marxists.org/norsk/marx-engels/1848/01/manifestet/",
         urlLabel: "Les fulltekst på norsk (marxists.org)",
@@ -534,14 +534,14 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         title: 'Den evige gjenkomst',
         icon: '⏳',
         image: '/images/hooks/nietzsche-evig-gjenkomst.webp',
-        description: 'Hva om en demon kom inn på rommet ditt i natt og sa: «Dette livet du nå lever, må du leve om igjen i nøyaktig samme rekkefølge og detalj en uendelighet av ganger»?',
+        description: 'Hva om en demon kom inn på rommet ditt i natt og sa: «Dette livet, slik du nå lever det og har levd det, må du leve én gang til og utallige ganger til»?',
         takeaway: 'Ville du kastet deg ned i fortvilelse, eller elsket skjebnen din (amor fati) så høyt at du jublet over beskjeden?',
       },
       {
         title: 'Det gale mennesket med lykten',
         icon: '🏮',
         image: '/images/hooks/nietzsche-lykten.webp',
-        description: 'En mann løper inn på markedsplassen midt på dagen med en tent lykt og roper: «Jeg leter etter Gud! Vi har drept ham – dere og jeg!»',
+        description: 'En mann løper inn på markedsplassen midt på dagen med en tent lykt og roper: «Jeg søker Gud! … Vi har drept ham – dere og jeg!»',
         takeaway: 'Guds død betyr at det metafysiske ankeret for vestlig moral er borte, og mennesket står i fare for å synke ned i passiv nihilisme.',
       },
     ],
@@ -689,13 +689,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
     ],
     receptionAndCritique:
-      'Norges mest kjente filosof internasjonalt og en global inspirasjonskilde for miljøbevegelsen. Kritisert av enkelte samfunnsforskere for å være politisk naiv i møte med global kapitalisme og for at begrepet «alt levendes like rett til å utfolde seg» skaper uløselige dilemmaer i praksis.',
+      'Norges mest kjente filosof internasjonalt og en global inspirasjonskilde for miljøbevegelsen. Kritisert av enkelte samfunnsforskere for å være politisk naiv i møte med global kapitalisme og for at begrepet «den like retten til å leve og blomstre» skaper uløselige dilemmaer i praksis.',
   },
 
   hobbes: {
     philosopherId: 'hobbes',
     historicalContext:
-      'Levde gjennom en av Englands mest voldelige epoker, der kong Karl I ble henrettet og borgerkrigen rev samfunnet fra hverandre. Hobbes måtte flykte til Paris i ti år. Han sa selv at «min mor fødte tvillinger: meg og frykten». Frykten for borgerkrig og kaos formet hele hans autoritære politiske filosofi.',
+      'Levde gjennom en av Englands mest voldelige epoker, der kong Karl I ble henrettet og borgerkrigen rev samfunnet fra hverandre. Hobbes måtte flykte til Paris i ti år. Han skrev selv at moren hans fødte tvillinger: ham og frykten. Frykten for borgerkrig og kaos formet hele hans autoritære politiske filosofi.',
     majorWorks: [
       {
         title: 'Leviathan',
@@ -1038,7 +1038,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Om livets korthet (De Brevitate Vitae)',
         year: 49,
-        description: '«Livet er langt nok hvis du vet hvordan du skal bruke det; det meste kaster vi bort på unyttige gjøremål.»',
+        description: '«Livet er langt hvis du vet å bruke det.» Problemet er ikke at vi har lite tid, men at vi kaster bort mye av den.',
       
         url: "https://en.wikisource.org/wiki/On_the_shortness_of_life",
         urlLabel: "Les på Wikisource",
@@ -1100,14 +1100,14 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         title: 'Lykten i dagslys',
         icon: '🏮',
         image: '/images/hooks/diogenes-lykten.webp',
-        description: 'Diogenes gikk rundt i Athens gater med en tent lykt midt på blanke formiddagen. Da folk spurte hva han drev med, svarte han: «Jeg leter etter et oppriktig, ekte menneske.»',
+        description: 'Diogenes gikk rundt i Athens gater med en tent lykt midt på blanke formiddagen. Da folk spurte hva han drev med, svarte han: «Jeg leter etter et menneske.»',
         takeaway: 'Menneskene gjemmer seg bak masker av sosial prestisje og hykleri.',
       },
       {
         title: 'Møtet med Aleksander den store',
         icon: '👑',
         image: '/images/hooks/diogenes-aleksander.webp',
-        description: 'Verdensherskeren Aleksander kom til Diogenes og sa: «Be om hva som helst du ønsker, og jeg skal gi deg det!» Diogenes svarte: «Flytt deg litt til siden, du skygger for solen min.»',
+        description: 'Verdensherskeren Aleksander kom til Diogenes og sa: «Be meg om hva du vil!» Diogenes svarte: «Flytt deg litt til siden, du skygger for solen min.»',
         takeaway: 'Ekte frihet er å trenge så lite at selv verdens mektigste mann ikke har noe å friste eller true deg med.',
       },
     ],
@@ -1281,7 +1281,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Den vibrerende strengen (Musikkens matematiske vesen)",
         description: "Deler du en streng i to nøyaktige halvdeler (forholdet 1:2), høres den samme tonen én oktav høyere. Deler du den 2:3, får du en ren kvint; 3:4 gir en kvart.",
-        takeaway: "Skjønnhet og harmoni i sanseverdenen hviler på usynlige, matematiske proporsjoner: «Alt er tall».",
+        takeaway: "Skjønnhet og harmoni i sanseverdenen hviler på usynlige, matematiske proporsjoner; pytagoreerne mente at alt i bunn og grunn er tall.",
       },
       {
         title: "Sfærenes harmoni",
@@ -1638,7 +1638,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Kosmos som en vev av tråder",
-        description: "Gargi spurte: «Vann er vevd på luft, men hva er luften vevd på?» Yajnavalkya svarte: «Ilden.» Gargi fortsatte nådeløst: «Hva er ilden vevd på? Stjernene? Gudene?» Til slutt måtte vismannen advare: «Spør ikke for langt, Gargi, ellers vil hodet ditt falle av!»",
+        description: "Gargi spurte hva vannet er vevd på, og Yajnavalkya svarte: på luften. Hun fortsatte nådeløst og spurte hva luften er vevd på, og videre gjennom himmelens verdener, solen, månen, stjernene og gudene. Til slutt måtte vismannen advare: «Spør ikke for langt, Gargi, ellers vil hodet ditt falle av!»",
         takeaway: "Menneskelig nysgjerrighet krever et ubetinget, ytterste fundament for alt som eksisterer (Brahman) – hinsides tid og rom.",
       },
     ],
@@ -1790,7 +1790,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
     ],
     receptionAndCritique:
-      "Den største jødiske filosofen i middelalderen («fra Moses til Moses fantes det ingen som Moses»). Dypt beundret av Thomas Aquinas og Spinoza. Kritisert av ortodokse jødiske lærde i samtiden som mente han opphøyde Aristoteles over Toraen og brente bøkene hans.",
+      "Den største jødiske filosofen i middelalderen (hedret med det tradisjonelle ordtaket om at fra Moses til Moses fantes ingen som Moses). Dypt beundret av Thomas Aquinas og Spinoza. Kritisert av ortodokse jødiske lærde i samtiden som mente han opphøyde Aristoteles over Toraen og brente bøkene hans.",
   },
 
   rabia: {
@@ -1809,7 +1809,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         title: "Vannbøtten og fakkelen",
         icon: '🔥',
         image: '/images/hooks/rabia-fakkelen.webp',
-        description: "Rabia ble sett løpende gjennom Basras gater med en bøtte vann i den ene hånden og en brennende fakkel i den andre. Da folk spurte hva hun skulle, svarte hun: «Jeg skal sette fyr på paradis og slukke helvetes flammer, så menneskene elsker Gud for Guds egen skyld, og ikke av frykt for straff eller håp om belønning!»",
+        description: "Ifølge en senere legende ble Rabia sett løpende gjennom Basras gater med en bøtte vann i den ene hånden og en brennende fakkel i den andre. Da folk spurte hva hun skulle, svarte hun at hun ville sette fyr på paradis og slukke helvetes flammer, slik at menneskene skulle elske Gud for Guds egen skyld, og ikke av frykt for straff eller håp om belønning.",
         takeaway: "Sann kjærlighet og moralsk godhet må være fullstendig fri for egoistiske baktanker og frykt.",
       },
     ],
@@ -2064,13 +2064,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
     ],
     receptionAndCritique:
-      "Står som det internasjonale diplomatiets fremste etiske fyrtårn; USAs president John F. Kennedy kalte ham «århundrets største statsmann». Kritisert under den kalde krigen av Sovjetunionens leder Nikita Khrusjtsjov, som forlangte hans avgang fordi han mente en person aldri kan være genuint nøytral.",
+      "Står som det internasjonale diplomatiets fremste etiske fyrtårn; USAs president John F. Kennedy hedret ham etter flyulykken i 1961 som en stor statsmann for hele verden. Kritisert under den kalde krigen av Sovjetunionens leder Nikita Khrusjtsjov, som forlangte hans avgang fordi han mente en person aldri kan være genuint nøytral.",
   },
 
   dogen: {
     philosopherId: 'dogen',
     historicalContext:
-      "Dōgen Zenji (1200–1253), født inn i en aristokratisk familie i Kyoto under Kamakura-shogunatets fremvekst i Japan. Etter å ha mistet begge foreldrene som barn ble han munk. Frustrert over korrupsjon i klostrene reiste han til Kina i 1223 for å finne ekte buddhisme. Der oppnådde han opplysning under mester Rujing da han hørte ordene: «Kast av kropp og sinn!» Han vendte tilbake til Japan og grunnla Sōtō Zen-skolen og det avsidesliggende Eihei-ji-tempelet i fjellene.",
+      "Dōgen Zenji (1200–1253), født inn i en aristokratisk familie i Kyoto under Kamakura-shogunatets fremvekst i Japan. Etter å ha mistet begge foreldrene som barn ble han munk. Frustrert over korrupsjon i klostrene reiste han til Kina i 1223 for å finne ekte buddhisme. Ifølge senere biografier oppnådde han opplysning under mester Rujing da han hørte ham tale om å kaste av seg kropp og sinn (shinjin datsuraku). Han vendte tilbake til Japan og grunnla Sōtō Zen-skolen og det avsidesliggende Eihei-ji-tempelet i fjellene.",
     majorWorks: [
       {
         title: "Shōbōgenzō (Den sanne dharmaens øye-skatt)",
@@ -2180,7 +2180,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         icon: '💀',
         image: '/images/hooks/wonhyo-hodeskallen.webp',
         description: "På vei til Kina for å studere søkte Wonhyo ly i en mørk hule i et voldsomt regnvær. Tørst i mørket drakk han av en skål med vann og syntes det smakte vidunderlig friskt og søtt. Da han våknet om morgenen, oppdaget han at hulen var en gammel grav, og «skålen» var en råtnende menneskeskalle full av mark.",
-        takeaway: "Vannet hadde ikke endret seg; det var sinnets forestilling som gjorde det friskt i mørket og motbydelig i lyset. «Når sinnet oppstår, oppstår mangfoldet av ting; når sinnet stilner, forsvinner graven og skallen.»",
+        takeaway: "Vannet hadde ikke endret seg; det var sinnets forestilling som gjorde det friskt i mørket og motbydelig i lyset. Ifølge legenden innså han at alt springer ut av sinnet: Når sinnet oppstår, oppstår tingenes mangfold, og når sinnet stilner, er det ingen forskjell lenger.",
       },
     ],
     receptionAndCritique:
@@ -2301,7 +2301,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: "Selvtillit (Self-Reliance)",
         year: 1841,
-        description: "Verdenslitteraturens skarpeste hyllest til individuell uavhengighet: «Å stole på seg selv er å stole på det guddommelige».",
+        description: "Verdenslitteraturens skarpeste hyllest til individuell uavhengighet, der det å stole på seg selv blir det samme som å stole på det guddommelige.",
       },
       {
         title: "Den amerikanske lærde (The American Scholar)",
@@ -2420,7 +2420,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Filosofien i kjøkkenet",
-        description: "Da kirken forbød henne å lese filosofibøker, begynte hun å studere vitenskapelige lover under matlaging: Hvorfor stivner et egg i varm olje mens sukker smelter til væske? «Hvis Aristoteles hadde laget mat, ville han skrevet langt mer!»",
+        description: "Da en priorinne forbød henne å studere i tre måneder, begynte hun å studere vitenskapelige lover under matlaging: Hvorfor stivner et egg i varm olje mens sukker smelter til væske? «Hvis Aristoteles hadde laget mat, ville han skrevet langt mer!»",
         takeaway: "Erkjennelsestrangen kan aldri kveles av forbud; fornuften finner sannhet i de mest hverdagslige erfaringer.",
       },
     ],
@@ -2453,7 +2453,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Det hvite blikkets fangenskap",
-        description: "En liten fransk gutt på gaten i Paris peker på Fanon og roper til moren sin: «Se, en neger! Mamma, se på negeren, jeg er redd!»",
+        description: "En liten fransk gutt på gaten peker på Fanon og roper til moren sin at han er redd for den svarte mannen.",
         takeaway: "Den svarte mannen får ikke lov til å eksistere som et vanlig menneskelig subjekt; han fanges og fastfryses som et fryktet, fremmedgjort objekt i den hvites blikk.",
       },
     ],
@@ -2556,7 +2556,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Kunnskapens kilde hos tjenestejenten",
-        description: "«Vær ikke hovmodig over din lærdom; rådspør både den uvitende og den vise. For kunnskapens grenser kan aldri nås, og ingen håndverker mestrer sitt fag fullkomment. Kloke ord kan finnes like ofte hos slavinnen ved kvernen som blant de lærde.»",
+        description: "«Vær ikke hovmodig over din lærdom; rådspør både den uvitende og den vise. For kunnskapens grenser kan aldri nås, og ingen håndverker mestrer sitt fag fullkomment.» Gode ord er sjeldnere enn edelstener, sier Ptahhotep, men de kan finnes hos tjenestekvinnene ved kvernsteinene.",
         takeaway: "Sann visdom krever radikal ydmykhet og vilje til å lytte oppmerksomt til alle stemmer i samfunnet.",
       },
       {

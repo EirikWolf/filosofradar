@@ -36,7 +36,7 @@ export const TOURS: Tour[] = [
         philosopherId: 'sokrates',
         narrativeTitle: '4. Den kritiske samtalen på torget i Athen',
         narrativeText:
-          'I Athen stilte Sokrates spørsmål til alle som trodde de visste noe om rettferdighet, kjærlighet og mot. Ved å innse at «det eneste jeg vet er at jeg intet vet», gjorde han samtalen og den selvkritiske fornuften til filosofiens hjerte.',
+          'I Athen stilte Sokrates spørsmål til alle som trodde de visste noe om rettferdighet, kjærlighet og mot. Ved å innse at han ikke trodde han visste det han ikke visste, gjorde han samtalen og den selvkritiske fornuften til filosofiens hjerte.',
         keyQuestion: 'Er du modig nok til å innrømme når du tar feil?',
       },
       {

@@ -701,7 +701,7 @@ export const EXPHIL_FLASHCARDS: ExphilFlashcard[] = [
     explanation:
       'Krever universell konsistens. Hvis en regel ikke lar seg universalisere uten selvmotsigelse (f.eks. å gi et falskt løfte), er handlingen moralsk uakseptabel.',
     examTip:
-      'Husk humanitetsformuleringen også: «Behandle alltid mennesker som et formål i seg selv, aldri bare som et middel». Sensor krever ofte begge formuleringer!',
+      'Husk humanitetsformuleringen også: «Handle slik at du bruker menneskeheten, både i din egen person og i enhver annens, alltid samtidig som mål og aldri bare som middel». Sensor krever ofte begge formuleringer!',
     example: 'Å låne penger uten intensjon om å betale tilbake ødelegger selve tillitsinstitusjonen for lån dersom alle gjorde det.',
   },
   {
