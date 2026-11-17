@@ -156,6 +156,7 @@ gang, så seeren lærer dem utenat.
 - **Forsvinner:** Descartes og Hume. Igjen ligger den halvsmeltede voksbiten og
   én biljardkule.
 - **I appen:** Ex.phil-debatten «Descartes vs. Hume».
+- Fullt manus: `docs/tegnefilm/ep4-manus.md`.
 
 ## Episode 5 · Noen ringer på
 
