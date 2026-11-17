@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { ExphilDuel } from './types';
 import { EXPHIL_DUELS } from './exphilData';
+import { isKnownPhilosopherId } from '../../lib/philosopherIndex';
 
 interface ExphilDuelsViewProps {
   onOpenPhilosopherCard: (id: string) => void;
@@ -112,12 +113,14 @@ export const ExphilDuelsView: React.FC<ExphilDuelsViewProps> = ({
                   <span className="text-xs font-serif font-bold text-amber-300 uppercase tracking-wider">
                     {activeDuel.sideA.positionName}
                   </span>
-                  <button
-                    onClick={() => onOpenPhilosopherCard(activeDuel.sideA.philosopherId)}
-                    className="text-[11px] text-gold hover:underline font-serif"
-                  >
-                    Filosofkort ↗
-                  </button>
+                  {isKnownPhilosopherId(activeDuel.sideA.philosopherId) && (
+                    <button
+                      onClick={() => onOpenPhilosopherCard(activeDuel.sideA.philosopherId as string)}
+                      className="text-[11px] text-gold hover:underline font-serif"
+                    >
+                      Filosofkort ↗
+                    </button>
+                  )}
                 </div>
                 <h5 className="text-lg font-serif font-bold text-star-white">
                   {activeDuel.sideA.philosopherName}
@@ -175,12 +178,14 @@ export const ExphilDuelsView: React.FC<ExphilDuelsViewProps> = ({
                   <span className="text-xs font-serif font-bold text-cyan-300 uppercase tracking-wider">
                     {activeDuel.sideB.positionName}
                   </span>
-                  <button
-                    onClick={() => onOpenPhilosopherCard(activeDuel.sideB.philosopherId)}
-                    className="text-[11px] text-cyan-300 hover:underline font-serif"
-                  >
-                    Filosofkort ↗
-                  </button>
+                  {isKnownPhilosopherId(activeDuel.sideB.philosopherId) && (
+                    <button
+                      onClick={() => onOpenPhilosopherCard(activeDuel.sideB.philosopherId as string)}
+                      className="text-[11px] text-cyan-300 hover:underline font-serif"
+                    >
+                      Filosofkort ↗
+                    </button>
+                  )}
                 </div>
                 <h5 className="text-lg font-serif font-bold text-star-white">
                   {activeDuel.sideB.philosopherName}
@@ -255,12 +260,16 @@ export const ExphilDuelsView: React.FC<ExphilDuelsViewProps> = ({
 
         {/* Aksjoner nederst */}
         <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-white/10">
+          {isKnownPhilosopherId(activeDuel.sideA.philosopherId) && isKnownPhilosopherId(activeDuel.sideB.philosopherId) && (
           <button
-            onClick={() => onComparePhilosophers([activeDuel.sideA.philosopherId, activeDuel.sideB.philosopherId])}
+            onClick={() =>
+              onComparePhilosophers([activeDuel.sideA.philosopherId as string, activeDuel.sideB.philosopherId as string])
+            }
             className="px-4 py-2 rounded-xl bg-gold text-cosmos font-serif font-bold text-xs hover:bg-gold-bright transition-all shadow-[0_0_12px_rgba(246,200,95,0.3)] flex items-center gap-2"
           >
             <span>⚖️</span> Åpne direkte i Sammenligningskammeret
           </button>
+          )}
           <div className="text-xs text-star-dim font-serif">
             Tips: Bruk gjerne eksemplene aktivt i din egen eksamensbesvarelse.
           </div>

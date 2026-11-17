@@ -49,10 +49,13 @@ describe('Examen Philosophicum (Ex.phil) Modul', () => {
       expect(EXPHIL_DUELS.length).toBeGreaterThanOrEqual(5);
     });
 
-    it('alle dueller refererer til eksisterende filosofer i datasettet', () => {
+    it('dueller refererer bare til eksisterende filosofer (en side uten filosofkort har ingen ID)', () => {
       for (const duel of EXPHIL_DUELS) {
-        expect(philosopherIdSet.has(duel.sideA.philosopherId)).toBe(true);
-        expect(philosopherIdSet.has(duel.sideB.philosopherId)).toBe(true);
+        // ARK-01: Kuhn-siden lå tidligere med Foucaults ID som stedfortreder for å
+        // bestå denne testen. Nå er ID-en valgfri, men skal finnes når den står der.
+        for (const id of [duel.sideA.philosopherId, duel.sideB.philosopherId]) {
+          if (id !== undefined) expect(philosopherIdSet.has(id)).toBe(true);
+        }
         expect(duel.examPrompt.length).toBeGreaterThan(20);
         expect(duel.clarifications.length).toBeGreaterThanOrEqual(1);
         expect(duel.gradingAdvice.length).toBeGreaterThan(20);

@@ -514,7 +514,7 @@ export const EXPHIL_DUELS: ExphilDuel[] = [
       ],
     },
     sideB: {
-      philosopherId: 'foucault', // Brukes som motvekt / epistemologisk representant sammen med Kuhn
+      // Thomas Kuhn er ikke en filosof i radaren, så siden har ingen philosopherId (ARK-01)
       philosopherName: 'Thomas Kuhn & vitenskapssosiologien',
       positionName: 'Paradigmeteori & Historisk diskontinuitet',
       mainThesis: 'Vitenskap utvikler seg ikke jevnt og kumulativt, men gjennom revolusjonære brudd (paradigmeskifter).',
@@ -750,7 +750,7 @@ export const EXPHIL_FLASHCARDS: ExphilFlashcard[] = [
     id: 'fc-5',
     concept: 'Paradigmeskifte & Inkommensurabilitet',
     pillar: 'erkjennelse',
-    philosopherId: 'popper',
+    // Knyttet til Thomas Kuhn, som ikke er en filosof i radaren (ARK-01)
     philosopherName: 'Thomas Kuhn',
     definition:
       'Et paradigmeskifte er en vitenskapelig revolusjon der et helt verdensbilde erstattes. Inkommensurabilitet betyr at paradigmene er usammenlignbare fordi de bruker ulike begreper og målestokker.',

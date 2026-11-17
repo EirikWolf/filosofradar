@@ -9,6 +9,7 @@ import { TourPlayer } from './features/tours/TourPlayer';
 import type { Tour } from './features/tours/types';
 import { sound } from './lib/sound';
 import { trackPageView, trackEvent } from './lib/telemetry';
+import { isKnownPhilosopherId } from './lib/philosopherIndex';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
 import type { ExphilTab } from './features/exphil/ExphilHub';
@@ -197,6 +198,8 @@ export const App: React.FC = () => {
   }, [view, activeCardId]);
 
   const openCard = useCallback((id: string) => {
+    // Som URL-stien over: ukjente ID-er åpner ingenting (ARK-01)
+    if (!isKnownPhilosopherId(id)) return;
     setActiveCardId(id);
     const url = new URL(window.location.href);
     url.searchParams.set('f', id);
@@ -700,11 +703,15 @@ export const App: React.FC = () => {
             philosopherName={activeStory.philosopherName}
             experiment={activeStory.experiment}
             onClose={() => setActiveStory(null)}
-            onExploreDeepDive={() => {
-              const id = activeStory.philosopherId;
-              setActiveStory(null);
-              openCard(id);
-            }}
+            onExploreDeepDive={
+              isKnownPhilosopherId(activeStory.philosopherId)
+                ? () => {
+                    const id = activeStory.philosopherId;
+                    setActiveStory(null);
+                    openCard(id);
+                  }
+                : undefined
+            }
           />
         </Suspense>
       )}

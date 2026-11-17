@@ -7,6 +7,7 @@ import {
 } from './dilemmaData';
 import type { DilemmaOption, EthicalSchool } from './types';
 import { sound } from '../../lib/sound';
+import { isKnownPhilosopherId } from '../../lib/philosopherIndex';
 
 interface EthicsLabViewProps {
   philosophers: Philosopher[];
@@ -117,12 +118,14 @@ export const EthicsLabView: React.FC<EthicsLabViewProps> = ({
               </p>
 
               <div className="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                {isKnownPhilosopherId(ethicsProfile.philosopherTwinId) && (
                 <button
                   onClick={() => onOpenPhilosopherCard(ethicsProfile.philosopherTwinId)}
                   className="px-4 py-2 rounded-xl bg-gold text-cosmos font-serif font-bold text-xs hover:bg-gold-bright transition-all shadow-md flex items-center gap-2 hover:scale-[1.02]"
                 >
                   <span>✦</span> Utforsk {ethicsProfile.philosopherTwinName} i Radaren
                 </button>
+                )}
                 {onNavigateToExphilHub && (
                   <button
                     onClick={onNavigateToExphilHub}
