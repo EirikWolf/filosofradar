@@ -15,6 +15,7 @@ import { getTraditionMeta } from '../../lib/traditions';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
+import { preloadCardContent } from '../card/cardContent';
 
 /** Hvor lenge supernova-glimtet vises når en filosof fødes i tidsmaskinen. */
 const SUPERNOVA_GLOW_MS = 1400;
@@ -155,6 +156,12 @@ export const RadarView: React.FC<RadarViewProps> = ({
   const selectedPoint = useMemo(() => {
     return selectedId ? pointsMap.get(selectedId) || null : null;
   }, [selectedId, pointsMap]);
+
+  // Når en stjerne velges eller pekes på, er neste steg ofte filosofkortet.
+  // Hent innholdet allerede nå, så dypdykket står klart når kortet åpnes (YTE-04).
+  useEffect(() => {
+    if (selectedId || hoveredId) preloadCardContent();
+  }, [selectedId, hoveredId]);
 
   // Aktiv filosof for visuelle effekter på radaren (hover eller valgt)
   const activePoint = useMemo(() => {
