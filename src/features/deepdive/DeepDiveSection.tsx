@@ -33,7 +33,7 @@ export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({
   };
 
   return (
-    <div id="dypdykk-seksjon" className="my-6 rounded-2xl border border-gold/40 bg-gradient-to-b from-cosmos-card/90 to-cosmos/95 overflow-hidden shadow-xl transition-all shrink-0">
+    <div id="dypdykk-seksjon" className="my-6 rounded-2xl border border-gold/40 bg-linear-to-b from-cosmos-card/90 to-cosmos/95 overflow-hidden shadow-xl transition-all shrink-0">
       {/* Toggle-knapp i toppen */}
       <button
         onClick={handleToggle}
@@ -103,7 +103,7 @@ export const DeepDiveSection: React.FC<DeepDiveSectionProps> = ({
                         href={work.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 text-gold text-xs font-serif font-bold transition-all hover:scale-[1.02] shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-gold/15 hover:bg-gold/25 border border-gold/40 text-gold text-xs font-serif font-bold transition-all hover:scale-[1.02] shadow-xs"
                       >
                         <span>📖</span> {work.urlLabel || 'Les verket (åpen tilgang)'} ↗
                       </a>

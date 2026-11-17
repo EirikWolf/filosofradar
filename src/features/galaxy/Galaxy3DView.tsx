@@ -516,7 +516,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
           <select
             value={selectedTradition}
             onChange={(e) => setSelectedTradition(e.target.value)}
-            className="bg-cosmos border border-white/15 rounded-xl px-3 py-1.5 text-xs text-star-white focus:outline-none focus:border-gold font-sans"
+            className="bg-cosmos border border-white/15 rounded-xl px-3 py-1.5 text-xs text-star-white focus:outline-hidden focus:border-gold font-sans"
           >
             <option value="all">Alle tradisjoner (80)</option>
             {TRADITION_SECTOR_ORDER.map((tid) => (
@@ -564,7 +564,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
       </div>
 
       {/* 3D Canvas Vindu */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] max-h-[640px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(4,7,20,0.9)] bg-cosmos select-none cursor-grab active:cursor-grabbing">
+      <div className="relative w-full aspect-4/3 sm:aspect-16/10 max-h-[640px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(4,7,20,0.9)] bg-cosmos select-none cursor-grab active:cursor-grabbing">
         <canvas
           ref={canvasRef}
           onMouseDown={handleMouseDown}

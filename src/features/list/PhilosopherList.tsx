@@ -51,7 +51,7 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Søk etter filosof, idé, retning eller verdensdel..."
-              className="w-full bg-cosmos border border-white/15 rounded-xl pl-9 pr-4 py-2.5 text-sm text-star-white placeholder:text-star-dim focus:outline-none focus:border-gold transition-colors"
+              className="w-full bg-cosmos border border-white/15 rounded-xl pl-9 pr-4 py-2.5 text-sm text-star-white placeholder:text-star-dim focus:outline-hidden focus:border-gold transition-colors"
             />
             {search && (
               <button
@@ -147,7 +147,7 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
                 >
                   <div className="flex items-start sm:items-center gap-3">
                     <span
-                      className="w-3 h-3 rounded-full mt-1 sm:mt-0 flex-shrink-0 shadow-[0_0_8px]"
+                      className="w-3 h-3 rounded-full mt-1 sm:mt-0 shrink-0 shadow-[0_0_8px]"
                       style={{ backgroundColor: tradMeta.color, color: tradMeta.color }}
                     />
                     <div>
@@ -248,7 +248,7 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
                         {Object.entries(p.themes).map(([theme, score]) => (
                           <div
                             key={theme}
-                            className="flex items-center justify-between bg-cosmos/60 px-2.5 py-1.5 rounded border border-white/5"
+                            className="flex items-center justify-between bg-cosmos/60 px-2.5 py-1.5 rounded-sm border border-white/5"
                           >
                             <span className="text-star-dim capitalize text-[11px]">{theme}</span>
                             <span className="text-gold font-bold font-serif">{score}/5</span>

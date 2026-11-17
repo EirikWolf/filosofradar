@@ -72,7 +72,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-end bg-cosmos/70 backdrop-blur-sm animate-in fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-end bg-cosmos/70 backdrop-blur-xs animate-in fade-in"
       onClick={onClose}
     >
       {/* Kort-panel som glir inn fra høyre */}
@@ -82,7 +82,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         role="dialog"
         aria-modal="true"
         aria-label={`Filosofkort for ${philosopher.name}`}
-        className="w-full max-w-lg md:max-w-xl h-full bg-cosmos-card border-l border-gold/30 shadow-2xl overflow-y-auto flex flex-col p-6 sm:p-8 animate-in slide-in-from-right duration-300 select-text focus:outline-none"
+        className="w-full max-w-lg md:max-w-xl h-full bg-cosmos-card border-l border-gold/30 shadow-2xl overflow-y-auto flex flex-col p-6 sm:p-8 animate-in slide-in-from-right duration-300 select-text focus:outline-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header med lukk-knapp og tradisjon */}
@@ -263,7 +263,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
 
         {/* 3. Seksjon: Sitat */}
         {philosopher.quote && (
-          <div className="mb-6 p-4 rounded-xl bg-cosmos-card border-l-4 border-gold bg-gradient-to-r from-gold/10 to-transparent shrink-0">
+          <div className="mb-6 p-4 rounded-xl bg-cosmos-card border-l-4 border-gold bg-linear-to-r from-gold/10 to-transparent shrink-0">
             <blockquote className="italic font-serif text-sm text-star-white leading-relaxed">
               «{philosopher.quote.text}»
             </blockquote>

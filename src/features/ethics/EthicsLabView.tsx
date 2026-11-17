@@ -86,7 +86,7 @@ export const EthicsLabView: React.FC<EthicsLabViewProps> = ({
         </div>
 
         {/* Filosofisk Tvilling-kort */}
-        <div className="rounded-3xl border-2 border-gold/60 bg-gradient-to-b from-amber-950/40 via-cosmos-card to-cosmos/95 p-6 sm:p-8 shadow-2xl relative overflow-hidden mb-8">
+        <div className="rounded-3xl border-2 border-gold/60 bg-linear-to-b from-amber-950/40 via-cosmos-card to-cosmos/95 p-6 sm:p-8 shadow-2xl relative overflow-hidden mb-8">
           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
 
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
@@ -210,7 +210,7 @@ export const EthicsLabView: React.FC<EthicsLabViewProps> = ({
       </div>
 
       {/* Dilemma-kort */}
-      <div className="rounded-3xl border border-gold/40 bg-gradient-to-b from-cosmos-card to-cosmos/95 p-6 sm:p-8 shadow-2xl space-y-6">
+      <div className="rounded-3xl border border-gold/40 bg-linear-to-b from-cosmos-card to-cosmos/95 p-6 sm:p-8 shadow-2xl space-y-6">
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -234,7 +234,7 @@ export const EthicsLabView: React.FC<EthicsLabViewProps> = ({
               alt={dilemma.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-cosmos-card via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-linear-to-t from-cosmos-card via-transparent to-transparent opacity-80" />
           </div>
         )}
 
@@ -363,7 +363,7 @@ export const EthicsLabView: React.FC<EthicsLabViewProps> = ({
             </div>
 
             {/* Ex.phil eksamen takeaway */}
-            <div className="p-3.5 rounded-xl bg-gold/10 border border-gold/30 text-xs text-amber-100 font-sans shadow-sm">
+            <div className="p-3.5 rounded-xl bg-gold/10 border border-gold/30 text-xs text-amber-100 font-sans shadow-xs">
               <div className="font-serif font-bold text-gold uppercase tracking-wider text-[11px] mb-1 flex items-center gap-1.5">
                 <span>💡</span> Hva lærer vi av dette dilemmaet til eksamen?
               </div>

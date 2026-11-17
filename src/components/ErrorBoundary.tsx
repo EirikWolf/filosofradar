@@ -70,7 +70,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
           aria-live="assertive"
           className="min-h-screen bg-cosmos text-star-bright flex flex-col items-center justify-center p-6 selection:bg-gold/30"
         >
-          <div className="max-w-lg w-full bg-slate-900/80 border border-gold/30 rounded-2xl p-8 backdrop-blur shadow-2xl text-center space-y-6">
+          <div className="max-w-lg w-full bg-slate-900/80 border border-gold/30 rounded-2xl p-8 backdrop-blur-sm shadow-2xl text-center space-y-6">
             {/* Kosmisk ikon */}
             <div className="w-16 h-16 mx-auto rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-3xl">
               🔭
@@ -91,14 +91,14 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
               <button
                 type="button"
                 onClick={this.handleReset}
-                className="px-5 py-2.5 rounded-lg bg-gold/20 hover:bg-gold/30 text-gold border border-gold/50 font-medium text-sm transition-all focus:outline-none focus:ring-2 focus:ring-gold"
+                className="px-5 py-2.5 rounded-lg bg-gold/20 hover:bg-gold/30 text-gold border border-gold/50 font-medium text-sm transition-all focus:outline-hidden focus:ring-2 focus:ring-gold"
               >
                 🔄 Prøv igjen
               </button>
               <button
                 type="button"
                 onClick={this.handleGoHome}
-                className="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-sm font-medium transition-all focus:outline-none focus:ring-2 focus:ring-slate-400"
+                className="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-sm font-medium transition-all focus:outline-hidden focus:ring-2 focus:ring-slate-400"
               >
                 🌌 Nullstill visning
               </button>
@@ -107,10 +107,10 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             {/* Teknisk feildetaljer (for revisor / utvikler) */}
             {this.state.error && (
               <details className="text-left mt-6 pt-4 border-t border-slate-800">
-                <summary className="text-xs text-slate-400 cursor-pointer hover:text-slate-200 focus:outline-none">
+                <summary className="text-xs text-slate-400 cursor-pointer hover:text-slate-200 focus:outline-hidden">
                   Teknisk feilinformasjon (for inspeksjon)
                 </summary>
-                <div className="mt-2 p-3 bg-black/60 rounded border border-slate-800 text-[11px] font-mono text-rose-300 overflow-x-auto max-h-40">
+                <div className="mt-2 p-3 bg-black/60 rounded-sm border border-slate-800 text-[11px] font-mono text-rose-300 overflow-x-auto max-h-40">
                   <p className="font-semibold">{this.state.error.name}: {this.state.error.message}</p>
                   {this.state.error.stack && (
                     <pre className="mt-1 text-slate-400 text-[10px] whitespace-pre-wrap">

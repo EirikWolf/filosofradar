@@ -111,7 +111,7 @@ export const ThemeRadar: React.FC<ThemeRadarProps> = ({
                 fill="#93c5fd"
                 fontSize="9"
                 fontWeight="500"
-                className="font-serif pointer-events-none drop-shadow"
+                className="font-serif pointer-events-none drop-shadow-sm"
               >
                 {meta.name}
               </text>

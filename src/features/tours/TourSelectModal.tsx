@@ -42,7 +42,7 @@ export const TourSelectModal: React.FC<TourSelectModalProps> = ({
         role="dialog"
         aria-modal="true"
         aria-label="Velg en historisk idéreise"
-        className="focus:outline-none relative w-full max-w-4xl max-h-[90vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
+        className="focus:outline-hidden relative w-full max-w-4xl max-h-[90vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

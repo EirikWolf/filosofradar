@@ -233,13 +233,13 @@ export const QuizView: React.FC<QuizViewProps> = ({
                   <div className="mt-3 flex items-center gap-2">
                     <button
                       onClick={() => onOpenCard(match.philosopher.id)}
-                      className="px-2.5 py-1 rounded bg-white/5 hover:bg-white/15 text-xs text-gold border border-gold/30 transition-all font-serif"
+                      className="px-2.5 py-1 rounded-sm bg-white/5 hover:bg-white/15 text-xs text-gold border border-gold/30 transition-all font-serif"
                     >
                       Les filosofkort ↗
                     </button>
                     <button
                       onClick={() => onNavigateToRadar(match.philosopher.id)}
-                      className="px-2.5 py-1 rounded bg-white/5 hover:bg-white/15 text-xs text-cyan-glow border border-cyan-400/30 transition-all font-serif"
+                      className="px-2.5 py-1 rounded-sm bg-white/5 hover:bg-white/15 text-xs text-cyan-glow border border-cyan-400/30 transition-all font-serif"
                     >
                       Finn på stjernekartet ✦
                     </button>
@@ -294,7 +294,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
         {/* Progresjonslinje */}
         <div className="w-full h-1.5 bg-cosmos-card border border-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-cyan-glow to-gold transition-all duration-300 rounded-full shadow-[0_0_8px_rgba(246,200,95,0.6)]"
+            className="h-full bg-linear-to-r from-cyan-glow to-gold transition-all duration-300 rounded-full shadow-[0_0_8px_rgba(246,200,95,0.6)]"
             style={{ width: `${((currentIndex + 1) / totalQuestions) * 100}%` }}
           />
         </div>

@@ -88,7 +88,7 @@ export const TourPlayer: React.FC<TourPlayerProps> = ({
 
           <button
             onClick={onExitTour}
-            className="text-star-dim hover:text-white text-xs p-1 rounded hover:bg-white/5 transition-colors"
+            className="text-star-dim hover:text-white text-xs p-1 rounded-sm hover:bg-white/5 transition-colors"
             title="Avslutt tur (Esc)"
           >
             ✕

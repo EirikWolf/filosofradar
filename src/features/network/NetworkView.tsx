@@ -171,7 +171,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
   return (
     <div className="w-full flex flex-col items-center gap-4 select-none">
       {/* Kontrollpanel */}
-      <div className="w-full max-w-5xl flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-cosmos-card/85 border border-white/10 rounded-2xl backdrop-blur shadow-2xl">
+      <div className="w-full max-w-5xl flex flex-wrap items-center justify-between gap-3 px-4 py-3 bg-cosmos-card/85 border border-white/10 rounded-2xl backdrop-blur-sm shadow-2xl">
         <div className="flex items-center gap-2">
           <span className="text-sm font-serif font-bold text-gold flex items-center gap-1.5">
             <span>🕸️</span> Idénettverket ({rawLinks.length} påvirkningslenker)
@@ -228,7 +228,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
                   {idx > 0 && <span className="text-gold-bright">→</span>}
                   <button
                     onClick={() => onOpenCard?.(id)}
-                    className="px-2 py-0.5 rounded bg-cosmos border border-gold/40 text-star-white hover:border-gold font-serif"
+                    className="px-2 py-0.5 rounded-sm bg-cosmos border border-gold/40 text-star-white hover:border-gold font-serif"
                   >
                     {p?.name ?? id}
                   </button>
@@ -450,7 +450,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
 
         {/* Hurtig-tooltip nederst til venstre når en filosof holdes peker over */}
         {activeId && (
-          <div className="absolute bottom-4 left-4 p-3 bg-cosmos/90 border border-gold/40 rounded-xl shadow-xl backdrop-blur text-xs max-w-sm pointer-events-none animate-in fade-in">
+          <div className="absolute bottom-4 left-4 p-3 bg-cosmos/90 border border-gold/40 rounded-xl shadow-xl backdrop-blur-sm text-xs max-w-sm pointer-events-none animate-in fade-in">
             {(() => {
               const p = philosophers.find((item) => item.id === activeId);
               if (!p) return null;

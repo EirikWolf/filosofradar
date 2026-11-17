@@ -32,7 +32,7 @@ export const ExphilCardExamBox: React.FC<ExphilCardExamBoxProps> = ({
   };
 
   return (
-    <div className="my-6 p-4.5 rounded-2xl bg-gradient-to-br from-amber-950/30 via-cosmos-card to-cosmos border-2 border-gold/40 shadow-[0_0_20px_rgba(246,200,95,0.15)] relative overflow-hidden shrink-0">
+    <div className="my-6 p-4.5 rounded-2xl bg-linear-to-br from-amber-950/30 via-cosmos-card to-cosmos border-2 border-gold/40 shadow-[0_0_20px_rgba(246,200,95,0.15)] relative overflow-hidden shrink-0">
       {/* Bakgrunnsdekor */}
       <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-2xl pointer-events-none" />
 
