@@ -1,0 +1,167 @@
+// @vitest-environment jsdom
+// Bevistester fra testbarhetsrevisjonen 2026-11-17 (docs/revisjoner/2026-11-17-testbarhet.md).
+// Ikke en retting: røde tester her viser funn, grønne viser hva en ny test ville fanget.
+import { describe, it, expect, afterEach, vi } from 'vitest';
+import { render, screen, fireEvent, cleanup, act } from '@testing-library/react';
+import philosophersData from '../src/generated/philosophers.json';
+import type { Philosopher } from '../src/schemas/philosopher';
+import { RadarView } from '../src/features/radar/RadarView';
+import { TimelineView } from '../src/features/timeline/TimelineView';
+import { DailyPhilosopher } from '../src/features/daily/DailyPhilosopher';
+import { ExphilFlashcardsView } from '../src/features/exphil/ExphilFlashcardsView';
+import { sound } from '../src/lib/sound';
+import { getLongestLineage } from '../src/lib/influence';
+import { radiusForYear } from '../src/lib/polar';
+import { getStartYear } from '../src/lib/years';
+
+const philosophers = philosophersData as Philosopher[];
+const byId = (id: string) => philosophers.find((p) => p.id === id) as Philosopher;
+
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+  vi.useRealTimers();
+  document.body.innerHTML = '';
+});
+
+function startTimeMachine(): HTMLInputElement {
+  render(<RadarView philosophers={philosophers} />);
+  fireEvent.click(screen.getByRole('button', { name: /Aktiver Tidsmaskin/ }));
+  const slider = document.querySelector<HTMLInputElement>('input[type="range"]');
+  if (!slider) throw new Error('Fant ikke tidsmaskin-glideren');
+  return slider;
+}
+
+function starFor(name: string): Element {
+  const star = document.querySelector(`g[role="button"][aria-label^="${name} ("]`);
+  if (!star) throw new Error(`Fant ikke stjernen for ${name}`);
+  return star;
+}
+
+describe('Tidsmaskinen (moveTimeTo)', () => {
+  it('[TST-bevis] Kant fødes én gang når glideren flyttes 1723 → 1724 → 1725', () => {
+    const slider = startTimeMachine();
+    const spy = vi.spyOn(sound, 'playSupernovaBirth').mockImplementation(() => {});
+    fireEvent.change(slider, { target: { value: '1723' } });
+    spy.mockClear();
+
+    fireEvent.change(slider, { target: { value: '1724' } });
+    fireEvent.change(slider, { target: { value: '1725' } });
+
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('[TST-bevis] supernova-glimtet forsvinner etter 1,4 s (regresjon for #20)', () => {
+    vi.useFakeTimers();
+    const slider = startTimeMachine();
+    vi.spyOn(sound, 'playSupernovaBirth').mockImplementation(() => {});
+    fireEvent.change(slider, { target: { value: '1723' } });
+    act(() => {
+      vi.advanceTimersByTime(2000);
+    });
+
+    fireEvent.change(slider, { target: { value: '1724' } });
+    expect(starFor('Immanuel Kant').querySelector('circle.animate-pulse')).not.toBeNull();
+
+    act(() => {
+      vi.advanceTimersByTime(1400);
+    });
+    expect(starFor('Immanuel Kant').querySelector('circle.animate-pulse')).toBeNull();
+  });
+
+  it('[TST-bevis] viser aldri «år 0» når glideren står mellom 1 f.Kr. og 1 e.Kr.', () => {
+    const slider = startTimeMachine();
+    fireEvent.change(slider, { target: { value: '0' } });
+    const label = screen.getByText('Historisk tid:').nextElementSibling;
+    expect(label?.textContent).not.toBe('0');
+  });
+
+  it('[TST-bevis] glideren har et tilgjengelig navn (WCAG 4.1.2)', () => {
+    startTimeMachine();
+    expect(screen.getByRole('slider', { name: /.+/ })).toBeTruthy();
+  });
+});
+
+describe('Tastaturrekkefølge på radaren (UU-04, på oppførsel)', () => {
+  it('stjernene kommer i kronologisk Tab-rekkefølge i DOM-en', () => {
+    render(<RadarView philosophers={philosophers} />);
+    const nameToStart = new Map(philosophers.map((p) => [p.name, getStartYear(p)]));
+    const years = Array.from(document.querySelectorAll('g[role="button"][tabindex="0"]')).map((g) => {
+      const label = g.getAttribute('aria-label') ?? '';
+      const name = label.slice(0, label.lastIndexOf(' ('));
+      return nameToStart.get(name);
+    });
+    expect(years).toHaveLength(philosophers.length);
+    for (let i = 1; i < years.length; i++) {
+      expect(years[i] as number).toBeGreaterThanOrEqual(years[i - 1] as number);
+    }
+  });
+});
+
+describe('Flashcards (UU-02, på oppførsel)', () => {
+  it('Enter på en knapp snur ikke kortet', () => {
+    render(<ExphilFlashcardsView onOpenPhilosopherCard={() => {}} />);
+    expect(screen.queryByText(/Klikk for svar/)).not.toBeNull();
+    const button = screen.getAllByRole('button')[0];
+    button.focus();
+    fireEvent.keyDown(button, { key: 'Enter' });
+    expect(screen.queryByText(/Klikk for svar/)).not.toBeNull();
+  });
+});
+
+describe('Tidslinjen', () => {
+  it('[TST-bevis] Seneca (4 f.Kr.–65) vises med 68 år, ikke 69 (intet år 0, B-003)', () => {
+    render(<TimelineView philosophers={philosophers} onOpenCard={() => {}} />);
+    const bar = Array.from(document.querySelectorAll('svg g')).find(
+      (g) => g.textContent?.trim() === 'Seneca',
+    );
+    if (!bar) throw new Error('Fant ikke Seneca-stolpen');
+    fireEvent.click(bar);
+    expect(screen.getByText(/Levetid:/).textContent).toContain('(68 år)');
+  });
+
+  it('[TST-bevis] en filosof kan velges med tastatur (WCAG 2.1.1)', () => {
+    render(<TimelineView philosophers={philosophers} onOpenCard={() => {}} />);
+    const focusableBars = document.querySelectorAll('svg g[tabindex="0"], svg [role="button"]');
+    expect(focusableBars.length).toBeGreaterThan(0);
+  });
+});
+
+describe('Dagens filosof', () => {
+  it('[TST-bevis] bytter filosof ved midnatt også om sommeren (Europe/Oslo)', () => {
+    const original = process.env.TZ;
+    process.env.TZ = 'Europe/Oslo';
+    try {
+      vi.useFakeTimers({ toFake: ['Date'] });
+      vi.setSystemTime(new Date('2026-06-30T12:00:00+02:00'));
+      const { unmount } = render(
+        <DailyPhilosopher philosophers={philosophers} onOpenCard={() => {}} onNavigateToRadar={() => {}} />,
+      );
+      const yesterday = document.body.textContent;
+      unmount();
+
+      vi.setSystemTime(new Date('2026-07-01T00:30:00+02:00'));
+      render(<DailyPhilosopher philosophers={philosophers} onOpenCard={() => {}} onNavigateToRadar={() => {}} />);
+      const today = document.body.textContent;
+
+      const nameIn = (text: string | null) => philosophers.find((p) => text?.includes(p.name))?.id;
+      expect(nameIn(today)).not.toBe(nameIn(yesterday));
+    } finally {
+      process.env.TZ = original;
+    }
+  });
+});
+
+describe('Kanttilfeller i lib', () => {
+  it('[TST-bevis] getLongestLineage tåler en sirkel i påvirkningene', () => {
+    const a = { ...byId('kant'), id: 'a', influencedBy: ['b'], influences: ['b'] };
+    const b = { ...byId('kant'), id: 'b', influencedBy: ['a'], influences: ['a'] };
+    expect(() => getLongestLineage([a, b])).not.toThrow();
+  });
+
+  it('[TST-bevis] Ptahhotep (ca. 2400 f.Kr.) står innenfor Gargi (ca. 700 f.Kr.) på radaren', () => {
+    const rPtah = radiusForYear(getStartYear(byId('ptahhotep')), 'compressed', 55, 345);
+    const rGargi = radiusForYear(getStartYear(byId('gargi')), 'compressed', 55, 345);
+    expect(rPtah).toBeLessThan(rGargi);
+  });
+});

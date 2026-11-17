@@ -1,0 +1,18 @@
+diff --git a/src/features/radar/RadarView.tsx b/src/features/radar/RadarView.tsx
+index 38c2fee..cdcc973 100644
+--- a/src/features/radar/RadarView.tsx
++++ b/src/features/radar/RadarView.tsx
+@@ -217,6 +217,13 @@ export const RadarView: React.FC<RadarViewProps> = ({
+     return ids;
+   }, [radarPoints, selectedTradition, selectedTheme, searchQuery, onlyExphil]);
+ 
++  // PROTOTYPE (revisjon 2026-11-17): forhåndslast kortets late deler når en stjerne velges
++  useEffect(() => {
++    if (!selectedId) return;
++    void import('../deepdive/DeepDiveSection');
++    void import('../exphil/ExphilCardExamBox');
++  }, [selectedId]);
++
+   // Rydd opp ventende supernova-tidtakere når radaren lukkes
+   useEffect(() => {
+     const timers = glowTimersRef.current;

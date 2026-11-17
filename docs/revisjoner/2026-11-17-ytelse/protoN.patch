@@ -1,0 +1,22 @@
+diff --git a/src/features/network/NetworkView.tsx b/src/features/network/NetworkView.tsx
+index 9651590..538f98f 100644
+--- a/src/features/network/NetworkView.tsx
++++ b/src/features/network/NetworkView.tsx
+@@ -416,7 +416,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
+                     fill={isLineageNode ? '#f6c85f' : '#ffffff'}
+                     stroke={meta.color}
+                     strokeWidth={isNodeHovered ? 3 : 2}
+-                    className="filter drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]"
++                    className=""
+                   />
+ 
+                   {/* Antall koblinger-badge i sentrum av noden */}
+@@ -438,7 +438,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
+                     fill={isLineageNode ? '#f6c85f' : '#ffffff'}
+                     fontSize="11"
+                     fontWeight={isNodeHovered || isLineageNode ? 'bold' : 'normal'}
+-                    className="font-serif pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
++                    className="font-serif pointer-events-none "
+                   >
+                     {node.name}
+                   </text>
