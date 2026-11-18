@@ -256,6 +256,7 @@ som fagstoff.
    står igjen, og det kommer en ny gyllen stjerne i skråtaket hennes.
 2. **Ingen forklarer huset.** Beboerne vet ikke hvorfor de bor der, og de
    kommenterer ikke at noen forsvinner. Det skal føles naturlig, ikke skummelt.
+   Unntaket er episode 8: Der er beboerne Majas minner og kan nevne huset.
 3. **Det finnes ingen huseier, ingen brev og ingen lærer bak kulissene.**
    Mysteriet er bare dette: rommene tømmes, og stjernene kommer.
 4. **Sitater:** Når en filosof sier noe i anførselstegn, er det et ekte sitat,
@@ -281,7 +282,7 @@ som fagstoff.
   retter ham: Platon mente at sjelen husker det den så før fødselen. Det Maja
   gjør nå, er noe annet. Hun husker fordi hun har *steder* å henge idéene på.
   Vendingen: huset var hennes eget minnepalass. Hun åpner øynene og skriver.
-  Siste bilde: taket fullt av stjerner som zoomer ut og blir til
+  Siste bilde: taket fullt av stjerner som i en overtoning blir til
   Filosofradaren.
 
 ## Visuell retning

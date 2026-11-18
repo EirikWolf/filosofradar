@@ -233,7 +233,7 @@ gang, så seeren lærer dem utenat.
 ## Episode 8 · Eksamen
 
 - **Rom:** hele huset.
-- **Handling:** Eksamenslokalet er stille. Oppgaven på arket er appens
+- **Handling:** Eksamenslokalet er stille. Oppgaven på skjermen er appens
   eksamensoppgave for Platon mot Aristoteles. Maja får blackout. Så lukker hun
   øynene og står i gangen, der Sokrates sitter på skohylla igjen. Hun går hele
   ruten. Alle beboerne er tilbake, nå med skissepreg og gull-linjer fordi de er
@@ -244,10 +244,11 @@ gang, så seeren lærer dem utenat.
   henge idéene på. Det er en teknikk, og Aristoteles skrev selv om den.
 - **Vendingen:** Huset var hennes eget minnepalass. Hun åpner øynene og
   skriver.
-- **Epilog:** Taket hennes er fullt av stjerner. Kameraet zoomer ut, og
-  stjernene og linjene mellom dem blir til Filosofradaren. Siste bilde: en ny
+- **Epilog:** Taket hennes er fullt av stjerner. I en overtoning blir
+  stjernene og linjene mellom dem til Filosofradaren. Siste bilde: en ny
   lapp på en oppslagstavle på Blindern, *Rom ledig i kollektiv. Lav leie.
   Krav: nysgjerrighet.* En ny student, altså seeren, river av en lapp.
 - **Pensum:** alt. Den fulle repetisjonsscenen er hele pensumet på drøye ett
   minutt.
-- **I appen:** Ex.phil-huben, med lenke til «Hvilken filosof ligner du på?».
+- **I appen:** Ex.phil-huben og quizen «Hvilken filosof ligner du på?».
+- Fullt manus: `docs/tegnefilm/ep8-manus.md`.
