@@ -5,6 +5,8 @@ import { getTraditionMeta, TRADITIONS } from '../../lib/traditions';
 import { formatLifeSpan, getStartYear } from '../../lib/years';
 import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
+import { stepGalaxyCamera, type GalaxyCamera } from '../../lib/galaxyCamera';
+import { prefersReducedMotion } from '../../lib/motion';
 
 interface Galaxy3DViewProps {
   philosophers: Philosopher[];
@@ -80,7 +82,8 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedTradition, setSelectedTradition] = useState<string>('all');
   const [onlyExphil, setOnlyExphil] = useState<boolean>(false);
-  const [isAutoRotating, setIsAutoRotating] = useState<boolean>(true);
+  // Redusert bevegelse: CSS-overstyringen stopper ikke canvas-rotasjonen (YTE-07, UU-05)
+  const [isAutoRotating, setIsAutoRotating] = useState<boolean>(() => !prefersReducedMotion());
 
   // Oppdater valgt stjerne ved ekstern fokusering (f.eks. guidet tur). Justeres
   // under rendring når propen endrer seg, i stedet for i en effekt som ville gitt
@@ -94,7 +97,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   }
 
   // Kameraorientering og zoom
-  const cameraRef = useRef({
+  const cameraRef = useRef<GalaxyCamera>({
     yaw: 0.45, // Rotasjon rundt Y-aksen (vannrett)
     pitch: 0.55, // Rotasjon rundt X-aksen (vipping / fugleperspektiv)
     distance: 680, // Avstand fra galaksesenteret
@@ -104,6 +107,8 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   });
 
   const isDraggingRef = useRef(false);
+  // Starter tegneløkka igjen etter at den har stoppet i ro (YTE-07). Settes av effekten under.
+  const wakeRef = useRef<() => void>(() => {});
   const lastMousePosRef = useRef({ x: 0, y: 0 });
 
   // Forhåndsberegn 3D-koordinater for alle filosofer i galaksen
@@ -176,9 +181,10 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animId: number;
+    let animId: number | null = null;
 
     const render = () => {
+      animId = null;
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
 
@@ -200,17 +206,9 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
       const cx = width / 2;
       const cy = height / 2;
 
-      // Myk kamerasmoothing (lerp)
+      // Myk kamerasmoothing (lerp). Svarer om kameraet fortsatt beveger seg.
       const cam = cameraRef.current;
-      if (isAutoRotating && !isDraggingRef.current) {
-        cam.targetYaw += 0.0022; // Sakte kosmisk galakserotasjon
-      }
-      cam.yaw += (cam.targetYaw - cam.yaw) * 0.1;
-      cam.pitch += (cam.targetPitch - cam.pitch) * 0.1;
-      cam.distance += (cam.targetDistance - cam.distance) * 0.1;
-
-      // Klem pitch for å unngå å snu galaksen opp ned
-      cam.pitch = Math.max(-1.3, Math.min(1.3, cam.pitch));
+      const isMoving = stepGalaxyCamera(cam, isAutoRotating && !isDraggingRef.current);
 
       const cosYaw = Math.cos(cam.yaw);
       const sinYaw = Math.sin(cam.yaw);
@@ -407,17 +405,33 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
       });
 
       ctx.restore();
-      animId = requestAnimationFrame(render);
+      // Tegn neste bilde bare mens kameraet beveger seg eller brukeren drar. I ro
+      // står bildet stille uten å bruke CPU, til wake() kalles ved ny input.
+      if (isMoving || isDraggingRef.current) {
+        animId = requestAnimationFrame(render);
+      }
     };
 
-    animId = requestAnimationFrame(render);
-    return () => cancelAnimationFrame(animId);
+    const wake = () => {
+      if (animId === null) animId = requestAnimationFrame(render);
+    };
+    wakeRef.current = wake;
+    // Lerretet må tegnes på nytt når størrelsen endres, også når løkka står i ro.
+    window.addEventListener('resize', wake);
+
+    wake();
+    return () => {
+      window.removeEventListener('resize', wake);
+      wakeRef.current = () => {};
+      if (animId !== null) cancelAnimationFrame(animId);
+    };
   }, [stars3D, dustParticles, starsMap, selectedTradition, onlyExphil, hoveredId, selectedId, isAutoRotating, activeStar]);
 
   // Håndter mus- og berøringsinteraksjon for 3D-rotering og zooming
   const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
     isDraggingRef.current = true;
     lastMousePosRef.current = { x: e.clientX, y: e.clientY };
+    wakeRef.current();
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -432,6 +446,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
       const cam = cameraRef.current;
       cam.targetYaw += dx * 0.007;
       cam.targetPitch -= dy * 0.007;
+      wakeRef.current();
     } else {
       // Sjekk om musen treffer en stjerne for hover-effekt
       const rect = canvas.getBoundingClientRect();
@@ -479,6 +494,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
     e.preventDefault();
     const cam = cameraRef.current;
     cam.targetDistance = Math.max(300, Math.min(1200, cam.targetDistance + e.deltaY * 0.6));
+    wakeRef.current();
   };
 
   const handleClick = () => {
@@ -493,6 +509,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
     cam.targetYaw = 0.45;
     cam.targetPitch = 0.55;
     cam.targetDistance = 680;
+    wakeRef.current();
   }, []);
 
   const selectedPhilosopher = selectedId ? starsMap.get(selectedId)?.philosopher : null;

@@ -41,7 +41,7 @@
 | Første besøk | 3 sekunders intro: sveipen tenner punktene ett for ett, så dukker en diskret hjelpeboble opp. |
 
 Alle animasjoner: `transform` og `opacity` der det går; ingen layout-animasjon av hundrevis av elementer.
-`prefers-reduced-motion`: sveip av, ingen puls, overganger ≤ 150 ms.
+`prefers-reduced-motion`: sveip av, ingen puls, overganger ≤ 150 ms, og 3D-galaksen starter uten spinn (canvas-animasjoner sjekker innstillingen selv, `src/lib/motion.ts`).
 
 ## 5. Filosofkortet
 ```
