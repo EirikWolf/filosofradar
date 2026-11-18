@@ -63,7 +63,7 @@ gang, så seeren lærer dem utenat.
 | Loftstrappa | Kierkegaard | *Tre trinn: nytelse, plikt og tro. Angst er frihetens svimmelhet.* | «Frihetens svimmelhet» er Kierkegaards uttrykk (*Begrebet Angest*, 1844) |
 | Arkbalkongen | Sartre | *Vi er dømt til å være frie.* | Sartres eget uttrykk (*Eksistensialismen er en humanisme*, 1946) |
 | Arkbalkongen | de Beauvoir | *Men noen situasjoner gjør friheten trang.* | Nei |
-| Loftet | Popper | *Én svart svane er nok til å motbevise.* | Nei. Eksempelet er Poppers |
+| Loftet | Popper | *Én svart svane er nok til å motbevise at alle er hvite.* | Nei. Svaneeksempelet er eldre (J. S. Mill, 1843), men Popper gjorde det kjent |
 | Loftet | Kuhn (gjest) | *Til slutt bytter man ut hele loftet: paradigmeskifte.* | Nei |
 
 ---
@@ -210,8 +210,8 @@ gang, så seeren lærer dem utenat.
 ## Episode 7 · Loftet
 
 - **Rom:** loftet. **Beboer:** Popper, med Kuhn som gjest.
-- **Konflikt:** Popper har teorien om at alle svaner er hvite, og fuglekassene
-  hans er fulle av hvite svaner. Han prøver å motbevise teorien hver dag, og
+- **Konflikt:** Popper har teorien om at alle svaner er hvite, og takrenna
+  utenfor loftet er full av hvite svaner. Han prøver å motbevise teorien hver dag, og
   blir ellevill når en svart svane lander i takrenna. Maja kjenner det igjen fra
   informatikken: tester kan vise at programmet har en feil, men aldri bevise at
   det er feilfritt. Så kommer Kuhn på besøk med flyttekasser. Han bygger ikke
@@ -228,6 +228,7 @@ gang, så seeren lærer dem utenat.
   panikk. Hun ligger i senga og ser opp. Stjernene i taket danner et mønster
   hun ikke har sett før: omrisset av huset. Kutt.
 - **I appen:** Ex.phil-debatten «Popper vs. Kuhn».
+- Fullt manus: `docs/tegnefilm/ep7-manus.md`.
 
 ## Episode 8 · Eksamen
 

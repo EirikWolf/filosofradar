@@ -235,7 +235,7 @@ som fagstoff.
 
 ### Popper · loftet (Kuhn på besøk)
 
-- **Knagg:** Fuglekasser med hvite svaner, helt til én er svart.
+- **Knagg:** Hvite svaner på takrenna utenfor takvinduet, helt til én er svart.
 - **Popper:** Prøver hele tiden å motbevise sine egne teorier, og blir glad når
   han lykkes.
 - **Kuhn:** Kommer på besøk med flyttekasser og innreder hele loftet på nytt.
