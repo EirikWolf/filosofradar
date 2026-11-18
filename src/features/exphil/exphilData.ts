@@ -918,7 +918,7 @@ export const EXPHIL_QUIZ_QUESTIONS: ExphilQuizQuestion[] = [
     ],
     correctIndex: 0,
     explanation:
-      'Riktig! Dette er Poppers berømte asymmetri mellom verifikasjon og falsifikasjon. Ingen mengde hvite svaner beviser at «alle svaner er hvite», men en eneste sort svane falsifiserer påstanden umiddelbart.',
+      'Riktig! Dette er Poppers berømte asymmetri mellom verifikasjon og falsifikasjon. Ingen mengde hvite svaner beviser at «alle svaner er hvite», men en eneste sort svane falsifiserer påstanden, logisk sett. I praksis krevde Popper en observasjon som kan gjentas.',
   },
   {
     id: 'eq-5',

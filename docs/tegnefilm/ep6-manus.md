@@ -274,7 +274,7 @@ muren.
 **BILDE:** Maja våkner og ser opp i skråtaket. Der er det nå tolv gylne
 stjerner.
 
-**BILDE:** Åtte nye gull-linjer tegner seg. Alle går til de tre nye
+**BILDE:** Ni nye gull-linjer tegner seg. Alle går til de tre nye
 stjernene: Kierkegaard, Sartre og de Beauvoir. [12]
 
 **BILDE:** Loftstrappa står tom. På hver avsats ligger et manus.
@@ -388,6 +388,9 @@ Beauvoir. Kierkegaard får et eget bilde i scene 5.
 12. **Gull-linjene:** Følger `influencedBy` i appens filosof-filer. Kierkegaard
     er påvirket av Sokrates, Kant og Descartes. Sartre er påvirket av
     Kierkegaard og Descartes. De Beauvoir er påvirket av Kierkegaard,
-    Descartes og Kant. Det blir åtte linjer, og alle går til en av de tre nye
-    stjernene. Nietzsche og Marx står også i lista, men bor ikke i huset.
-    Appen har ingen linje mellom Sartre og de Beauvoir.
+    Descartes, Kant og Sartre. Det blir ni linjer, og alle går til en av de
+    tre nye stjernene. Nietzsche, Marx og Hegel står også i listene, men bor
+    ikke i huset. Påvirkningen mellom Sartre og de Beauvoir gikk begge veier.
+    Appen kan bare vise den ene, fordi den som påvirker, må være født først.
+    *(Rettet 2026-11-18: linja fra Sartre til de Beauvoir og Hegel hos
+    Kierkegaard manglet i appen.)*

@@ -29,7 +29,7 @@
   "keyIdeas": [
     {
       "title": "Falsifikasjon",
-      "text": "Uansett hvor mange hvite svaner du ser, kan du aldri bevise at alle svaner er hvite. Men å se én enkelt svart svane motbeviser påstanden umiddelbart."
+      "text": "Uansett hvor mange hvite svaner du ser, kan du aldri bevise at alle svaner er hvite. Men logisk sett er én enkelt svart svane nok til å motbevise påstanden."
     },
     {
       "title": "Toleransens paradoks",
@@ -38,8 +38,9 @@
   ],
   "quote": {
     "text": "Vår kunnskap kan bare være endelig, mens vår uvitenhet nødvendigvis må være uendelig.",
-    "work": "Conjectures and Refutations",
-    "source": "https://plato.stanford.edu/entries/popper/"
+    "work": "Conjectures and Refutations (1963), innledningen: On the Sources of Knowledge and of Ignorance (foredrag 1960), avsnitt XVI",
+    "source": "https://www.thebritishacademy.ac.uk/publishing/proceedings-british-academy/proceedings-volumes-1-111/46/",
+    "translator": "egen oversettelse fra engelsk"
   },
   "thinkAbout": "Bør et fritt demokrati tillate krefter som ønsker å avskaffe demokratiet?",
   "influencedBy": [

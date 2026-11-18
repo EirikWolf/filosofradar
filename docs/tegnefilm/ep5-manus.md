@@ -384,9 +384,12 @@ står i et eget bilde.
    At de fleste synes Kant tar feil her, er en vurdering, ikke fagstoff.
 10. **Gull-linjene:** Følger `influencedBy` i appens filosof-filer. Platon og
     Sokrates har påvirket Aristoteles. Aristoteles har påvirket Hobbes,
-    Descartes og Kant. Platon og Descartes har påvirket Kant, og Kant har
-    påvirket Wollstonecraft. Det blir åtte linjer, og alle går til
-    Aristoteles eller Kant.
+    Descartes og Kant. Platon, Descartes og Hume har påvirket Kant. Det blir
+    åtte linjer, og alle går til Aristoteles eller Kant. *(Rettet 2026-11-18:
+    Appen hadde Kant som påvirkning på Wollstonecraft, som er historisk
+    tvilsomt, men manglet Hume, som vekket Kant fra den «dogmatiske slummer»
+    (*Prolegomena*, 1783). Begge deler er rettet i appen, og antallet er det
+    samme.)*
 11. **Plikten og flertallet:** Vår formulering. Den bygger på at moralloven
     ikke kan utledes av eksempler eller av hva folk flest gjør (*Grunnlegging*
     4:408–409).
