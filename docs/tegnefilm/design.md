@@ -54,7 +54,7 @@ Alternativ B, valgt 2026-11-17:
 | 2. etasje | Kant | Ryddigst i huset, skiltet *Kan regelen din bli lov for alle?* | Det kategoriske imperativ, plikt |
 | Loftstrappa | Kierkegaard | Bor i den bratte loftstrappa: tre avsatser er tre stadier | Estetisk, etisk og religiøst stadium |
 | Arkbalkongen | Sartre og de Beauvoir | Kafébordet på balkongen øverst i huset | Frihet, eksistensen går forut for essensen (Sartre, *L'existentialisme est un humanisme*, 1946), situasjon |
-| Loftet | Popper (+ Kuhn på besøk) | Fuglekasser med hvite svaner, til én er svart | Falsifikasjon, paradigmeskifte |
+| Loftet | Popper (+ Kuhn på besøk) | Hvite svaner på takrenna, til én er svart | Falsifikasjon, paradigmeskifte |
 
 Descartes' oppvarmede rom (*Discours de la méthode*, del 2, der han la opp
 metoden; *cogito* kommer i del 4), Humes biljardkuler (*Abstract*, 1740, og
