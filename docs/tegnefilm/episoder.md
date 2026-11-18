@@ -205,6 +205,7 @@ gang, så seeren lærer dem utenat.
 - **Forsvinner:** Kierkegaard, Sartre og de Beauvoir. Igjen ligger tre manus med
   tre forskjellige forfatternavn i trappa, og to kaffekopper på balkongbordet.
 - **I appen:** Ex.phil-debatten «Sartre vs. Beauvoir».
+- Fullt manus: `docs/tegnefilm/ep6-manus.md`.
 
 ## Episode 7 · Loftet
 
