@@ -5,6 +5,7 @@ import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import type { ThoughtExperiment } from '../deepdive/types';
 import { sound } from '../../lib/sound';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
+import { cardImage } from '../../lib/images';
 
 interface StoryGalleryModalProps {
   onSelectStory: (story: {
@@ -241,7 +242,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
                   <div className="relative w-full h-36 bg-slate-950 overflow-hidden">
                     {story.image ? (
                       <img
-                        src={story.image}
+                        src={cardImage(story.image)}
                         alt={story.experimentTitle}
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

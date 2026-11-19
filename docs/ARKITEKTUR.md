@@ -23,6 +23,7 @@ content/philosophers/*.json ──(scripts/build-content.ts: valider + slå samm
 | Validering | Zod | Samme skjema for innhold og typer |
 | Tilstand | React state + URL-parametre (`?f=sokrates&year=-400`) | Delbare lenker, ingen ekstra bibliotek |
 | Bilde-eksport | Canvas (`src/lib/quizExport.ts`) | Del-bilde fra quizen uten ekstra avhengighet |
+| Bildevarianter | `sharp` i `scripts/make-image-variants.ts` (`npm run images`), bare ved utvikling | 960 px-varianter av illustrasjonene til kort og galleri, 61 % mindre (B-016) |
 | Tester | Vitest (logikk), Vitest + jsdom + Testing Library (komponenter, se B-009), Playwright (røyktest av hovedflyt, ikke innført ennå) | |
 | Hosting | Firebase Hosting, Spark-plan | Gratis, enkel publisering, forhåndsvisningskanaler |
 | Besøksstatistikk | GoatCounter (B-011) | Uten informasjonskapsler; se `docs/databehandlere.md` |
@@ -40,7 +41,7 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 │  ├─ philosophers/             én JSON per filosof (kilden til sannhet, Zod-validert)
 │  ├─ quiz/                     spørsmål til «Hvilken filosof ligner du på?»
 │  └─ quotes/                   sitatregister for sitatvakten (B-010)
-├─ public/images/hooks/         illustrasjoner til tankeeksperimenter (B-012)
+├─ public/images/hooks/         illustrasjoner til tankeeksperimenter (B-012), med 960 px-varianter for kort (B-016)
 ├─ scripts/
 │  ├─ build-content.ts          valider + slå sammen + statistikk + sitemap
 │  ├─ check-bundle-budget.ts    ytelsesbudsjett for første side

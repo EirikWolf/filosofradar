@@ -1,6 +1,7 @@
 import React from 'react';
 import type { ThoughtExperiment } from '../deepdive/types';
 import { sound } from '../../lib/sound';
+import { cardImage } from '../../lib/images';
 
 interface VisualHookCardProps {
   experiment: ThoughtExperiment;
@@ -31,7 +32,7 @@ export const VisualHookCard: React.FC<VisualHookCardProps> = ({
       {experiment.image ? (
         <div className="relative h-44 sm:h-52 w-full overflow-hidden bg-black/60">
           <img
-            src={experiment.image}
+            src={cardImage(experiment.image)}
             alt={experiment.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             loading="lazy"
