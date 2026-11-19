@@ -34,7 +34,7 @@ describe('Bildevarianter i public/images/hooks', () => {
 
   it('finner illustrasjonene', () => {
     // Vakt mot et tomt filter: et tomt resultat skal ikke gi grønt.
-    expect(originals.length).toBeGreaterThanOrEqual(48);
+    expect(originals.length).toBeGreaterThanOrEqual(107);
   });
 
   it('har en mindre 960 px-variant for hver illustrasjon (kjør `npm run images` etter nye bilder)', () => {

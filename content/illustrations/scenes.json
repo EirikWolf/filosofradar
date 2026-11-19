@@ -178,7 +178,8 @@
       "file": "fanon-blikket",
       "philosopherId": "fanon",
       "experiment": "Det hvite blikkets fangenskap",
-      "prompt": "A 1950s street in a French city in grey winter light. A small boy in a wool coat clutches his mother's hand and points. Across the cobblestones stands a dignified Black man in a suit and overcoat with a book under his arm, turning his head; the stares of the passersby form a cold, glassy frame around him, as if he were being fixed behind a pane of glass."
+      "prompt": "A 1950s street in a French city in grey winter light. In the foreground, a small boy in a wool coat hides behind his mother's skirt and points with an outstretched finger across the street, his face frightened. Across the cobblestones stands a calm, dignified Black man in a suit and overcoat with a book under his arm, turning to look back at the pointing child. Other passersby stop and stare at him. A quiet, painful moment.",
+      "seed": 202
     },
     {
       "file": "foucault-panoptikon",
@@ -226,7 +227,8 @@
       "file": "hildegard-kosmos-egget",
       "philosopherId": "hildegard",
       "experiment": "Kosmos som et egg",
-      "prompt": "A visionary medieval cosmos shaped like a great egg floating in darkness: the outer shell is a band of fire and stars, within it layers of air and wind swirl, and at the center lies the round green earth with mountains and rivers. A small nun at the bottom of the picture looks up at the vision in awe."
+      "prompt": "A medieval vision of the cosmos shaped like a great upright egg floating in darkness: the outer shell is a ring of flames and golden stars, inside it swirl bands of wind and pale air, and at the center lies a small flat disc of green land with hills, rivers and a walled medieval town, ringed by dark water, like a painted miniature rather than a planet. A small nun in a black habit kneels at the bottom, looking up in awe.",
+      "seed": 303
     },
     {
       "file": "hobbes-leviathan",
@@ -238,19 +240,22 @@
       "file": "holberg-potu",
       "philosopherId": "holberg",
       "experiment": "Potu-riket under jorden",
-      "prompt": "A whimsical underground world lit by a strange inner sun. Tall, wise walking trees with gentle faces in their bark and branch-like arms hold a council in a sunlit clearing, listening to one tree speaking from a wooden podium. A small 18th-century Norwegian student in a long coat and a powdered wig stands among them, astonished."
+      "prompt": "A whimsical underground world under a glowing inner sun. Tall walking trees with kind, wrinkled faces in their bark, leafy crowns and long branch-arms stand in a circle in a forest clearing, holding a council; one tree stands on a stump and speaks, waving its branches. A small young man in an 18th-century coat and tricorn hat stands among their roots, looking up at them in astonishment. No other humans.",
+      "seed": 202
     },
     {
       "file": "hume-biljardkulene",
       "philosopherId": "hume",
       "experiment": "Biljardkulene (Årsak og virkning)",
-      "prompt": "An 18th-century Scottish library lit by a single warm lamp. On a green baize billiard table, a white ball strikes a red ball in a frozen moment of impact. Faint golden sparks hang in the air at the point of contact, asking where the hidden force might be. Mahogany bookshelves in the dark background."
+      "prompt": "Close view of a green baize billiard table in an 18th-century library lit by a single warm lamp. Two ivory balls, one white and one red, collide at the center of the table in a frozen moment of impact, the red ball just starting to roll away. Faint golden sparks hang in the air at the point of contact. A gentleman in a powdered wig watches from the shadows, chin in hand, puzzled.",
+      "seed": 101
     },
     {
       "file": "hume-giljotinen",
       "philosopherId": "hume",
       "experiment": "Humes giljotin (Er/Bør-problemet)",
-      "prompt": "An 18th-century Edinburgh study at night. On a writing desk lies a thick open book: the left page is filled with detailed drawings of human anatomy and society, the right page is completely empty. A gleaming guillotine blade descends between the pages, cleanly cutting a golden thread that tried to join them. Quill, inkwell and candle."
+      "prompt": "A deep chasm splits a rocky landscape in two at twilight. On the near side lies a busy plateau of everything that is: people at work, houses, animals, measuring instruments and stacks of books. On the far side lies an empty, softly glowing plateau of what ought to be. A bridge of golden thread once spanned the gap, but it has been cut cleanly in the middle, and its two ends hang down into the abyss. An 18th-century gentleman in a powdered wig stands at the edge, looking across.",
+      "seed": 101
     },
     {
       "file": "hypatia-astrolabiet",
@@ -413,7 +418,8 @@
       "file": "nietzsche-evig-gjenkomst",
       "philosopherId": "nietzsche",
       "experiment": "Den evige gjenkomst",
-      "prompt": "A lonely 19th-century room at night. A man with a thick mustache sits up in bed, startled, as a shadowy figure leans over him and whispers. Through the window, the night sky twists into an endless golden spiral of stars repeating the same patterns over and over. Moonlight on the floorboards."
+      "prompt": "A lonely 19th-century attic room at night. A man with a thick mustache sits up in bed, startled, as a shadowy translucent figure leans over him and whispers. Above the bed, the ceiling dissolves into an endless golden spiral of small repeating scenes from his own life, the same moments circling again and again. Moonlight on the floorboards.",
+      "seed": 303
     },
     {
       "file": "nietzsche-lykten",
@@ -443,7 +449,8 @@
       "file": "platon-hulen",
       "philosopherId": "platon",
       "experiment": "Hulelignelsen",
-      "prompt": "An underground stone cave where prisoners sit chained to the floor, staring at a rough rock wall. Behind them a flickering fire casts long dancing shadows onto the wall. Far above, one freed prisoner climbs toward the cave opening, shielding his eyes from blinding golden sunlight from the outside world."
+      "prompt": "Inside a deep underground cave, a row of prisoners in simple tunics sit chained side by side with their backs to the viewer, all facing a bare rock wall. Behind them, a fire burns on a raised ledge, and people walking along the ledge carry statues whose dark shadows dance on the wall in front of the prisoners. Far above, at the cave mouth, one freed prisoner stands in blinding golden sunlight, shielding his eyes.",
+      "seed": 202
     },
     {
       "file": "platon-gyges-ring",
@@ -467,7 +474,8 @@
       "file": "ptahhotep-maat",
       "philosopherId": "ptahhotep",
       "experiment": "Ma'ats evige balanse",
-      "prompt": "A vast ancient Egyptian hall of judgment with tall papyrus columns lit by torches. A great golden balance holds a single white ostrich feather on one side; on the other, a heavy pile of gold and broken seals tips the scale, and the stone floor beneath it has begun to crack apart."
+      "prompt": "A vast ancient Egyptian hall of judgment with tall papyrus columns lit by torches. A great golden balance stands at the center. In one pan lies a single white ostrich feather; in the other pan sits a heavy heap of gold and broken clay seals that drags that side down so hard that the stone floor beneath it has cracked open. The feather side rises high. Small robed figures watch from the shadows.",
+      "seed": 303
     },
     {
       "file": "pytagoras-strengen",
@@ -498,7 +506,8 @@
       "replaces": "rousseau-lenkene",
       "philosopherId": "rousseau",
       "experiment": "Den første inngjerdringen av jord",
-      "prompt": "A wide, open green landscape in an imagined early age. A man drives the first wooden stakes of a fence into the ground and spreads his arms, claiming the plot. A few simple villagers watch, some nodding naively. In the far distance, the same land is already divided by walls and fences stretching toward a smoky city."
+      "prompt": "A wide green landscape in prehistoric times, with no roads, no buildings and no machines. A man dressed in animal skins hammers the first wooden stakes of a rough fence into the open grass and spreads his arms, claiming the plot. A few villagers in skins and woven cloth watch him; some nod. In the far distance, more fences and stone walls already begin to cut the land into pieces.",
+      "seed": 303
     },
     {
       "file": "rumi-sivfloyten",
@@ -534,7 +543,8 @@
       "file": "schopenhauer-piggsvinene",
       "philosopherId": "schopenhauer",
       "experiment": "Pinnsvinenes dilemma",
-      "prompt": "A group of porcupines on a freezing winter night in a snowy German forest. Some huddle close together for warmth but flinch as their quills prick each other; others stand apart, shivering in the frost. Moonlight on the snow and small clouds of frozen breath."
+      "prompt": "A group of small European hedgehogs with sharp brown spines on snow at night in a winter forest, seen low at hedgehog height. Some huddle close together for warmth but flinch as their spines prick each other; others sit alone at a distance, shivering in the frost. Moonlight on the snow and tiny clouds of frozen breath.",
+      "seed": 101
     },
     {
       "file": "seneca-premeditatio",
@@ -600,7 +610,8 @@
       "file": "wittgenstein-and-kanin",
       "philosopherId": "wittgenstein",
       "experiment": "And-kanin-figuren",
-      "prompt": "A 20th-century study lit by a green banker's lamp. On a leather desk lies an elegant ink drawing of an ambiguous head that can be seen both as a duck with an open beak facing left and as a rabbit with long ears facing right. Open notebooks and an old fountain pen beside it."
+      "prompt": "A 20th-century study lit by a green banker's lamp. On a leather desk lies a single sheet of paper with one simple ink line drawing of one ambiguous head: two long shapes stretch to the left, and they can be read either as a duck's beak or as a rabbit's ears. Only one figure on the paper, no separate duck or rabbit. A man in a dark suit leans over it, tilting his head.",
+      "seed": 202
     },
     {
       "file": "wollstonecraft-gullburet",
@@ -613,14 +624,16 @@
       "file": "wonhyo-hodeskallen",
       "philosopherId": "wonhyo",
       "experiment": "Vannet fra hodeskallen i mørket",
-      "prompt": "A dark mountain cave in ancient Korea during a thunderstorm. Inside, a thirsty wandering monk drinks eagerly in the darkness from a vessel he cannot see. In the faint gleam of lightning at the cave mouth, the vessel is revealed to be an old weathered skull. A moment of sudden awakening."
+      "prompt": "A dark mountain cave in ancient Korea during a thunderstorm. A young monk in grey robes kneels and drinks eagerly from an old human skull held in both hands like a bowl, his eyes closed, unaware of what it is. A flash of lightning at the cave mouth lights up the skull. The moment just before a sudden awakening.",
+      "seed": 101
     },
     {
       "file": "zapffe-kjempehjorten",
       "replaces": "zapffe-den-siste-messias",
       "philosopherId": "zapffe",
       "experiment": "Kjempehjorten med for store gevir",
-      "prompt": "A prehistoric giant deer stands in a misty Ice Age bog at dusk, its enormous antlers so vast and heavy that its head hangs low and it can barely lift them. Wolves watch from the treeline. Cold northern light under a vast, indifferent sky."
+      "prompt": "A prehistoric giant deer stands alone in a misty Ice Age bog at dusk. Its antlers are grotesquely oversized: two vast, flat, shovel-shaped palms spanning far wider than its whole body, so heavy that its head hangs down almost to the ground and its legs tremble under the weight. A pack of wolves watches from the treeline. No humans. Cold northern light under a vast, indifferent sky.",
+      "seed": 101
     },
     {
       "file": "zara-yaqob-grotten",
@@ -650,7 +663,8 @@
       "file": "zhuangzi-kokken-ding",
       "philosopherId": "zhuangzi",
       "experiment": "Kokken Ding som parterer oksen",
-      "prompt": "An ancient Chinese kitchen filled with misty steam. A cook in flowing robes with tied-up sleeves moves in a graceful, dance-like motion with a gleaming cleaver, his blade gliding through the natural gaps of a large carcass of beef without touching bone. A faint golden trail traces the blade's path. Serene mastery."
+      "prompt": "An ancient Chinese kitchen filled with misty steam and lantern light. A cook in flowing robes with tied-up sleeves moves in a graceful, dance-like pose, his gleaming cleaver tracing a faint golden ribbon of light through the air. On the wooden table before him lie neat, clean cuts of meat arranged like a still life, with no blood. A lord in fine robes watches in admiration from the doorway.",
+      "seed": 101
     }
   ]
 }
