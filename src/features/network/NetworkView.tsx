@@ -1,15 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import {
-  forceSimulation,
-  forceLink,
-  forceManyBody,
-  forceCenter,
-  forceX,
-  forceY,
-  type Simulation,
-} from 'd3-force';
 import type { Philosopher } from '../../schemas/philosopher';
-import { getNetworkData, getLongestLineage, type NetworkNode, type NetworkLink } from '../../lib/influence';
+import { getNetworkData, getLongestLineage, type NetworkNode } from '../../lib/influence';
+import { computeNetworkLayout, settleSimulation, type NetworkLayout } from '../../lib/networkLayout';
+import { prefersReducedMotion } from '../../lib/motion';
 import { getTraditionMeta } from '../../lib/traditions';
 import { formatLifeSpan, formatYear, getStartYear } from '../../lib/years';
 
@@ -19,21 +12,32 @@ interface NetworkViewProps {
   onNavigateToRadar?: () => void;
 }
 
+/** Hvor lenge stjernene glir mot plassene sine når grafen åpnes eller ordnes om. */
+export const NETWORK_GLIDE_MS = 600;
+const EDGE_FADE_MS = 300;
+const GLIDE_EASING = 'cubic-bezier(0.2, 0.8, 0.2, 1)';
+
+/**
+ * start: stjernene står samlet i midten, usynlige (bare første gang).
+ * moving: de glir til plassene sine; kantene er skjult så de ikke henger etter.
+ * settled: alt står i ro, og kantene tones inn.
+ * dragging: en node dras; simuleringen tegnes steg for steg uten overganger.
+ */
+type Phase = 'start' | 'moving' | 'settled' | 'dragging';
+
 export const NetworkView: React.FC<NetworkViewProps> = ({
   philosophers,
   onOpenCard,
   onNavigateToRadar,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [dimensions, setDimensions] = useState<{ width: number; height: number }>({
-    width: 900,
-    height: 600,
-  });
+  const [dimensions, setDimensions] = useState<{ width: number; height: number } | null>(null);
 
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [highlightLineage, setHighlightLineage] = useState<boolean>(false);
   const [timeForce, setTimeForce] = useState<number>(0.22); // 0 = fritt, 0.4 = streng tidsrekkefølge
+  const [reducedMotion] = useState(() => prefersReducedMotion());
 
   // Hent grafdata
   const { nodes: rawNodes, links: rawLinks } = useMemo(() => {
@@ -49,19 +53,16 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
     return new Set(longestLineage.path);
   }, [longestLineage]);
 
-  // Lokale noder og kanter for D3-simuleringen
-  const [simNodes, setSimNodes] = useState<NetworkNode[]>([]);
-  const [simLinks, setSimLinks] = useState<NetworkLink[]>([]);
-
-  // Responsiv størrelse
+  // Responsiv størrelse. Bare bredden starter grafen på nytt: på mobil endres høyden
+  // hver gang adresselinjen skjules ved rulling, og da skal ikke grafen ordnes om.
   useEffect(() => {
     if (!containerRef.current) return;
     const updateSize = () => {
       if (containerRef.current) {
-        setDimensions({
-          width: Math.max(340, containerRef.current.clientWidth),
-          height: Math.max(500, window.innerHeight - 260),
-        });
+        const width = Math.max(340, containerRef.current.clientWidth);
+        setDimensions((prev) =>
+          prev && prev.width === width ? prev : { width, height: Math.max(500, window.innerHeight - 260) },
+        );
       }
     };
     updateSize();
@@ -69,52 +70,52 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
-  // Kjør D3-force simuleringen
-  const simulationRef = useRef<Simulation<NetworkNode, NetworkLink> | null>(null);
+  // Oppsettet regnes ferdig på forhånd (YTE-02) og tegnes én gang.
+  const layout = useMemo<NetworkLayout | null>(
+    () => (dimensions ? computeNetworkLayout(rawNodes, rawLinks, { ...dimensions, timeForce }) : null),
+    [rawNodes, rawLinks, dimensions, timeForce],
+  );
+
+  // Nytt oppsett: første gang flyr stjernene inn fra midten, senere glir de fra der de står.
+  const [phaseState, setPhaseState] = useState<{ layout: NetworkLayout | null; phase: Phase }>({
+    layout: null,
+    phase: 'start',
+  });
+  let phase = phaseState.phase;
+  if (layout !== phaseState.layout) {
+    phase = reducedMotion ? 'settled' : phaseState.layout === null ? 'start' : 'moving';
+    setPhaseState({ layout, phase });
+  }
 
   useEffect(() => {
-    const width = dimensions.width;
-    const height = dimensions.height;
+    const setPhase = (next: Phase) => setPhaseState((s) => (s.layout === layout ? { ...s, phase: next } : s));
+    if (phase === 'start') {
+      // To bilder: det første tegner stjernene i midten, det andre starter overgangen.
+      let inner = 0;
+      const outer = requestAnimationFrame(() => {
+        inner = requestAnimationFrame(() => setPhase('moving'));
+      });
+      return () => {
+        cancelAnimationFrame(outer);
+        cancelAnimationFrame(inner);
+      };
+    }
+    if (phase === 'moving') {
+      const timer = window.setTimeout(() => setPhase('settled'), NETWORK_GLIDE_MS);
+      return () => window.clearTimeout(timer);
+    }
+  }, [phase, layout]);
 
-    // Klon noder og kanter så vi ikke muterer memo-verdiene
-    const nodes: NetworkNode[] = rawNodes.map((d) => ({ ...d }));
-    const links: NetworkLink[] = rawLinks.map((d) => ({ ...d }));
-
-    // Tidsakse-skala: maper årstall (-600 til 2000) til X (100 til width - 100)
-    const minYear = -650;
-    const maxYear = 2025;
-    const paddingX = Math.min(120, width * 0.1);
-    const getTargetX = (year: number) => {
-      const frac = (year - minYear) / (maxYear - minYear);
-      return paddingX + frac * (width - 2 * paddingX);
-    };
-
-    const simulation = forceSimulation<NetworkNode>(nodes)
-      .force(
-        'link',
-        forceLink<NetworkNode, NetworkLink>(links)
-          .id((d) => d.id)
-          .distance(95),
-      )
-      .force('charge', forceManyBody().strength(-280))
-      .force('center', forceCenter(width / 2, height / 2).strength(0.05))
-      .force(
-        'x',
-        forceX<NetworkNode>((d) => getTargetX(d.bornYear)).strength(timeForce),
-      )
-      .force('y', forceY(height / 2).strength(0.12));
-
-    simulation.on('tick', () => {
-      setSimNodes([...nodes]);
-      setSimLinks([...links]);
-    });
-
-    simulationRef.current = simulation;
-
+  // Under dragning tegnes simuleringen steg for steg, som før.
+  const [, setDragFrame] = useState(0);
+  useEffect(() => {
+    if (!layout) return;
+    layout.simulation.on('tick', () => setDragFrame((f) => f + 1));
     return () => {
-      simulation.stop();
+      layout.simulation.on('tick', null);
+      layout.simulation.stop();
     };
-  }, [rawNodes, rawLinks, dimensions, timeForce]);
+  }, [layout]);
 
   // Drag-and-drop håndtering
   const draggingNodeRef = useRef<NetworkNode | null>(null);
@@ -125,9 +126,8 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
     draggingNodeRef.current = node;
     node.fx = node.x;
     node.fy = node.y;
-    if (simulationRef.current) {
-      simulationRef.current.alphaTarget(0.3).restart();
-    }
+    setPhaseState((st) => ({ ...st, phase: 'dragging' }));
+    layout?.simulation.alphaTarget(0.3).restart();
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
@@ -149,13 +149,25 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
     draggingNodeRef.current.fx = null;
     draggingNodeRef.current.fy = null;
     draggingNodeRef.current = null;
-    if (simulationRef.current) {
-      simulationRef.current.alphaTarget(0);
+    if (layout) {
+      // Regn resten ferdig med en gang og la stjernene gli på plass, i stedet for å
+      // tegne de gjenværende stegene ett for ett.
+      layout.simulation.alphaTarget(0);
+      settleSimulation(layout.simulation);
+      setPhaseState((st) => ({ ...st, phase: reducedMotion ? 'settled' : 'moving' }));
     }
   };
 
   // Aktiv node (hovered eller selected)
   const activeId = hoveredId || selectedId;
+
+  // Før første måling: samme størrelse som før, så siden ikke hopper.
+  const width = dimensions?.width ?? 900;
+  const height = dimensions?.height ?? 600;
+  const nodes = layout?.nodes ?? [];
+  const links = layout?.links ?? [];
+  const edgesVisible = phase === 'settled' || phase === 'dragging';
+  const atStart = phase === 'start';
 
   // Finn noder koblet til aktiv node
   const connectedIds = useMemo(() => {
@@ -243,13 +255,13 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
       <div
         ref={containerRef}
         className="w-full max-w-5xl relative rounded-2xl bg-cosmos-card/90 border border-gold/30 shadow-2xl overflow-hidden cursor-grab active:cursor-grabbing"
-        style={{ height: dimensions.height }}
+        style={{ height }}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
       >
         <svg
-          width={dimensions.width}
-          height={dimensions.height}
+          width={width}
+          height={height}
           className="w-full h-full"
         >
           <defs>
@@ -281,15 +293,15 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
           {/* Tidslinje bakgrunns-gradient langs X */}
           <line
             x1="40"
-            y1={dimensions.height - 30}
-            x2={dimensions.width - 40}
-            y2={dimensions.height - 30}
+            y1={height - 30}
+            x2={width - 40}
+            y2={height - 30}
             stroke="rgba(147, 197, 253, 0.2)"
             strokeDasharray="4 4"
           />
           <text
             x="45"
-            y={dimensions.height - 15}
+            y={height - 15}
             fill="rgba(147, 197, 253, 0.5)"
             fontSize="10"
             className="font-serif"
@@ -297,8 +309,8 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
             Antikken (ca. 600 f.Kr.)
           </text>
           <text
-            x={dimensions.width - 45}
-            y={dimensions.height - 15}
+            x={width - 45}
+            y={height - 15}
             textAnchor="end"
             fill="rgba(147, 197, 253, 0.5)"
             fontSize="10"
@@ -308,8 +320,11 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
           </text>
 
           {/* 1. Kantlaget (Påvirkningslenker) */}
-          <g className="links">
-            {simLinks.map((link, idx) => {
+          <g
+            className="links"
+            style={{ opacity: edgesVisible ? 1 : 0, transition: edgesVisible ? `opacity ${EDGE_FADE_MS}ms` : 'none' }}
+          >
+            {links.map((link, idx) => {
               const sourceNode = link.source as NetworkNode;
               const targetNode = link.target as NetworkNode;
               if (!sourceNode.x || !sourceNode.y || !targetNode.x || !targetNode.y) return null;
@@ -357,7 +372,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
 
           {/* 2. Nodelaget (Filosof-stjerner) */}
           <g className="nodes">
-            {simNodes.map((node) => {
+            {nodes.map((node) => {
               if (node.x == null || node.y == null) return null;
 
               const meta = getTraditionMeta(node.tradition);
@@ -378,9 +393,15 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
               return (
                 <g
                   key={node.id}
-                  transform={`translate(${node.x}, ${node.y})`}
-                  opacity={opacity}
-                  className="cursor-pointer transition-opacity duration-300 group"
+                  style={{
+                    transform: `translate(${atStart ? width / 2 : node.x}px, ${atStart ? height / 2 : node.y}px)`,
+                    opacity: atStart ? 0 : opacity,
+                    transition:
+                      phase === 'moving'
+                        ? `transform ${NETWORK_GLIDE_MS}ms ${GLIDE_EASING}, opacity ${NETWORK_GLIDE_MS}ms`
+                        : 'opacity 300ms',
+                  }}
+                  className="cursor-pointer group"
                   onMouseEnter={() => setHoveredId(node.id)}
                   onMouseLeave={() => setHoveredId(null)}
                   onClick={() => {

@@ -38,10 +38,11 @@
 | **[endret]** Klikk | Filosofkortet glir inn fra siden (mobil: nedenfra). Påvirkningsbuer animeres ut fra punktet som elegante, gylne stjernebilder/konstellasjonsbuer. |
 | Filter | Punkter som filtreres bort tones ned (ikke fjernet) med myk overgang. |
 | Zoom | Knip/scroll zoomer inn på en epoke; dobbelttrykk tilbakestiller. |
+| Idénettverket | Oppsettet regnes ferdig på forhånd og tegnes én gang (YTE-02). Første gang glir stjernene ut fra midten på 0,6 s, og påvirkningslinjene tones inn når stjernene står. Bryteren for tidsflyt og en ny bredde gir samme glidning til det nye oppsettet; en ny høyde alene (adresselinjen på mobil) endrer ingenting. Ved dra og slipp følger grafen fingeren steg for steg. |
 | Første besøk | 3 sekunders intro: sveipen tenner punktene ett for ett, så dukker en diskret hjelpeboble opp. |
 
 Alle animasjoner: `transform` og `opacity` der det går; ingen layout-animasjon av hundrevis av elementer.
-`prefers-reduced-motion`: sveip av, ingen puls, overganger ≤ 150 ms, og 3D-galaksen starter uten spinn (canvas-animasjoner sjekker innstillingen selv, `src/lib/motion.ts`).
+`prefers-reduced-motion`: sveip av, ingen puls, overganger ≤ 150 ms, 3D-galaksen starter uten spinn, og idénettverket vises ferdig uten glidning (canvas-animasjoner sjekker innstillingen selv, `src/lib/motion.ts`).
 
 ## 5. Filosofkortet
 ```
