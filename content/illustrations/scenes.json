@@ -1,0 +1,656 @@
+{
+  "$comment": "Én scene per tankeeksperiment i dypdykkene (B-017). Promptene beskriver bare motivet; stilen legges på av scripts/illustrations/generate_on_kitor.py. «replaces» er det gamle filnavnet når en illustrasjon har fått nytt navn.",
+  "style": "Fine art oil painting with rich painterly brushwork and dramatic chiaroscuro lighting: warm golden highlights against deep blue and obsidian shadows, with a faint shimmer of cosmic stardust in the air. Historically appropriate clothing and architecture, dignified and suitable for teenagers, contemplative mood. No text, no letters, no captions, no watermark.",
+  "negative": "text, letters, writing, caption, watermark, signature, logo, blurry, low quality, deformed hands, extra fingers, distorted face, gore, blood, photograph, 3d render, cartoon",
+  "width": 1280,
+  "height": 768,
+  "scenes": [
+    {
+      "file": "achille-mbembe-dodssonene",
+      "philosopherId": "achille-mbembe",
+      "experiment": "Dødssoner og dødsverdener",
+      "prompt": "A long concrete border wall topped with coils of razor wire cuts across a barren plain at dusk. On one side stand the white tents and chain-link fences of a detention camp, watched by towers with searchlights. Small distant figures wait silently by the fence, seen from far away. Desolate, sober, unresolved atmosphere."
+    },
+    {
+      "file": "al-farabi-den-syke-byen",
+      "philosopherId": "al-farabi",
+      "experiment": "Den syke byen (Korrupte samfunn)",
+      "prompt": "A medieval Islamic city seen from a hilltop at dusk, divided into two halves. On the left, a harmonious city of libraries, gardens and an observatory, where scholars and citizens talk in lamplit courtyards. On the right, a city of walled palaces and overflowing gold coffers, where merchants quarrel in dark, neglected streets. Abbasid domes and arches."
+    },
+    {
+      "file": "al-ghazali-bomullen-og-ilden",
+      "philosopherId": "al-ghazali",
+      "experiment": "Bomullen og ilden (Kausalitetsskepsis)",
+      "prompt": "Close view of a scholar's hand in a medieval Persian study holding a tuft of white cotton to the flame of a brass oil lamp. The cotton blackens and catches fire. Thin threads of golden light descend from above onto the flame, as if each moment were being created anew. Manuscripts and an astrolabe rest in the shadows."
+    },
+    {
+      "file": "angela-davis-murene",
+      "philosopherId": "angela-davis",
+      "experiment": "Frihetens illusjon bak murene",
+      "prompt": "A vast grey concrete prison complex with high walls and floodlights at night, stretching to the horizon. In the foreground, outside the walls, the unfinished foundations of a school, a clinic and family homes stand abandoned in the rain, their rolled-up building plans lying on the wet ground. Quiet, sober, thought-provoking mood."
+    },
+    {
+      "file": "philippa-foot-sporvogn",
+      "philosopherId": "anscombe",
+      "experiment": "Sporvognsdilemmaet (Trolley-problemet)",
+      "prompt": "A heavy vintage steel and brass tram speeds through thick fog on wet rails at night. In the foreground, an old mechanical switch lever splits the track in two directions; a lone figure stands beside the lever with a hand on it. The tram's lantern headlights cut through the mist. Tense moral dilemma."
+    },
+    {
+      "file": "anscombe-dobbel-virkning",
+      "philosopherId": "anscombe",
+      "experiment": "Doktrinen om dobbel virkning",
+      "prompt": "A composition divided by a single vertical beam of light. On the left, a surgeon in a 1950s operating theatre bends carefully over a patient under a round surgical lamp. On the right, the same light falls on an old brass balance scale on a dark wooden table, one pan holding a white feather and the other a dark stone, perfectly level."
+    },
+    {
+      "file": "anton-wilhelm-amo-sinnets-urorlighet",
+      "philosopherId": "anton-wilhelm-amo",
+      "experiment": "Sinnets urørlighet (Apatheia)",
+      "prompt": "An 18th-century university study in Halle. A young African scholar in a dark academic coat sits calmly at a desk holding a rose stem; a thorn has pricked his fingertip, yet his face remains serene and thoughtful. A still, untouched flame of soft light rises from his brow. Latin manuscripts and a quill on the desk."
+    },
+    {
+      "file": "aquinas-urverket",
+      "philosopherId": "aquinas",
+      "experiment": "De fem veier (Gudsbevisene)",
+      "prompt": "A vast cosmic clockwork of interlocking golden gears and celestial spheres turns in the dark, with planets and stars set into its rings. The chain of gears recedes into the depths and ends at a single point of still, radiant white light that moves everything without moving itself. A medieval Dominican friar in black and white robes looks up at it from a stone balcony."
+    },
+    {
+      "file": "arendt-glassburet",
+      "philosopherId": "arendt",
+      "experiment": "Ondskapens banalitet",
+      "prompt": "A 1961 courtroom. In a glass booth sits an unremarkable bureaucrat in a grey suit and headphones, shuffling papers with a blank, ordinary face. In the foreground, a woman journalist with short dark hair, seen from behind, watches him intently with a notebook in her hand. Rows of spectators sit in shadow. Sober, quiet, unsettling."
+    },
+    {
+      "file": "aristoteles-eikenotten",
+      "philosopherId": "aristoteles",
+      "experiment": "Eikenøtten og eiketreet (Teleologi)",
+      "prompt": "A single acorn lies on dark forest soil in the foreground, split open with a tiny green sprout. Behind it, rising out of golden morning mist, stands a mighty ancient oak whose translucent outline seems to grow from the acorn, showing what it will become. A marble stoa of an ancient Greek grove in the distance."
+    },
+    {
+      "file": "aristoteles-marmorstatuen",
+      "philosopherId": "aristoteles",
+      "experiment": "De fire årsakene (Marmorstatuen)",
+      "prompt": "An ancient Athenian sculptor in his sunlit marble workshop carves a monumental statue of Apollo from a massive rough block of white marble, bronze hammer and steel chisel in hand. Marble dust floats through golden sunbeams from high arched windows. Half the statue is finished, half still raw stone."
+    },
+    {
+      "file": "arne-naess-tvergastein",
+      "philosopherId": "arne-naess",
+      "experiment": "Det utvidede Selv",
+      "prompt": "A small stone hut high on a bare Norwegian mountain plateau above the tree line, steep cliffs behind it, low evening sun. An elderly climber in a woolen sweater sits on a rock outside the hut, gazing at a mountain stream, lichen and a small wind-bent birch. Fine threads of golden light connect him with the stream, the birds and the mountain."
+    },
+    {
+      "file": "aspasia-dialogen",
+      "philosopherId": "aspasia",
+      "experiment": "Den sokratiske dialogens opprinnelse",
+      "prompt": "A sunlit courtyard of a house in classical Athens. An elegant, wise woman in a draped himation sits on a marble bench, gently asking questions of a married couple seated opposite her. The couple listen, surprised and thoughtful. Through the gate a fine horse is visible, and an open jewelry box rests on a table. Olive trees and painted columns."
+    },
+    {
+      "file": "augustin-paeretreet",
+      "replaces": "augustin-tidens-gate",
+      "philosopherId": "augustin",
+      "experiment": "Pæretreet i naboens hage",
+      "prompt": "A moonlit garden in late Roman North Africa. A group of teenage boys in tunics climb a low stone wall and shake a pear tree, gathering unripe green pears and laughing. One boy pauses and looks back with a troubled, knowing expression. In the corner, pigs root among the thrown fruit. Olive trees and a Roman villa in shadow."
+    },
+    {
+      "file": "buddha-pilen",
+      "philosopherId": "buddha",
+      "experiment": "Lignelsen om den forgiftede pilen",
+      "prompt": "An ancient grove under a Bodhi tree at dusk. A calm healer kneels beside a wounded man struck by a dark arrow in his shoulder, gently drawing it out, while other men in the background argue and gesture, demanding to know who shot it. Warm lantern glow against deep jungle shadows. Serene and compassionate."
+    },
+    {
+      "file": "buddha-flaten",
+      "philosopherId": "buddha",
+      "experiment": "Flåteanalogien",
+      "prompt": "A wide misty river at dawn in ancient India. A traveler in simple saffron robes has just stepped onto the safe far bank, leaving a roughly lashed bamboo raft at the water's edge behind him. He walks lightly toward a sunlit grove with empty hands. On the dark shore behind him, storm clouds and swirling currents."
+    },
+    {
+      "file": "camilla-collett-tvangstroya",
+      "philosopherId": "camilla-collett",
+      "experiment": "Kjærlighetens tvangstrøye",
+      "prompt": "A 19th-century Norwegian bourgeois parlor. A young woman in a crinoline dress stands before a tall window while a cage of gilded ribbons and wedding lace tightens around her. Behind her, an older suitor in a frock coat and her parents examine dowry papers at a table. Outside the window, a free fjord landscape in spring light."
+    },
+    {
+      "file": "de-beauvoir-den-andre",
+      "philosopherId": "de-beauvoir",
+      "experiment": "Kvinnen som «den Andre»",
+      "prompt": "A grand Parisian salon in the 1940s with a huge classical painting on the wall: a tall male figure stands bathed in light at its center, while female figures are pushed to the margins in shadow. In front of it, a woman writer with her hair in a turban, seen in profile, studies the painting critically, pen in hand. Books and a coffee cup on a café table."
+    },
+    {
+      "file": "descartes-demonen",
+      "philosopherId": "descartes",
+      "experiment": "Den onde demonen (Malin génie)",
+      "prompt": "A 17th-century philosopher's study lit only by candlelight. A melting beeswax candle drips onto handwritten manuscripts on an oak desk where a thinker sits with his head in his hand. In the deep shadows behind him looms a translucent cosmic demon, weaving illusory images of sky, earth and colors around the room."
+    },
+    {
+      "file": "descartes-voksstykket",
+      "philosopherId": "descartes",
+      "experiment": "Voksstykket",
+      "prompt": "An intimate 17th-century candlelit study. A scholar holds a piece of fresh honeycomb beeswax near a candle flame and watches it soften, lose its color and shape, and drip as a warm clear liquid into a brass dish. Pressed flowers and a quill on the walnut desk."
+    },
+    {
+      "file": "diogenes-lykten",
+      "philosopherId": "diogenes",
+      "experiment": "Lykten i dagslys",
+      "prompt": "Bright midday in the agora of ancient Athens. A ragged, barefoot old philosopher with a wild beard holds up a lit oil lantern in full sunlight, peering closely into the faces of well-dressed citizens who stare back in bewilderment. Stray dogs at his feet, marble stoas and market stalls around him."
+    },
+    {
+      "file": "diogenes-aleksander",
+      "philosopherId": "diogenes",
+      "experiment": "Møtet med Aleksander den store",
+      "prompt": "The young Alexander the Great in gleaming bronze armor and a purple cloak, flanked by hoplite soldiers, stands before the humble philosopher Diogenes, who lounges in a large worn clay jar in a sunlit Greek marketplace. Diogenes waves him lazily aside so the sunlight falls on him again; Alexander's shadow lies across the old man."
+    },
+    {
+      "file": "dogen-tid-vaeren",
+      "philosopherId": "dogen",
+      "experiment": "Tid-Væren (Uji)",
+      "prompt": "A Japanese Zen monk sits in meditation on a wooden temple veranda facing a mountain at dawn. The mountain, the rising sun, the drifting mist and the monk's own breath merge into one continuous spiral of light, as if the landscape itself were time unfolding. Cedar trees, a moss garden, Kamakura-period temple architecture."
+    },
+    {
+      "file": "dogen-baaten",
+      "philosopherId": "dogen",
+      "experiment": "Å ro en båt",
+      "prompt": "A small wooden boat on a calm lake in medieval Japan at dusk. A monk rows with his gaze fixed on the boat itself, while the distant shore with pine trees and a temple seems to drift away, its reflection rippling. Gentle rings spread from the oar. Peaceful and reflective."
+    },
+    {
+      "file": "edith-stein-sorgens-taarer",
+      "philosopherId": "edith-stein",
+      "experiment": "Sorgens tårer hos en venn (Empatiens vesen)",
+      "prompt": "A quiet 1920s German study by a window in soft grey daylight. One young woman weeps with her face half hidden in her hands; her friend, a dark-haired woman in a simple dark dress, sits close beside her, holding her hand and looking at her with deep, attentive compassion. A faint thread of warm light connects their faces without merging them."
+    },
+    {
+      "file": "emerson-oyeeplet",
+      "philosopherId": "emerson",
+      "experiment": "Det gjennomsiktige øyeeplet (Transparent Eyeball)",
+      "prompt": "A lone man in a 19th-century New England coat stands on a bare open field at twilight with his head lifted toward an infinite starry sky. His figure is becoming transparent and luminous, and the stars, clouds and autumn woods flow through him. Forest edge of Concord, Massachusetts."
+    },
+    {
+      "file": "epiktet-kontrollens-todeling",
+      "philosopherId": "epiktet",
+      "experiment": "Kontrollens todeling (Dichotomy of Control)",
+      "prompt": "An elderly Stoic teacher with a walking stick and a simple tunic sits in a bare Roman room. His cupped hands shelter a small, steady oil lamp flame. Through the open window behind him a storm rages over the sea, with ships tossed by waves, lightning and dark clouds he cannot command. His face is serene."
+    },
+    {
+      "file": "epikur-hagen",
+      "philosopherId": "epikur",
+      "experiment": "Tetrapharmakos (De fire medisinene mot frykt)",
+      "prompt": "A peaceful walled garden in ancient Athens at golden hour. Friends of all ages, men and women, sit around a simple wooden table with bread, olives and a jug of water, talking and laughing. A kind bearded teacher listens. Fruit trees, a small stone fountain, the Acropolis in the distance. Calm, content and unafraid."
+    },
+    {
+      "file": "fanon-blikket",
+      "philosopherId": "fanon",
+      "experiment": "Det hvite blikkets fangenskap",
+      "prompt": "A 1950s street in a French city in grey winter light. A small boy in a wool coat clutches his mother's hand and points. Across the cobblestones stands a dignified Black man in a suit and overcoat with a book under his arm, turning his head; the stares of the passersby form a cold, glassy frame around him, as if he were being fixed behind a pane of glass."
+    },
+    {
+      "file": "foucault-panoptikon",
+      "philosopherId": "foucault",
+      "experiment": "Panoptikon",
+      "prompt": "A massive circular prison rotunda. Concentric tiers of backlit barred cells rise into towering shadows, all facing a monolithic central inspection tower with dark windows from which harsh searchlights pierce the dusty air. Inside the cells, small figures stand stiffly, unsure whether anyone is watching."
+    },
+    {
+      "file": "gargi-kosmos-vev",
+      "philosopherId": "gargi",
+      "experiment": "Kosmos som en vev av tråder",
+      "prompt": "An ancient Indian royal assembly hall with carved wooden pillars and oil lamps. A fearless young woman scholar stands and questions an aged sage. Above them, the whole cosmos is woven like a vast loom of glowing threads: water woven on air, air on sky, sky on sun, moon and stars, each layer receding into a radiant source."
+    },
+    {
+      "file": "hammarskjold-meditasjonsrommet",
+      "philosopherId": "hammarskjold",
+      "experiment": "FNs meditasjonsrom (Det tomme alteret)",
+      "prompt": "A small, quiet windowless room with pale walls. In the center stands a single massive block of dark iron ore, its polished top lit by one narrow shaft of light from the ceiling. Simple wooden benches face it, and an abstract fresco of geometric shapes covers the far wall. No religious symbols. Silence and stillness."
+    },
+    {
+      "file": "hegel-herre-og-trell",
+      "philosopherId": "hegel",
+      "experiment": "Herre-trell-dialektikken",
+      "prompt": "Two men in a rugged landscape after a struggle. One stands idle and proud in a fine cloak; the other kneels and works with his hands, shaping a clay pot beside a glowing forge. The worker is lit by a growing golden light of mastery, while the idle master slowly fades into shadow. Early 19th-century romantic painting."
+    },
+    {
+      "file": "heraklit-elven",
+      "philosopherId": "heraklit",
+      "experiment": "Elven du aldri stiger ned i to ganger",
+      "prompt": "A clear mountain river rushing over stones in ancient Ionia. An old philosopher stands knee-deep in the flowing water, watching the currents swirl around his legs. The water forms countless moving patterns of light, and his reflection is broken and constantly changing. Temple ruins on the hills."
+    },
+    {
+      "file": "heraklit-buen-og-lyren",
+      "philosopherId": "heraklit",
+      "experiment": "Buen og lyren (Motsetningenes spenning)",
+      "prompt": "A dark stone table in an ancient Greek house lit by a single lamp. A drawn hunting bow and a lyre lie side by side, their strings pulled tight against the curved wood. Golden lines of tension shimmer along the strings, as if the opposing forces were visible. Embers glow in a bronze brazier."
+    },
+    {
+      "file": "hildegard-viriditas",
+      "philosopherId": "hildegard",
+      "experiment": "Viriditas (Den grønne livskraften)",
+      "prompt": "A medieval Benedictine abbess in a black habit kneels in a monastery garden in spring, cupping a dry twig from which fresh bright green buds burst forth. A soft emerald glow of life force radiates from the herbs, plants and fruit trees around her. Romanesque abbey walls in the background."
+    },
+    {
+      "file": "hildegard-kosmos-egget",
+      "philosopherId": "hildegard",
+      "experiment": "Kosmos som et egg",
+      "prompt": "A visionary medieval cosmos shaped like a great egg floating in darkness: the outer shell is a band of fire and stars, within it layers of air and wind swirl, and at the center lies the round green earth with mountains and rivers. A small nun at the bottom of the picture looks up at the vision in awe."
+    },
+    {
+      "file": "hobbes-leviathan",
+      "philosopherId": "hobbes",
+      "experiment": "Naturtilstanden (Alles krig mot alle)",
+      "prompt": "A stormy, lawless landscape at twilight: barren hills, burning huts and small bands of people guarding their campfires against each other. Rising vast and semi-translucent above the horizon is a colossal crowned sovereign whose body and armor are made of thousands of tiny human figures, holding a sword in one hand and a crosier in the other."
+    },
+    {
+      "file": "holberg-potu",
+      "philosopherId": "holberg",
+      "experiment": "Potu-riket under jorden",
+      "prompt": "A whimsical underground world lit by a strange inner sun. Tall, wise walking trees with gentle faces in their bark and branch-like arms hold a council in a sunlit clearing, listening to one tree speaking from a wooden podium. A small 18th-century Norwegian student in a long coat and a powdered wig stands among them, astonished."
+    },
+    {
+      "file": "hume-biljardkulene",
+      "philosopherId": "hume",
+      "experiment": "Biljardkulene (Årsak og virkning)",
+      "prompt": "An 18th-century Scottish library lit by a single warm lamp. On a green baize billiard table, a white ball strikes a red ball in a frozen moment of impact. Faint golden sparks hang in the air at the point of contact, asking where the hidden force might be. Mahogany bookshelves in the dark background."
+    },
+    {
+      "file": "hume-giljotinen",
+      "philosopherId": "hume",
+      "experiment": "Humes giljotin (Er/Bør-problemet)",
+      "prompt": "An 18th-century Edinburgh study at night. On a writing desk lies a thick open book: the left page is filled with detailed drawings of human anatomy and society, the right page is completely empty. A gleaming guillotine blade descends between the pages, cleanly cutting a golden thread that tried to join them. Quill, inkwell and candle."
+    },
+    {
+      "file": "hypatia-astrolabiet",
+      "philosopherId": "hypatia",
+      "experiment": "Astrolabiet og himmelens mekanikk",
+      "prompt": "On the rooftop of a library in late-antique Alexandria at night, a woman scholar in a pale himation holds a bronze astrolabe up against the starry sky to measure a star. Golden geometric lines extend from the instrument to the constellations. Scrolls and a sundial nearby, the great lighthouse glowing in the distance."
+    },
+    {
+      "file": "ibn-rushd-to-sprak",
+      "philosopherId": "ibn-rushd",
+      "experiment": "Sannhetens to språk",
+      "prompt": "The courtyard of a 12th-century mosque in Córdoba with red and white horseshoe arches. Two streams of light enter from opposite sides: one passes through colorful mosaic patterns and paints vivid images for a listening crowd, the other passes through a precise bronze geometric instrument as a scholar teaches his students. The two beams meet as one clear light in a fountain at the center."
+    },
+    {
+      "file": "ibn-sina-mannen",
+      "philosopherId": "ibn-sina",
+      "experiment": "Den flytende mannen (Bevissthetens uavhengighet)",
+      "prompt": "A medieval Persian philosopher floats weightless in a dark, silent void, his arms and legs spread apart so that nothing touches. His eyes are closed in deep awareness. From within his chest, a radiant golden glow of conscious existence shines out into the emptiness, surrounded by faint distant stars."
+    },
+    {
+      "file": "john-dewey-verkstedet",
+      "philosopherId": "john-dewey",
+      "experiment": "Learning by doing (Skolen som verksted)",
+      "prompt": "A bright early 20th-century classroom in Chicago turned into a workshop. Children of different ages build a wooden treehouse model together, measure boards, cook at a small stove and test a pulley. An older teacher with a grey mustache and round glasses kneels among them, asking questions. Sunlight through tall windows, sawdust in the air."
+    },
+    {
+      "file": "judith-butler-det-er-en-jente",
+      "philosopherId": "judith-butler",
+      "experiment": "«Det er en jente!» (Kjønnets performativitet)",
+      "prompt": "A hospital delivery room in soft light. A midwife holds up a newborn baby wrapped in a white blanket. From the baby, a long corridor of stage curtains and mirrors unfolds into the distance, lined with dresses, dolls, shoes and expectations, where the same small figure repeats a pose again and again as it grows up. Thoughtful and gentle."
+    },
+    {
+      "file": "kant-morderen-ved-doren",
+      "philosopherId": "kant",
+      "experiment": "Morderen ved døren",
+      "prompt": "A heavy wooden house door opened slightly on a dark, rainy Prussian night. On the threshold stands an ominous hooded visitor in deep shadow, demanding entry. From inside, warm candlelight falls on the troubled face of a man at the doorway, torn between duty and truth, while a frightened friend hides on the stairs behind him."
+    },
+    {
+      "file": "kant-fargede-briller",
+      "philosopherId": "kant",
+      "experiment": "De fargede brillene (Kopernikansk vending)",
+      "prompt": "An 18th-century study at twilight. A contemplative philosopher holds an antique pair of blue-tinted spectacles up toward a window and the starry sky. Through the lenses, raw chaotic light is transformed into ordered geometric structures of space, time and cause, while the world outside the lenses remains a blur."
+    },
+    {
+      "file": "kierkegaard-klippekanten",
+      "replaces": "kierkegaard-abraham",
+      "philosopherId": "kierkegaard",
+      "experiment": "Frihetens svimmelhet (Klippekanten)",
+      "prompt": "A lone man in a 19th-century Danish frock coat and top hat stands at the very edge of a towering white chalk cliff above a stormy sea at dusk. He leans slightly forward, gazing down into the abyss, wind tugging at his coat, his shadow stretching out over the void. Vertigo, freedom and dread."
+    },
+    {
+      "file": "konfucius-nordstjernen",
+      "philosopherId": "konfucius",
+      "experiment": "Lederskap som Nordstjernen",
+      "prompt": "A night sky over an ancient Chinese palace courtyard. The Pole Star shines bright and still at the top of the sky while all other stars trace circular trails around it. Below, an elderly teacher in Zhou-dynasty robes stands calmly at the center of the courtyard, and officials and common people gather around him in a respectful circle."
+    },
+    {
+      "file": "konfucius-gjensidighet",
+      "philosopherId": "konfucius",
+      "experiment": "Den gylne regel i revers (Shu)",
+      "prompt": "A quiet ancient Chinese pavilion beside a still pond. An old teacher in simple robes and a young disciple sit facing each other across a low table. In the water below, the teacher's reflection shows the disciple's face and the disciple's reflection shows the teacher's, as if each saw himself in the other. Bamboo, lanterns, falling willow leaves."
+    },
+    {
+      "file": "kukai-mandala",
+      "philosopherId": "kukai",
+      "experiment": "Kroppen som levende mandala",
+      "prompt": "Inside a dim Japanese mountain temple hall, a monk sits in meditation before a huge painted mandala of concentric circles and seated buddhas. The mandala's light spills out and flows into a rough stone, a bowl of water, a candle flame, the drifting air and the monk's own fingertip, as if the same sacred presence filled them all."
+    },
+    {
+      "file": "laozi-vannet",
+      "philosopherId": "laozi",
+      "experiment": "Vannets kraft (Det myke overvinner det harde)",
+      "prompt": "A deep gorge carved through hard grey granite by a soft, clear river. A small waterfall slips gently over smooth, rounded stones it has polished over millennia. An old sage riding a water buffalo pauses on the path above, watching the water. Mist and pine trees in a Chinese mountain landscape."
+    },
+    {
+      "file": "laozi-hjulet-og-krukka",
+      "philosopherId": "laozi",
+      "experiment": "Hjulets nav og leirkrukkens tomrom",
+      "prompt": "A simple ancient Chinese workshop. A wooden cart wheel with thirty spokes leans against the wall, the empty hole at its hub glowing softly. Beside it, on a potter's wheel, an old potter shapes a clay jar whose hollow interior is filled with soft light. An open doorway frames empty space."
+    },
+    {
+      "file": "leibniz-mollen",
+      "philosopherId": "leibniz",
+      "experiment": "Leibniz’ mølle (Materialismens grense)",
+      "prompt": "The interior of a gigantic mill shaped like a human head, filled with towering brass cogwheels, iron gears and wooden levers in perpetual motion. A 17th-century philosopher in a long curled wig walks through the vast machinery with a lantern, searching for a thought or a feeling, and finding only parts pushing against parts."
+    },
+    {
+      "file": "leibniz-beste-verden",
+      "philosopherId": "leibniz",
+      "experiment": "Den beste av alle mulige verdener",
+      "prompt": "An infinite dark cosmic hall in which countless shimmering glass globes float, each holding a different miniature world. One globe at the center glows brightest and richest, filled with forests, cities, storms and sunlight together. A 17th-century philosopher in a long curled wig looks up at it with wonder."
+    },
+    {
+      "file": "locke-vokstavlen",
+      "philosopherId": "locke",
+      "experiment": "Tabula Rasa (Den blanke tavlen)",
+      "prompt": "A 17th-century English study. On a wooden desk lies a perfectly blank white sheet of paper. Light streams in through an open window, and faint colors and images – a tree, a face, a candle flame, a bird – are just beginning to drift in from the outside world and settle on the empty page. A quill and an unlit candle beside it."
+    },
+    {
+      "file": "locke-eikenottene",
+      "philosopherId": "locke",
+      "experiment": "Eiendomsrettens opprinnelse (Eikenøttene i skogen)",
+      "prompt": "An English oak forest in autumn, sunlight filtering through the leaves. A 17th-century commoner in simple clothes kneels to gather acorns into a woven basket. Golden light runs from his working hands into the acorns he picks, while the rest of the forest floor around him lies untouched and shared."
+    },
+    {
+      "file": "mahavira-elefanten",
+      "philosopherId": "mahavira",
+      "experiment": "De blinde mennene og elefanten (Anekantavada)",
+      "prompt": "An ancient Indian courtyard in warm twilight. A majestic elephant stands quietly while six blindfolded men touch different parts of it: one feels the pillar-like leg, another the trunk, another the smooth ivory tusk, another the tail, another the broad ear and another its side, each with a different look of certainty."
+    },
+    {
+      "file": "maimonides-negativ-teologi",
+      "philosopherId": "maimonides",
+      "experiment": "Negativ teologi (Hva Gud ikke er)",
+      "prompt": "A medieval scholar in Fustat, Egypt, stands before a vast curtain of darkness. He holds up a lamp, but its light reveals only empty frames and outlines of things that are not there. Beyond them lies an immeasurable, bright silence he cannot describe. Manuscripts and an astrolabe on a low table beside him."
+    },
+    {
+      "file": "marcus-aurelius-synet-fra-oven",
+      "philosopherId": "marcus-aurelius",
+      "experiment": "Synet fra oven",
+      "prompt": "A Roman emperor in a plain military cloak sits alone at night in a tent on the northern frontier, eyes closed. Above him, the tent dissolves into a vision of the Earth seen from high among the stars: empires, armies and cities appear as tiny anthills on a small blue and green globe in the vast cosmos."
+    },
+    {
+      "file": "marx-fabrikken",
+      "philosopherId": "marx",
+      "experiment": "Fremmedgjøringens fire former",
+      "prompt": "A dim 19th-century English textile factory. Rows of workers tend huge iron spinning machines, their bodies seeming to merge with the gears. In the foreground, a weary worker watches a finished bolt of cloth being pulled away from him toward a well-dressed owner in a top hat. The workers do not look at each other. Steam, soot, gaslight."
+    },
+    {
+      "file": "mengzi-bronnen",
+      "philosopherId": "mengzi",
+      "experiment": "Barnet ved brønnen",
+      "prompt": "An ancient Chinese village courtyard. A small toddler crawls unsteadily toward the open stone rim of a deep well. An onlooker rushes forward with instinctive alarm and compassion to catch the child, with no thought of reward. Warm lantern light, dramatic tension, deeply human."
+    },
+    {
+      "file": "montaigne-katten",
+      "philosopherId": "montaigne",
+      "experiment": "Katten og Montaigne (Perspektivets relativitet)",
+      "prompt": "A warm 16th-century French château library filled with leather-bound books. A nobleman in a white ruff sits in a carved walnut armchair, dangling a ribbon for a calico cat that bats at it. Firelight catches their playful, quizzical eye contact: who is playing with whom?"
+    },
+    {
+      "file": "montaigne-kannibaler",
+      "philosopherId": "montaigne",
+      "experiment": "Om kannibaler (Kulturrelativisme)",
+      "prompt": "A divided scene. On the left, a calm village in a Brazilian rainforest clearing with hammocks, feather ornaments and a shared fire. On the right, a crowded 16th-century European town square where soldiers stack wood around a stake before a jeering crowd. A French nobleman in a white ruff stands between the two, looking from one to the other in doubt."
+    },
+    {
+      "file": "mozi-allmenn-kjaerlighet",
+      "philosopherId": "mozi",
+      "experiment": "Allmenn kjærlighet (Jian'ai)",
+      "prompt": "An ancient Chinese ruler in travelling robes, about to leave on a journey, stands at his gate before two men. One guards only his own small family behind a closed door. The other stands with open arms in a village courtyard where children from many households play together safely. Warm evening light."
+    },
+    {
+      "file": "nagarjuna-vognen",
+      "philosopherId": "nagarjuna",
+      "experiment": "Vognen og dens deler (Tomhetslæren)",
+      "prompt": "An ancient Indian wooden chariot taken apart and laid out on a courtyard floor: two wheels, the axle, the seat, the yoke and the shaft, each part separate. A monk in maroon robes kneels among the parts, searching; in the empty space between them hangs only a faint, translucent outline of the whole chariot."
+    },
+    {
+      "file": "nietzsche-evig-gjenkomst",
+      "philosopherId": "nietzsche",
+      "experiment": "Den evige gjenkomst",
+      "prompt": "A lonely 19th-century room at night. A man with a thick mustache sits up in bed, startled, as a shadowy figure leans over him and whispers. Through the window, the night sky twists into an endless golden spiral of stars repeating the same patterns over and over. Moonlight on the floorboards."
+    },
+    {
+      "file": "nietzsche-lykten",
+      "philosopherId": "nietzsche",
+      "experiment": "Det gale mennesket med lykten",
+      "prompt": "A sun-drenched, crowded 19th-century European market square at noon. A wild-eyed man runs into the square holding a burning lantern high, searching and shouting. Startled merchants and townspeople stop and stare, some laughing. Heavy storm clouds gather above the bright square."
+    },
+    {
+      "file": "parmenides-intet",
+      "philosopherId": "parmenides",
+      "experiment": "Intethetens umulighet",
+      "prompt": "An ancient Greek philosopher stands on a marble terrace above the sea before a perfectly round, motionless, luminous sphere that fills the sky. Around its edges, small patches of pure darkness appear and are instantly filled with light, as if nothingness could not exist. Coastal light of southern Italy."
+    },
+    {
+      "file": "peirce-tegnets-triade",
+      "philosopherId": "peirce",
+      "experiment": "Tegnets triade (Ikon, indeks, symbol)",
+      "prompt": "A cluttered 19th-century American study full of books and instruments. On the desk, three objects are joined by glowing golden lines into a triangle: a weathervane turning in the wind, a small painted portrait and a sealed letter. A bearded scholar contemplates the triangle, while a chain of further glowing triangles recedes endlessly into the dark."
+    },
+    {
+      "file": "peirce-diamanten",
+      "philosopherId": "peirce",
+      "experiment": "Diamantens hardhet",
+      "prompt": "A brilliant diamond on dark velvet is drawn across a pane of glass and a piece of quartz, leaving fine bright scratches while its own facets remain flawless and glittering. A jeweler's loupe and brass scales lie nearby, and a bearded 19th-century scientist leans in to observe."
+    },
+    {
+      "file": "platon-hulen",
+      "philosopherId": "platon",
+      "experiment": "Hulelignelsen",
+      "prompt": "An underground stone cave where prisoners sit chained to the floor, staring at a rough rock wall. Behind them a flickering fire casts long dancing shadows onto the wall. Far above, one freed prisoner climbs toward the cave opening, shielding his eyes from blinding golden sunlight from the outside world."
+    },
+    {
+      "file": "platon-gyges-ring",
+      "philosopherId": "platon",
+      "experiment": "Gyges’ ring",
+      "prompt": "An ancient shepherd in a dark underground chasm holds up a bronze ring set with a glowing stone. As he turns the ring on his finger, his body becomes translucent and fades into invisibility. Torchlight casts eerie shadows on the rock walls, and the glint of a royal palace waits far above."
+    },
+    {
+      "file": "popper-svanen",
+      "philosopherId": "popper",
+      "experiment": "Svaneproblemet (Asymmetrien)",
+      "prompt": "A calm alpine lake at dusk under a starry sky. Floating on the dark, mirror-like water among a large flock of white swans is a single jet-black swan spreading its wings in the center. Mist rises from the cool water, and starlight reflects in sapphire and gold."
+    },
+    {
+      "file": "ptahhotep-tjenestekvinnene",
+      "philosopherId": "ptahhotep",
+      "experiment": "Kunnskapens kilde hos tjenestejenten",
+      "prompt": "A courtyard in Old Kingdom Egypt. An aged vizier in white linen and a broad beaded collar sits on a low stool, listening humbly to young servant women grinding grain on millstones as they explain something to him. Palm trees, mud-brick walls and a step pyramid in the hazy distance. Warm afternoon light."
+    },
+    {
+      "file": "ptahhotep-maat",
+      "philosopherId": "ptahhotep",
+      "experiment": "Ma'ats evige balanse",
+      "prompt": "A vast ancient Egyptian hall of judgment with tall papyrus columns lit by torches. A great golden balance holds a single white ostrich feather on one side; on the other, a heavy pile of gold and broken seals tips the scale, and the stone floor beneath it has begun to crack apart."
+    },
+    {
+      "file": "pytagoras-strengen",
+      "philosopherId": "pytagoras",
+      "experiment": "Den vibrerende strengen (Musikkens matematiske vesen)",
+      "prompt": "A Greek philosopher in white robes in a lamplit room plucks a single string stretched over a long wooden monochord. A movable bridge divides the string into halves and thirds. Above it, harmonious waves of golden light and geometric proportions rise and spread like visible music."
+    },
+    {
+      "file": "pytagoras-sfaerenes-harmoni",
+      "philosopherId": "pytagoras",
+      "experiment": "Sfærenes harmoni",
+      "prompt": "The night sky above a Greek coastline, with the planets moving in perfect concentric orbits, each orbit glowing like a vibrating string of light. Faint waves of harmony ripple between the spheres. A small group of white-robed philosophers stands on a hilltop, listening in silence."
+    },
+    {
+      "file": "rabia-fakkelen",
+      "philosopherId": "rabia",
+      "experiment": "Vannbøtten og fakkelen",
+      "prompt": "Night in the streets of old Basra. A Sufi woman in billowing robes hurries along the shadowy cobblestones, carrying a blazing torch in one hand and a wooden bucket of clear water in the other. Townspeople look on from doorways in surprise. Deep lapis lazuli night and warm, radiant flame."
+    },
+    {
+      "file": "ramanuja-guds-kropp",
+      "philosopherId": "ramanuja",
+      "experiment": "Universet som Guds kropp (Sharira-Shariri Bhava)",
+      "prompt": "A vast human-like form made of rivers, forests, mountains, stars and countless living beings sits in serene meditation, filling the sky above a South Indian temple at dusk. A soft golden light flows through every part of it like a soul. A teacher in white robes and his students look up from the temple steps."
+    },
+    {
+      "file": "rousseau-gjerdet",
+      "replaces": "rousseau-lenkene",
+      "philosopherId": "rousseau",
+      "experiment": "Den første inngjerdringen av jord",
+      "prompt": "A wide, open green landscape in an imagined early age. A man drives the first wooden stakes of a fence into the ground and spreads his arms, claiming the plot. A few simple villagers watch, some nodding naively. In the far distance, the same land is already divided by walls and fences stretching toward a smoky city."
+    },
+    {
+      "file": "rumi-sivfloyten",
+      "philosopherId": "rumi",
+      "experiment": "Sivfløytens klage (Ney)",
+      "prompt": "A Sufi musician sits alone on a riverbank at twilight, playing a long reed flute. Behind him the reed bed sways in the wind, with a gap where his reed was cut. Golden waves of sound drift from the flute back toward the reeds and the river. Distant domes of an Anatolian city."
+    },
+    {
+      "file": "russell-tekanne",
+      "philosopherId": "russell",
+      "experiment": "Russells tekanne",
+      "prompt": "A small white and gold porcelain teapot floats in quiet orbit around the sun in deep space, between a blue Earth and a red Mars. Starlight reflects off its glaze. Far away on Earth, a tiny observatory points its telescope at the sky, unable to see it."
+    },
+    {
+      "file": "russell-barbereren",
+      "philosopherId": "russell",
+      "experiment": "Barbererparadokset (Russells paradoks)",
+      "prompt": "A village barbershop at twilight with vintage mirrors, lather bowls and straight razors. A barber in suspenders and rolled-up sleeves stares into an endless tunnel of reflections between two facing mirrors, razor raised hesitantly to his own chin, frozen in logical paralysis. Mahogany, brass and dramatic shadows."
+    },
+    {
+      "file": "sartre-kelneren",
+      "philosopherId": "sartre",
+      "experiment": "Kelneren på kaféen (Ond tro)",
+      "prompt": "A 1940s Parisian café in the evening, amber light and swirling smoke over small round marble tables. A waiter in a black vest, white apron and bow tie moves with exaggerated, overly precise, almost mechanical gestures, balancing a silver tray as if playing a role on a stage. A man at a corner table watches him thoughtfully."
+    },
+    {
+      "file": "sartre-eleven",
+      "philosopherId": "sartre",
+      "experiment": "Eleven under krigen",
+      "prompt": "A small Paris apartment during the Second World War. A young student sits at a kitchen table with his head in his hands. Through a doorway on one side, his frail mother rests in a dim bedroom; through the window on the other side lies a misty harbor with a ship bound across the sea. A single lamp. Heavy, undecided silence."
+    },
+    {
+      "file": "schopenhauer-piggsvinene",
+      "philosopherId": "schopenhauer",
+      "experiment": "Pinnsvinenes dilemma",
+      "prompt": "A group of porcupines on a freezing winter night in a snowy German forest. Some huddle close together for warmth but flinch as their quills prick each other; others stand apart, shivering in the frost. Moonlight on the snow and small clouds of frozen breath."
+    },
+    {
+      "file": "seneca-premeditatio",
+      "philosopherId": "seneca",
+      "experiment": "Premeditatio Malorum (Foregrip det verste)",
+      "prompt": "Dawn on the terrace of a Roman villa above the sea. An older Roman statesman in a toga sits calmly with a wax writing tablet, gazing at dark storm clouds and a ship struggling on the horizon, imagining misfortune before it comes. His face is composed and steady as first light breaks through the clouds."
+    },
+    {
+      "file": "shankara-slangen",
+      "philosopherId": "shankara",
+      "experiment": "Tauet og slangen (Maya-læren)",
+      "prompt": "A dusty path in an ancient Indian village at deep twilight. A coiled rope lies in the shadows beneath a banyan tree, and in the gloom it looks like a rearing hooded cobra. A traveler holds up a flickering oil lamp, and the warm light reveals that it is only a rope."
+    },
+    {
+      "file": "sokrates-jordmorkunsten",
+      "philosopherId": "sokrates",
+      "experiment": "Maieutikk (Jordmorkunsten)",
+      "prompt": "A sunlit portico in ancient Athens. An old barefoot philosopher with a snub nose and a simple cloak sits on a stone step, asking gentle questions of a young man. From the young man's chest a small radiant light is being born and rising like a newborn star, while the old man's open hands guide it out without touching it."
+    },
+    {
+      "file": "sokrates-geometrien",
+      "philosopherId": "sokrates",
+      "experiment": "Geometritesten med slavegutten (Menon)",
+      "prompt": "A sunlit stone colonnade in ancient Athens. An old barefoot philosopher in a coarse tunic kneels on the sandy ground beside a young servant boy, drawing squares and a diagonal in the sand with a stick. The boy's eyes light up with sudden understanding. Warm Mediterranean sunlight and marble columns."
+    },
+    {
+      "file": "sor-juana-kjokkenet",
+      "philosopherId": "sor-juana",
+      "experiment": "Filosofien i kjøkkenet",
+      "prompt": "A 17th-century convent kitchen in Mexico City. A nun in a white and black habit with a large painted medallion on her chest leans over a clay stove, studying an egg setting in hot oil and sugar melting into syrup in a copper pot. Books and an open notebook lie among the pots and spices. Firelight and copper reflections."
+    },
+    {
+      "file": "spinoza-linsen",
+      "philosopherId": "spinoza",
+      "experiment": "Deus sive Natura (Gud eller Naturen)",
+      "prompt": "A 17th-century Dutch lens grinder sits at a workbench by candlelight, holding up a freshly polished glass lens. Through the lens, the whole cosmos appears as one continuous ocean of light, in which stars, trees, human bodies and thoughts are waves on the same sea."
+    },
+    {
+      "file": "thoreau-togbilletten",
+      "philosopherId": "thoreau",
+      "experiment": "Prisen på en togbillett",
+      "prompt": "A 19th-century New England landscape crossed by a railway. In the foreground, a man in a straw hat walks freely along a country path through woods and meadows in the morning, carrying only a walking stick. In the distance lies a factory town with smoking chimneys, where a steam train leaves the station in the evening light."
+    },
+    {
+      "file": "william-james-ekornet",
+      "philosopherId": "william-james",
+      "experiment": "Ekornets tre (Pragmatisk metode)",
+      "prompt": "A sunny autumn forest in New England. A man in a 19th-century suit circles a thick tree trunk, peering around it, while a red squirrel on the far side scurries the same way, keeping the trunk always between them. In the background, a group of campers argue animatedly about it."
+    },
+    {
+      "file": "william-james-bresprekken",
+      "philosopherId": "william-james",
+      "experiment": "Fjellklatreren over bresprekken (Viljen til å tro)",
+      "prompt": "A mountain climber in 19th-century gear crouches at the edge of a deep blue crevasse on a glacier, ready to leap across the gap. Sunlight breaks through the clouds behind him, and his face is set with determination. Snow, ice, a coiled rope and an ice axe."
+    },
+    {
+      "file": "wittgenstein-bille-eske",
+      "philosopherId": "wittgenstein",
+      "experiment": "Bille i esken (Privatspråkargumentet)",
+      "prompt": "A dark study with a walnut desk. Several people sit in a circle, each holding a small closed wooden box on their lap, none able to see into the others'. One person lifts the lid of their box just a crack, and a glowing iridescent beetle shines inside, visible only to them."
+    },
+    {
+      "file": "wittgenstein-and-kanin",
+      "philosopherId": "wittgenstein",
+      "experiment": "And-kanin-figuren",
+      "prompt": "A 20th-century study lit by a green banker's lamp. On a leather desk lies an elegant ink drawing of an ambiguous head that can be seen both as a duck with an open beak facing left and as a rabbit with long ears facing right. Open notebooks and an old fountain pen beside it."
+    },
+    {
+      "file": "wollstonecraft-gullburet",
+      "replaces": "wollstonecraft-fakkelen",
+      "philosopherId": "wollstonecraft",
+      "experiment": "Fuglene i gullburet",
+      "prompt": "An 18th-century English drawing room. Ornate gilded birdcages hang by a tall window, each holding a beautiful songbird with clipped wings. A woman writer in a simple dark dress opens one of the cages, while outside the window wild birds fly freely over the London rooftops."
+    },
+    {
+      "file": "wonhyo-hodeskallen",
+      "philosopherId": "wonhyo",
+      "experiment": "Vannet fra hodeskallen i mørket",
+      "prompt": "A dark mountain cave in ancient Korea during a thunderstorm. Inside, a thirsty wandering monk drinks eagerly in the darkness from a vessel he cannot see. In the faint gleam of lightning at the cave mouth, the vessel is revealed to be an old weathered skull. A moment of sudden awakening."
+    },
+    {
+      "file": "zapffe-kjempehjorten",
+      "replaces": "zapffe-den-siste-messias",
+      "philosopherId": "zapffe",
+      "experiment": "Kjempehjorten med for store gevir",
+      "prompt": "A prehistoric giant deer stands in a misty Ice Age bog at dusk, its enormous antlers so vast and heavy that its head hangs low and it can barely lift them. Wolves watch from the treeline. Cold northern light under a vast, indifferent sky."
+    },
+    {
+      "file": "zara-yaqob-grotten",
+      "philosopherId": "zara-yaqob",
+      "experiment": "Grotten ved Takkaze-elven",
+      "prompt": "A cave high above a river gorge in the Ethiopian highlands. A solitary man in a white cotton shawl sits in thought by a small fire at the cave mouth, three closed books laid before him on a flat stone. Above him a clear night sky; a soft inner light glows from his brow. The river winds through the gorge below."
+    },
+    {
+      "file": "zeami-den-sanne-blomsten",
+      "philosopherId": "zeami",
+      "experiment": "Den sanne blomsten (Hana)",
+      "prompt": "A Noh stage of polished cypress wood with a painted pine tree on its back wall. An old Noh actor in a magnificent robe and a serene mask sits completely still at the center of the stage. A single cherry blossom petal drifts down through a beam of light, and the audience in the shadows leans forward, spellbound."
+    },
+    {
+      "file": "zeami-yugen",
+      "philosopherId": "zeami",
+      "experiment": "Yūgen (Skyggenes subtile skjønnhet)",
+      "prompt": "A white swan holding a reed in its beak glides across a quiet lake at dusk in medieval Japan. Behind it, the sun sinks behind a misty, layered mountain ridge, and only a hint of a temple roof shows through the fog. Subtle, understated, half-hidden beauty."
+    },
+    {
+      "file": "zhuangzi-sommerfuglen",
+      "philosopherId": "zhuangzi",
+      "experiment": "Sommerfugldrømmen",
+      "prompt": "An ancient Chinese landscape at twilight. A Daoist philosopher in flowing robes sleeps peacefully on a mossy boulder beside a winding stream under a blossoming peach tree. Around him, glowing blue and golden butterflies rise into the sky, one of them hovering just above his face, blurring the line between dream and waking."
+    },
+    {
+      "file": "zhuangzi-kokken-ding",
+      "philosopherId": "zhuangzi",
+      "experiment": "Kokken Ding som parterer oksen",
+      "prompt": "An ancient Chinese kitchen filled with misty steam. A cook in flowing robes with tied-up sleeves moves in a graceful, dance-like motion with a gleaming cleaver, his blade gliding through the natural gaps of a large carcass of beef without touching bone. A faint golden trail traces the blade's path. Serene mastery."
+    }
+  ]
+}
