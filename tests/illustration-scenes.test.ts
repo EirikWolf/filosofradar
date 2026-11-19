@@ -11,6 +11,7 @@ import { PHILOSOPHER_DEEP_DIVES } from '../src/features/deepdive/deepDiveData';
 type Scene = {
   file: string;
   replaces?: string;
+  seed?: number;
   philosopherId: string;
   experiment: string;
   prompt: string;
@@ -44,17 +45,26 @@ describe('Illustrasjonsmanifestet', () => {
     for (const f of files) expect(f).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
   });
 
-  it('beholder filnavnet til illustrasjoner som finnes, eller sier hvilken den erstatter', () => {
+  it('kobler hvert tankeeksperiment til bildet fra scenen sin', () => {
     const byKey = new Map(manifest.scenes.map((s) => [key(s.philosopherId, s.experiment), s]));
-    const mismatches = experiments
-      .filter((e) => e.image)
-      .filter((e) => {
-        const scene = byKey.get(key(e.philosopherId, e.title));
-        const current = e.image!.replace(/^\/images\/hooks\//, '').replace(/\.webp$/, '');
-        return scene && scene.file !== current && scene.replaces !== current;
-      })
-      .map((e) => key(e.philosopherId, e.title));
-    expect(mismatches).toEqual([]);
+    const wrong = experiments
+      .filter((e) => e.image !== `/images/hooks/${byKey.get(key(e.philosopherId, e.title))?.file}.webp`)
+      .map((e) => `${key(e.philosopherId, e.title)}: ${e.image ?? 'mangler bilde'}`);
+    expect(wrong).toEqual([]);
+  });
+
+  it('har en bildefil for hver scene', () => {
+    const missing = manifest.scenes
+      .map((s) => s.file)
+      .filter((f) => !fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'hooks', `${f}.webp`)));
+    expect(missing).toEqual([]);
+  });
+
+  it('har fjernet bildene som er erstattet', () => {
+    const left = manifest.scenes
+      .flatMap((s) => (s.replaces ? [s.replaces] : []))
+      .filter((f) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'hooks', `${f}.webp`)));
+    expect(left).toEqual([]);
   });
 
   it('har prompter som beskriver et motiv uten sitater som kan bli tekst i bildet', () => {

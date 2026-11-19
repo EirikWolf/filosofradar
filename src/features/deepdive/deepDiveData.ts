@@ -123,6 +123,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Eikenøtten og eiketreet (Teleologi)',
         icon: '🌰',
+        image: '/images/hooks/aristoteles-eikenotten.webp',
         description: 'En eikenøtt er ikke bare en klump med materie; den bærer i seg en iboende hensikt (telos) om å bli et fullvoksent eiketre.',
         takeaway: 'Naturen gjør ingenting forgjeves; forandring er virkeliggjøring av slumrende muligheter (akt og potens).',
       },
@@ -253,6 +254,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Eiendomsrettens opprinnelse (Eikenøttene i skogen)',
         icon: '🌰',
+        image: '/images/hooks/locke-eikenottene.webp',
         description: 'Jorden tilhører i utgangspunktet hele menneskeheten. Men når du plukker eikenøtter under treet, har du blandet ditt eget kroppslige arbeid med naturen.',
         takeaway: 'Arbeid gjør en del av felleseiet til rettmessig privat eiendom.',
       },
@@ -298,6 +300,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: 'Humes giljotin (Er/Bør-problemet)',
+        image: '/images/hooks/hume-giljotinen.webp',
         description: 'Forfattere begynner ofte med lange fakta om menneskets biologi eller samfunn (ER), og plutselig glir de over i påstander om hva man BØR gjøre.',
         takeaway: 'Et normativt bør kan aldri utledes logisk fra et rent deskriptivt er.',
       },
@@ -387,7 +390,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Fuglene i gullburet',
         icon: '🕊️',
-        image: '/images/hooks/wollstonecraft-fakkelen.webp',
+        image: '/images/hooks/wollstonecraft-gullburet.webp',
         description: 'Kvinner i samtiden ble oppdratt til å være pyntelige, svake og følelsesstyrte vesener som bare skulle sjarmere menn, lik finkultiverte sangfugler i forgylte bur.',
         takeaway: 'Når samfunnet klipper vingene av kvinner, kan man ikke etterpå håne dem for at de ikke kan fly.',
       },
@@ -490,7 +493,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Frihetens svimmelhet (Klippekanten)',
         icon: '🧗',
-        image: '/images/hooks/kierkegaard-abraham.webp',
+        image: '/images/hooks/kierkegaard-klippekanten.webp',
         description: 'Når du står på kanten av et stup, skyldes angsten ikke bare at du kan falle ned, men den skremmende vissheten om at du *kan velge å kaste deg ut*.',
         takeaway: 'Angst er ikke frykt for en ytre fare; angst er bevisstheten om din egen radikale valgfrihet.',
       },
@@ -609,6 +612,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: 'Eleven under krigen',
+        image: '/images/hooks/sartre-eleven.webp',
         description: 'En ung student kommer til Sartre under krigen for råd: Skal han bli i Frankrike for å pleie sin syke mor, eller reise til England for å kjempe mot nazistene?',
         takeaway: 'Ingen etisk lære (verken kristen nestekjærlighet eller pliktetikk) kan regne ut svaret; uansett hva han velger, må han velge selv og bære ansvaret alene.',
       },
@@ -755,7 +759,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Den første inngjerdringen av jord',
         icon: '🪵',
-        image: '/images/hooks/rousseau-lenkene.webp',
+        image: '/images/hooks/rousseau-gjerdet.webp',
         description: '«Den første som gjerdet inn et stykke jord og sa: Dette er mitt!, og fant folk enfoldige nok til å tro ham, var det borgerlige samfunns sanne grunnlegger.»',
         takeaway: 'Menneskelig ulikhet og krig er ikke en naturnødvendighet, men en historisk oppfinnelse.',
       },
@@ -826,7 +830,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Pæretreet i naboens hage',
         icon: '🍐',
-        image: '/images/hooks/augustin-tidens-gate.webp',
+        image: '/images/hooks/augustin-paeretreet.webp',
         description: 'Som tenåring snek Augustin seg inn i en hage og stjal umodne pærer bare for å kaste dem til grisene. Hvorfor? Ikke fordi han var sulten, men fordi han nøt selve overtredelsen.',
         takeaway: 'Menneskets vilje er skadet av arvesynden og drives mot det gale for dets egen skyld uten Guds nåde.',
       },
@@ -962,6 +966,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Doktrinen om dobbel virkning',
         icon: '⚖️',
+        image: '/images/hooks/anscombe-dobbel-virkning.webp',
         description: 'En bonde planter en bombe for å drepe en fiendtlig offiser vel vitende om at et barn i nærheten også vil omkomme, kontra en kirurg som fjerner en kreftsvulst vel vitende om at pasienten kan dø under inngrepet.',
         takeaway: 'Det er en moralsk fundamental forskjell på å ville et onde som middel, og å forutse et onde som en uunngåelig bieffekt.',
       },
@@ -989,6 +994,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Tetrapharmakos (De fire medisinene mot frykt)',
+        image: '/images/hooks/epikur-hagen.webp',
         description: '1. Frykt ikke gudene (de bryr seg ikke om oss). 2. Frykt ikke døden (når vi er, er ikke døden; når døden er, er ikke vi). 3. Det gode er lett å oppnå (enkle behov som brød og vann). 4. Det vonde er lett å utholde (enten kortvarig eller dør vi).',
         takeaway: 'Menneskets lidelse skyldes unødvendige begjær og irrasjonell frykt for døden.',
       },
@@ -1014,6 +1020,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Synet fra oven',
+        image: '/images/hooks/marcus-aurelius-synet-fra-oven.webp',
         description: 'Lukk øynene og se for deg jorden høyt oppe fra stjernene: Se keiserdømmene, hærene, domstolene og rikdommene som ørsmå maurtuer som forsvinner i det uendelige rommet.',
         takeaway: 'Våre daglige bekymringer og sårede stolthet krymper til ingenting når de sees i lys av kosmos og evigheten.',
       },
@@ -1047,6 +1054,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Premeditatio Malorum (Foregrip det verste)',
+        image: '/images/hooks/seneca-premeditatio.webp',
         description: 'Tenk hver morgen over det verste som kan skje i dag: Du kan bli syk, miste pengene dine, eller bli sviktet av en venn.',
         takeaway: 'Når du har sett det verste i øynene på forhånd, kan ingenting overrumple eller knekke deg.',
       },
@@ -1077,6 +1085,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Kontrollens todeling (Dichotomy of Control)',
+        image: '/images/hooks/epiktet-kontrollens-todeling.webp',
         description: 'Del verden strengt i to: 1. Ting som er under din kontroll (dine meninger, verdier, reaksjoner og valg). 2. Ting som ikke er under din kontroll (kroppen din, ryktet ditt, været, andre menneskers handlinger og døden).',
         takeaway: 'Hvis du bare bryr deg om det du har kontroll over, kan ingen i hele verden noensinne gjøre deg ulykkelig.',
       },
@@ -1173,7 +1182,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       {
         title: 'Kjempehjorten med for store gevir',
         icon: '🦌',
-        image: '/images/hooks/zapffe-den-siste-messias.webp',
+        image: '/images/hooks/zapffe-kjempehjorten.webp',
         description: 'Den forhistoriske kjempehjorten utviklet gjennom evolusjonen så enorme gevir at den til slutt ikke klarte å løfte hodet eller rømme fra rovdyr. Mennesket har på samme måte utviklet en overdimensjonert bevissthet.',
         takeaway: 'Mennesket krever mening og rettferdighet av et univers som er blindt og meningsløst; vi er en biologisk feilkonstruksjon.',
       },
@@ -1209,6 +1218,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Potu-riket under jorden',
+        image: '/images/hooks/holberg-potu.webp',
         description: 'Nils Klim havner i landet Potu under jorden, der kloke trær styrer. I Potu har kvinner og menn nøyaktig samme rettigheter, men den som foreslår en ny lov må ha en løkke rundt halsen mens forslaget debatteres – blir det avvist, heises han opp!',
         takeaway: 'Kritikk av forhastede politiske innfall og hyllest til likeverd og fornuftig toleranse.',
       },
@@ -1231,11 +1241,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Elven du aldri stiger ned i to ganger",
+        image: '/images/hooks/heraklit-elven.webp',
         description: "Går du ut i en elv, er det aldri det samme vannet som omgir deg andre gang – nye vannmasser strømmer uavbrutt til, og du selv har i mellomtiden også endret deg.",
         takeaway: "Virkeligheten er ikke en samling statiske ting, men en uopphørlig prosess av forandring (panta rhei).",
       },
       {
         title: "Buen og lyren (Motsetningenes spenning)",
+        image: '/images/hooks/heraklit-buen-og-lyren.webp',
         description: "Både buen og lyren fungerer bare fordi strengen trekkes i motsatt retning av treverket; det er motstridende krefter i balanse som skaper pilens kraft og musikkens harmoni.",
         takeaway: "Konflikt og motsetninger er ikke onder som skal utryddes, men selve universets skapende drivkraft.",
       },
@@ -1258,6 +1270,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Intethetens umulighet",
+        image: '/images/hooks/parmenides-intet.webp',
         description: "Prøv å tenke på eller snakke om «ingenting». I samme øyeblikk som du tenker på det, tenker du på noe. Derfor er det umulig for noe å oppstå fra intet (ex nihilo nihil fit), eller å forsvinne inn i intet.",
         takeaway: "Forandring krever at noe blir til av intet; ettersom intet ikke kan eksistere, må forandring være en logisk umulighet og sansenes illusjon.",
       },
@@ -1280,11 +1293,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Den vibrerende strengen (Musikkens matematiske vesen)",
+        image: '/images/hooks/pytagoras-strengen.webp',
         description: "Deler du en streng i to nøyaktige halvdeler (forholdet 1:2), høres den samme tonen én oktav høyere. Deler du den 2:3, får du en ren kvint; 3:4 gir en kvart.",
         takeaway: "Skjønnhet og harmoni i sanseverdenen hviler på usynlige, matematiske proporsjoner; pytagoreerne mente at alt i bunn og grunn er tall.",
       },
       {
         title: "Sfærenes harmoni",
+        image: '/images/hooks/pytagoras-sfaerenes-harmoni.webp',
         description: "Himmellegemene beveger seg i faste, matematiske baner og må derfor frembringe en uendelig vakker kosmisk klang (musica universalis), som vi ikke hører fordi vi har levd i den siden fødselen.",
         takeaway: "Universet er et ordnet og harmonisk kosmos, ikke et kaotisk kaos.",
       },
@@ -1307,6 +1322,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Den sokratiske dialogens opprinnelse",
+        image: '/images/hooks/aspasia-dialogen.webp',
         description: "I Aischines’ dialog lar Aspasia et ektepar innse at uansett hvor rik naboens hest eller kones smykker er, vil de alltid foretrekke den beste ektefellen – og at dyd derfor krever at man gjør seg selv til det beste mennesket for sin partner.",
         takeaway: "Gjennom ledende, empatiske spørsmål kan mennesker bringes til å erkjenne etiske sannheter på egen hånd – forløperen til den sokratiske metoden.",
       },
@@ -1334,6 +1350,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Astrolabiet og himmelens mekanikk",
+        image: '/images/hooks/hypatia-astrolabiet.webp',
         description: "Ved å holde et astrolabium mot nattehimmelen kan man beregne nøyaktig tid og stjernenes posisjon ut fra geometriske prinsipper.",
         takeaway: "Menneskets fornuft kan avlese og forstå universets storslåtte lover uten å ty til blind overtro.",
       },
@@ -1359,11 +1376,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Lederskap som Nordstjernen",
+        image: '/images/hooks/konfucius-nordstjernen.webp',
         description: "«Den som styrer ved hjelp av sin egen moralske styrke, er som Nordstjernen: Den forblir på sin faste plass, mens alle de andre stjernene bøyer seg og kretser omkring den.»",
         takeaway: "Ekte autoritet krever moralsk forbilde; hvis lederen er rettferdig, vil folket følge etter av fri vilje.",
       },
       {
         title: "Den gylne regel i revers (Shu)",
+        image: '/images/hooks/konfucius-gjensidighet.webp',
         description: "Disippelen Zigong spurte: «Finnes det ett ord som kan tjene som rettesnor for hele livet?» Mesteren svarte: «Gjensidighet (shu): Det du ikke ønsker at andre skal gjøre mot deg, skal du heller ikke gjøre mot dem.»",
         takeaway: "Empati og selvkritisk måtehold er etikkens fundamentale kjerne.",
       },
@@ -1389,11 +1408,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Vannets kraft (Det myke overvinner det harde)",
+        image: '/images/hooks/laozi-vannet.webp',
         description: "Ingenting i verden er mykere og mer ettergivende enn vann. Likevel er det ingenting som kan overgå vann når det gjelder å slipe ned hard granitt og forme dype kløfter over tid.",
         takeaway: "Sann styrke ligger i tilpasningsevne, mykhet og ydmykhet, ikke i stivbeint aggresjon.",
       },
       {
         title: "Hjulets nav og leirkrukkens tomrom",
+        image: '/images/hooks/laozi-hjulet-og-krukka.webp',
         description: "Tretti eiker samles i hjulets nav, men det er det tomme hullet i midten som gjør at vognen ruller. Vi former leire til en krukke, men det er det tomme rommet inni som gjør den brukbar.",
         takeaway: "Det ikke-værende og usynlige er ofte mer verdifullt og virksomt enn det fysiske og påtrengende.",
       },
@@ -1480,6 +1501,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Allmenn kjærlighet (Jian'ai)",
+        image: '/images/hooks/mozi-allmenn-kjaerlighet.webp',
         description: "Hvis en hersker må velge en guvernør til å ta vare på sin familie mens han reiser bort: Ville han valgt den som bare bryr seg om sin egen familie, eller den som elsker alle familier like høyt som sin egen?",
         takeaway: "Partiskhet og klanlojalitet er årsaken til krig og urett; bare universell omsorg for alle skaper trygghet.",
       },
@@ -1514,6 +1536,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: "Flåteanalogien",
+        image: '/images/hooks/buddha-flaten.webp',
         description: "Du bygger en flåte for å krysse en farlig elv. Når du har nådd den trygge bredden på den andre siden, bærer du vel ikke flåten videre på ryggen din?",
         takeaway: "Selv religiøse doktriner og filosofiske teorier er bare verktøy for frigjøring; når målet er nådd, må man gi slipp på dem.",
       },
@@ -1536,6 +1559,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Vognen og dens deler (Tomhetslæren)",
+        image: '/images/hooks/nagarjuna-vognen.webp',
         description: "Hva er en vogn? Er det hjulene? Akselen? Setet? Hesten? Hvis du plukker delene fra hverandre, finner du ingen uavhengig «vogn-essens». Vognen eksisterer bare i kraft av delenes samspill og navnet vi gir den.",
         takeaway: "Ingenting i universet har en iboende, isolert egeneksistens (svabhava); alt er «tomt» (śūnya) og eksisterer bare i gjensidig avhengighet.",
       },
@@ -1616,6 +1640,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Universet som Guds kropp (Sharira-Shariri Bhava)",
+        image: '/images/hooks/ramanuja-guds-kropp.webp',
         description: "På samme måte som din sjel gir liv til, styrer og er uløselig knyttet til kroppen din, er Gud (Brahman) den indre sjelen som gjennomstrømmer og oppholder hele det fysiske universet og alle individuelle sjeler.",
         takeaway: "Verden og menneskene er ikke tomme illusjoner (slik Shankara hevdet), men virkelige, vakre deler av Guds levende organisme.",
       },
@@ -1638,6 +1663,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Kosmos som en vev av tråder",
+        image: '/images/hooks/gargi-kosmos-vev.webp',
         description: "Gargi spurte hva vannet er vevd på, og Yajnavalkya svarte: på luften. Hun fortsatte nådeløst og spurte hva luften er vevd på, og videre gjennom himmelens verdener, solen, månen, stjernene og gudene. Til slutt måtte vismannen advare: «Spør ikke for langt, Gargi, ellers vil hodet ditt falle av!»",
         takeaway: "Menneskelig nysgjerrighet krever et ubetinget, ytterste fundament for alt som eksisterer (Brahman) – hinsides tid og rom.",
       },
@@ -1699,6 +1725,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Sannhetens to språk",
+        image: '/images/hooks/ibn-rushd-to-sprak.webp',
         description: "Koranens metaforer og billedspråk er gitt for at vanlige folk skal forstå etiske sannheter, mens filosofiens strenge demonstrasjoner er for lærde fornuftsvesener.",
         takeaway: "«Sannhet kan aldri motsi sannhet»: Filosofisk vitenskap og religiøs tro står i harmoni, ikke konflikt.",
       },
@@ -1726,6 +1753,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Den syke byen (Korrupte samfunn)",
+        image: '/images/hooks/al-farabi-den-syke-byen.webp',
         description: "Al-Farabi klassifiserte samfunn som enten «dydige» (søker sann lykke) eller «uvitende» (søker bare makt, rikdom eller sanselig nytelse). Et samfunn som bare jakter på penger kaller han en «by av usselhet».",
         takeaway: "Politikkens egentlige oppgave er ikke bare økonomisk vekst, men å muliggjøre borgernes moralske og intellektuelle fullendelse.",
       },
@@ -1758,6 +1786,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Bomullen og ilden (Kausalitetsskepsis)",
+        image: '/images/hooks/al-ghazali-bomullen-og-ilden.webp',
         description: "Når du setter en flamme bort til et stykke bomull, ser du bomullen bli svart og brenne. Men beviser det at ilden i seg selv har en iboende kraft til å brenne? Nei, det er Gud som i hvert eneste øyeblikk gjenskaper hendelsen.",
         takeaway: "Naturlover er ikke logisk nødvendige årsakskjeder, men observerte vaner – 700 år før David Hume formulerte samme kritikk.",
       },
@@ -1785,6 +1814,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Negativ teologi (Hva Gud ikke er)",
+        image: '/images/hooks/maimonides-negativ-teologi.webp',
         description: "Hvis du sier at «Gud er vis» eller «Gud er mektig», bruker du menneskelige ord som krymper Gud til et forstørret menneske. Du kan bare si hva Gud *ikke* er: Gud er ikke materiell, ikke begrenset, ikke dødelig.",
         takeaway: "Den sanne erkjennelse av det guddommelige nås gjennom ydmyk stillhet og opphevelse av menneskelige projeksjoner.",
       },
@@ -1836,6 +1866,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Sivfløytens klage (Ney)",
+        image: '/images/hooks/rumi-sivfloyten.webp',
         description: "Hør på sivfløytens såre melodi: Hvorfor gråter den? Fordi den ble skåret løs fra sivbedet sitt ved elven. Hver tone den synger er en klagesang og en lengsel etter å vende tilbake til kilden den ble revet bort fra.",
         takeaway: "Menneskets eksistensielle uro og lengsel er sjelens rop etter å bli gjenforent med den kosmiske kjærligheten.",
       },
@@ -1873,6 +1904,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: "Den beste av alle mulige verdener",
+        image: '/images/hooks/leibniz-beste-verden.webp',
         description: "Før skapelsen vurderte Gud uendelig mange mulige verdener. En verden med fri vilje må nødvendigvis innebære muligheten for at mennesker velger feil; en verden uten ondskap ville vært en verden av forhåndsprogrammerte roboter.",
         takeaway: "Vår verden maksimerer det største mulige mangfold og gode under de mest elegante lover.",
       },
@@ -1910,6 +1942,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: "Om kannibaler (Kulturrelativisme)",
+        image: '/images/hooks/montaigne-kannibaler.webp',
         description: "Europeere kaller urbefolkningen i Amerika for «barbarer» fordi de spiser sine fiender etter døden. Men er det ikke langt mer barbarisk å torturere levende naboer på bålet for bagatellmessige dogmeuenigheter?",
         takeaway: "Vi kaller alt for barbari som vi ikke er vant til i vårt eget land.",
       },
@@ -1978,11 +2011,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Viriditas (Den grønne livskraften)",
+        image: '/images/hooks/hildegard-viriditas.webp',
         description: "Se for deg den usynlige, saftige kraften som får en tørr kvist til å skyte friske, grønne knopper om våren. Hildegard kalte denne kraften *viriditas* (grønnhet).",
         takeaway: "Guddommelig skaperkraft er ikke fjern og abstrakt, men den pulserende biologiske og moralske vitaliteten i alt levende.",
       },
       {
         title: "Kosmos som et egg",
+        image: '/images/hooks/hildegard-kosmos-egget.webp',
         description: "Universet er formet som et stort egg: Skallet er stjernehimmelen, hviten er luft og vind, og plommen er den faste jorden i midten omgitt av ild.",
         takeaway: "Mennesket og kosmos er innbyrdes speilbilder (mikrokosmos og makrokosmos) i fullkommen økologisk balanse.",
       },
@@ -2010,6 +2045,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Sorgens tårer hos en venn (Empatiens vesen)",
+        image: '/images/hooks/edith-stein-sorgens-taarer.webp',
         description: "Når du ser en venn gråte av sorg, opplever du sorgen direkte i hennes ansikt, men du forveksler ikke hennes sorg med din egen. Du føler *med* henne, ikke *i* henne.",
         takeaway: "Empati (innlevelse) er en unik erkjennelsesakt som beviser at den andre er et selvstendig, ukrenkelig subjekt, og redder oss fra solipsisme.",
       },
@@ -2037,6 +2073,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Kjærlighetens tvangstrøye",
+        image: '/images/hooks/camilla-collett-tvangstroya.webp',
         description: "En kvinne oppdras til at hennes eneste livskall er å bli gift. Hvis hun følger sitt sanne hjerte, kalles hun uansvarlig; hvis hun selger seg inn i et trygt, kjærlighetsløst ekteskap for å overleve økonomisk, kalles det ærverdig.",
         takeaway: "Et samfunn som fratar kvinner økonomisk uavhengighet, tvinger dem inn i en form for legitimert prostitusjon som forkrøpler moralen.",
       },
@@ -2059,6 +2096,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "FNs meditasjonsrom (Det tomme alteret)",
+        image: '/images/hooks/hammarskjold-meditasjonsrommet.webp',
         description: "Hammarskjöld tegnet FNs meditasjonsrom i New York med et eneste massivt stykke svensk jernmalm i midten, belyst av en enkelt lysstråle ovenfra, helt uten religiøse symboler.",
         takeaway: "I stillheten bak alle ord og nasjonale slagord finnes et felles rom av sannhet, verdighet og tjeneste for menneskeheten.",
       },
@@ -2086,11 +2124,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Tid-Væren (Uji)",
+        image: '/images/hooks/dogen-tid-vaeren.webp',
         description: "Tid er ikke en abstrakt elv som flyter forbi deg mens du står stille på bredden. Fjellet *er* tid; solen *er* tid; din pust i dette sekundet *er* selve tiden som utfolder seg.",
         takeaway: "Væren og tid er uatskillelige; hvert øyeblikk er hele universets fulle realisering.",
       },
       {
         title: "Å ro en båt",
+        image: '/images/hooks/dogen-baaten.webp',
         description: "Når du ror en båt over vannet, ser du kysten flytte seg bort. Men hvis du fester blikket på båten din, oppdager du at det er båten som beveger seg, ikke kysten.",
         takeaway: "Illusjoner oppstår når vi projiserer vår egen urolige bevegelse over på den uforanderlige naturen.",
       },
@@ -2118,6 +2158,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Kroppen som levende mandala",
+        image: '/images/hooks/kukai-mandala.webp',
         description: "Hele universet er kroppen, talen og sinnet til ur-buddhaen Dainichi Nyorai. De seks elementene (jord, vann, ild, luft, rom og bevissthet) finnes like fullt i en stein og i din egen fingertupp.",
         takeaway: "Den materielle verden er ikke en syndig felle som sjelen skal flykte fra, men selve det hellige nærværet.",
       },
@@ -2145,11 +2186,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Den sanne blomsten (Hana)",
+        image: '/images/hooks/zeami-den-sanne-blomsten.webp',
         description: "En ung skuespiller har en naturlig sjarm som alle beundrer – men dette er bare en «forbigående blomst» som visner med alderen. Den «sanne blomsten» oppnås først etter tiår med disiplin, når skuespilleren kan bevege et publikum bare ved å sitte helt ubevegelig på scenen.",
         takeaway: "Ekte skjønnhet og mesterskap krever at man overvinner forfengelighet og finner sjelens usynlige kjerne.",
       },
       {
         title: "Yūgen (Skyggenes subtile skjønnhet)",
+        image: '/images/hooks/zeami-yugen.webp',
         description: "Som en hvit svane med en sivbit i nebbet, eller solen som synker bak en tåkete åskam: Skjønnheten ligger i det antydede og tilbakeholdte, ikke i det brautende åpenbare.",
         takeaway: "Den dypeste kunsten avslører ikke alt, men vekker tilskuerens egen kontemplasjon.",
       },
@@ -2211,6 +2254,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Learning by doing (Skolen som verksted)",
+        image: '/images/hooks/john-dewey-verkstedet.webp',
         description: "Barn lærer ikke om geometri og fysikk ved å sitte passive på rad og rekke og lytte til en lærer; de lærer når de skal bygge en trehytte, lage mat eller løse et praktisk problem sammen.",
         takeaway: "Tenkning er et verktøy for handling og problemløsning (instrumentalisme), ikke passiv tilskuerkontemplasjon.",
       },
@@ -2243,11 +2287,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Ekornets tre (Pragmatisk metode)",
+        image: '/images/hooks/william-james-ekornet.webp',
         description: "En mann løper rundt en trestamme for å få øye på et ekorn som sitter på baksiden. Ekornet beveger seg like raskt rundt treet slik at det alltid har stammen mellom seg og mannen. Går mannen «rundt» ekornet eller ikke?",
         takeaway: "Uten en praktisk forskjell i erfaringen er filosofiske ordkrangler fullstendig meningsløse.",
       },
       {
         title: "Fjellklatreren over bresprekken (Viljen til å tro)",
+        image: '/images/hooks/william-james-bresprekken.webp',
         description: "En klatrer må hoppe over en livsfarlig bresprekk for å overleve. Hvis han tviler og krever 100 % bevis for at han vil klare det før han hopper, vil bena nøle og han styrter i avgrunnen. Hvis han velger å tro fullt og fast på sine krefter, gir selve troen ham spensten som redder livet.",
         takeaway: "I moralske og eksistensielle spørsmål er troen en aktiv faktor som er med på å skape det faktumet den håper på.",
       },
@@ -2275,11 +2321,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Tegnets triade (Ikon, indeks, symbol)",
+        image: '/images/hooks/peirce-tegnets-triade.webp',
         description: "Et tegn er ikke bare et ord som peker på en ting; det er en treleddet relasjon: Tegnet (representamen), Tingen (objektet), og Tolkningen i sinnet (interpretanten).",
         takeaway: "Menneskelig tenkning er en uavbrutt kjede av tegnfortolkning (semiose); vi kan aldri hoppe ut av tegnene for å nå en naken virkelighet.",
       },
       {
         title: "Diamantens hardhet",
+        image: '/images/hooks/peirce-diamanten.webp',
         description: "Hva mener vi når vi sier at en diamant er «hard»? Vi mener at den vil ripe opp nesten alle andre stoffer og ikke bli ripet opp selv.",
         takeaway: "Virkelighetens egenskaper eksisterer som vaner og lovmessige disposisjoner, ikke som skjulte mystiske substanser.",
       },
@@ -2312,6 +2360,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Det gjennomsiktige øyeeplet (Transparent Eyeball)",
+        image: '/images/hooks/emerson-oyeeplet.webp',
         description: "«Når jeg står på den bare marken med hodet løftet mot den uendelige himmelen, forsvinner all egoisme. Jeg blir et gjennomsiktig øyeeple: Jeg er ingenting; jeg ser alt; den universelle Væren strømmer gjennom meg.»",
         takeaway: "Når vi opphever det snevre egoet, oppdager vi vår dype, mystiske enhet med hele kosmos og naturen.",
       },
@@ -2339,6 +2388,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Prisen på en togbillett",
+        image: '/images/hooks/thoreau-togbilletten.webp',
         description: "Thoreau sammenlignet to menn som vil reise 50 kilometer inn til byen: Den ene jobber en hel dag i fabrikken for å tjene penger til togbilletten og tar toget om kvelden. Den andre begynner å gå til fots om morgenen. Hvem har da egentlig reist friest?",
         takeaway: "«Kostnaden for en ting er mengden liv du må bytte bort for å skaffe den.» Vi blir slaver av våre egne eiendeler.",
       },
@@ -2366,6 +2416,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "«Det er en jente!» (Kjønnets performativitet)",
+        image: '/images/hooks/judith-butler-det-er-en-jente.webp',
         description: "Når legen roper «Det er en jente!» i fødestuen, er det ikke bare en medisinsk beskrivelse; det er en performativ talehandling som starter en livslang tildeling av klær, leker, forventninger og kroppsbevegelser som må repeteres hver eneste dag for å fremstå som «naturlig».",
         takeaway: "Kjønnsidentitet er ikke noe du *er* på forhånd; det er noe du *gjør* og gjentar innenfor kulturens tvangstrøye.",
       },
@@ -2393,6 +2444,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Frihetens illusjon bak murene",
+        image: '/images/hooks/angela-davis-murene.webp',
         description: "Et samfunn bygger enorme, privatiserte fengsler for å låse bort fattigdom, rasisme og psykiske lidelser. Vi later som om vi har løst sosiale problemer bare ved å gjøre menneskene usynlige bak betongmurer.",
         takeaway: "Ekte rettferdighet krever at vi bygger skoler, boliger og helsetilbud som forebygger nød, i stedet for å profitere på straff.",
       },
@@ -2420,6 +2472,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Filosofien i kjøkkenet",
+        image: '/images/hooks/sor-juana-kjokkenet.webp',
         description: "Da en priorinne forbød henne å studere i tre måneder, begynte hun å studere vitenskapelige lover under matlaging: Hvorfor stivner et egg i varm olje mens sukker smelter til væske? «Hvis Aristoteles hadde laget mat, ville han skrevet langt mer!»",
         takeaway: "Erkjennelsestrangen kan aldri kveles av forbud; fornuften finner sannhet i de mest hverdagslige erfaringer.",
       },
@@ -2453,6 +2506,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Det hvite blikkets fangenskap",
+        image: '/images/hooks/fanon-blikket.webp',
         description: "En liten fransk gutt på gaten peker på Fanon og roper til moren sin at han er redd for den svarte mannen.",
         takeaway: "Den svarte mannen får ikke lov til å eksistere som et vanlig menneskelig subjekt; han fanges og fastfryses som et fryktet, fremmedgjort objekt i den hvites blikk.",
       },
@@ -2485,6 +2539,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Dødssoner og dødsverdener",
+        image: '/images/hooks/achille-mbembe-dodssonene.webp',
         description: "Moderne grensemurer, interneringsleirer for flyktninger og okkuperte territorier der mennesker fratas juridiske rettigheter og holdes i en permanent tilstand mellom liv og død.",
         takeaway: "Makt i det 21. århundre utøves gjennom å skape zoner av organisert sårbarhet og langsom død.",
       },
@@ -2512,6 +2567,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Sinnets urørlighet (Apatheia)",
+        image: '/images/hooks/anton-wilhelm-amo-sinnets-urorlighet.webp',
         description: "Når du stikker fingeren på en torn, er det den fysiske kroppen som skades og registrerer smerteimpulsen; selve den tenkende ånden (mens) forblir immateriell og upåvirket av fysiske kutt.",
         takeaway: "Forvekslingen mellom kropp og ånd skyldes uklar begrepsbruk; sjelen er en ren, aktiv fornuftskraft som aldri lider passivt.",
       },
@@ -2534,6 +2590,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Grotten ved Takkaze-elven",
+        image: '/images/hooks/zara-yaqob-grotten.webp',
         description: "Alene i mørket i hulen spurte Yacob: Kristne, jøder og muslimer hevder alle at deres bok er den eneste sanne og at de andre lyver. Hvordan kan en rettferdig Skaper dømme folk for å følge foreldrenes tro? Hvis Gud er god, må han ha gitt alle mennesker samme redskap for å finne sannheten: den medfødte fornuften (lebuna).",
         takeaway: "Enhver religiøs lov som strider mot fornuft og skaperverkets orden (f.eks. faste som ødelegger helsen eller sølibat som hindrer liv) er menneskeskapt løgn.",
       },
@@ -2556,11 +2613,13 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Kunnskapens kilde hos tjenestejenten",
+        image: '/images/hooks/ptahhotep-tjenestekvinnene.webp',
         description: "«Vær ikke hovmodig over din lærdom; rådspør både den uvitende og den vise. For kunnskapens grenser kan aldri nås, og ingen håndverker mestrer sitt fag fullkomment.» Gode ord er sjeldnere enn edelstener, sier Ptahhotep, men de kan finnes hos tjenestekvinnene ved kvernsteinene.",
         takeaway: "Sann visdom krever radikal ydmykhet og vilje til å lytte oppmerksomt til alle stemmer i samfunnet.",
       },
       {
         title: "Ma'ats evige balanse",
+        image: '/images/hooks/ptahhotep-maat.webp',
         description: "Løgn og maktmisbruk kan gi kortsiktig vinning, men urettferdighet skaper sprekker i universets orden som til slutt vil ramle sammen over overgriperen.",
         takeaway: "Rettferdighet, balanse og sannhet (Ma'at) er selve kosmos’ grunnstruktur og overlever alle tider.",
       },

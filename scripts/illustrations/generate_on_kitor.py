@@ -141,6 +141,8 @@ def main():
     parser.add_argument('--scenes', default='scenes.json')
     parser.add_argument('--only', help='kommaseparerte filnavn (uten .webp)')
     parser.add_argument('--force', action='store_true', help='lag bildet på nytt selv om det finnes')
+    parser.add_argument('--seeds', help='kommaseparerte frø: lag én variant per frø som <fil>--<frø>.webp, '
+                        'så du kan velge. Vinnerens frø føres inn som «seed» i scenes.json.')
     parser.add_argument('--dry-run', action='store_true', help='skriv ut hva som ville blitt laget')
     args = parser.parse_args()
 
@@ -154,12 +156,18 @@ def main():
             sys.exit(f'Ukjente scener: {", ".join(sorted(unknown))}')
         scenes = [s for s in scenes if s['file'] in wanted]
 
+    # Én jobb per bilde: (scene, frø, filnavn uten .webp).
+    if args.seeds:
+        jobs = [(s, int(seed), f"{s['file']}--{seed}") for s in scenes for seed in args.seeds.split(',')]
+    else:
+        jobs = [(s, s.get('seed', seed_for(s['file'])), s['file']) for s in scenes]
+
     os.makedirs(args.out, exist_ok=True)
-    todo = [s for s in scenes if args.force or not os.path.exists(os.path.join(args.out, f"{s['file']}.webp"))]
-    print(f'{len(scenes)} scener valgt, {len(scenes) - len(todo)} finnes fra før, {len(todo)} skal lages med {args.model}.', flush=True)
+    todo = [j for j in jobs if args.force or not os.path.exists(os.path.join(args.out, f'{j[2]}.webp'))]
+    print(f'{len(jobs)} bilder valgt, {len(jobs) - len(todo)} finnes fra før, {len(todo)} skal lages med {args.model}.', flush=True)
     if args.dry_run or not todo:
-        for s in todo:
-            print(f"  {s['file']}")
+        for _, _, name in todo:
+            print(f'  {name}')
         return
 
     duration = len(todo) * SECONDS_PER_IMAGE_BUDGET + 600
@@ -182,29 +190,29 @@ def main():
 
     failed = []
     try:
-        for n, scene in enumerate(todo, 1):
+        for n, (scene, seed, name) in enumerate(todo, 1):
             positive = f"{scene['prompt']} {manifest['style']}"
             graph = build_graph(
                 args.model, positive, manifest['negative'], manifest['width'], manifest['height'],
-                scene.get('seed', seed_for(scene['file'])), f"filosofradar/illustrasjoner/{args.model}/{scene['file']}",
+                seed, f'filosofradar/illustrasjoner/{args.model}/{name}',
             )
             started = time.time()
             try:
                 png = run_graph(graph, TIMEOUT_PER_IMAGE)
             except (RuntimeError, TimeoutError, OSError) as e:
-                failed.append(scene['file'])
-                print(f"[{n}/{len(todo)}] {scene['file']}: FEIL {e}", flush=True)
+                failed.append(name)
+                print(f'[{n}/{len(todo)}] {name}: FEIL {e}', flush=True)
                 continue
             image = Image.open(png).convert('RGB')
             brightness = sum(ImageStat.Stat(image).mean) / 3
             if brightness < MIN_MEAN_BRIGHTNESS:
-                failed.append(scene['file'])
-                print(f"[{n}/{len(todo)}] {scene['file']}: FEIL nesten svart bilde (snitt {brightness:.1f})", flush=True)
+                failed.append(name)
+                print(f'[{n}/{len(todo)}] {name}: FEIL nesten svart bilde (snitt {brightness:.1f})', flush=True)
                 continue
-            target = os.path.join(args.out, f"{scene['file']}.webp")
+            target = os.path.join(args.out, f'{name}.webp')
             image.save(target, 'WEBP', quality=WEBP_QUALITY, method=6)
             kb = os.path.getsize(target) // 1024
-            print(f"[{n}/{len(todo)}] {scene['file']}: {round(time.time() - started)} s, {kb} kB", flush=True)
+            print(f'[{n}/{len(todo)}] {name}: {round(time.time() - started)} s, {kb} kB', flush=True)
     finally:
         stop.set()
         arbiter('release', token)

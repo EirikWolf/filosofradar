@@ -1439,7 +1439,7 @@ export const BESPOKE_STORIES: Record<string, StoryScript> = {
     experimentTitle: 'Frihetens svimmelhet (Klippekanten)',
     philosopherName: 'Søren Kierkegaard',
     philosopherId: 'kierkegaard',
-    image: '/images/hooks/kierkegaard-abraham.webp',
+    image: '/images/hooks/kierkegaard-klippekanten.webp',
     icon: '🧗',
     totalDurationSeconds: 45,
     slides: [
@@ -1643,7 +1643,7 @@ export const BESPOKE_STORIES: Record<string, StoryScript> = {
     experimentTitle: 'Fuglene i gullburet',
     philosopherName: 'Mary Wollstonecraft',
     philosopherId: 'wollstonecraft',
-    image: '/images/hooks/wollstonecraft-fakkelen.webp',
+    image: '/images/hooks/wollstonecraft-gullburet.webp',
     icon: '🕊️',
     totalDurationSeconds: 45,
     slides: [
@@ -1915,7 +1915,7 @@ export const BESPOKE_STORIES: Record<string, StoryScript> = {
     experimentTitle: 'Den første inngjerdringen av jord',
     philosopherName: 'Jean-Jacques Rousseau',
     philosopherId: 'rousseau',
-    image: '/images/hooks/rousseau-lenkene.webp',
+    image: '/images/hooks/rousseau-gjerdet.webp',
     icon: '🪵',
     totalDurationSeconds: 45,
     slides: [
@@ -1983,7 +1983,7 @@ export const BESPOKE_STORIES: Record<string, StoryScript> = {
     experimentTitle: 'Pæretreet i naboens hage',
     philosopherName: 'Augustin av Hippo',
     philosopherId: 'augustin',
-    image: '/images/hooks/augustin-tidens-gate.webp',
+    image: '/images/hooks/augustin-paeretreet.webp',
     icon: '🍐',
     totalDurationSeconds: 45,
     slides: [
@@ -2119,7 +2119,7 @@ export const BESPOKE_STORIES: Record<string, StoryScript> = {
     experimentTitle: 'Kjempehjorten med for store gevir',
     philosopherName: 'Peter Wessel Zapffe',
     philosopherId: 'zapffe',
-    image: '/images/hooks/zapffe-den-siste-messias.webp',
+    image: '/images/hooks/zapffe-kjempehjorten.webp',
     icon: '🦌',
     totalDurationSeconds: 45,
     slides: [
