@@ -1,5 +1,5 @@
 {
-  "$comment": "Én scene per tankeeksperiment i dypdykkene (B-017). Promptene beskriver bare motivet; stilen legges på av scripts/illustrations/generate_on_kitor.py. «replaces» er det gamle filnavnet når en illustrasjon har fått nytt navn.",
+  "$comment": "Én scene per tankeeksperiment i dypdykkene (B-017). Promptene beskriver bare motivet; stilen legges på av scripts/illustrations/generate_on_kitor.py. «replaces» er det gamle filnavnet når en illustrasjon har fått nytt navn. «model» velger en annen modell enn Z-Image-Turbo for én scene.",
   "style": "Fine art oil painting with rich painterly brushwork and dramatic chiaroscuro lighting: warm golden highlights against deep blue and obsidian shadows, with a faint shimmer of cosmic stardust in the air. Historically appropriate clothing and architecture, dignified and suitable for teenagers, contemplative mood. No text, no letters, no captions, no watermark.",
   "negative": "text, letters, writing, caption, watermark, signature, logo, blurry, low quality, deformed hands, extra fingers, distorted face, gore, blood, photograph, 3d render, cartoon",
   "width": 1280,
@@ -633,7 +633,8 @@
       "philosopherId": "zapffe",
       "experiment": "Kjempehjorten med for store gevir",
       "prompt": "A prehistoric giant deer stands alone in a misty Ice Age bog at dusk. Its antlers are grotesquely oversized: two vast, flat, shovel-shaped palms spanning far wider than its whole body, so heavy that its head hangs down almost to the ground and its legs tremble under the weight. A pack of wolves watches from the treeline. No humans. Cold northern light under a vast, indifferent sky.",
-      "seed": 101
+      "seed": 202,
+      "model": "qwen"
     },
     {
       "file": "zara-yaqob-grotten",

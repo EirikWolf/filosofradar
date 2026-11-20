@@ -11,9 +11,10 @@ til slutt, også ved feil. Ferdige bilder hoppes over, så en avbrutt kjøring k
 på nytt med samme kommando. Bildene lagres som WebP i --out; 960 px-variantene lages
 lokalt med `npm run images` etter at filene er kopiert til public/images/hooks/.
 
-Z-Image-Turbo er valgt (B-017); Qwen er beholdt som alternativ. Begge er Apache-2.0. MiniMax H3, som de første 48 bildene ble laget med, skal
-ikke brukes: lisensen forbyr visning i EU, Storbritannia, USA og Sør-Korea og krever
-KI-merking (se B-017).
+Z-Image-Turbo er valgt (B-017); Qwen er beholdt som alternativ. Begge er Apache-2.0.
+En scene kan be om Qwen med «model» i scenes.json, slik kjempehjorten gjør.
+MiniMax H3, som de første 48 bildene ble laget med, skal ikke brukes: lisensen forbyr
+visning i EU, Storbritannia, USA og Sør-Korea og krever KI-merking (se B-017).
 """
 import argparse
 import json
@@ -36,6 +37,9 @@ TIMEOUT_PER_IMAGE = 900
 # Et bilde med lavere snittlysstyrke enn dette (0–255) regnes som mislykket. Feil
 # attention-backend ga bilder med snitt 0,0; den mørkeste ekte scenen i prøven lå over 25.
 MIN_MEAN_BRIGHTNESS = 5
+
+# Modellen for scener uten eget «model»-felt i scenes.json.
+DEFAULT_MODEL = 'zimage'
 
 MODELS = {
     # Qwen-Image-2512, Apache-2.0. Følger negativ prompt (cfg > 1).
@@ -136,7 +140,8 @@ def arbiter(*args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--model', choices=sorted(MODELS), default='zimage', help='zimage er valgt i B-017')
+    parser.add_argument('--model', choices=sorted(MODELS), help='overstyr modellen for alle scener. Uten flagget '
+                        'brukes scenens «model», ellers zimage (B-017)')
     parser.add_argument('--out', required=True, help='mappe for ferdige WebP-filer')
     parser.add_argument('--scenes', default='scenes.json')
     parser.add_argument('--only', help='kommaseparerte filnavn (uten .webp)')
@@ -162,9 +167,13 @@ def main():
     else:
         jobs = [(s, s.get('seed', seed_for(s['file'])), s['file']) for s in scenes]
 
+    def model_for(scene):
+        return args.model or scene.get('model', DEFAULT_MODEL)
+
     os.makedirs(args.out, exist_ok=True)
     todo = [j for j in jobs if args.force or not os.path.exists(os.path.join(args.out, f'{j[2]}.webp'))]
-    print(f'{len(jobs)} bilder valgt, {len(jobs) - len(todo)} finnes fra før, {len(todo)} skal lages med {args.model}.', flush=True)
+    models = sorted({model_for(scene) for scene, _, _ in todo}) or [args.model or DEFAULT_MODEL]
+    print(f'{len(jobs)} bilder valgt, {len(jobs) - len(todo)} finnes fra før, {len(todo)} skal lages med {", ".join(models)}.', flush=True)
     if args.dry_run or not todo:
         for _, _, name in todo:
             print(f'  {name}')
@@ -172,7 +181,7 @@ def main():
 
     duration = len(todo) * SECONDS_PER_IMAGE_BUDGET + 600
     token = json.loads(
-        arbiter('acquire', 'image', '--requester', 'filosofradar', '--label', f'illustrasjoner-{args.model}',
+        arbiter('acquire', 'image', '--requester', 'filosofradar', '--label', f'illustrasjoner-{"+".join(models)}',
                 '--duration-s', str(duration), '--priority', 'bakgrunn', '--json')
     )['token']
     print(f'GPU-lease tatt ({token[:8]}…).', flush=True)
@@ -193,8 +202,8 @@ def main():
         for n, (scene, seed, name) in enumerate(todo, 1):
             positive = f"{scene['prompt']} {manifest['style']}"
             graph = build_graph(
-                args.model, positive, manifest['negative'], manifest['width'], manifest['height'],
-                seed, f'filosofradar/illustrasjoner/{args.model}/{name}',
+                model_for(scene), positive, manifest['negative'], manifest['width'], manifest['height'],
+                seed, f'filosofradar/illustrasjoner/{model_for(scene)}/{name}',
             )
             started = time.time()
             try:

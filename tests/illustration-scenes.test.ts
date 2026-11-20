@@ -12,6 +12,7 @@ type Scene = {
   file: string;
   replaces?: string;
   seed?: number;
+  model?: string;
   philosopherId: string;
   experiment: string;
   prompt: string;
@@ -65,6 +66,19 @@ describe('Illustrasjonsmanifestet', () => {
       .flatMap((s) => (s.replaces ? [s.replaces] : []))
       .filter((f) => fs.existsSync(path.join(__dirname, '..', 'public', 'images', 'hooks', `${f}.webp`)));
     expect(left).toEqual([]);
+  });
+
+  it('ber bare om modeller som genereringsskriptet kjenner', () => {
+    // Skriptet på kitor slår opp modellen i MODELS. En skrivefeil her ville først vist
+    // seg som en krasj midt i en kjøring på GPU-en.
+    const script = fs.readFileSync(
+      path.join(__dirname, '..', 'scripts', 'illustrations', 'generate_on_kitor.py'),
+      'utf8',
+    );
+    const known = [...script.matchAll(/^ {4}'(\w+)': \{\r?$/gm)].map((m) => m[1]);
+    expect(known).toEqual(expect.arrayContaining(['qwen', 'zimage']));
+    const unknown = manifest.scenes.filter((s) => s.model !== undefined && !known.includes(s.model));
+    expect(unknown.map((s) => `${s.file}: ${s.model}`)).toEqual([]);
   });
 
   it('har prompter som beskriver et motiv uten sitater som kan bli tekst i bildet', () => {
