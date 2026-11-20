@@ -7,7 +7,7 @@ export const AXIS_START_YEAR = -650;
 /**
  * Den eldste filosofen (Ptahhotep, ca. 2400 f.Kr.). Den komprimerte skalaen har et
  * kort forsegment hit, så filosofer før 650 f.Kr. står der de hører hjemme (B-019).
- * `tests/timeScale.test.ts` feiler om en filosof er født før dette.
+ * `tests/axis-bounds.test.ts` feiler om en filosof er født før dette.
  */
 export const AXIS_EARLIEST_YEAR = -2400;
 /** Siste år på aksen. */
