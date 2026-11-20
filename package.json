@@ -11,10 +11,10 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
+    "e2e": "playwright test",
     "images": "tsx scripts/make-image-variants.ts",
     "validate": "tsx scripts/build-content.ts --validate-only",
     "faktasjekk": "tsx scripts/build-content.ts --validate-only",
-    "e2e": "vitest run tests/fase8-validation.test.ts",
     "wikidata": "tsx scripts/wikidata.ts",
     "longest-life": "tsx scripts/longest-life.ts",
     "find-socrates": "tsx scripts/find-socrates.ts",
@@ -29,7 +29,9 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.1",
     "@tailwindcss/postcss": "^4.3.5",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/react": "^16.3.3",
