@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import type { Philosopher, ThemeId } from '../../schemas/philosopher';
 import { TRADITION_SECTOR_ORDER, getSectorAngles, polarToCartesian, radiusForYear } from '../../lib/polar';
 import { computeRadarLayout, type RadarPoint } from '../../lib/layout';
-import type { ScaleMode } from '../../lib/timeScale';
+import { AXIS_END_YEAR, AXIS_START_YEAR, axisStartYear, type ScaleMode } from '../../lib/timeScale';
 import {
   formatYear,
   formatLifeSpan,
@@ -326,7 +326,12 @@ export const RadarView: React.FC<RadarViewProps> = ({
   // Radius for tidsmaskinens ekspanderende ring
   const timeRingRadius = useMemo(() => {
     if (!isTimeMachineActive) return null;
-    return radiusForYear(Math.min(2025, Math.max(-650, currentTime)), scaleMode, minRadius, maxRadius);
+    return radiusForYear(
+      Math.min(AXIS_END_YEAR, Math.max(AXIS_START_YEAR, currentTime)),
+      scaleMode,
+      minRadius,
+      maxRadius,
+    );
   }, [isTimeMachineActive, currentTime, scaleMode]);
 
   // Livsstatus i tidsmaskinen (YTE-01). Den avhenger bare av hvor mange som er
@@ -374,8 +379,8 @@ export const RadarView: React.FC<RadarViewProps> = ({
               setIsTimeMachineActive(next);
               // Hopp direkte (uten supernova-glimt) til start eller slutt
               if (next) {
-                timeRef.current = -650;
-                setCurrentTime(-650);
+                timeRef.current = AXIS_START_YEAR;
+                setCurrentTime(AXIS_START_YEAR);
                 setIsPlaying(true);
               } else {
                 setIsPlaying(false);
@@ -468,10 +473,10 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 <button onClick={() => setShowScaleHelp(false)} className="text-star-dim hover:text-white">✕</button>
               </div>
               <p className="mb-2">
-                <strong>Komprimert skala:</strong> Forstørrer antikken (600 f.Kr.–500 e.Kr.) og moderne tid (1500–i dag) der flest filosofer virket, slik at de ikke klumper seg sammen.
+                <strong>Komprimert skala:</strong> Forstørrer antikken (650 f.Kr.–500 e.Kr.) og moderne tid (1500–i dag) der flest filosofer virket, slik at de ikke klumper seg sammen. Den eldste filosofen, Ptahhotep (ca. 2400 f.Kr.), står i et smalt felt innerst.
               </p>
               <p>
-                <strong>Lineær skala:</strong> Hvert århundre har nøyaktig samme avstand. Viser den enorme historiske avstanden i middelalderen!
+                <strong>Lineær skala:</strong> Hvert århundre har nøyaktig samme avstand fra 650 f.Kr. Viser den enorme historiske avstanden i middelalderen! Filosofer som er eldre, står innerst og er merket «← eldre».
               </p>
             </div>
           )}
@@ -483,11 +488,11 @@ export const RadarView: React.FC<RadarViewProps> = ({
         <div className="w-full max-w-4xl flex flex-col gap-3 animate-in fade-in">
           {/* Tidsmaskin-glider */}
           <div className="w-full px-6 py-3 bg-cosmos-card/60 border border-cyan-glow/20 rounded-xl backdrop-blur-sm flex items-center gap-4">
-            <span className="text-xs text-star-dim font-mono">650 f.Kr.</span>
+            <span className="text-xs text-star-dim font-mono">{formatYear(AXIS_START_YEAR)}</span>
             <input
               type="range"
-              min={-650}
-              max={2025}
+              min={AXIS_START_YEAR}
+              max={AXIS_END_YEAR}
               value={Math.round(currentTime)}
               onChange={(e) => {
                 moveTimeTo(Number(e.target.value));
@@ -495,7 +500,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
               }}
               className="flex-1 accent-cyan-glow cursor-pointer h-2 bg-cosmos-dark rounded-lg border border-cyan-glow/30"
             />
-            <span className="text-xs text-star-dim font-mono">2025 e.Kr.</span>
+            <span className="text-xs text-star-dim font-mono">{formatYear(AXIS_END_YEAR)} e.Kr.</span>
           </div>
 
           {/* Historiens Lyskaster: Viser filosofen som nettopp trer frem i historien */}
@@ -941,7 +946,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             </g>
           ))}
 
-          {/* Ur-stjerne og kompassrose i sentrum (ca. 650 f.Kr.) */}
+          {/* Ur-stjerne og kompassrose i sentrum: aksens første år */}
           <circle cx={cx} cy={cy} r={minRadius} fill="url(#centerGlow)" className="pointer-events-none" />
           <circle cx={cx} cy={cy} r={4} fill="#f6c85f" className="filter drop-shadow-[0_0_8px_#f6c85f]" />
           <text
@@ -953,7 +958,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             fontWeight="bold"
             className="font-serif pointer-events-none"
           >
-            650 f.Kr.
+            {formatYear(axisStartYear(scaleMode))}
           </text>
 
           {/* Tidsmaskinens ekspanderende ring */}

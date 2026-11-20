@@ -1,6 +1,12 @@
 import React, { useState, useMemo, useRef } from 'react';
 import type { Philosopher } from '../../schemas/philosopher';
-import { createLinearScale, createCompressedScale, type ScaleMode } from '../../lib/timeScale';
+import {
+  createLinearScale,
+  createCompressedScale,
+  AXIS_EARLIEST_YEAR,
+  AXIS_START_YEAR,
+  type ScaleMode,
+} from '../../lib/timeScale';
 import { formatLifeSpan, checkOverlap, getStartYear, getEndYear, CURRENT_YEAR } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 
@@ -14,6 +20,9 @@ interface PhilosopherSpan {
   startYear: number;
   endYear: number;
 }
+
+// Bredden til et navn med «· ← eldre» bak, så neste stolpe i raden ikke dekker det.
+const BEFORE_AXIS_LABEL_PX = 130;
 
 export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpenCard }) => {
   const [scaleMode, setScaleMode] = useState<ScaleMode>('compressed');
@@ -55,8 +64,8 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
   // Bygg tidsskala
   const scale = useMemo(() => {
     return scaleMode === 'compressed'
-      ? createCompressedScale(totalWidth, -650, CURRENT_YEAR)
-      : createLinearScale(totalWidth, -650, CURRENT_YEAR);
+      ? createCompressedScale(totalWidth, AXIS_EARLIEST_YEAR, CURRENT_YEAR)
+      : createLinearScale(totalWidth, AXIS_START_YEAR, CURRENT_YEAR);
   }, [scaleMode, totalWidth]);
 
   // Pakk stolpene inn i rader slik at de ikke overlapper vertikalt (Lane Packing)
@@ -69,7 +78,9 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
 
       for (const lane of laneList) {
         const lastInLane = lane[lane.length - 1];
-        const lastX2 = scale.toPixel(lastInLane.endYear) + 30; // 30px sikkerhetsmargin
+        // 30 px sikkerhetsmargin, og ekstra plass når navnet har «← eldre» bak seg.
+        const labelRoom = lastInLane.startYear < scale.minYear ? BEFORE_AXIS_LABEL_PX : 0;
+        const lastX2 = scale.toPixel(lastInLane.endYear) + 30 + labelRoom;
 
         if (x1 >= lastX2) {
           lane.push(span);
@@ -266,6 +277,8 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
                 const x1 = scale.toPixel(span.startYear);
                 const x2 = scale.toPixel(span.endYear);
                 const barWidth = Math.max(14, x2 - x1);
+                // Født før aksens første år: stolpen er flyttet inn til kanten (B-019).
+                const isBeforeAxis = span.startYear < scale.minYear;
                 const tradMeta = getTraditionMeta(p.tradition);
 
                 const isSelected = selectedId === p.id;
@@ -334,6 +347,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
                       className="font-serif select-none pointer-events-none drop-shadow-[0_1px_3px_#000000]"
                     >
                       {p.name}
+                      {isBeforeAxis && ' · ← eldre'}
                       {isSelected && ' ★'}
                     </text>
                   </g>

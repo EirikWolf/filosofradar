@@ -26,6 +26,8 @@
   vinkel = tradisjon + liten spredning for å unngå overlapp (deterministisk, ikke tilfeldig per lasting).
 - **Tidsskala:** filosofene er tett i nyere tid. Standard er en **komprimert skala** (f.eks. kvadratrot eller stykkevis lineær),
   med en bryter for «ærlig lineær skala» og en kort forklaring på forskjellen. Dette er et poeng i seg selv.
+  Aksen starter i 650 f.Kr. Den komprimerte skalaen har i tillegg et smalt forsegment (5 %) tilbake til den eldste
+  filosofen, Ptahhotep (ca. 2400 f.Kr.). I lineær skala står filosofer født før 650 f.Kr. innerst og er merket «← eldre» (B-019).
 - **Punktets størrelse:** fast, eller etter antall påvirkningslenker (valgfritt).
 - **Levetid:** når et punkt er valgt, tegnes en bue langs radius fra fødsel til død.
 

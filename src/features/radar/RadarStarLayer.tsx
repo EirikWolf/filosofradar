@@ -155,6 +155,22 @@ export const RadarStarLayer = React.memo(function RadarStarLayer({
               className="pointer-events-none"
             />
 
+            {/* Født før aksens første år: stjernen står innerst, ikke der den hører hjemme (B-019).
+                Levetiden i aria-label har de riktige årstallene. */}
+            {pt.beforeAxis && (
+              <text
+                x={-starRadius - 4}
+                y={3}
+                textAnchor="end"
+                fill="#ffd79e"
+                fontSize="8"
+                aria-hidden="true"
+                className="font-serif pointer-events-none select-none"
+              >
+                ← eldre
+              </text>
+            )}
+
             {/* Navnelapp og levetid på radaren ved hover eller når valgt */}
             {(isHovered || isSelected) && (
               <g className="pointer-events-none select-none">
