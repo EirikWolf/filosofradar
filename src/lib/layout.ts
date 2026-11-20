@@ -1,6 +1,6 @@
 import type { Philosopher, TraditionId } from '../schemas/philosopher';
 import { getSectorAngles, polarToCartesian, radiusForYear } from './polar';
-import type { ScaleMode } from './timeScale';
+import { axisStartYear, type ScaleMode } from './timeScale';
 
 export interface RadarPoint {
   id: string;
@@ -12,6 +12,8 @@ export interface RadarPoint {
   tradition: TraditionId;
   birthYear: number;
   deathYear?: number;
+  /** Født før aksens første år, så stjernen står innerst uten å vise den reelle avstanden. */
+  beforeAxis: boolean;
 }
 
 export interface RadarLayoutOptions {
@@ -75,9 +77,10 @@ export function computeRadarLayout(
     maxRadius = 365,
     scaleMode = 'compressed',
     minDistance = 16,
-    minYear = -650,
-    maxYear = 2025,
+    minYear,
+    maxYear,
   } = options;
+  const firstAxisYear = minYear ?? axisStartYear(scaleMode);
 
   // Grupper per tradisjon
   const byTradition = new Map<TraditionId, Philosopher[]>();
@@ -216,6 +219,7 @@ export function computeRadarLayout(
         tradition: item.philosopher.tradition,
         birthYear: item.birthYear,
         deathYear: item.deathYear,
+        beforeAxis: item.birthYear < firstAxisYear,
       });
     }
   }

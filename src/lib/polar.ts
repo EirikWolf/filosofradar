@@ -103,15 +103,16 @@ export function getSectorAngles(tradition: TraditionId): SectorAngles {
 
 /**
  * Beregner radien fra sentrum til et gitt årstall.
- * Støtter både komprimert og lineær skala.
+ * Støtter både komprimert og lineær skala. Uten minYear og maxYear brukes
+ * skalaens egne grenser (se AXIS_* i timeScale.ts).
  */
 export function radiusForYear(
   year: number,
   scaleMode: ScaleMode,
   minRadius: number,
   maxRadius: number,
-  minYear = -650,
-  maxYear = 2025,
+  minYear?: number,
+  maxYear?: number,
 ): number {
   const span = maxRadius - minRadius;
   const scale =

@@ -8,6 +8,7 @@ import {
   type Simulation,
 } from 'd3-force';
 import type { NetworkNode, NetworkLink } from './influence';
+import { AXIS_END_YEAR, AXIS_START_YEAR } from './timeScale';
 
 /**
  * Oppsettet for idénettverket (YTE-02).
@@ -19,8 +20,8 @@ import type { NetworkNode, NetworkLink } from './influence';
  */
 
 /** Tidsaksen: fødselsår i dette spennet fordeles fra venstre til høyre kant. */
-const MIN_YEAR = -650;
-const MAX_YEAR = 2025;
+const MIN_YEAR = AXIS_START_YEAR;
+const MAX_YEAR = AXIS_END_YEAR;
 const LINK_DISTANCE = 95;
 const CHARGE_STRENGTH = -280;
 const CENTER_STRENGTH = 0.05;
