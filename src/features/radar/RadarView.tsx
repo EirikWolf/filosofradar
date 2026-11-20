@@ -18,6 +18,11 @@ import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import { preloadCardContent } from '../card/cardContent';
 import { RadarStarLayer } from './RadarStarLayer';
 
+/** Året i tidsmaskinen slik en skjermleser skal lese det: «430 f.Kr.», «1800 e.Kr.». */
+function sliderYearText(year: number): string {
+  return year < 0 ? formatYear(year) : `${formatYear(year)} e.Kr.`;
+}
+
 /** Hvor lenge supernova-glimtet vises når en filosof fødes i tidsmaskinen. */
 const SUPERNOVA_GLOW_MS = 1400;
 // Hvor mange ganger i sekundet radaren rendres mens tidsmaskinen spiller (YTE-01).
@@ -494,6 +499,9 @@ export const RadarView: React.FC<RadarViewProps> = ({
               min={AXIS_START_YEAR}
               max={AXIS_END_YEAR}
               value={Math.round(currentTime)}
+              // Uten navn og verditekst leser skjermlesere bare «-430» (TST-05, WCAG 4.1.2).
+              aria-label="Tidsmaskin: velg år"
+              aria-valuetext={sliderYearText(Math.round(currentTime))}
               onChange={(e) => {
                 moveTimeTo(Number(e.target.value));
                 setIsPlaying(false);

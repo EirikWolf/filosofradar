@@ -97,6 +97,16 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
     return laneList;
   }, [sortedSpans, scale]);
 
+  // Stolpene tegnes i tidsrekkefølge, ikke rad for rad, så Tab går fra eldst til
+  // yngst (DESIGN.md §7). Raden bestemmer bare høyden.
+  const barsInTimeOrder = useMemo(
+    () =>
+      lanes
+        .flatMap((lane, laneIdx) => lane.map((span) => ({ span, laneIdx })))
+        .sort((a, b) => a.span.startYear - b.span.startYear),
+    [lanes],
+  );
+
   const selectedSpan = useMemo(() => {
     if (!selectedId) return null;
     return spans.find((s) => s.philosopher.id === selectedId) || null;
@@ -151,6 +161,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
 
           {/* Tradisjon-filter */}
           <select
+            aria-label="Filtrer etter tradisjon"
             value={selectedTradition}
             onChange={(e) => setSelectedTradition(e.target.value)}
             className="bg-cosmos border border-white/15 rounded-xl px-3 py-2 text-xs font-serif text-star-white focus:outline-hidden focus:border-gold"
@@ -269,90 +280,111 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
             )}
 
             {/* Levetidsstolper for filosofene */}
-            {lanes.map((lane, laneIdx) => {
+            {barsInTimeOrder.map(({ span, laneIdx }) => {
               const y = headerHeight + 15 + laneIdx * rowHeight;
+              const p = span.philosopher;
+              const x1 = scale.toPixel(span.startYear);
+              const x2 = scale.toPixel(span.endYear);
+              const barWidth = Math.max(14, x2 - x1);
+              // Født før aksens første år: stolpen er flyttet inn til kanten (B-019).
+              const isBeforeAxis = span.startYear < scale.minYear;
+              const tradMeta = getTraditionMeta(p.tradition);
 
-              return lane.map((span) => {
-                const p = span.philosopher;
-                const x1 = scale.toPixel(span.startYear);
-                const x2 = scale.toPixel(span.endYear);
-                const barWidth = Math.max(14, x2 - x1);
-                // Født før aksens første år: stolpen er flyttet inn til kanten (B-019).
-                const isBeforeAxis = span.startYear < scale.minYear;
-                const tradMeta = getTraditionMeta(p.tradition);
+              const isSelected = selectedId === p.id;
+              const isHovered = hoveredId === p.id;
 
-                const isSelected = selectedId === p.id;
-                const isHovered = hoveredId === p.id;
-
-                // Er denne personen samtidig med den valgte?
-                const isContemporary =
-                  selectedSpan &&
-                  p.id !== selectedSpan.philosopher.id &&
-                  checkOverlap(
-                    { start: span.startYear, end: span.endYear },
-                    { start: selectedSpan.startYear, end: selectedSpan.endYear },
-                  );
-
-                // Skal denne stolpen tones ned?
-                const isDimmed = selectedSpan && !isSelected && !isContemporary;
-
-                return (
-                  <g
-                    key={p.id}
-                    transform={`translate(${x1}, ${y})`}
-                    className="cursor-pointer transition-opacity duration-300"
-                    opacity={isDimmed ? 0.2 : 1}
-                    onClick={() => setSelectedId(isSelected ? null : p.id)}
-                    onMouseEnter={() => setHoveredId(p.id)}
-                    onMouseLeave={() => setHoveredId(null)}
-                  >
-                    {/* Bakgrunnsglød ved hover eller valg */}
-                    {(isSelected || isHovered || isContemporary) && (
-                      <rect
-                        x="-4"
-                        y="-4"
-                        width={barWidth + 8}
-                        height="26"
-                        rx="13"
-                        fill={isSelected ? '#f6c85f' : tradMeta.color}
-                        opacity={isSelected ? 0.4 : isHovered ? 0.3 : 0.2}
-                        filter="blur(4px)"
-                      />
-                    )}
-
-                    {/* Selve levetids-stolpen */}
-                    <rect
-                      x="0"
-                      y="0"
-                      width={barWidth}
-                      height="18"
-                      rx="9"
-                      fill={isSelected ? '#f6c85f' : tradMeta.color}
-                      stroke={isSelected ? '#ffffff' : 'rgba(255,255,255,0.3)'}
-                      strokeWidth={isSelected ? 2 : 1}
-                      className="transition-all duration-200"
-                    />
-
-                    {/* Fødsels- og dødsstjerner i endene */}
-                    <circle cx="3" cy="9" r="2.5" fill="#ffffff" />
-                    <circle cx={barWidth - 3} cy="9" r="2.5" fill="#ffffff" />
-
-                    {/* Navn på filosofen ved siden av eller over stolpen */}
-                    <text
-                      x={barWidth + 8}
-                      y="13"
-                      fill={isSelected ? '#f6c85f' : '#ffffff'}
-                      fontSize="12"
-                      fontWeight={isSelected ? 'bold' : 'normal'}
-                      className="font-serif select-none pointer-events-none drop-shadow-[0_1px_3px_#000000]"
-                    >
-                      {p.name}
-                      {isBeforeAxis && ' · ← eldre'}
-                      {isSelected && ' ★'}
-                    </text>
-                  </g>
+              // Er denne personen samtidig med den valgte?
+              const isContemporary =
+                selectedSpan &&
+                p.id !== selectedSpan.philosopher.id &&
+                checkOverlap(
+                  { start: span.startYear, end: span.endYear },
+                  { start: selectedSpan.startYear, end: selectedSpan.endYear },
                 );
-              });
+
+              // Skal denne stolpen tones ned?
+              const isDimmed = selectedSpan && !isSelected && !isContemporary;
+
+              return (
+                <g
+                  key={p.id}
+                  transform={`translate(${x1}, ${y})`}
+                  className="cursor-pointer transition-opacity duration-300 outline-none group"
+                  opacity={isDimmed ? 0.2 : 1}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${p.name} (${formatLifeSpan(p)})`}
+                  aria-pressed={isSelected}
+                  onClick={() => setSelectedId(isSelected ? null : p.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setSelectedId(isSelected ? null : p.id);
+                    } else if (e.key === 'Escape') {
+                      setSelectedId(null);
+                    }
+                  }}
+                  onMouseEnter={() => setHoveredId(p.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                >
+                  {/* Synlig fokus for tastaturbrukere (WCAG 2.4.7) */}
+                  <rect
+                    x="-5"
+                    y="-5"
+                    width={barWidth + 10}
+                    height="28"
+                    rx="14"
+                    fill="none"
+                    stroke="#f6c85f"
+                    strokeWidth="2"
+                    className="opacity-0 group-focus-visible:opacity-100 pointer-events-none"
+                  />
+                  {/* Bakgrunnsglød ved hover eller valg */}
+                  {(isSelected || isHovered || isContemporary) && (
+                    <rect
+                      x="-4"
+                      y="-4"
+                      width={barWidth + 8}
+                      height="26"
+                      rx="13"
+                      fill={isSelected ? '#f6c85f' : tradMeta.color}
+                      opacity={isSelected ? 0.4 : isHovered ? 0.3 : 0.2}
+                      filter="blur(4px)"
+                    />
+                  )}
+
+                  {/* Selve levetids-stolpen */}
+                  <rect
+                    x="0"
+                    y="0"
+                    width={barWidth}
+                    height="18"
+                    rx="9"
+                    fill={isSelected ? '#f6c85f' : tradMeta.color}
+                    stroke={isSelected ? '#ffffff' : 'rgba(255,255,255,0.3)'}
+                    strokeWidth={isSelected ? 2 : 1}
+                    className="transition-all duration-200"
+                  />
+
+                  {/* Fødsels- og dødsstjerner i endene */}
+                  <circle cx="3" cy="9" r="2.5" fill="#ffffff" />
+                  <circle cx={barWidth - 3} cy="9" r="2.5" fill="#ffffff" />
+
+                  {/* Navn på filosofen ved siden av eller over stolpen */}
+                  <text
+                    x={barWidth + 8}
+                    y="13"
+                    fill={isSelected ? '#f6c85f' : '#ffffff'}
+                    fontSize="12"
+                    fontWeight={isSelected ? 'bold' : 'normal'}
+                    className="font-serif select-none pointer-events-none drop-shadow-[0_1px_3px_#000000]"
+                  >
+                    {p.name}
+                    {isBeforeAxis && ' · ← eldre'}
+                    {isSelected && ' ★'}
+                  </text>
+                </g>
+              );
             })}
           </svg>
         </div>
