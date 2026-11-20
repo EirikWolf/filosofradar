@@ -24,7 +24,7 @@ content/philosophers/*.json ──(scripts/build-content.ts: valider + slå samm
 | Tilstand | React state + URL-parametre (`?f=sokrates&year=-400`) | Delbare lenker, ingen ekstra bibliotek |
 | Bilde-eksport | Canvas (`src/lib/quizExport.ts`) | Del-bilde fra quizen uten ekstra avhengighet |
 | Bildevarianter | `sharp` i `scripts/make-image-variants.ts` (`npm run images`), bare ved utvikling | 960 px-varianter av illustrasjonene til kort og galleri, 61 % mindre (B-016) |
-| Tester | Vitest (logikk), Vitest + jsdom + Testing Library (komponenter, se B-009), Playwright (røyktest av hovedflyt, ikke innført ennå) | |
+| Tester | Vitest (logikk), Vitest + jsdom + Testing Library (komponenter, se B-009), Playwright med axe-core (røyktest av det bygde nettstedet, `e2e/`, B-018) | Ser det jsdom ikke ser: CSP, lat lasting, rolig modus, axe |
 | Hosting | Firebase Hosting, Spark-plan | Gratis, enkel publisering, forhåndsvisningskanaler |
 | Besøksstatistikk | GoatCounter (B-011) | Uten informasjonskapsler; se `docs/databehandlere.md` |
 
@@ -59,11 +59,13 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 │  └─ features/                 radar, timeline, galaxy, network, list, card, comparison, deepdive,
 │                               exphil, ethics, story, tours, quiz, factcheck, daily, about
 ├─ tests/                       Vitest; komponenttester i jsdom (*.test.tsx)
+├─ e2e/                         Playwright-røyktest mot `vite preview` av dist/ (*.e2e.ts, B-018)
+├─ docs/user-stories/           brukerhistorier i Gherkin; hver røyktest viser til én (US-NNN)
 └─ firebase.json, .firebaserc
 ```
 
 ## Kommandoer (package.json)
-`dev`, `build` (kjører `build-content` først), `budget` (JS på første side < 200 kB gzip, kjøres i CI og i `publiser` etter build), `validate`, `lint`, `typecheck`, `test`, `check`, `wikidata`.
+`dev`, `build` (kjører `build-content` først), `budget` (JS på første side < 200 kB gzip, kjøres i CI og i `publiser` etter build), `validate`, `lint`, `typecheck`, `test`, `e2e` (Playwright mot bygget, kjøres i CI etter `build`), `check`, `wikidata`.
 
 **Kodesplitting:** Forsiden laster bare radar, liste, tidslinje, nettverk og filosofdataene. Dypdykk, Ex.phil-innhold, historier og Zod lastes først når de trengs. Konstanter som appen trenger, ligger derfor i egne små filer (`src/schemas/ids.ts`, `src/features/exphil/exphilIds.ts`) og ikke sammen med skjemaer eller innhold.
 

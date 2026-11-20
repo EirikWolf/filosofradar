@@ -59,13 +59,13 @@
 - [x] Brukerens temaradar vokser mens man svarer; resultat med topp 3, prosent og begrunnelse
 - [x] Last ned resultat som PNG; ingenting lagres eller sendes
 
-## Fase 8 – Innhold, kvalitet og lansering ✅ (unntatt røyktesten)
+## Fase 8 – Innhold, kvalitet og lansering ✅
 - [x] 70+ filosofer (totalt 80), alle 9 tradisjoner, 13 kvinner, 6 nordiske; alle `reviewed: true`
 - [x] `/faktasjekk` uten feil (interaktiv Faktasjekk-side + `npm run faktasjekk`)
 - [x] Om-side: metode, temaprofiler er skjønn, kilder og bildelisenser
 - [x] Klasseromsmodus (stor tekst, tilpasset projektor/storskjerm)
 - [x] Ytelse: JS på første side under 200 kB gzip (`npm run budget`, også i CI)
-- [ ] Røyktest i nettleser av hovedflyten. Avkrysset fram til 2026-11-20 med «62/62 tester grønne (`npm run e2e`)», men 62 var hele Vitest-suiten, og `npm run e2e` kjørte bare 8 tester som teller filosofer og tradisjoner i dataene. Ingen test åpner appen i en nettleser (TST-03). Skriptet er fjernet; innholdstestene kjøres av `npm test`.
+- [x] Røyktest i nettleser av hovedflyten: `npm run e2e`, 5 Playwright-tester mot det bygde nettstedet, én per brukerhistorie US-001–US-005, også i CI (B-018). Linja var avkrysset fram til 2026-11-20 med «62/62 tester grønne (`npm run e2e`)», men 62 var hele Vitest-suiten, og det gamle `e2e`-skriptet kjørte bare 8 tester som teller filosofer og tradisjoner (TST-03).
 - [x] Delbare lenker med forhåndsvisningsbilde (Open Graph og Twitter Cards i `index.html`)
 - [x] `npm run publiser` klargjort for Firebase Hosting 🎉
 

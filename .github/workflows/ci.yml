@@ -36,3 +36,31 @@ jobs:
       - run: npm run build
       # Ytelsesbudsjett: JS på første side < 200 kB gzip (global CLAUDE.md).
       - run: npm run budget
+      # Røyktest i Chromium mot det bygde nettstedet (B-018). Ligger i samme jobb som
+      # bygget, så den gjenbruker dist/ og omfattes av regelsettet for main uten endring.
+      - name: Hent Playwright-versjon
+        id: playwright
+        run: echo "version=$(npx playwright --version | cut -d' ' -f2)" >> "$GITHUB_OUTPUT"
+      - name: Mellomlager for Chromium
+        id: browsers
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+      - name: Installer Chromium
+        if: steps.browsers.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps chromium
+      - name: Installer systempakker for Chromium
+        if: steps.browsers.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
+      - name: Røyktest (Playwright)
+        run: npm run e2e
+      - name: Last opp Playwright-rapport ved feil
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-rapport
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
