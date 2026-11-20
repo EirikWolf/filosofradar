@@ -3,6 +3,7 @@ import { preloadCardContent } from '../card/cardContent';
 import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { TRADITIONS, getTraditionMeta } from '../../lib/traditions';
+import { matchesSearch, normalizeQuery } from '../../lib/search';
 
 interface PhilosopherListProps {
   philosophers: Philosopher[];
@@ -15,18 +16,15 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
+    const query = normalizeQuery(search);
     return philosophers.filter((p) => {
-      const tradMeta = getTraditionMeta(p.tradition);
-      const matchesSearch =
-        p.name.toLowerCase().includes(search.toLowerCase()) ||
-        (p.nameOriginal && p.nameOriginal.toLowerCase().includes(search.toLowerCase())) ||
-        p.schools.some((s) => s.toLowerCase().includes(search.toLowerCase())) ||
-        tradMeta.name.toLowerCase().includes(search.toLowerCase()) ||
-        p.keyIdeas.some((idea) => idea.title.toLowerCase().includes(search.toLowerCase()) || idea.text.toLowerCase().includes(search.toLowerCase()));
+      // Lista finner også tradisjonens navn, f.eks. «kinesisk».
+      const matchesText =
+        matchesSearch(p, query) || getTraditionMeta(p.tradition).name.toLowerCase().includes(query);
 
       const matchesTradition = selectedTradition === 'all' || p.tradition === selectedTradition;
 
-      return matchesSearch && matchesTradition;
+      return matchesText && matchesTradition;
     });
   }, [philosophers, search, selectedTradition]);
 
