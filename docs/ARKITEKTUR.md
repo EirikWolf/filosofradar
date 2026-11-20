@@ -63,7 +63,7 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 ```
 
 ## Kommandoer (package.json)
-`dev`, `build` (kjører `build-content` først), `budget` (JS på første side < 200 kB gzip, kjøres i CI og i `publiser` etter build), `validate`, `lint`, `typecheck`, `test`, `e2e`, `check`, `wikidata`.
+`dev`, `build` (kjører `build-content` først), `budget` (JS på første side < 200 kB gzip, kjøres i CI og i `publiser` etter build), `validate`, `lint`, `typecheck`, `test`, `check`, `wikidata`.
 
 **Kodesplitting:** Forsiden laster bare radar, liste, tidslinje, nettverk og filosofdataene. Dypdykk, Ex.phil-innhold, historier og Zod lastes først når de trengs. Konstanter som appen trenger, ligger derfor i egne små filer (`src/schemas/ids.ts`, `src/features/exphil/exphilIds.ts`) og ikke sammen med skjemaer eller innhold.
 
