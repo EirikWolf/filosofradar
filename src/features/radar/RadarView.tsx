@@ -7,11 +7,11 @@ import {
   formatYear,
   formatLifeSpan,
   checkOverlap,
-  getStartYear,
   getEndYear,
   CURRENT_YEAR,
 } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
+import { matchesSearch, normalizeQuery, rankSearchMatches } from '../../lib/search';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
@@ -127,33 +127,10 @@ export const RadarView: React.FC<RadarViewProps> = ({
   }, [radarPoints]);
 
   // Søkematching for hurtig-dropdown
-  const searchMatches = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
-    if (!query) return [];
-
-    return philosophers
-      .filter((p) => {
-        const matchesName = p.name.toLowerCase().includes(query);
-        const matchesOrig = p.nameOriginal?.toLowerCase().includes(query);
-        const matchesSchool = p.schools.some((s) => s.toLowerCase().includes(query));
-        const matchesIdea = p.keyIdeas.some(
-          (k) => k.title.toLowerCase().includes(query) || k.text.toLowerCase().includes(query)
-        );
-        return matchesName || matchesOrig || matchesSchool || matchesIdea;
-      })
-      .sort((a, b) => {
-        const aName = a.name.toLowerCase();
-        const bName = b.name.toLowerCase();
-        if (aName === query) return -1;
-        if (bName === query) return 1;
-        if (aName.startsWith(query) && !bName.startsWith(query)) return -1;
-        if (!aName.startsWith(query) && bName.startsWith(query)) return 1;
-        const aYear = getStartYear(a);
-        const bYear = getStartYear(b);
-        return aYear - bYear;
-      })
-      .slice(0, 6);
-  }, [philosophers, searchQuery]);
+  const searchMatches = useMemo(
+    () => rankSearchMatches(philosophers, searchQuery),
+    [philosophers, searchQuery],
+  );
 
   // Den valgte filosofen (vises i Hurtigkort / Mini-observatoriet under radaren ved klikk)
   const selectedPoint = useMemo(() => {
@@ -192,7 +169,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
 
   // Filtrering
   const matchingIds = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
+    const query = normalizeQuery(searchQuery);
     const ids = new Set<string>();
 
     for (const pt of radarPoints) {
@@ -211,17 +188,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
         continue;
       }
       // 4. Tekstsøk (navn, opprinnelig navn, skoler, idéer)
-      if (query) {
-        const matchesName = p.name.toLowerCase().includes(query);
-        const matchesOrig = p.nameOriginal?.toLowerCase().includes(query);
-        const matchesSchool = p.schools.some((s) => s.toLowerCase().includes(query));
-        const matchesIdea = p.keyIdeas.some(
-          (k) => k.title.toLowerCase().includes(query) || k.text.toLowerCase().includes(query),
-        );
-        if (!matchesName && !matchesOrig && !matchesSchool && !matchesIdea) {
-          continue;
-        }
-      }
+      if (!matchesSearch(p, query)) continue;
       ids.add(p.id);
     }
     return ids;

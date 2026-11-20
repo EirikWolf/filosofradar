@@ -53,7 +53,7 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 │  ├─ schemas/                  Zod-skjemaer; ids.ts har konstanter uten Zod
 │  ├─ generated/                bygget innhold (git-ignorert)
 │  ├─ lib/                      ren logikk med tester: years, polar, timeScale, layout, influence,
-│  │                            similarity, quotes, sound, telemetry …
+│  │                            similarity, search, galaxy, quotes, sound, telemetry …
 │  ├─ components/               ErrorBoundary, SweepBeam, ThemeRadar
 │  ├─ hooks/                    useDialogFocus (fokus i alle dialoger)
 │  └─ features/                 radar, timeline, galaxy, network, list, card, comparison, deepdive,

@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react';
-import type { Philosopher, TraditionId } from '../../schemas/philosopher';
-import { TRADITION_SECTOR_ORDER, getSectorAngles } from '../../lib/polar';
+import type { Philosopher } from '../../schemas/philosopher';
+import { TRADITION_SECTOR_ORDER } from '../../lib/polar';
 import { getTraditionMeta, TRADITIONS } from '../../lib/traditions';
-import { formatLifeSpan, getStartYear } from '../../lib/years';
+import { formatLifeSpan } from '../../lib/years';
+import { galaxyPosition } from '../../lib/galaxy';
 import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import { stepGalaxyCamera, type GalaxyCamera } from '../../lib/galaxyCamera';
@@ -112,51 +113,20 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
   const lastMousePosRef = useRef({ x: 0, y: 0 });
 
   // Forhåndsberegn 3D-koordinater for alle filosofer i galaksen
-  const stars3D = useMemo<Star3D[]>(() => {
-    // Sektorvinkler for tradisjonene
-    const sectorAnglesMap = new Map<TraditionId, { midAngle: number }>();
-    TRADITION_SECTOR_ORDER.forEach((tid) => {
-      const angles = getSectorAngles(tid);
-      sectorAnglesMap.set(tid, { midAngle: angles.midAngle });
-    });
-
-    return philosophers.map((p) => {
-      const meta = getTraditionMeta(p.tradition);
-      const angles = sectorAnglesMap.get(p.tradition) || { midAngle: 0 };
-
-      // Radius basert på kronologi:
-      // Eldste filosofer (~800 f.Kr.) i den lysende galaksekjernen (~85 enheter)
-      // Moderne filosofer (1900-2025) i de ytre spiralarmene (~340 enheter)
-      const birth = getStartYear(p);
-      const normalizedYear = Math.max(0, Math.min(1, (birth - -800) / (2025 - -800)));
-      const radius = 80 + Math.pow(normalizedYear, 0.85) * 260;
-
-      // Spiralvridning: Galaksen roterer svakt utover som Melkeveien
-      const spiralTwist = normalizedYear * 1.8;
-      const baseAngleRad = (angles.midAngle * Math.PI) / 180;
-      const theta = baseAngleRad + spiralTwist;
-
-      // X og Z i galakseplanet
-      const x = Math.cos(theta) * radius;
-      const z = Math.sin(theta) * radius;
-
-      // Y (høyde over/under skiven): Enkelte tradisjoner og individer bølger svakt i 3D
-      // Gir ekte kosmisk tredimensjonal dybde
-      const seed = Math.sin(birth * 13.37);
-      const y = seed * 38;
-
-      return {
-        id: p.id,
-        philosopher: p,
-        x,
-        y,
-        z,
-        color: meta.color,
-        traditionName: meta.name,
-        birthYear: birth,
-      };
-    });
-  }, [philosophers]);
+  const stars3D = useMemo<Star3D[]>(
+    () =>
+      philosophers.map((p) => {
+        const meta = getTraditionMeta(p.tradition);
+        return {
+          id: p.id,
+          philosopher: p,
+          ...galaxyPosition(p),
+          color: meta.color,
+          traditionName: meta.name,
+        };
+      }),
+    [philosophers],
+  );
 
   // Bakgrunnsstøv og fjerne stjerner (3D kosmos), laget én gang per sidelast
   const dustParticles = DUST_PARTICLES;
