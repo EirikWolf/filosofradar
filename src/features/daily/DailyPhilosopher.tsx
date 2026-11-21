@@ -3,6 +3,7 @@ import type { Philosopher } from '../../schemas/philosopher';
 import { getTraditionMeta } from '../../lib/traditions';
 import { sound } from '../../lib/sound';
 import { preloadCardContent } from '../card/cardContent';
+import { getDailyPhilosopherIndex } from '../../lib/daily';
 
 interface DailyPhilosopherProps {
   philosophers: Philosopher[];
@@ -20,10 +21,7 @@ export const DailyPhilosopher: React.FC<DailyPhilosopherProps> = ({
   // Finn dagens filosof deterministisk basert på kalenderdag
   const { dailyPhilosopher, dateString } = useMemo(() => {
     const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = now.getTime() - start.getTime();
-    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const p = philosophers[dayOfYear % philosophers.length];
+    const p = philosophers.length > 0 ? philosophers[getDailyPhilosopherIndex(now, philosophers.length)] : undefined;
 
     const options: Intl.DateTimeFormatOptions = {
       day: 'numeric',
