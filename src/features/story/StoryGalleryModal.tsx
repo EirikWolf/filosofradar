@@ -91,11 +91,11 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
   const handleLaunchStory = (summary: StorySummary) => {
     sound.playStarSelect();
     const deepDive = PHILOSOPHER_DEEP_DIVES[summary.philosopherId];
-    const experiment = deepDive?.thoughtExperiments?.find(
-      (te) => te.title.toLowerCase().includes(summary.experimentTitle.toLowerCase()) ||
-              summary.experimentTitle.toLowerCase().includes(te.title.toLowerCase())
-    ) || {
+    // Samme kobling som fra filosofkortet: storyKey, ikke tittel (ARK-02). Fortellinger
+    // uten tankeeksperiment (f.eks. Foot, som ikke er på radaren) får et syntetisk et.
+    const experiment = deepDive?.thoughtExperiments?.find((te) => te.storyKey === summary.key) || {
       title: summary.experimentTitle,
+      storyKey: summary.key,
       description: summary.teaser,
       takeaway: summary.headline,
       image: summary.image,
