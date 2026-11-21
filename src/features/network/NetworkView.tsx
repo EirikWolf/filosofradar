@@ -164,7 +164,11 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
   // Før første måling: samme størrelse som før, så siden ikke hopper.
   const width = dimensions?.width ?? 900;
   const height = dimensions?.height ?? 600;
-  const nodes = layout?.nodes ?? [];
+  // Nodene tegnes i tidsrekkefølge, så Tab går fra eldst til yngst (DESIGN.md §7).
+  const nodesInTimeOrder = useMemo(
+    () => [...(layout?.nodes ?? [])].sort((a, b) => a.bornYear - b.bornYear),
+    [layout],
+  );
   const links = layout?.links ?? [];
   const edgesVisible = phase === 'settled' || phase === 'dragging';
   const atStart = phase === 'start';
@@ -372,7 +376,7 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
 
           {/* 2. Nodelaget (Filosof-stjerner) */}
           <g className="nodes">
-            {nodes.map((node) => {
+            {nodesInTimeOrder.map((node) => {
               if (node.x == null || node.y == null) return null;
 
               const meta = getTraditionMeta(node.tradition);
@@ -401,15 +405,42 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
                         ? `transform ${NETWORK_GLIDE_MS}ms ${GLIDE_EASING}, opacity ${NETWORK_GLIDE_MS}ms`
                         : 'opacity 300ms',
                   }}
-                  className="cursor-pointer group"
+                  className="cursor-pointer group outline-none"
+                  role="button"
+                  tabIndex={0}
+                  // Navnet begynner med den synlige teksten («Konfucius» og tallet i noden), så
+                  // talestyring virker (WCAG 2.5.3); axe meldte ellers label-content-name-mismatch.
+                  aria-label={`${node.name}, ${node.connectionCount} koblinger (${formatLifeSpan(node.philosopher)}): påvirket av ${node.philosopher.influencedBy.length}, inspirerte ${node.philosopher.influences?.length ?? 0}`}
                   onMouseEnter={() => setHoveredId(node.id)}
                   onMouseLeave={() => setHoveredId(null)}
+                  // Fokus gjør det samme som å holde pekeren over: viser koblingene og infoboksen.
+                  onFocus={() => setHoveredId(node.id)}
+                  onBlur={() => setHoveredId(null)}
                   onClick={() => {
                     setSelectedId(selectedId === node.id ? null : node.id);
                     onOpenCard?.(node.id);
                   }}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setSelectedId(node.id);
+                      onOpenCard?.(node.id);
+                    } else if (e.key === 'Escape') {
+                      setSelectedId(null);
+                      setHoveredId(null);
+                    }
+                  }}
                   onPointerDown={(e) => handlePointerDown(node, e)}
                 >
+                  {/* Synlig fokus for tastaturbrukere (WCAG 2.4.7) */}
+                  <circle
+                    r={radius + 6}
+                    fill="none"
+                    stroke="#f6c85f"
+                    strokeWidth="2.5"
+                    className="opacity-0 group-focus-visible:opacity-100 pointer-events-none"
+                  />
+
                   {/* Ytre glød hvis i fokus eller del av lengste slekt */}
                   {(isLineageNode || isNodeHovered || isNodeSelected) && (
                     <circle
@@ -440,6 +471,20 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
                     className="filter drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]"
                   />
 
+                  {/* Navnelapp */}
+                  <text
+                    y={radius + 13}
+                    textAnchor="middle"
+                    fill={isLineageNode ? '#f6c85f' : '#ffffff'}
+                    fontSize="11"
+                    fontWeight={isNodeHovered || isLineageNode ? 'bold' : 'normal'}
+                    className="font-serif pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
+                  >
+                    {/* Mellomrommet skiller navnet fra tallet i den synlige teksten («Sokrates 14»),
+                        som må stå i det tilgjengelige navnet (WCAG 2.5.3). */}
+                    {node.name}{' '}
+                  </text>
+
                   {/* Antall koblinger-badge i sentrum av noden */}
                   <text
                     textAnchor="middle"
@@ -450,18 +495,6 @@ export const NetworkView: React.FC<NetworkViewProps> = ({
                     className="font-mono pointer-events-none"
                   >
                     {node.connectionCount}
-                  </text>
-
-                  {/* Navnelapp */}
-                  <text
-                    y={radius + 13}
-                    textAnchor="middle"
-                    fill={isLineageNode ? '#f6c85f' : '#ffffff'}
-                    fontSize="11"
-                    fontWeight={isNodeHovered || isLineageNode ? 'bold' : 'normal'}
-                    className="font-serif pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
-                  >
-                    {node.name}
                   </text>
                 </g>
               );
