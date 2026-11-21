@@ -12,6 +12,7 @@ import {
 } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 import { matchesSearch, normalizeQuery, rankSearchMatches } from '../../lib/search';
+import { bornBetween, historicalYear, skipYearZero } from '../../lib/timeMachine';
 import { THEME_LIST } from '../../lib/themes';
 import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
@@ -227,12 +228,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
       }
       if (nextYear <= fromYear) return;
 
-      const newlyBorn = new Set<string>();
-      for (const pt of radarPoints) {
-        if (pt.birthYear >= fromYear && pt.birthYear <= nextYear) {
-          newlyBorn.add(pt.id);
-        }
-      }
+      const newlyBorn = new Set(bornBetween(radarPoints, fromYear, nextYear).map((pt) => pt.id));
       if (newlyBorn.size === 0) return;
 
       sound.playSupernovaBirth();
@@ -433,7 +429,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
         <div className="flex items-center gap-2 text-center">
           <span className="text-xs text-star-dim font-serif">Historisk tid:</span>
           <span className="font-serif text-lg md:text-xl font-bold text-gold drop-shadow-[0_0_10px_rgba(246,200,95,0.5)]">
-            {isTimeMachineActive ? formatYear(Math.round(currentTime)) : 'Nåtid (alle epoker)'}
+            {isTimeMachineActive ? formatYear(historicalYear(currentTime)) : 'Nåtid (alle epoker)'}
           </span>
         </div>
 
@@ -498,12 +494,13 @@ export const RadarView: React.FC<RadarViewProps> = ({
               type="range"
               min={AXIS_START_YEAR}
               max={AXIS_END_YEAR}
-              value={Math.round(currentTime)}
+              value={historicalYear(currentTime)}
               // Uten navn og verditekst leser skjermlesere bare «-430» (TST-05, WCAG 4.1.2).
               aria-label="Tidsmaskin: velg år"
-              aria-valuetext={sliderYearText(Math.round(currentTime))}
+              aria-valuetext={sliderYearText(historicalYear(currentTime))}
               onChange={(e) => {
-                moveTimeTo(Number(e.target.value));
+                // År 0 finnes ikke (B-003): glideren går videre i samme retning.
+                moveTimeTo(skipYearZero(Number(e.target.value), timeRef.current));
                 setIsPlaying(false);
               }}
               className="flex-1 accent-cyan-glow cursor-pointer h-2 bg-cosmos-dark rounded-lg border border-cyan-glow/30"

@@ -116,3 +116,16 @@ export function getEndYear(p: LifeSpan, currentYear: number): number {
   if (p.floruit) return p.floruit.to;
   return currentYear;
 }
+
+/**
+ * Hvor mange år filosofen levde, eller har levd så langt. Går gjennom
+ * calculateLifespan, så år 0 ikke telles med (B-003): Seneca (4 f.Kr.–65) ble 68,
+ * ikke 69. Uten kjent fødselsår, eller med fødselsår men ukjent dødsår, finnes
+ * ingen levealder å vise.
+ */
+export function lifespanInYears(p: LifeSpan, currentYear: number): number | null {
+  if (!p.born) return null;
+  if (p.died) return calculateLifespan(p.born.year, p.died.year);
+  if (p.floruit) return null;
+  return calculateLifespan(p.born.year, currentYear);
+}
