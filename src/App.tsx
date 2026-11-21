@@ -83,6 +83,9 @@ export const App: React.FC = () => {
 
   const changeView = useCallback((nextView: ViewMode, pushHistory = true) => {
     setView(nextView);
+    // En markering fra «Se på radaren» gjelder bare den ene gangen. Ellers dukket
+    // den opp igjen neste gang radaren ble vist, f.eks. etter Tilbake.
+    setFocusedRadarId(null);
     if (['radar', 'galaxy', 'timeline', 'network', 'list'].includes(nextView)) {
       setLastObservatoryView(nextView);
     }
@@ -173,6 +176,8 @@ export const App: React.FC = () => {
         setLastObservatoryView('radar');
       }
 
+      setFocusedRadarId(null);
+
       const fParam = params.get('f');
       if (fParam && philosophers.some((p) => p.id === fParam)) {
         setActiveCardId(fParam);
@@ -204,6 +209,25 @@ export const App: React.FC = () => {
     const url = new URL(window.location.href);
     url.searchParams.set('f', id);
     window.history.pushState({}, '', url.toString());
+  }, []);
+
+  // «Se på radaren» fra alle visninger: bytt til radaren, lukk et åpent kort og marker
+  // stjernen. Ex.phil-huben, galaksen og quizen åpnet tidligere kortet i stedet.
+  // Ett nytt historikkpunkt, så Tilbake går til visningen man kom fra.
+  const showOnRadar = useCallback((id?: string) => {
+    setView('radar');
+    setLastObservatoryView('radar');
+    setActiveCardId(null);
+    setFocusedRadarId(id && isKnownPhilosopherId(id) ? id : null);
+    const url = new URL(window.location.href);
+    url.searchParams.delete('v');
+    url.searchParams.delete('f');
+    window.history.pushState({}, '', url.toString());
+    setTimeout(() => {
+      document
+        .getElementById('radar-canvas-container')
+        ?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+    }, 50);
   }, []);
 
   const closeCard = useCallback(() => {
@@ -527,17 +551,7 @@ export const App: React.FC = () => {
           <DailyPhilosopher
             philosophers={philosophers}
             onOpenCard={openCard}
-            onNavigateToRadar={(id) => {
-              changeView('radar');
-              setActiveCardId(null);
-              setFocusedRadarId(id);
-              setTimeout(() => {
-                const el = document.getElementById('radar-canvas-container');
-                if (el) {
-                  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-              }, 50);
-            }}
+            onNavigateToRadar={showOnRadar}
           />
         </div>
       )}
@@ -558,10 +572,7 @@ export const App: React.FC = () => {
             <Galaxy3DView
               philosophers={philosophers}
               onOpenCard={openCard}
-              onNavigateToRadar={(id) => {
-                changeView('radar');
-                if (id) openCard(id);
-              }}
+              onNavigateToRadar={showOnRadar}
               focusPhilosopherId={currentTourStop?.philosopherId}
             />
           ) : view === 'timeline' ? (
@@ -580,12 +591,7 @@ export const App: React.FC = () => {
               philosophers={philosophers}
               onOpenCard={openCard}
               onComparePhilosophers={(ids) => setComparingIds(ids)}
-              onNavigateToRadar={(focusId) => {
-                changeView('radar');
-                if (focusId) {
-                  openCard(focusId);
-                }
-              }}
+              onNavigateToRadar={showOnRadar}
               activeTab={exphilTab}
               onTabChange={setExphilTab}
             />
@@ -593,12 +599,7 @@ export const App: React.FC = () => {
             <QuizView
               philosophers={philosophers}
               onOpenCard={openCard}
-              onNavigateToRadar={(highlightId) => {
-                changeView('radar');
-                if (highlightId) {
-                  openCard(highlightId);
-                }
-              }}
+              onNavigateToRadar={showOnRadar}
             />
           ) : view === 'ethics' ? (
             <EthicsLabView
