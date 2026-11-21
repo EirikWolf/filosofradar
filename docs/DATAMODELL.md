@@ -6,6 +6,7 @@ Ingen database – innhold endres med vanlige commits.
 
 ## Årstall
 - Heltall. **Negative tall = f.Kr.** (−470 = 470 f.Kr.). Det finnes ikke år 0: året før 1 e.Kr. er 1 f.Kr. (−1).
+  Skjemaet avviser år 0 i `born`, `died` og `floruit`, og `formatYear(0)` kaster.
 - Visning via `formatYear()` i `src/lib/years.ts` (med tester): `-470` → «470 f.Kr.», `1724` → «1724».
 - Lengde på et liv over år 0: `died - born - 1` når born < 0 < died. Testes eksplisitt.
 - Usikkerhet: `approx: true` gir «ca.» foran. Kun kjent virkeperiode: bruk `floruit`.
@@ -66,7 +67,9 @@ Rekkefølgen kan justeres i fase 4 for at naboer skal ha mest mulig historisk ko
 
 ## Validering (kjøres i `npm run validate` og i bygget)
 - Filnavn = id; id-er er unike.
-- Alle `influencedBy` peker på eksisterende filosofer, og påvirkeren er født før den påvirkede.
+- Alle `influencedBy` peker på eksisterende filosofer, og påvirkeren er født før den påvirkede (samme år er lov).
+- Ingen filosof påvirker seg selv, og påvirkningene går ikke i sirkel. Reglene står i
+  `validateRelations` (`src/lib/relations.ts`), som `npm run validate` og bygget kjører.
 - `died >= born`; minst én av `born`/`floruit` finnes.
 - Alle 8 temaer har verdi 0–5.
 - `quote` har `work` og `source`.

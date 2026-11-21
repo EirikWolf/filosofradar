@@ -20,8 +20,12 @@ export interface LifeSpan {
 
 /**
  * Formaterer et årstall til en pen lesbar tekst (f.eks. «470 f.Kr.» eller «1724»).
+ * År 0 finnes ikke (B-003). Det kastes i stedet for å vise «0», slik
+ * calculateLifespan gjør; skjemaet avviser år 0 i innholdet, og tidsmaskinen
+ * hopper over det (historicalYear).
  */
 export function formatYear(year: number, approx = false): string {
+  if (year === 0) throw new RangeError('År 0 finnes ikke i historisk tidsregning');
   const prefix = approx ? 'ca. ' : '';
   if (year < 0) {
     return `${prefix}${Math.abs(year)} f.Kr.`;

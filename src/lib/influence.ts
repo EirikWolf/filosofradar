@@ -99,11 +99,15 @@ export function getLongestLineage(philosophers: Philosopher[]): LineageResult {
 
   // Memoization av lengste sti fra hver node
   const memo = new Map<string, string[]>();
+  // Noder på stien vi står i. Valideringen avviser sirkler (validateRelations), men
+  // en sirkel som likevel slipper gjennom skal kutte stien, ikke sprenge stakken.
+  const visiting = new Set<string>();
 
   function dfs(currentId: string): string[] {
     if (memo.has(currentId)) {
       return memo.get(currentId)!;
     }
+    if (visiting.has(currentId)) return [];
 
     const currentP = map.get(currentId);
     if (!currentP || !currentP.influences || currentP.influences.length === 0) {
@@ -112,13 +116,16 @@ export function getLongestLineage(philosophers: Philosopher[]): LineageResult {
       return single;
     }
 
+    visiting.add(currentId);
     let longestSubPath: string[] = [];
+    // Ved like lange kjeder vinner den første i influences (`>`, ikke `>=`).
     for (const childId of currentP.influences) {
       const sub = dfs(childId);
       if (sub.length > longestSubPath.length) {
         longestSubPath = sub;
       }
     }
+    visiting.delete(currentId);
 
     const fullPath = [currentId, ...longestSubPath];
     memo.set(currentId, fullPath);
