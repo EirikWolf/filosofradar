@@ -442,7 +442,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
 
             {contemporaries.length === 0 ? (
               <p className="text-xs text-star-dim italic">
-                Ingen andre av de 21 filosofene hadde overlappende levetid.
+                Ingen andre av de {philosophers.length} filosofene hadde overlappende levetid.
               </p>
             ) : (
               <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pr-1">
