@@ -7,7 +7,14 @@ import {
   AXIS_START_YEAR,
   type ScaleMode,
 } from '../../lib/timeScale';
-import { formatLifeSpan, checkOverlap, getStartYear, getEndYear, CURRENT_YEAR } from '../../lib/years';
+import {
+  formatLifeSpan,
+  checkOverlap,
+  getStartYear,
+  getEndYear,
+  lifespanInYears,
+  CURRENT_YEAR,
+} from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
 
 interface TimelineViewProps {
@@ -111,6 +118,10 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
     if (!selectedId) return null;
     return spans.find((s) => s.philosopher.id === selectedId) || null;
   }, [spans, selectedId]);
+
+  // Levealderen uten år 0 (B-003). Stolpens endYear er strukket til minst 5 år og
+  // kan derfor ikke brukes til dette.
+  const selectedAge = selectedSpan ? lifespanInYears(selectedSpan.philosopher, CURRENT_YEAR) : null;
 
   // Finn alle som levde samtidig med den valgte filosofen
   const contemporaries = useMemo(() => {
@@ -406,7 +417,8 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
               {selectedSpan.philosopher.name}
             </h3>
             <p className="text-sm text-cyan-glow font-sans mt-0.5">
-              Levetid: {formatLifeSpan(selectedSpan.philosopher)} ({selectedSpan.endYear - selectedSpan.startYear} år)
+              Levetid: {formatLifeSpan(selectedSpan.philosopher)}
+              {selectedAge !== null && ` (${selectedAge} år)`}
             </p>
             {onOpenCard && (
               <button
