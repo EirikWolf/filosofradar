@@ -87,6 +87,8 @@ describe('«Vis på radaren»', () => {
     await waitFor(() => expect(selectedOnRadar()).toBe('Sokrates'));
 
     fireEvent.click(screen.getByRole('button', { name: /Tidslinjen$/ }));
+    // Tidslinjen lastes lat (YTE-06). Vent til den vises, slik en bruker ville gjort.
+    await screen.findByRole('button', { name: /Ærlig lineær/ }, { timeout: 5000 });
     fireEvent.click(await screen.findByRole('button', { name: /^✦ Radaren$/ }));
     await waitFor(() => expect(document.querySelector('svg g[role="button"]')).not.toBeNull());
     expect(selectedOnRadar()).toBeNull();
