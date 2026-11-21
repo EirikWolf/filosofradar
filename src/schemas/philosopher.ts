@@ -5,14 +5,21 @@ import { THEME_IDS, TRADITION_IDS } from './ids';
 export { THEME_IDS, TRADITION_IDS };
 export type { ThemeId, TraditionId } from './ids';
 
+// År 0 finnes ikke i historisk tidsregning (B-003). Avvises her, så formatYear og
+// calculateLifespan aldri får det fra innholdet.
+const HistoricalYearSchema = z
+  .number()
+  .int()
+  .refine((year) => year !== 0, { message: 'År 0 finnes ikke (B-003): bruk -1 (1 f.Kr.) eller 1' });
+
 export const YearSchema = z.object({
-  year: z.number().int(),
+  year: HistoricalYearSchema,
   approx: z.boolean().default(false),
 });
 
 export const FloruitSchema = z.object({
-  from: z.number().int(),
-  to: z.number().int(),
+  from: HistoricalYearSchema,
+  to: HistoricalYearSchema,
 });
 
 export const KeyIdeaSchema = z.object({

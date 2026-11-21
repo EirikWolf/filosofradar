@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PhilosopherSchema, type PhilosopherInput, type Philosopher } from '../src/schemas/philosopher';
 import { QuizQuestionsSchema, type QuizQuestion } from '../src/schemas/quiz';
+import { validateRelations } from '../src/lib/relations';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -79,24 +80,9 @@ function run() {
     }
   }
 
-  // Sjekk relasjoner mellom filosofene (influencedBy)
-  for (const p of rawPhilosophers) {
-    for (const inflId of p.influencedBy) {
-      const influencer = idMap.get(inflId);
-      if (!influencer) {
-        errors.push(`[${p.id}] "influencedBy" peker til ukjent filosof-ID "${inflId}"`);
-      } else {
-        // Sjekk at påvirkeren er eldre enn den påvirkede
-        const pYear = p.born?.year ?? p.floruit?.from ?? 0;
-        const inflYear = influencer.born?.year ?? influencer.floruit?.from ?? 0;
-        if (inflYear > pYear) {
-          errors.push(
-            `[${p.id}] Påvirker "${inflId}" (${inflYear}) er født ETTER ${p.id} (${pYear})!`,
-          );
-        }
-      }
-    }
-  }
+  // Sjekk relasjoner mellom filosofene (influencedBy): ukjente ID-er, selvreferanse,
+  // påvirker født etter den påvirkede, og sirkler (TST-10).
+  errors.push(...validateRelations(rawPhilosophers));
 
   if (errors.length > 0) {
     console.error('\n❌ Følgende feil må rettes:');
