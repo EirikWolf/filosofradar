@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef, Suspense } from 'react';
 import { PhilosopherList } from './features/list/PhilosopherList';
-import { TimelineView } from './features/timeline/TimelineView';
 import { RadarView } from './features/radar/RadarView';
-import { NetworkView } from './features/network/NetworkView';
 import { PhilosopherCard } from './features/card/PhilosopherCard';
 import { DailyPhilosopher } from './features/daily/DailyPhilosopher';
 import { TourPlayer } from './features/tours/TourPlayer';
@@ -16,6 +14,15 @@ import type { ExphilTab } from './features/exphil/ExphilHub';
 import type { ThoughtExperiment } from './features/deepdive/types';
 
 // Kodeoppdeling via lazy loading for sekundære og tyngre moduler
+// Tidslinjen og idénettverket vises ikke på forsiden. Nettverket drar med seg d3-force,
+// som ellers ble forhåndslastet på første side (YTE-06). Lista lastes ikke lat: den er
+// det tilgjengelige alternativet til radaren og skal ikke blinke inn.
+const TimelineView = React.lazy(() =>
+  import('./features/timeline/TimelineView').then((m) => ({ default: m.TimelineView })),
+);
+const NetworkView = React.lazy(() =>
+  import('./features/network/NetworkView').then((m) => ({ default: m.NetworkView })),
+);
 const Galaxy3DView = React.lazy(() =>
   import('./features/galaxy/Galaxy3DView').then((m) => ({ default: m.Galaxy3DView })),
 );

@@ -11,6 +11,10 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 
 const FIRST_PAGE_JS_BUDGET_KB = 200;
+// Moduler som ikke skal lastes på forsiden (YTE-06). Tidslinjen og idénettverket
+// lastes lat, og d3-force brukes bare av nettverket. Havner en av dem på første side
+// igjen, f.eks. via en statisk import, feiler sjekken i stedet for at bunten vokser stille.
+const MUST_NOT_BE_ON_FIRST_PAGE = [/^assets\/d3-/, /^assets\/TimelineView-/, /^assets\/NetworkView-/];
 const DIST = path.resolve(import.meta.dirname, '../dist');
 
 const html = fs.readFileSync(path.join(DIST, 'index.html'), 'utf-8');
@@ -37,6 +41,11 @@ if (jsTotal > FIRST_PAGE_JS_BUDGET_KB) {
   process.stderr.write(
     `❌ JS på første side er ${jsTotal.toFixed(1)} kB gzip, over budsjettet på ${FIRST_PAGE_JS_BUDGET_KB} kB.\n`,
   );
+  process.exit(1);
+}
+const eager = assets.filter((asset) => MUST_NOT_BE_ON_FIRST_PAGE.some((re) => re.test(asset)));
+if (eager.length > 0) {
+  process.stderr.write(`❌ Disse skal lastes lat, men ligger på første side: ${eager.join(', ')}\n`);
   process.exit(1);
 }
 process.stdout.write('✅ Innenfor budsjett.\n');
