@@ -49,6 +49,7 @@ Nye avhengigheter: begrunn og loggfør i BESLUTNINGER.md.
 - `npm run budget` – sjekk at JS på første side er under 200 kB gzip (kjøres etter build)
 - `npm run validate` – sjekk alle filosof-filer mot skjemaet
 - `npm run images` – lag 960 px-varianter av nye illustrasjoner i `public/images/hooks/` (B-016)
+- `npm run sjekk-lenker` – slå opp alle NB-lenker i Nasjonalbibliotekets katalog (nett, ikke i CI; ARK-05)
 - `npm run lint` · `npm run typecheck` · `npm test`
 - `npm run e2e` – røyktest i Chromium mot det bygde nettstedet (kjør `npm run build` først; B-018)
 - `npm run check` – alt over; må være grønn før en fase er ferdig
