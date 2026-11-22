@@ -2184,37 +2184,17 @@ export const BESPOKE_STORIES: Record<string, StoryScript> = {
 };
 
 /**
- * Normaliserer tekst for nøkkel-oppslag
- */
-function normalizeKey(str: string): string {
-  return str.toLowerCase().replace(/['"«»’]/g, '').trim();
-}
-
-/**
- * Henter kuratert manus eller genererer et strukturert 4-slide manus automatisk.
+ * Henter den kuraterte fortellingen tankeeksperimentet peker på med storyKey, eller
+ * genererer et strukturert 4-slide manus. Koblingen gjettes ikke ut fra tittelen
+ * (ARK-02): tests/story-links.test.ts sjekker at hver nøkkel finnes.
  */
 export function getStoryScript(
   philosopherId: string,
   philosopherName: string,
   experiment: ThoughtExperiment,
 ): StoryScript {
-  const normTitle = normalizeKey(experiment.title);
-  const directKey = `${philosopherId}:${normTitle}`;
-
-  if (BESPOKE_STORIES[directKey]) {
-    return BESPOKE_STORIES[directKey];
-  }
-
-  // Søk etter nøkkel som matcher deler av tittelen
-  const foundKey = Object.keys(BESPOKE_STORIES).find((k) => {
-    if (!k.startsWith(`${philosopherId}:`)) return false;
-    const keyTitle = k.split(':')[1];
-    return normTitle.includes(keyTitle) || keyTitle.includes(normTitle);
-  });
-
-  if (foundKey && BESPOKE_STORIES[foundKey]) {
-    return BESPOKE_STORIES[foundKey];
-  }
+  const curated = experiment.storyKey ? BESPOKE_STORIES[experiment.storyKey] : undefined;
+  if (curated) return curated;
 
   // Automatisk fallback-generator som strukturerer eksperimentet i 4 faser
   return {

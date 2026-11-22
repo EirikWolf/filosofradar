@@ -22,6 +22,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Maieutikk (Jordmorkunsten)',
+        storyKey: 'sokrates:maieutikk (jordmorkunsten)',
         icon: '🏺',
         image: '/images/hooks/sokrates-jordmorkunsten.webp',
         description: 'Sokrates sammenlignet seg med sin mor som var jordmor. Han tilførte ingen ny lærdom, men hjalp samtalepartneren med å forløse sannheter som allerede lå slumrende i deres eget sinn.',
@@ -72,6 +73,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Hulelignelsen',
+        storyKey: 'platon:hulelignelsen',
         icon: '🕯️',
         image: '/images/hooks/platon-hulen.webp',
         description: 'Fanger sitter lenket fast i en mørk hule og ser bare skygger på veggen kastet av et bål. En fange slipper fri, ledes opp til overflaten, blendes av sollyset, og ser til slutt solen – Det Godes Idé.',
@@ -129,6 +131,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: 'De fire årsakene (Marmorstatuen)',
+        storyKey: 'aristoteles:de fire årsakene (marmorstatuen)',
         icon: '🏛️',
         image: '/images/hooks/aristoteles-marmorstatuen.webp',
         description: 'For å forstå en statue må du kjenne: 1. Stoffet (marmoren), 2. Formen (statuens skikkelse), 3. Virkeårsaken (billedhuggerens meisel), og 4. Formålet (å hedre guden Apollo).',
@@ -164,6 +167,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Den onde demonen (Malin génie)',
+        storyKey: 'descartes:det onde demon-eksperimentet',
         icon: '😈',
         image: '/images/hooks/descartes-demonen.webp',
         description: 'Tenk deg at det finnes en allmektig, ond demon som bruker all sin kraft på å lure sansene dine, slik at himmelen, jorden, farger og til og med 2+2=4 er ren illusjon.',
@@ -206,6 +210,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Deus sive Natura (Gud eller Naturen)',
+        storyKey: 'spinoza:deus sive natura (gud eller naturen)',
         icon: '🔍',
         image: '/images/hooks/spinoza-linsen.webp',
         description: 'Det finnes ikke en konge i himmelen som skapte universet utenfra. Hele kosmos – stjernene, naturlovene, menneskekroppen og tankene – er uttrykk for én og samme evige substans.',
@@ -246,6 +251,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Tabula Rasa (Den blanke tavlen)',
+        storyKey: 'locke:tabula rasa (den blanke tavlen)',
         icon: '📜',
         image: '/images/hooks/locke-vokstavlen.webp',
         description: 'Tenk deg sinnet ved fødselen som et hvitt papirark uten et eneste tegn. Hvor kommer alle forestillingene fra? Fra én eneste kilde: erfaring (sansning og refleksjon).',
@@ -293,6 +299,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Biljardkulene (Årsak og virkning)',
+        storyKey: 'hume:biljardkulene (årsak og virkning)',
         icon: '🎱',
         image: '/images/hooks/hume-biljardkulene.webp',
         description: 'Du ser den hvite kulen rulle over bordet og treffe den røde, og deretter ser du den røde rulle videre. Men så du noen gang selve «nødvendigheten» eller «årsakskraften»?',
@@ -347,6 +354,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Morderen ved døren',
+        storyKey: 'kant:morderen ved døren',
         icon: '🚪',
         image: '/images/hooks/kant-morderen-ved-doren.webp',
         description: 'En venn søker tilflukt i huset ditt. Like etter banker en morder på døren og spør om vennen din er inne. Kan du lyve for å redde vennens liv?',
@@ -389,6 +397,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Fuglene i gullburet',
+        storyKey: 'wollstonecraft:fuglene i gullburet',
         icon: '🕊️',
         image: '/images/hooks/wollstonecraft-gullburet.webp',
         description: 'Kvinner i samtiden ble oppdratt til å være pyntelige, svake og følelsesstyrte vesener som bare skulle sjarmere menn, lik finkultiverte sangfugler i forgylte bur.',
@@ -418,6 +427,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Herre-trell-dialektikken',
+        storyKey: 'hegel:herre-trell-dialektikken',
         icon: '⛓️',
         image: '/images/hooks/hegel-herre-og-trell.webp',
         description: 'To bevisstheter møtes og kjemper en kamp på liv og død om anerkjennelse. Den ene frykter døden og underkaster seg (trellen), mens den andre blir herren. Men gjennom sitt arbeid med den fysiske verdenen oppnår trellen etter hvert en dypere mestring og frihet enn den passive herren.',
@@ -458,6 +468,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Fremmedgjøringens fire former',
+        storyKey: 'marx:fremmedgjøringens fire former',
         icon: '🏭',
         image: '/images/hooks/marx-fabrikken.webp',
         description: 'Under kapitalismen mister fabrikkarbeideren kontroll over: 1. Produktet (som tilhører kapitaleieren), 2. Arbeidsprosessen (mekanisk slit), 3. Sin menneskelige natur (artsvesen redusert til et tannhjul), og 4. Sine medmennesker (konkurrenter i stedet for feller).',
@@ -492,6 +503,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Frihetens svimmelhet (Klippekanten)',
+        storyKey: 'kierkegaard:frihetens svimmelhet (klippekanten)',
         icon: '🧗',
         image: '/images/hooks/kierkegaard-klippekanten.webp',
         description: 'Når du står på kanten av et stup, skyldes angsten ikke bare at du kan falle ned, men den skremmende vissheten om at du *kan velge å kaste deg ut*.',
@@ -542,6 +554,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: 'Det gale mennesket med lykten',
+        storyKey: 'nietzsche:det gale mennesket med lykten',
         icon: '🏮',
         image: '/images/hooks/nietzsche-lykten.webp',
         description: 'En mann løper inn på markedsplassen midt på dagen med en tent lykt og roper: «Jeg søker Gud! … Vi har drept ham – dere og jeg!»',
@@ -571,6 +584,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Svaneproblemet (Asymmetrien)',
+        storyKey: 'popper:svaneproblemet (asymmetrien)',
         icon: '🦢',
         image: '/images/hooks/popper-svanen.webp',
         description: 'Uansett hvor mange tusen hvite svaner du observerer, kan du aldri være logisk sikker på at «alle svaner er hvite». Men ser du én eneste sort svane, vet du med 100 % logisk sikkerhet at hypotesen er falsk.',
@@ -605,6 +619,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Kelneren på kaféen (Ond tro)',
+        storyKey: 'sartre:kelneren på kaféen (ond tro)',
         icon: '☕',
         image: '/images/hooks/sartre-kelneren.webp',
         description: 'Se på kafékelneren: Bevegelsene hans er litt for presise, stemmen litt for høflig, balansen med brettet litt for overdrevet. Han spiller rollen som «kelner» for å late som om han *er* en gjenstand med fastlagte funksjoner.',
@@ -646,6 +661,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Kvinnen som «den Andre»',
+        storyKey: 'de-beauvoir:kvinnen som den andre',
         icon: '🪞',
         image: '/images/hooks/de-beauvoir-den-andre.webp',
         description: 'I all historisk mytologi og samfunnsteori er mannen satt som det universelle Subjektet («Mennesket»), mens kvinnen defineres som det relative, det avvikende – «den Andre».',
@@ -686,6 +702,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Det utvidede Selv',
+        storyKey: 'arne-naess:det utvidede selv',
         icon: '🏔️',
         image: '/images/hooks/arne-naess-tvergastein.webp',
         description: 'Når du ser et vakkert tre bli hugget ned, eller en elv bli lagt i rør, opplever du det ikke som et abstrakt tap; du kjenner det som et slag mot deg selv.',
@@ -718,6 +735,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Naturtilstanden (Alles krig mot alle)',
+        storyKey: 'hobbes:naturtilstanden (alles krig mot alle)',
         icon: '👑',
         image: '/images/hooks/hobbes-leviathan.webp',
         description: 'Se for deg hva som skjer hvis politiet, domstolene og lovene forsvinner over natten. Uten en felles overordnet makt vil alles frykt for alle føre til forebyggende angrep.',
@@ -758,6 +776,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Den første inngjerdringen av jord',
+        storyKey: 'rousseau:den første inngjerdringen av jord',
         icon: '🪵',
         image: '/images/hooks/rousseau-gjerdet.webp',
         description: '«Den første som gjerdet inn et stykke jord og sa: Dette er mitt!, og fant folk enfoldige nok til å tro ham, var det borgerlige samfunns sanne grunnlegger.»',
@@ -790,6 +809,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Bille i esken (Privatspråkargumentet)',
+        storyKey: 'wittgenstein:bille i esken (privatspråkargumentet)',
         icon: '🪲',
         image: '/images/hooks/wittgenstein-bille-eske.webp',
         description: 'Anta at alle mennesker har en liten eske med noe inni som kalles en «bille». Ingen kan noensinne se inn i en annens eske. Kunne ordet «bille» bety en privat følelse?',
@@ -829,6 +849,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Pæretreet i naboens hage',
+        storyKey: 'augustin:pæretreet i naboens hage',
         icon: '🍐',
         image: '/images/hooks/augustin-paeretreet.webp',
         description: 'Som tenåring snek Augustin seg inn i en hage og stjal umodne pærer bare for å kaste dem til grisene. Hvorfor? Ikke fordi han var sulten, men fordi han nøt selve overtredelsen.',
@@ -861,6 +882,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'De fem veier (Gudsbevisene)',
+        storyKey: 'aquinas:de fem veier (gudsbevisene)',
         icon: '⚙️',
         image: '/images/hooks/aquinas-urverket.webp',
         description: 'Alt som beveger seg i universet, beveges av noe annet. Men en uendelig kjede av bevegere bakover i tid er umulig.',
@@ -895,6 +917,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Panoptikon',
+        storyKey: 'foucault:panoptikon',
         icon: '👁️',
         image: '/images/hooks/foucault-panoptikon.webp',
         description: 'Et sirkulært fengsel tegnet av Jeremy Bentham der et sentralt tårn kan se inn i alle celler, men fangene kan aldri se om vakten er der eller ikke.',
@@ -929,6 +952,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Ondskapens banalitet',
+        storyKey: 'arendt:ondskapens banalitet',
         icon: '🏛️',
         image: '/images/hooks/arendt-glassburet.webp',
         description: 'I rettssalen så Arendt ikke en demonisk morder, men en mann som snakket i klisjeer og bare «gjorde plikten sin» for å fremme karrieren i et byråkrati.',
@@ -1107,6 +1131,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Lykten i dagslys',
+        storyKey: 'diogenes:lykten i dagslys',
         icon: '🏮',
         image: '/images/hooks/diogenes-lykten.webp',
         description: 'Diogenes gikk rundt i Athens gater med en tent lykt midt på blanke formiddagen. Da folk spurte hva han drev med, svarte han: «Jeg leter etter et menneske.»',
@@ -1146,6 +1171,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Pinnsvinenes dilemma',
+        storyKey: 'schopenhauer:pinnsvinenes dilemma',
         icon: '🦔',
         image: '/images/hooks/schopenhauer-piggsvinene.webp',
         description: 'På en kald vinterdag må en flokk pinnsvin rykke tett sammen for å holde varmen. Men når de kommer for nær, stikker piggene deres hverandre smertefullt. Rygger de unna, fryser de i hjel.',
@@ -1181,6 +1207,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: 'Kjempehjorten med for store gevir',
+        storyKey: 'zapffe:kjempehjorten med for store gevir',
         icon: '🦌',
         image: '/images/hooks/zapffe-kjempehjorten.webp',
         description: 'Den forhistoriske kjempehjorten utviklet gjennom evolusjonen så enorme gevir at den til slutt ikke klarte å løfte hodet eller rømme fra rovdyr. Mennesket har på samme måte utviklet en overdimensjonert bevissthet.',
@@ -1440,6 +1467,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Sommerfugldrømmen",
+        storyKey: 'zhuangzi:sommerfugldrømmen',
         icon: "🦋",
         image: "/images/hooks/zhuangzi-sommerfuglen.webp",
         description: "Zhuangzi drømte en gang at han var en sommerfugl som flagret sorgløst omkring uten å vite at han var Zhuangzi. Da han våknet, var han igjen Zhuangzi. Men drømte han at han var en sommerfugl, eller drømmer en sommerfugl nå at den er Zhuangzi?",
@@ -1447,6 +1475,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       },
       {
         title: "Kokken Ding som parterer oksen",
+        storyKey: 'zhuangzi:kokken ding som parterer oksen',
         icon: "🔪",
         image: "/images/hooks/zhuangzi-kokken-ding.webp",
         description: "Kokken Ding skar opp en okse med slike elegante, dansende bevegelser at kniven aldri traff et bein eller en sene. Etter 19 år var knivbladet like skarpt som da det kom fra slipesteinen, fordi han lot bladet gli gjennom de naturlige tomrommene.",
@@ -1691,6 +1720,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Den flytende mannen (Bevissthetens uavhengighet)",
+        storyKey: 'ibn-sina:den flyvende mannen',
         icon: "🌌",
         image: "/images/hooks/ibn-sina-mannen.webp",
         description: "Tenk deg at du blir skapt fullt bevisst i dette øyeblikk, men svevende i et totalt mørkt tomrom. Armene og bena er spredt så de ikke rører hverandre; øynene er blinde, ørene døve, og luften har samme temperatur som huden så du kjenner ingenting fysisk.",
@@ -1975,6 +2005,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
     thoughtExperiments: [
       {
         title: "Russells tekanne",
+        storyKey: 'russell:russells tekanne',
         icon: "🫖",
         image: "/images/hooks/russell-tekanne.webp",
         description: "Hvis jeg påstår at det kretser en bitte liten porselenstekanne i bane rundt solen mellom jorden og Mars, kan ingen motbevise meg, for den er for liten til å sees i teleskoper. Betyr det at det er rimelig å tro på den?",

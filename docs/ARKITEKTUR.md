@@ -72,6 +72,8 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 ## Illustrasjoner
 Hvert tankeeksperiment i dypdykkene har én scene i `content/illustrations/scenes.json`: filnavn, filosof, eksperimentets tittel og en engelsk prompt som bare beskriver motivet. Stilen, negativ prompt og størrelsen (1280 × 768) står én gang øverst i fila, så alle bildene får samme uttrykk. `tests/illustration-scenes.test.ts` feiler hvis et tankeeksperiment mangler scene, eller hvis en scene peker på et eksperiment som ikke finnes.
 
+Et tankeeksperiment kobles til en kuratert fortelling («▶ Se idéen på 45 sek») med `storyKey`, som peker på en nøkkel i `BESPOKE_STORIES` (`src/features/story/storyData.ts`). Filosofkortet og historiegalleriet bruker samme kobling. Uten `storyKey` lages en generert fortelling. `tests/story-links.test.ts` feiler hvis en nøkkel ikke finnes eller hører til en annen filosof, eller hvis en kuratert fortelling ikke har nøyaktig ett tankeeksperiment. Unntaket er fortellinger som bare finnes i galleriet, som Foots, fordi hun ikke er på radaren (B-014). Før ble koblingen gjettet ut fra tittelen (ARK-02).
+
 Bildene lages med Z-Image-Turbo på kitor med `scripts/illustrations/generate_on_kitor.py` (B-017). Skriptet tar en `image`-lease i kitor-arbiter, hopper over bilder som finnes, og kan startes på nytt etter avbrudd.
 
 ```

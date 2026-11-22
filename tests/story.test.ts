@@ -4,33 +4,24 @@ import type { ThoughtExperiment } from '../src/features/deepdive/types';
 import { storySpeech } from '../src/features/story/storySpeech';
 
 describe('Story-modus: Idéen på 45 sekunder', () => {
-  const targetPhilosophers = [
-    { id: 'platon', name: 'Platon', title: 'Hulelignelsen' },
-    { id: 'descartes', name: 'René Descartes', title: 'Det onde demon-eksperimentet' },
-    { id: 'ibn-sina', name: 'Ibn Sina (Avicenna)', title: 'Den flyvende mannen' },
-    { id: 'russell', name: 'Bertrand Russell', title: 'Russells tekanne' },
-    { id: 'foot', name: 'Philippa Foot', title: 'Sporvognsproblemet (Trolley Problem)' },
-    { id: 'aristoteles', name: 'Aristoteles', title: 'De fire årsakene (Marmorstatuen)' },
-    { id: 'hume', name: 'David Hume', title: 'Biljardkulene (Årsak og virkning)' },
-    { id: 'kant', name: 'Immanuel Kant', title: 'Morderen ved døren' },
-    { id: 'nietzsche', name: 'Friedrich Nietzsche', title: 'Det gale mennesket med lykten' },
-    { id: 'sartre', name: 'Jean-Paul Sartre', title: 'Kelneren på kaféen (Ond tro)' },
-    { id: 'popper', name: 'Karl Popper', title: 'Svaneproblemet (Asymmetrien)' },
-    { id: 'wittgenstein', name: 'Ludwig Wittgenstein', title: 'Bille i esken (Privatspråkargumentet)' },
-    { id: 'foucault', name: 'Michel Foucault', title: 'Panoptikon' },
-    { id: 'hobbes', name: 'Thomas Hobbes', title: 'Naturtilstanden (Alles krig mot alle)' },
-    { id: 'zhuangzi', name: 'Zhuangzi', title: 'Sommerfugldrømmen' },
-    { id: 'zhuangzi', name: 'Zhuangzi', title: 'Kokken Ding som parterer oksen' },
-  ];
+  // Alle kuraterte fortellinger, slått opp med nøkkelen slik filosofkortet og galleriet
+  // gjør (ARK-02). Før ble 16 av dem slått opp på tittel, som ikke lenger brukes.
+  const curated = Object.entries(BESPOKE_STORIES).map(([key, story]) => ({
+    key,
+    id: story.philosopherId,
+    name: story.philosopherName,
+    title: story.experimentTitle,
+  }));
 
   it('har minst 15 kuraterte bespoke stories i databasen', () => {
     expect(Object.keys(BESPOKE_STORIES).length).toBeGreaterThanOrEqual(15);
   });
 
-  targetPhilosophers.forEach(({ id, name, title }) => {
+  curated.forEach(({ key, id, name, title }) => {
     it(`genererer et komplett 4-slide manus for ${name} (${title})`, () => {
       const dummyExp: ThoughtExperiment = {
         title,
+        storyKey: key,
         description: 'Testbeskrivelse av eksperimentet',
         takeaway: 'Eksamensfasit her',
       };
