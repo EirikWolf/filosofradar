@@ -9,7 +9,7 @@ import path from 'path';
 //   UU-02 Enter/Mellomrom på knapper  tests/flashcards-keyboard.test.tsx
 //   UU-04 Tab-rekkefølge på radaren   tests/radar-keyboard.test.tsx
 //   Søkerangeringen                  tests/search.test.ts
-// UU-10 (ruting med ?v= og ?f=) har ennå ingen oppførselstest.
+//   UU-10 ruting med ?v= og ?f=      tests/app-navigation.test.tsx
 
 describe('UU-rettinger som sjekkes i kildeteksten', () => {
   it('[UU-09] index.html har spesifisert lang="nb"', () => {
@@ -53,14 +53,5 @@ describe('UU-rettinger som sjekkes i kildeteksten', () => {
     const listPath = path.resolve(__dirname, '../src/features/list/PhilosopherList.tsx');
     const listCode = fs.readFileSync(listPath, 'utf-8');
     expect(listCode).toContain('aria-label="Søk etter filosof, idé, retning eller verdensdel"');
-  });
-
-  it('[UU-10 & Hjem-knapp] App.tsx har ruting via URL searchParams (?v= og ?f=) og handleGoHome', () => {
-    const appPath = path.resolve(__dirname, '../src/App.tsx');
-    const appCode = fs.readFileSync(appPath, 'utf-8');
-    expect(appCode).toContain('handleGoHome');
-    expect(appCode).toContain("url.searchParams.set('v', nextView)");
-    expect(appCode).toContain("params.get('v')");
-    expect(appCode).toContain('popstate');
   });
 });

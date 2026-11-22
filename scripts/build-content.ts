@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { PhilosopherSchema, type PhilosopherInput, type Philosopher } from '../src/schemas/philosopher';
 import { QuizQuestionsSchema, type QuizQuestion } from '../src/schemas/quiz';
 import { validateRelations } from '../src/lib/relations';
+import { sitemapViews } from '../src/lib/views';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -188,13 +189,12 @@ function run() {
   // Generer sitemap.xml for søkemotorer og robots.txt
   const siteUrls = [
     { loc: 'https://filosofradar.web.app/', priority: '1.0', changefreq: 'weekly' },
-    { loc: 'https://filosofradar.web.app/?v=radar', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://filosofradar.web.app/?v=timeline', priority: '0.8', changefreq: 'weekly' },
-    { loc: 'https://filosofradar.web.app/?v=list', priority: '0.8', changefreq: 'weekly' },
-    { loc: 'https://filosofradar.web.app/?v=quiz', priority: '0.8', changefreq: 'monthly' },
-    { loc: 'https://filosofradar.web.app/?v=exphil', priority: '0.8', changefreq: 'monthly' },
-    { loc: 'https://filosofradar.web.app/?v=ethics', priority: '0.8', changefreq: 'monthly' },
-    { loc: 'https://filosofradar.web.app/?v=about', priority: '0.6', changefreq: 'monthly' },
+    // Visningene kommer fra VIEWS i src/lib/views.ts, samme liste som appen bruker (ARK-03).
+    ...sitemapViews().map((v) => ({
+      loc: `https://filosofradar.web.app/?v=${v.id}`,
+      priority: v.priority,
+      changefreq: v.changefreq,
+    })),
     ...finalPhilosophers.map((p) => ({
       loc: `https://filosofradar.web.app/?f=${p.id}`,
       priority: '0.7',
