@@ -1,0 +1,5 @@
+# Commits som bare endrer formatering. GitHub og `git blame` hopper over dem, så
+# hver linje viser den forrige reelle endringen. Lokalt: git config blame.ignoreRevsFile .git-blame-ignore-revs
+
+# ARK-04: LF i hele repoet og deepDiveData.ts som tekst igjen (bare blanktegn)
+468d5e75e75f005f34273b10b13cbbd6d73d0f1c
