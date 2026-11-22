@@ -97,14 +97,14 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: -340,
         description: 'Klassikeren om dydsetikk, karakterutvikling, eudaimonia (oppblomstring) og den gylne middelvei.',
         url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008100600026",
-        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
+        urlLabel: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)",
       },
       {
         title: 'Politikken',
         year: -335,
         description: 'Analyse av styreformer og mennesket som et iboende samfunnsvesen (zoon politikon).',
         url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090706001",
-        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
+        urlLabel: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)",
       },
       {
         title: 'Metafysikken',
@@ -145,7 +145,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: 1641,
         description: 'Seks filosofiske meditasjoner der han gjennomfører metodisk tvil og etablerer «Cogito, ergo sum» og substansdualismen.',
         url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090708092",
-        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
+        urlLabel: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)",
       },
       {
         title: 'Om metoden',
@@ -1002,7 +1002,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: 180,
         description: 'Verdenshistoriens mest leste personlige selvhjelpsbok og etiske dagbok om plikt, ydmykhet og fatning.',
         url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008071604024",
-        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
+        urlLabel: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)",
       },
     ],
     thoughtExperiments: [
@@ -1059,7 +1059,7 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         year: 125,
         description: 'En ultrakonsis praktisk guide til stoisk sjelefred og mental motstandskraft.',
         url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2011102106034",
-        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
+        urlLabel: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)",
       },
       {
         title: 'Samtaler (Diatribai)',
