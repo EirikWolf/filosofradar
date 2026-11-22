@@ -74,6 +74,8 @@ Hvert tankeeksperiment i dypdykkene har én scene i `content/illustrations/scene
 
 Et tankeeksperiment kobles til en kuratert fortelling («▶ Se idéen på 45 sek») med `storyKey`, som peker på en nøkkel i `BESPOKE_STORIES` (`src/features/story/storyData.ts`). Filosofkortet og historiegalleriet bruker samme kobling. Uten `storyKey` lages en generert fortelling. `tests/story-links.test.ts` feiler hvis en nøkkel ikke finnes eller hører til en annen filosof, eller hvis en kuratert fortelling ikke har nøyaktig ett tankeeksperiment. Unntaket er fortellinger som bare finnes i galleriet, som Foots, fordi hun ikke er på radaren (B-014). Før ble koblingen gjettet ut fra tittelen (ARK-02).
 
+Datafilene i `src/features/` (dypdykk, fortellinger, Ex.phil) redigeres for hånd eller med skript som importerer dataene, ikke med regex på kildeteksten. Et regex-skript ødela linjesluttene i `deepDiveData.ts` (ARK-04). `.gitattributes` holder alt som LF, og `tests/line-endings.test.ts` stopper løse `\r`.
+
 Bildene lages med Z-Image-Turbo på kitor med `scripts/illustrations/generate_on_kitor.py` (B-017). Skriptet tar en `image`-lease i kitor-arbiter, hopper over bilder som finnes, og kan startes på nytt etter avbrudd.
 
 ```
