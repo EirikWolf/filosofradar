@@ -8,6 +8,7 @@
     "build": "tsx scripts/build-content.ts && tsc && vite build",
     "preview": "vite preview",
     "budget": "tsx scripts/check-bundle-budget.ts",
+    "sjekk-lenker": "tsx scripts/check-nb-links.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",

@@ -78,8 +78,10 @@ const VERIFIED_LINKS = {
     label: "Les på Project Gutenberg"
   },
   "kant:Grunnlegging av moralens metafysikk": {
-    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2014061808064", // Eiliv Skard / NB
-    label: "Søk i Nasjonalbiblioteket (nb.no)"
+    // Morallov og frihet: moralfilosofiske skrifter (overs. Eivind Storheim, 1997), som inneholder
+    // Grunnlegging av moralens metafysikk. Forrige URN (…2014061808064) fantes ikke i NB (ARK-05).
+    url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2017072007213",
+    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
   },
   "kant:Til den evige fred": {
     url: "https://www.gutenberg.org/ebooks/50922", // Perpetual Peace

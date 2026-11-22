@@ -317,8 +317,8 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
         title: 'Grunnlegging av moralens metafysikk',
         year: 1785,
         description: 'Den klareste innføringen i Kants etikk: Det kategoriske imperativ og menneskeverdets ukrenkelighet.',
-        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2014061808064",
-        urlLabel: "Søk i Nasjonalbiblioteket (nb.no)",
+        url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2017072007213",
+        urlLabel: "Les på norsk hos Nasjonalbiblioteket (nb.no)",
       },
       {
         title: 'Kritikk av den praktiske fornuft',
