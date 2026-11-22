@@ -1,0 +1,14 @@
+# Linjeslutt: LF i repoet og i arbeidskopien, uansett operativsystem (ARK-04).
+# Uten dette lagret git deepDiveData.ts som ikke-tekst med blandede linjeslutt, og
+# en lenkeretting ga en diff på hele fila.
+* text=auto eol=lf
+
+# Binærfiler skal aldri normaliseres.
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.gif binary
+*.woff binary
+*.woff2 binary
