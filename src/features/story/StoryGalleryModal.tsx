@@ -233,10 +233,12 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredStories.map((story) => (
+                // Kortet startes med knappen i tittelen. Knappens ::after dekker hele kortet,
+                // så et klikk hvor som helst virker, og tastaturbrukere får én knapp med
+                // tittelen som navn. Før var kortet en <div onClick> uten tastaturstøtte.
                 <div
                   key={story.key}
-                  onClick={() => handleLaunchStory(story)}
-                  className="group relative flex flex-col justify-between bg-cosmos-card border border-white/10 hover:border-gold/50 rounded-2xl overflow-hidden shadow-lg transition-all hover:shadow-[0_0_20px_rgba(246,200,95,0.2)] hover:scale-[1.01] cursor-pointer"
+                  className="group relative flex flex-col justify-between bg-cosmos-card border border-white/10 hover:border-gold/50 rounded-2xl overflow-hidden shadow-lg transition-all hover:shadow-[0_0_20px_rgba(246,200,95,0.2)] hover:scale-[1.01] cursor-pointer has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-gold"
                 >
                   {/* Bilde-header */}
                   <div className="relative w-full h-36 bg-slate-950 overflow-hidden">
@@ -270,7 +272,13 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
                   <div className="p-4 flex-1 flex flex-col justify-between">
                     <div>
                       <h3 className="text-base font-serif font-bold text-star-white group-hover:text-gold transition-colors leading-snug">
-                        {story.experimentTitle}
+                        <button
+                          type="button"
+                          onClick={() => handleLaunchStory(story)}
+                          className="text-left cursor-pointer focus-visible:outline-none after:absolute after:inset-0 after:content-['']"
+                        >
+                          {story.experimentTitle}
+                        </button>
                       </h3>
                       {story.subheadline && (
                         <p className="text-xs text-gold/80 italic font-serif mt-0.5">
