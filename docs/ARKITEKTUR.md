@@ -49,11 +49,11 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 │  ├─ illustrations/            genereringsskriptet som kjøres på kitor (B-017)
 │  └─ wikidata.ts               hent/kontroller årstall fra Wikidata (SPARQL)
 ├─ src/
-│  ├─ main.tsx, App.tsx         visningsvalg og URL-parametre (?v=, ?f=)
+│  ├─ main.tsx, App.tsx         visningsvalg og URL-parametre (?v=, ?f=); visningene står i lib/views.ts
 │  ├─ schemas/                  Zod-skjemaer; ids.ts har konstanter uten Zod
 │  ├─ generated/                bygget innhold (git-ignorert)
 │  ├─ lib/                      ren logikk med tester: years, polar, timeScale, layout, influence,
-│  │                            similarity, search, galaxy, timeMachine, relations, daily, quotes, sound, telemetry …
+│  │                            similarity, search, galaxy, timeMachine, relations, daily, views, quotes, sound, telemetry …
 │  ├─ components/               ErrorBoundary, SweepBeam, ThemeRadar
 │  ├─ hooks/                    useDialogFocus (fokus i alle dialoger)
 │  └─ features/                 radar, timeline, galaxy, network, list, card, comparison, deepdive,

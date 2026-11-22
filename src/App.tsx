@@ -8,6 +8,7 @@ import type { Tour } from './features/tours/types';
 import { sound } from './lib/sound';
 import { trackPageView, trackEvent } from './lib/telemetry';
 import { isKnownPhilosopherId } from './lib/philosopherIndex';
+import { isExperienceView as isExperience, isObservatoryView as isObservatory, isViewMode, urlFor, type ViewMode } from './lib/views';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
 import type { ExphilTab } from './features/exphil/ExphilHub';
@@ -66,7 +67,6 @@ const ViewFallback: React.FC = () => (
 
 const philosophers = philosophersData as Philosopher[];
 
-type ViewMode = 'radar' | 'galaxy' | 'timeline' | 'network' | 'list' | 'quiz' | 'exphil' | 'factcheck' | 'about' | 'ethics';
 
 export const App: React.FC = () => {
   const [view, setView] = useState<ViewMode>('radar');
@@ -84,34 +84,33 @@ export const App: React.FC = () => {
     experiment: ThoughtExperiment;
   } | null>(null);
 
-  const isObservatoryView =
-    view === 'radar' || view === 'galaxy' || view === 'timeline' || view === 'network' || view === 'list';
-  const isExperienceView = view === 'quiz' || view === 'ethics';
+  const isObservatoryView = isObservatory(view);
+  const isExperienceView = isExperience(view);
 
-  const changeView = useCallback((nextView: ViewMode, pushHistory = true) => {
+  // Nøyaktig ett nytt historikkpunkt per brukerhandling (ARK-03). Tilbake går da
+  // alltid til det brukeren så sist, ikke til en mellomtilstand. Før ga Hjem to punkter,
+  // og Tilbake viste filosofkortet over radaren.
+  const pushUrl = useCallback((change: { view?: ViewMode; card?: string | null }) => {
+    window.history.pushState({}, '', urlFor(window.location.href, change));
+  }, []);
+
+  const applyView = useCallback((nextView: ViewMode) => {
     setView(nextView);
     // En markering fra «Se på radaren» gjelder bare den ene gangen. Ellers dukket
     // den opp igjen neste gang radaren ble vist, f.eks. etter Tilbake.
     setFocusedRadarId(null);
-    if (['radar', 'galaxy', 'timeline', 'network', 'list'].includes(nextView)) {
-      setLastObservatoryView(nextView);
-    }
-    const url = new URL(window.location.href);
-    if (nextView === 'radar') {
-      url.searchParams.delete('v');
-    } else {
-      url.searchParams.set('v', nextView);
-    }
-    if (pushHistory) {
-      window.history.pushState({}, '', url.toString());
-    } else {
-      window.history.replaceState({}, '', url.toString());
-    }
+    if (isObservatory(nextView)) setLastObservatoryView(nextView);
   }, []);
 
-  const selectObservatoryView = useCallback((v: ViewMode) => {
-    changeView(v, true);
-  }, [changeView]);
+  const changeView = useCallback(
+    (nextView: ViewMode) => {
+      applyView(nextView);
+      pushUrl({ view: nextView });
+    },
+    [applyView, pushUrl],
+  );
+
+  const selectObservatoryView = changeView;
 
   // Guidet tur tilstand
   const [isTourModalOpen, setIsTourModalOpen] = useState<boolean>(false);
@@ -160,29 +159,11 @@ export const App: React.FC = () => {
   useEffect(() => {
     const handleUrlChange = () => {
       const params = new URLSearchParams(window.location.search);
-      const vParam = params.get('v') as ViewMode | null;
-      const validViews: ViewMode[] = [
-        'radar',
-        'galaxy',
-        'timeline',
-        'network',
-        'list',
-        'quiz',
-        'exphil',
-        'factcheck',
-        'about',
-        'ethics',
-      ];
-      if (vParam && validViews.includes(vParam)) {
-        setView(vParam);
-        if (['radar', 'galaxy', 'timeline', 'network', 'list'].includes(vParam)) {
-          setLastObservatoryView(vParam);
-        }
-      } else if (!vParam) {
-        setView('radar');
-        setLastObservatoryView('radar');
-      }
-
+      const vParam = params.get('v');
+      // Ukjente visninger i adressen gir radaren (hvitelisten er VIEWS).
+      const nextView: ViewMode = isViewMode(vParam) ? vParam : 'radar';
+      setView(nextView);
+      if (isObservatory(nextView)) setLastObservatoryView(nextView);
       setFocusedRadarId(null);
 
       const fParam = params.get('f');
@@ -213,10 +194,8 @@ export const App: React.FC = () => {
     // Som URL-stien over: ukjente ID-er åpner ingenting (ARK-01)
     if (!isKnownPhilosopherId(id)) return;
     setActiveCardId(id);
-    const url = new URL(window.location.href);
-    url.searchParams.set('f', id);
-    window.history.pushState({}, '', url.toString());
-  }, []);
+    pushUrl({ card: id });
+  }, [pushUrl]);
 
   // «Se på radaren» fra alle visninger: bytt til radaren, lukk et åpent kort og marker
   // stjernen. Ex.phil-huben, galaksen og quizen åpnet tidligere kortet i stedet.
@@ -226,38 +205,29 @@ export const App: React.FC = () => {
     setLastObservatoryView('radar');
     setActiveCardId(null);
     setFocusedRadarId(id && isKnownPhilosopherId(id) ? id : null);
-    const url = new URL(window.location.href);
-    url.searchParams.delete('v');
-    url.searchParams.delete('f');
-    window.history.pushState({}, '', url.toString());
+    pushUrl({ view: 'radar', card: null });
     setTimeout(() => {
       document
         .getElementById('radar-canvas-container')
         ?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
     }, 50);
-  }, []);
+  }, [pushUrl]);
 
   const closeCard = useCallback(() => {
     setActiveCardId(null);
-    const url = new URL(window.location.href);
-    url.searchParams.delete('f');
-    window.history.pushState({}, '', url.toString());
-  }, []);
+    pushUrl({ card: null });
+  }, [pushUrl]);
 
   // Hjem-knapp som nullstiller til Radaren fra hvilken som helst side
   const handleGoHome = useCallback(() => {
-    changeView('radar', true);
+    applyView('radar');
     setActiveCardId(null);
     setComparingIds(null);
     setIsStoryGalleryOpen(false);
     setIsTourModalOpen(false);
-    setFocusedRadarId(null);
-    const url = new URL(window.location.href);
-    url.searchParams.delete('v');
-    url.searchParams.delete('f');
-    window.history.pushState({}, '', url.toString());
+    pushUrl({ view: 'radar', card: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [changeView]);
+  }, [applyView, pushUrl]);
 
   const activePhilosopher = activeCardId
     ? philosophers.find((p) => p.id === activeCardId) || null
