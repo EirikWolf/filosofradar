@@ -505,7 +505,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
             onChange={(e) => setSelectedTradition(e.target.value)}
             className="bg-cosmos border border-white/15 rounded-xl px-3 py-1.5 text-xs text-star-white focus:outline-hidden focus:border-gold font-sans"
           >
-            <option value="all">Alle tradisjoner (80)</option>
+            <option value="all">Alle tradisjoner ({philosophers.length})</option>
             {TRADITION_SECTOR_ORDER.map((tid) => (
               <option key={tid} value={tid}>
                 {TRADITIONS[tid].name}

@@ -11,6 +11,7 @@ import { isKnownPhilosopherId } from './lib/philosopherIndex';
 import { isExperienceView as isExperience, isObservatoryView as isObservatory, isViewMode, urlFor, type ViewMode } from './lib/views';
 import type { Philosopher } from './schemas/philosopher';
 import philosophersData from './generated/philosophers.json';
+import contentCounts from './generated/contentCounts.json';
 import type { ExphilTab } from './features/exphil/ExphilHub';
 import type { ThoughtExperiment } from './features/deepdive/types';
 
@@ -500,9 +501,9 @@ export const App: React.FC = () => {
             <button
               onClick={() => setIsStoryGalleryOpen(true)}
               className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-gold-bright hover:text-white bg-gold/10 hover:bg-gold/20 border border-gold/40 shadow-xs font-bold"
-              title="Åpne de 32 dramatiserte filosofiske historiene med tale"
+              title={`Åpne de ${contentCounts.stories} dramatiserte filosofiske historiene med tale`}
             >
-              <span>📖</span> 32 Filosofiske Historier
+              <span>📖</span> {contentCounts.stories} Filosofiske Historier
             </button>
             <button
               onClick={() => setIsTourModalOpen(true)}
@@ -660,7 +661,7 @@ export const App: React.FC = () => {
         />
       )}
 
-      {/* 31 Filosofiske Historier (Story-galleri modal) */}
+      {/* Filosofiske historier (Story-galleri modal) */}
       {isStoryGalleryOpen && (
         <Suspense fallback={null}>
           <StoryGalleryModal
@@ -715,7 +716,7 @@ export const App: React.FC = () => {
             onClick={() => setIsStoryGalleryOpen(true)}
             className="py-1.5 px-1 inline-flex items-center hover:text-gold transition-colors underline underline-offset-4 text-gold font-bold"
           >
-            📖 32 Historier
+            📖 {contentCounts.stories} Historier
           </button>
           <span aria-hidden="true">·</span>
           <button

@@ -5,6 +5,7 @@ import { PhilosopherSchema, type PhilosopherInput, type Philosopher } from '../s
 import { QuizQuestionsSchema, type QuizQuestion } from '../src/schemas/quiz';
 import { validateRelations } from '../src/lib/relations';
 import { sitemapViews } from '../src/lib/views';
+import { BESPOKE_STORIES } from '../src/features/story/storyData';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,6 +15,7 @@ const QUIZ_FILE = path.resolve(__dirname, '../content/quiz/questions.json');
 const OUTPUT_DIR = path.resolve(__dirname, '../src/generated');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'philosophers.json');
 const QUIZ_OUTPUT_FILE = path.join(OUTPUT_DIR, 'quizQuestions.json');
+const COUNTS_OUTPUT_FILE = path.join(OUTPUT_DIR, 'contentCounts.json');
 const SITEMAP_FILE = path.resolve(__dirname, '../public/sitemap.xml');
 
 const isValidateOnly = process.argv.includes('--validate-only');
@@ -185,6 +187,12 @@ function run() {
     fs.writeFileSync(QUIZ_OUTPUT_FILE, JSON.stringify(quizQuestions, null, 2), 'utf-8');
     console.log(`📦 Bygget og lagret: ${QUIZ_OUTPUT_FILE}`);
   }
+
+  // Tall som står i menyen, avledet fra dataene så de ikke glir (ARK-06). Fortellingene
+  // ligger i en egen chunk, og forsiden skal ikke laste den bare for å telle dem.
+  const contentCounts = { stories: Object.keys(BESPOKE_STORIES).length };
+  fs.writeFileSync(COUNTS_OUTPUT_FILE, JSON.stringify(contentCounts, null, 2), 'utf-8');
+  console.log(`📦 Bygget og lagret: ${COUNTS_OUTPUT_FILE} (${contentCounts.stories} fortellinger)`);
 
   // Generer sitemap.xml for søkemotorer og robots.txt
   const siteUrls = [

@@ -1072,7 +1072,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
             </g>
           )}
 
-          {/* Stjernelaget (alle 80 filosofene, gjengitt i kronologisk DOM-rekkefølge for universell utforming UU-04) */}
+          {/* Stjernelaget (alle filosofene, gjengitt i kronologisk DOM-rekkefølge for universell utforming UU-04) */}
           <RadarStarLayer
             points={sortedRadarPoints}
             matchingIds={matchingIds}
