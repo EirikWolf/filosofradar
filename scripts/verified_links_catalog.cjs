@@ -21,11 +21,11 @@ const VERIFIED_LINKS = {
   // Aristoteles (Norske oversettelser hos Nasjonalbiblioteket)
   "aristoteles:Den nikomakiske etikk": {
     url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008100600026", // Overs. Rabbås & Stigen
-    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
+    label: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)"
   },
   "aristoteles:Politikken": {
     url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090706001", // Overs. Tormod Eide
-    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
+    label: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)"
   },
   "aristoteles:Metafysikken": {
     url: "https://classics.mit.edu/Aristotle/metaphysics.html",
@@ -35,7 +35,7 @@ const VERIFIED_LINKS = {
   // Descartes (Norsk oversettelse av Aarnes)
   "descartes:Meditasjoner over filosofiens grunnlag": {
     url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2015090708092", // Asbjørn Aarnes' oversettelse
-    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
+    label: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)"
   },
   "descartes:Om metoden": {
     url: "https://www.gutenberg.org/ebooks/59", // Discourse on the Method
@@ -189,13 +189,13 @@ const VERIFIED_LINKS = {
   // Epiktet
   "epiktet:Håndbok i livskunst (Encheiridion)": {
     url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2011102106034", // Handbok i moral, oversatt av Hellesnes & Skard
-    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
+    label: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)"
   },
 
   // Marcus Aurelius
   "marcus-aurelius:Til meg selv (Meditasjoner)": {
     url: "https://www.nb.no/items/URN:NBN:no-nb_digibok_2008071604024", // Til meg selv, oversatt av Rebekka Hammering Bang
-    label: "Les på norsk hos Nasjonalbiblioteket (nb.no)"
+    label: "Se boka hos Nasjonalbiblioteket (leses bare på biblioteket)"
   },
 
   // Schopenhauer
