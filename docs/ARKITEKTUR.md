@@ -12,6 +12,11 @@ content/philosophers/*.json ──(scripts/build-content.ts: valider + slå samm
                                                           dist/ ──► Firebase Hosting
 ```
 
+Byggeskriptet skriver også `src/generated/contentCounts.json` med tall som står i UI-et
+(antallet fortellinger). Tall som følger av innholdet skal avledes, ikke skrives inn for
+hånd (ARK-06). Komponenter som har dataene, teller dem selv. Tall som vises på forsiden,
+men bor i en chunk som lastes senere, telles av byggeskriptet.
+
 ## Teknologivalg
 | Område | Valg | Hvorfor |
 |---|---|---|

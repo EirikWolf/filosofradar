@@ -7,9 +7,11 @@ const philosophers = philosophersData as Philosopher[];
 const philosopherIdSet = new Set(philosophers.map((p) => p.id));
 
 describe('Dypdykk: Historisk kontekst & Hovedverker', () => {
-  it('har dypdykk for samtlige 80 filosofer i observatoriet', () => {
-    const keys = Object.keys(PHILOSOPHER_DEEP_DIVES);
-    expect(keys.length).toBe(80);
+  // Sammenligner mengder, ikke et fast antall: den neste filosofen skal ikke gjøre
+  // testen rød, bare en filosof uten dypdykk (ARK-06).
+  it('har dypdykk for samtlige filosofer i observatoriet', () => {
+    const keys = Object.keys(PHILOSOPHER_DEEP_DIVES).sort();
+    expect(keys).toEqual([...philosopherIdSet].sort());
   });
 
   it('samtlige filosofer i PHILOSOPHER_DEEP_DIVES finnes i datasettet', () => {

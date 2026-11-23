@@ -81,7 +81,7 @@ export const EthicsLabView: React.FC<EthicsLabViewProps> = ({
             Ditt Etiske Moralkompass
           </h2>
           <p className="text-sm text-star-dim max-w-lg mx-auto mt-2 font-sans">
-            Gjennom 6 moralske prøvelser har du avdekket hvilke prinsipper som veileder deg når det virkelig gjelder.
+            Gjennom {totalDilemmas} moralske prøvelser har du avdekket hvilke prinsipper som veileder deg når det virkelig gjelder.
           </p>
         </div>
 

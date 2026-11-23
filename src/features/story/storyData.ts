@@ -2,7 +2,7 @@ import type { ThoughtExperiment } from '../deepdive/types';
 import type { StoryScript } from './types';
 
 /**
- * 15 Kuraterte Story-manus for Ex.phil-pensum og historiske tankeeksperimenter.
+ * Kuraterte Story-manus for Ex.phil-pensum og historiske tankeeksperimenter.
  * Nøkkel: `${philosopherId}:${normalizedExperimentTitle}`
  */
 export const BESPOKE_STORIES: Record<string, StoryScript> = {
