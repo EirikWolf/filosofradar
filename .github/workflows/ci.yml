@@ -27,11 +27,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      # src/generated/ er gitignorert og lages fra content/. Uten dette steget
-      # feiler typecheck på en fersk klon (lokalt ligger filene der fra før).
-      - name: Generer innhold
-        run: npx tsx scripts/build-content.ts
-      # typecheck + lint + test + innholdsvalidering
+      # Bygger og validerer innholdet (src/generated/ er gitignorert), og kjører så
+      # typecheck + lint + test. Samme kommando som lokalt.
       - run: npm run check
       - run: npm run build
       # Ytelsesbudsjett: JS på første side < 200 kB gzip (global CLAUDE.md).
