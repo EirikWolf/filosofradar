@@ -7,6 +7,7 @@ import { ThemeRadar } from '../../components/ThemeRadar';
 import { exportQuizResultAsPng } from '../../lib/quizExport';
 import { getThemeMeta } from '../../lib/themes';
 import { trackEvent } from '../../lib/telemetry';
+import { nb } from '../../i18n/nb';
 
 const questions = quizQuestionsData as QuizQuestion[];
 
@@ -235,7 +236,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
                       onClick={() => onOpenCard(match.philosopher.id)}
                       className="px-2.5 py-1 rounded-sm bg-white/5 hover:bg-white/15 text-xs text-gold border border-gold/30 transition-all font-serif"
                     >
-                      Les filosofkort ↗
+                      {nb.readPhilosopherCard}
                     </button>
                     <button
                       onClick={() => onNavigateToRadar(match.philosopher.id)}
@@ -286,7 +287,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
       <div className="w-full max-w-xl flex flex-col gap-2">
         <div className="flex items-center justify-between text-xs font-serif text-star-dim">
           <span>
-            Spørsmål {currentIndex + 1} av {totalQuestions}
+            {nb.questionOf(currentIndex + 1, totalQuestions)}
           </span>
           <span className="text-gold font-bold">{progressPercent}% fullført</span>
         </div>

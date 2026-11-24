@@ -15,6 +15,7 @@ import philosophersData from './generated/philosophers.json';
 import contentCounts from './generated/contentCounts.json';
 import type { ExphilTab } from './features/exphil/ExphilHub';
 import type { ThoughtExperiment } from './features/deepdive/types';
+import { nb } from './i18n/nb';
 
 // Kodeoppdeling via lazy loading for sekundære og tyngre moduler
 // Tidslinjen og idénettverket vises ikke på forsiden. Nettverket drar med seg d3-force,
@@ -424,7 +425,7 @@ export const App: React.FC = () => {
                   : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
               }`}
             >
-              <span>⚔️</span> Eksamensdueller
+              <span>⚔️</span> {nb.exphil.duels}
             </button>
             <button
               onClick={() => setExphilTab('flashcards')}
@@ -434,7 +435,7 @@ export const App: React.FC = () => {
                   : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
               }`}
             >
-              <span>🃏</span> Flashcards (Begrepsdrill)
+              <span>🃏</span> {nb.exphil.flashcards}
             </button>
             <button
               onClick={() => setExphilTab('quiz')}
@@ -444,7 +445,7 @@ export const App: React.FC = () => {
                   : 'text-amber-300 hover:text-white hover:bg-amber-400/10'
               }`}
             >
-              <span>📝</span> Eksamens-drill
+              <span>📝</span> {nb.exphil.drill}
             </button>
             <button
               onClick={() => setExphilTab('syllabus')}
@@ -468,7 +469,7 @@ export const App: React.FC = () => {
               className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-cyan-300 hover:text-white hover:bg-cyan-500/10 border border-cyan-400/30"
               title="Sammenlign to tenkere i sammenligningskammeret"
             >
-              <span>⚖️</span> Sammenlign
+              <span>⚖️</span> {nb.compare}
             </button>
           </nav>
         )}
@@ -504,7 +505,7 @@ export const App: React.FC = () => {
               className="px-3.5 py-1.5 rounded-full font-serif tracking-wider transition-all flex items-center gap-1.5 text-gold-bright hover:text-white bg-gold/10 hover:bg-gold/20 border border-gold/40 shadow-xs font-bold"
               title={`Åpne de ${contentCounts.stories} dramatiserte filosofiske historiene med tale`}
             >
-              <span>📖</span> {contentCounts.stories} Filosofiske Historier
+              <span>📖</span> {nb.stories(contentCounts.stories)}
             </button>
             <button
               onClick={() => setIsTourModalOpen(true)}

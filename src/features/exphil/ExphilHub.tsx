@@ -6,6 +6,7 @@ import { ExphilFlashcardsView } from './ExphilFlashcardsView';
 import { ExphilQuizView } from './ExphilQuizView';
 import { sound } from '../../lib/sound';
 import { formatLifeSpan } from '../../lib/years';
+import { nb } from '../../i18n/nb';
 
 export type ExphilTab = 'duels' | 'flashcards' | 'quiz' | 'syllabus';
 
@@ -59,7 +60,7 @@ export const ExphilHub: React.FC<ExphilHubProps> = ({
                 : 'text-star-dim hover:text-white'
             }`}
           >
-            <span>⚔️</span> Eksamensdueller
+            <span>⚔️</span> {nb.exphil.duels}
           </button>
           <button
             onClick={() => handleTabChange('flashcards')}
@@ -69,7 +70,7 @@ export const ExphilHub: React.FC<ExphilHubProps> = ({
                 : 'text-star-dim hover:text-white'
             }`}
           >
-            <span>🃏</span> Flashcards (Begrepsdrill)
+            <span>🃏</span> {nb.exphil.flashcards}
           </button>
           <button
             onClick={() => handleTabChange('quiz')}
@@ -79,7 +80,7 @@ export const ExphilHub: React.FC<ExphilHubProps> = ({
                 : 'text-star-dim hover:text-white'
             }`}
           >
-            <span>📝</span> Eksamens-drill
+            <span>📝</span> {nb.exphil.drill}
           </button>
           <button
             onClick={() => handleTabChange('syllabus')}

@@ -9,6 +9,7 @@ import { sound } from '../../lib/sound';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
 import { loadDeepDiveSection, loadExphilCardExamBox } from './cardContent';
 import { lazyView } from '../../components/lazyView';
+import { nb } from '../../i18n/nb';
 
 // Dypdykk, Ex.phil-boksen og historiene bærer mye tekst. De lastes først når et
 // kort åpnes, slik at forsiden holder seg under ytelsesbudsjettet (200 kB gzip).
@@ -167,7 +168,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
               onClick={onClose}
               aria-label="Lukk filosofkort (Esc)"
               className="w-8 h-8 rounded-full border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors flex items-center justify-center text-sm"
-              title="Lukk (Esc)"
+              title={nb.close}
             >
               ✕
             </button>
@@ -241,7 +242,7 @@ export const PhilosopherCard: React.FC<PhilosopherCardProps> = ({
         {/* 2. Seksjon: Kjerneidéer */}
         <div className="mb-6 shrink-0">
           <h3 className="text-sm font-serif font-bold text-gold tracking-wide mb-3 flex items-center gap-2">
-            <span>💡</span> Kjerneidéer
+            <span>💡</span> {nb.coreIdeas}
           </h3>
           <div className="space-y-3">
             {philosopher.keyIdeas.map((idea, idx) => (

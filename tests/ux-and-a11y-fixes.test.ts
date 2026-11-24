@@ -7,6 +7,7 @@ import path from 'path';
 // testes her:
 //   UU-01 fokusfelle i dialoger      tests/dialog-focus.test.tsx
 //   UU-02 Enter/Mellomrom på knapper  tests/flashcards-keyboard.test.tsx
+//   UU-03 navn på søk og filtre       tests/form-labels.test.tsx
 //   UU-04 Tab-rekkefølge på radaren   tests/radar-keyboard.test.tsx
 //   Søkerangeringen                  tests/search.test.ts
 //   UU-10 ruting med ?v= og ?f=      tests/app-navigation.test.tsx
@@ -41,17 +42,5 @@ describe('UU-rettinger som sjekkes i kildeteksten', () => {
       const content = fs.readFileSync(filePath, 'utf-8');
       expect(content).not.toContain('text-star-dim/70');
     }
-  });
-
-  it('[UU-03] RadarView og PhilosopherList inneholder tilgjengelige aria-labels på skjemafelter', () => {
-    const radarPath = path.resolve(__dirname, '../src/features/radar/RadarView.tsx');
-    const radarCode = fs.readFileSync(radarPath, 'utf-8');
-    expect(radarCode).toContain('aria-label="Søk etter filosof eller idé"');
-    expect(radarCode).toContain('aria-label="Filtrer etter tradisjon"');
-    expect(radarCode).toContain('aria-label="Filtrer etter tema"');
-
-    const listPath = path.resolve(__dirname, '../src/features/list/PhilosopherList.tsx');
-    const listCode = fs.readFileSync(listPath, 'utf-8');
-    expect(listCode).toContain('aria-label="Søk etter filosof, idé, retning eller verdensdel"');
   });
 });

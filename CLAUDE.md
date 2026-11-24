@@ -59,7 +59,10 @@ Nye avhengigheter: begrunn og loggfør i BESLUTNINGER.md.
 - React tegner SVG; D3 brukes til beregning, ikke til å manipulere DOM direkte.
 - Animasjoner skal gå i 60 fps på en vanlig mobil. Respekter `prefers-reduced-motion`.
 - Alle visninger har et tilgjengelig alternativ (liste/tabell) og kan brukes med tastatur.
-- UI-tekster samles i `src/i18n/nb.ts`.
+- UI-tekster står der de brukes. Tekster som står for samme ting flere steder, samles i
+  `src/i18n/nb.ts`; `tests/ui-texts.test.ts` sier fra når samme tekst står i to filer (B-020).
+- Tall som følger av innholdet (antall filosofer, fortellinger, tradisjoner …) regnes ut fra
+  dataene og skrives aldri inn for hånd (ARK-06).
 - Ingen `any`, ingen `console.log` i ferdig kode.
 
 ## Arbeidsmåte

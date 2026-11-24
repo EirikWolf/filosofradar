@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EXPHIL_QUIZ_QUESTIONS } from './exphilData';
 import { sound } from '../../lib/sound';
+import { nb } from '../../i18n/nb';
 
 interface ExphilQuizViewProps {
   onOpenPhilosopherCard?: (id: string) => void;
@@ -104,7 +105,7 @@ export const ExphilQuizView: React.FC<ExphilQuizViewProps> = ({
         {/* Fremdrift og pilar */}
         <div className="flex items-center justify-between border-b border-white/10 pb-3 text-xs font-serif">
           <span className="text-gold font-bold">
-            Spørsmål {currentIdx + 1} av {EXPHIL_QUIZ_QUESTIONS.length}
+            {nb.questionOf(currentIdx + 1, EXPHIL_QUIZ_QUESTIONS.length)}
           </span>
           <span className="px-2.5 py-0.5 rounded-full bg-cosmos border border-white/15 text-star-dim uppercase text-[10px]">
             {activeQuestion.pillar === 'etikk' ? 'Normativ etikk' : activeQuestion.pillar === 'erkjennelse' ? 'Erkjennelsesteori' : 'Menneskesyn'}
