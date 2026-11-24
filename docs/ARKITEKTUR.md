@@ -13,9 +13,16 @@ content/philosophers/*.json ──(scripts/build-content.ts: valider + slå samm
 ```
 
 Byggeskriptet skriver også `src/generated/contentCounts.json` med tall som står i UI-et
-(antallet fortellinger). Tall som følger av innholdet skal avledes, ikke skrives inn for
-hånd (ARK-06). Komponenter som har dataene, teller dem selv. Tall som vises på forsiden,
-men bor i en chunk som lastes senere, telles av byggeskriptet.
+og i metadataene: filosofer, tradisjoner i bruk og fortellinger. Tall som følger av
+innholdet skal avledes, ikke skrives inn for hånd (ARK-06). Komponenter som har dataene,
+teller dem selv. Tall som vises på forsiden, men bor i en chunk som lastes senere, telles
+av byggeskriptet.
+
+Beskrivelsen for søkemotorer og deling i `index.html` og manifestet bruker plassholderne
+`%PHILOSOPHER_COUNT%` og `%TRADITION_COUNT%`. Vite-tillegget `contentCountsInMetadata` i
+`vite.config.ts` fyller dem inn, både i `npm run dev` og i bygget, og en ukjent
+`%…_COUNT%` stopper bygget. Manifestmalen ligger i `src/site/manifest.webmanifest`, ikke i
+`public/`, fordi Vite kopierer `public/` urørt.
 
 ## Teknologivalg
 | Område | Valg | Hvorfor |
@@ -57,6 +64,7 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 │  ├─ main.tsx, App.tsx         visningsvalg og URL-parametre (?v=, ?f=); visningene står i lib/views.ts
 │  ├─ schemas/                  Zod-skjemaer; ids.ts har konstanter uten Zod
 │  ├─ generated/                bygget innhold (git-ignorert)
+│  ├─ site/                     manifestmalen; tallene fylles inn ved bygg (vite.config.ts)
 │  ├─ lib/                      ren logikk med tester: years, polar, timeScale, layout, influence,
 │  │                            similarity, search, galaxy, timeMachine, relations, daily, views, quotes, sound, telemetry …
 │  ├─ components/               ErrorBoundary, SweepBeam, ThemeRadar

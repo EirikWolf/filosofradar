@@ -6,6 +6,7 @@ import { QuizQuestionsSchema, type QuizQuestion } from '../src/schemas/quiz';
 import { validateRelations } from '../src/lib/relations';
 import { sitemapViews } from '../src/lib/views';
 import { BESPOKE_STORIES } from '../src/features/story/storyData';
+import { countContent } from '../src/lib/siteCounts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -190,9 +191,13 @@ function run() {
 
   // Tall som står i menyen, avledet fra dataene så de ikke glir (ARK-06). Fortellingene
   // ligger i en egen chunk, og forsiden skal ikke laste den bare for å telle dem.
-  const contentCounts = { stories: Object.keys(BESPOKE_STORIES).length };
+  // Filosofer og tradisjoner fylles inn i index.html og manifestet ved bygg (vite.config.ts).
+  const contentCounts = { ...countContent(finalPhilosophers), stories: Object.keys(BESPOKE_STORIES).length };
   fs.writeFileSync(COUNTS_OUTPUT_FILE, JSON.stringify(contentCounts, null, 2), 'utf-8');
-  console.log(`📦 Bygget og lagret: ${COUNTS_OUTPUT_FILE} (${contentCounts.stories} fortellinger)`);
+  console.log(
+    `📦 Bygget og lagret: ${COUNTS_OUTPUT_FILE} (${contentCounts.philosophers} filosofer, ` +
+      `${contentCounts.traditions} tradisjoner, ${contentCounts.stories} fortellinger)`,
+  );
 
   // Generer sitemap.xml for søkemotorer og robots.txt
   const siteUrls = [

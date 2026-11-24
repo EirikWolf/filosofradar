@@ -1,6 +1,40 @@
 import fs from 'node:fs';
+import type { Plugin } from 'vite';
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
+import { fillContentCounts, type SiteCounts } from './src/lib/siteCounts.ts';
+
+// Beskrivelsen for søkemotorer og deling i index.html og manifestet sier hvor mange
+// filosofer og tradisjoner appen har. Tallene telles av scripts/build-content.ts og
+// fylles inn her, så de ikke glir når innholdet vokser (ARK-06). Manifestmalen ligger i
+// src/site/, ikke i public/, fordi Vite kopierer public/ urørt.
+const MANIFEST = 'manifest.webmanifest';
+
+function readSiteCounts(): SiteCounts {
+  const file = new URL('./src/generated/contentCounts.json', import.meta.url);
+  if (!fs.existsSync(file)) {
+    throw new Error('src/generated/contentCounts.json mangler. Kjør `npx tsx scripts/build-content.ts` først.');
+  }
+  return JSON.parse(fs.readFileSync(file, 'utf8')) as SiteCounts;
+}
+
+function contentCountsInMetadata(): Plugin {
+  const manifest = () =>
+    fillContentCounts(fs.readFileSync(new URL(`./src/site/${MANIFEST}`, import.meta.url), 'utf8'), readSiteCounts());
+  return {
+    name: 'content-counts-in-metadata',
+    transformIndexHtml: (html) => fillContentCounts(html, readSiteCounts()),
+    configureServer(server) {
+      server.middlewares.use(`/${MANIFEST}`, (_req, res) => {
+        res.setHeader('Content-Type', 'application/manifest+json');
+        res.end(manifest());
+      });
+    },
+    generateBundle() {
+      this.emitFile({ type: 'asset', fileName: MANIFEST, source: manifest() });
+    },
+  };
+}
 
 // `vite preview` sender de samme headerne som Firebase Hosting gir alle sider, med CSP.
 // Da ser røyktesten (e2e/) en CSP som stopper egne skript før produksjonen gjør det.
@@ -13,7 +47,7 @@ function firebaseHeadersForAllPages(): Record<string, string> {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), contentCountsInMetadata()],
   preview: {
     headers: firebaseHeadersForAllPages(),
   },
