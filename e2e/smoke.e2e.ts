@@ -1,12 +1,13 @@
 import { test as base, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { contentCounts } from './contentCounts';
 
 // Røyktest av det bygde nettstedet (B-018, TST-03). Hver test dekker én brukerhistorie
 // i docs/user-stories/. Den fanger det jsdom ikke ser: at bunten laster under CSP,
 // at kodesplittingen henter dypdykket, at rolig modus faktisk stopper animasjonene,
 // og tilgjengelighetsfeil axe-core kan finne.
 
-const PHILOSOPHER_COUNT = 80;
+const PHILOSOPHER_COUNT = contentCounts.philosophers;
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 
 type Fixtures = { browserErrors: string[] };
