@@ -100,6 +100,8 @@ deretter `npm install -g firebase-tools`.
 ## Firebase
 - Prosjekt-id: **filosofradar** (`.firebaserc`), produksjon på https://filosofradar.web.app
 - Kun Hosting. `firebase.json`: `public: dist`, SPA-rewrite til `/index.html`, `no-cache` på HTML, lang cache på `assets/**`, og sikkerhetsheadere (CSP m.m.).
+- **Rewriten gjelder ikke `/assets/`** (`"source": "/!(assets){,/**}"`). En fil som ikke finnes der, gir 404 i stedet for `index.html` med status 200. Før fikk en fane som var åpen fra før en publisering, HTML der den ventet JavaScript, og HTML-en ble i tillegg servert med årslang cache. Mønsteret er prøvd i emulatoren (`firebase serve --only hosting`) og på forhåndsvisningskanalen. Den enkle negasjonen `!/assets/**` ga 404 også på `/sokrates` og på ekte filer, så ikke forenkle den uten å prøve.
+- **Visningene i egne filer lastes med `lazyView`** (`src/components/lazyView.ts`). Feiler hentingen, laster siden seg selv på nytt én gang, med en vakt i `sessionStorage` mot løkker og uten ny innlasting når nettleseren er frakoblet (US-006). Bruk `lazyView`, ikke `React.lazy`, for nye visninger.
 - Forhåndsvisning: `firebase hosting:channel:deploy preview --expires 7d`
 - Produksjon: `firebase deploy --only hosting`
 
