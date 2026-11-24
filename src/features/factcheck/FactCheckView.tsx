@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import type { Philosopher, TraditionId } from '../../schemas/philosopher';
 import { TRADITIONS } from '../../lib/traditions';
 import { getStartYear } from '../../lib/years';
+import { nb } from '../../i18n/nb';
 
 interface FactCheckViewProps {
   philosophers: Philosopher[];
@@ -205,7 +206,7 @@ export const FactCheckView: React.FC<FactCheckViewProps> = ({
                 : 'text-star-dim hover:text-white'
             }`}
           >
-            Alle ({philosophers.length})
+            {nb.all(philosophers.length)}
           </button>
           {(Object.keys(TRADITIONS) as TraditionId[]).map((tid) => {
             const count = qualityReport.traditionStats[tid] || 0;
@@ -295,7 +296,7 @@ export const FactCheckView: React.FC<FactCheckViewProps> = ({
                       onClick={() => onOpenCard(p.id)}
                       className="text-gold hover:underline font-serif text-xs"
                     >
-                      Åpne kort ↗
+                      {nb.openCard}
                     </button>
                   </td>
                 </tr>

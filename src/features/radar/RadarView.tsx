@@ -18,6 +18,7 @@ import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import { preloadCardContent } from '../card/cardContent';
 import { RadarStarLayer } from './RadarStarLayer';
+import { nb } from '../../i18n/nb';
 
 /** Året i tidsmaskinen slik en skjermleser skal lese det: «430 f.Kr.», «1800 e.Kr.». */
 function sliderYearText(year: number): string {
@@ -474,10 +475,10 @@ export const RadarView: React.FC<RadarViewProps> = ({
                 <button onClick={() => setShowScaleHelp(false)} className="text-star-dim hover:text-white">✕</button>
               </div>
               <p className="mb-2">
-                <strong>Komprimert skala:</strong> Forstørrer antikken (650 f.Kr.–500 e.Kr.) og moderne tid (1500–i dag) der flest filosofer virket, slik at de ikke klumper seg sammen. Den eldste filosofen, Ptahhotep (ca. 2400 f.Kr.), står i et smalt felt innerst.
+                <strong>{nb.scale.compressed}:</strong> Forstørrer antikken (650 f.Kr.–500 e.Kr.) og moderne tid (1500–i dag) der flest filosofer virket, slik at de ikke klumper seg sammen. Den eldste filosofen, Ptahhotep (ca. 2400 f.Kr.), står i et smalt felt innerst.
               </p>
               <p>
-                <strong>Lineær skala:</strong> Hvert århundre har nøyaktig samme avstand fra 650 f.Kr. Viser den enorme historiske avstanden i middelalderen! Filosofer som er eldre, står innerst og er merket «← eldre».
+                <strong>{nb.scale.linear}:</strong> Hvert århundre har nøyaktig samme avstand fra 650 f.Kr. Viser den enorme historiske avstanden i middelalderen! Filosofer som er eldre, står innerst og er merket «← eldre».
               </p>
             </div>
           )}
@@ -586,7 +587,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   }}
                   className="px-4 py-1.5 rounded-full bg-gold hover:bg-gold-light text-cosmos font-serif font-bold text-xs transition-all shadow-[0_0_12px_rgba(246,200,95,0.4)] active:scale-95"
                 >
-                  Les filosofkort ↗
+                  {nb.readPhilosopherCard}
                 </button>
               </div>
             </div>
@@ -673,9 +674,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
           {/* UU-08: Skjermleser-tilbakemelding på søkeresultat */}
           <div className="sr-only" aria-live="polite" aria-atomic="true">
             {searchQuery.trim()
-              ? searchMatches.length === 1
-                ? '1 filosof funnet'
-                : `${searchMatches.length} filosofer funnet`
+              ? nb.philosophersFound(searchMatches.length)
               : ''}
           </div>
 
@@ -747,7 +746,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                         ✦ Marker
                       </button>
                       <span className="text-xs font-serif text-gold font-bold">
-                        Åpne kort ↗
+                        {nb.openCard}
                       </span>
                     </div>
                   </li>
@@ -762,7 +761,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
           <span className="text-star-dim font-serif mr-1">Tradisjon:</span>
           <select
             value={selectedTradition}
-            aria-label="Filtrer etter tradisjon"
+            aria-label={nb.filterByTradition}
             onChange={(e) => setSelectedTradition(e.target.value)}
             className="px-2.5 py-1.5 rounded-lg bg-cosmos/80 border border-white/10 text-star-white focus:border-gold focus:outline-hidden font-serif text-xs"
           >
@@ -1159,7 +1158,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   onClick={() => onOpenCard(selectedPoint.philosopher.id)}
                   className="px-3.5 py-1.5 rounded-lg bg-gold text-cosmos font-serif font-bold hover:bg-gold-bright text-xs transition-all shadow-[0_0_10px_rgba(246,200,95,0.4)] flex items-center gap-1"
                 >
-                  <span>📖</span> Åpne filosofkort
+                  <span>📖</span> {nb.openPhilosopherCard}
                 </button>
               )}
               {onStartCompare && (
@@ -1167,7 +1166,7 @@ export const RadarView: React.FC<RadarViewProps> = ({
                   onClick={() => onStartCompare(selectedPoint.philosopher.id)}
                   className="px-3 py-1.5 rounded-lg border border-gold/40 text-gold hover:bg-gold/10 text-xs font-serif transition-colors flex items-center gap-1"
                 >
-                  <span>⚖️</span> Sammenlign
+                  <span>⚖️</span> {nb.compare}
                 </button>
               )}
               {onNavigateToTimeline && (

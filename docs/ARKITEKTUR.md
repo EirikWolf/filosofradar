@@ -69,6 +69,7 @@ Hvis radaren får > 500 punkter eller hakker på mobil: bytt punktlaget til `<ca
 │  │                            similarity, search, galaxy, timeMachine, relations, daily, views, quotes, sound, telemetry …
 │  ├─ components/               ErrorBoundary, SweepBeam, ThemeRadar
 │  ├─ hooks/                    useDialogFocus (fokus i alle dialoger)
+│  ├─ i18n/nb.ts                UI-tekster som står flere steder (B-020)
 │  └─ features/                 radar, timeline, galaxy, network, list, card, comparison, deepdive,
 │                               exphil, ethics, story, tours, quiz, factcheck, daily, about
 ├─ tests/                       Vitest; komponenttester i jsdom (*.test.tsx)

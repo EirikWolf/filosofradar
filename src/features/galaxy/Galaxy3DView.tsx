@@ -8,6 +8,7 @@ import { sound } from '../../lib/sound';
 import { EXPHIL_PHILOSOPHER_IDS } from '../exphil/exphilIds';
 import { stepGalaxyCamera, type GalaxyCamera } from '../../lib/galaxyCamera';
 import { prefersReducedMotion } from '../../lib/motion';
+import { nb } from '../../i18n/nb';
 
 interface Galaxy3DViewProps {
   philosophers: Philosopher[];
@@ -505,7 +506,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
             onChange={(e) => setSelectedTradition(e.target.value)}
             className="bg-cosmos border border-white/15 rounded-xl px-3 py-1.5 text-xs text-star-white focus:outline-hidden focus:border-gold font-sans"
           >
-            <option value="all">Alle tradisjoner ({philosophers.length})</option>
+            <option value="all">{nb.allTraditions(philosophers.length)}</option>
             {TRADITION_SECTOR_ORDER.map((tid) => (
               <option key={tid} value={tid}>
                 {TRADITIONS[tid].name}
@@ -620,7 +621,7 @@ export const Galaxy3DView: React.FC<Galaxy3DViewProps> = ({
                 onClick={() => onOpenCard(selectedPhilosopher.id)}
                 className="flex-1 py-1.5 px-3 rounded-xl bg-gold hover:bg-gold-bright text-cosmos font-serif font-bold text-xs shadow-md transition-all text-center"
               >
-                📖 Åpne filosofkort
+                📖 {nb.openPhilosopherCard}
               </button>
               {onNavigateToRadar && (
                 <button

@@ -14,6 +14,7 @@ import {
 } from '../../lib/years';
 import { ThemeRadar } from '../../components/ThemeRadar';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
+import { nb } from '../../i18n/nb';
 
 interface PhilosopherComparisonProps {
   initialIds: string[];
@@ -122,7 +123,7 @@ export const PhilosopherComparison: React.FC<PhilosopherComparisonProps> = ({
           <button
             onClick={onClose}
             aria-label="Lukk sammenligningskammer (Esc)"
-            title="Lukk (Esc)"
+            title={nb.close}
             className="w-9 h-9 rounded-full border border-white/20 text-star-dim hover:text-white hover:border-gold transition-colors flex items-center justify-center text-sm"
           >
             ✕

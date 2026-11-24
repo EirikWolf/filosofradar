@@ -6,6 +6,7 @@ import type { ThoughtExperiment } from '../deepdive/types';
 import { sound } from '../../lib/sound';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
 import { cardImage } from '../../lib/images';
+import { nb } from '../../i18n/nb';
 
 interface StoryGalleryModalProps {
   onSelectStory: (story: {
@@ -119,7 +120,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
         tabIndex={-1}
         role="dialog"
         aria-modal="true"
-        aria-label={`${allStories.length} Filosofiske Historier (Story-modus)`}
+        aria-label={`${nb.stories(allStories.length)} (Story-modus)`}
         className="focus:outline-hidden relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-cosmos-card/95 border border-gold/40 rounded-3xl shadow-2xl overflow-hidden animate-slideUp"
         onClick={(e) => e.stopPropagation()}
       >
@@ -130,7 +131,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
               ✦ Opplevelser // Story-modus
             </div>
             <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white tracking-wide">
-              {allStories.length} Filosofiske Historier
+              {nb.stories(allStories.length)}
             </h2>
             <p className="text-xs sm:text-sm text-star-dim mt-1 max-w-2xl font-sans">
               Opplev historiens største tankeeksperimenter som levende, 4-delte historier med stemmeopplesning,
@@ -139,8 +140,8 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            aria-label="Lukk (Esc)"
-            title="Lukk (Esc)"
+            aria-label={nb.close}
+            title={nb.close}
             className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 text-star-dim hover:text-white flex items-center justify-center text-lg transition-colors border border-white/10"
           >
             ✕
@@ -159,7 +160,7 @@ export const StoryGalleryModal: React.FC<StoryGalleryModalProps> = ({
                   : 'bg-cosmos-card/80 border-white/10 text-star-dim hover:text-white'
               }`}
             >
-              Alle ({allStories.length})
+              {nb.all(allStories.length)}
             </button>
             <button
               onClick={() => setActiveCategory('exphil')}

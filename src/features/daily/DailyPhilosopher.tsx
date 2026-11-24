@@ -4,6 +4,7 @@ import { getTraditionMeta } from '../../lib/traditions';
 import { sound } from '../../lib/sound';
 import { preloadCardContent } from '../card/cardContent';
 import { getDailyPhilosopherIndex } from '../../lib/daily';
+import { nb } from '../../i18n/nb';
 
 interface DailyPhilosopherProps {
   philosophers: Philosopher[];
@@ -117,7 +118,7 @@ export const DailyPhilosopher: React.FC<DailyPhilosopherProps> = ({
               }}
               className="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-serif text-white transition-all active:scale-95"
             >
-              Les filosofkort ↗
+              {nb.readPhilosopherCard}
             </button>
             <button
               onClick={() => {

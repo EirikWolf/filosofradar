@@ -4,6 +4,7 @@ import type { Philosopher } from '../../schemas/philosopher';
 import { formatLifeSpan } from '../../lib/years';
 import { TRADITIONS, getTraditionMeta } from '../../lib/traditions';
 import { matchesSearch, normalizeQuery } from '../../lib/search';
+import { nb } from '../../i18n/nb';
 
 interface PhilosopherListProps {
   philosophers: Philosopher[];
@@ -62,7 +63,7 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
               </button>
             )}
             <div className="sr-only" aria-live="polite" aria-atomic="true">
-              {filtered.length === 1 ? '1 filosof funnet' : `${filtered.length} filosofer funnet`}
+              {nb.philosophersFound(filtered.length)}
             </div>
           </div>
           <div className="text-xs text-star-dim font-serif whitespace-nowrap self-center">
@@ -80,7 +81,7 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
                 : 'bg-white/5 text-star-dim hover:text-white hover:bg-white/10'
             }`}
           >
-            Alle ({philosophers.length})
+            {nb.all(philosophers.length)}
           </button>
           {Object.entries(TRADITIONS).map(([id, meta]) => {
             const count = traditionCounts[id] || 0;
@@ -195,14 +196,14 @@ export const PhilosopherList: React.FC<PhilosopherListProps> = ({ philosophers, 
                     <div>
                       <div className="flex items-center justify-between mb-1.5">
                         <h4 className="text-xs font-serif text-gold uppercase tracking-widest">
-                          Kjerneidéer
+                          {nb.coreIdeas}
                         </h4>
                         {onOpenCard && (
                           <button
                             onClick={() => onOpenCard(p.id)}
                             className="px-3 py-1 bg-gold text-cosmos rounded-md font-serif text-xs font-bold hover:bg-gold-bright transition-all shadow-md flex items-center gap-1"
                           >
-                            <span>📖</span> Åpne filosofkort
+                            <span>📖</span> {nb.openPhilosopherCard}
                           </button>
                         )}
                       </div>

@@ -4,6 +4,7 @@ import { TOURS } from './tourData';
 import type { Philosopher } from '../../schemas/philosopher';
 import { sound } from '../../lib/sound';
 import { useDialogFocus } from '../../hooks/useDialogFocus';
+import { nb } from '../../i18n/nb';
 
 interface TourSelectModalProps {
   philosophers: Philosopher[];
@@ -61,8 +62,8 @@ export const TourSelectModal: React.FC<TourSelectModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            aria-label="Lukk (Esc)"
-            title="Lukk (Esc)"
+            aria-label={nb.close}
+            title={nb.close}
             className="w-9 h-9 rounded-full border border-white/15 hover:border-gold/50 text-star-dim hover:text-white flex items-center justify-center text-sm transition-all"
           >
             ✕

@@ -417,6 +417,8 @@ Innstilling: **stryk regelen i `CLAUDE.md` og erstatt den med en mindre: «Gjent
 
 Alternativet er å beholde regelen og flytte gradvis per fil, men da står regelen brutt i lang tid, og neste revisjon flagger den igjen.
 
+> **Status: BESVART (Eirik, 2026-11-24).** «Vi gjør som du anbefaler.» Gjennomført som B-020, med én presisering etter måling: tatt bokstavelig gjelder «tekster med tall som følger av innholdet» ca. 35 tekster som alle regner ut tallet fra dataene, og flytting av dem gir ingen gevinst. Regelen er derfor delt i to: tall fra innholdet avledes alltid (ARK-06), og tekster som står for samme ting flere steder, samles i `nb.ts`. `src/i18n/nb.ts` fantes ikke før denne endringen.
+
 ### Åpent beslutningspunkt: Personer som omtales, men ikke er filosofer i radaren
 Klassifisering: prosjektintern (redaksjonell).
 Innstilling: legg Mill og Bentham inn som filosofer, siden de er Ex.phil-pensum og er tvilling og reaksjon 6 ganger. De andre (Foot, Singer, Løgstrup, Jonas, Hippokrates, Kuhn) vises som navn uten «Filosofkort»-knapp til dere eventuelt tar dem inn. Det hviler på ARK-01 og på at listen over filosofer er en redaksjonell beslutning (`docs/INNHOLD.md`).

@@ -16,6 +16,7 @@ import {
   CURRENT_YEAR,
 } from '../../lib/years';
 import { getTraditionMeta } from '../../lib/traditions';
+import { nb } from '../../i18n/nb';
 
 interface TimelineViewProps {
   philosophers: Philosopher[];
@@ -172,12 +173,12 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
 
           {/* Tradisjon-filter */}
           <select
-            aria-label="Filtrer etter tradisjon"
+            aria-label={nb.filterByTradition}
             value={selectedTradition}
             onChange={(e) => setSelectedTradition(e.target.value)}
             className="bg-cosmos border border-white/15 rounded-xl px-3 py-2 text-xs font-serif text-star-white focus:outline-hidden focus:border-gold"
           >
-            <option value="all">Alle tradisjoner ({philosophers.length})</option>
+            <option value="all">{nb.allTraditions(philosophers.length)}</option>
             <option value="greek-roman">Gresk og romersk</option>
             <option value="chinese">Kinesisk</option>
             <option value="indian">Indisk</option>
@@ -219,11 +220,11 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
         <p>
           {scaleMode === 'compressed' ? (
             <span>
-              💡 <strong className="text-gold">Komprimert skala:</strong> Gir antikken, middelalderen og nyere tid god plass, slik at moderne filosofer ikke klumper seg sammen.
+              💡 <strong className="text-gold">{nb.scale.compressed}:</strong> Gir antikken, middelalderen og nyere tid god plass, slik at moderne filosofer ikke klumper seg sammen.
             </span>
           ) : (
             <span>
-              💡 <strong className="text-cyan-glow">Lineær skala:</strong> Viser historiens eksakte proporsjoner. Merk hvor tett filosofene er konsentrert på 1800- og 1900-tallet!
+              💡 <strong className="text-cyan-glow">{nb.scale.linear}:</strong> Viser historiens eksakte proporsjoner. Merk hvor tett filosofene er konsentrert på 1800- og 1900-tallet!
             </span>
           )}
         </p>
@@ -425,7 +426,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ philosophers, onOpen
                 onClick={() => onOpenCard(selectedSpan.philosopher.id)}
                 className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold text-cosmos font-serif font-bold text-xs hover:bg-gold-bright transition-all shadow-md"
               >
-                <span>📖</span> Åpne filosofkort
+                <span>📖</span> {nb.openPhilosopherCard}
               </button>
             )}
             <p className="text-xs text-star-bright/80 mt-2 font-sans max-w-xl">
