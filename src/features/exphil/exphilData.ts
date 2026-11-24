@@ -339,6 +339,21 @@ export const EXPHIL_PROFILES: Record<string, ExphilProfile> = {
       'Gjør rede for Hegels herre-trell-dialektikk og forklar begrepet om anerkjennelse.',
     ],
   },
+  bentham: {
+    philosopherId: 'bentham',
+    pillar: 'etikk',
+    pillarLabel: 'Normativ etikk & Rettsfilosofi',
+    subPillar: 'Klassisk utilitarisme (Hedonistisk konsekvensetikk)',
+    coreTakeaway:
+      'Glede og smerte styrer alt vi gjør. En handling eller lov er riktig når den gir størst mulig lykke for det største antall. Lykken kan i prinsippet beregnes med lykkekalkylen.',
+    examKeywords: ['Nytteprinsippet', 'Største lykke for største antall', 'Lykkekalkylen (den hedonistiske kalkyle)', 'Kvantitativ hedonisme', 'Dyrs lidelse', 'Lovreform'],
+    commonPitfall:
+      'Å blande Bentham og Mill. Bentham skiller ikke mellom høyere og lavere gleder: det er mengden glede som teller. Det var Mill som innførte kvalitetsforskjeller.',
+    typicalQuestions: [
+      'Gjør rede for Benthams utilitarisme og lykkekalkylen.',
+      'Sammenlign Benthams og Mills syn på glede. Hvilket syn er mest overbevisende?',
+    ],
+  },
   mill: {
     philosopherId: 'mill',
     pillar: 'etikk',

@@ -418,6 +418,49 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       'En av de mektigste skikkelsene i 1800-tallets idéhistorie; inspirerte både «venstre-hegelianerne» (Marx) og den moderne statsteorien. Kritisert av Schopenhauer og Kierkegaard for tåkefullt språk og for å ofre det sårbare enkeltmennesket på historiens store alter.',
   },
 
+  bentham: {
+    philosopherId: 'bentham',
+    historicalContext:
+      'Vokste opp i London som sønn av en advokat, og begynte på universitetet i Oxford da han var tolv år. Han utdannet seg til jurist, men ble opprørt over hvor vilkårlige og grusomme mange lover var, og viet livet til å reformere dem. Han levde i en tid med den amerikanske og den franske revolusjonen, og var med på å grunnlegge University College London. Etter eget ønske ble skjelettet hans kledd i hans egne klær og stilt ut der, med et voksansikt.',
+    majorWorks: [
+      {
+        title: 'Et fragment om styresett (A Fragment on Government)',
+        year: 1776,
+        description: 'Utgitt anonymt. Her slår Bentham fast at den største lykke for det største antall er målestokken for rett og galt, og angriper den rådende juristen Blackstone.',
+      },
+      {
+        title: 'En innføring i moralens og lovgivningens prinsipper (An Introduction to the Principles of Morals and Legislation)',
+        year: 1789,
+        description: 'Hovedverket: nytteprinsippet, lykkekalkylen og hvordan straff kan begrunnes. Fotnoten om at dyr kan lide er blitt et utgangspunkt for moderne dyreetikk.',
+        url: 'https://en.wikisource.org/wiki/An_Introduction_to_the_Principles_of_Morals_and_Legislation',
+        urlLabel: 'Les på Wikisource',
+      },
+      {
+        title: 'Panoptikon (Panopticon; or, The Inspection-House)',
+        year: 1791,
+        description: 'Tegningen av et rundt fengsel der en vokter i midten kan se alle fangene uten selv å bli sett. Bentham mente det var en human reform; Michel Foucault gjorde det senere til et bilde på overvåkningssamfunnet.',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Kan de lide?',
+        icon: '🐕',
+        image: '/images/hooks/bentham-kan-de-lide.webp',
+        description: 'En hund kan ikke regne eller snakke, og en baby kan heller ikke det. Vi syns likevel det er galt å plage en baby. Hva er det da som gjør det galt å plage en hund?',
+        takeaway: 'Bentham mente at grensen ikke går ved fornuft eller språk, men ved evnen til å lide. Kan et vesen kjenne smerte, må smerten telle når vi vurderer hva som er rett.',
+      },
+      {
+        title: 'Lykkekalkulatoren',
+        icon: '🧮',
+        image: '/images/hooks/bentham-lykkekalkulatoren.webp',
+        description: 'Du må velge mellom en fest i kveld og å lese til en prøve i morgen. Bentham ville at du skulle regne på det: Hvor sterk og hvor lang er gleden? Hvor sikker? Hvor snart kommer den? Fører den til mer glede eller til smerte senere? Og hvor mange berøres?',
+        takeaway: 'Bentham beskrev sju mål for glede og smerte: styrke, varighet, sikkerhet, nærhet i tid, fruktbarhet, renhet og hvor mange det gjelder. Kritikerne spør om lykke virkelig lar seg måle og legge sammen.',
+      },
+    ],
+    receptionAndCritique:
+      'Regnes som grunnleggeren av den moderne utilitarismen, som John Stuart Mill videreutviklet. Ideene hans fikk stor betydning for lovreformer i Storbritannia, for velferdsøkonomi og for dyreetikk, blant annet hos Peter Singer. Kritikere mener at han gjør lykke til noe som kan måles som tall, og at han ikke skiller mellom gleder av ulik kvalitet. Det var nettopp det Mill forsøkte å rette på.',
+  },
+
   mill: {
     philosopherId: 'mill',
     historicalContext:

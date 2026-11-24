@@ -87,7 +87,8 @@ describe('Filosof-referanser i innholdet (ARK-01)', () => {
   it('isKnownPhilosopherId skiller filosofer i radaren fra andre', () => {
     expect(isKnownPhilosopherId('kant')).toBe(true);
     expect(isKnownPhilosopherId('mill')).toBe(true);
-    expect(isKnownPhilosopherId('bentham')).toBe(false);
+    expect(isKnownPhilosopherId('bentham')).toBe(true);
+    expect(isKnownPhilosopherId('foot')).toBe(false);
     expect(isKnownPhilosopherId(undefined)).toBe(false);
   });
 });

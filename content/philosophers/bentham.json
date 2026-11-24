@@ -1,0 +1,70 @@
+{
+  "id": "bentham",
+  "name": "Jeremy Bentham",
+  "nameOriginal": "Jeremy Bentham",
+  "born": {
+    "year": 1748,
+    "approx": false
+  },
+  "died": {
+    "year": 1832,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "utilitarisme",
+    "rettsfilosofi"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 1,
+    "knowledge": 2,
+    "politics": 5,
+    "logic": 3,
+    "mind": 2,
+    "meaning": 1,
+    "beauty": 1
+  },
+  "themeNotes": "Bentham var mest opptatt av hva som gjør handlinger og lover gode (etikk) og av å reformere lover, fengsler og styresett (politikk). Han var også opptatt av at ord i loven skulle være presise (logikk og språk).",
+  "keyIdeas": [
+    {
+      "title": "Største lykke for største antall",
+      "text": "Bentham mente at det som avgjør om en handling eller en lov er riktig, er hvor mye lykke den gir og hvor mye lidelse den fører til, for alle som berøres. Han så på glede og smerte som de to herrene som styrer alt vi gjør."
+    },
+    {
+      "title": "Dyr teller også",
+      "text": "Hvis det er lidelse som gjør noe galt, må også dyrs lidelse telle. Bentham mente at det avgjørende ikke er om et dyr kan tenke eller snakke, men om det kan lide. Han ville ha straff for dyremishandling i loven."
+    },
+    {
+      "title": "Lover skal tjene folk",
+      "text": "Bentham kritiserte lover som bare fulgte tradisjon. En lov må kunne begrunnes med hva den gjør for menneskene. Han tok til orde for stemmerett for flere og et fengselsvesen som forbedrer, og skrev at homofilt samliv ikke burde straffes. Det essayet turte han ikke gi ut mens han levde."
+    }
+  ],
+  "quote": {
+    "text": "Spørsmålet er ikke: Kan de resonnere? eller: Kan de snakke? men: Kan de lide?",
+    "work": "An Introduction to the Principles of Morals and Legislation (1789), kapittel 17, fotnote",
+    "source": "https://plato.stanford.edu/entries/bentham/",
+    "translator": "egen oversettelse fra engelsk"
+  },
+  "thinkAbout": "Hvis det er lidelse som gjør noe galt, hvordan bør vi da behandle dyr? Er det noen grense for hvor mye dyrs lidelse skal telle?",
+  "influencedBy": [
+    "hume"
+  ],
+  "wikidata": "Q60887",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/Jeremy_Bentham"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/Jeremy_Bentham"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/bentham/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": false
+}
