@@ -98,6 +98,20 @@ const VERIFIED_LINKS = {
     label: "Les på Project Gutenberg"
   },
 
+  // Mill (Gutenberg-ID-ene kontrollert mot teksten på gutenberg.pglaf.org 2026-11-24)
+  "mill:Om friheten (On Liberty)": {
+    url: "https://www.gutenberg.org/ebooks/34901", // On Liberty, Walter Scott Publishing
+    label: "Les på Project Gutenberg"
+  },
+  "mill:Utilitarismen (Utilitarianism)": {
+    url: "https://www.gutenberg.org/ebooks/11224", // Utilitarianism, 7. utgave 1879
+    label: "Les på Project Gutenberg"
+  },
+  "mill:Kvinnenes underkuelse (The Subjection of Women)": {
+    url: "https://www.gutenberg.org/ebooks/27083", // The Subjection of Women
+    label: "Les på Project Gutenberg"
+  },
+
   // Marx
   "marx:Det kommunistiske manifest": {
     url: "https://www.marxists.org/norsk/marx-engels/1848/01/manifestet/",

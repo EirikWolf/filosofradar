@@ -8,7 +8,6 @@ const PHILOSOPHER_IDS = new Set((philosophersData as { id: string }[]).map((p) =
  * Kommer en av dem inn i content/, skal den fjernes herfra (testen krever det).
  */
 export const NOT_IN_RADAR: Record<string, string> = {
-  mill: 'John Stuart Mill',
   bentham: 'Jeremy Bentham',
   foot: 'Philippa Foot',
   singer: 'Peter Singer',
