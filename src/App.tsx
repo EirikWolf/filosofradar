@@ -5,6 +5,7 @@ import { PhilosopherCard } from './features/card/PhilosopherCard';
 import { DailyPhilosopher } from './features/daily/DailyPhilosopher';
 import { TourPlayer } from './features/tours/TourPlayer';
 import type { Tour } from './features/tours/types';
+import { lazyView } from './components/lazyView';
 import { sound } from './lib/sound';
 import { trackPageView, trackEvent } from './lib/telemetry';
 import { isKnownPhilosopherId } from './lib/philosopherIndex';
@@ -19,39 +20,39 @@ import type { ThoughtExperiment } from './features/deepdive/types';
 // Tidslinjen og idénettverket vises ikke på forsiden. Nettverket drar med seg d3-force,
 // som ellers ble forhåndslastet på første side (YTE-06). Lista lastes ikke lat: den er
 // det tilgjengelige alternativet til radaren og skal ikke blinke inn.
-const TimelineView = React.lazy(() =>
+const TimelineView = lazyView(() =>
   import('./features/timeline/TimelineView').then((m) => ({ default: m.TimelineView })),
 );
-const NetworkView = React.lazy(() =>
+const NetworkView = lazyView(() =>
   import('./features/network/NetworkView').then((m) => ({ default: m.NetworkView })),
 );
-const Galaxy3DView = React.lazy(() =>
+const Galaxy3DView = lazyView(() =>
   import('./features/galaxy/Galaxy3DView').then((m) => ({ default: m.Galaxy3DView })),
 );
-const QuizView = React.lazy(() =>
+const QuizView = lazyView(() =>
   import('./features/quiz/QuizView').then((m) => ({ default: m.QuizView })),
 );
-const ExphilHub = React.lazy(() =>
+const ExphilHub = lazyView(() =>
   import('./features/exphil/ExphilHub').then((m) => ({ default: m.ExphilHub })),
 );
-const AboutView = React.lazy(() =>
+const AboutView = lazyView(() =>
   import('./features/about/AboutView').then((m) => ({ default: m.AboutView })),
 );
-const PhilosopherComparison = React.lazy(() =>
+const PhilosopherComparison = lazyView(() =>
   import('./features/comparison/PhilosopherComparison').then((m) => ({
     default: m.PhilosopherComparison,
   })),
 );
-const TourSelectModal = React.lazy(() =>
+const TourSelectModal = lazyView(() =>
   import('./features/tours/TourSelectModal').then((m) => ({ default: m.TourSelectModal })),
 );
-const StoryModal = React.lazy(() =>
+const StoryModal = lazyView(() =>
   import('./features/story/StoryModal').then((m) => ({ default: m.StoryModal })),
 );
-const StoryGalleryModal = React.lazy(() =>
+const StoryGalleryModal = lazyView(() =>
   import('./features/story/StoryGalleryModal').then((m) => ({ default: m.StoryGalleryModal })),
 );
-const EthicsLabView = React.lazy(() =>
+const EthicsLabView = lazyView(() =>
   import('./features/ethics/EthicsLabView').then((m) => ({ default: m.EthicsLabView })),
 );
 
