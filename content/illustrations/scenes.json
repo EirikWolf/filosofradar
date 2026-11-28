@@ -684,7 +684,8 @@
       "file": "bentham-kan-de-lide",
       "philosopherId": "bentham",
       "experiment": "Kan de lide?",
-      "prompt": "A quiet late 18th-century English study lit by a single candle. An elderly man in a dark coat kneels beside a thin, frightened dog lying on a woollen blanket, gently resting his hand on its head. Through the window a grey London street at dusk. Compassionate, serious and calm mood, no injury shown."
+      "prompt": "A quiet late 18th-century English study lit by a single candle. An elderly man in a dark coat kneels beside a thin, frightened dog lying on a woollen blanket, gently resting his hand on its head. Through the window, a cobbled Georgian London street at dusk with gas-less oil lamps and a horse-drawn carriage; no cars, no modern objects. Compassionate, serious and calm mood, no injury shown.",
+      "seed": 5311
     },
     {
       "file": "bentham-lykkekalkulatoren",
