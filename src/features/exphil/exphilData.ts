@@ -339,6 +339,21 @@ export const EXPHIL_PROFILES: Record<string, ExphilProfile> = {
       'Gjør rede for Hegels herre-trell-dialektikk og forklar begrepet om anerkjennelse.',
     ],
   },
+  mill: {
+    philosopherId: 'mill',
+    pillar: 'etikk',
+    pillarLabel: 'Normativ etikk & Politisk filosofi',
+    subPillar: 'Konsekvensetikk (Utilitarisme) & Liberalisme',
+    coreTakeaway:
+      'En handling er riktig hvis den fremmer størst mulig lykke for alle som berøres (nytteprinsippet). Mill skiller mellom høyere og lavere gleder, og forsvarer individets frihet med skadeprinsippet.',
+    examKeywords: ['Nytteprinsippet', 'Høyere og lavere gleder', 'Konsekvensetikk', 'Skadeprinsippet', 'Ytringsfrihet', 'Upartiskhet'],
+    commonPitfall:
+      'Å tro at utilitarismen betyr at hver enkelt skal gjøre det som gir mest lykke for seg selv. Mill krever at alles lykke teller like mye, og at den som handler, er upartisk.',
+    typicalQuestions: [
+      'Gjør rede for Mills utilitarisme og skillet mellom høyere og lavere gleder.',
+      'Drøft styrker og svakheter ved Mills konsekvensetikk sammenlignet med Kants pliktetikk.',
+    ],
+  },
   marx: {
     philosopherId: 'marx',
     pillar: 'etikk',

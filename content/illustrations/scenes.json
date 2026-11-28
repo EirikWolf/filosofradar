@@ -666,6 +666,19 @@
       "experiment": "Kokken Ding som parterer oksen",
       "prompt": "An ancient Chinese kitchen filled with misty steam and lantern light. A cook in flowing robes with tied-up sleeves moves in a graceful, dance-like pose, his gleaming cleaver tracing a faint golden ribbon of light through the air. On the wooden table before him lie neat, clean cuts of meat arranged like a still life, with no blood. A lord in fine robes watches in admiration from the doorway.",
       "seed": 101
+    },
+    {
+      "file": "mill-grisen-og-sokrates",
+      "philosopherId": "mill",
+      "experiment": "Den fornøyde grisen og den misfornøyde Sokrates",
+      "prompt": "A split scene in warm evening light. On the left, a contented pink pig sleeps in clean golden straw beside a full feeding trough in a cosy barn. On the right, an elderly bearded man in a simple ancient Greek tunic sits on a stone bench under a starry sky, deep in thought with a furrowed brow, an open scroll on his knee. The two halves meet in a soft glow. Gentle, thoughtful, slightly humorous mood."
+    },
+    {
+      "file": "mill-den-usikre-brua",
+      "philosopherId": "mill",
+      "experiment": "Mannen på den usikre brua",
+      "prompt": "A dilapidated wooden footbridge sags over a rushing river in a misty Victorian countryside: several planks are missing, leaving dark gaps, and one rope railing has snapped and dangles into the water. A man in a 19th-century coat and top hat stands at the very start of the bridge with one foot raised to step onto it. Directly behind him, a second man in Victorian clothes firmly grips his shoulder to hold him back. Tense but calm moment, early morning light.",
+      "seed": 4207
     }
   ]
 }

@@ -418,6 +418,58 @@ export const PHILOSOPHER_DEEP_DIVES: Record<string, PhilosopherDeepDive> = {
       'En av de mektigste skikkelsene i 1800-tallets idéhistorie; inspirerte både «venstre-hegelianerne» (Marx) og den moderne statsteorien. Kritisert av Schopenhauer og Kierkegaard for tåkefullt språk og for å ofre det sårbare enkeltmennesket på historiens store alter.',
   },
 
+  mill: {
+    philosopherId: 'mill',
+    historicalContext:
+      'Vokste opp i London under den industrielle revolusjonen. Faren James Mill og vennen hans Jeremy Bentham ville gjøre ham til utilitarismens fremste forsvarer: han lærte gresk fra han var tre år og latin fra han var sju. Som 20-åring fikk han en dyp psykisk krise, og fant tilbake til livsgleden blant annet gjennom Wordsworths dikt. Han arbeidet i over 30 år for Ostindiakompaniet i London, og satt i det britiske parlamentet 1865–1868.',
+    majorWorks: [
+      {
+        title: 'Et system av logikk (A System of Logic)',
+        year: 1843,
+        description: 'Hvordan vi kan slutte fra erfaring til generelle lover. Her beskriver Mill metodene for å finne årsaker, som fortsatt brukes i vitenskapelig metode.',
+      },
+      {
+        title: 'Om friheten (On Liberty)',
+        year: 1859,
+        description: 'Forsvaret for individets frihet og ytringsfriheten, med skadeprinsippet: samfunnet får bare gripe inn for å hindre skade på andre.',
+        url: 'https://www.gutenberg.org/ebooks/34901',
+        urlLabel: 'Les på Project Gutenberg',
+      },
+      {
+        title: 'Utilitarismen (Utilitarianism)',
+        year: 1863,
+        description: 'Den klassiske framstillingen av nytteetikken, med skillet mellom høyere og lavere gleder og svarene på de vanligste innvendingene.',
+        url: 'https://www.gutenberg.org/ebooks/11224',
+        urlLabel: 'Les på Project Gutenberg',
+      },
+      {
+        title: 'Kvinnenes underkuelse (The Subjection of Women)',
+        year: 1869,
+        description: 'Argumentet for full likestilling mellom kjønnene i ekteskap, arbeid og politikk, skrevet i en tid da kvinner ikke hadde stemmerett.',
+        url: 'https://www.gutenberg.org/ebooks/27083',
+        urlLabel: 'Les på Project Gutenberg',
+      },
+    ],
+    thoughtExperiments: [
+      {
+        title: 'Den fornøyde grisen og den misfornøyde Sokrates',
+        icon: '🐖',
+        image: '/images/hooks/mill-grisen-og-sokrates.webp',
+        description: 'Tenk deg at du kunne bytte livet ditt mot livet til en gris som alltid er mett, varm og fornøyd. Den kjenner aldri tvil, sorg eller kjedsomhet. Ville du byttet?',
+        takeaway: 'Mill mente at gleder har ulik kvalitet. Den som har kjent både de enkle og de høyere gledene, som vennskap, kunnskap og kunst, velger de høyere, selv om de kommer med mer uro.',
+      },
+      {
+        title: 'Mannen på den usikre brua',
+        icon: '🌉',
+        image: '/images/hooks/mill-den-usikre-brua.webp',
+        description: 'En mann skal til å gå over en bru som er kjent for å være usikker, og det er ikke tid til å advare ham. Har du lov til å gripe ham og holde ham tilbake?',
+        takeaway: 'Ja, sier Mill: han ønsker ikke å falle i elva, så du hindrer ham ikke i å gjøre det han vil. Men vet han om faren og velger å gå likevel, er det hans eget valg. Da kan du advare, ikke tvinge.',
+      },
+    ],
+    receptionAndCritique:
+      'Utilitarismen hans er fortsatt en av de tre store retningene i etikken, sammen med pliktetikk og dydsetikk, og står sentralt i Ex.phil. Om friheten brukes stadig i debatter om ytringsfrihet og om hva staten bør forby. Kritikere mener at nytteetikken kan forsvare å ofre enkeltmennesker for flertallets lykke, og spør hvem som skal avgjøre hvilke gleder som er de høyere. Han var en tidlig mannlig forkjemper for kvinners rettigheter.',
+  },
+
   marx: {
     philosopherId: 'marx',
     historicalContext:

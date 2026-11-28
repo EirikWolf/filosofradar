@@ -1,0 +1,73 @@
+{
+  "id": "mill",
+  "name": "John Stuart Mill",
+  "nameOriginal": "John Stuart Mill",
+  "born": {
+    "year": 1806,
+    "approx": false
+  },
+  "died": {
+    "year": 1873,
+    "approx": false
+  },
+  "tradition": "european",
+  "schools": [
+    "utilitarisme",
+    "liberalisme",
+    "empirisme"
+  ],
+  "themes": {
+    "ethics": 5,
+    "metaphysics": 2,
+    "knowledge": 4,
+    "politics": 5,
+    "logic": 4,
+    "mind": 2,
+    "meaning": 2,
+    "beauty": 2
+  },
+  "themeNotes": "Mill var mest opptatt av hva som gjør en handling riktig (etikk) og hvor mye frihet samfunnet skal gi hver enkelt (politikk). Han skrev også en stor bok om logikk og om hvordan vi kan vite noe ut fra erfaring.",
+  "keyIdeas": [
+    {
+      "title": "Størst mulig lykke for flest mulig",
+      "text": "En handling er riktig når den gir mest mulig lykke og minst mulig lidelse for alle den berører. Alles lykke teller like mye, også din egen, men ikke mer. Mill mente at noen gleder, som vennskap, kunnskap og kunst, er mer verdt enn andre."
+    },
+    {
+      "title": "Skadeprinsippet",
+      "text": "Staten og andre mennesker får bare hindre deg i å gjøre noe hvis det skader andre. Det som bare angår deg selv, bestemmer du over. Mill forsvarte også ytringsfriheten: selv en feil mening kan hjelpe oss å forstå hvorfor det sanne er sant."
+    },
+    {
+      "title": "Like rettigheter for kvinner",
+      "text": "Mill mente at kvinner skulle ha stemmerett og de samme rettighetene som menn. Mange av tankene utviklet han sammen med Harriet Taylor Mill. Som parlamentsmedlem foreslo han i 1867 at kvinner skulle få stemme ved valg i Storbritannia."
+    }
+  ],
+  "quote": {
+    "text": "Det er bedre å være et misfornøyd menneske enn en fornøyd gris; bedre å være en misfornøyd Sokrates enn en fornøyd tosk.",
+    "work": "Utilitarianism (1863), kapittel 2",
+    "source": "https://www.gutenberg.org/ebooks/11224",
+    "translator": "egen oversettelse fra engelsk"
+  },
+  "thinkAbout": "Bør det være lov å gjøre noe som bare kan skade deg selv, som å sykle uten hjelm? Hvor går grensen for hva andre kan bestemme over deg?",
+  "influencedBy": [
+    "platon",
+    "locke",
+    "hume"
+  ],
+  "wikidata": "Q50020",
+  "links": [
+    {
+      "label": "Store norske leksikon",
+      "url": "https://snl.no/John_Stuart_Mill"
+    },
+    {
+      "label": "Wikipedia (norsk)",
+      "url": "https://no.wikipedia.org/wiki/John_Stuart_Mill"
+    },
+    {
+      "label": "Stanford Encyclopedia of Philosophy",
+      "url": "https://plato.stanford.edu/entries/mill/"
+    }
+  ],
+  "gender": "mann",
+  "reviewed": true
+}
