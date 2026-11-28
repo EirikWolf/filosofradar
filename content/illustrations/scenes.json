@@ -677,7 +677,8 @@
       "file": "mill-den-usikre-brua",
       "philosopherId": "mill",
       "experiment": "Mannen på den usikre brua",
-      "prompt": "A rickety old wooden footbridge with missing planks and frayed ropes spans a fast river in a misty Victorian countryside. A man in a 19th-century coat and top hat is about to step onto it. Behind him, another man in Victorian clothes reaches out a hand to stop him by the shoulder. Tense but calm moment, early morning light, seen from a slight distance."
+      "prompt": "A dilapidated wooden footbridge sags over a rushing river in a misty Victorian countryside: several planks are missing, leaving dark gaps, and one rope railing has snapped and dangles into the water. A man in a 19th-century coat and top hat stands at the very start of the bridge with one foot raised to step onto it. Directly behind him, a second man in Victorian clothes firmly grips his shoulder to hold him back. Tense but calm moment, early morning light.",
+      "seed": 4207
     }
   ]
 }
