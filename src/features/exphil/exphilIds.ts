@@ -13,6 +13,7 @@ export const EXPHIL_PHILOSOPHER_IDS = new Set<string>([
   'kant',
   'wollstonecraft',
   'hegel',
+  'bentham',
   'mill',
   'marx',
   'kierkegaard',

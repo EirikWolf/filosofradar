@@ -679,6 +679,19 @@
       "experiment": "Mannen på den usikre brua",
       "prompt": "A dilapidated wooden footbridge sags over a rushing river in a misty Victorian countryside: several planks are missing, leaving dark gaps, and one rope railing has snapped and dangles into the water. A man in a 19th-century coat and top hat stands at the very start of the bridge with one foot raised to step onto it. Directly behind him, a second man in Victorian clothes firmly grips his shoulder to hold him back. Tense but calm moment, early morning light.",
       "seed": 4207
+    },
+    {
+      "file": "bentham-kan-de-lide",
+      "philosopherId": "bentham",
+      "experiment": "Kan de lide?",
+      "prompt": "A quiet late 18th-century English study lit by a single candle. An elderly man in a dark coat kneels beside a thin, frightened dog lying on a woollen blanket, gently resting his hand on its head. Through the window, a cobbled Georgian London street at dusk with gas-less oil lamps and a horse-drawn carriage; no cars, no modern objects. Compassionate, serious and calm mood, no injury shown.",
+      "seed": 5311
+    },
+    {
+      "file": "bentham-lykkekalkulatoren",
+      "philosopherId": "bentham",
+      "experiment": "Lykkekalkulatoren",
+      "prompt": "A teenager in modern clothes stands at a crossroads in a twilight city: one path leads to a warmly lit house with a party and friends silhouetted in the windows, the other to a desk with books under a reading lamp. Above the crossroads floats a large antique brass balance scale weighing small glowing orbs of light against dark grey stones. Thoughtful, slightly whimsical mood."
     }
   ]
 }
